@@ -1,0 +1,69 @@
+title: 오픈소스컨설팅 기술 블로그
+email: lab@osci.kr
+description: |
+  소통, 협업으로 가치 창출.
+  오픈소스컨설팅은 공개를 멈추지 않을 것입니다.
+baseurl: ''
+url: https://tech.osci.kr
+timezone: Asia/Seoul
+facebook_comment: true
+
+repository: OpenSourceConsulting/opensourceconsulting.github.io
+
+permalink: /blog/:categories/:year/:month/:day/:title/
+
+excerpt_separator: <!--more-->
+
+markdown: kramdown
+
+krandown:
+  input: GFM
+  highlighter: rouge
+
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+
+paginate: 5
+paginate_path: '/page/:num/'
+
+collections:
+  authors:
+    output: true
+    permalink: /authors/:path/
+  tags:
+    output: true
+    permalink: /tags/:path/
+
+defaults:
+  - scope:
+      path: ''
+      type: authors
+    values:
+      layout: author
+  - scope:
+      path: ''
+      type: tags
+    values:
+      layout: tag
+
+exclude: [README.md, Gemfile, Gemfile.lock]
+
+keep_files: [assets, files]
+
+author: lab@osci.kr
+image: '/assets/images/default_blog_cover.jpg'
+asset_url: /assets
+
+google_analytics:
+  ua: UA-39977834-4 
+facebook:
+  app_id: '724406651053479'
+  username: opensourceconsulting
+  comment: true
+#twitter:
+#  username:
+#google_plus:
+#  username:
+github:
+  username: OpenSourceConsulting
