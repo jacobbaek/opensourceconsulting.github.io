@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>오픈소스컨설팅 기술 블로그</title>
+    <description>소통, 협업으로 가치 창출.
+오픈소스컨설팅은 공개를 멈추지 않을 것입니다.
+</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/rss" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 03 Jul 2018 00:46:33 +0900</pubDate>
+    <lastBuildDate>Tue, 03 Jul 2018 00:46:33 +0900</lastBuildDate>
+    <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>GitHub Page 블로그 이전</title>
+        <description>&lt;h1 id=&quot;headding-1&quot;&gt;Headding 1&lt;/h1&gt;
+</description>
+        <pubDate>Tue, 03 Jul 2018 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/blog/opensource,%20github,%20jekyll/2018/07/03/migration-github-blog/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/opensource,%20github,%20jekyll/2018/07/03/migration-github-blog/</guid>
+        
+        <category>GitHub</category>
+        
+        <category>Blog</category>
+        
+        <category>T-Story</category>
+        
+        <category>Jekyll</category>
+        
+        
+        <category>OpenSource, GitHub, Jekyll</category>
+        
+      </item>
+    
+  </channel>
+</rss>
