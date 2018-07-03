@@ -5,7 +5,7 @@
         xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://localhost:4000/blog/opensource,%20github,%20jekyll/2018/07/03/migration-github-blog/</loc>
+    <loc>https://tech.osci.kr/blog/opensource,%20github,%20jekyll/2018/07/03/migration-github-blog/</loc>
     
     <lastmod>2018-07-03T00:00:00+09:00</lastmod>
     
@@ -18,7 +18,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/about/</loc>
+    <loc>https://tech.osci.kr/about/</loc>
     
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -27,24 +27,7 @@
   
   
   <url>
-    <loc>http://localhost:4000/authors/</loc>
-    
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <url>
-    <loc>http://localhost:4000/tags/</loc>
+    <loc>https://tech.osci.kr/authors/</loc>
     
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -54,69 +37,86 @@
   
   
   
+  
+  
+  
+  
+  
+  
   <url>
-    <loc>http://localhost:4000/authors/it2seiyon</loc>
+    <loc>https://tech.osci.kr/tags/</loc>
+    
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  
+  
+  
+  
+  <url>
+    <loc>https://tech.osci.kr/authors/it2seiyon</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   
   <url>
-    <loc>http://localhost:4000/tags/JPA</loc>
+    <loc>https://tech.osci.kr/tags/JPA</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/tags/data structure</loc>
+    <loc>https://tech.osci.kr/tags/data structure</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/tags/diary</loc>
+    <loc>https://tech.osci.kr/tags/diary</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/tags/gc</loc>
+    <loc>https://tech.osci.kr/tags/gc</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/tags/git</loc>
+    <loc>https://tech.osci.kr/tags/git</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/tags/java</loc>
+    <loc>https://tech.osci.kr/tags/java</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/tags/java8</loc>
+    <loc>https://tech.osci.kr/tags/java8</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/tags/mac</loc>
+    <loc>https://tech.osci.kr/tags/mac</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/tags/spring</loc>
+    <loc>https://tech.osci.kr/tags/spring</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/tags/vim</loc>
+    <loc>https://tech.osci.kr/tags/vim</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
