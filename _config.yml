@@ -10,7 +10,7 @@ facebook_comment: true
 
 repository: OpenSourceConsulting/opensourceconsulting.github.io
 
-permalink: /blog/:categories/:year/:month/:day/:title/
+permalink: /:categories/:year/:month/:day/:title/
 
 excerpt_separator: <!--more-->
 
@@ -56,9 +56,9 @@ image: '/assets/images/default_blog_cover.jpg'
 asset_url: /assets
 
 google_analytics:
-  ua: UA-39977834-4 
+  ua: UA-39977834-4
 facebook:
-  app_id: '724406651053479'
+  app_id: ''
   username: opensourceconsulting
   comment: true
 #twitter:
@@ -66,4 +66,4 @@ facebook:
 #google_plus:
 #  username:
 github:
-  username: OpenSourceConsulting
+  username: opensourceconsulting
