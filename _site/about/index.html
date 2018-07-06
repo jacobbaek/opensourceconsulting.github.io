@@ -18,20 +18,20 @@
 <meta name="author" content="lab@osci.kr"/>
 <meta name="description" content=""/>
 
-<meta property="fb:app_id" content=""/>
+<meta property="fb:app_id" content="724406651053479"/>
 
 <meta property="og:site_name" content="오픈소스컨설팅 기술 블로그"/>
 <meta property="og:type" content="article"/>
 <meta property="og:title" content="About OpenSourceConsulting"/>
 <meta property="og:description" content=""/>
-<meta property="og:url" content="https://tech.osci.kr/about/"/>
-<meta property="og:image" content="https://tech.osci.kr/files/covers/about_intro.jpg"/>
+<meta property="og:url" content="http://localhost:4000/about/"/>
+<meta property="og:image" content="http://localhost:4000/files/covers/about_intro.jpg"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="About OpenSourceConsulting"/>
 <meta name="twitter:description" content=""/>
 <meta name="twitter:label1" content="Written by"/>
 <meta name="twitter:data1" content="lab@osci.kr"/>
-<meta name="twitter:image:src" content="https://tech.osci.kr/files/covers/about_intro.jpg"/>
+<meta name="twitter:image:src" content="http://localhost:4000/files/covers/about_intro.jpg"/>
 <meta name="naver-site-verification" content="11ec9086ec9292ebc8dc73f6224492f208b2007b"/>
 <meta name="google-site-verification" content="Q5w5X0R32gOG-1lBhFg0UxvXRNoQX-uOSPjxPI4sXH4" />
 
@@ -43,7 +43,7 @@
 
 
 
-<link href="https://tech.osci.kr/rss/" rel="alternate" type="application/rss+xml" title="RSS"/>
+<link href="http://localhost:4000/rss/" rel="alternate" type="application/rss+xml" title="RSS"/>
 <link href="/assets/favicon.png" rel="icon" type="image/png"/>
 <link href="/assets/apple-touch-icon.png" rel="apple-touch-icon" type="image/png"/>
 <link href="/assets/apple-touch-icon.png" rel="apple-touch-icon-precomposed" type="image/png"/>
@@ -110,7 +110,7 @@
     <ul id="links">
         
         <li>
-            <a id="link-github" href="http://github.com/opensourceconsulting" target="_blank">
+            <a id="link-github" href="http://github.com/OpenSourceConsulting" target="_blank">
                 <span class="sr-only">github</span>
             </a>
         </li>
@@ -146,7 +146,6 @@
 <script src="/assets/lib/jquery-1.12.0.min.js"></script>
 <script src="/assets/lib/jquery.magnific-popup.min.js"></script>
 <script src="/assets/js/index.js"></script>
-<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 
 
 <script>
@@ -168,55 +167,12 @@
 
 
 
-    <script type='text/javascript'>
-    //<![CDATA[
-    // // 사용할 앱의 JavaScript 키를 설정해 주세요.
-    Kakao.init('65d48e116d8b9409e08960c4800c3017');
-    // // 카카오링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
-    var ogImg = $('meta[property="og:image"]').attr('content').replace("tech.kakao.com", "kakao.github.io");
-    var ogTitle = $('meta[property="og:title"]').attr('content');
-    var ogUrl = $('meta[property="og:url"]').attr('content');
-    Kakao.Link.createTalkLinkButton({
-        container: '#kakao-link-btn',
-        label: ogTitle,
-        image: {
-            src: ogImg,
-            width: '300',
-            height: '200'
-        },
-        webButton: {
-            text: '카카오 기술블로그',
-            url: ogUrl // 앱 설정의 웹 플랫폼에 등록한 도메인의 URL이어야 합니다.
-        },
-        forwardable: true
-    });
-    //]]>
-</script>
-<script>
-    var _ua = navigator.userAgent.toLowerCase().match(/iphone|ipod|ipad|android/);
-    var sb = document.getElementById("shares").getElementsByTagName("li");
-    if (_ua) {
-        sb[0].style.display = "inline";
-    }
-</script>
-    <script type='text/javascript'>
-   //<![CDATA[
-    // 사용할 앱의 JavaScript 키를 설정해 주세요.
-    //Kakao.init('65d48e116d8b9409e08960c4800c3017');
-    function shareStory(abs_page_url) {
-        Kakao.Story.share({
-            url: abs_page_url,
-            text: '카카오 기술블로그 #개발자 #카카오'
-        });
-    }
-    //]]>
-</script>
 
     
     <script>
     window.fbAsyncInit = function() {
         FB.init({
-            appId      : '',
+            appId      : '724406651053479',
             xfbml      : true,
             version    : 'v2.8'
         });
