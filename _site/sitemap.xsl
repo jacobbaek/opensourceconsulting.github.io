@@ -15,11 +15,11 @@
         <div id="content">
           <h1>XML Sitemap</h1>
           <p>This is a generated
-            <a href="https://tech.osci.kr/sitemap.xml">sitemap</a>
+            <a href="http://localhost:4000/sitemap.xml">sitemap</a>
             for robot, orcs or elves.
           </p>
           <p>You might to visit a
-            <a href="https://tech.osci.kr">site</a>
+            <a href="http://localhost:4000">site</a>
             for human.
           </p>
           <xsl:if test="count(sitemap:sitemapindex/sitemap:sitemap) &gt; 0">
@@ -96,4 +96,4 @@
     </html>
 
   </xsl:template>
-</xsl:stylesheet>t>
+</xsl:stylesheet>
