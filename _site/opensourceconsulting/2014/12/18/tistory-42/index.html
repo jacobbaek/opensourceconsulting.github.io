@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-4319643791278273",
+    enable_page_level_ads: true
+  });
+</script>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+
+<title>PackStack으로 OpenStack 교육용 All-In-One VM 여러 세트를 하나의 KVM에 만들기</title>
+<meta name="title" content="PackStack으로 OpenStack 교육용 All-In-One VM 여러 세트를 하나의 KVM에 만들기" />
+<meta name="author" content="it2seiyon"/>
+<meta name="description" content="1. Baremetal 서버의 Bridge Network 설정 먼저 bridge 모듈 설치 yum install bridge-utils KVM Host 서버의 외부 접속 Ethernet을 Bridge로 변경 (외부 IP. 여기서는 10.0.0.100이 할당된 것) [root@Tiger ~]# cat /etc/sysconfig/network-scripts/ifcfg-eth7 DEVICE=eth7 HWADDR=A0:D3:C1:EF:F6:30 TYPE=Ethernet UUID=ceebc5a7-338d-456b-b752-98cae0d7e700 ONBOOT=yes BOOTPROTO=static BRIDGE=br7 ==&gt; 기존 Ethernet의 IP를 아래 Bridge로 옮김 [root@Tiger ~]# cat /etc/sysconfig/network-scripts/ifcfg-br7 DEVICE=br7 TYPE=Bridge ONBOOT=yes BOOTPROTO=static DELAY=0 IPADDR=192.168.0.240 NETMASK=255.255.255.0 GATEWAY=192.168.0.1 2. CentOs 7 VM 이미지 생성 http://www.centos.org/download/ 에서 Minimal Install Image 선택 ==&gt; openstack1으로 생성 (마스터 VM 이미지) 3...."/>
+
+<meta property="fb:app_id" content=""/>
+
+<meta property="og:site_name" content="오픈소스컨설팅 기술 블로그"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="PackStack으로 OpenStack 교육용 All-In-One VM 여러 세트를 하나의 KVM에 만들기"/>
+<meta property="og:description" content="1. Baremetal 서버의 Bridge Network 설정 먼저 bridge 모듈 설치 yum install bridge-utils KVM Host 서버의 외부 접속 Ethernet을 Bridge로 변경 (외부 IP. 여기서는 10.0.0.100이 할당된 것) [root@Tiger ~]# cat /etc/sysconfig/network-scripts/ifcfg-eth7 DEVICE=eth7 HWADDR=A0:D3:C1:EF:F6:30 TYPE=Ethernet UUID=ceebc5a7-338d-456b-b752-98cae0d7e700 ONBOOT=yes BOOTPROTO=static BRIDGE=br7 ==&gt; 기존 Ethernet의 IP를 아래 Bridge로 옮김 [root@Tiger ~]# cat /etc/sysconfig/network-scripts/ifcfg-br7 DEVICE=br7 TYPE=Bridge ONBOOT=yes BOOTPROTO=static DELAY=0 IPADDR=192.168.0.240 NETMASK=255.255.255.0 GATEWAY=192.168.0.1 2. CentOs 7 VM 이미지 생성 http://www.centos.org/download/ 에서 Minimal Install Image 선택 ==&gt; openstack1으로 생성 (마스터 VM 이미지) 3...."/>
+<meta property="og:url" content="http://localhost:4000/opensourceconsulting/2014/12/18/tistory-42/"/>
+<meta property="og:image" content="http://localhost:4000/assets/images/default_blog_cover.jpg"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="PackStack으로 OpenStack 교육용 All-In-One VM 여러 세트를 하나의 KVM에 만들기"/>
+<meta name="twitter:description" content="1. Baremetal 서버의 Bridge Network 설정 먼저 bridge 모듈 설치 yum install bridge-utils KVM Host 서버의 외부 접속 Ethernet을 Bridge로 변경 (외부 IP. 여기서는 10.0.0.100이 할당된 것) [root@Tiger ~]# cat /etc/sysconfig/network-scripts/ifcfg-eth7 DEVICE=eth7 HWADDR=A0:D3:C1:EF:F6:30 TYPE=Ethernet UUID=ceebc5a7-338d-456b-b752-98cae0d7e700 ONBOOT=yes BOOTPROTO=static BRIDGE=br7 ==&gt; 기존 Ethernet의 IP를 아래 Bridge로 옮김 [root@Tiger ~]# cat /etc/sysconfig/network-scripts/ifcfg-br7 DEVICE=br7 TYPE=Bridge ONBOOT=yes BOOTPROTO=static DELAY=0 IPADDR=192.168.0.240 NETMASK=255.255.255.0 GATEWAY=192.168.0.1 2. CentOs 7 VM 이미지 생성 http://www.centos.org/download/ 에서 Minimal Install Image 선택 ==&gt; openstack1으로 생성 (마스터 VM 이미지) 3...."/>
+<meta name="twitter:label1" content="Written by"/>
+<meta name="twitter:data1" content="it2seiyon"/>
+<meta name="twitter:image:src" content="http://localhost:4000/assets/images/default_blog_cover.jpg"/>
+<meta name="naver-site-verification" content="11ec9086ec9292ebc8dc73f6224492f208b2007b"/>
+<meta name="google-site-verification" content="Q5w5X0R32gOG-1lBhFg0UxvXRNoQX-uOSPjxPI4sXH4" />
+
+<meta name="twitter:label2" content="Filed under"/>
+<meta name="twitter:data2" content="OpenSourceConsulting"/>
+
+<meta property="article:tag" content="OpenSourceConsulting"/>
+
+
+
+<meta property="article:published_time" content="2014-12-18T00:20:08+09:00"/>
+
+
+<meta property="article:author" content="http://localhost:4000/authors/it2seiyon"/>
+
+<link href="http://localhost:4000/rss/" rel="alternate" type="application/rss+xml" title="RSS"/>
+<link href="/assets/favicon.png" rel="icon" type="image/png"/>
+<link href="/assets/apple-touch-icon.png" rel="apple-touch-icon" type="image/png"/>
+<link href="/assets/apple-touch-icon.png" rel="apple-touch-icon-precomposed" type="image/png"/>
+<link href="/assets/lib/normalize.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/css/monokai.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/lib/magnific-popup.min.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/fonts/Kakao.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/css/screen.css" rel="stylesheet" type="text/css"/>
+
+</head>
+<body class="post-template">
+
+<div id="header">
+    <button id="menu-toggle" type="button">
+        <span class="sr-only">Toggle Navigation Menu</span>
+    </button>
+    <button id="search-toggle" type="button">
+        <span class="sr-only">Toggle Search Form</span>
+    </button>
+    <a href="/">
+        <img src="/assets/images/pc/tech_logo.png" class="tech_logo">
+    </a>
+    <form id="search">
+        <input id="searchQueryEdit" name="q" type="search" placeholder="Search..." value="" />
+    </form>
+
+    <ul id="menu" class="nav">
+        <li class=" active "><a href="/">Blog</a></li>
+        <!--<li class=""><a href="/books/">Books</a></li>-->
+        <li class=""><a href="/about/">About</a></li>
+    </ul>
+</div><!-- #header -->
+
+
+<div id="wrapper">
+    <div id="fb-root"></div>
+<div id="navbar" class="container">
+    <h5><a id="link-back" href="/">Back to Posts</a></h5>
+    
+<ul id="shares">
+    
+    <li>
+        <a id="share-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/opensourceconsulting/2014/12/18/tistory-42/"
+           onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+            <span class="sr-only">Share to Facebook</span>
+        </a>
+    </li>
+    
+    
+    
+</ul>
+
+</div>
+
+<div id="cover" class="container"
+     >
+    <div>
+        <h1>PackStack으로 OpenStack 교육용 All-In-One VM 여러 세트를 하나의 KVM에 만들기</h1>
+        <p>1. Baremetal 서버의 Bridge Network 설정 먼저 bridge 모듈 설치 yum install bridge-utils KVM Host 서버의 외부 접속 Ethernet을 Bridge로 변경 (외부 IP. 여기서는 10.0.0.100이 할당된 것) [root@Tiger ~]# c..</p>
+        <p class="right" style="opacity: 0.5">
+            
+                OpenSourceConsulting
+                
+            
+        </p>
+        
+
+
+    </div>
+</div>
+
+<div id="content" class="container post" role="main">
+    <div id="post-content"><div class="area_view">
+ <div class="tt_article_useless_p_margin">
+  <p>
+   <b>
+    1. Baremetal 서버의 Bridge Network 설정
+   </b>
+  </p>
+  <en-note style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;">
+   <div>
+    <br />
+   </div>
+   <div>
+    먼저 bridge 모듈 설치
+   </div>
+   <div>
+    yum install bridge-utils
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    KVM Host 서버의 외부 접속 Ethernet을 Bridge로 변경
+   </div>
+   <div>
+    (외부 IP. 여기서는 10.0.0.100이 할당된 것)
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    [root@Tiger ~]# cat /etc/sysconfig/network-scripts/ifcfg-eth7
+   </div>
+   <div>
+    DEVICE=eth7
+   </div>
+   <div>
+    HWADDR=A0:D3:C1:EF:F6:30
+   </div>
+   <div>
+    TYPE=Ethernet
+   </div>
+   <div>
+    UUID=ceebc5a7-338d-456b-b752-98cae0d7e700
+   </div>
+   <div>
+    ONBOOT=yes
+   </div>
+   <div>
+    BOOTPROTO=static
+   </div>
+   <div>
+    BRIDGE=br7
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    ==&gt; 기존 Ethernet의 IP를 아래 Bridge로 옮김
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    [root@Tiger ~]# cat /etc/sysconfig/network-scripts/ifcfg-br7
+   </div>
+   <div>
+    DEVICE=br7
+   </div>
+   <div>
+    TYPE=Bridge
+   </div>
+   <div>
+    ONBOOT=yes
+   </div>
+   <div>
+    BOOTPROTO=static
+   </div>
+   <div>
+    DELAY=0
+   </div>
+   <div>
+    IPADDR=192.168.0.240
+   </div>
+   <div>
+    NETMASK=255.255.255.0
+   </div>
+   <div>
+    GATEWAY=192.168.0.1
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    <div>
+     <b>
+      2. CentOs 7 VM 이미지 생성
+     </b>
+    </div>
+    <div>
+     <a href="http://www.centos.org/download/">
+      http://www.centos.org/download/
+     </a>
+     에서 Minimal Install Image 선택
+    </div>
+    <div>
+     <p style="text-align: center; clear: none; float: none;">
+      <span class="imageblock" style="display:inline-block;width:369px;;height:auto;max-width:100%">
+       <img src="/assets/images/42/evernote_image_1.png" />
+      </span>
+     </p>
+    </div>
+    <div>
+     <br />
+    </div>
+    <div>
+     ==&gt; openstack1으로 생성 (마스터 VM 이미지)
+    </div>
+    <br />
+   </div>
+   <div>
+    <b>
+     3. 생성된 CentOS VM의 NIC 중 하나를 위에 생성된 br7으로 변경
+    </b>
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    virt-manager의 VM 설정 화면에서...
+   </div>
+   <div>
+    NIC를 선택하고 Device에 'Specify shared device name'
+   </div>
+   <div>
+    Bridge name에 'br7' (위에서 br7으로 생성)
+   </div>
+   <div>
+    <p style="text-align: center; clear: none; float: none;">
+     <span class="imageblock" style="display:inline-block;width:698px;;height:auto;max-width:100%">
+      <img src="/assets/images/42/evernote_image_2.png" />
+     </span>
+    </p>
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    <b>
+     4. CentOS VM 에 연결할 수 있는 VNC 할당
+    </b>
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    <div>
+     <div>
+      다음과 같이 VNC 포트 수정. IP는 KVM Host(Baremetal)의 IP
+     </div>
+     <br />
+    </div>
+    <div>
+     virsh # edit openstack1
+     <br />
+    </div>
+    <div>
+     <br />
+    </div>
+    <div>
+     &lt;graphics type='vnc' port='6901' autoport='no' listen='10.0.0.100'&gt;
+     <br />
+     &lt;listen type='address' address='10.0.0.100'/&gt;
+     <br />
+     &lt;/graphics&gt;
+     <br />
+    </div>
+    <br />
+   </div>
+   <div>
+    그러면 다음과 같이 VNC Listening 하고 접속 가능
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    virsh # vncdisplay openstack1
+    <br />
+    10.0.0.100:1001
+    <br />
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    [root@Lion ~]# netstat -an | grep 690
+    <br />
+    tcp        0      0 10.0.0.100:6901              0.0.0.0:*                   LISTEN
+    <br />
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    <p style="text-align: center; clear: none; float: none;">
+     <span class="imageblock" style="display:inline-block;width:407px;;height:auto;max-width:100%">
+      <img src="/assets/images/42/evernote_image_3.png" />
+     </span>
+    </p>
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    <div>
+     파이어월에 의해 69XX 포트가 접속이 안되는 경우가 있으므로 다음과 같이 완전히 OFF 하거나 예외를 추가해야 함
+    </div>
+    <div>
+     <br />
+    </div>
+    <div>
+     파이어월 OFF
+    </div>
+    <div>
+     systemctl stop firewalld
+    </div>
+    <br />
+   </div>
+   <div>
+    69XX 포트 예외 추가
+   </div>
+   <div>
+    [root@server ~]# firewall-cmd --permanent --zone=public --add-port=69XX/tcp
+   </div>
+   <div>
+    [root@server ~]# firewall-cmd --reload
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    <b>
+     5. CentOS VM을 여러 개 복제 생성
+    </b>
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    <div>
+     다음과 같이 virt-clone 툴 설치
+    </div>
+    <div>
+     <br />
+    </div>
+    <div>
+     yum install virt-install.noarch
+     <br />
+    </div>
+    <br />
+   </div>
+   <div>
+    virt-clone --original openstack1 --name openstack2 --file /var/lib/libvirt/images/openstack2.img
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    4번 과정을 참고해서 각 VM에 맞게 VNC 포트 변경
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    <hr />
+    <b>
+     6. 각자 VM에서 ifcfg-eth0의 IP 및 MAC addr 변경
+    </b>
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    미리 ip a 또는 ifconfig 명령으로 eth0에 새로 할당된 MAC Addr 확인 후
+   </div>
+   <div>
+    아래 정보를 각자 환경에 맞게 수정
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    [root@localhost ~]# vi /etc/sysconfig/network-scripts/ifcfg-eth0
+    <br />
+   </div>
+   <div>
+    HWADDR="
+    <span style="background-color:rgb(255, 250, 165);-evernote-highlight:true;">
+     52:54:00:AB:AF:48
+    </span>
+    "
+   </div>
+   <div>
+    TYPE="Ethernet"
+    <br />
+    BOOTPROTO="static"
+    <br />
+    IPADDR=
+    <span style="background-color:rgb(255, 250, 165);-evernote-highlight:true;">
+     192.168.0.61
+    </span>
+    <br />
+    GATEWAY=192.168.0.1
+    <br />
+    NAME="eth0"
+    <br />
+    UUID="fed9319b-ef74-4be9-a1bd-9044b6d5641a"
+    <br />
+    ONBOOT="yes"
+    <br />
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    DNS 서버를 세팅
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    [root@localhost ~]# cat /etc/resolv.conf
+    <br />
+    # Generated by NetworkManager
+    <br />
+    nameserver 10.0.0.2
+    <br />
+    nameserver 210.94.0.73
+    <br />
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    <b>
+     7. PackStack으로 OpenStack 설치
+    </b>
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    root로 로그인 해서
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    ELEP 패키지 Repository 설정
+   </div>
+   <div>
+    rpm -Uvh
+    <a href="http://mirror.premi.st/epel/7/x86_64/e/epel-release-7-5.noarch.rpm">
+     http://mirror.premi.st/epel/7/x86_64/e/epel-release-7-5.noarch.rpm
+    </a>
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    OpenStack IceHouse 버전 Repository 설정
+   </div>
+   <div>
+    yum install -y
+    <a href="https://repos.fedorapeople.org/repos/openstack/openstack-icehouse/rdo-release-icehouse-4.noarch.rpm">
+     https://repos.fedorapeople.org/repos/openstack/openstack-icehouse/rdo-release-icehouse-4.noarch.rpm
+    </a>
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    PackStack 설치
+   </div>
+   <div>
+    yum install openstack-packstack
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    <b>
+     8. Answer 파일 준비
+    </b>
+   </div>
+   <div>
+    packstack --gen-answer-file=answer.txt
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    다음 파일을 각자 IP에 맞게 수정
+   </div>
+   <div>
+    <p>
+     <br />
+    </p>
+    <p style="text-align: left;">
+     <span class="imageblock" style="display:inline-block;;height:auto;max-width:100%">
+      <a href="http://blog.osci.kr/attachment/cfile25.uf@235D413F54919E2901158C.txt">
+       <img alt="" src="https://t1.daumcdn.net/tistory_admin/blogs/image/extension/txt.gif?_version_=e5bccf3ae699fd50098405045efeeb0cc901a607" style="vertical-align: middle;" />
+       my_answers.txt
+      </a>
+     </span>
+    </p>
+    <p>
+     <br />
+    </p>
+   </div>
+   <div>
+    vi에서 일괄 변경:%s/192.168.25.13/&lt;각 서버 IP&gt;/g
+    <br />
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    9. PackStack에 있는 버그 때문에 MongoDB(Ceilometer의 스토리지로 활용) 설치 중 에러
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    Workaround로 다음과 같이 작업
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    cd /var/run/mongodb
+   </div>
+   <div>
+    ln -s mongodb.pid mongod.pid
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    <b>
+     9. 설치 작업
+    </b>
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    packstack --answer-file=my_answers.txt
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    ==&gt; 약 30분 정도 작업
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    대략 다음과 같은 화면이 나오면 All In One 설치 완료
+   </div>
+   <div>
+    <p style="text-align: center; clear: none; float: none;">
+     <span class="imageblock" style="display:inline-block;width:800px;;height:auto;max-width:100%">
+      <img src="/assets/images/42/evernote_image_5.png" />
+     </span>
+    </p>
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    <b>
+     10. 접속
+    </b>
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    대시보드 접속 (horizon):
+    <a href="http://10.0.0.51/">
+     http://10.0.0.51/
+    </a>
+   </div>
+   <div>
+    ==&gt; ID/PW는 다음과 같이 keystonerc_admin 파일에 들어 있음
+   </div>
+   <div>
+    [root@localhost ~]# cat keystonerc_admin
+    <br />
+    export OS_USERNAME=admin
+    <br />
+    <span style="background-color:rgb(255, 250, 165);-evernote-highlight:true;">
+     export OS_TENANT_NAME=admin
+     <br />
+     export OS_PASSWORD=780a485e394b4013
+    </span>
+    <br />
+    export OS_AUTH_URL=http://192.168.0.61:5000/v2.0/
+    <br />
+    export PS1='[\u@\h \W(keystone_admin)]\$ '
+    <br />
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    <p style="text-align: center; clear: none; float: none;">
+     <span class="imageblock" style="display:inline-block;width:800px;;height:auto;max-width:100%">
+      <img src="/assets/images/42/evernote_image_6.png" />
+     </span>
+    </p>
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    Nagios 접속
+   </div>
+   <div>
+    <a href="http://192.168.0.61/nagios">
+     http://192.168.0.61/nagios
+    </a>
+   </div>
+   <div>
+    ==&gt; ID/PW는 다음과 같이 설치 확인 메시지 참고
+   </div>
+   <div>
+    * To use Nagios, browse to http://192.168.0.61/nagios
+    <span style="background-color:rgb(255, 250, 165);-evernote-highlight:true;">
+     username: nagiosadmin, password: 84093c56484344de
+    </span>
+    <br />
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    <p style="text-align: center; clear: none; float: none;">
+     <span class="imageblock" style="display:inline-block;width:800px;;height:auto;max-width:100%">
+      <img src="/assets/images/42/evernote_image_7.png" />
+     </span>
+    </p>
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    이 패스워드들은 my_answers.txt 파일에 저장이 되어 있으므로 8번 과정에서 미리 Text 파일을 수정해서 원하는 패스워드를 사용할 수도 있음
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    [root@localhost ~]# ls -l
+   </div>
+   <div>
+    합계 40
+    <br />
+    -rw-r--r--. 1 root root   196 12월 16 21:37 a.txt
+    <br />
+    -rw-------. 1 root root   936 12월 16 20:34 anaconda-ks.cfg
+    <br />
+    -rw-r--r--. 1 root root   120 12월 16 21:36 b.txt
+    <br />
+    -rw-------. 1 root root   179 12월 16 22:41 keystonerc_admin
+    <br />
+    -rw-------. 1 root root   176 12월 16 22:41 keystonerc_demo
+    <br />
+    -rw-r--r--. 1 root root 17628 12월 16 22:02 my_answers.txt
+    <br />
+    <br />
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    <b>
+     11. OpenStack 설치 및 동작 상태 확인
+    </b>
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    [root@localhost ~]# source keystonerc_admin
+    <br />
+    ==&gt; Admin 유저 환경 변수 세팅
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    [root@localhost ~(keystone_admin)]# openstack-status
+    <br />
+    <font face="바탕체" style="font-size: 12px;">
+     == Nova services ==
+     <br />
+     openstack-nova-api:                     active
+     <br />
+     openstack-nova-cert:                    active
+     <br />
+     openstack-nova-compute:                 active
+     <br />
+     openstack-nova-network:                 inactive  (disabled on boot)
+     <br />
+     openstack-nova-scheduler:               active
+     <br />
+     openstack-nova-volume:                  inactive  (disabled on boot)
+     <br />
+     openstack-nova-conductor:               active
+     <br />
+     == Glance services ==
+     <br />
+     openstack-glance-api:                   active
+     <br />
+     openstack-glance-registry:              active
+     <br />
+     == Keystone service ==
+     <br />
+     openstack-keystone:                     active
+     <br />
+     == Horizon service ==
+     <br />
+     openstack-dashboard:                    active
+     <br />
+     == neutron services ==
+     <br />
+     neutron-server:                         active
+     <br />
+     neutron-dhcp-agent:                     active
+     <br />
+     neutron-l3-agent:                       active
+     <br />
+     neutron-metadata-agent:                 active
+     <br />
+     neutron-lbaas-agent:                    active
+     <br />
+     neutron-openvswitch-agent:              active
+     <br />
+     neutron-linuxbridge-agent:              inactive  (disabled on boot)
+     <br />
+     neutron-ryu-agent:                      inactive  (disabled on boot)
+     <br />
+     neutron-nec-agent:                      inactive  (disabled on boot)
+     <br />
+     neutron-mlnx-agent:                     inactive  (disabled on boot)
+     <br />
+     == Swift services ==
+     <br />
+     openstack-swift-proxy:                  active
+     <br />
+     openstack-swift-account:                active
+     <br />
+     openstack-swift-container:              active
+     <br />
+     openstack-swift-object:                 active
+     <br />
+     == Cinder services ==
+     <br />
+     openstack-cinder-api:                   active
+     <br />
+     openstack-cinder-scheduler:             active
+     <br />
+     openstack-cinder-volume:                active
+     <br />
+     openstack-cinder-backup:                active
+     <br />
+     == Ceilometer services ==
+     <br />
+     openstack-ceilometer-api:               active
+     <br />
+     openstack-ceilometer-central:           active
+     <br />
+     openstack-ceilometer-compute:           active
+     <br />
+     openstack-ceilometer-collector:         active
+     <br />
+     openstack-ceilometer-alarm-notifier:    active
+     <br />
+     openstack-ceilometer-alarm-evaluator:   active
+     <br />
+     == Heat services ==
+     <br />
+     openstack-heat-api:                     active
+     <br />
+     openstack-heat-api-cfn:                 active
+     <br />
+     openstack-heat-api-cloudwatch:          inactive  (disabled on boot)
+     <br />
+     openstack-heat-engine:                  active
+     <br />
+     == Support services ==
+     <br />
+     libvirtd:                               active
+     <br />
+     openvswitch:                            active
+     <br />
+     dbus:                                   active
+     <br />
+     tgtd:                                   inactive  (disabled on boot)
+     <br />
+     rabbitmq-server:                        active
+     <br />
+     memcached:                              active
+     <br />
+     == Keystone users ==
+     <br />
+     +----------------------------------+------------+---------+----------------------+
+     <br />
+     |                id                |    name    | enabled |        email         |
+     <br />
+     +----------------------------------+------------+---------+----------------------+
+     <br />
+     | d0628dbf8841486d92550a1a411ea6aa |   admin    |   True  |    root@localhost    |
+     <br />
+     | 6ae674f8ba5047a98a427f043bfac5b4 | ceilometer |   True  | ceilometer@localhost |
+     <br />
+     | 33ce7a39194244e49b965368d5c77722 |   cinder   |   True  |   cinder@localhost   |
+     <br />
+     | d1f5c5d4810e4731ad8f335f6dd237bb |    demo    |   True  |                      |
+     <br />
+     | 5dcd12aceafc4bf8adaf34a657612490 |   glance   |   True  |   glance@localhost   |
+     <br />
+     | 3e3a0c38357e44fa8f2439b46e3d02b4 |    heat    |   True  |    heat@localhost    |
+     <br />
+     | bd5cde239e874dc9bbae326981434035 |  heat-cfn  |   True  |  heat-cfn@localhost  |
+     <br />
+     | dbeb4a46c31d4fa29130b1e19e781f86 | heat_admin |   True  |                      |
+     <br />
+     | 8884d2eab5b54ceb94deab9c3e45d3db |  neutron   |   True  |  neutron@localhost   |
+     <br />
+     | 6878401b2b0a43659eec2880317c119e |    nova    |   True  |    nova@localhost    |
+     <br />
+     | 140ae099f0e341c182d033992c37c9c0 |   swift    |   True  |   swift@localhost    |
+     <br />
+     +----------------------------------+------------+---------+----------------------+
+     <br />
+     == Glance images ==
+     <br />
+     +--------------------------------------+--------+-------------+------------------+----------+--------+
+     <br />
+     | ID                                   | Name   | Disk Format | Container Format | Size     | Status |
+     <br />
+     +--------------------------------------+--------+-------------+------------------+----------+--------+
+     <br />
+     | c874b9cd-d74d-43d2-8acb-703a2a70324d | cirros | qcow2       | bare             | 13147648 | active |
+     <br />
+     +--------------------------------------+--------+-------------+------------------+----------+--------+
+     <br />
+     == Nova managed services ==
+     <br />
+     +------------------+-----------------------+----------+---------+-------+----------------------------+-----------------+
+     <br />
+     | Binary           | Host                  | Zone     | Status  | State | Updated_at                 | Disabled Reason |
+     <br />
+     +------------------+-----------------------+----------+---------+-------+----------------------------+-----------------+
+     <br />
+     | nova-consoleauth | localhost.localdomain | internal | enabled | up    | 2014-12-17T12:23:41.000000 | -               |
+     <br />
+     | nova-scheduler   | localhost.localdomain | internal | enabled | up    | 2014-12-17T12:23:44.000000 | -               |
+     <br />
+     | nova-conductor   | localhost.localdomain | internal | enabled | up    | 2014-12-17T12:23:45.000000 | -               |
+     <br />
+     | nova-compute     | localhost.localdomain | nova     | enabled | up    | 2014-12-17T12:23:43.000000 | -               |
+     <br />
+     | nova-cert        | localhost.localdomain | internal | enabled | up    | 2014-12-17T12:23:46.000000 | -               |
+     <br />
+     +------------------+-----------------------+----------+---------+-------+----------------------------+-----------------+
+     <br />
+     == Nova networks ==
+     <br />
+     +--------------------------------------+---------+------+
+     <br />
+     | ID                                   | Label   | Cidr |
+     <br />
+     +--------------------------------------+---------+------+
+     <br />
+     | 4ace4285-e254-4c20-b5c2-e07c3cf7939d | private | -    |
+     <br />
+     | b0e95e38-9762-4774-9946-fd221ca54a48 | public  | -    |
+     <br />
+     +--------------------------------------+---------+------+
+     <br />
+     == Nova instance flavors ==
+     <br />
+     +----+-----------+-----------+------+-----------+------+-------+-------------+-----------+
+     <br />
+     | ID | Name      | Memory_MB | Disk | Ephemeral | Swap | VCPUs | RXTX_Factor | Is_Public |
+     <br />
+     +----+-----------+-----------+------+-----------+------+-------+-------------+-----------+
+     <br />
+     | 1  | m1.tiny   | 512       | 1    | 0         |      | 1     | 1.0         | True      |
+     <br />
+     | 2  | m1.small  | 2048      | 20   | 0         |      | 1     | 1.0         | True      |
+     <br />
+     | 3  | m1.medium | 4096      | 40   | 0         |      | 2     | 1.0         | True      |
+     <br />
+     | 4  | m1.large  | 8192      | 80   | 0         |      | 4     | 1.0         | True      |
+     <br />
+     | 5  | m1.xlarge | 16384     | 160  | 0         |      | 8     | 1.0         | True      |
+     <br />
+     +----+-----------+-----------+------+-----------+------+-------+-------------+-----------+
+     <br />
+     == Nova instances ==
+     <br />
+     +----+------+--------+------------+-------------+----------+
+     <br />
+     | ID | Name | Status | Task State | Power State | Networks |
+     <br />
+     +----+------+--------+------------+-------------+----------+
+     <br />
+     +----+------+--------+------------+-------------+----------+
+     <br />
+    </font>
+   </div>
+   <div>
+    <span style="font-family: 나눔고딕코딩;">
+     <br />
+    </span>
+   </div>
+   <div>
+    <span style="font-family: 나눔고딕코딩;">
+     <br />
+    </span>
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    <br />
+   </div>
+  </en-note>
+  <p>
+   <br />
+  </p>
+  <div class="container_postbtn">
+   <div class="postbtn_ccl" data-ccl-type="3">
+    <a class="link_ccl" href="http://creativecommons.org/licenses/by/4.0/deed.ko" target="_blank">
+     <span class="bundle_ccl">
+      <span class="ico_postbtn ico_ccl1">
+       저작자표시
+      </span>
+     </span>
+    </a>
+   </div>
+  </div>
+  <!--
+	<rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+		<Work rdf:about="">
+			<license rdf:resource="http://creativecommons.org/licenses/by-fr/2.0/kr/" />
+		</Work>
+		<License rdf:about="http://creativecommons.org/licenses/by-fr/">
+			<permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+			<permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+			<requires rdf:resource="http://web.resource.org/cc/Notice"/>
+			<requires rdf:resource="http://web.resource.org/cc/Attribution"/>
+			<permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+		</License>
+	</rdf:RDF>
+	-->
+  <div style="text-align:left; padding-top:10px;clear:both">
+  </div>
+ </div>
+</div>
+<div class="fb-like" data-share="true" data-width="450" data-show-faces="true"></div></div>
+    <div id="post-footer">
+        
+        <a id="post-author" href="/authors/it2seiyon/">
+            <div id="author-image" style="background-image:url(/files/authors/it2seiyon.jpeg);">
+                <span class="sr-only">it2seiyon's profile image</span>
+            </div>
+            <p id="author-name">it2seiyon</p>
+        </a>
+        <p id="post-date">2014-12-18</p>
+        <a id="post-more" href="/authors/it2seiyon/">
+            <span>Read more posts by this author</span>
+        </a>
+    </div>
+    
+    <div id="post-comment">
+        <div class="fb-comments" data-href="" data-width="770px" data-numposts="5"></div>
+    </div>
+    
+
+</div>
+
+<div id="post-links" class="container">
+    
+    
+        <div id="post-prev"
+             >
+            <div>
+                <h3><a href="/opensourceconsulting/2014/12/09/tistory-27/">표준화된 컴퓨팅 환경의 중요성</a></h3>
+                <p>YOU MIGHT ENJOY</p>
+            </div>
+        </div>
+    
+    
+    
+        <div id="post-next"
+             >
+            <div>
+                <h3><a href="/opensourceconsulting/2015/03/18/tistory-53/">configuration of openstack 4 node</a></h3>
+                <p>NEXT POST</p>
+            </div>
+        </div>
+    
+</div>
+
+<div id="lightbox">
+    <div id="lightbox-image"></div>
+</div>
+
+    <div class="clearfix"></div>
+
+    <a href="#" id="back-to-top"></a>
+</div>
+
+<div id="footer" class="container-fluid">
+    <ul id="links">
+        
+        <li>
+            <a id="link-github" href="http://github.com/opensourceconsulting" target="_blank">
+                <span class="sr-only">github</span>
+            </a>
+        </li>
+        
+        
+        <li>
+            <a id="link-facebook" href="http://facebook.com/opensourceconsulting" target="_blank">
+                <span class="sr-only">facebook</span>
+            </a>
+        </li>
+        
+        
+        <li>
+            <a id="link-rss" href="/rss" target="_blank">
+                <span class="sr-only">rss</span>
+            </a>
+        </li>
+    </ul>
+    <!--
+    <ul id="footer-menu">
+        <li><a href="//www.kakaocorp.com">Kakao</a></li>
+        <li><a href="//www.kakaocorp.com/recruit/currentOpportunities">Jobs</a></li>
+        <li><a href="//privacy.kakaocorp.com">Privacy</a></li>
+    </ul>
+    -->
+    <p id="copyright">
+        <a href="https://tech.osci.kr">&copy; OpenSourceConsulting</a>
+        All rights reserved.
+    </p>
+</div><!--#footer-->
+
+
+<script src="/assets/lib/jquery-1.12.0.min.js"></script>
+<script src="/assets/lib/jquery.magnific-popup.min.js"></script>
+<script src="/assets/js/index.js"></script>
+
+
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-39977834-4', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+
+
+
+    
+    <script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '',
+            xfbml      : true,
+            version    : 'v2.8'
+        });
+        FB.Canvas.getPageInfo(
+            function(info) {
+                alert('Width: ' + info.clientWidth + ' Height: ' + info.clientHeight);
+            }
+        );
+        FB.AppEvents.logPageView();
+    };
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.8";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<!--
+<script>
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.8";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+-->
+
+    
+
+    
+
+    
+
+</body>
+</html>
