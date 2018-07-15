@@ -28,6 +28,10 @@ Windows, Mac(Linux) 환경 구성 방법을 안내해 드리겠습니다. <br/>
  - Git 설치 https://git-scm.com/download/win <br/>
  - Ruby 설치  https://github.com/oneclick/rubyinstaller2/releases/download/rubyinstaller-2.5.1-2/rubyinstaller-devkit-2.5.1-2-x64.exe <br/>
  - `Start Command Prompt with Ruby` 실행
+ - utf8 설정
+```
+C:\Users\sy\work>chcp 65001
+```
  - GitHub 블로그 Clone (폴더가 생성됩니다. 작업 위치 선정 필요합니다.)
 ```
 C:\Users\sy\work>git clone git@github.com:OpenSourceConsulting/opensourceconsulting.github.io.git
@@ -54,6 +58,22 @@ or download and install MSYS2 manually from https://msys2.github.io/
 ```
 C:\Users\sy\work\opensourceconsulting.github.io>bundle install
 ```
+ - 내 컴퓨터(local)에 jekyll build 및 서버 실행
+ > jekyll build는 웹 사이트에 보여지는 코드를 생성한다. <br/>
+ > 우리는 build된 코드를 배포해야 한다.
+```
+C:\Users\sy\work\opensourceconsulting.github.io>bundle exec jekyll serve
+Configuration file: C:/Users/sy/work/opensourceconsulting.github.io/_config.yml
+   GitHub Metadata: No GitHub API authentication could be found. Some fields may be missing or have incorrect data.
+            Source: C:/Users/sy/work/opensourceconsulting.github.io
+       Destination: C:/Users/sy/work/opensourceconsulting.github.io/_site
+ Incremental build: disabled. Enable with --incremental
+      Generating...
+                    done in 8.31 seconds.
+ Auto-regeneration: enabled for 'C:/Users/sy/work/opensourceconsulting.github.io'
+    Server address: http://127.0.0.1:4000/
+  Server running... press ctrl-c to stop.
+```
 
 ### macOS
 Git 설치 [https://git-scm.com/download/mac] <br/>
@@ -64,24 +84,4 @@ Ruby -v
 
 ### 글 쓰기 (Windows & macOS)
 에디터는 Atom으로 진행하지만 편하신걸로 아무거나 괜찮습니다!
-
  - Atom 설치 [ https://atom.io/ ]
-
-자 이제 Step by step으로 진행 하겠습니다.
-
-Step1. GitHub에서 블로그 소스코드 복사
- - `Windowns + R` = `cmd` 실행
- - git repository(저장소) Local(내 컴퓨터)에 복사
-```
-git clone git@github.com:OpenSourceConsulting/opensourceconsulting.github.io.git
-```
-
-  -
-
-
-
-### Mac
-
-## 작성 방법
-### Branch 생성
-### Create Pull Request
