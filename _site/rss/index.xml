@@ -7,14 +7,158 @@ Sharing Tech. Growing Together.
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/rss" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 16 Jul 2018 01:55:10 +0900</pubDate>
-    <lastBuildDate>Mon, 16 Jul 2018 01:55:10 +0900</lastBuildDate>
+    <pubDate>Tue, 17 Jul 2018 00:46:30 +0900</pubDate>
+    <lastBuildDate>Tue, 17 Jul 2018 00:46:30 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
     
       <item>
         <title>GitHub Page 블로그 이전</title>
-        <description>&lt;h1 id=&quot;github-page&quot;&gt;GitHub Page&lt;/h1&gt;
-&lt;p&gt;안녕하세요.&lt;/p&gt;
+        <description>&lt;h1 id=&quot;오픈소스컨설팅-기술-블로그&quot;&gt;오픈소스컨설팅 기술 블로그&lt;/h1&gt;
+&lt;h2 id=&quot;기술을-나눕니다-함께-성장합니다&quot;&gt;기술을 나눕니다. 함께 성장합니다.&lt;/h2&gt;
+
+&lt;h2 id=&quot;설명&quot;&gt;설명&lt;/h2&gt;
+&lt;p&gt;기술 블로그를 GitHub Page로 이전 했습니다.&lt;br /&gt;
+GitHub Page를 선택한 이유는 HTML, CSS, Javascript를 자유롭게 수정하고 싶었습니다. &lt;br /&gt;
+하지만 Infra, Middleware를 구성은 유지보수 이슈가 있었습니다.&lt;br /&gt;
+GitHub Page는 이러한 고민을 해결해 주면서 &lt;code class=&quot;highlighter-rouge&quot;&gt;글 쓰기에&lt;/code&gt; 집중 할 수 있습니다.&lt;br /&gt;
+우리는 글을 작성하고 올리면 GitHub에서 웹 서비스를 해줍니다.&lt;br /&gt;
+테마 적용에 약간의 코딩을 했지만 우리는 글을 작성하고 올리기만 하면 됩니다!&lt;br /&gt;
+하지만 다른 블로그와 달리 &lt;code class=&quot;highlighter-rouge&quot;&gt;Git&lt;/code&gt;을 조금 알아야 하구요.&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;MarkDown&lt;/code&gt;도 알아야 합니다. 어렵지 않습니다.&lt;br /&gt;
+이 글을 읽고 해보시기 바랍니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;환경-구성&quot;&gt;환경 구성&lt;/h2&gt;
+&lt;p&gt;우리는 GitHub에서 블로그 소스코드를 우리 컴퓨터에 복사 해야 합니다.&lt;br /&gt;
+복사한 소스코드를 jekyll(네 맞습니다. 지킬앤하이드에 지킬입니다.)을 이용해서 작성한 글을 확인하고 빌드해서 GitHub에 추가할 것입니다.&lt;br /&gt;
+Atom이라는 도구를 이용해서 글을 편집하고 GitHub에 추가해 보겠습니다.&lt;br /&gt;
+Windows, Mac(Linux) 환경 구성 방법을 안내해 드리겠습니다.&lt;br /&gt;
+설치만 했지 자세한건 몰라도 됩니다. 매우 쉽거든요! &lt;code class=&quot;highlighter-rouge&quot;&gt;:)&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&quot;설치-프로그램&quot;&gt;설치 프로그램&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Git (소스코드 관리)&lt;/li&gt;
+  &lt;li&gt;Ruby (아름다운 언어)&lt;/li&gt;
+  &lt;li&gt;jekyll (소스코드 빌드/서비스)&lt;/li&gt;
+  &lt;li&gt;Atom (편집도구)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;windows&quot;&gt;Windows&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Git 설치 https://git-scm.com/download/win&lt;/li&gt;
+  &lt;li&gt;Ruby 설치  https://github.com/oneclick/rubyinstaller2/releases/download/rubyinstaller-2.5.1-2/rubyinstaller-devkit-2.5.1-2-x64.exe&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Start Command Prompt with Ruby&lt;/code&gt; 실행&lt;/li&gt;
+  &lt;li&gt;utf8 설정
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;C:\Users\sy\work&amp;gt;chcp 65001
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;GitHub 블로그 Clone (폴더가 생성됩니다. 작업 위치 선정 필요합니다.)
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;C:\Users\sy\work&amp;gt;git clone git@github.com:OpenSourceConsulting/opensourceconsulting.github.io.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;jekyll 설치
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;C:\Users\sy\work\opensourceconsulting.github.io&amp;gt;gem install bundler jekyll
+Fetching: bundler-1.16.2.gem (100%)
+Successfully installed bundler-1.16.2
+Parsing documentation for bundler-1.16.2
+Installing ri documentation for bundler-1.16.2
+Done installing documentation for bundler after 11 seconds
+Fetching: public_suffix-3.0.2.gem (100%)
+Successfully installed public_suffix-3.0.2
+Fetching: addressable-2.5.2.gem (100%)
+Successfully installed addressable-2.5.2
+Fetching: colorator-1.1.0.gem (100%)
+Successfully installed colorator-1.1.0
+Fetching: http_parser.rb-0.6.0.gem (100%)
+MSYS2 could not be found. Please run 'ridk install'
+or download and install MSYS2 manually from https://msys2.github.io/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;블로그 bundle install
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;C:\Users\sy\work\opensourceconsulting.github.io&amp;gt;bundle install
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;내 컴퓨터(local)에 jekyll build 및 서버 실행
+    &lt;blockquote&gt;
+      &lt;p&gt;jekyll build는 웹 사이트에 보여지는 코드를 생성한다.&lt;br /&gt;
+우리는 build된 코드를 배포해야 한다.&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  C:\Users\sy\work\opensourceconsulting.github.io&amp;gt;bundle exec jekyll serve
+
+  Configuration file: C:/Users/sy/work/opensourceconsulting.github.io/_config.yml
+     GitHub Metadata: No GitHub API authentication could be found. Some fields may be missing or have incorrect data.
+              Source: C:/Users/sy/work/opensourceconsulting.github.io
+         Destination: C:/Users/sy/work/opensourceconsulting.github.io/_site
+   Incremental build: disabled. Enable with --incremental
+        Generating...
+                      done in 8.31 seconds.
+   Auto-regeneration: enabled for 'C:/Users/sy/work/opensourceconsulting.github.io'
+      Server address: http://127.0.0.1:4000/
+    Server running... press ctrl-c to stop.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;macos&quot;&gt;macOS&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Git 설치 [https://git-scm.com/download/mac]&lt;/li&gt;
+  &lt;li&gt;Ruby Version 확인
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt; Ruby -v
+ruby 2.3.3p222 (2016-11-21 revision 56859) [universal.x86_64-darwin17]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Jekyll 설치
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt; gem install bundler jekyll
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;GitHub 저장소 복사
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &amp;gt; git clone git@github.com:OpenSourceConsulting/opensourceconsulting.github.io.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;bundle install
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; opensourceconsulting.github.io&amp;gt;bundle install
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;내 컴퓨터(local)에 jekyll build 및 서버 실행
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; opensourceconsulting.github.io&amp;gt;bundle exec jekyll serve
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;글-쓰기-windows--macos&quot;&gt;글 쓰기 (Windows &amp;amp; macOS)&lt;/h3&gt;
+&lt;p&gt;에디터는 Atom으로 진행하지만 편하신걸로 아무거나 괜찮습니다!&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;Jira Issue key&lt;/code&gt;로 &lt;code class=&quot;highlighter-rouge&quot;&gt;브랜치를 생성&lt;/code&gt;하여 글을 작성하고 &lt;code class=&quot;highlighter-rouge&quot;&gt;Pull Request&lt;/code&gt;로 작성한 글을 승인 받고 웹에 퍼블리싱하는 과정을 설명하겠습니다.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Jira Issue 생성&lt;br /&gt;
+ https://jira.osci.kr/secure/RapidBoard.jspa?rapidView=98&amp;amp;projectKey=TB
+  이슈를 생성해 주세요.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Git Branch 생성&lt;br /&gt;
+ 블로그 위치에서 &lt;code class=&quot;highlighter-rouge&quot;&gt;git checkout -b &amp;lt;issue key&amp;gt;&lt;/code&gt; 이슈키로 브랜치를 생성합니다.
+ opensourceconsulting.github.io&amp;gt;git checkout TB-5&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Atom 설치 [ https://atom.io/ ]&lt;br /&gt;
+ File &amp;gt; Open &amp;gt; opensourceconsulting.github.io &lt;code class=&quot;highlighter-rouge&quot;&gt;open&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;글 생성&lt;br /&gt;
+ &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; 폴더에 yyyy-mm-dd-title.md 파일 생성&lt;br /&gt;
+ 다른 post의 header를 참고로 page 정보 기입&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;마크다운&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;이미지 첨부&lt;br /&gt;
+ ```
+ /assets/images/ 경로에 이미지 파일 삽입&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;```
+  &lt;img src=&quot;http://localhost:4000/assets/images/1/kernel_panic.png&quot; alt=&quot;이미지 설명&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Tue, 03 Jul 2018 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/opensource,%20github,%20jekyll/2018/07/03/migration-github-blog/</link>
@@ -433,13 +577,15 @@ Sharing Tech. Growing Together.
 &lt;/div&gt;
 </description>
         <pubDate>Tue, 13 Jun 2017 22:50:47 +0900</pubDate>
-        <link>http://localhost:4000/opensourceconsulting/2017/06/13/tistory-71/</link>
-        <guid isPermaLink="true">http://localhost:4000/opensourceconsulting/2017/06/13/tistory-71/</guid>
+        <link>http://localhost:4000/agile,%20jira/2017/06/13/tistory-71/</link>
+        <guid isPermaLink="true">http://localhost:4000/agile,%20jira/2017/06/13/tistory-71/</guid>
         
-        <category>OpenSourceConsulting</category>
+        <category>Agile</category>
+        
+        <category>Jira</category>
         
         
-        <category>OpenSourceConsulting</category>
+        <category>Agile, Jira</category>
         
       </item>
     
