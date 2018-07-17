@@ -1,5 +1,5 @@
 ---
 name: wjsrkqdlf
 title: 전갑일
-image: /files/authors/wjsrkqdlf.jpeg
+image: /files/authors/wjsrkqdlf.png
 ---
