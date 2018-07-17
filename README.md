@@ -165,14 +165,19 @@ http://127.0.0.1:4000/ post 확인
 `opensourceconsulting.github.io>git push` 원격 저장소에 생성한 브랜치를 업로드 합니다.
 
 - Create Pull Request  
-GitHub에서 생성한 브랜치를 Master에 Merge를 하는 행위입니다.  
+GitHub에서 생성한 브랜치를 Master에 Merge를 요청합니다.  
 GitHub URL [https://github.com/OpenSourceConsulting/opensourceconsulting.github.io]  
-![Branch 메뉴]({{"/assets/images/branch_1.png | absolute_url"}})  
-![New Pull Request]({{"/assets/images/branch_2.png | absolute_url"}})  
-![Open Pull Request]({{"/assets/images/branch_3.png | absolute_url"}})  
+
+![Branch 메뉴](/assets/images/branch_1.png)  
+branches 메뉴 선택  
+
+![New Pull Request](/assets/images/branch_2.png)  
+Your branches에서 New pull request 버튼 클릭  
+
+![Open Pull Request](/assets/images/branch_3.png)  
 Title에는 Jira 이슈키와 간단한 제목을 적어줍니다.  
 Description은 선택사항 입니다.  
-`Create Pull Request` 버튼으로 Pull Request를 생성합니다.
+`Create Pull Request` 버튼으로 Pull Request를 생성합니다.  
 
 ## 마무리
 `GitHub` 가입을 시작으로 `Git`, `Ruby`, `Jekyll`, `Atom`을 설치했습니다.  
