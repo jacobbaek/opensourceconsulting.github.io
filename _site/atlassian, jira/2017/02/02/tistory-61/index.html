@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-4319643791278273",
+    enable_page_level_ads: true
+  });
+</script>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+ <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+<title>Jira 설정_1(Project)</title>
+<meta name="title" content="Jira 설정_1(Project)" />
+<meta name="author" content="wjsrkqdlf"/>
+<meta name="description" content="이전 내용에서 설치가 완료되었으므로 이제 사용에 들어가보겠습니다. 이 내용을 정리하기 위해 먼 길을 돌아온 듯하군요. [Language] 우선 항상 많은 분들이 바라는 그 것. 한글화부터 시작하겠습니다. 실제로 고객사에서 설치하고나면 90% 이상의 확률로 물어보시는 것이 "그래서 한글은 지원되죠?" 이기 때문이죠. 사실 별 거 없고 그냥 다음과 같이 사용자 설정에서 간단히 변경 가능합니다. 우선 우측 상단에서 프로필 사진을 눌러준 뒤, Profile을 클릭합니다. (처음 설치 시에는 회색바탕의 흰 그림자가 맞아줍니다) Preferences에서 연필모양을 클릭 후 한국어을 선택해줍니다. 단, 위 방법과..."/>
+
+<meta property="fb:app_id" content=""/>
+
+<meta property="og:site_name" content="오픈소스컨설팅 기술 블로그"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="Jira 설정_1(Project)"/>
+<meta property="og:description" content="이전 내용에서 설치가 완료되었으므로 이제 사용에 들어가보겠습니다. 이 내용을 정리하기 위해 먼 길을 돌아온 듯하군요. [Language] 우선 항상 많은 분들이 바라는 그 것. 한글화부터 시작하겠습니다. 실제로 고객사에서 설치하고나면 90% 이상의 확률로 물어보시는 것이 "그래서 한글은 지원되죠?" 이기 때문이죠. 사실 별 거 없고 그냥 다음과 같이 사용자 설정에서 간단히 변경 가능합니다. 우선 우측 상단에서 프로필 사진을 눌러준 뒤, Profile을 클릭합니다. (처음 설치 시에는 회색바탕의 흰 그림자가 맞아줍니다) Preferences에서 연필모양을 클릭 후 한국어을 선택해줍니다. 단, 위 방법과..."/>
+<meta property="og:url" content="https://tech.osci.kr/atlassian,%20jira/2017/02/02/tistory-61/"/>
+<meta property="og:image" content="https://tech.osci.kr/assets/images/default_blog_cover.jpg"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Jira 설정_1(Project)"/>
+<meta name="twitter:description" content="이전 내용에서 설치가 완료되었으므로 이제 사용에 들어가보겠습니다. 이 내용을 정리하기 위해 먼 길을 돌아온 듯하군요. [Language] 우선 항상 많은 분들이 바라는 그 것. 한글화부터 시작하겠습니다. 실제로 고객사에서 설치하고나면 90% 이상의 확률로 물어보시는 것이 "그래서 한글은 지원되죠?" 이기 때문이죠. 사실 별 거 없고 그냥 다음과 같이 사용자 설정에서 간단히 변경 가능합니다. 우선 우측 상단에서 프로필 사진을 눌러준 뒤, Profile을 클릭합니다. (처음 설치 시에는 회색바탕의 흰 그림자가 맞아줍니다) Preferences에서 연필모양을 클릭 후 한국어을 선택해줍니다. 단, 위 방법과..."/>
+<meta name="twitter:label1" content="Written by"/>
+<meta name="twitter:data1" content="wjsrkqdlf"/>
+<meta name="twitter:image:src" content="https://tech.osci.kr/assets/images/default_blog_cover.jpg"/>
+<meta name="naver-site-verification" content="11ec9086ec9292ebc8dc73f6224492f208b2007b"/>
+<meta name="google-site-verification" content="Q5w5X0R32gOG-1lBhFg0UxvXRNoQX-uOSPjxPI4sXH4" />
+
+<meta name="twitter:label2" content="Filed under"/>
+<meta name="twitter:data2" content="Jira,Jira Project,Atlassian"/>
+
+<meta property="article:tag" content="Jira"/>
+
+<meta property="article:tag" content="Jira Project"/>
+
+<meta property="article:tag" content="Atlassian"/>
+
+
+
+<meta property="article:published_time" content="2017-02-02T17:43:50+09:00"/>
+
+
+<meta property="article:author" content="https://tech.osci.kr/authors/wjsrkqdlf"/>
+
+<link href="https://tech.osci.kr/rss/" rel="alternate" type="application/rss+xml" title="RSS"/>
+<link href="/assets/favicon.png" rel="icon" type="image/png"/>
+<link href="/assets/apple-touch-icon.png" rel="apple-touch-icon" type="image/png"/>
+<link href="/assets/apple-touch-icon.png" rel="apple-touch-icon-precomposed" type="image/png"/>
+<link href="/assets/lib/normalize.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/css/monokai.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/lib/magnific-popup.min.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/fonts/Kakao.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/css/screen.css" rel="stylesheet" type="text/css"/>
+
+</head>
+<body class="post-template">
+
+<div id="header">
+    <button id="menu-toggle" type="button">
+        <span class="sr-only">Toggle Navigation Menu</span>
+    </button>
+    <button id="search-toggle" type="button">
+        <span class="sr-only">Toggle Search Form</span>
+    </button>
+    <a href="/" id="logo">
+    </a>
+    <form id="search">
+        <input id="searchQueryEdit" name="q" type="search" placeholder="Search..." value="" />
+    </form>
+
+    <ul id="menu" class="nav">
+        <li class=" active "><a href="/">Blog</a></li>
+        <!--<li class=""><a href="/books/">Books</a></li>-->
+        <li class=""><a href="/about/">About</a></li>
+    </ul>
+</div><!-- #header -->
+
+
+<div id="wrapper">
+    <div id="fb-root"></div>
+<div id="navbar" class="container">
+    <h5><a id="link-back" href="/">Back to Posts</a></h5>
+    
+<ul id="shares">
+    
+    <li>
+        <a id="share-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://tech.osci.kr/atlassian,%20jira/2017/02/02/tistory-61/"
+           onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+            <span class="sr-only">Share to Facebook</span>
+        </a>
+    </li>
+    
+    
+    
+</ul>
+
+</div>
+
+<div id="cover" class="container"
+     >
+    <div>
+        <h1>Jira 설정_1(Project)</h1>
+        <p>Jira의 기본! Project에 대해서 알아보겠습니다.</p>
+        <p class="right" style="opacity: 0.5">
+            
+                Jira
+                ,
+            
+                Jira Project
+                ,
+            
+                Atlassian
+                
+            
+        </p>
+        
+
+
+    </div>
+</div>
+
+<div id="content" class="container post" role="main">
+    <div id="post-content"><div class="area_view">
+ <div class="tt_article_useless_p_margin">
+  <div>
+   <span>
+    이전 내용에서 설치가 완료되었으므로 이제 사용에 들어가보겠습니다.
+   </span>
+  </div>
+  <div>
+   <span>
+    이 내용을 정리하기 위해 먼 길을 돌아온 듯하군요.
+   </span>
+  </div>
+  <div>
+   <span>
+    <br />
+   </span>
+  </div>
+  <div>
+   <span>
+    <b>
+     [Language]
+    </b>
+   </span>
+  </div>
+  <div>
+   <span>
+    우선 항상 많은 분들이 바라는 그 것. 한글화부터 시작하겠습니다.
+   </span>
+  </div>
+  <div>
+   <span>
+    실제로 고객사에서 설치하고나면 90% 이상의 확률로 물어보시는 것이 "그래서 한글은 지원되죠?" 이기 때문이죠.
+   </span>
+  </div>
+  <div>
+   <span>
+    <br />
+   </span>
+  </div>
+  <div>
+   <span>
+    사실 별 거 없고 그냥 다음과 같이 사용자 설정에서 간단히 변경 가능합니다.
+   </span>
+  </div>
+  <p>
+  </p>
+  <div>
+   <span>
+    우선 우측 상단에서 프로필 사진을 눌러준 뒤, Profile을 클릭합니다. (처음 설치 시에는 회색바탕의 흰 그림자가 맞아줍니다)
+   </span>
+   <span class="imageblock" style="display:inline-block;width:196px;text-align: center;;height:auto;max-width:100%">
+    <img src="/assets/images/61/0.png" />
+   </span>
+  </div>
+  <div>
+   <br />
+  </div>
+  <div>
+   <br />
+  </div>
+  <div>
+   <br />
+  </div>
+  <div>
+   <span>
+    <p>
+     <br />
+    </p>
+   </span>
+   <div>
+    Preferences에서 연필모양을 클릭 후 한국어을 선택해줍니다.
+    <span class="imageblock" style="display:inline-block;width:684px;text-align: center;;height:auto;max-width:100%">
+     <img src="/assets/images/61/1.jpg" />
+    </span>
+   </div>
+  </div>
+  <div>
+   <br />
+  </div>
+  <div>
+   <br />
+  </div>
+  <div>
+   <br />
+  </div>
+  <div>
+   <div>
+    단, 위 방법과 같이 한국어가 내장된 것은
+    <span style="color: rgb(255, 0, 0);">
+     7.2버전부터 지원
+    </span>
+    하므로 그 이전 버전의 경우 추가적인 한글팩 설치가 필요합니다.
+   </div>
+   <div>
+    개인적으로는 영어를 더 선호하는데 이유는
+    <s>
+     그게 더 있어보여서
+    </s>
+    직역이다보니 조금 익숙해지면 한글이 외려 불편해지는
+   </div>
+   <div>
+    기현상이 발생하기 때문이죠.
+    <s>
+     (한글화는 PS타이틀만 잘 되면 됩니다)
+    </s>
+   </div>
+   <div>
+    또한 아무래도 외국계 솔루션이다보니 한글로 검색하는 것보다 영어로 검색하는 것이 훨씬 많은 정보를 얻을 수 있습니다.
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    자, 이제 언어설정까지 완료되었으므로 기본적인 개념과 설정 등에 대한 내용을 진행해보도록하죠.
+   </div>
+  </div>
+  <div>
+   <br />
+  </div>
+  <div>
+   <p>
+    <br />
+   </p>
+   <p>
+    <br />
+   </p>
+   <div>
+    <span>
+     <b>
+      [Project]
+     </b>
+    </span>
+   </div>
+   <div>
+    <span>
+     우선 프로젝트부터 설명하겠습니다. Jira에서 프로젝트란, Issue를 모아둔 것으로 회사에서 사용할 성격에 따라 이름을 지정해줍니다.
+    </span>
+   </div>
+   <div>
+    <span>
+     단위는 지정하기 나름인데, 게임업계의 경우 프로젝트의 이름이 각 게임명일 수도 있으며,
+    </span>
+   </div>
+   <div>
+    <span>
+     해외법인과 일하는 회사의 경우 프로젝트의 이름이 각 나라명일 수도 있습니다.
+    </span>
+   </div>
+   <div>
+    <span>
+     <br />
+    </span>
+   </div>
+   <div>
+    <span>
+     예를 들어 저희 회사에서는 고객기술지원팀별로 나누어 사용 중이며, 본 문서에서는 가상의 프로젝트팀을 하나 더 만드는 시나리오로
+    </span>
+   </div>
+   <div>
+    <span>
+     진행해보겠습니다.
+    </span>
+    여담으로 Atlassian의 교육에서는 Rocekt Engineering이라는 로켓을 만드는 거창한 시나리오를 가진
+   </div>
+   <div>
+    튜토리얼로 진행합니다.
+    <s>
+     (내용은 그다지...)
+    </s>
+   </div>
+   <div>
+    <span>
+     <br />
+    </span>
+   </div>
+   <div>
+    <span>
+     <br />
+    </span>
+   </div>
+   <p>
+   </p>
+   <div>
+    <span>
+     우선, 상단 메뉴의 Projects에서 Create project를 클릭합니다. (맨 우측의 Create 버튼은 Issue 생성버튼이므로 여기서 생성하셔야합니다)
+    </span>
+    <span class="imageblock" style="display:inline-block;width:302px;text-align: center;;height:auto;max-width:100%">
+     <img src="/assets/images/61/3.jpg" />
+    </span>
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    <div>
+     버튼을 누르면 다음과 같이 뭔가 많이 튀어나옵니다. Jira에서 기본적으로 제공하는 프로젝트의 템플릿들인데
+    </div>
+    <div>
+     간단히 설명드리자면, 보시다시피 Software타입의 프로젝트와 Business타입의 프로젝트로 나뉘어 보여집니다.
+    </div>
+   </div>
+   <div>
+    <p style="text-align: center; clear: none; float: none;">
+     <span class="imageblock" style="display:inline-block;width:820px;;height:auto;max-width:100%">
+      <img src="/assets/images/61/4.jpg" />
+     </span>
+    </p>
+    <p>
+     본 화면의 경우 설치된 솔루션이 Jira Software라 그런 것이고, 만약 Core만 설치하실 경우 Business타입만 보여지게 되죠.
+    </p>
+    <div>
+     우선 Business타입의 경우, 간단한 이슈타입과 워크플로우를 가진 프로젝트로 저 세 가지의 차이는
+    </div>
+    <div>
+     워크플로우 복잡도 정도의 차이만 있습니다.
+    </div>
+    <div>
+     <br />
+    </div>
+    <div>
+     이슈타입과 워크플로우의 경우 차후 설명드리겠지만, 궁금하시면 한 번씩 눌러보시는 것도 좋습니다.
+    </div>
+    <div>
+     <s>
+      삽질하면서 배우는게 기억에 남는법이니까요
+     </s>
+    </div>
+    <div>
+     <s>
+      <br />
+     </s>
+    </div>
+    <div>
+     Software타입의 경우, 요즘 화제인 Agile이라는 단어가 들어가 있는 것을 보실 수 있는데
+    </div>
+    <div>
+     그냥 보드가 추가된 프로젝트라고 생각하시면 됩니다.
+    </div>
+    <div>
+     <br />
+    </div>
+    <div>
+     KANBAN의 경우, 일반적으로 일상 생활에서 사용하시는 화이트보드에 포스트잇을 붙이시는 거라고 보시면되며,
+    </div>
+    <div>
+     이해를 돕기위해 다음 그림을 첨부합니다.
+    </div>
+    <div>
+     <span class="imageblock" style="display:inline-block;width:460px;text-align: center;;height:auto;max-width:100%">
+      <img src="/assets/images/61/5.png" />
+     </span>
+    </div>
+    <div>
+     <br />
+    </div>
+    <div>
+     <div>
+      위 내용을 시스템적으로 하겠다는 의미인데, 실제 사용하시는 분들의 말씀에 의하면 손맛이 없다...라는 의견이 꽤 많았습니다.
+     </div>
+     <div>
+      <s>
+       (저도 동감이구요)
+      </s>
+     </div>
+     <div>
+      <br />
+     </div>
+     <div>
+      여하튼 Scrum타입의 경우 KANBAN타입에 Sprint라는 시간 개념만 추가되었다고 생각하시면됩니다. 사실 위의 어떤 타입으로 선택해도
+     </div>
+     <div>
+      차후에 Business타입을 Software로, Software타입에서 보드와 스프린트를 추가할 수 있으므로 어떤 것으로 만들어도 상관은 없습니다.
+     </div>
+     <div>
+      <br />
+     </div>
+     <div>
+      Next를 누르기 전에 잠시 빨간색으로 표시해둔 Create with shared configuration에 대해 설명드리자면,
+     </div>
+     <div>
+      Jira7버전에서 새로 생긴 기능으로서 기존 생성된 프로젝트의 설정을 복사하여 프로젝트를 생성할 수 있습니다.
+     </div>
+     <div>
+      (프로젝트의 설정이지, 내부 이슈 등을 복사하는 것이 아닙니다)
+     </div>
+     <div>
+      <br />
+     </div>
+     <div>
+      <br />
+     </div>
+     <div>
+      우선 처음 쓰시는 분들을 대상으로 작성되고있는 문서이므로, 여기선 간단히 Project management 타입을 선택하고 Next를 눌러줍니다.
+     </div>
+     <div>
+      그러면 이렇게 해당 템플릿이 가진 이슈타입과 워크플로우가 보여집니다. 가볍게 select를 눌러줍니다.
+     </div>
+    </div>
+    <p>
+    </p>
+    <p style="text-align: center; clear: none; float: none;">
+     <span class="imageblock" style="display:inline-block;width:820px;;height:auto;max-width:100%">
+      <img src="/assets/images/61/6.jpg" />
+     </span>
+    </p>
+    <p>
+     <br />
+    </p>
+    <p>
+     <br />
+    </p>
+    <p>
+     <br />
+    </p>
+    <p>
+     이제 프로젝트의 이름과 키, 프로젝트리더를 설정한 뒤 Submit을 눌러 프로젝트를 생성합니다.
+    </p>
+    <div>
+     이름은 앞에서 설명드린 것과 같이 해당 프로젝트의 이름이며 키는 해당 프로젝트의 고유한 값입니다.
+    </div>
+    <div>
+     <br />
+    </div>
+    <div>
+     당연히 타 프로젝트의 키값과 겹쳐서는 안되며 보여지는 것처럼 기본적으로 프로젝트의 이름에 따라 자동생성되지만,
+    </div>
+    <div>
+     임의로 수정가능합니다. 이후 생성되는 이슈는 해당 프로젝트의 키값에 숫자가 붙어서 생성되며,
+    </div>
+    <div>
+     예를 들어 다음 프로젝트의 경우 해당 프로젝트에서 생성되는 이슈는 이슈아이디로서 WCS-1, WCS-2 등으로 생성됩니다.
+    </div>
+    <div>
+     <br />
+    </div>
+    <div>
+     프로젝트리더의 경우, 기본적으로 프로젝트를 생성하는 사람으로 지정되며 차후 프로젝트 설정에서 변경가능합니다.
+    </div>
+    <p style="text-align: center; clear: none; float: none;">
+     <span class="imageblock" style="display:inline-block;width:820px;;height:auto;max-width:100%">
+      <img src="/assets/images/61/7.jpg" />
+     </span>
+    </p>
+    <p>
+     <br />
+    </p>
+    <br />
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    <span>
+     Submit을 누르면 다음과 같이 아무 이슈도 없는 빈 프로젝트가 하나 생성된 것을 확인하실 수 있습니다.
+    </span>
+   </div>
+   <div>
+    <span>
+     <br />
+    </span>
+   </div>
+   <div>
+    <span>
+     이슈를 채워나가기 전에, 간단히 Jira Administration메뉴와, Project Administration메뉴에 대해 설명드리고 넘어가도록 하겠습니다.
+    </span>
+   </div>
+   <div>
+    <span>
+     우선 우측 상단의 톱니바퀴모양이 Jira Administration메뉴입니다. 해당 메뉴에서는 Jira시스템 자체에 대한 전체 설정을 다루죠.
+    </span>
+   </div>
+   <div>
+    <span>
+     <br />
+    </span>
+   </div>
+   <div>
+    <span>
+     그리고 좌측 하단의 톱니바퀴모양이 Project Administration메뉴로서 해당 프로젝트의 설정을 다룹니다.
+    </span>
+   </div>
+   <p>
+   </p>
+   <div>
+    <span>
+     즉, Jira Administration메뉴는 공통, Project Administration메뉴는 프로젝트별로 따로 적용되는 것으로 이해하시면 됩니다.
+    </span>
+   </div>
+   <div>
+    <span>
+     <p style="text-align: center; clear: none; float: none;">
+      <span class="imageblock" style="display:inline-block;width:820px;;height:auto;max-width:100%">
+       <img src="/assets/images/61/8.jpg" />
+      </span>
+     </p>
+     <p>
+      <br />
+     </p>
+     <br />
+    </span>
+   </div>
+   <br />
+  </div>
+  <div>
+   글이 길어지므로 Jira Administration메뉴부터는 다음 글에서 적어보도록 하겠습니다.
+  </div>
+  <p>
+   <br />
+  </p>
+  <div class="container_postbtn">
+  </div>
+  <div style="text-align:left; padding-top:10px;clear:both">
+  </div>
+ </div>
+</div>
+<div class="fb-like" data-share="true" data-width="450" data-show-faces="true"></div></div>
+    <div id="post-footer">
+        
+        <a id="post-author" href="/authors/wjsrkqdlf/">
+            <div id="author-image" style="background-image:url(/files/authors/wjsrkqdlf.png);">
+                <span class="sr-only">wjsrkqdlf's profile image</span>
+            </div>
+            <p id="author-name">wjsrkqdlf</p>
+        </a>
+        <p id="post-date">2017-02-02</p>
+        <a id="post-more" href="/authors/wjsrkqdlf/">
+            <span>Read more posts by this author</span>
+        </a>
+    </div>
+    
+    <div id="post-comment">
+        <div class="fb-comments" data-href="" data-width="770px" data-numposts="5"></div>
+    </div>
+    
+
+</div>
+
+<div id="post-links" class="container">
+    
+    
+        <div id="post-prev"
+             >
+            <div>
+                <h3><a href="/atlassian,%20jira/2017/02/01/tistory-60/">Jira 설치</a></h3>
+                <p>YOU MIGHT ENJOY</p>
+            </div>
+        </div>
+    
+    
+    
+        <div id="post-next"
+             >
+            <div>
+                <h3><a href="/opensourceconsulting/2017/02/03/tistory-62/">Jira 설정_2(System Administration / User Management)</a></h3>
+                <p>NEXT POST</p>
+            </div>
+        </div>
+    
+</div>
+
+<div id="lightbox">
+    <div id="lightbox-image"></div>
+</div>
+
+    <div class="clearfix"></div>
+
+    <a href="#" id="back-to-top"></a>
+</div>
+
+<div id="footer" class="container-fluid">
+    <ul id="links">
+        
+        <li>
+            <a id="link-github" href="http://github.com/opensourceconsulting" target="_blank">
+                <span class="sr-only">github</span>
+            </a>
+        </li>
+        
+        
+        <li>
+            <a id="link-facebook" href="http://facebook.com/osckorea" target="_blank">
+                <span class="sr-only">facebook</span>
+            </a>
+        </li>
+        
+        
+        <li>
+            <a id="link-rss" href="/rss" target="_blank">
+                <span class="sr-only">rss</span>
+            </a>
+        </li>
+    </ul>
+    <!--
+    <ul id="footer-menu">
+        <li><a href="//www.kakaocorp.com">Kakao</a></li>
+        <li><a href="//www.kakaocorp.com/recruit/currentOpportunities">Jobs</a></li>
+        <li><a href="//privacy.kakaocorp.com">Privacy</a></li>
+    </ul>
+    -->
+    <p id="copyright">
+        <a href="https://tech.osci.kr">&copy; OpenSourceConsulting</a>
+        All rights reserved.
+    </p>
+</div><!--#footer-->
+
+
+<script src="/assets/lib/jquery-1.12.0.min.js"></script>
+<script src="/assets/lib/jquery.magnific-popup.min.js"></script>
+<script src="/assets/js/index.js"></script>
+
+
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-39977834-4', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+
+
+
+    
+    <script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '',
+            xfbml      : true,
+            version    : 'v2.8'
+        });
+        FB.Canvas.getPageInfo(
+            function(info) {
+                alert('Width: ' + info.clientWidth + ' Height: ' + info.clientHeight);
+            }
+        );
+        FB.AppEvents.logPageView();
+    };
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.8";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<!--
+<script>
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.8";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+-->
+
+    
+
+    
+
+    
+
+</body>
+</html>

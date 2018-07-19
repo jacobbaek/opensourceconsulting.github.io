@@ -10,7 +10,7 @@
 </script>
 <meta charset="utf-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+ <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 
 <title>오픈소스컨설팅 기술 블로그</title>
@@ -63,8 +63,7 @@ Sharing Tech. Growing Together.
     <button id="search-toggle" type="button">
         <span class="sr-only">Toggle Search Form</span>
     </button>
-    <a href="/">
-        <img src="/assets/images/pc/tech_logo.png" class="tech_logo">
+    <a href="/" id="logo">
     </a>
     <form id="search">
         <input id="searchQueryEdit" name="q" type="search" placeholder="Search..." value="" />
@@ -131,7 +130,7 @@ Sharing Tech. Growing Together.<br />
         <li class="post-item post ">
     <a href="/agile,%20jira/2017/06/13/tistory-71/">
         <h3 class="post-title">팀에게 애자일 조금씩 주입하기.</h3>
-        <p class="post-excerpt">Introduction 안녕하세요. 오픈소스컨설팅 솔루션 설계팀 김세연입니다. 저희는 기존 시스템을 오픈소스로 전환, 사용 지원하고 있습니다. 더 많은 내용은 www.osci.kr 에서 확인해 주세요. 고객에게 가치를 전달.. Introduction 안녕하세요. 오픈소스컨설팅 솔루션 설계팀 김세연입니다. 저희는 기존 시스템을 오픈소스로 전환, 사용 지원하고 있습니다. 더 많은 내용은 www.osci.kr 에서 확인해 주세요. 고객에게 가치를 전달하는 IT 프로젝트는 무엇일까요? 고객의 요구사항을 기간 안에 구현하는 것일까요? 위 그림은 IT 프로젝트의 초기 요구사항의 불확실성, 복잡성에 대해서 각 담당자가 이해한 결과물을 보여줍니다. 사실 고객은 나무에서 타이어 그네를 타고 싶었습니다. 프로젝트가 끝날 때쯤에 알았다면 이미 늦었습니다. 프로젝트 기간, 비용, 품질 3박자를 충족시키고 시장(고객)의 반응이 좋을 때 성공했다고 생각이 듭니다. 여기서 한...</p>
+        <p class="post-excerpt">조금씩 변화하다 보면 큰 결과를 얻을 수 있지 않을까.. Introduction 안녕하세요. 오픈소스컨설팅 솔루션 설계팀 김세연입니다. 저희는 기존 시스템을 오픈소스로 전환, 사용 지원하고 있습니다. 더 많은 내용은 www.osci.kr 에서 확인해 주세요. 고객에게 가치를 전달하는 IT 프로젝트는 무엇일까요? 고객의 요구사항을 기간 안에 구현하는 것일까요? 위 그림은 IT 프로젝트의 초기 요구사항의 불확실성, 복잡성에 대해서 각 담당자가 이해한 결과물을 보여줍니다. 사실 고객은 나무에서 타이어 그네를 타고 싶었습니다. 프로젝트가 끝날 때쯤에 알았다면 이미 늦었습니다. 프로젝트 기간, 비용, 품질 3박자를 충족시키고 시장(고객)의 반응이 좋을 때 성공했다고 생각이 듭니다. 여기서 한...</p>
     </a>
     <p class="post-tags">
         
@@ -142,12 +141,12 @@ Sharing Tech. Growing Together.<br />
     </p>
     <div class="post-meta">
         
-        <a href="/authors/OpenSourceConsulting">
+        <a href="/authors/it2seiyon">
             <div class="author-image"
-                 >
-                <span class="sr-only">'s profile image</span>
+                 style="background-image:url(/files/authors/it2seiyon.jpeg);">
+                <span class="sr-only">it2seiyon's profile image</span>
             </div>
-            <p class="author-name"></p>
+            <p class="author-name">it2seiyon</p>
         </a>
         <p class="post-date">2017-06-13</p>
     </div>
@@ -156,23 +155,25 @@ Sharing Tech. Growing Together.<br />
 
     
         <li class="post-item post ">
-    <a href="/opensourceconsulting/2017/02/22/tistory-70/">
+    <a href="/jira,%20alm,%20project%20management/2017/02/22/tistory-70/">
         <h3 class="post-title">Jira Project Administration</h3>
-        <p class="post-excerpt">[Jira Project Administration] 이제 앞에서 열심히 설정했던 내용들을 사용해볼 시간입니다. 아이씐나 이쯤되면 까먹으셨을테니 다시 캡처를 첨부해보면, 만들었던 Web Customer Support로 들어간 뒤, 하단의 Pro.. [Jira Project Administration] 이제 앞에서 열심히 설정했던 내용들을 사용해볼 시간입니다. 아이씐나 이쯤되면 까먹으셨을테니 다시 캡처를 첨부해보면, 만들었던 Web Customer Support로 들어간 뒤, 하단의 Project Administration을 클릭합니다. 그리고 다시 시작된 곶통.jpg 그럼 다음과 같은 화면이 나오며 좌측에 많이 본 듯한 메뉴가 존재합니다. (Subtask Templates의 경우 플러그인이 설치되어있기에 나타난 메뉴입니다) Summary : 우선 Summary부터 보시면 프로젝트의 설정 요약으로써, 해당 프로젝트가 어떤 설정들을 적용받고 있는지를 보여줍니다. 우측의 Edit Proejct를 클릭 시, 해당 프로젝트의 이름, 키값, 프로젝트 아바타 등을...</p>
+        <p class="post-excerpt">Jira Administration에 대해서 깊게 알아보겠습니다. [Jira Project Administration] 이제 앞에서 열심히 설정했던 내용들을 사용해볼 시간입니다. 아이씐나 이쯤되면 까먹으셨을테니 다시 캡처를 첨부해보면, 만들었던 Web Customer Support로 들어간 뒤, 하단의 Project Administration을 클릭합니다. 그리고 다시 시작된 곶통.jpg 그럼 다음과 같은 화면이 나오며 좌측에 많이 본 듯한 메뉴가 존재합니다. (Subtask Templates의 경우 플러그인이 설치되어있기에 나타난 메뉴입니다) Summary : 우선 Summary부터 보시면 프로젝트의 설정 요약으로써, 해당 프로젝트가 어떤 설정들을 적용받고 있는지를 보여줍니다. 우측의 Edit Proejct를 클릭 시, 해당 프로젝트의 이름, 키값, 프로젝트 아바타 등을...</p>
     </a>
     <p class="post-tags">
         
-            <a class="tag tag-OpenSourceConsulting">OpenSourceConsulting</a>
+            <a class="tag tag-Jira">Jira</a>
+        
+            <a class="tag tag-JiraAdmin">JiraAdmin</a>
         
     </p>
     <div class="post-meta">
         
-        <a href="/authors/it2seiyon">
+        <a href="/authors/wjsrkqdlf">
             <div class="author-image"
-                 style="background-image:url(/files/authors/it2seiyon.jpeg);">
-                <span class="sr-only">it2seiyon's profile image</span>
+                 style="background-image:url(/files/authors/wjsrkqdlf.png);">
+                <span class="sr-only">wjsrkqdlf's profile image</span>
             </div>
-            <p class="author-name">it2seiyon</p>
+            <p class="author-name">wjsrkqdlf</p>
         </a>
         <p class="post-date">2017-02-22</p>
     </div>
@@ -181,23 +182,25 @@ Sharing Tech. Growing Together.<br />
 
     
         <li class="post-item post ">
-    <a href="/opensourceconsulting/2017/02/20/tistory-69/">
+    <a href="/atlassian,%20alm,%20project%20management/2017/02/20/tistory-69/">
         <h3 class="post-title">Jira 설정_9(Schemes)</h3>
         <p class="post-excerpt">드디어 마지막인 Scheme부분입니다. 앞서 나왔던 Field scheme이라던가 screen scheme들도 있기에 조금 더 정확히 쓰자면 Issue security, Permission, Notification Scheme입니다만, 제목으론 조금 길어서 scheme.. 드디어 마지막인 Scheme부분입니다. 앞서 나왔던 Field scheme이라던가 screen scheme들도 있기에 조금 더 정확히 쓰자면 Issue security, Permission, Notification Scheme입니다만, 제목으론 조금 길어서 scheme으로 적었습니다. 그럼 Issue탭 설정의 마지막을 적어보겠습니다. Issue security schemes : 생성된 이슈들에 대해서 볼 수 있는 권한을 설정하는 메뉴입니다. 일반적으로 많이 사용하는 메뉴는 아니지만, 설명은 하고 넘어가야겠죠. 우선 Add issue Security Scheme를 클릭하여 다음처럼 Test Issue Security Scheme을 생성합니다. 그리고 우측의 Security Levels를 클릭 후 다음처럼 Test A와 Test B레벨을 만들어줍니다. 그리고...</p>
     </a>
     <p class="post-tags">
         
-            <a class="tag tag-OpenSourceConsulting">OpenSourceConsulting</a>
+            <a class="tag tag-Jira">Jira</a>
+        
+            <a class="tag tag-Jira Scheme">Jira Scheme</a>
         
     </p>
     <div class="post-meta">
         
-        <a href="/authors/it2seiyon">
+        <a href="/authors/wjsrkqdlf">
             <div class="author-image"
-                 style="background-image:url(/files/authors/it2seiyon.jpeg);">
-                <span class="sr-only">it2seiyon's profile image</span>
+                 style="background-image:url(/files/authors/wjsrkqdlf.png);">
+                <span class="sr-only">wjsrkqdlf's profile image</span>
             </div>
-            <p class="author-name">it2seiyon</p>
+            <p class="author-name">wjsrkqdlf</p>
         </a>
         <p class="post-date">2017-02-20</p>
     </div>
@@ -206,23 +209,23 @@ Sharing Tech. Growing Together.<br />
 
     
         <li class="post-item post ">
-    <a href="/opensourceconsulting/2017/02/18/tistory-68/">
+    <a href="/atlassian,%20alm,%20project%20management/2017/02/18/tistory-68/">
         <h3 class="post-title">Jira 설정_8(Time Tracking / Resolution / Priority)</h3>
         <p class="post-excerpt">Time tracking: Jira Issue에서 Time Tracking기능을 사용할지 여부를 결정하는 메뉴입니다. 만약 필드에 Time Tracking을 사용하도록 설정하였다면, 이슈를 생성 시 다음과 같이 시간을 설정할 수 있는 필드가 생.. Time tracking : Jira Issue에서 Time Tracking기능을 사용할지 여부를 결정하는 메뉴입니다. 만약 필드에 Time Tracking을 사용하도록 설정하였다면, 이슈를 생성 시 다음과 같이 시간을 설정할 수 있는 필드가 생기며 예를 들어 3일짜리 일을 생성할 경우 3d를 입력 후 생성합니다. 그럼 생성된 이슈의 우측에 이렇게 3일이 표시됩니다. 시간을 기록하기 위해선 Sub-Task를 만드는 것처럼 이슈의 More에서 Log Work를 클릭하면 됩니다. 그리고 하루 일했다는 가정으로 1d를 입력 후 Log를 클릭하면, 이렇게 시간이 계산되는 것을 볼 수 있습니다. 눈치채셨겠지만, 자동으론...</p>
     </a>
     <p class="post-tags">
         
-            <a class="tag tag-OpenSourceConsulting">OpenSourceConsulting</a>
+            <a class="tag tag-Jira">Jira</a>
         
     </p>
     <div class="post-meta">
         
-        <a href="/authors/it2seiyon">
+        <a href="/authors/wjsrkqdlf">
             <div class="author-image"
-                 style="background-image:url(/files/authors/it2seiyon.jpeg);">
-                <span class="sr-only">it2seiyon's profile image</span>
+                 style="background-image:url(/files/authors/wjsrkqdlf.png);">
+                <span class="sr-only">wjsrkqdlf's profile image</span>
             </div>
-            <p class="author-name">it2seiyon</p>
+            <p class="author-name">wjsrkqdlf</p>
         </a>
         <p class="post-date">2017-02-18</p>
     </div>

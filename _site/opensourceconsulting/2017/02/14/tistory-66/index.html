@@ -10,12 +10,12 @@
 </script>
 <meta charset="utf-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+ <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 
 <title>Jira 설정_6(Screen)</title>
 <meta name="title" content="Jira 설정_6(Screen)" />
-<meta name="author" content="it2seiyon"/>
+<meta name="author" content="wjsrkqdlf"/>
 <meta name="description" content="Screen : 스크린을 클릭 시 뭔가 더럽게 많은 내용이 뜨는 것을 보실 수 있는데, 일단 스크린이란 말 그대로 화면입니다. 여기서 화면이란 다음처럼 이슈를 생성 시 보여지는 팝업 창 그 자체라고 생각하시면됩니다. 이 팝업창을 보시면 아시겠지만, 뭔가 필드(Summary, Due Date등)가 굉장히 많이 있는 것을 확인할 수 있으며, 스크린은 해당 필드들을 화면에서 숨기거나 보여주고 싶은 필드를 설정하는 등의 설정입니다. 앞서 해왔듯이 우측 상단의 Add Screen버튼을 클릭하여 다음과 같이 새로운 스크린을 하나 추가합니다. 그럼 아무것도 없는 화면이 나오며,..."/>
 
 <meta property="fb:app_id" content=""/>
@@ -30,22 +30,26 @@
 <meta name="twitter:title" content="Jira 설정_6(Screen)"/>
 <meta name="twitter:description" content="Screen : 스크린을 클릭 시 뭔가 더럽게 많은 내용이 뜨는 것을 보실 수 있는데, 일단 스크린이란 말 그대로 화면입니다. 여기서 화면이란 다음처럼 이슈를 생성 시 보여지는 팝업 창 그 자체라고 생각하시면됩니다. 이 팝업창을 보시면 아시겠지만, 뭔가 필드(Summary, Due Date등)가 굉장히 많이 있는 것을 확인할 수 있으며, 스크린은 해당 필드들을 화면에서 숨기거나 보여주고 싶은 필드를 설정하는 등의 설정입니다. 앞서 해왔듯이 우측 상단의 Add Screen버튼을 클릭하여 다음과 같이 새로운 스크린을 하나 추가합니다. 그럼 아무것도 없는 화면이 나오며,..."/>
 <meta name="twitter:label1" content="Written by"/>
-<meta name="twitter:data1" content="it2seiyon"/>
+<meta name="twitter:data1" content="wjsrkqdlf"/>
 <meta name="twitter:image:src" content="https://tech.osci.kr/assets/images/default_blog_cover.jpg"/>
 <meta name="naver-site-verification" content="11ec9086ec9292ebc8dc73f6224492f208b2007b"/>
 <meta name="google-site-verification" content="Q5w5X0R32gOG-1lBhFg0UxvXRNoQX-uOSPjxPI4sXH4" />
 
 <meta name="twitter:label2" content="Filed under"/>
-<meta name="twitter:data2" content="OpenSourceConsulting"/>
+<meta name="twitter:data2" content="Jira,Jira Screen,Jira Admin"/>
 
-<meta property="article:tag" content="OpenSourceConsulting"/>
+<meta property="article:tag" content="Jira"/>
+
+<meta property="article:tag" content="Jira Screen"/>
+
+<meta property="article:tag" content="Jira Admin"/>
 
 
 
 <meta property="article:published_time" content="2017-02-14T22:59:26+09:00"/>
 
 
-<meta property="article:author" content="https://tech.osci.kr/authors/it2seiyon"/>
+<meta property="article:author" content="https://tech.osci.kr/authors/wjsrkqdlf"/>
 
 <link href="https://tech.osci.kr/rss/" rel="alternate" type="application/rss+xml" title="RSS"/>
 <link href="/assets/favicon.png" rel="icon" type="image/png"/>
@@ -67,8 +71,7 @@
     <button id="search-toggle" type="button">
         <span class="sr-only">Toggle Search Form</span>
     </button>
-    <a href="/">
-        <img src="/assets/images/pc/tech_logo.png" class="tech_logo">
+    <a href="/" id="logo">
     </a>
     <form id="search">
         <input id="searchQueryEdit" name="q" type="search" placeholder="Search..." value="" />
@@ -109,7 +112,13 @@
         <p>Screen: 스크린을 클릭 시 뭔가 더럽게 많은 내용이 뜨는 것을 보실 수 있는데, 일단 스크린이란 말 그대로 화면입니다. 여기서 화면이란 다음처럼 이슈를 생성 시 보여지는 팝업 창 그 자체라고 생각하시면됩니다..</p>
         <p class="right" style="opacity: 0.5">
             
-                OpenSourceConsulting
+                Jira
+                ,
+            
+                Jira Screen
+                ,
+            
+                Jira Admin
                 
             
         </p>
@@ -436,14 +445,14 @@
 <div class="fb-like" data-share="true" data-width="450" data-show-faces="true"></div></div>
     <div id="post-footer">
         
-        <a id="post-author" href="/authors/it2seiyon/">
-            <div id="author-image" style="background-image:url(/files/authors/it2seiyon.jpeg);">
-                <span class="sr-only">it2seiyon's profile image</span>
+        <a id="post-author" href="/authors/wjsrkqdlf/">
+            <div id="author-image" style="background-image:url(/files/authors/wjsrkqdlf.png);">
+                <span class="sr-only">wjsrkqdlf's profile image</span>
             </div>
-            <p id="author-name">it2seiyon</p>
+            <p id="author-name">wjsrkqdlf</p>
         </a>
         <p id="post-date">2017-02-14</p>
-        <a id="post-more" href="/authors/it2seiyon/">
+        <a id="post-more" href="/authors/wjsrkqdlf/">
             <span>Read more posts by this author</span>
         </a>
     </div>
@@ -461,7 +470,7 @@
         <div id="post-prev"
              >
             <div>
-                <h3><a href="/opensourceconsulting/2017/02/12/tistory-65/">Jira 설정_5(Workflow)</a></h3>
+                <h3><a href="/atlassian,%20jira,%20alm,%20project%20management/2017/02/12/tistory-65/">Jira 설정_5(Workflow)</a></h3>
                 <p>YOU MIGHT ENJOY</p>
             </div>
         </div>
@@ -471,7 +480,7 @@
         <div id="post-next"
              >
             <div>
-                <h3><a href="/opensourceconsulting/2017/02/16/tistory-67/">Jira 설정_7(Field)</a></h3>
+                <h3><a href="/atlassian,%20alm,%20project%20management/2017/02/16/tistory-67/">Jira 설정_7(Field)</a></h3>
                 <p>NEXT POST</p>
             </div>
         </div>
