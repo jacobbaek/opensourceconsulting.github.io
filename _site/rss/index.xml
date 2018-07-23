@@ -7,8 +7,8 @@ Sharing Tech. Growing Together.
 </description>
     <link>https://tech.osci.kr/</link>
     <atom:link href="https://tech.osci.kr/rss" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 19 Jul 2018 09:24:42 +0900</pubDate>
-    <lastBuildDate>Thu, 19 Jul 2018 09:24:42 +0900</lastBuildDate>
+    <pubDate>Sun, 22 Jul 2018 16:17:37 +0900</pubDate>
+    <lastBuildDate>Sun, 22 Jul 2018 16:17:37 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
     
       <item>
@@ -360,7 +360,6 @@ Atom 에디터로 Post를 작성하기 위해서 Markdown을 습득했습니다.
    &lt;/p&gt;
    &lt;p class=&quot;graf graf--p graf-after--figure&quot; style=&quot;margin-top: 10px; margin-right: 0px; margin-left: 0px; padding: 0px;&quot;&gt;
     개발 대상, 범위, 시간은 팀, 고객 모두와 조율 되야합니다. PM 또는 스크럼 마스터의 할 일이 여기있습니다.
-    &lt;img alt=&quot;(wink)&quot; border=&quot;0&quot; class=&quot;emoticon emoticon-wink&quot; src=&quot;https://rootseyo.atlassian.net/wiki/s/1567119128/6452/c52fe4419588c3a2c3b30aaf2d38de12acae0802/_/images/icons/emoticons/wink.png&quot; style=&quot;margin: 0px; padding: 0px; border: 0px; vertical-align: text-bottom;&quot; title=&quot;(wink)&quot; /&gt;
    &lt;/p&gt;
    &lt;h2 class=&quot;graf graf--p graf-after--figure&quot; id=&quot;id-팀에게애자일조금씩주입하기.-애자일(Agile)무엇인가?&quot; style=&quot;margin: 30px 0px 0px; padding: 0px; font-size: 20px; font-weight: normal; line-height: 1.5; border-bottom-color: rgb(204, 204, 204);&quot;&gt;
     애자일(Agile) 무엇인가?
@@ -455,7 +454,6 @@ Atom 에디터로 Post를 작성하기 위해서 Markdown을 습득했습니다.
    &lt;/p&gt;
    &lt;p style=&quot;margin-top: 10px; margin-right: 0px; margin-left: 0px; padding: 0px;&quot;&gt;
     다른 시각으로 보이고 이해가 될 때가 있습니다. 저도 천천히 이해하고 있습니다
-    &lt;img alt=&quot;(메롱)&quot; border=&quot;0&quot; class=&quot;emoticon emoticon-cheeky&quot; src=&quot;https://rootseyo.atlassian.net/wiki/s/1567119128/6452/c52fe4419588c3a2c3b30aaf2d38de12acae0802/_/images/icons/emoticons/tongue.png&quot; style=&quot;margin: 0px; padding: 0px; border: 0px; vertical-align: text-bottom;&quot; title=&quot;(메롱)&quot; /&gt;
    &lt;/p&gt;
    &lt;h3 id=&quot;id-팀에게애자일조금씩주입하기.-애자일적용대상&quot; style=&quot;margin: 30px 0px 0px; padding: 0px; font-size: 16px; line-height: 1.5;&quot;&gt;
     애자일 적용 대상
@@ -602,11 +600,6 @@ Atom 에디터로 Post를 작성하기 위해서 Markdown을 습득했습니다.
    &lt;/ul&gt;
    &lt;p class=&quot;graf graf--p graf-after--pullquote&quot; style=&quot;margin-top: 10px; margin-right: 0px; margin-left: 0px; padding: 0px;&quot;&gt;
     처음부터 잘하는 사람, 팀은 없습니다. 시행착오를 격으면서 소수의 인원과 함께 적용하시기를 바랍니다.
-   &lt;/p&gt;
-   &lt;p class=&quot;graf graf--p graf-after--pullquote&quot; style=&quot;margin-top: 10px; margin-right: 0px; margin-left: 0px; padding: 0px;&quot;&gt;
-    참여자 섭외가 힘드시면 인간적으로 부탁해 보세요
-    &lt;img alt=&quot;(wink)&quot; border=&quot;0&quot; class=&quot;emoticon emoticon-wink&quot; src=&quot;https://rootseyo.atlassian.net/wiki/s/1567119128/6452/c52fe4419588c3a2c3b30aaf2d38de12acae0802/_/images/icons/emoticons/wink.png&quot; style=&quot;margin: 0px; padding: 0px; border: 0px; vertical-align: text-bottom;&quot; title=&quot;(wink)&quot; /&gt;
-    친한 동료들 부터 시작하셔서 성과를 다른 팀원들과 공유하세요.
    &lt;/p&gt;
    &lt;h2 class=&quot;graf graf--h4 graf-after--p&quot; id=&quot;id-팀에게애자일조금씩주입하기.-결론&quot; style=&quot;margin: 30px 0px 0px; padding: 0px; font-size: 20px; font-weight: normal; line-height: 1.5; border-bottom-color: rgb(204, 204, 204);&quot;&gt;
     결론
