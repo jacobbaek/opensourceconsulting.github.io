@@ -7,8 +7,8 @@ Sharing Tech. Growing Together.
 </description>
     <link>https://tech.osci.kr/</link>
     <atom:link href="https://tech.osci.kr/rss" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 22 Jul 2018 16:17:37 +0900</pubDate>
-    <lastBuildDate>Sun, 22 Jul 2018 16:17:37 +0900</lastBuildDate>
+    <pubDate>Mon, 23 Jul 2018 13:11:46 +0900</pubDate>
+    <lastBuildDate>Mon, 23 Jul 2018 13:11:46 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
     
       <item>
@@ -18,25 +18,24 @@ Sharing Tech. Growing Together.
 
 &lt;h2 id=&quot;설명&quot;&gt;설명&lt;/h2&gt;
 &lt;p&gt;기술 블로그를 GitHub Page로 이전 했습니다.&lt;br /&gt;
-GitHub Page를 선택한 이유는 HTML, CSS, Javascript를 자유롭게 수정하고 싶었습니다. &lt;br /&gt;
-하지만 Infra, Middleware를 구성은 유지보수 이슈가 있었습니다.&lt;br /&gt;
-GitHub Page는 이러한 고민을 해결해 주면서 &lt;code class=&quot;highlighter-rouge&quot;&gt;글 쓰기에&lt;/code&gt; 집중 할 수 있습니다.&lt;br /&gt;
-우리는 글을 작성하고 올리면 GitHub에서 웹 서비스를 해줍니다.&lt;br /&gt;
-테마 적용에 약간의 코딩을 했지만 우리는 글을 작성하고 올리기만 하면 됩니다!&lt;br /&gt;
-하지만 다른 블로그와 달리 &lt;code class=&quot;highlighter-rouge&quot;&gt;Git&lt;/code&gt;을 조금 알아야 하구요.&lt;br /&gt;
+GitHub Page를 선택한 이유는 HTML, CSS, Javascript를 자유롭게 수정하고 싶었습니다.
+하지만 Infra, Middleware를 구성은 만드는데 시간도 필요하고 유지보수 하기도 힘들고.. 그래서
+GitHub Page를 선택했습니다. 우리는 &lt;code class=&quot;highlighter-rouge&quot;&gt;글 쓰기에&lt;/code&gt; 집중하면서 무료 테마나 오픈소스로 Github에서 서비스 하면 됩니다.&lt;br /&gt;
+우선 다른 블로그와 달리 &lt;code class=&quot;highlighter-rouge&quot;&gt;Git&lt;/code&gt;을 조금 알아야 하구요.
 &lt;code class=&quot;highlighter-rouge&quot;&gt;MarkDown&lt;/code&gt;도 알아야 합니다. 어렵지 않습니다.&lt;br /&gt;
-이 글을 읽고 해보시기 바랍니다.&lt;/p&gt;
+이 글이 도움이 되길 바랍니다.&lt;/p&gt;
 
 &lt;h2 id=&quot;github-회원가입&quot;&gt;GitHub 회원가입&lt;/h2&gt;
-&lt;p&gt;아직 가입 안하셨습니다. 이번 기회에 가입해 보세요&lt;br /&gt;
-오픈소스컨설팅 기술 블로그로 감을 익히시고 &lt;code class=&quot;highlighter-rouge&quot;&gt;개인 블로그&lt;/code&gt; 운영도 해보세요 :)&lt;/p&gt;
+&lt;p&gt;아직 가입 안하셨다면, 이번 기회에 가입해 보세요&lt;br /&gt;
+오픈소스컨설팅 기술 블로그로 감을 익히시고 &lt;code class=&quot;highlighter-rouge&quot;&gt;개인 GitHub 블로그&lt;/code&gt; 운영도 해보세요 :)&lt;/p&gt;
 
 &lt;h2 id=&quot;환경-구성&quot;&gt;환경 구성&lt;/h2&gt;
-&lt;p&gt;우리는 GitHub에서 블로그 소스코드를 우리 컴퓨터에 복사 해야 합니다.&lt;br /&gt;
-복사한 소스코드를 jekyll(네 맞습니다. 지킬앤하이드에 지킬입니다.)을 이용해서 작성한 글을 확인하고 빌드해서 GitHub에 추가할 것입니다.&lt;br /&gt;
-Atom이라는 도구를 이용해서 글을 편집하고 GitHub에 추가해 보겠습니다.&lt;br /&gt;
-Windows, Mac(Linux) 환경 구성 방법을 안내해 드리겠습니다.&lt;br /&gt;
-설치만 했지 자세한건 몰라도 됩니다. 매우 쉽거든요! &lt;code class=&quot;highlighter-rouge&quot;&gt;:)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Windows, Mac(Linux) 환경 구성 방법을 안내해 드리겠습니다.&lt;br /&gt;
+환경 구성 후 GitHub에서 블로그 소스코드를 내려 받고,&lt;br /&gt;
+글을 편집하고 GitHub에 올려 보겠습니다.
+글 편집에는 Atom이라는 도구를 이용했지만 자유롭게 어떤 편집기든 가능합니다.(심지어 메모장 가능!)&lt;br /&gt;
+이 과정이 어려우시면 오픈소스컨설팅 직원은 &lt;code class=&quot;highlighter-rouge&quot;&gt;https://wiki.osci.kr/pages/viewpage.action?pageId=41553358&lt;/code&gt;에 올려주세요.
+  우리 엔지니어들이 도와 드릴겁니다. 글이 중요하지 뭐가 중요하겠어요.&lt;/p&gt;
 
 &lt;h3 id=&quot;설치-프로그램&quot;&gt;설치 프로그램&lt;/h3&gt;
 &lt;ul&gt;
