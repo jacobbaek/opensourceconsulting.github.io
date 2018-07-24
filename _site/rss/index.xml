@@ -7,9 +7,92 @@ Sharing Tech. Growing Together.
 </description>
     <link>https://tech.osci.kr/</link>
     <atom:link href="https://tech.osci.kr/rss" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 23 Jul 2018 13:11:46 +0900</pubDate>
-    <lastBuildDate>Mon, 23 Jul 2018 13:11:46 +0900</lastBuildDate>
+    <pubDate>Tue, 24 Jul 2018 13:06:14 +0900</pubDate>
+    <lastBuildDate>Tue, 24 Jul 2018 13:06:14 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>Confluence Page CSS 꾸미기</title>
+        <description>&lt;h1 id=&quot;오픈소스컨설팅-기술-블로그&quot;&gt;오픈소스컨설팅 기술 블로그&lt;/h1&gt;
+&lt;h2 id=&quot;기술을-나눕니다-함께-성장합니다&quot;&gt;기술을 나눕니다. 함께 성장합니다.&lt;/h2&gt;
+
+&lt;p&gt;Confluence(이하 컨플루언스)는 간단한 방법으로 문서를 작성, 공유하는 도구입니다. 문서를 꾸미는데&lt;br /&gt;
+시간을 낭비하지 않고 고객이 원하는 서비스를 구현, 지원하는데 모든 걸 쏟아붓습니다.&lt;/p&gt;
+
+&lt;p&gt;하지만, 우리가 어떤 민족입니까. &lt;code class=&quot;highlighter-rouge&quot;&gt;멋&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;간지&lt;/code&gt;가 있어줘야 하지 않겠습니까. IT에서는 &lt;code class=&quot;highlighter-rouge&quot;&gt;멋&lt;/code&gt;을 CSS라고 부르더군요. w3schools.com의 CSS는 소개는 이렇습니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;CSS stands for Cascading Style Sheets&lt;br /&gt;
+CSS describes how HTML elements are to be displayed on screen, paper, or in other media&lt;br /&gt;
+CSS saves a lot of work. It can control the layout of multiple web pages all at once&lt;br /&gt;
+External stylesheets are stored in CSS files&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;HTML&lt;/code&gt;에 &lt;code class=&quot;highlighter-rouge&quot;&gt;멋&lt;/code&gt;을 입힐 수 있다고합니다. 우리도 컨플루언스에 &lt;code class=&quot;highlighter-rouge&quot;&gt;멋&lt;/code&gt;을 좀 내볼까요?&lt;/p&gt;
+
+&lt;h2 id=&quot;사전조건&quot;&gt;사전조건&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;컨플루언스 관리자 (confluence-administrators)&lt;br /&gt;
+CSS로 &lt;code class=&quot;highlighter-rouge&quot;&gt;멋&lt;/code&gt;을 내다보면 실수할 수도 있으니 운영시간 이외에 또는 테스트 환경에 우선 적용을 해보시기 바랍니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;h1-제목에-스타일-입히고-전체-폰트-키우기&quot;&gt;h1 제목에 스타일 입히고 전체 폰트 키우기&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/h1_css.png&quot; alt=&quot;Confluence CSS&quot; /&gt;&lt;br /&gt;
+위 사진처럼 H1 제목에 강조하는 스타일을 적용하고 일반 텍스트 폰트 사이즈를 키워보겠습니다. 폰트가 작아서 좀 답답했거든요..&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Admin menu&lt;/code&gt; &amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;Look and feel&lt;/code&gt; &amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;Stylesheet&lt;/code&gt; 메뉴를 보시면&lt;br /&gt;
+ &lt;img src=&quot;/assets/images/wiki_css_menu.png&quot; alt=&quot;Confluence Menu 위치&quot; /&gt;[width=200]&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Global CSS를 입력할 수 있습니다. &lt;code class=&quot;highlighter-rouge&quot;&gt;EDIT&lt;/code&gt; 버튼으로 CSS를 입력합니다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/wiki_css.png&quot; alt=&quot;Confluence Global Stylesheet&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; /* main content는 page 글 부분입니다. */
+#main-content h1{
+  border-left: 5px solid black;
+  padding-left: 5px;
+}
+
+/* 글씨 크기 키우기 */
+#main-content p{
+    font-size: 15px;
+    padding-bottom: 5px; /* 글 간격 조정 */
+}
+
+/* 구두점 목록 글씨 크기 키우기 */
+#main-content li {
+  font-size: 15px;
+  padding-bottom: 5px;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;코드를 복사&amp;amp;붙여 넣기 후 바뀐 페이지를 확인할 수 있습니다.&lt;br /&gt;
+Edit할 때는 보이지 않지만 저정 후 보여요 :)&lt;br /&gt;
+간단한 방법으로 각자의 &lt;code class=&quot;highlighter-rouge&quot;&gt;멋&lt;/code&gt;을 추가해보시는건 어떨까요?&lt;/p&gt;
+
+&lt;p&gt;오픈소스컨설팅&lt;br /&gt;
+김세연&lt;br /&gt;
+atlassian@osci.kr&lt;/p&gt;
+</description>
+        <pubDate>Mon, 23 Jul 2018 00:00:00 +0900</pubDate>
+        <link>https://tech.osci.kr/confluence,%20atlassian/2018/07/23/confluence-style/</link>
+        <guid isPermaLink="true">https://tech.osci.kr/confluence,%20atlassian/2018/07/23/confluence-style/</guid>
+        
+        <category>Confluence</category>
+        
+        <category>Atlassian</category>
+        
+        <category>CSS</category>
+        
+        
+        <category>Confluence, Atlassian</category>
+        
+      </item>
     
       <item>
         <title>GitHub Page 블로그 이전</title>
@@ -3777,476 +3860,6 @@ Atom 에디터로 Post를 작성하기 위해서 Markdown을 습득했습니다.
         
         
         <category>Atlassian, Jira</category>
-        
-      </item>
-    
-      <item>
-        <title>Jira 설정_3(Project / Application / Add-ons)</title>
-        <description>&lt;div class=&quot;area_view&quot;&gt;
- &lt;div class=&quot;tt_article_useless_p_margin&quot;&gt;
-  &lt;p&gt;
-   오늘은 주말이므로, 간단하게 짤막한 세 종류만 적어보도록 하겠습니다.
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   저번에 이어 Administration메뉴의 Application부분부터 진행합니다.
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    &lt;b&gt;
-     [Jira Administration - Application]
-    &lt;/b&gt;
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    Application을 클릭 시 다음과 같이 좌측에 메뉴들이 보이며. 본 문서의 경우
-    &lt;s&gt;
-     VM새로 만들기가 귀찮아서
-    &lt;/s&gt;
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    사내 Jira로 진행 중이기에 실제로는 메뉴가 더 적게보일 수 있습니다.
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    &lt;br /&gt;
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    &lt;i&gt;
-     Versions &amp;amp; Licenses
-    &lt;/i&gt;
-    : 이전 Overview문서에서 잠시 다뤘었던 내용으로, 해당 메뉴에서 Jira 솔루션 설치 및 라이선스관리가 가능합니다.
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    주로 만료된 라이선스를 교체할 때 사용하며, License Key부분에 새 라이선스를
-   &lt;/span&gt;
-   복사하여 붙여넣는 것으로 간단히 교체가 가능합니다.
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;s&gt;
-    관리자가 나태해서 버전이 좀 낮은데 본 문서 작성 후 업그레이드할 예정입니다.
-   &lt;/s&gt;
-  &lt;/div&gt;
-  &lt;p style=&quot;text-align: center; clear: none; float: none;&quot;&gt;
-   &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:820px;;height:auto;max-width:100%&quot;&gt;
-    &lt;img src=&quot;/assets/images/63/1.png&quot; /&gt;
-   &lt;/span&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;div&gt;
-   &lt;b&gt;
-    &lt;i&gt;
-     Application Access
-    &lt;/i&gt;
-    :
-   &lt;/b&gt;
-   Jira에 로그인이 가능한 그룹을 설정하며, 여기에 추가되어있지않다면 Jira에 로그인이 불가능합니다.
-  &lt;/div&gt;
-  &lt;p&gt;
-  &lt;/p&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    또한 여기서 라이선스 사용자 수를 체크하기에 중요한 메뉴 중 하나라고 보시면 됩니다.
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;p style=&quot;text-align: center; clear: none; float: none;&quot;&gt;
-   &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:820px;;height:auto;max-width:100%&quot;&gt;
-    &lt;img src=&quot;/assets/images/63/2.png&quot; /&gt;
-   &lt;/span&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;i&gt;
-    Jira Software configuration
-   &lt;/i&gt;
-   : Jira에 조금 익숙하신 분들을 위한 메뉴로,
-  &lt;/p&gt;
-  &lt;p&gt;
-   앞서 나온 Scrum Board사용 시 Sprint를 동시에 여러 개 진행할 수 있도록하는 옵션입니다.
-  &lt;/p&gt;
-  &lt;p&gt;
-   기본은 동시에 하나의 스프린트만 진행하도록 되어있습니다.
-   &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:538px;text-align: center;;height:auto;max-width:100%&quot;&gt;
-    &lt;img src=&quot;/assets/images/63/3.png&quot; /&gt;
-   &lt;/span&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;b&gt;
-    &lt;i&gt;
-     Application Link
-    &lt;/i&gt;
-    :
-   &lt;/b&gt;
-   타 Atlassian 솔루션과의 연계를 위한 설정입니다. 해당 솔루션이 있는 서버의 URL을 입력 후,
-  &lt;/p&gt;
-  &lt;p&gt;
-   Create new link 버튼을 클릭 시 연동이 가능하며, 관리자 권한이 필요합니다.
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   주로 Confluence와 연동하여 사용하며, 이는 차후에 Confluence 문서에서 좀 더 자세히 다루도록 하겠습니다.
-  &lt;/p&gt;
-  &lt;p style=&quot;text-align: center; clear: none; float: none;&quot;&gt;
-   &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:820px;;height:auto;max-width:100%&quot;&gt;
-    &lt;img src=&quot;/assets/images/63/4.png&quot; /&gt;
-   &lt;/span&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;b&gt;
-    &lt;i&gt;
-     Application Navigator
-    &lt;/i&gt;
-    :
-   &lt;/b&gt;
-   Jira 좌측 상단의 모양의
-   &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:30px;text-align: center;;height:auto;max-width:100%&quot;&gt;
-    &lt;img src=&quot;/assets/images/63/5.png&quot; /&gt;
-   &lt;/span&gt;
-   설정으로, 단순히 링크를 추가하여 해당 링크로 이동할 수 있는 설정입니다.
-  &lt;/p&gt;
-  &lt;p&gt;
-   Jira에서 자주 이동하는 사이트가 있을 경우 등록해두면 편리합니다.
-  &lt;/p&gt;
-  &lt;p style=&quot;text-align: center; clear: none; float: none;&quot;&gt;
-   &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:820px;;height:auto;max-width:100%&quot;&gt;
-    &lt;img src=&quot;/assets/images/63/6.png&quot; /&gt;
-   &lt;/span&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    &lt;b&gt;
-     [Jira Administration - Projects]
-    &lt;/b&gt;
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    Jira 내의 프로젝트 관리 화면으로 메뉴가 두 개 뿐입니다.
-    &lt;s&gt;
-     행복
-    &lt;/s&gt;
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;p&gt;
-  &lt;/p&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    Projects를 클릭 시 다음과 같이 생성되어있는 프로젝트의 목록이 보여지며, 앞서 말씀드린대로
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    Change project type을 통해 Business타입을 Software타입으로 변경하는 등의 작업이 가능합니다.
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    &lt;p style=&quot;text-align: center; clear: none; float: none;&quot;&gt;
-     &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:820px;;height:auto;max-width:100%&quot;&gt;
-      &lt;img src=&quot;/assets/images/63/7.png&quot; /&gt;
-     &lt;/span&gt;
-    &lt;/p&gt;
-    &lt;p&gt;
-     &lt;br /&gt;
-    &lt;/p&gt;
-    &lt;br /&gt;
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    &lt;br /&gt;
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    &lt;br /&gt;
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   Project 카테고리의 경우, 단순 검색을 위해 추가하는 메뉴로써 프로젝트의 갯수가 많을 때 필요한 경우
-  &lt;/p&gt;
-  &lt;p&gt;
-   Business타입이나 Software타입 외에 임의로 프로젝트를 분류하여 검색하기 쉽도록 하기위해 사용합니다.
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;s&gt;
-    (딱히 많이 사용하지는 않습니다)
-   &lt;/s&gt;
-  &lt;/p&gt;
-  &lt;p style=&quot;text-align: center; clear: none; float: none;&quot;&gt;
-   &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:820px;;height:auto;max-width:100%&quot;&gt;
-    &lt;img src=&quot;/assets/images/63/8.png&quot; /&gt;
-   &lt;/span&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    &lt;b&gt;
-     [Jira Administration - Add-ons]
-    &lt;/b&gt;
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    단도직입적으로, 돈을 요구하는 메뉴입니다. 보통 일반적으로 아시는 앱스토어 같은 것을 생각하시면 되며,
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    JIRA의 기본기능으로 부족한 것들을 메꿔주는 역할을 합니다.
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    &lt;br /&gt;
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    물론 무료이면서도 훌륭한 플러그인들도 많이 있으나 보통 조금 쓸만하다싶으면 유료인 경우가 대부분이죠.
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    아무튼 현재 Jira의 마켓플레이스에 등록된 플러그인은 3천 개를 넘어가며, 당연히 어떤 플러
-   &lt;/span&gt;
-   그인이 좋은지, 필요한지는
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    각 회사 사정에 따라, 한 달의 무료 체험을 통해 사용하면서 알아내는 수밖에 없습니다.
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    &lt;br /&gt;
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    범용적으로 Workflow를 추가로 제어할 수 있는 Jira Suit Utilities와 Toolkit, 간트차트를 만들 수 있는 Biggantt같은 것들이 있으나,
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    이 또한 사내 사정에 따라 필요할 수도, 없을 수도 있습니다.
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    &lt;br /&gt;
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    아무튼 이 메뉴는 Find new add-ons에서 마켓플레이스에 접속하여 필요한 플러그인을 검색하여 설치 후,
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    Manage add-ons를 통해 해당 플러그인을 설정하는 구조를 가지고 있는데, 대부분의 고객사는 외부인터넷이되지 않는 환경이 많습니다.
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;p&gt;
-  &lt;/p&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    이럴 경우, maketplace.atlassian.com에서 해당 플러그인을 검색 후, jar파일로 다운받아서 설치가 가능합니다.
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;b&gt;
-    &lt;i&gt;
-     Find new add-ons
-    &lt;/i&gt;
-    :
-   &lt;/b&gt;
-   앞에서 설명한 바와 같이 Atlassian마켓플레이스에서 플러그인을 검색하여 설치합니다.
-  &lt;/p&gt;
-  &lt;p&gt;
-   Admin 권한이 필요하며, 외부인터넷이 되지 않는 환경이거나, 사용하지 않도록 Disable할 경우 사용이 불가능합니다.
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p style=&quot;text-align: center; clear: none; float: none;&quot;&gt;
-   &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:820px;;height:auto;max-width:100%&quot;&gt;
-    &lt;img src=&quot;/assets/images/63/9.jpg&quot; /&gt;
-   &lt;/span&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;b&gt;
-    &lt;i&gt;
-     Manage add-ons
-    &lt;/i&gt;
-    :
-   &lt;/b&gt;
-   설치된 플러그인들의 설정을 변경하거나, 제거할 수 있으며, 라이선스의 업데이트가 가능합니다.
-  &lt;/p&gt;
-  &lt;p&gt;
-   또한 외부 인터넷이 되지 않거나, 마켓플레이스를 사용할 수 없을 때 외부에서 받은 jar파일을 업로드하여 설치가 가능합니다.
-  &lt;/p&gt;
-  &lt;p style=&quot;text-align: center; clear: none; float: none;&quot;&gt;
-   &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:820px;;height:auto;max-width:100%&quot;&gt;
-    &lt;img src=&quot;/assets/images/63/10.jpg&quot; /&gt;
-   &lt;/span&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   다음에는 본 블로그를 작성하게 된 계기인 Issue 설정에 대해 기술해보도록 하겠습니다.
-  &lt;/p&gt;
-  &lt;div class=&quot;container_postbtn&quot;&gt;
-  &lt;/div&gt;
-  &lt;div style=&quot;text-align:left; padding-top:10px;clear:both&quot;&gt;
-  &lt;/div&gt;
- &lt;/div&gt;
-&lt;/div&gt;
-</description>
-        <pubDate>Sun, 05 Feb 2017 13:23:05 +0900</pubDate>
-        <link>https://tech.osci.kr/opensourceconsulting/2017/02/05/tistory-63/</link>
-        <guid isPermaLink="true">https://tech.osci.kr/opensourceconsulting/2017/02/05/tistory-63/</guid>
-        
-        <category>OpenSourceConsulting</category>
-        
-        
-        <category>OpenSourceConsulting</category>
         
       </item>
     
