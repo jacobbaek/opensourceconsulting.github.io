@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Confluence Page CSS 꾸미기"
+title: "ConfluencePage CSS꾸미기"
 description: "Confluence CSS로 멋짐을 입혀서 가독성과 페이지를 이쁘게 꾸미는 방법을 소개합니다."  
 author: it2seiyon
 date: 2018-07-23
@@ -60,7 +60,7 @@ CSS로 `멋`을 내다보면 실수할 수도 있으니 운영시간 이외에 �
  ```
 
 코드를 복사&붙여 넣기 후 바뀐 페이지를 확인할 수 있습니다.  
-Edit할 때는 보이지 않지만 저정 후 보여요 :)  
+Edit할 때는 보이지 않지만 저장 후 보여요 :)  
 간단한 방법으로 각자의 `멋`을 추가해보시는건 어떨까요?  
 
 오픈소스컨설팅  

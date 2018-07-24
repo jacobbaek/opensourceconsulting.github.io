@@ -7,12 +7,12 @@ Sharing Tech. Growing Together.
 </description>
     <link>https://tech.osci.kr/</link>
     <atom:link href="https://tech.osci.kr/rss" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 24 Jul 2018 17:12:56 +0900</pubDate>
-    <lastBuildDate>Tue, 24 Jul 2018 17:12:56 +0900</lastBuildDate>
+    <pubDate>Tue, 24 Jul 2018 23:49:39 +0900</pubDate>
+    <lastBuildDate>Tue, 24 Jul 2018 23:49:39 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
     
       <item>
-        <title>Confluence Page CSS 꾸미기</title>
+        <title>ConfluencePage CSS꾸미기</title>
         <description>&lt;h1 id=&quot;오픈소스컨설팅-기술-블로그&quot;&gt;오픈소스컨설팅 기술 블로그&lt;/h1&gt;
 &lt;h2 id=&quot;기술을-나눕니다-함께-성장합니다&quot;&gt;기술을 나눕니다. 함께 성장합니다.&lt;/h2&gt;
 
@@ -72,7 +72,7 @@ CSS로 &lt;code class=&quot;highlighter-rouge&quot;&gt;멋&lt;/code&gt;을 내�
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;코드를 복사&amp;amp;붙여 넣기 후 바뀐 페이지를 확인할 수 있습니다.&lt;br /&gt;
-Edit할 때는 보이지 않지만 저정 후 보여요 :)&lt;br /&gt;
+Edit할 때는 보이지 않지만 저장 후 보여요 :)&lt;br /&gt;
 간단한 방법으로 각자의 &lt;code class=&quot;highlighter-rouge&quot;&gt;멋&lt;/code&gt;을 추가해보시는건 어떨까요?&lt;/p&gt;
 
 &lt;p&gt;오픈소스컨설팅&lt;br /&gt;
