@@ -30,8 +30,8 @@ Windows, Mac(Linux) 환경 구성 방법을 안내해 드리겠습니다.
   - Atom (편집도구)
 
 ### Windows
- - Git 설치 https://git-scm.com/download/win  
- - Ruby 설치  https://github.com/oneclick/rubyinstaller2/releases/download/rubyinstaller-2.5.1-2/rubyinstaller-devkit-2.5.1-2-x64.exe   
+ - Git 설치 [ https://git-scm.com/download/win ]  
+ - Ruby 설치  [ https://github.com/oneclick/rubyinstaller2/releases/download/rubyinstaller-2.5.1-2/rubyinstaller-devkit-2.5.1-2-x64.exe ]   
  - `Start Command Prompt with Ruby` 실행
  - utf8 설정
 ```
@@ -83,7 +83,7 @@ C:\Users\sy\work\opensourceconsulting.github.io>bundle install
   ```
 
 ### macOS
- - Git 설치 [https://git-scm.com/download/mac]  
+ - Git 설치 [ https://git-scm.com/download/mac ]  
  - Ruby Version 확인
 ```
 > Ruby -v
@@ -166,7 +166,7 @@ http://127.0.0.1:4000/ post 확인
 
 - Create Pull Request  
 GitHub에서 생성한 브랜치를 Master에 Merge를 요청합니다.  
-GitHub URL [https://github.com/OpenSourceConsulting/opensourceconsulting.github.io]  
+GitHub URL [ https://github.com/OpenSourceConsulting/opensourceconsulting.github.io ]  
 
 ![Branch 메뉴](/assets/images/branch_1.png)  
 branches 메뉴 선택  
