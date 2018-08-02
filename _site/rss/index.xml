@@ -7,9 +7,133 @@ Sharing Tech. Growing Together.
 </description>
     <link>https://tech.osci.kr/</link>
     <atom:link href="https://tech.osci.kr/rss" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 02 Aug 2018 07:47:34 +0900</pubDate>
-    <lastBuildDate>Thu, 02 Aug 2018 07:47:34 +0900</lastBuildDate>
+    <pubDate>Thu, 02 Aug 2018 20:56:23 +0900</pubDate>
+    <lastBuildDate>Thu, 02 Aug 2018 20:56:23 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>Confluence 6.11.0-beta Release Notes 분석</title>
+        <description>&lt;p&gt;Confluence 6.11.0 beta가 릴리즈 됐습니다. 몇가지 큰 변화기 있는데요 한번 살펴보겠습니다.&lt;br /&gt;
+ &lt;img src=&quot;/assets/images/44204745/0&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;설치&quot;&gt;설치&lt;/h1&gt;
+&lt;p&gt;다운로드 받아서 설치를 진행해 봤습니다.&lt;br /&gt;
+아래 주소에서 다운로드 받을 수 있습니다.&lt;br /&gt;
+https://www.atlassian.com/software/confluence/download-eap?&lt;br /&gt;
+https://www.atlassian.com/software/confluence/downloads/binary/atlassian-confluence-6.11.0-beta1-x64.bin&lt;br /&gt;
+&lt;img src=&quot;/assets/images/44204745/1&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;저는 간단한게 Virtualbox에 vm 올려서 설치를 해보겠습니다.&lt;br /&gt;
+저는 평소에 Virtualbox + Vagrant 조합을 사용해서 테스트를 하는데요 편하고 쉽습니다.&lt;br /&gt;
+자주 사용하는 개발환경, 테스트환경은 provisioning script로 작성하여 git에서 관리하고 있습니다.&lt;br /&gt;
+(언제 어디서나 테스트 환경을 뚝.딱! 만들 수 있습니다. from 좋은 선배)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/44204745/2&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;주요기능&quot;&gt;주요기능&lt;/h1&gt;
+&lt;h2 id=&quot;첨부파일-edit&quot;&gt;첨부파일 edit&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;A better way to edit files
+Confluence already lets you upload a wide range of files to share and discuss with your team. We’ve now made it easier to make changes to your files without the hassle of downloading and uploading multiple times.
+You can now edit any file attached to a Confluence page using a desktop application, then save the file back to Confluence in a few clicks. And it’s not just available for Microsoft Offices documents; it works for Photoshop files, Keynote &amp;gt; &amp;gt; presentations — any attached file with a compatible application installed on your computer.
+This feature replaces the Edit in Office function, which had some tricky limitations. It was restricted to Microsoft Office documents and only worked if you had the right browser, operating system and app combo running.
+Read more in our guide to editing files.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;이제 컴퓨터에 설치된 어플리케이션을 통해 업로드된 첨부파일을 편집할 수 있습니다.&lt;br /&gt;
+ Microsoft Office 문서에만 사용할수있는 것은 아닙니다. Photoshop 파일, Keynote 등 컴퓨터에 설치된 호환 응용 프로그램이 있는 첨부파일에서 작동합니다.&lt;br /&gt;
+ 설치한 컨플루언스로 편집 기능을 이용해 보겠습니다.&lt;br /&gt;
+ 처음에는 Atlassian 프로그램을 설치해야 합니다. macOS도 지원하네요 : )&lt;br /&gt;
+ &lt;img src=&quot;/assets/images/44204745/3&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;설치를 하구요.&lt;br /&gt;
+ &lt;img src=&quot;/assets/images/44204745/4&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;어플리케이션을 실행하면 Status Bar에 작은 아틀라시안 아이콘이 생깁니다.&lt;br /&gt;
+ &lt;img src=&quot;/assets/images/44204745/5&quot; alt=&quot;&quot; /&gt;&lt;br /&gt;
+ Confluence 에서 클라이언트로 접속을 허용 할건지 팝업이 뜹니다.&lt;br /&gt;
+ &lt;img src=&quot;/assets/images/44204745/6&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Trust로 허용 하면 연결 됐다는 메시지가 나옵니다.&lt;br /&gt;
+ &lt;img src=&quot;/assets/images/44204745/7&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Confluence로 돌아가서 Edit with를 누르면 Edit with Excel로 변경이 되어 있습니다.&lt;br /&gt;
+ &lt;img src=&quot;/assets/images/44204745/8&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Edit 버튼을 누르면 엑셀이 실행 되면서 편집을 할 수 있습니다.&lt;br /&gt;
+ &lt;img src=&quot;/assets/images/44204745/9&quot; alt=&quot;&quot; /&gt;&lt;br /&gt;
+ Excel 파일을 수정 후 저장을 하게 되면&lt;br /&gt;
+ Upload 버튼이 활성화 됩니다.&lt;br /&gt;
+ &lt;img src=&quot;/assets/images/44204745/10&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Upload를 하게되면 변경 사항에 Companion app으로 수정됐다는 이력이 기록됩니다.&lt;br /&gt;
+ &lt;img src=&quot;/assets/images/44204745/11&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;아쉽지만 동시편집은 안됐습니다.&lt;br /&gt;
+ 엑셀 레벨에서 편집이 되기때문에 동시편집은 힘들겠죠?&lt;/p&gt;
+
+&lt;p&gt;Keynote 파일도 편집을 해보겠습니다. Edit with Kenote 버튼이 활성화 되네요.&lt;br /&gt;
+ &lt;img src=&quot;/assets/images/44204745/12&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Keynote가 실행됩니다.&lt;br /&gt;
+ &lt;img src=&quot;/assets/images/44204745/13&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;변경 후 저장하면 Upload 버튼이 활성화 됩니다.&lt;br /&gt;
+ &lt;img src=&quot;/assets/images/44204745/14&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;변경이력 내용을 보면 Keynote 파일이 Companion app으로 업로드 됐다고 나옵니다.&lt;br /&gt;
+ &lt;img src=&quot;/assets/images/44204745/15&quot; alt=&quot;&quot; /&gt;&lt;br /&gt;
+ 앞으로 Confluence는 다양한 어플리케이션과 작업할 수 있는 환경이 되겠네요. (엄지 척!)&lt;/p&gt;
+
+&lt;h2 id=&quot;support-zip-생성이-쉬워졌습니다&quot;&gt;Support Zip 생성이 쉬워졌습니다.&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Easier ways to generate support zips   We’ve made it easier for you to create support zips from your site. A new REST API allows you to generate a support zip, and then download the zip remotely. You can even generate support zips from multiple nodes in your Data Center cluster with a single request.
+We hope that this API will save a huge amount of time when you’re investigating an issue, and also opens up opportunities for automating support zip generation.
+Find out how to generate a support zip via REST for Server or for Data Center.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;REST API를 통해서 Support Zip을 생성하고 다운로드 할 수 있다고 합니다. Data Center 버전에서는 여러 노드에서 Support Zip을 쉽게 만들 수 있을 것 같습니다.&lt;br /&gt;
+자동화도 쉽게 할 수 있겠습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;data-center-버전에서-xml-backups-스케줄이-비활성화-되었습니다&quot;&gt;Data Center 버전에서 XML backups 스케줄이 비활성화 되었습니다.&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Scheduled XML backups disabled for Data Center   Having a robust backup strategy is essential. For small or test instances, the scheduled daily XML backup may be adequate, but once you’re running at scale we recommend you back up your database, install and home directories regularly. &lt;br /&gt;
+In this release, we’ve disabled the daily XML backup for sites with a Data Center license.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&quot;새로운-분석정보-제공-예정&quot;&gt;새로운 분석정보 제공 예정&lt;/h1&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;New diagnostics info coming soon   After upgrading to Confluence 6.11, you may see some new messages in your application log, and a new  &lt;code&gt;   atlassian-diagnostics.log  &lt;/code&gt;  file, which is also included in support zips. This is related to new diagnostic information we’re working on, for things like low memory or disk space, or slow HTTP requests, long running tasks, or macro rendering. No action is required for these messages for now. &lt;br /&gt;
+We plan to fine-tune the thresholds and provide a UI for this diagnostic information in an upcoming Confluence release.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Confluence 6.11로 업그레이드하면 새로운 atlassian-diagnostics.log를 확인할 수 있습니다.&lt;br /&gt;
+이 로그는 느린 HTTP 요청, 메모리 또는 디스크 공간부족, 장기 실행 작업 또는 매크로 렌더링 관련하여 작업중인 진단 정보와 관련이 있습니다. 이 메시지에 대한 조치는 당장 필요하지 않습니다. 아틀라시안은 앞으로 릴리즈에서 임계 값을 미세 조정하고 진단 정보를 보여주는 UI를 제공 예정에 있다고 합니다. 반가운 소식입니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;지원하는-플랫폼-변경사항&quot;&gt;지원하는 플랫폼 변경사항&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Supported platforms changes &lt;br /&gt;
+In this release we will be adding support for:&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Oracle 12c R2&lt;/li&gt;
+    &lt;li&gt;Microsoft SQL Server 2017&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Oralce 12c r2, MS SQL 2017을 지원합니다.&lt;/p&gt;
+
+&lt;h1 id=&quot;wrap-up&quot;&gt;Wrap up&lt;/h1&gt;
+&lt;p&gt;변화의 바람이 6.11에서 불어오네요. 첨부파일을 Edit할 수 있는 기능과 메모리 사용량, 느린 HTTP 요청 등 APM에서 제공하던 기능을 Confluence에서 제공 예정입니다.&lt;br /&gt;
+Confluence를 사용하면서 조금 아쉽다 하는 부분을 예리하게 기능 추가/개선이 되는 것 같습니다.&lt;br /&gt;
+지금까지 반가운 6.11 Beta Release 소식이었습니다.&lt;br /&gt;
+감사합니다.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 02 Aug 2018 00:00:00 +0900</pubDate>
+        <link>https://tech.osci.kr/2018/08/02/44204745/</link>
+        <guid isPermaLink="true">https://tech.osci.kr/2018/08/02/44204745/</guid>
+        
+        
+      </item>
     
       <item>
         <title>기술 블로그 PR을 받았습니다.</title>
@@ -137,6 +261,124 @@ atlassian@osci.kr&lt;/p&gt;
         
         
         <category>Confluence, Atlassian</category>
+        
+      </item>
+    
+      <item>
+        <title>Bamboo Agent 설정</title>
+        <description>&lt;p&gt;Bamboo Agent로 Remote Server에서 Job을 실행할 수 있는 환경을 안내드립니다.&lt;br /&gt;
+전체 순서는 아래와 같습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;대상 서버에 Bamboo Agent 설치&lt;/li&gt;
+  &lt;li&gt;Server capabilities 설정&lt;/li&gt;
+  &lt;li&gt;Job 설정&lt;/li&gt;
+  &lt;li&gt;결과 확인&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;bamboo-agent-설치&quot;&gt;Bamboo Agent 설치&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;사전 조건
+    &lt;ul&gt;
+      &lt;li&gt;Bamboo Server ↔ Remote Server 방화벽 설정(proxy 사용 시 80, 8085, 54663)&lt;/li&gt;
+      &lt;li&gt;Remote Server JDK 1.8 설치&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;관리자-메뉴의-agents&quot;&gt;관리자 메뉴의 Agents&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/41553358/0&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;install-remote-agent&quot;&gt;Install remote agent&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/41553358/1&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;agent-jar-파일을-다운로드-받아서-remote-server에서-실행합니다&quot;&gt;Agent JAR 파일을 다운로드 받아서 Remote Server에서 실행합니다.&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/41553358/2&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#bamboo agent home directory를 생성합니다.   &lt;/span&gt;
+/var/atlassian/application-data/bamboo-home  
+&lt;span class=&quot;c&quot;&gt;#bamboo home path를 지정합니다.&lt;/span&gt;
+java &lt;span class=&quot;nt&quot;&gt;-Dbamboo&lt;/span&gt;.home&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/var/atlassian/application-data/bamboo-home &lt;span class=&quot;nt&quot;&gt;-jar&lt;/span&gt; atlassian-bamboo-agent-installer-6.6.1.jar http://13.209.93.233:8085/agentServer/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/41553358/3&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;bamboo-home에 bin, log등 파일 생성을 확인할 수 있습니다.
+    &lt;h3 id=&quot;approve-this-agent-at-링크로-ip-승인&quot;&gt;Approve this agent at 링크로 IP 승인&lt;/h3&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/41553358/4&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;등록된-remote-agent-확인&quot;&gt;등록된 Remote Agent 확인&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/41553358/5&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;server-capabilities&quot;&gt;Server capabilities&lt;/h2&gt;
+&lt;p&gt;서버가 할 수 있는 작업들을 Key, Value 또는 환경을 정의합니다.&lt;br /&gt;
+python, test 값으로 테스트 해보겠습니다.&lt;/p&gt;
+&lt;h3 id=&quot;메뉴는-agents--shared-remote-capabilities-입니다&quot;&gt;메뉴는 Agents &amp;gt; Shared remote capabilities 입니다.&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/41553358/6&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;key-value에-python-test를-추가합니다&quot;&gt;Key, Value에 python, test를 추가합니다.&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/41553358/7&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;이제 Remote Agent에 작업을 실행해 보겠습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;job-설정&quot;&gt;Job 설정&lt;/h2&gt;
+&lt;p&gt;Job에서 Requirements를 선택하여 사전에 정의한 python을 선택합니다.&lt;br /&gt;
+아래 Python Code로 테스트를 진행 했습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#file wirte test#/opt/test.py&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/opt/pyText.txt&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'w'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;11&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;d line &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;Task &amp;gt; Requirements 선택하여 Remote Agent의 capabilities에서 정의한 값 선택&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/41553358/8&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Script 명령어 작성&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/41553358/9&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;결과확인&quot;&gt;결과확인&lt;/h2&gt;
+&lt;h3 id=&quot;run-plan&quot;&gt;Run plan&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/41553358/10&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;remote-agent의-python-sample-code-실행-결과&quot;&gt;Remote Agent의 python sample code 실행 결과&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/41553358/11&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;서버에 Agent 설치 부터 실행까지 해봤습니다. 중간에 capabilities 설정이 생소합니다.&lt;br /&gt;
+Plan의 여러 Task들이 capabilities에 의해서 여러 Agent의 실행 결과에 따라 빌드를 수행할 수 있습니다.&lt;br /&gt;
+API 빌드 결과에 따라서 다음 API 서버의 작업을 다르게 설정할 수 있는 유연한 계획을 수립할 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;Bamboo Server와 Agent간의 방화벽 허용도 중요합니다. Proxy서버에서 8085는 처리할 수 있지만 54663 포트는 proxy를 하지 않도록 권장하고 있습니다.&lt;/p&gt;
+
+&lt;p&gt;Bamboo는 UI/UX가 군더더기 없고 깔끔해서 관리하기가 좋은 것 같습니다.
+또한 Jira, Bitbucket과 강력한 통합 환경을 제공하는데요 이 내용은 다음에 공유하도록 하겠습니다.
+감사합니다.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 17 Jul 2018 00:00:00 +0900</pubDate>
+        <link>https://tech.osci.kr/ci/cd/2018/07/17/41553358/</link>
+        <guid isPermaLink="true">https://tech.osci.kr/ci/cd/2018/07/17/41553358/</guid>
+        
+        <category>Bamboo</category>
+        
+        <category>CI/CD</category>
+        
+        <category>Atlassian</category>
+        
+        
+        <category>CI/CD</category>
         
       </item>
     
@@ -2661,838 +2903,6 @@ Atom 에디터로 Post를 작성하기 위해서 Markdown을 습득했습니다.
         
         
         <category>Atlassian, ALM, Project Management</category>
-        
-      </item>
-    
-      <item>
-        <title>Jira 설정_6(Screen)</title>
-        <description>&lt;div class=&quot;area_view&quot;&gt;
- &lt;div class=&quot;tt_article_useless_p_margin&quot;&gt;
-  &lt;div&gt;
-   &lt;b&gt;
-    &lt;i&gt;
-     Screen
-    &lt;/i&gt;
-    :
-   &lt;/b&gt;
-   스크린을 클릭 시 뭔가
-   &lt;s&gt;
-    더럽게
-   &lt;/s&gt;
-   많은 내용이 뜨는 것을 보실 수 있는데, 일단 스크린이란 말 그대로 화면입니다.
-  &lt;/div&gt;
-  &lt;div&gt;
-   여기서 화면이란 다음처럼 이슈를 생성 시 보여지는 팝업 창 그 자체라고 생각하시면됩니다.
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;p&gt;
-  &lt;/p&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    이 팝업창을 보시면 아시겠지만, 뭔가 필드(Summary, Due Date등)가 굉장히 많이 있는 것을 확인할 수 있으며,
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    스크린은 해당 필드들을 화면에서 숨기거나 보여주고 싶은 필드를 설정하는 등의 설정입니다.
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;p style=&quot;text-align: center; clear: none; float: none;&quot;&gt;
-   &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:819px;;height:auto;max-width:100%&quot;&gt;
-    &lt;img src=&quot;/assets/images/66/0.png&quot; /&gt;
-   &lt;/span&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   앞서 해왔듯이 우측 상단의 Add Screen버튼을 클릭하여 다음과 같이 새로운 스크린을 하나 추가합니다.
-   &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:548px;text-align: center;;height:auto;max-width:100%&quot;&gt;
-    &lt;img src=&quot;/assets/images/66/1.png&quot; /&gt;
-   &lt;/span&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-  &lt;/p&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    &lt;br /&gt;
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;p&gt;
-  &lt;/p&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    그럼 아무것도 없는 화면이 나오며, 하단의 Select Field를 눌러서 다음처럼 기본적으로 필요한 몇 가지를 설정해줍니다.
-   &lt;/span&gt;
-   &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:291px;text-align: center;;height:auto;max-width:100%&quot;&gt;
-    &lt;img src=&quot;/assets/images/66/2.png&quot; /&gt;
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;div&gt;
-    &lt;br /&gt;
-   &lt;/div&gt;
-   &lt;div&gt;
-    &lt;b&gt;
-     &lt;i&gt;
-      Screen schemes
-     &lt;/i&gt;
-     :
-    &lt;/b&gt;
-    Scheme을 추가하기 전에 한 가지 짚고 넘어가야할 것이 있는데
-   &lt;/div&gt;
-   &lt;div&gt;
-    Screen, Screen schemes, Issue type screen schemes의 세 가지의 관계에 대해서입니다.
-   &lt;/div&gt;
-   &lt;div&gt;
-    &lt;br /&gt;
-   &lt;/div&gt;
-   &lt;div&gt;
-    앞의 이슈타입과 워크플로우와는 다르게 스크린과 이후 나올 필드의 경우 세 가지로 나뉘어있는데,
-   &lt;/div&gt;
-   &lt;div&gt;
-    스크린은 앞에서 보신 바와 같이 팝업창 그 자체라고 보시면됩니다.
-   &lt;/div&gt;
-   &lt;div&gt;
-    그럼 Screen schemes와 Issue type screen schemes의 차이는 무엇인가인데,
-   &lt;/div&gt;
-   &lt;div&gt;
-    &lt;br /&gt;
-   &lt;/div&gt;
-   &lt;ul&gt;
-    &lt;ul&gt;
-     &lt;li&gt;
-      Screen schemes은 해당 scheme을 사용 시 Create, Edit, View 시에 각각 어떤 스크린이 기본적으로 보여질 것인지
-     &lt;/li&gt;
-     &lt;li&gt;
-      Issue type screen schemes은 각 이슈타입별로 어떤 Screen schemes을 사용할 것인지
-     &lt;/li&gt;
-    &lt;/ul&gt;
-   &lt;/ul&gt;
-   &lt;div&gt;
-    입니다.
-   &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;div&gt;
-    &lt;br /&gt;
-   &lt;/div&gt;
-   &lt;div&gt;
-    차후
-    &lt;span style=&quot;color: rgb(255, 0, 0);&quot;&gt;
-     프로젝트설정에서는 Issue type screen schemes을 선택
-    &lt;/span&gt;
-    하게됩니다.  설명을 들을 때는 쉽지만 실제로 적용하려하면
-   &lt;/div&gt;
-   &lt;div&gt;
-    꽤나 헷갈리는 부분이 되기에 몇 번의 연습이 필요합니다. (
-    &lt;s&gt;
-     본인도 자주 헷갈림
-    &lt;/s&gt;
-    )
-   &lt;/div&gt;
-   &lt;div&gt;
-    &lt;br /&gt;
-   &lt;/div&gt;
-   &lt;div&gt;
-    백문이불여일타라고, 다음과 같이 scheme도 추가해줍니다.
-   &lt;/div&gt;
-   &lt;div&gt;
-    &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:552px;text-align: center;;height:auto;max-width:100%&quot;&gt;
-     &lt;img src=&quot;/assets/images/66/3.png&quot; /&gt;
-    &lt;/span&gt;
-   &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;p&gt;
-    &lt;br /&gt;
-   &lt;/p&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;div&gt;
-    그럼 다음과 같이 scheme 생성되며, 기본 스크린으로는 Web Bug Default Screen을 사용함을 알 수 있습니다.
-   &lt;/div&gt;
-   &lt;div&gt;
-    여기서의 기본이란 해당 scheme을 사용 시 모든 보여지는 스크린을 Web Bug Default Screen으로 하겠다는 의미이며,
-   &lt;/div&gt;
-   &lt;div&gt;
-    만약 이슈 생성, 수정, 뷰의 화면을 전부 다르게 하고싶을 경우 우측상단의 Associate an Issue Operation with a Screen을 클릭하여
-   &lt;/div&gt;
-   &lt;div&gt;
-    다른 스크린을 할당해줍니다.
-   &lt;/div&gt;
-   &lt;div&gt;
-    &lt;br /&gt;
-   &lt;/div&gt;
-   &lt;div&gt;
-    물론 본 문서에서는
-    &lt;s&gt;
-     귀찮으므로
-    &lt;/s&gt;
-    생략합니다.
-   &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;p style=&quot;text-align: center; clear: none; float: none;&quot;&gt;
-    &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:820px;;height:auto;max-width:100%&quot;&gt;
-     &lt;img src=&quot;/assets/images/66/4.png&quot; /&gt;
-    &lt;/span&gt;
-   &lt;/p&gt;
-   &lt;p&gt;
-    &lt;br /&gt;
-   &lt;/p&gt;
-   &lt;p&gt;
-    &lt;br /&gt;
-   &lt;/p&gt;
-   &lt;p&gt;
-    &lt;br /&gt;
-   &lt;/p&gt;
-   &lt;p&gt;
-   &lt;/p&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;div&gt;
-    &lt;b&gt;
-     &lt;i&gt;
-      Issue tpye Screen schemes
-     &lt;/i&gt;
-     :
-    &lt;/b&gt;
-    해당 Scheme에 대해선 앞에서 설명드렸으므로 바로 만들어봅니다. 다만, Screen Scheme을 기본을 Web Bug Screen Scheme으로 둘 경우 Web Bug타입과 다른 타입과의 비교가 되지않으므로 Default Screen Scheme을 할당해줍니다.
-    &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:549px;text-align: center;;height:auto;max-width:100%&quot;&gt;
-     &lt;img src=&quot;/assets/images/66/5.png&quot; /&gt;
-    &lt;/span&gt;
-   &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;p&gt;
-    &lt;br /&gt;
-   &lt;/p&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   그럼 이와 같은 화면이 나오며, 우린 Web Bug타입에 대해 다른 스크린을 써야하므로 우측 상단의
-  &lt;/div&gt;
-  &lt;div&gt;
-   Associate an Issue Type with a Screen Scheme을 클릭합니다.
-  &lt;/div&gt;
-  &lt;p style=&quot;text-align: center; clear: none; float: none;&quot;&gt;
-   &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:820px;;height:auto;max-width:100%&quot;&gt;
-    &lt;img src=&quot;/assets/images/66/6.png&quot; /&gt;
-   &lt;/span&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   그리고 이걸 이렇게 추가하여 Add를 눌러주시면...
-   &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:548px;text-align: center;;height:auto;max-width:100%&quot;&gt;
-    &lt;img src=&quot;/assets/images/66/7.png&quot; /&gt;
-   &lt;/span&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   이렇게 추가되며, Web Bug 이슈타입엔 Web Bug용 스크린을, 그 외엔 기본 Jira 스크린을 사용하도록 설정이 완료됩니다.
-  &lt;/p&gt;
-  &lt;p style=&quot;text-align: center; clear: none; float: none;&quot;&gt;
-   &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:820px;;height:auto;max-width:100%&quot;&gt;
-    &lt;img src=&quot;/assets/images/66/8.png&quot; /&gt;
-   &lt;/span&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   다음은 필드 설정에 대해 기술하도록하겠습니다.
-  &lt;/p&gt;
-  &lt;div class=&quot;container_postbtn&quot;&gt;
-  &lt;/div&gt;
-  &lt;div style=&quot;text-align:left; padding-top:10px;clear:both&quot;&gt;
-  &lt;/div&gt;
- &lt;/div&gt;
-&lt;/div&gt;
-</description>
-        <pubDate>Tue, 14 Feb 2017 22:59:26 +0900</pubDate>
-        <link>https://tech.osci.kr/opensourceconsulting/2017/02/14/tistory-66/</link>
-        <guid isPermaLink="true">https://tech.osci.kr/opensourceconsulting/2017/02/14/tistory-66/</guid>
-        
-        <category>Jira</category>
-        
-        <category>Jira Screen</category>
-        
-        <category>Jira Admin</category>
-        
-        
-        <category>OpenSourceConsulting</category>
-        
-      </item>
-    
-      <item>
-        <title>Jira 설정_5(Workflow)</title>
-        <description>&lt;div class=&quot;area_view&quot;&gt;
- &lt;div class=&quot;tt_article_useless_p_margin&quot;&gt;
-  &lt;div&gt;
-   &lt;b&gt;
-    &lt;i&gt;
-     Workflow
-    &lt;/i&gt;
-    :
-   &lt;/b&gt;
-   워크플로우는 앞에서 프로젝트 생성 시 잠깐 보셨을텐데, 일반적으로 사용하는 프로세스와 같은 의미라고 생각하시면 됩니다.
-  &lt;/div&gt;
-  &lt;div&gt;
-   예를 들어 현실에서의 결재라인이죠. 아시다시피, 프로세스는 각 업무별로 진행되는 과정이 다릅니다.
-  &lt;/div&gt;
-  &lt;div&gt;
-   기획팀 내부의 일을 처리하는데 개발팀의 프로세스를 탈 필요가 없는 것처럼요.
-  &lt;/div&gt;
-  &lt;div&gt;
-   이에 따라 각 이슈타입별로 다른 워크플로우를 설정할 수 있게되어있습니다.
-  &lt;/div&gt;
-  &lt;div&gt;
-   다음 그림과 같이, 프로젝트를 생성 시 각 프로젝트별로 기본적으로 워크플로우가 따로 생성되어지는 것을 확인할 수 있습니다.
-  &lt;/div&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p style=&quot;text-align: center; clear: none; float: none;&quot;&gt;
-   &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:820px;;height:auto;max-width:100%&quot;&gt;
-    &lt;img src=&quot;/assets/images/65/0.png&quot; /&gt;
-   &lt;/span&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    보시면 현재 사용하고 있는 워크플로우, 마지막 수정일자, 할당되어있는 scheme, 워크플로우의 단계(상태레벨이 몇 개인지),
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    워크플로우 수정이 있습니다. View를 눌러보시면 다음과 같이 해당 워크플로우가 어떻게 동작하는지를 확인할 수 있죠.
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;p&gt;
-  &lt;/p&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    Diagram 형태로도, Text형태로도 볼 수 있으며 필요 시 잘 구성된 워크플로우를 Export하여 타 시스템에서도 써먹을 수 있습니다.
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;p style=&quot;text-align: center; clear: none; float: none;&quot;&gt;
-   &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:820px;;height:auto;max-width:100%&quot;&gt;
-    &lt;img src=&quot;/assets/images/65/1.png&quot; /&gt;
-   &lt;/span&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    본제로 돌아와서, 앞서 만든 WCS(Web Customer Support)프로젝트에 새로운 워크플로우를 추가해보겠습니다.
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    우측 상단의 Add Workflow를 클릭 시 다음과 같은 팝업이 생성되며, 이름을 지정 후 Add를 클릭합니다.
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    안타깝게도 여기선 한글은 지원하지 않으므로 영어로 만드셔야하며, 차후 워크플로우가 늘어날 경우 보기에 어려워지므로
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    &lt;span style=&quot;color: rgb(255, 0, 0);&quot;&gt;
-     반드시 이름을 구분이 쉽도록 명확히 지정
-    &lt;/span&gt;
-    하셔야합니다.
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;p&gt;
-  &lt;/p&gt;
-  &lt;div&gt;
-   본 문서에서는 앞에서 만든 Web Bug타입의 워크플로우를 생성할 것이므로 다음과 같이 만들어보겠습니다.
-   &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:553px;text-align: center;;height:auto;max-width:100%&quot;&gt;
-    &lt;img src=&quot;/assets/images/65/3.png&quot; /&gt;
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   그럼 다음과 같이 아주 심플한 워크플로우가 생성됩니다.
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:361px;text-align: center;;height:auto;max-width:100%&quot;&gt;
-    &lt;img src=&quot;/assets/images/65/4.png&quot; /&gt;
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;div&gt;
-    상태가 오픈만 있으므로, Fix라는 상태를 하나 생성해봅니다. 방법은 Add status를 클릭하면되며,
-   &lt;/div&gt;
-   &lt;div&gt;
-    기존에 존재하는 상태를 선택하거나 새로운 상태를 생성할 수 있습니다.
-   &lt;/div&gt;
-   &lt;div&gt;
-    Fixed의 경우 없었던 상태이므로 다음처럼 new status라는 내용이 나오며 엔터키로 입력 후 Add를 클릭합니다.
-    &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:368px;text-align: center;;height:auto;max-width:100%&quot;&gt;
-     &lt;img src=&quot;/assets/images/65/5.png&quot; /&gt;
-    &lt;/span&gt;
-   &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;p&gt;
-    그럼 다음과 같이 다시 팝업이 생성되며, 카테고리를 지정하도록 나옵니다. Fixed의 경우 Done으로 분류될 것이기에
-   &lt;/p&gt;
-   &lt;p&gt;
-    Done으로 선택 후 Create를 눌러줍니다.
-   &lt;/p&gt;
-   &lt;div&gt;
-    안타깝지만 카테고리의 경우, 시스템에 하드코딩되어있는 부분이기에 간단히 추가는 어려우며 본 문서에서는 넘어가겠습니다.
-   &lt;/div&gt;
-   &lt;div&gt;
-    (
-    &lt;s&gt;
-     필요 시 구글신에게 물어보세요)
-    &lt;/s&gt;
-   &lt;/div&gt;
-   &lt;div&gt;
-    &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:557px;text-align: center;;height:auto;max-width:100%&quot;&gt;
-     &lt;img src=&quot;/assets/images/65/6.png&quot; /&gt;
-    &lt;/span&gt;
-   &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;p&gt;
-    아무튼 만들어지면 뭔가 오른쪽에 빨간색 느낌표와 함께 워닝이 뜹니다.
-   &lt;/p&gt;
-   &lt;p&gt;
-    이는 해당 스테이터스로 이동할 수 있는 연결이 없다는 의미인데 여기서 Add Transition을 눌러주셔도 되고
-   &lt;/p&gt;
-   &lt;div&gt;
-    다음과 같이 스테이터스에 마우스를 올릴 시 나타나는 원형에서 드래그하여 타 스테이터스로 이동 시 새로운 팝업이 생성됩니다.
-    &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:325px;text-align: center;;height:auto;max-width:100%&quot;&gt;
-     &lt;img src=&quot;/assets/images/65/7.png&quot; /&gt;
-    &lt;/span&gt;
-    &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:559px;text-align: center;;height:auto;max-width:100%&quot;&gt;
-     &lt;img src=&quot;/assets/images/65/8.png&quot; /&gt;
-    &lt;/span&gt;
-   &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;p&gt;
-    위처럼 어떤 상태로부터 어떤 상태로 이동할 것인지, 그리고 그 이름은 무엇이 될 것인지를 지정합니다.
-   &lt;/p&gt;
-   &lt;p&gt;
-    여기선 open에서 fixed상태로 이동할 것이므로 간단히 fix라고 하겠습니다.
-   &lt;/p&gt;
-   &lt;div&gt;
-    Screen의 경우, 상태를 Open에서 Fixed로 이동할 때 특정 팝업창을 띄울 것인지 여부를 정하는 내용으로
-   &lt;/div&gt;
-   &lt;div&gt;
-    Screen은 이 다음에 설명드릴 내용으므로 여기선 기본인 None으로 설정합니다.
-   &lt;/div&gt;
-   &lt;div&gt;
-    &lt;br /&gt;
-   &lt;/div&gt;
-   &lt;div&gt;
-    그럼 이렇게 Transition이 추가됩니다.
-   &lt;/div&gt;
-   &lt;div&gt;
-    &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:348px;text-align: center;;height:auto;max-width:100%&quot;&gt;
-     &lt;img src=&quot;/assets/images/65/10.png&quot; /&gt;
-    &lt;/span&gt;
-   &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   샘플 워크플로우이기도 하고 상태가 많으면
-   &lt;s&gt;
-    귀찮으므로
-   &lt;/s&gt;
-   이 워크플로우를 사용하도록 하고 넘어가도록 하겠습니다.
-  &lt;/div&gt;
-  &lt;div&gt;
-   농담도 들어있었지만 실제로 새로 Jira를 도입 시 워크플로우를
-   &lt;span style=&quot;color: rgb(255, 0, 0);&quot;&gt;
-    최대한 간소화
-   &lt;/span&gt;
-   하는 것은 굉장히 중요합니다.
-  &lt;/div&gt;
-  &lt;div&gt;
-   처음에 의욕이 앞서서 많은 복잡다단한 절차를 만들어도, 실제 사용자들이 사용하기엔 어렵고 불편하기에 접근이 어렵기 때문이죠.
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;div&gt;
-    반드시 필요한 절차가 아닐 경우, 사용에 익숙해진 이후에 도입해도 늦지 않습니다.
-   &lt;/div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;div&gt;
-    &lt;b&gt;
-     &lt;i&gt;
-      Workflow Schemes
-     &lt;/i&gt;
-     :
-    &lt;/b&gt;
-    앞에서 만든 워크플로우를 써먹기 위해선 이 Scheme을 지정해야합니다.
-   &lt;/div&gt;
-   &lt;div&gt;
-    Workflow scheme도 워크플로우와 같이 프로젝트 생성 시 기본적으로 생성됩니다.
-   &lt;/div&gt;
-   &lt;div&gt;
-    &lt;br /&gt;
-   &lt;/div&gt;
-   &lt;div&gt;
-    &lt;span&gt;
-     필요 시 우측 상단의 Add Workflow Scheme버튼을 눌러서 새로 생성이 가능합니다만, Workflow와 다른 점은
-    &lt;/span&gt;
-   &lt;/div&gt;
-   &lt;div&gt;
-    &lt;span&gt;
-     여러 개를 만들어봐야 실제로 사용할 것은 하나라는 점을 상기하셔야합니다.
-    &lt;/span&gt;
-   &lt;/div&gt;
-   &lt;div&gt;
-    &lt;span&gt;
-     &lt;br /&gt;
-    &lt;/span&gt;
-   &lt;/div&gt;
-   &lt;div&gt;
-    &lt;span&gt;
-     앞에서도 설명드렸지만, 결국 Jira의 프로젝트 설정이란, 여기서 만들어진 Scheme들에 Associate되는 형태로써
-    &lt;/span&gt;
-   &lt;/div&gt;
-   &lt;div&gt;
-    &lt;span&gt;
-     한 번에 하나의 Scheme설정만 적용받기 때문이죠.
-    &lt;/span&gt;
-   &lt;/div&gt;
-   &lt;div&gt;
-    &lt;span&gt;
-     &lt;br /&gt;
-    &lt;/span&gt;
-   &lt;/div&gt;
-   &lt;div&gt;
-    &lt;span&gt;
-     따라서 원래는 새로운 Scheme을 추가할 필요는 없지만, 그래도 처음 사용자를 위한 문서이니 한 번 추가해보겠습니다.
-    &lt;/span&gt;
-   &lt;/div&gt;
-   &lt;p&gt;
-   &lt;/p&gt;
-   &lt;div&gt;
-    &lt;span&gt;
-     Add Workflow Scheme버튼을 클릭 후 다음처럼 새로운 Scheme을 생성합니다.
-    &lt;/span&gt;
-    &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:552px;text-align: center;;height:auto;max-width:100%&quot;&gt;
-     &lt;img src=&quot;/assets/images/65/11.png&quot; /&gt;
-    &lt;/span&gt;
-   &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;p&gt;
-    그럼 이런 화면이 나오며, 해당 워크플로우 이름이 마음에 안들 경우 수정할 수도 있습니다.
-   &lt;/p&gt;
-   &lt;div&gt;
-    워크플로우를 추가하기 위해, Add Workflow를 클릭 후 Add Existing을 클릭해줍니다.
-   &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;p style=&quot;text-align: center; clear: none; float: none;&quot;&gt;
-    &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:820px;;height:auto;max-width:100%&quot;&gt;
-     &lt;img src=&quot;/assets/images/65/12.png&quot; /&gt;
-    &lt;/span&gt;
-   &lt;/p&gt;
-   &lt;p&gt;
-    &lt;br /&gt;
-   &lt;/p&gt;
-   &lt;p&gt;
-    &lt;br /&gt;
-   &lt;/p&gt;
-   &lt;p&gt;
-    &lt;br /&gt;
-   &lt;/p&gt;
-   &lt;p&gt;
-    여기선 앞에서 만든 Web Bug워크플로우를 선택 후, next를 눌러줍니다.
-   &lt;/p&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;p style=&quot;text-align: center; clear: none; float: none;&quot;&gt;
-    &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:820px;;height:auto;max-width:100%&quot;&gt;
-     &lt;img src=&quot;/assets/images/65/13.png&quot; /&gt;
-    &lt;/span&gt;
-   &lt;/p&gt;
-   &lt;p&gt;
-    &lt;br /&gt;
-   &lt;/p&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   그리고 이 워크플로우를 적용받을 이슈타입을 선택합니다. Web Bug타입용으로 만든 워크플로우이므로 해당 타입을 선택 후 마무리합니다.
-   &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:552px;text-align: center;;height:auto;max-width:100%&quot;&gt;
-    &lt;img src=&quot;/assets/images/65/14.png&quot; /&gt;
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;div&gt;
-    그럼 이렇게 Workflow Scheme에 워크플로우가 추가된 것을 볼 수 있습니다.
-   &lt;/div&gt;
-   &lt;div&gt;
-    의미는 Web Bug이슈타입은 새로 추가한 워크플로우를, 그 외의 모든 이슈타입은 jira의 기본 워크플로우를 타라는 의미죠.
-   &lt;/div&gt;
-   &lt;div&gt;
-    현재는 해당 Scheme이 어떤 프로젝트에서도 쓰이지 않기 때문에 Inactive에 분류되어있는 것을 볼 수 있으며, 프로젝트에서 해당 Scheme을 사용 시 자동으로 Active로 이동됩니다.
-   &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;p style=&quot;text-align: center; clear: none; float: none;&quot;&gt;
-    &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:820px;;height:auto;max-width:100%&quot;&gt;
-     &lt;img src=&quot;/assets/images/65/15.png&quot; /&gt;
-    &lt;/span&gt;
-   &lt;/p&gt;
-   &lt;p&gt;
-    &lt;br /&gt;
-   &lt;/p&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;p&gt;
-    &lt;br /&gt;
-   &lt;/p&gt;
-   중요한 것으로 만약 사용 중인 워크플로우를 수정 시, 다음처럼 경고창이 발생하며 경고창에서
-   &lt;span style=&quot;color: rgb(255, 0, 0);&quot;&gt;
-    꼭 Publish를 눌러주시기 바랍니다
-   &lt;/span&gt;
-   .
-  &lt;/div&gt;
-  &lt;div&gt;
-   그렇지 않으면 적용이 안되거든요.
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;p style=&quot;text-align: center; clear: none; float: none;&quot;&gt;
-    &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:820px;;height:auto;max-width:100%&quot;&gt;
-     &lt;img src=&quot;/assets/images/65/16.png&quot; /&gt;
-    &lt;/span&gt;
-   &lt;/p&gt;
-   &lt;p&gt;
-    &lt;br /&gt;
-   &lt;/p&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   여기까지 Workflow에 대해서 기술하였고 다음 문서에서는 Screen으로 넘어가도록하겠습니다.
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;div class=&quot;container_postbtn&quot;&gt;
-  &lt;/div&gt;
-  &lt;div style=&quot;text-align:left; padding-top:10px;clear:both&quot;&gt;
-  &lt;/div&gt;
- &lt;/div&gt;
-&lt;/div&gt;
-</description>
-        <pubDate>Sun, 12 Feb 2017 00:35:05 +0900</pubDate>
-        <link>https://tech.osci.kr/atlassian,%20jira,%20alm,%20project%20management/2017/02/12/tistory-65/</link>
-        <guid isPermaLink="true">https://tech.osci.kr/atlassian,%20jira,%20alm,%20project%20management/2017/02/12/tistory-65/</guid>
-        
-        <category>Jira</category>
-        
-        <category>Jira Workflow</category>
-        
-        <category>Workflow</category>
-        
-        
-        <category>Atlassian, Jira, ALM, Project Management</category>
         
       </item>
     
