@@ -5,10 +5,10 @@
     <description>기술을 나눕니다. 함께 성장합니다.
 Sharing Tech. Growing Together.
 </description>
-    <link>https://tech.osci.kr/</link>
-    <atom:link href="https://tech.osci.kr/rss" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 02 Aug 2018 20:56:23 +0900</pubDate>
-    <lastBuildDate>Thu, 02 Aug 2018 20:56:23 +0900</lastBuildDate>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/rss" rel="self" type="application/rss+xml"/>
+    <pubDate>Fri, 03 Aug 2018 07:54:56 +0900</pubDate>
+    <lastBuildDate>Fri, 03 Aug 2018 07:54:56 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
     
       <item>
@@ -129,8 +129,8 @@ Confluence를 사용하면서 조금 아쉽다 하는 부분을 예리하게 기
 감사합니다.&lt;/p&gt;
 </description>
         <pubDate>Thu, 02 Aug 2018 00:00:00 +0900</pubDate>
-        <link>https://tech.osci.kr/2018/08/02/44204745/</link>
-        <guid isPermaLink="true">https://tech.osci.kr/2018/08/02/44204745/</guid>
+        <link>http://localhost:4000/2018/08/02/44204745/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/08/02/44204745/</guid>
         
         
       </item>
@@ -169,8 +169,8 @@ https://github.com/OpenSourceConsulting/opensourceconsulting.github.io&lt;br /&g
 &lt;h3 id=&quot;감사합니다&quot;&gt;감사합니다.&lt;/h3&gt;
 </description>
         <pubDate>Fri, 27 Jul 2018 00:00:00 +0900</pubDate>
-        <link>https://tech.osci.kr/git/2018/07/27/44204215/</link>
-        <guid isPermaLink="true">https://tech.osci.kr/git/2018/07/27/44204215/</guid>
+        <link>http://localhost:4000/git/2018/07/27/44204215/</link>
+        <guid isPermaLink="true">http://localhost:4000/git/2018/07/27/44204215/</guid>
         
         <category>git</category>
         
@@ -250,8 +250,8 @@ Edit할 때는 보이지 않지만 저장 후 보여요 :)&lt;br /&gt;
 atlassian@osci.kr&lt;/p&gt;
 </description>
         <pubDate>Mon, 23 Jul 2018 00:00:00 +0900</pubDate>
-        <link>https://tech.osci.kr/confluence,%20atlassian/2018/07/23/confluence-style/</link>
-        <guid isPermaLink="true">https://tech.osci.kr/confluence,%20atlassian/2018/07/23/confluence-style/</guid>
+        <link>http://localhost:4000/confluence,%20atlassian/2018/07/23/confluence-style/</link>
+        <guid isPermaLink="true">http://localhost:4000/confluence,%20atlassian/2018/07/23/confluence-style/</guid>
         
         <category>Confluence</category>
         
@@ -288,10 +288,10 @@ atlassian@osci.kr&lt;/p&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;관리자-메뉴의-agents&quot;&gt;관리자 메뉴의 Agents&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/images/41553358/0&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/41553358/0&quot; alt=&quot;관리자 메뉴&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;install-remote-agent&quot;&gt;Install remote agent&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/images/41553358/1&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/41553358/1&quot; alt=&quot;Install remote agent&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;agent-jar-파일을-다운로드-받아서-remote-server에서-실행합니다&quot;&gt;Agent JAR 파일을 다운로드 받아서 Remote Server에서 실행합니다.&lt;/h3&gt;
 &lt;p&gt;&lt;img src=&quot;/assets/images/41553358/2&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
@@ -368,8 +368,8 @@ API 빌드 결과에 따라서 다음 API 서버의 작업을 다르게 설정�
 감사합니다.&lt;/p&gt;
 </description>
         <pubDate>Tue, 17 Jul 2018 00:00:00 +0900</pubDate>
-        <link>https://tech.osci.kr/ci/cd/2018/07/17/41553358/</link>
-        <guid isPermaLink="true">https://tech.osci.kr/ci/cd/2018/07/17/41553358/</guid>
+        <link>http://localhost:4000/ci/cd/2018/07/17/41553358/</link>
+        <guid isPermaLink="true">http://localhost:4000/ci/cd/2018/07/17/41553358/</guid>
         
         <category>Bamboo</category>
         
@@ -598,8 +598,8 @@ Atom 에디터로 Post를 작성하기 위해서 Markdown을 습득했습니다.
 글이 많이 작성 된다면 스크립트 만들어서 자동으로 넘기겠습니다.  &lt;code class=&quot;highlighter-rouge&quot;&gt;https://wiki.osci.kr/pages/viewpage.action?pageId=41553358&lt;/code&gt;&lt;/p&gt;
 </description>
         <pubDate>Tue, 03 Jul 2018 00:00:00 +0900</pubDate>
-        <link>https://tech.osci.kr/opensource,%20github,%20jekyll/2018/07/03/migration-github-blog/</link>
-        <guid isPermaLink="true">https://tech.osci.kr/opensource,%20github,%20jekyll/2018/07/03/migration-github-blog/</guid>
+        <link>http://localhost:4000/opensource,%20github,%20jekyll/2018/07/03/migration-github-blog/</link>
+        <guid isPermaLink="true">http://localhost:4000/opensource,%20github,%20jekyll/2018/07/03/migration-github-blog/</guid>
         
         <category>GitHub</category>
         
@@ -1007,8 +1007,8 @@ Atom 에디터로 Post를 작성하기 위해서 Markdown을 습득했습니다.
 &lt;/div&gt;
 </description>
         <pubDate>Tue, 13 Jun 2017 22:50:47 +0900</pubDate>
-        <link>https://tech.osci.kr/agile,%20jira/2017/06/13/tistory-71/</link>
-        <guid isPermaLink="true">https://tech.osci.kr/agile,%20jira/2017/06/13/tistory-71/</guid>
+        <link>http://localhost:4000/agile,%20jira/2017/06/13/tistory-71/</link>
+        <guid isPermaLink="true">http://localhost:4000/agile,%20jira/2017/06/13/tistory-71/</guid>
         
         <category>Agile</category>
         
@@ -1836,8 +1836,8 @@ Atom 에디터로 Post를 작성하기 위해서 Markdown을 습득했습니다.
 &lt;/div&gt;
 </description>
         <pubDate>Wed, 22 Feb 2017 20:25:26 +0900</pubDate>
-        <link>https://tech.osci.kr/jira,%20alm,%20project%20management/2017/02/22/tistory-70/</link>
-        <guid isPermaLink="true">https://tech.osci.kr/jira,%20alm,%20project%20management/2017/02/22/tistory-70/</guid>
+        <link>http://localhost:4000/jira,%20alm,%20project%20management/2017/02/22/tistory-70/</link>
+        <guid isPermaLink="true">http://localhost:4000/jira,%20alm,%20project%20management/2017/02/22/tistory-70/</guid>
         
         <category>Jira</category>
         
@@ -2165,8 +2165,8 @@ Atom 에디터로 Post를 작성하기 위해서 Markdown을 습득했습니다.
 &lt;/div&gt;
 </description>
         <pubDate>Mon, 20 Feb 2017 20:25:27 +0900</pubDate>
-        <link>https://tech.osci.kr/atlassian,%20alm,%20project%20management/2017/02/20/tistory-69/</link>
-        <guid isPermaLink="true">https://tech.osci.kr/atlassian,%20alm,%20project%20management/2017/02/20/tistory-69/</guid>
+        <link>http://localhost:4000/atlassian,%20alm,%20project%20management/2017/02/20/tistory-69/</link>
+        <guid isPermaLink="true">http://localhost:4000/atlassian,%20alm,%20project%20management/2017/02/20/tistory-69/</guid>
         
         <category>Jira</category>
         
@@ -2584,8 +2584,8 @@ Atom 에디터로 Post를 작성하기 위해서 Markdown을 습득했습니다.
 &lt;/div&gt;
 </description>
         <pubDate>Sat, 18 Feb 2017 23:37:15 +0900</pubDate>
-        <link>https://tech.osci.kr/atlassian,%20alm,%20project%20management/2017/02/18/tistory-68/</link>
-        <guid isPermaLink="true">https://tech.osci.kr/atlassian,%20alm,%20project%20management/2017/02/18/tistory-68/</guid>
+        <link>http://localhost:4000/atlassian,%20alm,%20project%20management/2017/02/18/tistory-68/</link>
+        <guid isPermaLink="true">http://localhost:4000/atlassian,%20alm,%20project%20management/2017/02/18/tistory-68/</guid>
         
         <category>Jira</category>
         
@@ -2892,8 +2892,8 @@ Atom 에디터로 Post를 작성하기 위해서 Markdown을 습득했습니다.
 &lt;/div&gt;
 </description>
         <pubDate>Thu, 16 Feb 2017 21:52:37 +0900</pubDate>
-        <link>https://tech.osci.kr/atlassian,%20alm,%20project%20management/2017/02/16/tistory-67/</link>
-        <guid isPermaLink="true">https://tech.osci.kr/atlassian,%20alm,%20project%20management/2017/02/16/tistory-67/</guid>
+        <link>http://localhost:4000/atlassian,%20alm,%20project%20management/2017/02/16/tistory-67/</link>
+        <guid isPermaLink="true">http://localhost:4000/atlassian,%20alm,%20project%20management/2017/02/16/tistory-67/</guid>
         
         <category>Jira</category>
         
