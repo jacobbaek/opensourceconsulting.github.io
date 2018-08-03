@@ -5,6 +5,15 @@
         xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://tech.osci.kr/2018/08/02/44204745/</loc>
+    
+    <lastmod>2018-08-02T00:00:00+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
     <loc>https://tech.osci.kr/linux/2018/07/31/linux-filesystem/</loc>
     
     <lastmod>2018-07-31T00:00:00+09:00</lastmod>
@@ -14,9 +23,27 @@
   </url>
   
   <url>
+    <loc>https://tech.osci.kr/git/2018/07/27/44204215/</loc>
+    
+    <lastmod>2018-07-27T00:00:00+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
     <loc>https://tech.osci.kr/confluence,%20atlassian/2018/07/23/confluence-style/</loc>
     
     <lastmod>2018-07-23T00:00:00+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/ci/cd/2018/07/17/41553358/</loc>
+    
+    <lastmod>2018-07-17T00:00:00+09:00</lastmod>
     
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -312,6 +339,12 @@
   
   <url>
     <loc>https://tech.osci.kr/authors/OpenSourceConsulting</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/authors/seiyeon.kim</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
