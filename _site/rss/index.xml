@@ -5,10 +5,10 @@
     <description>기술을 나눕니다. 함께 성장합니다.
 Sharing Tech. Growing Together.
 </description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/rss" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 03 Aug 2018 13:44:38 +0900</pubDate>
-    <lastBuildDate>Fri, 03 Aug 2018 13:44:38 +0900</lastBuildDate>
+    <link>https://tech.osci.kr/</link>
+    <atom:link href="https://tech.osci.kr/rss" rel="self" type="application/rss+xml"/>
+    <pubDate>Fri, 03 Aug 2018 13:57:31 +0900</pubDate>
+    <lastBuildDate>Fri, 03 Aug 2018 13:57:31 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
     
       <item>
@@ -129,8 +129,8 @@ Confluence를 사용하면서 조금 아쉽다 하는 부분을 예리하게 기
 감사합니다.&lt;/p&gt;
 </description>
         <pubDate>Thu, 02 Aug 2018 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/2018/08/02/44204745/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/08/02/44204745/</guid>
+        <link>https://tech.osci.kr/2018/08/02/44204745/</link>
+        <guid isPermaLink="true">https://tech.osci.kr/2018/08/02/44204745/</guid>
         
         
       </item>
@@ -156,12 +156,12 @@ Confluence를 사용하면서 조금 아쉽다 하는 부분을 예리하게 기
 
 &lt;p&gt;MINIX의 소스코드를 보는것은 가능했지만, 그것은 실제 무료 오픈소스 소프트웨어(FOSS)는 아니였습니다.  Tannebaum의 책은 비용과 라이센스 금액를 합해서 69 달러에 판매되었습니다.  그러나,  그 당시로서는 파격적으로 저렴한 가격이여서,  원래목적이였던 간단한 교육목적을 넘어서 급속히 확산되었습니다.&lt;/p&gt;
 
-&lt;p&gt;1990년대에 전 세계의 대학가에서 MINIX를 설치가 널리 퍼졌고, 이것은 Linus Torvalds는 1991년에 발표한 최초의 리눅스 커널 개발을 위해 MINIX 를 사용하였고, 이 리눅스커널을 1992년 12월에 GPL로 발표하게 됩니다.&lt;/p&gt;
+&lt;p&gt;1990년대에 전 세계의 대학가에서 MINIX를 설치가 널리 퍼졌고, 이것은 Linux Torvalds는 1991년에 발표한 최초의 리눅스 커널 개발을 위해 MINIX 를 사용하였고, 이 리눅스커널을 1992년 12월에 GPL로 발표하게 됩니다.&lt;/p&gt;
 
 &lt;p&gt;파일시스템 이야기로 돌아가보자면, MINIX는 자체 파일시스템이 있었고, 초기 리눅스 역시 같은 파일시스템이었으나, 이는 장난감 수준의 파일시스템이었습니다. — MINIX 파일 시스템은 파일이름은 14 문자만 가능했으며, 단지 64MB의 저장공간만의 사용이 가능했습니다. 1991년에 이미 하드 드라이브의 크기가 40-140MB 크기였으니, 리눅스에는 더 향상된 파일 시스템이 필요했습니다.&lt;/p&gt;
 
 &lt;h2 id=&quot;ext&quot;&gt;ext&lt;/h2&gt;
-&lt;p&gt;Linus는 리눅스 커널에 초보적인 파일시스템을 사용하는 동안, Rémy Card는 첫번째 ext 파일 시스템에서 만들게 됩니다. 1992년에 처음 구현된 ext 는 - 리눅스가 발표된지 1년도 안된 시점- MINIX의 가장 최악의 문제를 해결했습니다.&lt;/p&gt;
+&lt;p&gt;Linux는 리눅스 커널에 초보적인 파일시스템을 사용하는 동안, Rémy Card는 첫번째 ext 파일 시스템에서 만들게 됩니다. 1992년에 처음 구현된 ext 는 - 리눅스가 발표된지 1년도 안된 시점- MINIX의 가장 최악의 문제를 해결했습니다.&lt;/p&gt;
 
 &lt;p&gt;1992년, ext는 Linux 커널에 새로운 추상화된 가상 파일 시스템 (VFS)을 사용했습니다. 이전의 MINIX 파일 시스템과 달리, ext은 최대 2GB의 저장 공간을 다룰 수 있고, 파일이름으로  255자를 사용할수 있었습니다.&lt;/p&gt;
 
@@ -196,22 +196,22 @@ Confluence를 사용하면서 조금 아쉽다 하는 부분을 예리하게 기
 &lt;p&gt;이전의 ext2와 마찬가지로 ext3은 16비트 내부 주소를 사용합니다. 즉, 블록 크기가 4K 인 경우 다룰 수 있는 가장 큰 파일크기는2TB이고,  최대 파일시스템 크기는 16TB입니다.&lt;/p&gt;
 
 &lt;h2 id=&quot;ext4&quot;&gt;ext4&lt;/h2&gt;
-&lt;p&gt;Theodore Ts’o(ext3의 핵심 개발자)는 2006년에 ext4 파일 시스템을 발표했고 2년 후 커널 버전 2.6.28d의 Linux에 추가되었습니다. Ts’o는 ex4가 ext3를 발전시킨 기술이지만 여전히 기존 기술에 의존한 중간단계이며, 결국 진정한 차세대 파일 시스템에 의해 대체될 것이라 이야기 합니다.&lt;/p&gt;
+&lt;p&gt;Theodore Ts’o(ext3의 핵심 개발자)는 2006년에 ext4 파일 시스템을 발표했고 2년 후 커널 버전 2.6.28d의 Linux에 추가되었습니다. Ts’o는 ext4가 ext3를 발전시킨 기술이지만 여전히 기존 기술에 의존한 중간단계이며, 결국 진정한 차세대 파일 시스템에 의해 대체될 것이라 이야기 합니다.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/files/post/filesystem/dell_precision_380_workstation.jpeg&quot; alt=&quot;Dell Precision 380 workstation, Lance Fisher, CC BY-SA 2.0&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Ex4는 기능적으로 ext3과 매우 유사하지만, 대용량 파일 시스템 지원을 제공하고 디스크 단편화에 대한 부분과 성능 증가, 타임 스탬프를 개선하였습니다.&lt;/p&gt;
+&lt;p&gt;ext4는 기능적으로 ext3과 매우 유사하지만, 대용량 파일 시스템 지원을 제공하고 디스크 단편화에 대한 부분과 성능 증가, 타임 스탬프를 개선하였습니다.&lt;/p&gt;
 
 &lt;h1 id=&quot;ext4-vs-ext3&quot;&gt;ext4 vs ext3&lt;/h1&gt;
 &lt;p&gt;ext4와 ext3 파일 시스템에서 몇 가지 차이점이 존재하며 이 번 섹션에서 설명합니다.&lt;/p&gt;
 
 &lt;h2 id=&quot;이전-버전과의-호환성&quot;&gt;이전 버전과의 호환성&lt;/h2&gt;
-&lt;p&gt;Ex4는 가능한 ext3으로 호환되도록 특별히 설계되었습니다. 이는 ext3파일 시스템을 ext4로 업그레이드할 수 있도록 할 뿐 아니라  ext4 드라이버가 자동으로 ext3 파일 시스템을 ext3 모드로 마운트 할 수 있으므로 두 코드베이스를 별도로 유지 관리 할 필요가 없습니다.&lt;/p&gt;
+&lt;p&gt;ext4는 가능한 ext3으로 호환되도록 특별히 설계되었습니다. 이는 ext3파일 시스템을 ext4로 업그레이드할 수 있도록 할 뿐 아니라  ext4 드라이버가 자동으로 ext3 파일 시스템을 ext3 모드로 마운트 할 수 있으므로 두 코드베이스를 별도로 유지 관리 할 필요가 없습니다.&lt;/p&gt;
 
 &lt;h2 id=&quot;large-filesystem&quot;&gt;Large filesystem&lt;/h2&gt;
 &lt;p&gt;Ext3파일 시스템이 32비트 주소 지정을 사용하여 최대 2TiB 파일, 16TiB파일 시스템의 제약 사항이 존재합니다.(4KiB 블록 크기의 경우 몇몇 Ext3파일 시스템은 더 작은 블록을 사용합니다)&lt;/p&gt;
 
-&lt;p&gt;Ex4는 48비트 내부 주소 지정을 사용하여 최대 16TB의 파일을 파일시스템 1,000,000TiB( 1 EiB)까지  할당하는 것이 이론적으로 가능합니다. 일부 사용자 환경 유틸리티에 의해 초기 ex4는 16TiB파일 시스템으로 제한되었지만, 2011년부터 e2fsprogs를 통해 16TiB 이상의 ext4 파일 시스템 생성을 지원합니다. 한가지 예로, Red Hat Enterprise Linux는 공식적으로 ex4 파일 시스템을 최대 50TiB까지만 지원하며, 100TiB이하의 ext4 볼륨을 권장합니다.&lt;/p&gt;
+&lt;p&gt;ext4는 48비트 내부 주소 지정을 사용하여 최대 16TB의 파일을 파일시스템 1,000,000TiB( 1 EiB)까지  할당하는 것이 이론적으로 가능합니다. 일부 사용자 환경 유틸리티에 의해 초기 ext4는 16TiB파일 시스템으로 제한되었지만, 2011년부터 e2fsprogs를 통해 16TiB 이상의 ext4 파일 시스템 생성을 지원합니다. 한가지 예로, Red Hat Enterprise Linux는 공식적으로 ext4 파일 시스템을 최대 50TiB까지만 지원하며, 100TiB이하의 ext4 볼륨을 권장합니다.&lt;/p&gt;
 
 &lt;h2 id=&quot;allocation-improvements&quot;&gt;Allocation Improvements&lt;/h2&gt;
 &lt;p&gt;Ext4는 스토리지 블록들의 읽기 및 쓰기 성능이 크게 향상될 수 있도록 디스크에 데이터를 쓰기 전에 할당하는 방식의 많은 개선사항을 도입하였습니다.&lt;/p&gt;
@@ -223,7 +223,7 @@ Confluence를 사용하면서 조금 아쉽다 하는 부분을 예리하게 기
 &lt;p&gt;Ext3는 새로운 블록이 할당될 때마다 블록할당자를 호출했습니다. 이는 다수의 writer가 동시에 작업을 하는 경우 심한 단편화를 쉽게 발생하게 합니다. 하지만 ext4는 아직 commit 하지 않은 쓰기에 대해 어떻게 할당것인지에 더 나은 의사결정과 여러 개의 쓰기를 하나로 합치도록 지연 할당을 사용합니다.&lt;/p&gt;
 
 &lt;h3 id=&quot;persistent-pre-allocation-지속적-사전-할당&quot;&gt;Persistent pre-allocation (지속적 사전 할당)&lt;/h3&gt;
-&lt;p&gt;한 파일에 대해 파일에 대한 디스크 공간을 사전 할당할 때 대부분의 파일 시스템은 해당 블록에 0을 써야 합니다. Ex4는 처음 쓰기 작업을 할 필요없이 공간 가용성을 확보(그리고 이를 위해 인접한 공간을 찾으려고 시도)하게 함으로써 fallocate()를 사용할 수 있도록 합니다. 이러한 작업은 스트리밍 및 데이터베이스 애플리케이션에 의해 기록된 데이터의 쓰기 및 향후 읽기 성능이 향상되도록 합니다.&lt;/p&gt;
+&lt;p&gt;한 파일에 대해 파일에 대한 디스크 공간을 사전 할당할 때 대부분의 파일 시스템은 해당 블록에 0을 써야 합니다. ext4는 처음 쓰기 작업을 할 필요없이 공간 가용성을 확보(그리고 이를 위해 인접한 공간을 찾으려고 시도)하게 함으로써 fallocate()를 사용할 수 있도록 합니다. 이러한 작업은 스트리밍 및 데이터베이스 애플리케이션에 의해 기록된 데이터의 쓰기 및 향후 읽기 성능이 향상되도록 합니다.&lt;/p&gt;
 
 &lt;h3 id=&quot;delayed-allocation-지연할당&quot;&gt;Delayed allocation (지연할당)&lt;/h3&gt;
 &lt;p&gt;지연 할당은 논쟁의 여지가 있는 기능입니다. 지연 할당은 ext4가 데이터를 디스크에 커밋할 준비가 될 때 데이터를 쓸 실제 블록을 할당하도록 합니다. (반면에 ext3은 데이터가 여전히 쓰기 캐시로 유입되는 동안에도 즉시 블록을 할당합니다)&lt;/p&gt;
@@ -335,8 +335,8 @@ Confluence를 사용하면서 조금 아쉽다 하는 부분을 예리하게 기
 &lt;p&gt;진행중인 btrfs의 상태는 논란이 되고 있습니다. SUSE Enterprise Linux는 2015년에 기본 파일시스템으로 인정한 반면 Red Hat은 2017년 RHEL 7.4의 시작으로 btrfs를 지원하지 않는다고 발표했습니다. ZFS 같이 다중 디스크 볼륨 관리가 아닌 단일 디스크 파일시스템으로 btrfs의 운영과 지원되는 운영 환경 구축으로 사용하는 것에 주목할 가치가 있습니다. -  스토리지 어플라이언스에 btrfs를 사용하는 Synology도 기존의 Linux 커널 RAID (mdraid) 위에 계층화하여 디스크를 관리합니다.&lt;/p&gt;
 </description>
         <pubDate>Tue, 31 Jul 2018 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/linux/2018/07/31/linux-filesystem/</link>
-        <guid isPermaLink="true">http://localhost:4000/linux/2018/07/31/linux-filesystem/</guid>
+        <link>https://tech.osci.kr/linux/2018/07/31/linux-filesystem/</link>
+        <guid isPermaLink="true">https://tech.osci.kr/linux/2018/07/31/linux-filesystem/</guid>
         
         <category>Linux</category>
         
@@ -383,8 +383,8 @@ https://github.com/OpenSourceConsulting/opensourceconsulting.github.io&lt;br /&g
 &lt;h3 id=&quot;감사합니다&quot;&gt;감사합니다.&lt;/h3&gt;
 </description>
         <pubDate>Fri, 27 Jul 2018 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/git/2018/07/27/44204215/</link>
-        <guid isPermaLink="true">http://localhost:4000/git/2018/07/27/44204215/</guid>
+        <link>https://tech.osci.kr/git/2018/07/27/44204215/</link>
+        <guid isPermaLink="true">https://tech.osci.kr/git/2018/07/27/44204215/</guid>
         
         <category>git</category>
         
@@ -464,8 +464,8 @@ Edit할 때는 보이지 않지만 저장 후 보여요 :)&lt;br /&gt;
 atlassian@osci.kr&lt;/p&gt;
 </description>
         <pubDate>Mon, 23 Jul 2018 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/confluence,%20atlassian/2018/07/23/confluence-style/</link>
-        <guid isPermaLink="true">http://localhost:4000/confluence,%20atlassian/2018/07/23/confluence-style/</guid>
+        <link>https://tech.osci.kr/confluence,%20atlassian/2018/07/23/confluence-style/</link>
+        <guid isPermaLink="true">https://tech.osci.kr/confluence,%20atlassian/2018/07/23/confluence-style/</guid>
         
         <category>Confluence</category>
         
@@ -582,8 +582,8 @@ API 빌드 결과에 따라서 다음 API 서버의 작업을 다르게 설정�
 감사합니다.&lt;/p&gt;
 </description>
         <pubDate>Tue, 17 Jul 2018 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/ci/cd/2018/07/17/41553358/</link>
-        <guid isPermaLink="true">http://localhost:4000/ci/cd/2018/07/17/41553358/</guid>
+        <link>https://tech.osci.kr/ci/cd/2018/07/17/41553358/</link>
+        <guid isPermaLink="true">https://tech.osci.kr/ci/cd/2018/07/17/41553358/</guid>
         
         <category>Bamboo</category>
         
@@ -812,8 +812,8 @@ Atom 에디터로 Post를 작성하기 위해서 Markdown을 습득했습니다.
 글이 많이 작성 된다면 스크립트 만들어서 자동으로 넘기겠습니다.  &lt;code class=&quot;highlighter-rouge&quot;&gt;https://wiki.osci.kr/pages/viewpage.action?pageId=41553358&lt;/code&gt;&lt;/p&gt;
 </description>
         <pubDate>Tue, 03 Jul 2018 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/opensource,%20github,%20jekyll/2018/07/03/migration-github-blog/</link>
-        <guid isPermaLink="true">http://localhost:4000/opensource,%20github,%20jekyll/2018/07/03/migration-github-blog/</guid>
+        <link>https://tech.osci.kr/opensource,%20github,%20jekyll/2018/07/03/migration-github-blog/</link>
+        <guid isPermaLink="true">https://tech.osci.kr/opensource,%20github,%20jekyll/2018/07/03/migration-github-blog/</guid>
         
         <category>GitHub</category>
         
@@ -1221,8 +1221,8 @@ Atom 에디터로 Post를 작성하기 위해서 Markdown을 습득했습니다.
 &lt;/div&gt;
 </description>
         <pubDate>Tue, 13 Jun 2017 22:50:47 +0900</pubDate>
-        <link>http://localhost:4000/agile,%20jira/2017/06/13/tistory-71/</link>
-        <guid isPermaLink="true">http://localhost:4000/agile,%20jira/2017/06/13/tistory-71/</guid>
+        <link>https://tech.osci.kr/agile,%20jira/2017/06/13/tistory-71/</link>
+        <guid isPermaLink="true">https://tech.osci.kr/agile,%20jira/2017/06/13/tistory-71/</guid>
         
         <category>Agile</category>
         
@@ -2050,8 +2050,8 @@ Atom 에디터로 Post를 작성하기 위해서 Markdown을 습득했습니다.
 &lt;/div&gt;
 </description>
         <pubDate>Wed, 22 Feb 2017 20:25:26 +0900</pubDate>
-        <link>http://localhost:4000/jira,%20alm,%20project%20management/2017/02/22/tistory-70/</link>
-        <guid isPermaLink="true">http://localhost:4000/jira,%20alm,%20project%20management/2017/02/22/tistory-70/</guid>
+        <link>https://tech.osci.kr/jira,%20alm,%20project%20management/2017/02/22/tistory-70/</link>
+        <guid isPermaLink="true">https://tech.osci.kr/jira,%20alm,%20project%20management/2017/02/22/tistory-70/</guid>
         
         <category>Jira</category>
         
@@ -2379,8 +2379,8 @@ Atom 에디터로 Post를 작성하기 위해서 Markdown을 습득했습니다.
 &lt;/div&gt;
 </description>
         <pubDate>Mon, 20 Feb 2017 20:25:27 +0900</pubDate>
-        <link>http://localhost:4000/atlassian,%20alm,%20project%20management/2017/02/20/tistory-69/</link>
-        <guid isPermaLink="true">http://localhost:4000/atlassian,%20alm,%20project%20management/2017/02/20/tistory-69/</guid>
+        <link>https://tech.osci.kr/atlassian,%20alm,%20project%20management/2017/02/20/tistory-69/</link>
+        <guid isPermaLink="true">https://tech.osci.kr/atlassian,%20alm,%20project%20management/2017/02/20/tistory-69/</guid>
         
         <category>Jira</category>
         
@@ -2798,8 +2798,8 @@ Atom 에디터로 Post를 작성하기 위해서 Markdown을 습득했습니다.
 &lt;/div&gt;
 </description>
         <pubDate>Sat, 18 Feb 2017 23:37:15 +0900</pubDate>
-        <link>http://localhost:4000/atlassian,%20alm,%20project%20management/2017/02/18/tistory-68/</link>
-        <guid isPermaLink="true">http://localhost:4000/atlassian,%20alm,%20project%20management/2017/02/18/tistory-68/</guid>
+        <link>https://tech.osci.kr/atlassian,%20alm,%20project%20management/2017/02/18/tistory-68/</link>
+        <guid isPermaLink="true">https://tech.osci.kr/atlassian,%20alm,%20project%20management/2017/02/18/tistory-68/</guid>
         
         <category>Jira</category>
         
