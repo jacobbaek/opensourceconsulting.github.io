@@ -7,8 +7,8 @@ Sharing Tech. Growing Together.
 </description>
     <link>https://tech.osci.kr/</link>
     <atom:link href="https://tech.osci.kr/rss" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 03 Aug 2018 13:28:50 +0900</pubDate>
-    <lastBuildDate>Fri, 03 Aug 2018 13:28:50 +0900</lastBuildDate>
+    <pubDate>Fri, 03 Aug 2018 13:42:41 +0900</pubDate>
+    <lastBuildDate>Fri, 03 Aug 2018 13:42:41 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
     
       <item>
@@ -502,10 +502,10 @@ atlassian@osci.kr&lt;/p&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;관리자-메뉴의-agents&quot;&gt;관리자 메뉴의 Agents&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/images/41553358/0&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/41553358/0&quot; alt=&quot;관리자 메뉴&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;install-remote-agent&quot;&gt;Install remote agent&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/images/41553358/1&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/41553358/1&quot; alt=&quot;Install remote agent&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;agent-jar-파일을-다운로드-받아서-remote-server에서-실행합니다&quot;&gt;Agent JAR 파일을 다운로드 받아서 Remote Server에서 실행합니다.&lt;/h3&gt;
 &lt;p&gt;&lt;img src=&quot;/assets/images/41553358/2&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
