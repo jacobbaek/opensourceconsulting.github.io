@@ -317,6 +317,12 @@
   </url>
   
   <url>
+    <loc>https://tech.osci.kr/authors/songhr</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>https://tech.osci.kr/authors/wjsrkqdlf</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

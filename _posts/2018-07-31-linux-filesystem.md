@@ -2,7 +2,7 @@
 layout: post
 title: "리눅스 파일 시스템 이해하기 : ext4"
 description: "ext3와 다른 파일시스템과의 차이점을 포함해서 ext4 의 history 를 배워봅시다 "  
-author: ienvyou
+author: songhr
 date: 2018-07-31
 modified: 2018-07-31
 tags: [Linux, File System, Kernel]
