@@ -5,7 +5,7 @@
         xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://192.168.0.62:4000/linux/2018/07/31/linux-filesystem/</loc>
+    <loc>http://localhost:4000/linux/2018/07/31/linux-filesystem/</loc>
     
     <lastmod>2018-07-31T00:00:00+09:00</lastmod>
     
@@ -14,7 +14,7 @@
   </url>
   
   <url>
-    <loc>http://192.168.0.62:4000/confluence,%20atlassian/2018/07/23/confluence-style/</loc>
+    <loc>http://localhost:4000/confluence,%20atlassian/2018/07/23/confluence-style/</loc>
     
     <lastmod>2018-07-23T00:00:00+09:00</lastmod>
     
@@ -23,7 +23,7 @@
   </url>
   
   <url>
-    <loc>http://192.168.0.62:4000/opensource,%20github,%20jekyll/2018/07/03/migration-github-blog/</loc>
+    <loc>http://localhost:4000/opensource,%20github,%20jekyll/2018/07/03/migration-github-blog/</loc>
     
     <lastmod>2018-07-03T00:00:00+09:00</lastmod>
     
@@ -32,7 +32,7 @@
   </url>
   
   <url>
-    <loc>http://192.168.0.62:4000/agile,%20jira/2017/06/13/tistory-71/</loc>
+    <loc>http://localhost:4000/agile,%20jira/2017/06/13/tistory-71/</loc>
     
     <lastmod>2017-06-13T22:50:47+09:00</lastmod>
     
@@ -41,7 +41,7 @@
   </url>
   
   <url>
-    <loc>http://192.168.0.62:4000/jira,%20alm,%20project%20management/2017/02/22/tistory-70/</loc>
+    <loc>http://localhost:4000/jira,%20alm,%20project%20management/2017/02/22/tistory-70/</loc>
     
     <lastmod>2017-02-22T20:25:26+09:00</lastmod>
     
@@ -50,7 +50,7 @@
   </url>
   
   <url>
-    <loc>http://192.168.0.62:4000/atlassian,%20alm,%20project%20management/2017/02/20/tistory-69/</loc>
+    <loc>http://localhost:4000/atlassian,%20alm,%20project%20management/2017/02/20/tistory-69/</loc>
     
     <lastmod>2017-02-20T20:25:27+09:00</lastmod>
     
@@ -59,7 +59,7 @@
   </url>
   
   <url>
-    <loc>http://192.168.0.62:4000/atlassian,%20alm,%20project%20management/2017/02/18/tistory-68/</loc>
+    <loc>http://localhost:4000/atlassian,%20alm,%20project%20management/2017/02/18/tistory-68/</loc>
     
     <lastmod>2017-02-18T23:37:15+09:00</lastmod>
     
@@ -68,7 +68,7 @@
   </url>
   
   <url>
-    <loc>http://192.168.0.62:4000/atlassian,%20alm,%20project%20management/2017/02/16/tistory-67/</loc>
+    <loc>http://localhost:4000/atlassian,%20alm,%20project%20management/2017/02/16/tistory-67/</loc>
     
     <lastmod>2017-02-16T21:52:37+09:00</lastmod>
     
@@ -77,7 +77,7 @@
   </url>
   
   <url>
-    <loc>http://192.168.0.62:4000/opensourceconsulting/2017/02/14/tistory-66/</loc>
+    <loc>http://localhost:4000/opensourceconsulting/2017/02/14/tistory-66/</loc>
     
     <lastmod>2017-02-14T22:59:26+09:00</lastmod>
     
@@ -86,7 +86,7 @@
   </url>
   
   <url>
-    <loc>http://192.168.0.62:4000/atlassian,%20jira,%20alm,%20project%20management/2017/02/12/tistory-65/</loc>
+    <loc>http://localhost:4000/atlassian,%20jira,%20alm,%20project%20management/2017/02/12/tistory-65/</loc>
     
     <lastmod>2017-02-12T00:35:05+09:00</lastmod>
     
@@ -95,7 +95,7 @@
   </url>
   
   <url>
-    <loc>http://192.168.0.62:4000/atlassian,%20jira/2017/02/07/tistory-64/</loc>
+    <loc>http://localhost:4000/atlassian,%20jira/2017/02/07/tistory-64/</loc>
     
     <lastmod>2017-02-07T10:42:36+09:00</lastmod>
     
@@ -104,7 +104,7 @@
   </url>
   
   <url>
-    <loc>http://192.168.0.62:4000/opensourceconsulting/2017/02/05/tistory-63/</loc>
+    <loc>http://localhost:4000/opensourceconsulting/2017/02/05/tistory-63/</loc>
     
     <lastmod>2017-02-05T13:23:05+09:00</lastmod>
     
@@ -113,7 +113,7 @@
   </url>
   
   <url>
-    <loc>http://192.168.0.62:4000/opensourceconsulting/2017/02/03/tistory-62/</loc>
+    <loc>http://localhost:4000/opensourceconsulting/2017/02/03/tistory-62/</loc>
     
     <lastmod>2017-02-03T19:17:34+09:00</lastmod>
     
@@ -122,7 +122,7 @@
   </url>
   
   <url>
-    <loc>http://192.168.0.62:4000/atlassian,%20jira/2017/02/02/tistory-61/</loc>
+    <loc>http://localhost:4000/atlassian,%20jira/2017/02/02/tistory-61/</loc>
     
     <lastmod>2017-02-02T17:43:50+09:00</lastmod>
     
@@ -131,7 +131,7 @@
   </url>
   
   <url>
-    <loc>http://192.168.0.62:4000/atlassian,%20jira/2017/02/01/tistory-60/</loc>
+    <loc>http://localhost:4000/atlassian,%20jira/2017/02/01/tistory-60/</loc>
     
     <lastmod>2017-02-01T17:57:41+09:00</lastmod>
     
@@ -140,7 +140,7 @@
   </url>
   
   <url>
-    <loc>http://192.168.0.62:4000/atlassian,%20jira/2017/01/31/tistory-59/</loc>
+    <loc>http://localhost:4000/atlassian,%20jira/2017/01/31/tistory-59/</loc>
     
     <lastmod>2017-01-31T19:41:11+09:00</lastmod>
     
@@ -149,7 +149,7 @@
   </url>
   
   <url>
-    <loc>http://192.168.0.62:4000/os,%20rhel7,%20centos7/2016/01/18/tistory-58/</loc>
+    <loc>http://localhost:4000/os,%20rhel7,%20centos7/2016/01/18/tistory-58/</loc>
     
     <lastmod>2016-01-18T13:00:30+09:00</lastmod>
     
@@ -158,7 +158,7 @@
   </url>
   
   <url>
-    <loc>http://192.168.0.62:4000/docker,%20openstack/2015/05/09/tistory-57/</loc>
+    <loc>http://localhost:4000/docker,%20openstack/2015/05/09/tistory-57/</loc>
     
     <lastmod>2015-05-09T12:00:37+09:00</lastmod>
     
@@ -167,7 +167,7 @@
   </url>
   
   <url>
-    <loc>http://192.168.0.62:4000/docker/2015/05/09/tistory-56/</loc>
+    <loc>http://localhost:4000/docker/2015/05/09/tistory-56/</loc>
     
     <lastmod>2015-05-09T11:32:24+09:00</lastmod>
     
@@ -176,7 +176,7 @@
   </url>
   
   <url>
-    <loc>http://192.168.0.62:4000/java/2015/04/09/tistory-54/</loc>
+    <loc>http://localhost:4000/java/2015/04/09/tistory-54/</loc>
     
     <lastmod>2015-04-09T09:33:12+09:00</lastmod>
     
@@ -185,7 +185,7 @@
   </url>
   
   <url>
-    <loc>http://192.168.0.62:4000/docker,%20openstack/2015/03/18/tistory-53/</loc>
+    <loc>http://localhost:4000/docker,%20openstack/2015/03/18/tistory-53/</loc>
     
     <lastmod>2015-03-18T20:51:21+09:00</lastmod>
     
@@ -194,7 +194,7 @@
   </url>
   
   <url>
-    <loc>http://192.168.0.62:4000/openstack/2014/12/18/tistory-42/</loc>
+    <loc>http://localhost:4000/openstack/2014/12/18/tistory-42/</loc>
     
     <lastmod>2014-12-18T00:20:08+09:00</lastmod>
     
@@ -203,7 +203,7 @@
   </url>
   
   <url>
-    <loc>http://192.168.0.62:4000/%ED%91%9C%EC%A4%80%ED%99%94/2014/12/09/tistory-27/</loc>
+    <loc>http://localhost:4000/%ED%91%9C%EC%A4%80%ED%99%94/2014/12/09/tistory-27/</loc>
     
     <lastmod>2014-12-09T19:36:24+09:00</lastmod>
     
@@ -212,7 +212,7 @@
   </url>
   
   <url>
-    <loc>http://192.168.0.62:4000/database/2014/11/27/tistory-14/</loc>
+    <loc>http://localhost:4000/database/2014/11/27/tistory-14/</loc>
     
     <lastmod>2014-11-27T22:50:26+09:00</lastmod>
     
@@ -221,7 +221,7 @@
   </url>
   
   <url>
-    <loc>http://192.168.0.62:4000/architecture/2014/11/22/tistory-9/</loc>
+    <loc>http://localhost:4000/architecture/2014/11/22/tistory-9/</loc>
     
     <lastmod>2014-11-22T12:44:05+09:00</lastmod>
     
@@ -230,7 +230,7 @@
   </url>
   
   <url>
-    <loc>http://192.168.0.62:4000/java/2014/11/15/tistory-4/</loc>
+    <loc>http://localhost:4000/java/2014/11/15/tistory-4/</loc>
     
     <lastmod>2014-11-15T09:26:06+09:00</lastmod>
     
@@ -239,7 +239,7 @@
   </url>
   
   <url>
-    <loc>http://192.168.0.62:4000/linux/2014/11/13/tistory-1/</loc>
+    <loc>http://localhost:4000/linux/2014/11/13/tistory-1/</loc>
     
     <lastmod>2014-11-13T22:46:38+09:00</lastmod>
     
@@ -252,7 +252,7 @@
   
   
   <url>
-    <loc>http://192.168.0.62:4000/about/</loc>
+    <loc>http://localhost:4000/about/</loc>
     
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -261,24 +261,7 @@
   
   
   <url>
-    <loc>http://192.168.0.62:4000/authors/</loc>
-    
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <url>
-    <loc>http://192.168.0.62:4000/tags/</loc>
+    <loc>http://localhost:4000/authors/</loc>
     
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -294,97 +277,114 @@
   
   
   
+  <url>
+    <loc>http://localhost:4000/tags/</loc>
+    
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   
   
   <url>
-    <loc>http://192.168.0.62:4000/authors/ienvyou</loc>
+    <loc>http://localhost:4000/authors/ienvyou</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>http://192.168.0.62:4000/authors/it2seiyon</loc>
+    <loc>http://localhost:4000/authors/it2seiyon</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>http://192.168.0.62:4000/authors/OpenSourceConsulting</loc>
+    <loc>http://localhost:4000/authors/OpenSourceConsulting</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>http://192.168.0.62:4000/authors/wjsrkqdlf</loc>
+    <loc>http://localhost:4000/authors/wjsrkqdlf</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>http://192.168.0.62:4000/authors/wsj31013</loc>
+    <loc>http://localhost:4000/authors/wsj31013</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   
   <url>
-    <loc>http://192.168.0.62:4000/tags/JPA</loc>
+    <loc>http://localhost:4000/tags/JPA</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>http://192.168.0.62:4000/tags/data structure</loc>
+    <loc>http://localhost:4000/tags/data structure</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>http://192.168.0.62:4000/tags/diary</loc>
+    <loc>http://localhost:4000/tags/diary</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>http://192.168.0.62:4000/tags/gc</loc>
+    <loc>http://localhost:4000/tags/gc</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>http://192.168.0.62:4000/tags/git</loc>
+    <loc>http://localhost:4000/tags/git</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>http://192.168.0.62:4000/tags/java</loc>
+    <loc>http://localhost:4000/tags/java</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>http://192.168.0.62:4000/tags/java8</loc>
+    <loc>http://localhost:4000/tags/java8</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>http://192.168.0.62:4000/tags/mac</loc>
+    <loc>http://localhost:4000/tags/mac</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>http://192.168.0.62:4000/tags/spring</loc>
+    <loc>http://localhost:4000/tags/spring</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>http://192.168.0.62:4000/tags/vim</loc>
+    <loc>http://localhost:4000/tags/vim</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
