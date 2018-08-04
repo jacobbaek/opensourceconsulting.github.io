@@ -152,6 +152,12 @@ ruby 2.3.3p222 (2016-11-21 revision 56859) [universal.x86_64-darwin17]
       opensourceconsulting.github.io>bundle exec jekyll serve
 http://127.0.0.1:4000/ post 확인
 
+- git에 올리기 전 jekyll build
+
+```shell
+bundle exec jekyll build
+```
+
 - git status  
 `opensourceconsulting.github.io>git status` 수정한 파일을 확인합니다.
 

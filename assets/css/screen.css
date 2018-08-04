@@ -652,16 +652,6 @@ a.tag:hover {
     display:block;
 }
 
-#page-prev {
-    background: url(../images/pc/icon_pre.png) no-repeat center;
-    background-size: 6px 11px;
-}
-
-#page-next {
-    background: url(../images/pc/icon_next.png) no-repeat center;
-    background-size: 6px 11px;
-}
-
 /* home */
 /*
 +#cover-----------------------------------------+
@@ -1001,7 +991,7 @@ body.tag-template #navbar {
 #post-next {
     display: table-cell;
     width: 50%;
-    background: url(../images/default_post_cover.jpg) no-repeat center;
+    border: 1px white solid;
     background-size: cover;
 }
 
@@ -1009,7 +999,7 @@ body.tag-template #navbar {
 #post-next > * {
     position: relative;
     overflow: hidden;
-    background-color: rgba(12, 12, 48, 0.3);
+    background-color: rgb(23, 43, 77);
 }
 
 #post-links h3 {
@@ -1018,7 +1008,7 @@ body.tag-template #navbar {
     margin: 0 auto;
     padding: 0;
     font-size: 18px;
-    line-height: 160px;
+    line-height: 100px;
     text-align: center;
     color: #fff;
     text-overflow: ellipsis;
