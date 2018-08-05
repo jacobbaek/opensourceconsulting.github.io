@@ -5,10 +5,10 @@
     <description>기술을 나눕니다. 함께 성장합니다.
 Sharing Tech. Growing Together.
 </description>
-    <link>https://tech.osci.kr/</link>
-    <atom:link href="https://tech.osci.kr/rss" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 03 Aug 2018 13:57:31 +0900</pubDate>
-    <lastBuildDate>Fri, 03 Aug 2018 13:57:31 +0900</lastBuildDate>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/rss" rel="self" type="application/rss+xml"/>
+    <pubDate>Sat, 04 Aug 2018 18:24:41 +0900</pubDate>
+    <lastBuildDate>Sat, 04 Aug 2018 18:24:41 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
     
       <item>
@@ -129,8 +129,8 @@ Confluence를 사용하면서 조금 아쉽다 하는 부분을 예리하게 기
 감사합니다.&lt;/p&gt;
 </description>
         <pubDate>Thu, 02 Aug 2018 00:00:00 +0900</pubDate>
-        <link>https://tech.osci.kr/2018/08/02/44204745/</link>
-        <guid isPermaLink="true">https://tech.osci.kr/2018/08/02/44204745/</guid>
+        <link>http://localhost:4000/2018/08/02/44204745/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/08/02/44204745/</guid>
         
         
       </item>
@@ -335,8 +335,8 @@ Confluence를 사용하면서 조금 아쉽다 하는 부분을 예리하게 기
 &lt;p&gt;진행중인 btrfs의 상태는 논란이 되고 있습니다. SUSE Enterprise Linux는 2015년에 기본 파일시스템으로 인정한 반면 Red Hat은 2017년 RHEL 7.4의 시작으로 btrfs를 지원하지 않는다고 발표했습니다. ZFS 같이 다중 디스크 볼륨 관리가 아닌 단일 디스크 파일시스템으로 btrfs의 운영과 지원되는 운영 환경 구축으로 사용하는 것에 주목할 가치가 있습니다. -  스토리지 어플라이언스에 btrfs를 사용하는 Synology도 기존의 Linux 커널 RAID (mdraid) 위에 계층화하여 디스크를 관리합니다.&lt;/p&gt;
 </description>
         <pubDate>Tue, 31 Jul 2018 00:00:00 +0900</pubDate>
-        <link>https://tech.osci.kr/linux/2018/07/31/linux-filesystem/</link>
-        <guid isPermaLink="true">https://tech.osci.kr/linux/2018/07/31/linux-filesystem/</guid>
+        <link>http://localhost:4000/linux/2018/07/31/linux-filesystem/</link>
+        <guid isPermaLink="true">http://localhost:4000/linux/2018/07/31/linux-filesystem/</guid>
         
         <category>Linux</category>
         
@@ -383,8 +383,8 @@ https://github.com/OpenSourceConsulting/opensourceconsulting.github.io&lt;br /&g
 &lt;h3 id=&quot;감사합니다&quot;&gt;감사합니다.&lt;/h3&gt;
 </description>
         <pubDate>Fri, 27 Jul 2018 00:00:00 +0900</pubDate>
-        <link>https://tech.osci.kr/git/2018/07/27/44204215/</link>
-        <guid isPermaLink="true">https://tech.osci.kr/git/2018/07/27/44204215/</guid>
+        <link>http://localhost:4000/git/2018/07/27/44204215/</link>
+        <guid isPermaLink="true">http://localhost:4000/git/2018/07/27/44204215/</guid>
         
         <category>git</category>
         
@@ -464,8 +464,8 @@ Edit할 때는 보이지 않지만 저장 후 보여요 :)&lt;br /&gt;
 atlassian@osci.kr&lt;/p&gt;
 </description>
         <pubDate>Mon, 23 Jul 2018 00:00:00 +0900</pubDate>
-        <link>https://tech.osci.kr/confluence,%20atlassian/2018/07/23/confluence-style/</link>
-        <guid isPermaLink="true">https://tech.osci.kr/confluence,%20atlassian/2018/07/23/confluence-style/</guid>
+        <link>http://localhost:4000/confluence,%20atlassian/2018/07/23/confluence-style/</link>
+        <guid isPermaLink="true">http://localhost:4000/confluence,%20atlassian/2018/07/23/confluence-style/</guid>
         
         <category>Confluence</category>
         
@@ -582,8 +582,8 @@ API 빌드 결과에 따라서 다음 API 서버의 작업을 다르게 설정�
 감사합니다.&lt;/p&gt;
 </description>
         <pubDate>Tue, 17 Jul 2018 00:00:00 +0900</pubDate>
-        <link>https://tech.osci.kr/ci/cd/2018/07/17/41553358/</link>
-        <guid isPermaLink="true">https://tech.osci.kr/ci/cd/2018/07/17/41553358/</guid>
+        <link>http://localhost:4000/ci/cd/2018/07/17/41553358/</link>
+        <guid isPermaLink="true">http://localhost:4000/ci/cd/2018/07/17/41553358/</guid>
         
         <category>Bamboo</category>
         
@@ -812,8 +812,8 @@ Atom 에디터로 Post를 작성하기 위해서 Markdown을 습득했습니다.
 글이 많이 작성 된다면 스크립트 만들어서 자동으로 넘기겠습니다.  &lt;code class=&quot;highlighter-rouge&quot;&gt;https://wiki.osci.kr/pages/viewpage.action?pageId=41553358&lt;/code&gt;&lt;/p&gt;
 </description>
         <pubDate>Tue, 03 Jul 2018 00:00:00 +0900</pubDate>
-        <link>https://tech.osci.kr/opensource,%20github,%20jekyll/2018/07/03/migration-github-blog/</link>
-        <guid isPermaLink="true">https://tech.osci.kr/opensource,%20github,%20jekyll/2018/07/03/migration-github-blog/</guid>
+        <link>http://localhost:4000/opensource,%20github,%20jekyll/2018/07/03/migration-github-blog/</link>
+        <guid isPermaLink="true">http://localhost:4000/opensource,%20github,%20jekyll/2018/07/03/migration-github-blog/</guid>
         
         <category>GitHub</category>
         
@@ -1221,8 +1221,8 @@ Atom 에디터로 Post를 작성하기 위해서 Markdown을 습득했습니다.
 &lt;/div&gt;
 </description>
         <pubDate>Tue, 13 Jun 2017 22:50:47 +0900</pubDate>
-        <link>https://tech.osci.kr/agile,%20jira/2017/06/13/tistory-71/</link>
-        <guid isPermaLink="true">https://tech.osci.kr/agile,%20jira/2017/06/13/tistory-71/</guid>
+        <link>http://localhost:4000/agile,%20jira/2017/06/13/tistory-71/</link>
+        <guid isPermaLink="true">http://localhost:4000/agile,%20jira/2017/06/13/tistory-71/</guid>
         
         <category>Agile</category>
         
@@ -2050,8 +2050,8 @@ Atom 에디터로 Post를 작성하기 위해서 Markdown을 습득했습니다.
 &lt;/div&gt;
 </description>
         <pubDate>Wed, 22 Feb 2017 20:25:26 +0900</pubDate>
-        <link>https://tech.osci.kr/jira,%20alm,%20project%20management/2017/02/22/tistory-70/</link>
-        <guid isPermaLink="true">https://tech.osci.kr/jira,%20alm,%20project%20management/2017/02/22/tistory-70/</guid>
+        <link>http://localhost:4000/jira,%20alm,%20project%20management/2017/02/22/tistory-70/</link>
+        <guid isPermaLink="true">http://localhost:4000/jira,%20alm,%20project%20management/2017/02/22/tistory-70/</guid>
         
         <category>Jira</category>
         
@@ -2379,8 +2379,8 @@ Atom 에디터로 Post를 작성하기 위해서 Markdown을 습득했습니다.
 &lt;/div&gt;
 </description>
         <pubDate>Mon, 20 Feb 2017 20:25:27 +0900</pubDate>
-        <link>https://tech.osci.kr/atlassian,%20alm,%20project%20management/2017/02/20/tistory-69/</link>
-        <guid isPermaLink="true">https://tech.osci.kr/atlassian,%20alm,%20project%20management/2017/02/20/tistory-69/</guid>
+        <link>http://localhost:4000/atlassian,%20alm,%20project%20management/2017/02/20/tistory-69/</link>
+        <guid isPermaLink="true">http://localhost:4000/atlassian,%20alm,%20project%20management/2017/02/20/tistory-69/</guid>
         
         <category>Jira</category>
         
@@ -2798,8 +2798,8 @@ Atom 에디터로 Post를 작성하기 위해서 Markdown을 습득했습니다.
 &lt;/div&gt;
 </description>
         <pubDate>Sat, 18 Feb 2017 23:37:15 +0900</pubDate>
-        <link>https://tech.osci.kr/atlassian,%20alm,%20project%20management/2017/02/18/tistory-68/</link>
-        <guid isPermaLink="true">https://tech.osci.kr/atlassian,%20alm,%20project%20management/2017/02/18/tistory-68/</guid>
+        <link>http://localhost:4000/atlassian,%20alm,%20project%20management/2017/02/18/tistory-68/</link>
+        <guid isPermaLink="true">http://localhost:4000/atlassian,%20alm,%20project%20management/2017/02/18/tistory-68/</guid>
         
         <category>Jira</category>
         
