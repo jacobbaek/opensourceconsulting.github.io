@@ -780,6 +780,7 @@ body.post-template #cover h1,
 body.author-template #cover h1,
 body.tag-template #cover h1 {
     white-space: normal;
+    display: contents;
 }
 
 body.post-template #navbar,
