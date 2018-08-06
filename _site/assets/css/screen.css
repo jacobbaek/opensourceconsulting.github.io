@@ -1728,9 +1728,14 @@ body.page-template {
 }
 
 .tech_logo {
-  height: 50px;
-  width: auto;
-  position: absolute;
-  top: 5px;
-  left: 10px;
+    height: 50px;
+    width: auto;
+    position: absolute;
+    top: 5px;
+    left: 10px;
+}
+
+.confluence-embedded-file-wrapper img{
+    width: 100%;
+    border: 1px solid #172B4D;
 }
