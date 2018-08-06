@@ -7,9 +7,494 @@ Sharing Tech. Growing Together.
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/rss" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 04 Aug 2018 18:24:41 +0900</pubDate>
-    <lastBuildDate>Sat, 04 Aug 2018 18:24:41 +0900</lastBuildDate>
+    <pubDate>Mon, 06 Aug 2018 10:08:37 +0900</pubDate>
+    <lastBuildDate>Mon, 06 Aug 2018 10:08:37 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>Bitbucket jekyll 블로그 만들기</title>
+        <description>&lt;p&gt;
+ 안녕하세요.
+&lt;/p&gt;
+&lt;p&gt;
+ 오픈소스컨설팅 김세연입니다.
+&lt;/p&gt;
+&lt;p&gt;
+ 이번에는 Bitbucket cloud에 jekyll을 이용하여 Blog Publishing을 해보겠습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;h1 id=&quot;Bitbucketjekyll블로그만들기-BitbucketCloud회원가입&quot;&gt;
+ Bitbucket Cloud 회원가입
+&lt;/h1&gt;
+&lt;p&gt;
+ &lt;a class=&quot;external-link&quot; href=&quot;https://bitbucket.org/account/signup/&quot; rel=&quot;nofollow&quot;&gt;
+  https://bitbucket.org/account/signup/
+ &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ gmail 또는 Atlassian 계정을 생성합니다.
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;h1 id=&quot;Bitbucketjekyll블로그만들기-Repository생성&quot;&gt;
+ Repository 생성
+&lt;/h1&gt;
+&lt;p&gt;
+ Repository를 생성할 때 이름은 Bitbucket 고유 주소의 bitbucket.io가 붙습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ 저는 it2seiyon으로 회원가입을 했기 때문에
+ &lt;strong&gt;
+  it2seiyon.bitbucket.io
+ &lt;/strong&gt;
+ 값으로 했습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ This is private repository 체크 해제 후 Create repository를 합니다.
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
+  &lt;img src=&quot;/assets/images/44205100/0&quot;&gt;
+ &lt;/span&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ 생성된 Repository의 URL을 보시면 bitbucket.org/it2seiyeon/it2seiyon.bitbucket.io를 확인할 수 있습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
+  &lt;img src=&quot;/assets/images/44205100/1&quot;&gt;
+ &lt;/span&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;a class=&quot;external-link&quot; href=&quot;https://it2seiyon.bitbucket.io&quot; rel=&quot;nofollow&quot;&gt;
+  https://it2seiyon.bitbucket.io
+ &lt;/a&gt;
+ 접속해 보면 아직 index파일이 없어서 File not found 가 뜹니다.
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
+  &lt;img src=&quot;/assets/images/44205100/2&quot;&gt;
+ &lt;/span&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ 다른 주소 bitbucket.io를 만들고 싶으시면 Team 추가하여 만들 수 있습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ + 버튼으로 추가할 수 있으며 Team ID 또한 고유 값을 갖습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ 그래야 겹치지 않는 주소를 갖겠죠?
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
+  &lt;img src=&quot;/assets/images/44205100/3&quot;&gt;
+ &lt;/span&gt;
+&lt;/p&gt;
+&lt;h1 id=&quot;Bitbucketjekyll블로그만들기-RepositoryClone&quot;&gt;
+ Repository Clone
+&lt;/h1&gt;
+&lt;p&gt;
+ Bitbucket Cloud Repository(remote repository)를 내 컴퓨터에 복사를 합니다.
+&lt;/p&gt;
+&lt;p&gt;
+ 저는 Atlassian의 Soruce Tree를 이용해서 Repository를 관리해보겠습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;a class=&quot;external-link&quot; href=&quot;https://www.sourcetreeapp.com/&quot; rel=&quot;nofollow&quot;&gt;
+  https://www.sourcetreeapp.com/
+ &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
+  &lt;img src=&quot;/assets/images/44205100/4&quot;&gt;
+ &lt;/span&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ Branch history를 그래프로 표시해주는 기능이 정말 편리합니다.
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ 설치 완료 후 계정의 원격 저장소에서 앞에서 만든 Repository를 확인할 수 있습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
+  &lt;img src=&quot;/assets/images/44205100/5&quot;&gt;
+ &lt;/span&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ Repository옆에 작은 Clone 버튼으로 저장소를 내 컴퓨터에 복제합니다.
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
+  &lt;img src=&quot;/assets/images/44205100/6&quot;&gt;
+ &lt;/span&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ 이제 Jekyll을 설치하고 Blog를 생성하여 remote repository에 추가해 보겠습니다.
+&lt;/p&gt;
+&lt;h1 id=&quot;Bitbucketjekyll블로그만들기-Jekyll&quot;&gt;
+ Jekyll
+&lt;/h1&gt;
+&lt;h2 id=&quot;Bitbucketjekyll블로그만들기-설치&quot;&gt;
+ 설치
+&lt;/h2&gt;
+&lt;blockquote&gt;
+ &lt;p&gt;
+  이 글의 ruby 버전은 2.4.4, jekyll은 3.6.2 입니다.
+ &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;
+ macOS 사용자는 쉽게 jekyll를 시작할 수 있습니다. macOS는 Ruby가 기본으로 설치되어 있거든요..
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;a class=&quot;external-link&quot; href=&quot;https://jekyllrb.com/docs/quickstart/&quot; rel=&quot;nofollow&quot;&gt;
+  https://jekyllrb.com/docs/quickstart/
+ &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ Windows는 조금 더 작업을 해야 합니다. 자세한 과정은 아래 링크를 확인해 주세요.
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;a class=&quot;external-link&quot; href=&quot;https://jekyllrb.com/docs/windows/&quot; rel=&quot;nofollow&quot;&gt;
+  https://jekyllrb.com/docs/windows/
+ &lt;/a&gt;
+&lt;/p&gt;
+&lt;ul style=&quot;list-style-type: square;&quot;&gt;
+ &lt;li&gt;
+  Ruby devkit installer를 이용하여 설치합니다.
+ &lt;/li&gt;
+ &lt;li&gt;
+  Start command Propt with Ruby로 jekyll을 설치합니다.
+  &lt;br/&gt;
+  &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
+   &lt;img src=&quot;/assets/images/44205100/7&quot;&gt;
+  &lt;/span&gt;
+ &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;h2 id=&quot;Bitbucketjekyll블로그만들기-Jekylltheme적용&quot;&gt;
+ Jekyll theme 적용
+&lt;/h2&gt;
+&lt;p&gt;
+ 처음부터 블로그를 만들기는 어렵기 때문에 기존에 인기 있는 jekyll 테마를 다운로드 받아서
+&lt;/p&gt;
+&lt;p&gt;
+ 새로 만든 blog에 적용해보겠습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ Jekyll theme중 인기있는 jasper를 적용해 보겠습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;a class=&quot;external-link&quot; href=&quot;https://github.com/jekyller/jasper&quot; rel=&quot;nofollow&quot;&gt;
+  https://github.com/jekyller/jasper
+ &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ Download zip으로 Source code를 다운로드 받습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
+  &lt;img src=&quot;/assets/images/44205100/8&quot;&gt;
+ &lt;/span&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ jekyll은 _data, _layout, _include, _post 등 소스코드로 _site를 생성합니다.
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
+  &lt;img src=&quot;/assets/images/44205100/9&quot;&gt;
+ &lt;/span&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;h3 id=&quot;Bitbucketjekyll블로그만들기-_config.yml수정&quot;&gt;
+ _config.yml 수정
+&lt;/h3&gt;
+&lt;p&gt;
+ Bitbucket 주소를 수정합니다.
+&lt;/p&gt;
+&lt;p&gt;
+ short_url: '
+ &lt;a class=&quot;external-link&quot; href=&quot;http://it2seiyon.bitbucket.io/&quot; rel=&quot;nofollow&quot;&gt;
+  it2seiyon.bitbucket.io/
+ &lt;/a&gt;
+ '
+&lt;/p&gt;
+&lt;p&gt;
+ baseurl: /
+&lt;/p&gt;
+&lt;p&gt;
+ 블로그를 효과적으로 운영하기 위해서는 많은 항목들을 수정해야합니다.
+&lt;/p&gt;
+&lt;p&gt;
+ Google Analytic도 추가하고 댓글 기능도 추가할 수 있습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ Start Command Prompt with Ruby를 실행합니다. ( Ruby devkit으로 설치 )
+&lt;/p&gt;
+&lt;p&gt;
+ Local Repository로 이동하여 theme에 필요한 패키지들을 설치합니다.
+&lt;/p&gt;
+&lt;div class=&quot;code panel pdl conf-macro output-block&quot; data-hasbody=&quot;true&quot; data-macro-name=&quot;code&quot; style=&quot;border-width: 1px;&quot;&gt;
+ &lt;div class=&quot;codeContent panelContent pdl&quot;&gt;
+  &lt;pre class=&quot;syntaxhighlighter-pre&quot; data-syntaxhighlighter-params=&quot;brush: shell; gutter: false; theme: Confluence&quot; data-theme=&quot;Confluence&quot;&gt;cd C:\Users\sy\Downloads\jasper-master\jasper-master
+C:\Users\sy\Downloads\jasper-master\jasper-master&gt;bundle install&lt;/pre&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ 패키지 설치 후 Local에 server를 띄워 확인해 보겠습니다.
+&lt;/p&gt;
+&lt;div class=&quot;code panel pdl conf-macro output-block&quot; data-hasbody=&quot;true&quot; data-macro-name=&quot;code&quot; style=&quot;border-width: 1px;&quot;&gt;
+ &lt;div class=&quot;codeContent panelContent pdl&quot;&gt;
+  &lt;pre class=&quot;syntaxhighlighter-pre&quot; data-syntaxhighlighter-params=&quot;brush: shell; gutter: false; theme: Confluence&quot; data-theme=&quot;Confluence&quot;&gt;C:\Users\sy\Downloads\jasper-master\jasper-master&gt;bundle exec jekyll serve&lt;/pre&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;
+ &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
+  &lt;img src=&quot;/assets/images/44205100/10&quot;&gt;
+ &lt;/span&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ 기본 테마 환경으로 올라왔습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ 이제 Remote Repository에 올리기 위해서 빌드를 실행합니다.
+&lt;/p&gt;
+&lt;div class=&quot;code panel pdl conf-macro output-block&quot; data-hasbody=&quot;true&quot; data-macro-name=&quot;code&quot; style=&quot;border-width: 1px;&quot;&gt;
+ &lt;div class=&quot;codeContent panelContent pdl&quot;&gt;
+  &lt;pre class=&quot;syntaxhighlighter-pre&quot; data-syntaxhighlighter-params=&quot;brush: shell; gutter: false; theme: Confluence&quot; data-theme=&quot;Confluence&quot;&gt;C:\Users\sy\Downloads\jasper-master\jasper-master&gt;bundle exec jekyll build&lt;/pre&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;
+ 빌드 후 jasper-pages 디렉터리가 생성됐습니다. _config.yml 설정에 의해서 생성되는 위치를 변경할 수 있습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
+  &lt;img src=&quot;/assets/images/44205100/11&quot;&gt;
+ &lt;/span&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ jasper-pages의 파일들을 Local Repository에 복사합니다.
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
+  &lt;img src=&quot;/assets/images/44205100/12&quot;&gt;
+ &lt;/span&gt;
+&lt;/p&gt;
+&lt;h2 id=&quot;Bitbucketjekyll블로그만들기-RemoteRepository에추가&quot;&gt;
+ Remote Repository에 추가
+&lt;/h2&gt;
+&lt;p&gt;
+ Soruce Tree에서 추가된 소스를 확인할 수 있습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
+  &lt;img src=&quot;/assets/images/44205100/13&quot;&gt;
+ &lt;/span&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ 내 Local 스테이징 환경에 모두 추가합니다.
+&lt;/p&gt;
+&lt;p&gt;
+ git 명령어로는 git add . 이 되겠습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ 스테이지에 올린 후 커밋 메시지와 함께 커밋을 합니다.
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ 그리고 Push로 Remote Repository에 소스를 추가합니다.
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
+  &lt;img src=&quot;/assets/images/44205100/14&quot;&gt;
+ &lt;/span&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ Bitbucket에서 추가된 소스코드를 확인할 수 있습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
+  &lt;img src=&quot;/assets/images/44205100/15&quot;&gt;
+ &lt;/span&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ 웹사이트를 확인해 보겠습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;a class=&quot;external-link&quot; href=&quot;https://it2seiyon.bitbucket.io/&quot; rel=&quot;nofollow&quot;&gt;
+  https://it2seiyon.bitbucket.io/
+ &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
+  &lt;img src=&quot;/assets/images/44205100/16&quot;&gt;
+ &lt;/span&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ 잘 나오네요. 앞으로 할 일은 블로그를 꾸미고 jekyll 빌드를 하고 생성된 소스를
+&lt;/p&gt;
+&lt;p&gt;
+ Repo에 올리는 일입니다.
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;h1 id=&quot;Bitbucketjekyll블로그만들기-마무리&quot;&gt;
+ 마무리
+&lt;/h1&gt;
+&lt;p&gt;
+ Jekyll를 이용하여 웹 사이트를 생성하고 Bitbucket cloud에 Publishing을 해봤습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ Bitbucket colud로 blog를 운영할 때 장점이 아래와 같이 있습니다.
+&lt;/p&gt;
+&lt;ul style=&quot;list-style-type: square;&quot;&gt;
+ &lt;li&gt;
+  Blog CSS, Javascript 수정
+ &lt;/li&gt;
+ &lt;li&gt;
+  무제한 traffic
+ &lt;/li&gt;
+ &lt;li&gt;
+  https 사용
+ &lt;/li&gt;
+ &lt;li&gt;
+  무료 domain
+ &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+ Jekyll Theme를 수정해서 나만의 블로그를 빠르고 쉽게 만들 수 있는 방법입니다.
+&lt;/p&gt;
+&lt;p&gt;
+ 앞에 설명한 단계를 요약을 하면
+&lt;/p&gt;
+&lt;ul style=&quot;list-style-type: square;&quot;&gt;
+ &lt;li&gt;
+  Bitbucket 가입
+ &lt;/li&gt;
+ &lt;li&gt;
+  Repository 생성 ( .bitbucket.io 가 뒤에 붙습니다. )
+  &lt;ul style=&quot;list-style-type: square;&quot;&gt;
+   &lt;li&gt;
+    다른 repository를 생성하여 publishing 하고싶을 땐 team을 추가하여 진행하면 됩니다.
+   &lt;/li&gt;
+  &lt;/ul&gt;
+ &lt;/li&gt;
+ &lt;li&gt;
+  Sourece Tree 설치 (git 관리 프로그램)
+  &lt;ul style=&quot;list-style-type: square;&quot;&gt;
+   &lt;li&gt;
+    git clone
+   &lt;/li&gt;
+  &lt;/ul&gt;
+ &lt;/li&gt;
+ &lt;li&gt;
+  Jekyll 설치
+ &lt;/li&gt;
+ &lt;li&gt;
+  Jekyll Theme 다운로드
+ &lt;/li&gt;
+ &lt;li&gt;
+  Jekyll _config.yml 수정
+ &lt;/li&gt;
+ &lt;li&gt;
+  Jekyll build
+ &lt;/li&gt;
+ &lt;li&gt;
+  생성된 Sourece code  복사 → Local Repository 붙여 넣기
+ &lt;/li&gt;
+ &lt;li&gt;
+  Sourece Tree에서 소스 스테이지환경 추가 → 커밋 → 푸시
+ &lt;/li&gt;
+ &lt;li&gt;
+  내 Bitbucket page 확인 (
+  &lt;a class=&quot;external-link&quot; href=&quot;https://it2seiyon.bitbucket.io/&quot; rel=&quot;nofollow&quot;&gt;
+   https://it2seiyon.bitbucket.io/
+  &lt;/a&gt;
+  )
+ &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ Bitbucket cloud의 pipeline을 이용하면 더 많은 방법으로 응용이 가능합니다.
+&lt;/p&gt;
+&lt;p&gt;
+ 마무리 하겠습니다. Bibucket으로 Happy CI/CD 하세요~
+&lt;/p&gt;
+&lt;p&gt;
+ 감사합니다.
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;</description>
+        <pubDate>Sun, 05 Aug 2018 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/bitbucket/2018/08/05/44205100/</link>
+        <guid isPermaLink="true">http://localhost:4000/bitbucket/2018/08/05/44205100/</guid>
+        
+        <category>git</category>
+        
+        <category>bitbucket</category>
+        
+        <category>blog</category>
+        
+        <category>jekyll</category>
+        
+        
+        <category>bitbucket</category>
+        
+      </item>
     
       <item>
         <title>Confluence 6.11.0-beta Release Notes 분석</title>
@@ -2385,423 +2870,6 @@ Atom 에디터로 Post를 작성하기 위해서 Markdown을 습득했습니다.
         <category>Jira</category>
         
         <category>Jira Scheme</category>
-        
-        
-        <category>Atlassian, ALM, Project Management</category>
-        
-      </item>
-    
-      <item>
-        <title>Jira 설정_8(Time Tracking / Resolution / Priority)</title>
-        <description>&lt;div class=&quot;area_view&quot;&gt;
- &lt;div class=&quot;tt_article_useless_p_margin&quot;&gt;
-  &lt;div&gt;
-   &lt;b&gt;
-    &lt;i&gt;
-     Time tracking
-    &lt;/i&gt;
-    :
-   &lt;/b&gt;
-   Jira Issue에서 Time Tracking기능을 사용할지 여부를 결정하는 메뉴입니다.
-  &lt;/div&gt;
-  &lt;p&gt;
-  &lt;/p&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    만약 필드에 Time Tracking을 사용하도록 설정하였다면, 이슈를 생성 시 다음과 같이 시간을 설정할 수 있는 필드가 생기며
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    예를 들어 3일짜리 일을 생성할 경우 3d를 입력 후 생성합니다.
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;p style=&quot;text-align: center; clear: none; float: none;&quot;&gt;
-   &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:783px;;height:auto;max-width:100%&quot;&gt;
-    &lt;img src=&quot;/assets/images/68/0.png&quot; /&gt;
-   &lt;/span&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   그럼 생성된 이슈의 우측에 이렇게 3일이 표시됩니다.
-   &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:510px;text-align: center;;height:auto;max-width:100%&quot;&gt;
-    &lt;img src=&quot;/assets/images/68/1.png&quot; /&gt;
-   &lt;/span&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   시간을 기록하기 위해선 Sub-Task를 만드는 것처럼 이슈의 More에서 Log Work를 클릭하면 됩니다.
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:215px;text-align: center;;height:auto;max-width:100%&quot;&gt;
-    &lt;img src=&quot;/assets/images/68/2.png&quot; /&gt;
-   &lt;/span&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   그리고 하루 일했다는 가정으로 1d를 입력 후 Log를 클릭하면,
-  &lt;/p&gt;
-  &lt;p style=&quot;text-align: center; clear: none; float: none;&quot;&gt;
-   &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:817px;;height:auto;max-width:100%&quot;&gt;
-    &lt;img src=&quot;/assets/images/68/3.png&quot; /&gt;
-   &lt;/span&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    이렇게 시간이 계산되는 것을 볼 수 있습니다. 눈치채셨겠지만, 자동으론 안됩니다.
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    물론 이를 자동화해주는 플러그인도 있겠지만,
-   &lt;/span&gt;
-   기본적으론 되지않지요...
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    또한 사용자가 입력하는 방식이기에 필요하면 악용하기도 쉽습니다. (1시간 일하고 10시간 일했다고 기록한다던가)
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    따라서 이 기능은 참조하는 정도지, 이것을 업무평가의 절대적인 지표로 쓰기에는
-   &lt;/span&gt;
-   적합하지 않습니다.
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;s&gt;
-    무엇보다 Jira에 익숙한 사용자조차도 이걸 입력하는 것은 굉장히 귀찮아요.
-   &lt;/s&gt;
-   &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:435px;text-align: center;;height:auto;max-width:100%&quot;&gt;
-    &lt;img src=&quot;/assets/images/68/4.png&quot; /&gt;
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    &lt;i&gt;
-     Issueu linking
-    &lt;/i&gt;
-    : Jira Issue에서 Issue linking기능을 사용할지 여부를 결정하는 메뉴입니다.
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    추가로 필요한 link 타입을 추가하거나 삭제할 수도 있죠. 우선 이 link가 무엇인지 설명드리자면
-   &lt;/span&gt;
-   이슈간의 연결을 나타내는 것으로써,
-  &lt;/div&gt;
-  &lt;div&gt;
-   해당 이슈가 다른 어떤 이슈와 연관되어있는지 혹은 다른 이슈에 의해 진행이 되지 않는지 등을 표시할 수 있습니다.
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;p&gt;
-  &lt;/p&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    이 또한 Time Tracking처럼 Linked Issue 필드가 설정되어있을 때 이슈 생성 시 보여지게되는데 다음과 같이 is blocked by를 선택 후 이슈를 생성 시 이슈의 상세 페이지에 해당 이슈가 어떤 이슈에 의해 일이 진행되지 않는지를 표시합니다.
-   &lt;/span&gt;
-   &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:646px;text-align: center;;height:auto;max-width:100%&quot;&gt;
-    &lt;img src=&quot;/assets/images/68/5.png&quot; /&gt;
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:651px;text-align: center;;height:auto;max-width:100%&quot;&gt;
-    &lt;img src=&quot;/assets/images/68/6.jpg&quot; /&gt;
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   그리고 해당 이슈를 클릭해보면, 이렇게 해당 이슈가 다른 이슈의 진행을 막고있음을 자동으로 표시하게되죠.
-   &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:787px;text-align: center;;height:auto;max-width:100%&quot;&gt;
-    &lt;img src=&quot;/assets/images/68/7.png&quot; /&gt;
-   &lt;/span&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;b&gt;
-    &lt;i&gt;
-     Statuses
-    &lt;/i&gt;
-    :
-   &lt;/b&gt;
-   Jira의 스테이터스를 추가합니다. 현재 Jira에 존재하는 상태들을 보여주며 추가의 경우 앞서나왔던 워크플로우내에서
-  &lt;/p&gt;
-  &lt;p&gt;
-   Status를 추가하는 것과 같은 내용이므로 넘어가겠습니다.
-  &lt;/p&gt;
-  &lt;p style=&quot;text-align: center; clear: none; float: none;&quot;&gt;
-   &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:820px;;height:auto;max-width:100%&quot;&gt;
-    &lt;img src=&quot;/assets/images/68/9.PNG&quot; /&gt;
-   &lt;/span&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    &lt;br /&gt;
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;b&gt;
-    &lt;i&gt;
-     Resolution
-    &lt;/i&gt;
-    :
-   &lt;/b&gt;
-   Jira의 필드 중 시스템적으로 설정된 필드 중 하나입니다. 기본적으로 Jira에서는 진행 중인 일을 끝낼 때
-  &lt;/div&gt;
-  &lt;div&gt;
-   (In Progress -&amp;gt; Done으로의 상태 변경) 해당 필드가 포함된 스크린을 띄우도록 하는데,
-  &lt;/div&gt;
-  &lt;div&gt;
-   이 때 해당 이슈가 어떤 방식으로 끝났는지를 선택하게되죠.
-  &lt;/div&gt;
-  &lt;p&gt;
-  &lt;/p&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    &lt;br /&gt;
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    다음처럼 해당 이슈가 수정되었는지, 수정되지는 않았지만 끝내야만 하는 경우라던지, 중복된 이슈라던지 등을 선택하여
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    차후 해당 이슈가 어떻게 끝났는지를 확인할 수 있게하는 필드입니다.
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:358px;text-align: center;;height:auto;max-width:100%&quot;&gt;
-    &lt;img src=&quot;/assets/images/68/8.png&quot; /&gt;
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;div&gt;
-   &lt;b&gt;
-    &lt;i&gt;
-     Priorities
-    &lt;/i&gt;
-    :
-   &lt;/b&gt;
-   이슈의 긴급도를 설정하는 필드입니다. 이 또한 Resolution처럼 시스템필드이며, 필요에 따라
-  &lt;/div&gt;
-  &lt;div&gt;
-   단계를 더 세분화하거나 간소화할 수 있습니다.
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;p&gt;
-  &lt;/p&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    기본은 5단계이며, 보통 3단계 정도로 쓰는게 수월합니다.
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    &lt;s&gt;
-     많이 만들어봐야 어차피 다들 본인 이슈는 다 Highest로 만들거든요. 3단계도 마찬가지긴 하지만...
-    &lt;/s&gt;
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;p style=&quot;text-align: center; clear: none; float: none;&quot;&gt;
-   &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:820px;;height:auto;max-width:100%&quot;&gt;
-    &lt;img src=&quot;/assets/images/68/10.PNG&quot; /&gt;
-   &lt;/span&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   다음은 드디어 이 설정의 마지막인 Scheme들(Issue Security, Permission, Notification)에 관련하여 적어보도록 하겠습니다.
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;div class=&quot;container_postbtn&quot;&gt;
-  &lt;/div&gt;
-  &lt;div style=&quot;text-align:left; padding-top:10px;clear:both&quot;&gt;
-  &lt;/div&gt;
- &lt;/div&gt;
-&lt;/div&gt;
-</description>
-        <pubDate>Sat, 18 Feb 2017 23:37:15 +0900</pubDate>
-        <link>http://localhost:4000/atlassian,%20alm,%20project%20management/2017/02/18/tistory-68/</link>
-        <guid isPermaLink="true">http://localhost:4000/atlassian,%20alm,%20project%20management/2017/02/18/tistory-68/</guid>
-        
-        <category>Jira</category>
         
         
         <category>Atlassian, ALM, Project Management</category>

@@ -5,6 +5,15 @@
         xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://localhost:4000/bitbucket/2018/08/05/44205100/</loc>
+    
+    <lastmod>2018-08-05T00:00:00+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
     <loc>http://localhost:4000/2018/08/02/44204745/</loc>
     
     <lastmod>2018-08-02T00:00:00+09:00</lastmod>
@@ -310,6 +319,8 @@
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
+  
+  
   
   
   
