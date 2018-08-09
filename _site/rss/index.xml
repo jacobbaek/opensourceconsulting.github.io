@@ -7,9 +7,372 @@ Sharing Tech. Growing Together.
 </description>
     <link>https://tech.osci.kr/</link>
     <atom:link href="https://tech.osci.kr/rss" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 08 Aug 2018 21:17:05 +0900</pubDate>
-    <lastBuildDate>Wed, 08 Aug 2018 21:17:05 +0900</lastBuildDate>
+    <pubDate>Thu, 09 Aug 2018 17:27:08 +0900</pubDate>
+    <lastBuildDate>Thu, 09 Aug 2018 17:27:08 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>우리는 왜, 무료로 Jira 교육을 하고 유료교육을 위해 만든 매뉴얼을 무료로 배포하기로 결정했을까?</title>
+        <description>&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ 안녕하세요, 오픈소스컨설팅에서 아틀라시안팀을 맡고 있는 한진규 이사입니다
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ 요즘 날씨가 엄청 덥네요.
+&lt;/p&gt;
+&lt;p&gt;
+ 찌는 듯한 더위가 가실지 모르고 에어컨을 틀게 만들더니, 오늘은 또 소나기와 함께 동남아 한가운데 서있는 듯 한 습한기운으로 아직 여름이 한참 남았다고 굳이 온몸으로 느끼게 해주네요.
+&lt;/p&gt;
+&lt;p&gt;
+ 아
+ &lt;s&gt;
+  18 john 나
+ &lt;/s&gt;
+ 더워....라는 말을 달고 사는건 저 뿐이 아닐 겁니다. 아 더워...
+&lt;/p&gt;
+&lt;p&gt;
+ 가을이 그리운 건 저 뿐만이 아니겠지만, 오지 않은 가을을 기다리는 것보다는 지금 이미 와 있는 이 여름도 즐기는 게 더 중요하다고 생각 합니다. 크~ 갬성~
+ &lt;s&gt;
+  아니고 아재인증
+ &lt;/s&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ 날씨가 더워서 이야기가 산으로 가고 있습니다..크흠...
+&lt;/p&gt;
+&lt;p&gt;
+ 그럼 이제 본론으로 들어가 볼까요?
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;h1 id=&quot;id-우리는왜,무료로Jira교육을하고유료교육을위해만든매뉴얼을무료로배포하기로결정했을까?-시작&quot;&gt;
+ 시작
+&lt;/h1&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ 사실 예전부터 Jira와 Confluence에 대해서 많은 고민이 있었습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ 외국산 (잘 아시다시피, Jira와 Confluence는 Atlassian이라는 호주 회사에서 만들었죠) 소프트웨어이다 보니, 한국에서 사용하기에 불편함이 많은 것이 사실입니다.
+&lt;/p&gt;
+&lt;p&gt;
+ 요즘은 초기에 비해 많은 개선이 이루어져서 한글화 등이 잘 되어 있지만, 사용법이나 Trouble shooting을 위한 가이드들은 여전히 영어로 되어 있는 경우가 많습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ 파파고와 구글 번역이 열일하고 있어서(조금만 더 힘내줘~!!) 불편함이 많이 줄기는 했지만,
+&lt;/p&gt;
+&lt;p&gt;
+ 한글로 된 정보가 적다는 것은 아무래도 초기 접근성을 떨어뜨리기도 하고 내포된 많은 기능과 의미를  제대로 파악하는데 있어서도 큰 제약이 됩니다.
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ 그래서 저는 친한 친구이자, Atlassian 전도사인 디프로그웍스 신철민대표와 책을 하나 써보자...라는 말을 자주 했었습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ 제대로된 Jira/Confluence 메뉴얼을 만들어보자는 것이었죠.
+ &lt;s&gt;
+  (왠지 돈을 많이 벌수 있을것 같아!)
+ &lt;/s&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ 그런데 그게 어디 쉽습니까?
+&lt;/p&gt;
+&lt;p&gt;
+ 잘 아시겠지만 하는 업무가 바쁜데 취미로 매뉴얼을 만든다는게 말이 쉽지 실제로 실행하지는 못했죠.
+ &lt;s&gt;
+  그냥 의지박약
+ &lt;/s&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ 핑계가 아니라
+ &lt;s&gt;
+  핑계맞음
+ &lt;/s&gt;
+ , 그때만 해도 저는 일반 회사에서
+ &lt;s&gt;
+  32500개의
+ &lt;/s&gt;
+ 여러업무 중 하나로 Jira/Confluence를 담당하고 있었고,
+&lt;/p&gt;
+&lt;p&gt;
+ Jira/Confluence 이 외에도 할 일이 너무
+ &lt;s&gt;
+  너무너무너무너무
+ &lt;/s&gt;
+ 많았기 때문에 그렇게 그냥 말만 앞세운 채 시간은 흘러갔습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;h1 id=&quot;id-우리는왜,무료로Jira교육을하고유료교육을위해만든매뉴얼을무료로배포하기로결정했을까?-진짜시작&quot;&gt;
+ 진짜 시작
+&lt;/h1&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ 그러다 저는 좋은 기회로 오픈소스컨설팅에 합류하게 되었고, 본격적으로 Atlassian 제품에 대한 Presales와 Consulting 업무를 맡게 되었습니다. (올레~!)
+&lt;/p&gt;
+&lt;p&gt;
+ 하고싶은 일, 좋아하는 일, 관심있는 일을 직업으로 갖는 다는건 참 행운이었죠.
+&lt;/p&gt;
+&lt;p&gt;
+ 덕분에 짧은 시간동안 많은 사례들을 접할 수 있었고, 일에 빠져들수록 예전에 생각 했던 메뉴얼 작업과 교육이 정말 중요한 부분이라는 것을 다시한번 깨닫게 되었습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ 좋은건 알지만 아무래도 매일매일 해야하는 업무가 있기 때문에 '교육프로그램'이라는 새로운 프로젝트를 꾸려나가기가 쉽지 않았는데
+&lt;/p&gt;
+&lt;p&gt;
+ 다행히 우리 팀 구성원들이 Open mind를 갖고 있는 분들이라, 새로운 프로젝트를 겁도 없이 시작할수 있었지요.
+ &lt;s&gt;
+  힘들죠? 우리팀...ㅠㅠ
+ &lt;/s&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ 더불어, 신철민대표도 본인 회사 운영하는데 바쁜데도 불구하고 교육 프로그램 런칭 프로젝트에 동참해 주었습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ 그는 이미 여러 곳에서 다양한 형태로 Jira/Confluence 교육을 해왔던 베테랑이기 때문에, 저는 천군만마를 얻은 듯이 기뻤습니다.
+ &lt;s&gt;
+  (신대표님, 이 정도면 충분히 칭찬 했지?)
+ &lt;/s&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;h1 id=&quot;id-우리는왜,무료로Jira교육을하고유료교육을위해만든매뉴얼을무료로배포하기로결정했을까?-고민&quot;&gt;
+ 고민
+&lt;/h1&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ 암튼 그렇게 시작된 프로젝트가  바로 지금 운영중인
+ &lt;a class=&quot;external-link&quot; href=&quot;http://osci.kr/training/training.php&quot; rel=&quot;nofollow&quot;&gt;
+  &lt;strong&gt;
+   Atlassian Training Program by Opensource Consulting
+  &lt;/strong&gt;
+ &lt;/a&gt;
+ 입니다.
+&lt;/p&gt;
+&lt;p&gt;
+ 다만, 초기 구상시에는 모든 프로그램이 유료였고, 유료교육이니 만큼 고객이 돈을 지불하는 그 이상의 가치를 전달하기 위해 깊이 있는 교육 프로그램을 구상하고 준비했습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ 다양한 변수 및 회사의 이윤과 고객의 혜택 사이에서 어느 한 쪽에 쏠리지 않고 모두가 행복할 수 있도록 프로그램당 최소인원과 최대인원, 비용 등을 책정 했습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ Training Program 오픈 시기가 가까워 오던 어느날, 우리는 좀 다른 부분에서 고민을 하게 되었습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ 바로 교육 자료의 제공범위에 대한 부분이었습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ 통상적으로 우리가 외부 기관에서 교육을 받게 되면 교육을 받은 사람이 아니면 알수 없는 뭔가 알맹이가 빠진 교재를 제공 받고,
+&lt;/p&gt;
+&lt;p&gt;
+ 교육수료의 훈장, 증표 처럼 그 책자를 들고 사무실에 와서는 그냥 서랍이나 책장에 처박아두고 잊어버리기 마련입니다. 왜냐면 다시 꺼내봐도 뭔소린지 모르게 되어 있거든요.
+&lt;/p&gt;
+&lt;p&gt;
+ 그리고 강사의 PPT자료를 안주는 경우도 많아서, 좀 뭔가 아쉽기도 했고요.
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ 그래서 저희는,  &quot;다 때려 넣자. 괜히 뭐 숨기고, 알맹이 빼고 그런거 하지 말고 제대로 다 넣자. 나중에 매뉴얼로 쓸수 있도록 만들자.&quot;라는 걸 모토로 교육자료를 만들게 되었고,
+&lt;/p&gt;
+&lt;p&gt;
+ 그 이후 오히려 이런 생각이 들었죠.
+&lt;/p&gt;
+&lt;p&gt;
+ '유료교육 수료한 분들만 주기엔 이 자료가 너~무 아깝다.....'
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ 모든 사람이 제약없이 Jira를 써보고 업무 생산성을 높이면 좋겠는데 유료교육을 들은 사람들만 주면 이렇게 열심히 만든게 오히려 아까운게 아닌가?
+&lt;/p&gt;
+&lt;p&gt;
+ 무료 배포하는게 어떨까? 라는 이야기가 내부에서 나온거죠.
+ &lt;s&gt;
+  니들 월급은 뭘로주니
+ &lt;/s&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ 흠..착한 사람들...
+&lt;/p&gt;
+&lt;p&gt;
+ 특히나 자료를 만드는데 너무 고생을 많이 했을 신철민 대표가 오히려 무료로 풀자고 하더군요. 우리 팀원들도 맞장구.
+ &lt;s style=&quot;letter-spacing: 0.0px;&quot;&gt;
+  나만왕따
+ &lt;/s&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ 하지만, 자료를 무료로 풀면 이에 맞춰 실시할 Basic Session을 유료로 운영하는게 맞나? 라는 생각까지 이어졌고,
+&lt;/p&gt;
+&lt;p&gt;
+ 비용과 다양한 문제들이 있기 때문에 쉽게 결정할 수 있는 문제는 아니었습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ 아무래도 회사는 자선사업을 하는 곳은 아니니까요.
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ 결국 고민 끝에 회사 대표님과 지웅님(aka.공동창업자)께 이러한 내용을 말씀드리고 의견을 어쭤보았습니다.
+ &lt;s&gt;
+  이런 말 했다가 땅파서 장사하냐고 욕들어 먹는거 아닌가 싶어서 엄청쫄았다
+ &lt;/s&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ 마케팅을 위해 이런 것도 필요하다는 장황한 설명을 준비해서 보고 드리는데,
+&lt;/p&gt;
+&lt;p&gt;
+ 우리 대표님과 지웅님 너무 cool하게, &quot;무료로 해요&quot; 라고 하셨습니다.
+ &lt;s&gt;
+  돈벌생각이 없으신가..
+ &lt;/s&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;h1 id=&quot;id-우리는왜,무료로Jira교육을하고유료교육을위해만든매뉴얼을무료로배포하기로결정했을까?-초심을잃지말자&quot;&gt;
+ 초심을 잃지말자
+&lt;/h1&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ 왜 처음에 우리가 이런 교육을 기획 했을까?
+&lt;/p&gt;
+&lt;p&gt;
+ 많은 사람이 좋은 Tool을 제약없이 쓰게 하는게 목표였죠.
+&lt;/p&gt;
+&lt;p&gt;
+ 제가 사용자일 때 부터 솔루션 파트너인 지금까지, 외국산 소프트웨어여서 불편해 하는 사람은 없었으면 좋겠다는 생각은 변함이 없고, 그 생각 때문에 이 모든게 시작 됐다는 걸 오랜만에 되새기게 되었죠.
+ &lt;s&gt;
+  머리가 나쁘면 고생
+ &lt;/s&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ 또한, 우리 회사가 중요하게 생각하는 항목 중에 하나가, &quot;고객의 이득을 최우선으로 하자&quot; 인데, 이에 부합하는 좋은 케이스였던 거죠.
+&lt;/p&gt;
+&lt;p&gt;
+ 여전히 우물 안 개구리인 저는 좋은 팀구성원들, 파트너, 선배님들을 만나서 오늘도 성장하며 우물 밖으로 슬슬 점프하려고 시도하고 있습니다.
+ &lt;s&gt;
+  이 나이에 아직도 성장한다는게 신기
+ &lt;/s&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ 우리가 유료교육으로 열심히 준비했던 Jira Basic Course는 이렇게 무료교육으로 전환되었고, 강의자료도 무료 배포하게 되었습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;h1 id=&quot;id-우리는왜,무료로Jira교육을하고유료교육을위해만든매뉴얼을무료로배포하기로결정했을까?-감사함도잊지말자&quot;&gt;
+ 감사함도 잊지말자
+&lt;/h1&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ 이 과정을 준비하며,
+&lt;/p&gt;
+&lt;p&gt;
+ 자기 업무 하나하나 너무 바쁜데 신경써주고 의견 함께 해준 팀구성원들이 너무 고맙고,
+&lt;/p&gt;
+&lt;p&gt;
+ 자료준비와 강의준비로 고생했던 디프로그웍스 신철민 대표도 너무 고맙고,
+&lt;/p&gt;
+&lt;p&gt;
+ 강의 외의 모든 준비를 급작스럽게 해줘야 했는데, 늘 웃으면서 도와주신 우리 마케팅팀의 혜진님, 현수님 너무나 고맙고, (포스터, 진행 모두 짱짱!!)
+&lt;/p&gt;
+&lt;p&gt;
+ 마케팅이라는
+ &lt;s&gt;
+  말같지도않은
+ &lt;/s&gt;
+ 포장을 가감없이 받아주시고, 강의료, 대관료 등등 비용을 믿고 지원해주시는 대표님, 지웅님 너무 감사 했습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ 저희 오픈소스컨설팅 아틀라시안팀은 더 많은 분들이 Jira/Confluene를 편하게 사용하실 그 날을 위해 좀 더 노력 하겠습니다.
+&lt;/p&gt;
+&lt;p&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ Jira 강의자료는 아래 사이트에서 다운로드 받으실 수 있습니다.
+ &amp;lt;img src=&quot;/assets/images/44205753/0&quot;&amp;gt;
+ &lt;img border=&quot;0&quot; class=&quot;emoticon emoticon-smile&quot; src=&quot;https://wiki.osci.kr/s/en_US/7701/d7b403a44466e5e8970db7530201039d865e79e1/6.9.0/_/images/icons/emoticons/smile.svg&quot; title=&quot;Smile :)&quot;/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;a class=&quot;external-link&quot; href=&quot;http://osci.kr/training/training.php&quot; rel=&quot;nofollow&quot;&gt;
+  http://osci.kr/training/training.php
+ &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ 그리고 매월 있을
+ &lt;strong&gt;
+  &lt;a class=&quot;external-link&quot; href=&quot;http://www.osci.kr/training/training.php&quot; rel=&quot;nofollow&quot;&gt;
+   Atlassian Training by Opensource Consulting
+  &lt;/a&gt;
+ &lt;/strong&gt;
+ 에도 많은관심 부탁드립니다.
+ &amp;lt;img src=&quot;/assets/images/44205753/0&quot;&amp;gt;
+ &lt;img alt=&quot;(smile)&quot; border=&quot;0&quot; class=&quot;emoticon emoticon-smile&quot; src=&quot;https://wiki.osci.kr/s/en_US/7701/d7b403a44466e5e8970db7530201039d865e79e1/_/images/icons/emoticons/smile.svg&quot; title=&quot;(smile)&quot;/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ 더 좋은 교육으로 찾아뵙겠습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;</description>
+        <pubDate>Thu, 09 Aug 2018 00:00:00 +0900</pubDate>
+        <link>https://tech.osci.kr/atlassian/2018/08/09/44205753/</link>
+        <guid isPermaLink="true">https://tech.osci.kr/atlassian/2018/08/09/44205753/</guid>
+        
+        <category>Jira</category>
+        
+        <category>교육</category>
+        
+        <category>Atlassian</category>
+        
+        
+        <category>Atlassian</category>
+        
+      </item>
     
       <item>
         <title>7월 Atlassian TroubleShooting 정리</title>
@@ -1968,835 +2331,6 @@ Atom 에디터로 Post를 작성하기 위해서 Markdown을 습득했습니다.
         
         
         <category>Agile, Jira</category>
-        
-      </item>
-    
-      <item>
-        <title>Jira Project Administration</title>
-        <description>&lt;div class=&quot;area_view&quot;&gt;
- &lt;div class=&quot;tt_article_useless_p_margin&quot;&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    &lt;b&gt;
-     [Jira Project Administration]
-    &lt;/b&gt;
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    이제 앞에서 열심히 설정했던 내용들을 사용해볼 시간입니다.
-    &lt;s&gt;
-     아이씐나
-    &lt;/s&gt;
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;p&gt;
-  &lt;/p&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    이쯤되면 까먹으셨을테니 다시 캡처를 첨부해보면, 만들었던 Web Customer Support로 들어간 뒤,
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    하단의 Project Administration을 클릭합니다.
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:267px;text-align: center;;height:auto;max-width:100%&quot;&gt;
-    &lt;img src=&quot;/assets/images/70/0.png&quot; /&gt;
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;p&gt;
-  &lt;/p&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    &lt;s&gt;
-     그리고 다시 시작된 곶통.jpg
-    &lt;/s&gt;
-    그럼 다음과 같은 화면이 나오며 좌측에 많이 본 듯한 메뉴가 존재합니다.
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    (Subtask Templates의 경우 플러그인이 설치되어있기에 나타난 메뉴입니다)
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;b&gt;
-    &lt;i&gt;
-     Summary
-    &lt;/i&gt;
-    :
-   &lt;/b&gt;
-   우선 Summary부터 보시면 프로젝트의 설정 요약으로써, 해당 프로젝트가 어떤 설정들을 적용받고 있는지를 보여줍니다.
-  &lt;/p&gt;
-  &lt;p style=&quot;text-align: center; clear: none; float: none;&quot;&gt;
-   &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:820px;;height:auto;max-width:100%&quot;&gt;
-    &lt;img src=&quot;/assets/images/70/1.png&quot; /&gt;
-   &lt;/span&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   우측의 Edit Proejct를 클릭 시, 해당 프로젝트의 이름, 키값, 프로젝트 아바타 등을 변경할 수있는 팝업창이 생성됩니다.
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:565px;text-align: center;;height:auto;max-width:100%&quot;&gt;
-    &lt;img src=&quot;/assets/images/70/2.png&quot; /&gt;
-   &lt;/span&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   그리고 옆의 Actions를 클릭 시 앞서 설명드렸듯이 프로젝트의 Software타입과 Business타입을 변경할 수 있는 메뉴와
-  &lt;/p&gt;
-  &lt;p&gt;
-   프로젝트 삭제, 인덱싱이 가능한 메뉴가 존재합니다.
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:222px;text-align: center;;height:auto;max-width:100%&quot;&gt;
-    &lt;img src=&quot;/assets/images/70/3.png&quot; /&gt;
-   &lt;/span&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;div&gt;
-   &lt;b&gt;
-    &lt;i&gt;
-     Issue types
-    &lt;/i&gt;
-    :
-   &lt;/b&gt;
-   우측의 Actions를 누르면 Edit issue types과 Use a different scheme이 있는데,
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    여기서 Edit issue type을 누를 경우 해당 프로젝트가 적용받고 있는 Issue type scheme을 수정하도록 이동합니다.
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    &lt;br /&gt;
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;p&gt;
-  &lt;/p&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    이것이 이전 단계에서 모든 scheme들을 가능한 새로 만든 이유로써, 누군가 실수로 Default scheme을 수정할 경우
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    다른
-   &lt;/span&gt;
-   모든 프로젝트도 영향을 받기 때문이죠.
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:194px;text-align: center;;height:auto;max-width:100%&quot;&gt;
-    &lt;img src=&quot;/assets/images/70/4.png&quot; /&gt;
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   Use a different scheme을 클릭 후 앞서 잘 만들어둔 WCS Issue Type Scheme을 선택한 뒤 OK를 눌러줍니다.
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:689px;text-align: center;;height:auto;max-width:100%&quot;&gt;
-    &lt;img src=&quot;/assets/images/70/5.png&quot; /&gt;
-   &lt;/span&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;b&gt;
-    &lt;i&gt;
-     Workflows
-    &lt;/i&gt;
-    :
-   &lt;/b&gt;
-   Switch Scheme를 클릭 후 이 또한 잘 만들어둔 WCS Workflow Scheme로 바꿔줍니다.
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:570px;text-align: center;;height:auto;max-width:100%&quot;&gt;
-    &lt;img src=&quot;/assets/images/70/6.png&quot; /&gt;
-   &lt;/span&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-  &lt;/p&gt;
-  &lt;div&gt;
-   &lt;b&gt;
-    &lt;i&gt;
-     Screens / Fields
-    &lt;/i&gt;
-    :
-   &lt;/b&gt;
-   Issue type과 동일한 화면이므로 생략하겠습니다.
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;b&gt;
-    &lt;i&gt;
-     Versions
-    &lt;/i&gt;
-    :
-   &lt;/b&gt;
-   Jira 이슈에 대해 간단한 버전관리를 할 수 있는 메뉴입니다.
-  &lt;/div&gt;
-  &lt;div&gt;
-   Version이나 다음에 나올 Component의 경우 필요에따라 사용하지 않아도 무방합니다.
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;div&gt;
-    Version을 사용하기 전에 조건이 있는데,
-   &lt;/div&gt;
-   &lt;div&gt;
-    &lt;br /&gt;
-   &lt;/div&gt;
-   &lt;ul&gt;
-    &lt;li&gt;
-     Project Type이 Software타입인지,
-    &lt;/li&gt;
-    &lt;li&gt;
-     Kanban이나 Scrum보드를 사용 중인지,
-    &lt;/li&gt;
-    &lt;li&gt;
-     Permission scheme에Administer Projects, Manage Sprint권한이 있는지
-    &lt;/li&gt;
-   &lt;/ul&gt;
-   &lt;div&gt;
-    &lt;br /&gt;
-   &lt;/div&gt;
-   &lt;div&gt;
-    확인이 필요합니다. 우선 본 문서에서는 다음처럼 간단히 v1, v2의 버전 두 개를 추가해보겠습니다.
-   &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;p&gt;
-  &lt;/p&gt;
-  &lt;p style=&quot;text-align: center; clear: none; float: none;&quot;&gt;
-   &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:820px;;height:auto;max-width:100%&quot;&gt;
-    &lt;img src=&quot;/assets/images/70/7.png&quot; /&gt;
-   &lt;/span&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   이후, 스크린에 Fix Versions라는 필드를 추가한 뒤, 이슈를 v1에 추가해줍니다.
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;span style=&quot;color: rgb(255, 0, 0);&quot;&gt;
-    하나의 이슈에 대해 Fix version은 하나만 할당해야만 하는 점에 주의하세요.
-   &lt;/span&gt;
-   그렇지않으면 이후 릴리즈 시
-  &lt;/p&gt;
-  &lt;p&gt;
-   이슈 갯수가 꼬여서 보이거나 기타 문제가 발생할 가능성이 있습니다.
-   &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:623px;text-align: center;;height:auto;max-width:100%&quot;&gt;
-    &lt;img src=&quot;/assets/images/70/8.png&quot; /&gt;
-   &lt;/span&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    &lt;br /&gt;
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    &lt;br /&gt;
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;p&gt;
-  &lt;/p&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    추가 후, Project의 Releases 메뉴를 확인 시 다음처럼 v1에 이슈가 한 개 들어간 것을 확인할 수 있습니다.
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;p&gt;
-  &lt;/p&gt;
-  &lt;p style=&quot;text-align: center; clear: none; float: none;&quot;&gt;
-   &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:820px;;height:auto;max-width:100%&quot;&gt;
-    &lt;img src=&quot;/assets/images/70/0.png&quot; /&gt;
-   &lt;/span&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   v1을 클릭 시 다음처럼 릴리즈 허브가 보여지며, 우측 상단의 Release를 클릭 시 팝업이 생성됩니다.
-  &lt;/p&gt;
-  &lt;p style=&quot;text-align: center; clear: none; float: none;&quot;&gt;
-   &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:820px;;height:auto;max-width:100%&quot;&gt;
-    &lt;img src=&quot;/assets/images/70/1.png&quot; /&gt;
-   &lt;/span&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   한 개의 덜 완료된 이슈에 대해 무시하고 릴리즈할 것인지, 다음버전으로 넘길 것인지를 확인하며 여기서 넘길 것을 선택하고 릴리즈 시,
-  &lt;/p&gt;
-  &lt;p style=&quot;text-align: center; clear: none; float: none;&quot;&gt;
-   &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:818px;;height:auto;max-width:100%&quot;&gt;
-    &lt;img src=&quot;/assets/images/70/2.png&quot; /&gt;
-   &lt;/span&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   이렇게 v2로 해당 이슈가 넘어간 것을 확인할 수 있습니다.
-  &lt;/p&gt;
-  &lt;p style=&quot;text-align: center; clear: none; float: none;&quot;&gt;
-   &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:820px;;height:auto;max-width:100%&quot;&gt;
-    &lt;img src=&quot;/assets/images/70/3.png&quot; /&gt;
-   &lt;/span&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;div&gt;
-   &lt;b&gt;
-    &lt;i&gt;
-     Componenents
-    &lt;/i&gt;
-    :
-   &lt;/b&gt;
-   Project와 Issue사이에 논리적으로 하나의 단계를 두기 위해 사용하는 기능입니다.
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    쉽게 말해서 핸드폰 앱을 개발한다는 가정하에 앱 개발을 프로젝트로 두고,
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   Component에 Android와 Iphone으로 구분하는 것을 생각하시면 됩니다.
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   Component또한 Version과 마찬가지로 간단히 입력하여 추가가 가능하며, 버전과 같은 조건은 필요하지 않습니다.
-  &lt;/div&gt;
-  &lt;p&gt;
-  &lt;/p&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    다음처럼 추가하시면 되며, Default Assignee를 설정 시 이슈를 생성할 때 해
-   &lt;/span&gt;
-   당 Component를 선택하면
-  &lt;/div&gt;
-  &lt;div&gt;
-   자동으로 해당 이슈의 Assignee가 Component Lead에게 할당되도록 설정할 수 있습니다.
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-   &lt;/span&gt;
-   &lt;span&gt;
-    &lt;p style=&quot;text-align: center; clear: none; float: none;&quot;&gt;
-     &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:820px;;height:auto;max-width:100%&quot;&gt;
-      &lt;img src=&quot;/assets/images/70/4.png&quot; /&gt;
-     &lt;/span&gt;
-    &lt;/p&gt;
-    &lt;p&gt;
-     &lt;br /&gt;
-    &lt;/p&gt;
-    &lt;br /&gt;
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    &lt;br /&gt;
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   그리고 물론 이 또한 스크린에서 Component필드를 추가해주어야합니다.
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:738px;text-align: center;;height:auto;max-width:100%&quot;&gt;
-    &lt;img src=&quot;/assets/images/70/5.png&quot; /&gt;
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    &lt;p&gt;
-     &lt;br /&gt;
-    &lt;/p&gt;
-    &lt;p&gt;
-     &lt;br /&gt;
-    &lt;/p&gt;
-    &lt;p&gt;
-     &lt;br /&gt;
-    &lt;/p&gt;
-   &lt;/span&gt;
-   &lt;div&gt;
-    &lt;b&gt;
-     &lt;i&gt;
-      User and roles
-     &lt;/i&gt;
-     :
-    &lt;/b&gt;
-    권한관리를 조금 더 세분화할 때 사용하는 메뉴로,  굳이 따지자면 그룹보다 한 단계 상위로 보시면됩니다.
-   &lt;/div&gt;
-   &lt;div&gt;
-    물론 이 또한 반드시 사용해야하는 메뉴는 아닙니다.
-   &lt;/div&gt;
-   &lt;div&gt;
-    우선 다음 화면에서 우측 상단의 Edit defaults를 눌러보시면 팝업창이 하나 생성됩니다.
-   &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;p style=&quot;text-align: center; clear: none; float: none;&quot;&gt;
-    &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:820px;;height:auto;max-width:100%&quot;&gt;
-     &lt;img src=&quot;/assets/images/70/6.png&quot; /&gt;
-    &lt;/span&gt;
-   &lt;/p&gt;
-   &lt;p&gt;
-    &lt;br /&gt;
-   &lt;/p&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    보시면 현재 프로젝트의 Project Lead와 Default Assignee를 변경할 수 있으며, Default Assignee를 Project Lead로 설정 시
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    담당자를 지정하지 않은 모든 이슈는 Project Lead에게 할당됩니다.
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;p&gt;
-  &lt;/p&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    &lt;s&gt;
-     마음에들지 않는 사람이 있다면 설정하여 메일 폭탄을 선물해보세요
-    &lt;/s&gt;
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;s&gt;
-    &lt;p style=&quot;text-align: center; clear: none; display: inline !important;&quot;&gt;
-     &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:549px;;height:auto;max-width:100%&quot;&gt;
-      &lt;img src=&quot;/assets/images/70/7.png&quot; /&gt;
-     &lt;/span&gt;
-    &lt;/p&gt;
-   &lt;/s&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    &lt;s&gt;
-     &lt;p&gt;
-      &lt;br /&gt;
-     &lt;/p&gt;
-     &lt;br /&gt;
-    &lt;/s&gt;
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    &lt;s&gt;
-     &lt;br /&gt;
-    &lt;/s&gt;
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   그 옆의 Add users to role을 선택 시 다음처럼 role에 사용자나 그룹을 할당할 수 있으며, 이 role은
-  &lt;/p&gt;
-  &lt;p&gt;
-   Jira Administrataion - System - Project roles에서 관리가능합니다.
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:309px;text-align: center;;height:auto;max-width:100%&quot;&gt;
-    &lt;img src=&quot;/assets/images/70/8.png&quot; /&gt;
-   &lt;/span&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;b&gt;
-    &lt;i&gt;
-     Permissions / Issue Security / Notifications
-    &lt;/i&gt;
-    :
-   &lt;/b&gt;
-   앞서나온 issue type과 설정방법이 같기에 생략합니다.
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;div&gt;
-   &lt;b&gt;
-    &lt;i&gt;
-     HipChat integration
-    &lt;/i&gt;
-    :
-   &lt;/b&gt;
-   Atlassian의 업무 SNS솔루션인 Hipchat과의 연동을 위한 메뉴입니다.
-  &lt;/div&gt;
-  &lt;div&gt;
-   Slack과의 기능상의 큰 차이는 없으나 대중성에서 밀린 비운의 툴이죠.
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    &lt;s&gt;
-     어차피 slack과의 연동 또한 플러그인으로 되므로 큰 의미는 없습니다만...
-    &lt;/s&gt;
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    &lt;s&gt;
-     &lt;br /&gt;
-    &lt;/s&gt;
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;b&gt;
-    &lt;i&gt;
-     Development tools
-    &lt;/i&gt;
-    :
-   &lt;/b&gt;
-   Atlassian의 타 솔루션인 Bamboo, Fisheye등과의 연동을 위한 메뉴입니다.
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    &lt;br /&gt;
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;b&gt;
-    &lt;i&gt;
-     Issue collectors
-    &lt;/i&gt;
-    :
-   &lt;/b&gt;
-   Jira 이슈에 대한 피드백을 받기위한 메뉴로, 내부 Jira계정을 이용하여 설정 시 만들어지는 html이나
-  &lt;/div&gt;
-  &lt;div&gt;
-   java script코드를 타겟 웹사이트에 심어 피드백을 받을 수 있도록 설정하는 메뉴입니다.
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    &lt;br /&gt;
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    &lt;br /&gt;
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    마지막으로 위에서 적용한 설정을 검증해보도록 하겠습니다.
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;p&gt;
-  &lt;/p&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    우선 Task 이슈타입으로 이슈 생성 시, 다음과 같이 기존 Default스크린으로 많은 필드들이 보여집니다.
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;p style=&quot;text-align: center; clear: none; float: none;&quot;&gt;
-   &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:820px;;height:auto;max-width:100%&quot;&gt;
-    &lt;img src=&quot;/assets/images/70/9.png&quot; /&gt;
-   &lt;/span&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    그럼 이슈타입을 Web Bug로 바꿔보면 어떨까요? 보시다시피 시스템적으로 반드시 들어가는 Proejct와
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    Issue Type을 제외하고 설정하였던 다섯가지의 필드만 보여지는 것을 확인할 수 있습니다.
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    &lt;br /&gt;
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;p&gt;
-  &lt;/p&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    필수값으로 변경하였었던 Web Bug Browser Type도 잘 적용되고 있네요.
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    만들어진 이후 View Workflow를 확인 시 워크플로우 또한 새로 만든 워크플로우가 잘 적용됨을 확인할 수 있습니다.
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;p style=&quot;text-align: center; clear: none; float: none;&quot;&gt;
-   &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:818px;;height:auto;max-width:100%&quot;&gt;
-    &lt;img src=&quot;/assets/images/70/10.png&quot; /&gt;
-   &lt;/span&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    &lt;br /&gt;
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    이로써, Jira 설정에 대한 기본 가이드를 정리해보았습니다. 이쯤되면 아시겠지만 딱히 어렵기보단 굉장히 귀찮은 작업입니다.
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    한 번 만들어두면 그 이후엔 나쁘지않으나 초기 세팅시에는 할 일이 꽤나 많죠.
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    &lt;br /&gt;
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    뒤로 갈수록 재미없어지는 글을 읽으시느라 고생많으셨고, 처음 Jira를 접하고 관리하셔야하는 분들에게 도움이 되었으면 좋겠습니다.
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;p&gt;
-  &lt;/p&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    &lt;s&gt;
-     언제가 될 지는 모르나,
-    &lt;/s&gt;
-    다음에 기회가 된다면 Confluence의 Overview 및 설정도 작성해보도록하겠습니다.
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;div class=&quot;container_postbtn&quot;&gt;
-  &lt;/div&gt;
-  &lt;div style=&quot;text-align:left; padding-top:10px;clear:both&quot;&gt;
-  &lt;/div&gt;
- &lt;/div&gt;
-&lt;/div&gt;
-</description>
-        <pubDate>Wed, 22 Feb 2017 20:25:26 +0900</pubDate>
-        <link>https://tech.osci.kr/jira,%20alm,%20project%20management/2017/02/22/tistory-70/</link>
-        <guid isPermaLink="true">https://tech.osci.kr/jira,%20alm,%20project%20management/2017/02/22/tistory-70/</guid>
-        
-        <category>Jira</category>
-        
-        <category>JiraAdmin</category>
-        
-        
-        <category>Jira, ALM, Project Management</category>
         
       </item>
     
