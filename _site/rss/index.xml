@@ -5,11 +5,264 @@
     <description>기술을 나눕니다. 함께 성장합니다.
 Sharing Tech. Growing Together.
 </description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/rss" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 06 Aug 2018 10:08:37 +0900</pubDate>
-    <lastBuildDate>Mon, 06 Aug 2018 10:08:37 +0900</lastBuildDate>
+    <link>https://tech.osci.kr/</link>
+    <atom:link href="https://tech.osci.kr/rss" rel="self" type="application/rss+xml"/>
+    <pubDate>Wed, 08 Aug 2018 21:17:05 +0900</pubDate>
+    <lastBuildDate>Wed, 08 Aug 2018 21:17:05 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>7월 Atlassian TroubleShooting 정리</title>
+        <description>&lt;h2 id=&quot;id-7월AtlassianTroubleShooting정리-7월이슈사항내역&quot;&gt;
+ 7월 이슈사항 내역
+&lt;/h2&gt;
+&lt;h3 id=&quot;id-7월AtlassianTroubleShooting정리-일반사용자가Header의Issues메뉴(Currentsearch,Searchforissues)사용시Layout이깨지며,Browser가hang되는현상&quot;&gt;
+ &lt;strong&gt;
+  일반 사용자가 Header의 Issues 메뉴(Current search, Search for issues) 사용 시 Layout이 깨지며, Browser가 hang되는 현상
+ &lt;/strong&gt;
+&lt;/h3&gt;
+&lt;ul&gt;
+ &lt;li style=&quot;list-style-type: none;background-image: none;&quot;&gt;
+  &lt;ul&gt;
+   &lt;li&gt;
+    Exception :Uncaught ReferenceError :Calendar is not defined
+   &lt;/li&gt;
+   &lt;li&gt;
+    사용하지 않는 Jira Suit Utilities plugin이 설치되어 있었으며, 해당 Add-on을 제거함으로써 해결
+   &lt;/li&gt;
+  &lt;/ul&gt;
+ &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;id-7월AtlassianTroubleShooting정리-Project생성시에러발생현상&quot;&gt;
+ &lt;strong&gt;
+  Project 생성 시 에러발생현상
+ &lt;/strong&gt;
+&lt;/h3&gt;
+&lt;ol&gt;
+ &lt;li style=&quot;list-style-type: none;background-image: none;&quot;&gt;
+  &lt;ul&gt;
+   &lt;li&gt;
+    Caused by: java.lang.RuntimeException: Could not identify Bundle at location &amp;lt;reference:
+    &lt;a class=&quot;external-link&quot; href=&quot;http://file/var/atlassian/application-data/jira/plugins/.osgi-plugins/transformed-plugins/project-templates-plugin-6.2.3_1531264928000.jar&quot; rel=&quot;nofollow&quot;&gt;
+     file:/var/atlassian/application-data/jira/plugins/.osgi-plugins/transformed-plugins/project-templates-plugin-6.2.3_1531264928000.jar
+    &lt;/a&gt;
+    &amp;gt;
+   &lt;/li&gt;
+   &lt;li&gt;
+    Cache된 플러그인 디렉토리가 삭제되어 발생하는 에러로, Jira 재시작 시 해결
+   &lt;/li&gt;
+  &lt;/ul&gt;
+ &lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;id-7월AtlassianTroubleShooting정리-JiraKanbanBoard에서이슈클릭시에러발생현상&quot;&gt;
+ &lt;strong&gt;
+  Jira Kanban Board에서 이슈 클릭 시 에러발생현상
+ &lt;/strong&gt;
+&lt;/h3&gt;
+&lt;ol&gt;
+ &lt;li style=&quot;list-style-type: none;background-image: none;&quot;&gt;
+  &lt;ul&gt;
+   &lt;li&gt;
+    An ssh error occurred while querying for reviews
+   &lt;/li&gt;
+   &lt;li&gt;
+    사용하지 않는 Gerrit plugin이 설치되어 있었으며, 해당 Add-on을 제거함으로써 해결
+   &lt;/li&gt;
+  &lt;/ul&gt;
+ &lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;id-7월AtlassianTroubleShooting정리-UserpickercustomField문제&quot;&gt;
+ &lt;strong&gt;
+  User picker custom Field 문제
+ &lt;/strong&gt;
+&lt;/h3&gt;
+&lt;ol&gt;
+ &lt;li style=&quot;list-style-type: none;background-image: none;&quot;&gt;
+  &lt;ul&gt;
+   &lt;li&gt;
+    사용자가 1000명 이상인 그룹에 대해 Jira의 Custom field 중 하나인 user picker를 사용 시 해당 그룹의 최대 사용자가 1000명까지밖에 조회되지않는 현상
+   &lt;/li&gt;
+   &lt;li&gt;
+    이는 Third-party Add-on인 Custom watcher field에서도 동일하게 발생
+   &lt;/li&gt;
+   &lt;li&gt;
+    현재 Bug로 등록 및 에스컬레이션 진행 중이나, Fix되지 않음
+    &lt;ul&gt;
+     &lt;li&gt;
+      &lt;a class=&quot;external-link&quot; href=&quot;https://jira.atlassian.com/browse/JRASERVER-63771&quot; rel=&quot;nofollow&quot;&gt;
+       https://jira.atlassian.com/browse/JRASERVER-63771
+      &lt;/a&gt;
+     &lt;/li&gt;
+    &lt;/ul&gt;
+   &lt;/li&gt;
+   &lt;li&gt;
+    Atlassian Bug Fix 정책에 따라, hotfix가 불가능
+   &lt;/li&gt;
+  &lt;/ul&gt;
+ &lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;id-7월AtlassianTroubleShooting정리-JiraFileupload문제&quot;&gt;
+ &lt;strong&gt;
+  Jira File upload 문제
+ &lt;/strong&gt;
+&lt;/h3&gt;
+&lt;ol&gt;
+ &lt;li style=&quot;list-style-type: none;background-image: none;&quot;&gt;
+  &lt;ul&gt;
+   &lt;li&gt;
+    Jira의 자체적인 파일업로드 사이즈 제한을 풀었음에도 파일 업로드가 되지 않는 현상
+   &lt;/li&gt;
+   &lt;li&gt;
+    Nginx 웹서버 설정의 max_body size 를 늘림으로써 해결
+   &lt;/li&gt;
+  &lt;/ul&gt;
+ &lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;id-7월AtlassianTroubleShooting정리-ConfluenceTable자음분리문제&quot;&gt;
+ &lt;strong&gt;
+  Confluence Table 자음 분리 문제
+ &lt;/strong&gt;
+&lt;/h3&gt;
+&lt;ol&gt;
+ &lt;li style=&quot;list-style-type: none;background-image: none;&quot;&gt;
+  &lt;ul&gt;
+   &lt;li&gt;
+    Confluence Table에서 첫 Column에서 한글의 자음이 분리되는 현상
+   &lt;/li&gt;
+   &lt;li&gt;
+    Chrome의 버그로 최신업데이트로 해결
+   &lt;/li&gt;
+  &lt;/ul&gt;
+ &lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;id-7월AtlassianTroubleShooting정리-JiraServiceDesk에서ConfluenceKnowledgeBase연동시Anonymous권한이있어야만하는현상&quot;&gt;
+ &lt;strong&gt;
+  Jira Service Desk에서 Confluence KnowledgeBase 연동 시 Anonymous 권한이 있어야만하는 현상
+ &lt;/strong&gt;
+&lt;/h3&gt;
+&lt;ul&gt;
+ &lt;li style=&quot;list-style-type: none;background-image: none;&quot;&gt;
+  &lt;ul&gt;
+   &lt;li&gt;
+    Jira의 Application link 버그로, 연결방식을 OAuth (impersonation)로 변경 시 해결
+   &lt;/li&gt;
+  &lt;/ul&gt;
+ &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;id-7월AtlassianTroubleShooting정리-SSRF버그를통한취약점문제&quot;&gt;
+ &lt;strong&gt;
+  SSRF 버그를 통한 취약점 문제
+ &lt;/strong&gt;
+&lt;/h3&gt;
+&lt;ol&gt;
+ &lt;li style=&quot;list-style-type: none;background-image: none;&quot;&gt;
+  &lt;ul&gt;
+   &lt;li&gt;
+    &lt;a class=&quot;external-link&quot; href=&quot;https://www.zdnet.com/article/jira-bug-exposed-private-server-keys-at-major-companies-researcher-finds/&quot; rel=&quot;nofollow&quot;&gt;
+     https://www.zdnet.com/article/jira-bug-exposed-private-server-keys-at-major-companies-researcher-finds/
+    &lt;/a&gt;
+   &lt;/li&gt;
+   &lt;li&gt;
+    &lt;a class=&quot;external-link&quot; href=&quot;https://www.trendmicro.com/vinfo/us/security/news/vulnerabilities-and-exploits/jira-bug-exposes-organizations-aws-server-keys&quot; rel=&quot;nofollow&quot;&gt;
+     https://www.trendmicro.com/vinfo/us/security/news/vulnerabilities-and-exploits/jira-bug-exposes-organizations-aws-server-keys
+    &lt;/a&gt;
+   &lt;/li&gt;
+   &lt;li&gt;
+    Jira / Confluence 각각 해당 취약점이 해결된 버전으로 업그레이드하여 해결
+   &lt;/li&gt;
+  &lt;/ul&gt;
+ &lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;id-7월AtlassianTroubleShooting정리-Log에사용자ID가남지않는문제&quot;&gt;
+ &lt;strong&gt;
+  Log에 사용자 ID가 남지않는 문제
+ &lt;/strong&gt;
+&lt;/h3&gt;
+&lt;ul&gt;
+ &lt;li style=&quot;list-style-type: none;background-image: none;&quot;&gt;
+  &lt;ul&gt;
+   &lt;li&gt;
+    &lt;p&gt;
+     192.168.1.120 - -
+     &lt;span class=&quot;error&quot;&gt;
+      [12/Jul/2018:14:53:16 +0900]
+     &lt;/span&gt;
+     0.366s - 7423 /wiki/attachmentnotfound.action?pageId=159876496
+    &lt;/p&gt;
+   &lt;/li&gt;
+   &lt;li&gt;
+    &lt;p&gt;
+     server.xml파일에 %{X-AUSERNAME}o 파라메터 추가
+     &lt;br/&gt;
+     &lt;a class=&quot;external-link&quot; href=&quot;https://confluence.atlassian.com/confkb/audit-confluence-using-the-tomcat-valve-component-223216846.html&quot; rel=&quot;nofollow&quot; title=&quot;Follow link&quot;&gt;
+      https://confluence.atlassian.com/confkb/audit-confluence-using-the-tomcat-valve-component-223216846.html
+     &lt;/a&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+     &lt;span class=&quot;error&quot;&gt;
+      [12/Jul/2018:15:04:19 +0900]
+     &lt;/span&gt;
+     testuser Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36 192.168.1.120 0.042s - 672 /wiki/rest/webResources/1.0/resources
+    &lt;/p&gt;
+   &lt;/li&gt;
+  &lt;/ul&gt;
+ &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;id-7월AtlassianTroubleShooting정리-ETC&quot;&gt;
+ ETC
+&lt;/h2&gt;
+&lt;h3 id=&quot;id-7월AtlassianTroubleShooting정리-CrowdDataCenterMechanism관련&quot;&gt;
+ Crowd Data Center Mechanism 관련
+&lt;/h3&gt;
+&lt;ul&gt;
+ &lt;li style=&quot;list-style-type: none;background-image: none;&quot;&gt;
+  &lt;ul&gt;
+   &lt;li&gt;
+    Jira의 경우 ehcache를, Confluence의 경우 hazelcast를 Clustering에 사용하나 Crowd에 대한 정보를 찾기가 어려워 Support에 질의
+   &lt;/li&gt;
+   &lt;li&gt;
+    Crowd의 경우 Jira나 Confluence만큼 복잡한 솔루션이 아니기에 DB Table 레벨에서 해결
+    &lt;ul&gt;
+     &lt;li&gt;
+      &lt;p&gt;
+       Crowd doesn't use any mechanisms like Hazelcast or ehcache to manage the cluster. It maintains the state of the cluster through tables in the database.
+       &lt;br/&gt;
+       Basically, Crowd is a
+       &lt;em&gt;
+        simpler
+       &lt;/em&gt;
+       application than Confluence or Jira and doesn't have any need to implement any additional clustering mechanism
+       &lt;br/&gt;
+       I also got the following information from one of our Crowd developers.
+      &lt;/p&gt;
+      &lt;blockquote&gt;
+       &lt;p&gt;
+        Crowd is not using cache replication among DC nodes.
+        &lt;br/&gt;
+        It relies on DB and there is publish - subscribe mechanism also based on DB to notify all nodes about changes in config
+       &lt;/p&gt;
+      &lt;/blockquote&gt;
+     &lt;/li&gt;
+    &lt;/ul&gt;
+   &lt;/li&gt;
+  &lt;/ul&gt;
+ &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;</description>
+        <pubDate>Tue, 07 Aug 2018 00:00:00 +0900</pubDate>
+        <link>https://tech.osci.kr/atlassian/2018/08/07/44205476/</link>
+        <guid isPermaLink="true">https://tech.osci.kr/atlassian/2018/08/07/44205476/</guid>
+        
+        <category>atlassian</category>
+        
+        <category>TroubleShooting</category>
+        
+        
+        <category>atlassian</category>
+        
+      </item>
     
       <item>
         <title>Bitbucket jekyll 블로그 만들기</title>
@@ -480,8 +733,8 @@ C:\Users\sy\Downloads\jasper-master\jasper-master&gt;bundle install&lt;/pre&gt;
  &lt;br/&gt;
 &lt;/p&gt;</description>
         <pubDate>Sun, 05 Aug 2018 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/bitbucket/2018/08/05/44205100/</link>
-        <guid isPermaLink="true">http://localhost:4000/bitbucket/2018/08/05/44205100/</guid>
+        <link>https://tech.osci.kr/bitbucket/2018/08/05/44205100/</link>
+        <guid isPermaLink="true">https://tech.osci.kr/bitbucket/2018/08/05/44205100/</guid>
         
         <category>git</category>
         
@@ -614,8 +867,8 @@ Confluence를 사용하면서 조금 아쉽다 하는 부분을 예리하게 기
 감사합니다.&lt;/p&gt;
 </description>
         <pubDate>Thu, 02 Aug 2018 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/2018/08/02/44204745/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/08/02/44204745/</guid>
+        <link>https://tech.osci.kr/2018/08/02/44204745/</link>
+        <guid isPermaLink="true">https://tech.osci.kr/2018/08/02/44204745/</guid>
         
         
       </item>
@@ -820,8 +1073,8 @@ Confluence를 사용하면서 조금 아쉽다 하는 부분을 예리하게 기
 &lt;p&gt;진행중인 btrfs의 상태는 논란이 되고 있습니다. SUSE Enterprise Linux는 2015년에 기본 파일시스템으로 인정한 반면 Red Hat은 2017년 RHEL 7.4의 시작으로 btrfs를 지원하지 않는다고 발표했습니다. ZFS 같이 다중 디스크 볼륨 관리가 아닌 단일 디스크 파일시스템으로 btrfs의 운영과 지원되는 운영 환경 구축으로 사용하는 것에 주목할 가치가 있습니다. -  스토리지 어플라이언스에 btrfs를 사용하는 Synology도 기존의 Linux 커널 RAID (mdraid) 위에 계층화하여 디스크를 관리합니다.&lt;/p&gt;
 </description>
         <pubDate>Tue, 31 Jul 2018 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/linux/2018/07/31/linux-filesystem/</link>
-        <guid isPermaLink="true">http://localhost:4000/linux/2018/07/31/linux-filesystem/</guid>
+        <link>https://tech.osci.kr/linux/2018/07/31/linux-filesystem/</link>
+        <guid isPermaLink="true">https://tech.osci.kr/linux/2018/07/31/linux-filesystem/</guid>
         
         <category>Linux</category>
         
@@ -868,8 +1121,8 @@ https://github.com/OpenSourceConsulting/opensourceconsulting.github.io&lt;br /&g
 &lt;h3 id=&quot;감사합니다&quot;&gt;감사합니다.&lt;/h3&gt;
 </description>
         <pubDate>Fri, 27 Jul 2018 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/git/2018/07/27/44204215/</link>
-        <guid isPermaLink="true">http://localhost:4000/git/2018/07/27/44204215/</guid>
+        <link>https://tech.osci.kr/git/2018/07/27/44204215/</link>
+        <guid isPermaLink="true">https://tech.osci.kr/git/2018/07/27/44204215/</guid>
         
         <category>git</category>
         
@@ -949,8 +1202,8 @@ Edit할 때는 보이지 않지만 저장 후 보여요 :)&lt;br /&gt;
 atlassian@osci.kr&lt;/p&gt;
 </description>
         <pubDate>Mon, 23 Jul 2018 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/confluence,%20atlassian/2018/07/23/confluence-style/</link>
-        <guid isPermaLink="true">http://localhost:4000/confluence,%20atlassian/2018/07/23/confluence-style/</guid>
+        <link>https://tech.osci.kr/confluence,%20atlassian/2018/07/23/confluence-style/</link>
+        <guid isPermaLink="true">https://tech.osci.kr/confluence,%20atlassian/2018/07/23/confluence-style/</guid>
         
         <category>Confluence</category>
         
@@ -1067,8 +1320,8 @@ API 빌드 결과에 따라서 다음 API 서버의 작업을 다르게 설정�
 감사합니다.&lt;/p&gt;
 </description>
         <pubDate>Tue, 17 Jul 2018 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/ci/cd/2018/07/17/41553358/</link>
-        <guid isPermaLink="true">http://localhost:4000/ci/cd/2018/07/17/41553358/</guid>
+        <link>https://tech.osci.kr/ci/cd/2018/07/17/41553358/</link>
+        <guid isPermaLink="true">https://tech.osci.kr/ci/cd/2018/07/17/41553358/</guid>
         
         <category>Bamboo</category>
         
@@ -1297,8 +1550,8 @@ Atom 에디터로 Post를 작성하기 위해서 Markdown을 습득했습니다.
 글이 많이 작성 된다면 스크립트 만들어서 자동으로 넘기겠습니다.  &lt;code class=&quot;highlighter-rouge&quot;&gt;https://wiki.osci.kr/pages/viewpage.action?pageId=41553358&lt;/code&gt;&lt;/p&gt;
 </description>
         <pubDate>Tue, 03 Jul 2018 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/opensource,%20github,%20jekyll/2018/07/03/migration-github-blog/</link>
-        <guid isPermaLink="true">http://localhost:4000/opensource,%20github,%20jekyll/2018/07/03/migration-github-blog/</guid>
+        <link>https://tech.osci.kr/opensource,%20github,%20jekyll/2018/07/03/migration-github-blog/</link>
+        <guid isPermaLink="true">https://tech.osci.kr/opensource,%20github,%20jekyll/2018/07/03/migration-github-blog/</guid>
         
         <category>GitHub</category>
         
@@ -1706,8 +1959,8 @@ Atom 에디터로 Post를 작성하기 위해서 Markdown을 습득했습니다.
 &lt;/div&gt;
 </description>
         <pubDate>Tue, 13 Jun 2017 22:50:47 +0900</pubDate>
-        <link>http://localhost:4000/agile,%20jira/2017/06/13/tistory-71/</link>
-        <guid isPermaLink="true">http://localhost:4000/agile,%20jira/2017/06/13/tistory-71/</guid>
+        <link>https://tech.osci.kr/agile,%20jira/2017/06/13/tistory-71/</link>
+        <guid isPermaLink="true">https://tech.osci.kr/agile,%20jira/2017/06/13/tistory-71/</guid>
         
         <category>Agile</category>
         
@@ -2535,8 +2788,8 @@ Atom 에디터로 Post를 작성하기 위해서 Markdown을 습득했습니다.
 &lt;/div&gt;
 </description>
         <pubDate>Wed, 22 Feb 2017 20:25:26 +0900</pubDate>
-        <link>http://localhost:4000/jira,%20alm,%20project%20management/2017/02/22/tistory-70/</link>
-        <guid isPermaLink="true">http://localhost:4000/jira,%20alm,%20project%20management/2017/02/22/tistory-70/</guid>
+        <link>https://tech.osci.kr/jira,%20alm,%20project%20management/2017/02/22/tistory-70/</link>
+        <guid isPermaLink="true">https://tech.osci.kr/jira,%20alm,%20project%20management/2017/02/22/tistory-70/</guid>
         
         <category>Jira</category>
         
@@ -2544,335 +2797,6 @@ Atom 에디터로 Post를 작성하기 위해서 Markdown을 습득했습니다.
         
         
         <category>Jira, ALM, Project Management</category>
-        
-      </item>
-    
-      <item>
-        <title>Jira 설정_9(Schemes)</title>
-        <description>&lt;div class=&quot;area_view&quot;&gt;
- &lt;div class=&quot;tt_article_useless_p_margin&quot;&gt;
-  &lt;p&gt;
-   드디어 마지막인 Scheme부분입니다.
-  &lt;/p&gt;
-  &lt;p&gt;
-   앞서 나왔던 Field scheme이라던가 screen scheme들도 있기에 조금 더 정확히 쓰자면
-  &lt;/p&gt;
-  &lt;p&gt;
-   Issue security, Permission, Notification Scheme입니다만, 제목으론 조금 길어서 scheme으로 적었습니다.
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   그럼 Issue탭 설정의 마지막을 적어보겠습니다.
-  &lt;/p&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    &lt;br /&gt;
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    &lt;br /&gt;
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;b&gt;
-    &lt;i&gt;
-     Issue security schemes
-    &lt;/i&gt;
-    :
-   &lt;/b&gt;
-   생성된 이슈들에 대해서 볼 수 있는 권한을 설정하는 메뉴입니다.
-  &lt;/div&gt;
-  &lt;div&gt;
-   일반적으로 많이 사용하는 메뉴는 아니지만, 설명은 하고 넘어가야겠죠.
-  &lt;/div&gt;
-  &lt;p&gt;
-  &lt;/p&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    우선 Add issue Security Scheme를 클릭하여 다음처럼 Test Issue Security Scheme을 생성합니다.
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;p style=&quot;text-align: center; clear: none; float: none;&quot;&gt;
-   &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:820px;;height:auto;max-width:100%&quot;&gt;
-    &lt;img src=&quot;/assets/images/69/1.png&quot; /&gt;
-   &lt;/span&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   그리고 우측의 Security Levels를 클릭 후 다음처럼 Test A와 Test B레벨을 만들어줍니다.
-  &lt;/p&gt;
-  &lt;p style=&quot;text-align: center; clear: none; float: none;&quot;&gt;
-   &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:820px;;height:auto;max-width:100%&quot;&gt;
-    &lt;img src=&quot;/assets/images/69/2.png&quot; /&gt;
-   &lt;/span&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   그리고 우측의 Add를 클릭하여 해당 레벨에 포함될 사용자, 그룹, Role을 설정합니다.
-   &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:496px;text-align: center;;height:auto;max-width:100%&quot;&gt;
-    &lt;img src=&quot;/assets/images/69/3.png&quot; /&gt;
-   &lt;/span&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    위와 같이 설정이 완료되었다면, 앞서 Time Tracking과 Linked Issue를 추가하였듯이,
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    스크린에 Security Level필드를 추가하여 레벨을 설정합니다.
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;p&gt;
-  &lt;/p&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    이후 해당 이슈는 이슈레벨에 맞는 사용자에게만 보여지게됩니다.
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    (만약 해당 기능이 잘 동작하지 않는다면, 이후 설명드릴 Permission schemes의 Set Issue Security부분을 확인해보세요)
-   &lt;/span&gt;
-   &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:376px;text-align: center;;height:auto;max-width:100%&quot;&gt;
-    &lt;img src=&quot;/assets/images/69/4.png&quot; /&gt;
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;div&gt;
-   &lt;b&gt;
-    &lt;i&gt;
-     Notificaiton schemes
-    &lt;/i&gt;
-    :
-   &lt;/b&gt;
-   이름에서도 감이오듯이, 메일 설정에 관련된 부분입니다.
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    정확하게는 메일 서버가 구성되어있다는 전제하에, 어떤 상태일 때 메일을 발송할지를 지정하는 곳이죠.
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    &lt;br /&gt;
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    기본적으론 Default Notification Scheme을 사용하며, 필요할 경우 Add Notification Scheme을 클릭하여 각 프로젝트별로 생성합니다.
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    보통 프로젝트별로 사용자나 그룹이 다르기에
-   &lt;/span&gt;
-   따로 만들어서 사용하는 편이 좋습니다.
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;p&gt;
-  &lt;/p&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    다음과 같이 새로 만들면,
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:463px;text-align: center;;height:auto;max-width:100%&quot;&gt;
-    &lt;img src=&quot;/assets/images/69/5.png&quot; /&gt;
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   이런 화면이 나타나며 만들어집니다. 각 이벤트에 대해 우측 Add를 클릭하여 사용자나 그룹, Role등을 지정하면되고,
-  &lt;/div&gt;
-  &lt;div&gt;
-   이벤트 자체의 추가가 필요한 경우, 한참 앞에서 나왔던 Jira Administration - System - Events 메뉴에서 가능합니다.
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;p style=&quot;text-align: center; clear: none; float: none;&quot;&gt;
-    &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:820px;;height:auto;max-width:100%&quot;&gt;
-     &lt;img src=&quot;/assets/images/69/6.png&quot; /&gt;
-    &lt;/span&gt;
-   &lt;/p&gt;
-   &lt;p&gt;
-    &lt;br /&gt;
-   &lt;/p&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;b&gt;
-    &lt;i&gt;
-     Permission schemes
-    &lt;/i&gt;
-    :
-   &lt;/b&gt;
-   드디어 마지막으로 권한관리 메뉴입니다. 다시 한 번 상기시켜드리자면 이 메뉴는 프로젝트별로 적용되는 내용으로
-  &lt;/div&gt;
-  &lt;div&gt;
-   Jira 전체에 대한 권한은 Jira Administration - System - Global Permission에서 설정가능합니다.
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;br /&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   다음처럼 빠르게 하나 만드시면,
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:413px;text-align: center;;height:auto;max-width:100%&quot;&gt;
-    &lt;img src=&quot;/assets/images/69/7.png&quot; /&gt;
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   대략 이런식으로 Notification scheme처럼 비슷한 화면이 나타나며 우측 Edit로 권한을 부여하시면 됩니다.
-  &lt;/p&gt;
-  &lt;p style=&quot;text-align: center; clear: none; float: none;&quot;&gt;
-   &lt;span class=&quot;imageblock&quot; style=&quot;display:inline-block;width:820px;;height:auto;max-width:100%&quot;&gt;
-    &lt;img src=&quot;/assets/images/69/9.png&quot; /&gt;
-   &lt;/span&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    &lt;br /&gt;
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   보통 Jira Software버전을 설치 시, Default Permission Scheme과 Default Software Permission Scheme이 나뉘어져있는데
-  &lt;/div&gt;
-  &lt;div&gt;
-   Default Permission Scheme의 경우 Assignable Users 권한이 jira-developers로 되어있기에
-  &lt;/div&gt;
-  &lt;p&gt;
-  &lt;/p&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    가끔 Business타입으로 프로젝트를 생성 시 Assignee에 타 유저가 검색되지 않는 경우가 있으므로 바꿔주는 것을 권장드립니다.
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-   &lt;span&gt;
-    &lt;s&gt;
-     그리고 필자는 귀찮아서 전부 없애고 하나로 통일했다고 합니다
-    &lt;/s&gt;
-   &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;p&gt;
-   &lt;br /&gt;
-  &lt;/p&gt;
-  &lt;p&gt;
-   여기까지 진행하시느라 고생많으셨으며, 다음에서는 여태 설정했던 내용들을
-  &lt;/p&gt;
-  &lt;p&gt;
-   실제 Project에 적용하는 것을 진행해보겠습니다.
-  &lt;/p&gt;
-  &lt;div class=&quot;container_postbtn&quot;&gt;
-  &lt;/div&gt;
-  &lt;div style=&quot;text-align:left; padding-top:10px;clear:both&quot;&gt;
-  &lt;/div&gt;
- &lt;/div&gt;
-&lt;/div&gt;
-</description>
-        <pubDate>Mon, 20 Feb 2017 20:25:27 +0900</pubDate>
-        <link>http://localhost:4000/atlassian,%20alm,%20project%20management/2017/02/20/tistory-69/</link>
-        <guid isPermaLink="true">http://localhost:4000/atlassian,%20alm,%20project%20management/2017/02/20/tistory-69/</guid>
-        
-        <category>Jira</category>
-        
-        <category>Jira Scheme</category>
-        
-        
-        <category>Atlassian, ALM, Project Management</category>
         
       </item>
     
