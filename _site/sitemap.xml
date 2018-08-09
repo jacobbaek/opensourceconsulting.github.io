@@ -5,6 +5,15 @@
         xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://tech.osci.kr/atlassian/2018/08/09/44205753/</loc>
+    
+    <lastmod>2018-08-09T00:00:00+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
     <loc>https://tech.osci.kr/atlassian/2018/08/07/44205476/</loc>
     
     <lastmod>2018-08-07T00:00:00+09:00</lastmod>
@@ -344,6 +353,12 @@
   
   
   
+  
+  <url>
+    <loc>https://tech.osci.kr/authors/brian</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
   
   <url>
     <loc>https://tech.osci.kr/authors/ienvyou</loc>
