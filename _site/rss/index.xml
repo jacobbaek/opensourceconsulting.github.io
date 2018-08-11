@@ -7,8 +7,8 @@ Sharing Tech. Growing Together.
 </description>
     <link>https://tech.osci.kr/</link>
     <atom:link href="https://tech.osci.kr/rss" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 12 Aug 2018 02:12:55 +0900</pubDate>
-    <lastBuildDate>Sun, 12 Aug 2018 02:12:55 +0900</lastBuildDate>
+    <pubDate>Sun, 12 Aug 2018 02:18:02 +0900</pubDate>
+    <lastBuildDate>Sun, 12 Aug 2018 02:18:02 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
     
       <item>
@@ -540,7 +540,7 @@ Sharing Tech. Growing Together.
 매달 이런 무료 교육이 진행 예정입니다.&lt;br/&gt;
 좋은 문화와 도구를 알리는데 좋은 기회가 됐으면 합니다.&lt;br/&gt;
  자세한 내용은 PDF를 참고하여 주시기 바랍니다.&lt;br/&gt;
-&lt;embed src=&quot;./files/OSC_JIRA기본사용자교육.pdf&quot; width=&quot;100%&quot; height=&quot;300px&quot;&gt;</description>
+&lt;embed src=&quot;/files/OSC_JIRA기본사용자교육.pdf&quot; width=&quot;100%&quot; height=&quot;300px&quot;&gt;</description>
         <pubDate>Thu, 09 Aug 2018 00:00:00 +0900</pubDate>
         <link>https://tech.osci.kr/2018/08/09/44205726/</link>
         <guid isPermaLink="true">https://tech.osci.kr/2018/08/09/44205726/</guid>
