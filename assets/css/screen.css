@@ -842,7 +842,7 @@ body.tag-template #navbar {
 }
 
 #post-content p {
-    /* margin: 28px 0 0 0; */
+    margin: 0;
 }
 
 #post-content ul,
@@ -1064,7 +1064,7 @@ body.author-template {
 
 body.author-template #cover h1,
 body.author-template #cover p {
-    max-width: 606px;
+    /* max-width: 606px; */
     width: 100%; /* @@iolo */
     margin-left: 254px; /* 254px = 80(padding-left) + 144(#cover-author-image width) + 30(spacing) */
     text-align: left;

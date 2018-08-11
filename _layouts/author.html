@@ -6,15 +6,13 @@ layout: default
     {% include share.html %}
 </div>
 
-<div id="cover" class="container"
-     {% if page.cover %}style="background-image: url({{ page.cover }});"{% endif %}>
+<div id="cover" class="container" style="background-image: url('/assets/images/book-glass.jpeg');">
     <div>
-        <div id="cover-author-image"
-             {% if page.image %}style="background-image:url({{ page.image }});"{% endif %}>
-            <span class="sr-only">{{ page.name }}'s profile image</span>
+        <div id="cover-author-image" style="width:0px; height: 0px;">
+            <span class="sr-only"></span>
         </div>
         <h1>{{ page.title | default: page.name }}</h1>
-        <p>All Posts by <em>{{ page.name }}</em></p>
+        <p style="margin:0px; text-align: center; width: 100%; max-width: 100%;">All Posts by <em>{{ page.name }}</em></p>
     </div>
 </div>
 

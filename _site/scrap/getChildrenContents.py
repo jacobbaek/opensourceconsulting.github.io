@@ -52,7 +52,7 @@ for body in children_url:
     for img in body_soup.find_all('img'):
         try:
             img_src = urllib.parse.unquote(img['src'])
-            img_tag = f'<img src="/assets/images/{body}/{cnt}">'
+            img_tag = BeautifulSoup(f'<img src="/assets/images/{body}/{cnt}">', "html.parser")
             img.insert_before(img_tag)
             img_bin = requests.get(f'{base_url}{img_src}', auth=(user, password))
             print('downloading..', f'{base_url}{img_src}')
@@ -76,25 +76,12 @@ for body in children_url:
     post_header += 'category: \n'
     post_header += '---\n'
 
-    #remove tags
-    # tags = ['span', 'h1', 'h2', 'h3', 'h4', 'br', 'strong']
-    # for tag in tags:
-    #     for r_tag in body_soup.find_all(tag):
-    #         if r_tag.name == 'h1':
-    #             r_tag.insert_before('# ')
-    #         if r_tag.name == 'h2':
-    #             r_tag.insert_before('## ')
-    #         if r_tag.name == 'h3':
-    #             r_tag.insert_before('### ')
-    #         if r_tag.name == 'h4':
-    #             r_tag.insert_before('#### ')
-    #         r_tag.replaceWithChildren()
-
-    # #remove p tag
-    # post = body_soup.prettify()
-    # post = post.replace('\n', '')
-    # post = post.replace('<p>', '')
-    # post = post.replace('</p>', '  \n')
+    for r_tag in body_soup.find_all('p'):
+        try:
+            if len(r_tag.text) == 0:
+                r_tag.extract()
+        except Exception as e:
+            print(e)
 
     post_file = open(f'../_posts/{created_date}-{body}.html', 'w')
     post_file.write(post_header)
