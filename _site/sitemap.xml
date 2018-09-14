@@ -5,6 +5,33 @@
         xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://tech.osci.kr/docker/2018/09/10/45749387/</loc>
+    
+    <lastmod>2018-09-10T00:00:00+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/atlassian/2018/09/10/45749344/</loc>
+    
+    <lastmod>2018-09-10T00:00:00+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/jira/2018/08/30/45745597/</loc>
+    
+    <lastmod>2018-08-30T00:00:00+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
     <loc>https://tech.osci.kr/marketing/2018/08/13/44206301/</loc>
     
     <lastmod>2018-08-13T00:00:00+09:00</lastmod>
@@ -372,8 +399,16 @@
   
   
   
+  
+  
   <url>
     <loc>https://tech.osci.kr/authors/brian</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/authors/chhan</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -386,6 +421,12 @@
   
   <url>
     <loc>https://tech.osci.kr/authors/it2seiyon</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/authors/natalia.tian</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
