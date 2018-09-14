@@ -7,8 +7,8 @@ Sharing Tech. Growing Together.
 </description>
     <link>https://tech.osci.kr/</link>
     <atom:link href="https://tech.osci.kr/rss" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 14 Sep 2018 13:27:38 +0900</pubDate>
-    <lastBuildDate>Fri, 14 Sep 2018 13:27:38 +0900</lastBuildDate>
+    <pubDate>Fri, 14 Sep 2018 13:36:49 +0900</pubDate>
+    <lastBuildDate>Fri, 14 Sep 2018 13:36:49 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
     
       <item>
@@ -95,7 +95,9 @@ Sharing Tech. Growing Together.
 &lt;p&gt;
  &lt;br/&gt;
 &lt;/p&gt;
-&lt;iframe allow=&quot;autoplay; encrypted-media&quot; allowfullscreen=&quot;&quot; class=&quot;conf-macro output-block&quot; data-hasbody=&quot;true&quot; data-macro-name=&quot;markdown&quot; frameborder=&quot;0&quot; height=&quot;450&quot; src=&quot;https://www.youtube.com/embed/n-JwAM6XF88&quot; width=&quot;800&quot;&gt;
+&lt;iframe allow=&quot;autoplay; encrypted-media&quot; allowfullscreen=&quot;&quot; 
+class=&quot;conf-macro output-block&quot; data-hasbody=&quot;true&quot; data-macro-name=&quot;markdown&quot; 
+frameborder=&quot;0&quot; height=&quot;450&quot; src=&quot;https://www.youtube.com/embed/n-JwAM6XF88&quot; style=&quot;width:100%&quot;&gt;
 &lt;/iframe&gt;
 &lt;p&gt;
  출처 :
@@ -166,7 +168,7 @@ drwxr-xr-x  5 root root   0  7월  6 23:23 systemd&lt;/pre&gt;
  해당 서브시스템에 대한 설명은 아래와 같습니다.
 &lt;/p&gt;
 &lt;div class=&quot;table-wrap&quot;&gt;
- &lt;table class=&quot;relative-table wrapped confluenceTable&quot; style=&quot;width: 34.9411%;&quot;&gt;
+ &lt;table class=&quot;relative-table wrapped confluenceTable&quot; style=&quot;width: 100%;&quot;&gt;
   &lt;colgroup&gt;
    &lt;col style=&quot;width: 21.0477%;&quot;/&gt;
    &lt;col style=&quot;width: 78.9523%;&quot;/&gt;
