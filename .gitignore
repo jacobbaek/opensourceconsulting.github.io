@@ -1,5 +1,4 @@
 .DS_Store
-env.py
 .vscode/
 .history/
 __pycache__/
