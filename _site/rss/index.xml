@@ -7,9 +7,263 @@ Sharing Tech. Growing Together.
 </description>
     <link>https://tech.osci.kr/</link>
     <atom:link href="https://tech.osci.kr/rss" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 15 Nov 2018 02:26:59 +0900</pubDate>
-    <lastBuildDate>Thu, 15 Nov 2018 02:26:59 +0900</lastBuildDate>
+    <pubDate>Wed, 05 Dec 2018 13:56:55 +0900</pubDate>
+    <lastBuildDate>Wed, 05 Dec 2018 13:56:55 +0900</lastBuildDate>
     <generator>Jekyll v3.7.4</generator>
+    
+      <item>
+        <title>Atlassian Oracle SE Java</title>
+        <description>&lt;p&gt;
+ Oracle Java BCL 라이선스가 2018년 7월 부로 `Java SE subscription` 년단위 구독모델로 개편됐습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ Oracle 유료화 모델이 변경 되면서 Atlassian Server, DataCenter에 어떤 영향을 주는지 알아봤습니다.
+&lt;/p&gt;
+&lt;h1 id=&quot;AtlassianOracleSEJava-OracleJDK는유료인가?&quot;&gt;
+ Oracle JDK는 유료인가?
+&lt;/h1&gt;
+&lt;p&gt;
+ 2019년 1월 이후에 릴리즈되는 Oracle Java SE8은 유료 라이선스 없이 없무용, 상업용으로 사용할 수 없습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ 그러면 그전의 1.8.181은 BCL 계약의 동의하에 무료로 사용할 수 있습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ 무료로 사용할 수 있는 범위는 Oracle Java SE 8 을 수정하지 않고 그대로 사용하면 무료로 사용할 수 있습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ 보통 Spring Framework이나 Java를 사용하지 Java SE를 고쳐서 쓰는 경우는 드물다고 생각합니다..
+&lt;/p&gt;
+&lt;p&gt;
+ 1.8.181 을 패치 없이 사용하거나 구독형 라이선스를 구매해서 사용할 수 있습니다.
+&lt;/p&gt;
+&lt;h1 id=&quot;AtlassianOracleSEJava-AtlassianOracleJava지원&quot;&gt;
+ Atlassian Oracle Java 지원
+&lt;/h1&gt;
+&lt;p&gt;
+ Oracle Java를 사용하는 제품은 Jira, Confluence가 있습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ 무료 사용자는 Java 1.8 패치 지원이 중단되면서 구매를 해야하나? 궁금하실 텐데요.
+&lt;/p&gt;
+&lt;p&gt;
+ Atlassian은 Open JDK 지원 계획을 발표 했습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ 그리고 Beta Version으로 Open JDK를 지원하는 최신 버전의 Jira, Confluence가 릴리즈 됐습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ 물론 Oracle JDK도 같이 지원 예정입니다.
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;a class=&quot;external-link&quot; href=&quot;https://confluence.atlassian.com/jirasoftware/jira-software-7-13-x-release-notes-957981568.html#JiraSoftware7.13.xreleasenotes-openjdk&quot; rel=&quot;nofollow&quot;&gt;
+  https://confluence.atlassian.com/jirasoftware/jira-software-7-13-x-release-notes-957981568.html#JiraSoftware7.13.xreleasenotes-openjdk
+ &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;a class=&quot;external-link&quot; href=&quot;https://confluence.atlassian.com/doc/preparing-for-confluence-6-13-958443854.html&quot; rel=&quot;nofollow&quot;&gt;
+  https://confluence.atlassian.com/doc/preparing-for-confluence-6-13-958443854.html
+ &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ 현재 1.8.181로 사용하고 계시다면 Jira, Confluence 최신 버전이 안정화 될 때 까지 지켜보다가 Open JDK로 운영하시는게 좋을 것 같습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ 오픈소스컨설팅과 함께면 더욱 좋겠죠?
+&lt;/p&gt;
+&lt;p&gt;
+ 감사합니다.
+&lt;/p&gt;
+&lt;p&gt;
+ 참고 링크
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;a class=&quot;external-link&quot; href=&quot;https://www.oracle.com/technetwork/java/javase/eol-135779.html&quot; rel=&quot;nofollow&quot;&gt;
+  https://www.oracle.com/technetwork/java/javase/eol-135779.html
+ &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;a class=&quot;external-link&quot; href=&quot;https://www.oracle.com/technetwork/java/javase/terms/license/index.html&quot; rel=&quot;nofollow&quot;&gt;
+  https://www.oracle.com/technetwork/java/javase/terms/license/index.html
+ &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;a class=&quot;external-link&quot; href=&quot;https://okky.kr/article/482664&quot; rel=&quot;nofollow&quot;&gt;
+  https://okky.kr/article/482664
+ &lt;/a&gt;
+&lt;/p&gt;
+</description>
+        <pubDate>Sun, 02 Dec 2018 00:00:00 +0900</pubDate>
+        <link>https://tech.osci.kr/atlassian/2018/12/02/50692831/</link>
+        <guid isPermaLink="true">https://tech.osci.kr/atlassian/2018/12/02/50692831/</guid>
+        
+        <category>jdk1.8 java</category>
+        
+        <category>atlassian</category>
+        
+        <category>jira oracle jdk</category>
+        
+        
+        <category>atlassian</category>
+        
+      </item>
+    
+      <item>
+        <title>[KOSSCON 2018] 오픈소스로서의 오픈스택과 그 미래</title>
+        <description>&lt;p&gt;
+ 안녕하세요? 오픈소스컨설팅입니다.
+&lt;/p&gt;
+&lt;p&gt;
+ 지난 11월 29일(목) 과학기술정보통신부가 주최하고 정보통신산업진흥원(NIPA)이 주관하는 '2018 공개소프트웨어 컨퍼런스'가 개최되었습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ 본 행사는 국내외 최신 오픈소스 기술을 공유하는 행사로, 올해 컨퍼런스는 4차 산업혁명시대에 가장 주목받는 있는 AI, 빅데이터, 블록체인, 클라우드 기술에 대한 내용이 심도있게 다뤄졌습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
+  &lt;img src=&quot;/assets/images/50692685/0&quot;/&gt;
+ &lt;/span&gt;
+ &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
+  &lt;img src=&quot;/assets/images/50692685/1&quot;/&gt;
+ &lt;/span&gt;
+ &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
+  &lt;img src=&quot;/assets/images/50692685/2&quot;/&gt;
+ &lt;/span&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ 국내  SW기업과 개발자 간 소통 확대를 위한 KOSSCON 행사에 오픈소스컨설팅도 참여하였습니다!
+&lt;/p&gt;
+&lt;p&gt;
+ 오픈소스컨설팅 클라우드팀 김호진 이사님께서 발표한
+ &lt;strong&gt;
+  '오픈소스로서의 오픈스택과 그 미래
+ &lt;/strong&gt;
+ ' 내용에 대해 공유 드립니다.
+&lt;/p&gt;
+&lt;h3 id=&quot;id-[KOSSCON2018]오픈소스로서의오픈스택과그미래-오픈스택의시작&quot;&gt;
+ 오픈스택의 시작
+&lt;/h3&gt;
+&lt;p&gt;
+ 오픈스택은 2010년, 퍼블릭 클라우드인 Amazon Web Service의 모든 장점을 가지고 싶어하는 니즈로 개발된 솔루션입니다.
+&lt;/p&gt;
+&lt;p&gt;
+ NASA(미 항공우주국)와 랙스페이스라는 기업이 오픈스택 기술 개발을 주도하며, 상상할 수도 없는 거대한 스케일의 인프라를 가장 저렴한 가격으로 구성해냈습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ X86 시장의 등장으로 모든 HW/SW 벤더가 가상화 인프라를 가질 수 있는 기회를 갖게 되었습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ 이것은 소프트웨어 업체에게도 제품의 표준을 만들 수 있는 기회가 되었습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ 모든 HW/SW 회사가 인프라를 가질 수 있다는 꿈이 생기면서 많은 업체들이 오픈소스 프로젝트에 기여하게 되었고
+&lt;/p&gt;
+&lt;p&gt;
+ RedHat, Huawei, 99Cloud 등과 같은 업체들이 오픈스택 프로젝트를 리드하고 있습니다.
+&lt;/p&gt;
+&lt;h3 id=&quot;id-[KOSSCON2018]오픈소스로서의오픈스택과그미래-오픈스택의차별점&quot;&gt;
+ &lt;span style=&quot;color: rgb(27,29,37);&quot;&gt;
+  오픈스택의 차별점
+ &lt;/span&gt;
+&lt;/h3&gt;
+&lt;p&gt;
+ 이렇게 많은 회사가 오픈스택 프로젝트에 참여하는 이유는 무엇일까요?
+&lt;/p&gt;
+&lt;p&gt;
+ 첫번째는 오픈스택의 모듈성입니다.
+&lt;/p&gt;
+&lt;p&gt;
+ 오픈스택은 컴퓨팅, 네트워킹, 스토리지, 대시보드 등의 기능을 각 프로젝트별로 제공합니다.
+&lt;/p&gt;
+&lt;p&gt;
+ 기업들은 각자의 환경에 맞게 커스터마이징이 가능하기 때문에 특정 벤더가 종속할 수 없는 구조입니다.
+&lt;/p&gt;
+&lt;p&gt;
+ 오픈스택을 도입하려는 기업에서는 각 기업 환경에 맞게 오픈스택을 어떻게 패키징하고 운영할 것인지에 대한 고민만 하면 됩니다.
+&lt;/p&gt;
+&lt;p&gt;
+ 두세명의 어드민만으로도 인프라 운영이 가능한 것이 바로 오픈스택입니다.
+&lt;/p&gt;
+&lt;p&gt;
+ 두번째는 집단지성, 커뮤니티의 힘입니다.
+&lt;/p&gt;
+&lt;p&gt;
+ 오픈스택의 프로젝트 커밋량이 리눅스 커널 프로젝트를 따라잡았다고 추정될 만큼 높은 참여도를 가졌습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ 오픈스택을 자체 패키징하는 업체들은 소스코드가 수정되면 다시 contribution 하는 것이 원칙이며, 만약 소스코드를 공개하지 않으면 오픈스택 커뮤니티에서 제외되게 됩니다.
+&lt;/p&gt;
+&lt;p&gt;
+ 오픈스택 기술지원 업체도 운영에 대한 가이드는 가능하지만, 버그는 커뮤니티를 통해 수정하게 됩니다.
+&lt;/p&gt;
+&lt;h3 id=&quot;id-[KOSSCON2018]오픈소스로서의오픈스택과그미래-오픈스택의미래&quot;&gt;
+ &lt;span style=&quot;color: rgb(27,29,37);&quot;&gt;
+  오픈스택의 미래
+ &lt;/span&gt;
+&lt;/h3&gt;
+&lt;p&gt;
+ X86은 메모리, 서비스 프로세서 이중화가 안 되어 있는 등 하드웨어 아키텍처상의 한계가 있습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ 기존의 리눅스 인프라 구성은 스토리지, SAN, VM, Application, 네트워크단마다 벤더가 상이하여 유연성이 떨어지고 관리의 어려움이 있습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ 이러한 문제를 해결하기 위한 미래의 인프라는 컨테이너에 orchestration 툴을 사용하거나 클라우드 위에 VM을 올려 사용하는 방법이 있습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ 결국은 클라우드로 갈 수 밖에 없는 환경이며, 이를 통해 워크로드 스케쥴링을 최적화할 수 있고 보안 이슈를 해결할 수 있습니다.
+&lt;/p&gt;
+&lt;p&gt;
+&lt;/p&gt;
+&lt;h3 id=&quot;id-[KOSSCON2018]오픈소스로서의오픈스택과그미래-오픈스택구축사례&quot;&gt;
+ &lt;strong&gt;
+  오픈스택 구축 사례
+ &lt;/strong&gt;
+&lt;/h3&gt;
+&lt;p&gt;
+ 오픈소스컨설팅은 국내 가상화폐거래소 코인제스트에 오픈스택 프로젝트를 실제로 구축하였습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ 코인제스트는 글로벌 9위, 국내 2위 거래량을 가진 가상화폐거래소입니다. (2018년 9월 5일 기준)
+&lt;/p&gt;
+&lt;p&gt;
+ 가상화폐거래소는 거래량이 얼마나 늘어날지 모르므로, 인프라의 유연성을 확보하는 것이 중요합니다.
+&lt;/p&gt;
+&lt;p&gt;
+ 코인제스트는 AWS 퍼블릭 클라우드와 오픈스택 프라이빗 클라우드를 조합한 하이브라이드 클라우드를 통해
+&lt;/p&gt;
+&lt;p&gt;
+ 초기 투자 비용을 절감하였고, 강력한 보안과 안전하고 편리한 거래를 지원하는 인프라 환경을 구축했습니다.
+&lt;/p&gt;
+&lt;h3 id=&quot;id-[KOSSCON2018]오픈소스로서의오픈스택과그미래-결론&quot;&gt;
+ 결론
+&lt;/h3&gt;
+&lt;p&gt;
+ 오픈소스를 기반으로 하는 클라우드 구축은 생각보다 어렵지 않습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ 오픈스택은 강력한 글로벌 커뮤니티가 지원하고 있고, 지난 8년 간 수많은 업체의 인프라에 적용되며 그 안정성이 충분히 검증되었습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ 우리는 커뮤니티의 흐름을 잘 따라가야 합니다.
+&lt;/p&gt;
+&lt;p&gt;
+ 커뮤니티에 기여하는 회사가 많아지게 되면, 커뮤니티가 de facto standard가 될 수 밖에 없습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;a class=&quot;external-link&quot; href=&quot;https://drive.google.com/open?id=1YzXq1pigKcV4efAHAAK4fvjRcqjer-qK&quot; rel=&quot;nofollow&quot;&gt;
+  발표자료 다운로드&amp;gt;&amp;gt;
+ &lt;/a&gt;
+&lt;/p&gt;
+</description>
+        <pubDate>Thu, 29 Nov 2018 00:00:00 +0900</pubDate>
+        <link>https://tech.osci.kr/openstack/2018/11/29/50692685/</link>
+        <guid isPermaLink="true">https://tech.osci.kr/openstack/2018/11/29/50692685/</guid>
+        
+        
+        <category>openstack</category>
+        
+      </item>
     
       <item>
         <title>9 ~ 10월 Atlassian TroubleShooting 정리</title>
@@ -3948,744 +4202,6 @@ han0495/hello-world   latest              2cb0d9787c4d        2 months ago      
         <link>https://tech.osci.kr/2018/08/09/44205726/</link>
         <guid isPermaLink="true">https://tech.osci.kr/2018/08/09/44205726/</guid>
         
-        
-      </item>
-    
-      <item>
-        <title>7월 Atlassian TroubleShooting 정리</title>
-        <description>&lt;h2 id=&quot;id-7월AtlassianTroubleShooting정리-7월이슈사항내역&quot;&gt;
- 7월 이슈사항 내역
-&lt;/h2&gt;
-&lt;h3 id=&quot;id-7월AtlassianTroubleShooting정리-일반사용자가Header의Issues메뉴(Currentsearch,Searchforissues)사용시Layout이깨지며,Browser가hang되는현상&quot;&gt;
- &lt;strong&gt;
-  일반 사용자가 Header의 Issues 메뉴(Current search, Search for issues) 사용 시 Layout이 깨지며, Browser가 hang되는 현상
- &lt;/strong&gt;
-&lt;/h3&gt;
-&lt;ul&gt;
- &lt;li style=&quot;list-style-type: none;background-image: none;&quot;&gt;
-  &lt;ul&gt;
-   &lt;li&gt;
-    Exception :Uncaught ReferenceError :Calendar is not defined
-   &lt;/li&gt;
-   &lt;li&gt;
-    사용하지 않는 Jira Suit Utilities plugin이 설치되어 있었으며, 해당 Add-on을 제거함으로써 해결
-   &lt;/li&gt;
-  &lt;/ul&gt;
- &lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;id-7월AtlassianTroubleShooting정리-Project생성시에러발생현상&quot;&gt;
- &lt;strong&gt;
-  Project 생성 시 에러발생현상
- &lt;/strong&gt;
-&lt;/h3&gt;
-&lt;ol&gt;
- &lt;li style=&quot;list-style-type: none;background-image: none;&quot;&gt;
-  &lt;ul&gt;
-   &lt;li&gt;
-    Caused by: java.lang.RuntimeException: Could not identify Bundle at location &amp;lt;reference:
-    &lt;a class=&quot;external-link&quot; href=&quot;http://file/var/atlassian/application-data/jira/plugins/.osgi-plugins/transformed-plugins/project-templates-plugin-6.2.3_1531264928000.jar&quot; rel=&quot;nofollow&quot;&gt;
-     file:/var/atlassian/application-data/jira/plugins/.osgi-plugins/transformed-plugins/project-templates-plugin-6.2.3_1531264928000.jar
-    &lt;/a&gt;
-    &amp;gt;
-   &lt;/li&gt;
-   &lt;li&gt;
-    Cache된 플러그인 디렉토리가 삭제되어 발생하는 에러로, Jira 재시작 시 해결
-   &lt;/li&gt;
-  &lt;/ul&gt;
- &lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&quot;id-7월AtlassianTroubleShooting정리-JiraKanbanBoard에서이슈클릭시에러발생현상&quot;&gt;
- &lt;strong&gt;
-  Jira Kanban Board에서 이슈 클릭 시 에러발생현상
- &lt;/strong&gt;
-&lt;/h3&gt;
-&lt;ol&gt;
- &lt;li style=&quot;list-style-type: none;background-image: none;&quot;&gt;
-  &lt;ul&gt;
-   &lt;li&gt;
-    An ssh error occurred while querying for reviews
-   &lt;/li&gt;
-   &lt;li&gt;
-    사용하지 않는 Gerrit plugin이 설치되어 있었으며, 해당 Add-on을 제거함으로써 해결
-   &lt;/li&gt;
-  &lt;/ul&gt;
- &lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&quot;id-7월AtlassianTroubleShooting정리-UserpickercustomField문제&quot;&gt;
- &lt;strong&gt;
-  User picker custom Field 문제
- &lt;/strong&gt;
-&lt;/h3&gt;
-&lt;ol&gt;
- &lt;li style=&quot;list-style-type: none;background-image: none;&quot;&gt;
-  &lt;ul&gt;
-   &lt;li&gt;
-    사용자가 1000명 이상인 그룹에 대해 Jira의 Custom field 중 하나인 user picker를 사용 시 해당 그룹의 최대 사용자가 1000명까지밖에 조회되지않는 현상
-   &lt;/li&gt;
-   &lt;li&gt;
-    이는 Third-party Add-on인 Custom watcher field에서도 동일하게 발생
-   &lt;/li&gt;
-   &lt;li&gt;
-    현재 Bug로 등록 및 에스컬레이션 진행 중이나, Fix되지 않음
-    &lt;ul&gt;
-     &lt;li&gt;
-      &lt;a class=&quot;external-link&quot; href=&quot;https://jira.atlassian.com/browse/JRASERVER-63771&quot; rel=&quot;nofollow&quot;&gt;
-       https://jira.atlassian.com/browse/JRASERVER-63771
-      &lt;/a&gt;
-     &lt;/li&gt;
-    &lt;/ul&gt;
-   &lt;/li&gt;
-   &lt;li&gt;
-    Atlassian Bug Fix 정책에 따라, hotfix가 불가능
-   &lt;/li&gt;
-  &lt;/ul&gt;
- &lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&quot;id-7월AtlassianTroubleShooting정리-JiraFileupload문제&quot;&gt;
- &lt;strong&gt;
-  Jira File upload 문제
- &lt;/strong&gt;
-&lt;/h3&gt;
-&lt;ol&gt;
- &lt;li style=&quot;list-style-type: none;background-image: none;&quot;&gt;
-  &lt;ul&gt;
-   &lt;li&gt;
-    Jira의 자체적인 파일업로드 사이즈 제한을 풀었음에도 파일 업로드가 되지 않는 현상
-   &lt;/li&gt;
-   &lt;li&gt;
-    Nginx 웹서버 설정의 max_body size 를 늘림으로써 해결
-   &lt;/li&gt;
-  &lt;/ul&gt;
- &lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&quot;id-7월AtlassianTroubleShooting정리-ConfluenceTable자음분리문제&quot;&gt;
- &lt;strong&gt;
-  Confluence Table 자음 분리 문제
- &lt;/strong&gt;
-&lt;/h3&gt;
-&lt;ol&gt;
- &lt;li style=&quot;list-style-type: none;background-image: none;&quot;&gt;
-  &lt;ul&gt;
-   &lt;li&gt;
-    Confluence Table에서 첫 Column에서 한글의 자음이 분리되는 현상
-   &lt;/li&gt;
-   &lt;li&gt;
-    Chrome의 버그로 최신업데이트로 해결
-   &lt;/li&gt;
-  &lt;/ul&gt;
- &lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&quot;id-7월AtlassianTroubleShooting정리-JiraServiceDesk에서ConfluenceKnowledgeBase연동시Anonymous권한이있어야만하는현상&quot;&gt;
- &lt;strong&gt;
-  Jira Service Desk에서 Confluence KnowledgeBase 연동 시 Anonymous 권한이 있어야만하는 현상
- &lt;/strong&gt;
-&lt;/h3&gt;
-&lt;ul&gt;
- &lt;li style=&quot;list-style-type: none;background-image: none;&quot;&gt;
-  &lt;ul&gt;
-   &lt;li&gt;
-    Jira의 Application link 버그로, 연결방식을 OAuth (impersonation)로 변경 시 해결
-   &lt;/li&gt;
-  &lt;/ul&gt;
- &lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;id-7월AtlassianTroubleShooting정리-SSRF버그를통한취약점문제&quot;&gt;
- &lt;strong&gt;
-  SSRF 버그를 통한 취약점 문제
- &lt;/strong&gt;
-&lt;/h3&gt;
-&lt;ol&gt;
- &lt;li style=&quot;list-style-type: none;background-image: none;&quot;&gt;
-  &lt;ul&gt;
-   &lt;li&gt;
-    &lt;a class=&quot;external-link&quot; href=&quot;https://www.zdnet.com/article/jira-bug-exposed-private-server-keys-at-major-companies-researcher-finds/&quot; rel=&quot;nofollow&quot;&gt;
-     https://www.zdnet.com/article/jira-bug-exposed-private-server-keys-at-major-companies-researcher-finds/
-    &lt;/a&gt;
-   &lt;/li&gt;
-   &lt;li&gt;
-    &lt;a class=&quot;external-link&quot; href=&quot;https://www.trendmicro.com/vinfo/us/security/news/vulnerabilities-and-exploits/jira-bug-exposes-organizations-aws-server-keys&quot; rel=&quot;nofollow&quot;&gt;
-     https://www.trendmicro.com/vinfo/us/security/news/vulnerabilities-and-exploits/jira-bug-exposes-organizations-aws-server-keys
-    &lt;/a&gt;
-   &lt;/li&gt;
-   &lt;li&gt;
-    Jira / Confluence 각각 해당 취약점이 해결된 버전으로 업그레이드하여 해결
-   &lt;/li&gt;
-  &lt;/ul&gt;
- &lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&quot;id-7월AtlassianTroubleShooting정리-Log에사용자ID가남지않는문제&quot;&gt;
- &lt;strong&gt;
-  Log에 사용자 ID가 남지않는 문제
- &lt;/strong&gt;
-&lt;/h3&gt;
-&lt;ul&gt;
- &lt;li style=&quot;list-style-type: none;background-image: none;&quot;&gt;
-  &lt;ul&gt;
-   &lt;li&gt;
-    &lt;p&gt;
-     192.168.1.120 - -
-     &lt;span class=&quot;error&quot;&gt;
-      [12/Jul/2018:14:53:16 +0900]
-     &lt;/span&gt;
-     0.366s - 7423 /wiki/attachmentnotfound.action?pageId=159876496
-    &lt;/p&gt;
-   &lt;/li&gt;
-   &lt;li&gt;
-    &lt;p&gt;
-     server.xml파일에 %{X-AUSERNAME}o 파라메터 추가
-     &lt;br/&gt;
-     &lt;a class=&quot;external-link&quot; href=&quot;https://confluence.atlassian.com/confkb/audit-confluence-using-the-tomcat-valve-component-223216846.html&quot; rel=&quot;nofollow&quot; title=&quot;Follow link&quot;&gt;
-      https://confluence.atlassian.com/confkb/audit-confluence-using-the-tomcat-valve-component-223216846.html
-     &lt;/a&gt;
-    &lt;/p&gt;
-    &lt;p&gt;
-     &lt;span class=&quot;error&quot;&gt;
-      [12/Jul/2018:15:04:19 +0900]
-     &lt;/span&gt;
-     testuser Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36 192.168.1.120 0.042s - 672 /wiki/rest/webResources/1.0/resources
-    &lt;/p&gt;
-   &lt;/li&gt;
-  &lt;/ul&gt;
- &lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;id-7월AtlassianTroubleShooting정리-ETC&quot;&gt;
- ETC
-&lt;/h2&gt;
-&lt;h3 id=&quot;id-7월AtlassianTroubleShooting정리-CrowdDataCenterMechanism관련&quot;&gt;
- Crowd Data Center Mechanism 관련
-&lt;/h3&gt;
-&lt;ul&gt;
- &lt;li style=&quot;list-style-type: none;background-image: none;&quot;&gt;
-  &lt;ul&gt;
-   &lt;li&gt;
-    Jira의 경우 ehcache를, Confluence의 경우 hazelcast를 Clustering에 사용하나 Crowd에 대한 정보를 찾기가 어려워 Support에 질의
-   &lt;/li&gt;
-   &lt;li&gt;
-    Crowd의 경우 Jira나 Confluence만큼 복잡한 솔루션이 아니기에 DB Table 레벨에서 해결
-    &lt;ul&gt;
-     &lt;li&gt;
-      &lt;p&gt;
-       Crowd doesn't use any mechanisms like Hazelcast or ehcache to manage the cluster. It maintains the state of the cluster through tables in the database.
-       &lt;br/&gt;
-       Basically, Crowd is a
-       &lt;em&gt;
-        simpler
-       &lt;/em&gt;
-       application than Confluence or Jira and doesn't have any need to implement any additional clustering mechanism
-       &lt;br/&gt;
-       I also got the following information from one of our Crowd developers.
-      &lt;/p&gt;
-      &lt;blockquote&gt;
-       &lt;p&gt;
-        Crowd is not using cache replication among DC nodes.
-        &lt;br/&gt;
-        It relies on DB and there is publish - subscribe mechanism also based on DB to notify all nodes about changes in config
-       &lt;/p&gt;
-      &lt;/blockquote&gt;
-     &lt;/li&gt;
-    &lt;/ul&gt;
-   &lt;/li&gt;
-  &lt;/ul&gt;
- &lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;
- &lt;br/&gt;
-&lt;/p&gt;</description>
-        <pubDate>Tue, 07 Aug 2018 00:00:00 +0900</pubDate>
-        <link>https://tech.osci.kr/atlassian/2018/08/07/44205476/</link>
-        <guid isPermaLink="true">https://tech.osci.kr/atlassian/2018/08/07/44205476/</guid>
-        
-        <category>atlassian</category>
-        
-        <category>TroubleShooting</category>
-        
-        
-        <category>atlassian</category>
-        
-      </item>
-    
-      <item>
-        <title>Bitbucket jekyll 블로그 만들기</title>
-        <description>&lt;p&gt;
- 안녕하세요.
-&lt;/p&gt;
-&lt;p&gt;
- 오픈소스컨설팅 김세연입니다.
-&lt;/p&gt;
-&lt;p&gt;
- 이번에는 Bitbucket cloud에 jekyll을 이용하여 Blog Publishing을 해보겠습니다.
-&lt;/p&gt;
-&lt;p&gt;
- &lt;br/&gt;
-&lt;/p&gt;
-&lt;h1 id=&quot;Bitbucketjekyll블로그만들기-BitbucketCloud회원가입&quot;&gt;
- Bitbucket Cloud 회원가입
-&lt;/h1&gt;
-&lt;p&gt;
- &lt;a class=&quot;external-link&quot; href=&quot;https://bitbucket.org/account/signup/&quot; rel=&quot;nofollow&quot;&gt;
-  https://bitbucket.org/account/signup/
- &lt;/a&gt;
-&lt;/p&gt;
-&lt;p&gt;
- gmail 또는 Atlassian 계정을 생성합니다.
-&lt;/p&gt;
-&lt;p&gt;
- &lt;br/&gt;
-&lt;/p&gt;
-&lt;h1 id=&quot;Bitbucketjekyll블로그만들기-Repository생성&quot;&gt;
- Repository 생성
-&lt;/h1&gt;
-&lt;p&gt;
- Repository를 생성할 때 이름은 Bitbucket 고유 주소의 bitbucket.io가 붙습니다.
-&lt;/p&gt;
-&lt;p&gt;
- 저는 it2seiyon으로 회원가입을 했기 때문에
- &lt;strong&gt;
-  it2seiyon.bitbucket.io
- &lt;/strong&gt;
- 값으로 했습니다.
-&lt;/p&gt;
-&lt;p&gt;
- This is private repository 체크 해제 후 Create repository를 합니다.
-&lt;/p&gt;
-&lt;p&gt;
- &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
-  &lt;img src=&quot;/assets/images/44205100/0&quot;&gt;
- &lt;/span&gt;
-&lt;/p&gt;
-&lt;p&gt;
- 생성된 Repository의 URL을 보시면 bitbucket.org/it2seiyeon/it2seiyon.bitbucket.io를 확인할 수 있습니다.
-&lt;/p&gt;
-&lt;p&gt;
- &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
-  &lt;img src=&quot;/assets/images/44205100/1&quot;&gt;
- &lt;/span&gt;
-&lt;/p&gt;
-&lt;p&gt;
- &lt;br/&gt;
-&lt;/p&gt;
-&lt;p&gt;
- &lt;a class=&quot;external-link&quot; href=&quot;https://it2seiyon.bitbucket.io&quot; rel=&quot;nofollow&quot;&gt;
-  https://it2seiyon.bitbucket.io
- &lt;/a&gt;
- 접속해 보면 아직 index파일이 없어서 File not found 가 뜹니다.
-&lt;/p&gt;
-&lt;p&gt;
- &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
-  &lt;img src=&quot;/assets/images/44205100/2&quot;&gt;
- &lt;/span&gt;
-&lt;/p&gt;
-&lt;p&gt;
- 다른 주소 bitbucket.io를 만들고 싶으시면 Team 추가하여 만들 수 있습니다.
-&lt;/p&gt;
-&lt;p&gt;
- + 버튼으로 추가할 수 있으며 Team ID 또한 고유 값을 갖습니다.
-&lt;/p&gt;
-&lt;p&gt;
- 그래야 겹치지 않는 주소를 갖겠죠?
-&lt;/p&gt;
-&lt;p&gt;
- &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
-  &lt;img src=&quot;/assets/images/44205100/3&quot;&gt;
- &lt;/span&gt;
-&lt;/p&gt;
-&lt;h1 id=&quot;Bitbucketjekyll블로그만들기-RepositoryClone&quot;&gt;
- Repository Clone
-&lt;/h1&gt;
-&lt;p&gt;
- Bitbucket Cloud Repository(remote repository)를 내 컴퓨터에 복사를 합니다.
-&lt;/p&gt;
-&lt;p&gt;
- 저는 Atlassian의 Soruce Tree를 이용해서 Repository를 관리해보겠습니다.
-&lt;/p&gt;
-&lt;p&gt;
- &lt;a class=&quot;external-link&quot; href=&quot;https://www.sourcetreeapp.com/&quot; rel=&quot;nofollow&quot;&gt;
-  https://www.sourcetreeapp.com/
- &lt;/a&gt;
-&lt;/p&gt;
-&lt;p&gt;
- &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
-  &lt;img src=&quot;/assets/images/44205100/4&quot;&gt;
- &lt;/span&gt;
-&lt;/p&gt;
-&lt;p&gt;
- Branch history를 그래프로 표시해주는 기능이 정말 편리합니다.
-&lt;/p&gt;
-&lt;p&gt;
- &lt;br/&gt;
-&lt;/p&gt;
-&lt;p&gt;
- 설치 완료 후 계정의 원격 저장소에서 앞에서 만든 Repository를 확인할 수 있습니다.
-&lt;/p&gt;
-&lt;p&gt;
- &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
-  &lt;img src=&quot;/assets/images/44205100/5&quot;&gt;
- &lt;/span&gt;
-&lt;/p&gt;
-&lt;p&gt;
- &lt;br/&gt;
-&lt;/p&gt;
-&lt;p&gt;
- Repository옆에 작은 Clone 버튼으로 저장소를 내 컴퓨터에 복제합니다.
-&lt;/p&gt;
-&lt;p&gt;
- &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
-  &lt;img src=&quot;/assets/images/44205100/6&quot;&gt;
- &lt;/span&gt;
-&lt;/p&gt;
-&lt;p&gt;
- &lt;br/&gt;
-&lt;/p&gt;
-&lt;p&gt;
- 이제 Jekyll을 설치하고 Blog를 생성하여 remote repository에 추가해 보겠습니다.
-&lt;/p&gt;
-&lt;h1 id=&quot;Bitbucketjekyll블로그만들기-Jekyll&quot;&gt;
- Jekyll
-&lt;/h1&gt;
-&lt;h2 id=&quot;Bitbucketjekyll블로그만들기-설치&quot;&gt;
- 설치
-&lt;/h2&gt;
-&lt;blockquote&gt;
- &lt;p&gt;
-  이 글의 ruby 버전은 2.4.4, jekyll은 3.6.2 입니다.
- &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;
- macOS 사용자는 쉽게 jekyll를 시작할 수 있습니다. macOS는 Ruby가 기본으로 설치되어 있거든요..
-&lt;/p&gt;
-&lt;p&gt;
- &lt;a class=&quot;external-link&quot; href=&quot;https://jekyllrb.com/docs/quickstart/&quot; rel=&quot;nofollow&quot;&gt;
-  https://jekyllrb.com/docs/quickstart/
- &lt;/a&gt;
-&lt;/p&gt;
-&lt;p&gt;
- &lt;br/&gt;
-&lt;/p&gt;
-&lt;p&gt;
- Windows는 조금 더 작업을 해야 합니다. 자세한 과정은 아래 링크를 확인해 주세요.
-&lt;/p&gt;
-&lt;p&gt;
- &lt;a class=&quot;external-link&quot; href=&quot;https://jekyllrb.com/docs/windows/&quot; rel=&quot;nofollow&quot;&gt;
-  https://jekyllrb.com/docs/windows/
- &lt;/a&gt;
-&lt;/p&gt;
-&lt;ul style=&quot;list-style-type: square;&quot;&gt;
- &lt;li&gt;
-  Ruby devkit installer를 이용하여 설치합니다.
- &lt;/li&gt;
- &lt;li&gt;
-  Start command Propt with Ruby로 jekyll을 설치합니다.
-  &lt;br/&gt;
-  &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
-   &lt;img src=&quot;/assets/images/44205100/7&quot;&gt;
-  &lt;/span&gt;
- &lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;
- &lt;br/&gt;
-&lt;/p&gt;
-&lt;h2 id=&quot;Bitbucketjekyll블로그만들기-Jekylltheme적용&quot;&gt;
- Jekyll theme 적용
-&lt;/h2&gt;
-&lt;p&gt;
- 처음부터 블로그를 만들기는 어렵기 때문에 기존에 인기 있는 jekyll 테마를 다운로드 받아서
-&lt;/p&gt;
-&lt;p&gt;
- 새로 만든 blog에 적용해보겠습니다.
-&lt;/p&gt;
-&lt;p&gt;
- Jekyll theme중 인기있는 jasper를 적용해 보겠습니다.
-&lt;/p&gt;
-&lt;p&gt;
- &lt;a class=&quot;external-link&quot; href=&quot;https://github.com/jekyller/jasper&quot; rel=&quot;nofollow&quot;&gt;
-  https://github.com/jekyller/jasper
- &lt;/a&gt;
-&lt;/p&gt;
-&lt;p&gt;
- &lt;br/&gt;
-&lt;/p&gt;
-&lt;p&gt;
- Download zip으로 Source code를 다운로드 받습니다.
-&lt;/p&gt;
-&lt;p&gt;
- &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
-  &lt;img src=&quot;/assets/images/44205100/8&quot;&gt;
- &lt;/span&gt;
-&lt;/p&gt;
-&lt;p&gt;
- &lt;br/&gt;
-&lt;/p&gt;
-&lt;p&gt;
- jekyll은 _data, _layout, _include, _post 등 소스코드로 _site를 생성합니다.
-&lt;/p&gt;
-&lt;p&gt;
- &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
-  &lt;img src=&quot;/assets/images/44205100/9&quot;&gt;
- &lt;/span&gt;
-&lt;/p&gt;
-&lt;p&gt;
- &lt;br/&gt;
-&lt;/p&gt;
-&lt;h3 id=&quot;Bitbucketjekyll블로그만들기-_config.yml수정&quot;&gt;
- _config.yml 수정
-&lt;/h3&gt;
-&lt;p&gt;
- Bitbucket 주소를 수정합니다.
-&lt;/p&gt;
-&lt;p&gt;
- short_url: '
- &lt;a class=&quot;external-link&quot; href=&quot;http://it2seiyon.bitbucket.io/&quot; rel=&quot;nofollow&quot;&gt;
-  it2seiyon.bitbucket.io/
- &lt;/a&gt;
- '
-&lt;/p&gt;
-&lt;p&gt;
- baseurl: /
-&lt;/p&gt;
-&lt;p&gt;
- 블로그를 효과적으로 운영하기 위해서는 많은 항목들을 수정해야합니다.
-&lt;/p&gt;
-&lt;p&gt;
- Google Analytic도 추가하고 댓글 기능도 추가할 수 있습니다.
-&lt;/p&gt;
-&lt;p&gt;
- &lt;br/&gt;
-&lt;/p&gt;
-&lt;p&gt;
- Start Command Prompt with Ruby를 실행합니다. ( Ruby devkit으로 설치 )
-&lt;/p&gt;
-&lt;p&gt;
- Local Repository로 이동하여 theme에 필요한 패키지들을 설치합니다.
-&lt;/p&gt;
-&lt;div class=&quot;code panel pdl conf-macro output-block&quot; data-hasbody=&quot;true&quot; data-macro-name=&quot;code&quot; style=&quot;border-width: 1px;&quot;&gt;
- &lt;div class=&quot;codeContent panelContent pdl&quot;&gt;
-  &lt;pre class=&quot;syntaxhighlighter-pre&quot; data-syntaxhighlighter-params=&quot;brush: shell; gutter: false; theme: Confluence&quot; data-theme=&quot;Confluence&quot;&gt;cd C:\Users\sy\Downloads\jasper-master\jasper-master
-C:\Users\sy\Downloads\jasper-master\jasper-master&gt;bundle install&lt;/pre&gt;
- &lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;
- &lt;br/&gt;
-&lt;/p&gt;
-&lt;p&gt;
- 패키지 설치 후 Local에 server를 띄워 확인해 보겠습니다.
-&lt;/p&gt;
-&lt;div class=&quot;code panel pdl conf-macro output-block&quot; data-hasbody=&quot;true&quot; data-macro-name=&quot;code&quot; style=&quot;border-width: 1px;&quot;&gt;
- &lt;div class=&quot;codeContent panelContent pdl&quot;&gt;
-  &lt;pre class=&quot;syntaxhighlighter-pre&quot; data-syntaxhighlighter-params=&quot;brush: shell; gutter: false; theme: Confluence&quot; data-theme=&quot;Confluence&quot;&gt;C:\Users\sy\Downloads\jasper-master\jasper-master&gt;bundle exec jekyll serve&lt;/pre&gt;
- &lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;
- &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
-  &lt;img src=&quot;/assets/images/44205100/10&quot;&gt;
- &lt;/span&gt;
-&lt;/p&gt;
-&lt;p&gt;
- 기본 테마 환경으로 올라왔습니다.
-&lt;/p&gt;
-&lt;p&gt;
- 이제 Remote Repository에 올리기 위해서 빌드를 실행합니다.
-&lt;/p&gt;
-&lt;div class=&quot;code panel pdl conf-macro output-block&quot; data-hasbody=&quot;true&quot; data-macro-name=&quot;code&quot; style=&quot;border-width: 1px;&quot;&gt;
- &lt;div class=&quot;codeContent panelContent pdl&quot;&gt;
-  &lt;pre class=&quot;syntaxhighlighter-pre&quot; data-syntaxhighlighter-params=&quot;brush: shell; gutter: false; theme: Confluence&quot; data-theme=&quot;Confluence&quot;&gt;C:\Users\sy\Downloads\jasper-master\jasper-master&gt;bundle exec jekyll build&lt;/pre&gt;
- &lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;
- 빌드 후 jasper-pages 디렉터리가 생성됐습니다. _config.yml 설정에 의해서 생성되는 위치를 변경할 수 있습니다.
-&lt;/p&gt;
-&lt;p&gt;
- &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
-  &lt;img src=&quot;/assets/images/44205100/11&quot;&gt;
- &lt;/span&gt;
-&lt;/p&gt;
-&lt;p&gt;
- &lt;br/&gt;
-&lt;/p&gt;
-&lt;p&gt;
- jasper-pages의 파일들을 Local Repository에 복사합니다.
-&lt;/p&gt;
-&lt;p&gt;
- &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
-  &lt;img src=&quot;/assets/images/44205100/12&quot;&gt;
- &lt;/span&gt;
-&lt;/p&gt;
-&lt;h2 id=&quot;Bitbucketjekyll블로그만들기-RemoteRepository에추가&quot;&gt;
- Remote Repository에 추가
-&lt;/h2&gt;
-&lt;p&gt;
- Soruce Tree에서 추가된 소스를 확인할 수 있습니다.
-&lt;/p&gt;
-&lt;p&gt;
- &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
-  &lt;img src=&quot;/assets/images/44205100/13&quot;&gt;
- &lt;/span&gt;
-&lt;/p&gt;
-&lt;p&gt;
- 내 Local 스테이징 환경에 모두 추가합니다.
-&lt;/p&gt;
-&lt;p&gt;
- git 명령어로는 git add . 이 되겠습니다.
-&lt;/p&gt;
-&lt;p&gt;
- 스테이지에 올린 후 커밋 메시지와 함께 커밋을 합니다.
-&lt;/p&gt;
-&lt;p&gt;
- &lt;br/&gt;
-&lt;/p&gt;
-&lt;p&gt;
- 그리고 Push로 Remote Repository에 소스를 추가합니다.
-&lt;/p&gt;
-&lt;p&gt;
- &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
-  &lt;img src=&quot;/assets/images/44205100/14&quot;&gt;
- &lt;/span&gt;
-&lt;/p&gt;
-&lt;p&gt;
- &lt;br/&gt;
-&lt;/p&gt;
-&lt;p&gt;
- Bitbucket에서 추가된 소스코드를 확인할 수 있습니다.
-&lt;/p&gt;
-&lt;p&gt;
- &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
-  &lt;img src=&quot;/assets/images/44205100/15&quot;&gt;
- &lt;/span&gt;
-&lt;/p&gt;
-&lt;p&gt;
- &lt;br/&gt;
-&lt;/p&gt;
-&lt;p&gt;
- 웹사이트를 확인해 보겠습니다.
-&lt;/p&gt;
-&lt;p&gt;
- &lt;a class=&quot;external-link&quot; href=&quot;https://it2seiyon.bitbucket.io/&quot; rel=&quot;nofollow&quot;&gt;
-  https://it2seiyon.bitbucket.io/
- &lt;/a&gt;
-&lt;/p&gt;
-&lt;p&gt;
- &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
-  &lt;img src=&quot;/assets/images/44205100/16&quot;&gt;
- &lt;/span&gt;
-&lt;/p&gt;
-&lt;p&gt;
- &lt;br/&gt;
-&lt;/p&gt;
-&lt;p&gt;
- 잘 나오네요. 앞으로 할 일은 블로그를 꾸미고 jekyll 빌드를 하고 생성된 소스를
-&lt;/p&gt;
-&lt;p&gt;
- Repo에 올리는 일입니다.
-&lt;/p&gt;
-&lt;p&gt;
- &lt;br/&gt;
-&lt;/p&gt;
-&lt;h1 id=&quot;Bitbucketjekyll블로그만들기-마무리&quot;&gt;
- 마무리
-&lt;/h1&gt;
-&lt;p&gt;
- Jekyll를 이용하여 웹 사이트를 생성하고 Bitbucket cloud에 Publishing을 해봤습니다.
-&lt;/p&gt;
-&lt;p&gt;
- Bitbucket colud로 blog를 운영할 때 장점이 아래와 같이 있습니다.
-&lt;/p&gt;
-&lt;ul style=&quot;list-style-type: square;&quot;&gt;
- &lt;li&gt;
-  Blog CSS, Javascript 수정
- &lt;/li&gt;
- &lt;li&gt;
-  무제한 traffic
- &lt;/li&gt;
- &lt;li&gt;
-  https 사용
- &lt;/li&gt;
- &lt;li&gt;
-  무료 domain
- &lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;
- Jekyll Theme를 수정해서 나만의 블로그를 빠르고 쉽게 만들 수 있는 방법입니다.
-&lt;/p&gt;
-&lt;p&gt;
- 앞에 설명한 단계를 요약을 하면
-&lt;/p&gt;
-&lt;ul style=&quot;list-style-type: square;&quot;&gt;
- &lt;li&gt;
-  Bitbucket 가입
- &lt;/li&gt;
- &lt;li&gt;
-  Repository 생성 ( .bitbucket.io 가 뒤에 붙습니다. )
-  &lt;ul style=&quot;list-style-type: square;&quot;&gt;
-   &lt;li&gt;
-    다른 repository를 생성하여 publishing 하고싶을 땐 team을 추가하여 진행하면 됩니다.
-   &lt;/li&gt;
-  &lt;/ul&gt;
- &lt;/li&gt;
- &lt;li&gt;
-  Sourece Tree 설치 (git 관리 프로그램)
-  &lt;ul style=&quot;list-style-type: square;&quot;&gt;
-   &lt;li&gt;
-    git clone
-   &lt;/li&gt;
-  &lt;/ul&gt;
- &lt;/li&gt;
- &lt;li&gt;
-  Jekyll 설치
- &lt;/li&gt;
- &lt;li&gt;
-  Jekyll Theme 다운로드
- &lt;/li&gt;
- &lt;li&gt;
-  Jekyll _config.yml 수정
- &lt;/li&gt;
- &lt;li&gt;
-  Jekyll build
- &lt;/li&gt;
- &lt;li&gt;
-  생성된 Sourece code  복사 → Local Repository 붙여 넣기
- &lt;/li&gt;
- &lt;li&gt;
-  Sourece Tree에서 소스 스테이지환경 추가 → 커밋 → 푸시
- &lt;/li&gt;
- &lt;li&gt;
-  내 Bitbucket page 확인 (
-  &lt;a class=&quot;external-link&quot; href=&quot;https://it2seiyon.bitbucket.io/&quot; rel=&quot;nofollow&quot;&gt;
-   https://it2seiyon.bitbucket.io/
-  &lt;/a&gt;
-  )
- &lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;
- &lt;br/&gt;
-&lt;/p&gt;
-&lt;p&gt;
- Bitbucket cloud의 pipeline을 이용하면 더 많은 방법으로 응용이 가능합니다.
-&lt;/p&gt;
-&lt;p&gt;
- 마무리 하겠습니다. Bibucket으로 Happy CI/CD 하세요~
-&lt;/p&gt;
-&lt;p&gt;
- 감사합니다.
-&lt;/p&gt;
-&lt;p&gt;
- &lt;br/&gt;
-&lt;/p&gt;
-&lt;p&gt;
- &lt;br/&gt;
-&lt;/p&gt;</description>
-        <pubDate>Sun, 05 Aug 2018 00:00:00 +0900</pubDate>
-        <link>https://tech.osci.kr/bitbucket/2018/08/05/44205100/</link>
-        <guid isPermaLink="true">https://tech.osci.kr/bitbucket/2018/08/05/44205100/</guid>
-        
-        <category>git</category>
-        
-        <category>bitbucket</category>
-        
-        <category>blog</category>
-        
-        <category>jekyll</category>
-        
-        
-        <category>bitbucket</category>
         
       </item>
     
