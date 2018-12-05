@@ -386,7 +386,7 @@ for small screen(<720px):
 }
 
 #cover h1, #cover p {
-    width: 80%; /* @@iolo */
+    width: 84%; /* @@iolo */
     max-width: 780px;
     margin: 0 auto;
     color: #fff;
@@ -1448,8 +1448,7 @@ body.page-template {
     }
 
     #post-content img{
-        width: 100%;
-        border: 1px solid rgba(23, 43, 77);
+        max-width: 100%;
     }
 
     #post-content {

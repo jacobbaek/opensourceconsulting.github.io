@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>오픈소스컨설팅 기술 블로그</title>
+    <title>오픈소스컨설팅 
+기술 블로그
+</title>
     <description>기술을 나눕니다. 함께 성장합니다.
 Sharing Tech. Growing Together.
 </description>
     <link>https://tech.osci.kr/</link>
     <atom:link href="https://tech.osci.kr/rss" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 06 Dec 2018 00:21:35 +0900</pubDate>
-    <lastBuildDate>Thu, 06 Dec 2018 00:21:35 +0900</lastBuildDate>
+    <pubDate>Thu, 06 Dec 2018 00:35:31 +0900</pubDate>
+    <lastBuildDate>Thu, 06 Dec 2018 00:35:31 +0900</lastBuildDate>
     <generator>Jekyll v3.7.4</generator>
     
       <item>
@@ -278,7 +280,7 @@ Sharing Tech. Growing Together.
 &lt;/p&gt;
 &lt;p&gt;
  &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
-&lt;img src=&quot;/assets/images/50692685/4&quot; height=200/&gt;
+&lt;img src=&quot;/assets/images/50692685/4&quot;/&gt;
  &lt;/span&gt;
 &lt;/p&gt;
 &lt;p&gt;
@@ -328,7 +330,7 @@ Sharing Tech. Growing Together.
 &lt;/p&gt;
 &lt;p&gt;
  &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
-&lt;img src=&quot;/assets/images/50692685/5&quot; height=150/&gt;
+&lt;img src=&quot;/assets/images/50692685/5&quot; /&gt;
  &lt;/span&gt;
 &lt;/p&gt;
 &lt;p&gt;
