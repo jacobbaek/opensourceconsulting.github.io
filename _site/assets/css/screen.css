@@ -1741,6 +1741,5 @@ body.page-template {
 }
 
 .confluence-embedded-file-wrapper img{
-    width: 100%;
-    border: 1px solid #172B4D;
+    max-width: 100%;
 }

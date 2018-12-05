@@ -68,12 +68,13 @@ for body in children_url:
     # create post
     post_header = '---\n'
     post_header += 'layout: post\n'
-    post_header += f'title: {title}\n'
+    post_header += f'title: "{title}"\n'
     post_header += f'description: " " \n'
     post_header += f'author: {created_by}\n'
     post_header += f'date: {created_date}\n'
     post_header += 'tags: []\n'
     post_header += 'category: \n'
+    post_header += 'image: \n'
     post_header += '---\n'
 
     for r_tag in body_soup.find_all('p'):

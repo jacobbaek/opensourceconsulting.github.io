@@ -7,13 +7,21 @@ Sharing Tech. Growing Together.
 </description>
     <link>https://tech.osci.kr/</link>
     <atom:link href="https://tech.osci.kr/rss" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 05 Dec 2018 13:56:55 +0900</pubDate>
-    <lastBuildDate>Wed, 05 Dec 2018 13:56:55 +0900</lastBuildDate>
+    <pubDate>Thu, 06 Dec 2018 00:21:35 +0900</pubDate>
+    <lastBuildDate>Thu, 06 Dec 2018 00:21:35 +0900</lastBuildDate>
     <generator>Jekyll v3.7.4</generator>
     
       <item>
         <title>Atlassian Oracle SE Java</title>
         <description>&lt;p&gt;
+ &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
+&lt;img src=&quot;/assets/images/50692831/0&quot;/&gt;
+ &lt;/span&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;
  Oracle Java BCL 라이선스가 2018년 7월 부로 `Java SE subscription` 년단위 구독모델로 개편됐습니다.
 &lt;/p&gt;
 &lt;p&gt;
@@ -66,10 +74,44 @@ Sharing Tech. Growing Together.
  &lt;/a&gt;
 &lt;/p&gt;
 &lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;
  현재 1.8.181로 사용하고 계시다면 Jira, Confluence 최신 버전이 안정화 될 때 까지 지켜보다가 Open JDK로 운영하시는게 좋을 것 같습니다.
 &lt;/p&gt;
 &lt;p&gt;
  오픈소스컨설팅과 함께면 더욱 좋겠죠?
+&lt;/p&gt;
+&lt;h1 id=&quot;AtlassianOracleSEJava-Bundle로제공되는JRE는?&quot;&gt;
+ Bundle로 제공되는 JRE는?
+&lt;/h1&gt;
+&lt;p&gt;
+ Jira installer로 설치하면 JRE 1.8.0_181이 기본으로 제공됩니다.
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
+&lt;img src=&quot;/assets/images/50692831/1&quot;/&gt;
+ &lt;/span&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ Atlassian도 무료 버전을 Bundle로 제공하고 있습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ 하지만 보안, 성능 다양한 이슈로 1.8.0_181 을 계속 사용할 수 없겠죠.
+&lt;/p&gt;
+&lt;p&gt;
+ 이에 관련해서는 아래 링크에서 Road map 지속 적인 확인이 필요할 것 같습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;a class=&quot;external-link&quot; href=&quot;https://community.atlassian.com/t5/Jira-discussions/Java-11-and-OpenJDK-support-for-Atlassian-Server-amp-Data-Center/td-p/872998&quot; rel=&quot;nofollow&quot;&gt;
+  https://community.atlassian.com/t5/Jira-discussions/Java-11-and-OpenJDK-support-for-Atlassian-Server-amp-Data-Center/td-p/872998
+ &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ 결과적으로 OpenJDK, OracleJDK 둘다 지원입니다.
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
 &lt;/p&gt;
 &lt;p&gt;
  감사합니다.
@@ -92,19 +134,26 @@ Sharing Tech. Growing Together.
   https://okky.kr/article/482664
  &lt;/a&gt;
 &lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
 </description>
         <pubDate>Sun, 02 Dec 2018 00:00:00 +0900</pubDate>
         <link>https://tech.osci.kr/atlassian/2018/12/02/50692831/</link>
         <guid isPermaLink="true">https://tech.osci.kr/atlassian/2018/12/02/50692831/</guid>
         
-        <category>jdk1.8 java</category>
+        <category>java</category>
+        
+        <category>jvm</category>
+        
+        <category>oracle</category>
         
         <category>atlassian</category>
         
-        <category>jira oracle jdk</category>
+        <category>jira</category>
         
         
-        <category>atlassian</category>
+        <category>Atlassian</category>
         
       </item>
     
@@ -121,14 +170,20 @@ Sharing Tech. Growing Together.
 &lt;/p&gt;
 &lt;p&gt;
  &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
-  &lt;img src=&quot;/assets/images/50692685/0&quot;/&gt;
+&lt;img src=&quot;/assets/images/50692685/0&quot;/&gt;
  &lt;/span&gt;
  &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
-  &lt;img src=&quot;/assets/images/50692685/1&quot;/&gt;
+&lt;img src=&quot;/assets/images/50692685/1&quot;/&gt;
  &lt;/span&gt;
  &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
-  &lt;img src=&quot;/assets/images/50692685/2&quot;/&gt;
+&lt;img src=&quot;/assets/images/50692685/2&quot;/&gt;
  &lt;/span&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
 &lt;/p&gt;
 &lt;p&gt;
  국내  SW기업과 개발자 간 소통 확대를 위한 KOSSCON 행사에 오픈소스컨설팅도 참여하였습니다!
@@ -139,6 +194,17 @@ Sharing Tech. Growing Together.
   '오픈소스로서의 오픈스택과 그 미래
  &lt;/strong&gt;
  ' 내용에 대해 공유 드립니다.
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;span class=&quot;confluence-embedded-file-wrapper&quot;&gt;
+&lt;img src=&quot;/assets/images/50692685/3&quot;/&gt;
+ &lt;/span&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
 &lt;/p&gt;
 &lt;h3 id=&quot;id-[KOSSCON2018]오픈소스로서의오픈스택과그미래-오픈스택의시작&quot;&gt;
  오픈스택의 시작
@@ -161,6 +227,11 @@ Sharing Tech. Growing Together.
 &lt;p&gt;
  RedHat, Huawei, 99Cloud 등과 같은 업체들이 오픈스택 프로젝트를 리드하고 있습니다.
 &lt;/p&gt;
+&lt;p&gt;
+ &lt;span style=&quot;color: rgb(27,29,37);&quot;&gt;
+  &lt;br/&gt;
+ &lt;/span&gt;
+&lt;/p&gt;
 &lt;h3 id=&quot;id-[KOSSCON2018]오픈소스로서의오픈스택과그미래-오픈스택의차별점&quot;&gt;
  &lt;span style=&quot;color: rgb(27,29,37);&quot;&gt;
   오픈스택의 차별점
@@ -168,6 +239,9 @@ Sharing Tech. Growing Together.
 &lt;/h3&gt;
 &lt;p&gt;
  이렇게 많은 회사가 오픈스택 프로젝트에 참여하는 이유는 무엇일까요?
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
 &lt;/p&gt;
 &lt;p&gt;
  첫번째는 오픈스택의 모듈성입니다.
@@ -185,6 +259,9 @@ Sharing Tech. Growing Together.
  두세명의 어드민만으로도 인프라 운영이 가능한 것이 바로 오픈스택입니다.
 &lt;/p&gt;
 &lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;
  두번째는 집단지성, 커뮤니티의 힘입니다.
 &lt;/p&gt;
 &lt;p&gt;
@@ -195,6 +272,17 @@ Sharing Tech. Growing Together.
 &lt;/p&gt;
 &lt;p&gt;
  오픈스택 기술지원 업체도 운영에 대한 가이드는 가능하지만, 버그는 커뮤니티를 통해 수정하게 됩니다.
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
+&lt;img src=&quot;/assets/images/50692685/4&quot; height=200/&gt;
+ &lt;/span&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
 &lt;/p&gt;
 &lt;h3 id=&quot;id-[KOSSCON2018]오픈소스로서의오픈스택과그미래-오픈스택의미래&quot;&gt;
  &lt;span style=&quot;color: rgb(27,29,37);&quot;&gt;
@@ -235,6 +323,17 @@ Sharing Tech. Growing Together.
 &lt;p&gt;
  초기 투자 비용을 절감하였고, 강력한 보안과 안전하고 편리한 거래를 지원하는 인프라 환경을 구축했습니다.
 &lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
+&lt;img src=&quot;/assets/images/50692685/5&quot; height=150/&gt;
+ &lt;/span&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
 &lt;h3 id=&quot;id-[KOSSCON2018]오픈소스로서의오픈스택과그미래-결론&quot;&gt;
  결론
 &lt;/h3&gt;
@@ -251,14 +350,60 @@ Sharing Tech. Growing Together.
  커뮤니티에 기여하는 회사가 많아지게 되면, 커뮤니티가 de facto standard가 될 수 밖에 없습니다.
 &lt;/p&gt;
 &lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;
  &lt;a class=&quot;external-link&quot; href=&quot;https://drive.google.com/open?id=1YzXq1pigKcV4efAHAAK4fvjRcqjer-qK&quot; rel=&quot;nofollow&quot;&gt;
   발표자료 다운로드&amp;gt;&amp;gt;
  &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
 &lt;/p&gt;
 </description>
         <pubDate>Thu, 29 Nov 2018 00:00:00 +0900</pubDate>
         <link>https://tech.osci.kr/openstack/2018/11/29/50692685/</link>
         <guid isPermaLink="true">https://tech.osci.kr/openstack/2018/11/29/50692685/</guid>
+        
+        <category>openstack</category>
+        
+        <category>kosscon2018</category>
         
         
         <category>openstack</category>

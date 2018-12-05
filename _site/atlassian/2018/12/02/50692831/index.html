@@ -25,24 +25,28 @@
 <meta property="og:title" content="Atlassian Oracle SE Java"/>
 <meta property="og:description" content="Oracle Java BCL 라이선스가 2018년 7월 부로 `Java SE subscription` 년단위 구독모델로 개편됐습니다. Oracle 유료화 모델이 변경 되면서 Atlassian Server, DataCenter에 어떤 영향을 주는지 알아봤습니다. Oracle JDK는 유료인가? 2019년 1월 이후에 릴리즈되는 Oracle Java SE8은 유료 라이선스 없이 없무용, 상업용으로 사용할 수 없습니다. 그러면 그전의 1.8.181은 BCL 계약의 동의하에 무료로 사용할 수 있습니다. 무료로 사용할 수 있는 범위는 Oracle Java SE 8 을 수정하지 않고 그대로 사용하면 무료로 사용할 수 있습니다. 보통 Spring Framework이나 Java를 사용하지..."/>
 <meta property="og:url" content="https://tech.osci.kr/atlassian/2018/12/02/50692831/"/>
-<meta property="og:image" content=""/>
+<meta property="og:image" content="/assets/images/50692831/0"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Atlassian Oracle SE Java"/>
 <meta name="twitter:description" content="Oracle Java BCL 라이선스가 2018년 7월 부로 `Java SE subscription` 년단위 구독모델로 개편됐습니다. Oracle 유료화 모델이 변경 되면서 Atlassian Server, DataCenter에 어떤 영향을 주는지 알아봤습니다. Oracle JDK는 유료인가? 2019년 1월 이후에 릴리즈되는 Oracle Java SE8은 유료 라이선스 없이 없무용, 상업용으로 사용할 수 없습니다. 그러면 그전의 1.8.181은 BCL 계약의 동의하에 무료로 사용할 수 있습니다. 무료로 사용할 수 있는 범위는 Oracle Java SE 8 을 수정하지 않고 그대로 사용하면 무료로 사용할 수 있습니다. 보통 Spring Framework이나 Java를 사용하지..."/>
 <meta name="twitter:label1" content="Written by"/>
 <meta name="twitter:data1" content="seiyeon.kim"/>
-<meta name="twitter:image:src" content="https://tech.osci.kr/assets/images/default_blog_cover.jpg"/>
+<meta name="twitter:image:src" content="https://tech.osci.kr/assets/images/50692831/0"/>
 <meta name="naver-site-verification" content="11ec9086ec9292ebc8dc73f6224492f208b2007b"/>
 <meta name="google-site-verification" content="Q5w5X0R32gOG-1lBhFg0UxvXRNoQX-uOSPjxPI4sXH4" />
 
 <meta name="twitter:label2" content="Filed under"/>
-<meta name="twitter:data2" content="jdk1.8 java,atlassian,jira oracle jdk"/>
+<meta name="twitter:data2" content="java,jvm,oracle,atlassian,jira"/>
 
-<meta property="article:tag" content="jdk1.8 java"/>
+<meta property="article:tag" content="java"/>
+
+<meta property="article:tag" content="jvm"/>
+
+<meta property="article:tag" content="oracle"/>
 
 <meta property="article:tag" content="atlassian"/>
 
-<meta property="article:tag" content="jira oracle jdk"/>
+<meta property="article:tag" content="jira"/>
 
 
 
@@ -105,19 +109,25 @@
 </div>
 
 <div id="cover" class="container"
-     >
+     style="background-image: url(/assets/images/50692831/0);">
     <div>
         <h1>Atlassian Oracle SE Java</h1>
         <p> </p>
         <p class="right" style="opacity: 0.5">
             
-                jdk1.8 java
+                java
+                ,
+            
+                jvm
+                ,
+            
+                oracle
                 ,
             
                 atlassian
                 ,
             
-                jira oracle jdk
+                jira
                 
             
         </p>
@@ -129,6 +139,14 @@
 
 <div id="content" class="container post" role="main">
     <div id="post-content"><p>
+ <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size">
+<img src="/assets/images/50692831/0"/>
+ </span>
+</p>
+<p>
+ <br/>
+</p>
+<p>
  Oracle Java BCL 라이선스가 2018년 7월 부로 `Java SE subscription` 년단위 구독모델로 개편됐습니다.
 </p>
 <p>
@@ -181,10 +199,44 @@
  </a>
 </p>
 <p>
+ <br/>
+</p>
+<p>
  현재 1.8.181로 사용하고 계시다면 Jira, Confluence 최신 버전이 안정화 될 때 까지 지켜보다가 Open JDK로 운영하시는게 좋을 것 같습니다.
 </p>
 <p>
  오픈소스컨설팅과 함께면 더욱 좋겠죠?
+</p>
+<h1 id="AtlassianOracleSEJava-Bundle로제공되는JRE는?">
+ Bundle로 제공되는 JRE는?
+</h1>
+<p>
+ Jira installer로 설치하면 JRE 1.8.0_181이 기본으로 제공됩니다.
+</p>
+<p>
+ <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size">
+<img src="/assets/images/50692831/1"/>
+ </span>
+</p>
+<p>
+ Atlassian도 무료 버전을 Bundle로 제공하고 있습니다.
+</p>
+<p>
+ 하지만 보안, 성능 다양한 이슈로 1.8.0_181 을 계속 사용할 수 없겠죠.
+</p>
+<p>
+ 이에 관련해서는 아래 링크에서 Road map 지속 적인 확인이 필요할 것 같습니다.
+</p>
+<p>
+ <a class="external-link" href="https://community.atlassian.com/t5/Jira-discussions/Java-11-and-OpenJDK-support-for-Atlassian-Server-amp-Data-Center/td-p/872998" rel="nofollow">
+  https://community.atlassian.com/t5/Jira-discussions/Java-11-and-OpenJDK-support-for-Atlassian-Server-amp-Data-Center/td-p/872998
+ </a>
+</p>
+<p>
+ 결과적으로 OpenJDK, OracleJDK 둘다 지원입니다.
+</p>
+<p>
+ <br/>
 </p>
 <p>
  감사합니다.
@@ -206,6 +258,9 @@
  <a class="external-link" href="https://okky.kr/article/482664" rel="nofollow">
   https://okky.kr/article/482664
  </a>
+</p>
+<p>
+ <br/>
 </p>
 </div>
 
