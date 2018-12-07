@@ -849,7 +849,7 @@ body.tag-template #navbar {
 }
 
 #post-content p {
-    margin: 0;
+    margin: 0, 0, 15px, 0;
 }
 
 #post-content ul,
