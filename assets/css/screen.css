@@ -15,7 +15,11 @@ body {
     background-color: #fff;
 }
 p {
-    color: black;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 1.6em;
+    color: #3a3a3a;
+    font-weight: 350;
 }
 
 h1,
@@ -902,7 +906,8 @@ body.tag-template #navbar {
 #post-content a {
     text-decoration: underline;
     text-decoration-color: #e6e6e6;
-    color: #63c3ff;
+    color: blue;
+    font-weight: 400;
 }
 
 #post-content > *:first-child {

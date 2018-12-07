@@ -9,15 +9,15 @@ Sharing Tech. Growing Together.
 </description>
     <link>https://tech.osci.kr/</link>
     <atom:link href="https://tech.osci.kr/rss" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 06 Dec 2018 00:35:31 +0900</pubDate>
-    <lastBuildDate>Thu, 06 Dec 2018 00:35:31 +0900</lastBuildDate>
+    <pubDate>Fri, 07 Dec 2018 14:33:33 +0900</pubDate>
+    <lastBuildDate>Fri, 07 Dec 2018 14:33:33 +0900</lastBuildDate>
     <generator>Jekyll v3.7.4</generator>
     
       <item>
-        <title>Atlassian Oracle SE Java</title>
+        <title>Atlassian Oracle SE Java 소식</title>
         <description>&lt;p&gt;
  &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
-&lt;img src=&quot;/assets/images/50692831/0&quot;/&gt;
+  &lt;img src=&quot;/assets/images/50692831/0&quot;/&gt;
  &lt;/span&gt;
 &lt;/p&gt;
 &lt;p&gt;
@@ -27,64 +27,77 @@ Sharing Tech. Growing Together.
  Oracle Java BCL 라이선스가 2018년 7월 부로 `Java SE subscription` 년단위 구독모델로 개편됐습니다.
 &lt;/p&gt;
 &lt;p&gt;
- Oracle 유료화 모델이 변경 되면서 Atlassian Server, DataCenter에 어떤 영향을 주는지 알아봤습니다.
+ Oracle 유료화 모델이 변경 되면서 Atlassian Jira, Software는 어떻게 대응하는지 알아봤습니다.
 &lt;/p&gt;
-&lt;h1 id=&quot;AtlassianOracleSEJava-OracleJDK는유료인가?&quot;&gt;
+&lt;h1 id=&quot;AtlassianOracleSEJava소식-OracleJDK는유료인가?&quot;&gt;
  Oracle JDK는 유료인가?
 &lt;/h1&gt;
 &lt;p&gt;
- 2019년 1월 이후에 릴리즈되는 Oracle Java SE8은 유료 라이선스 없이 없무용, 상업용으로 사용할 수 없습니다.
+ 2019년 1월 이후에 릴리즈되는 Oracle Java SE8은 유료 라이선스 없이 업무용, 상업용으로 사용할 수 없습니다.
 &lt;/p&gt;
 &lt;p&gt;
- 그러면 그전의 1.8.181은 BCL 계약의 동의하에 무료로 사용할 수 있습니다.
+ Atlassian Jira, Confluence 설치할 때 JRE 1.8.181가 Bundle로 제공됩니다.
 &lt;/p&gt;
 &lt;p&gt;
- 무료로 사용할 수 있는 범위는 Oracle Java SE 8 을 수정하지 않고 그대로 사용하면 무료로 사용할 수 있습니다.
+ Java 1.8.181은 BCL 계약의 동의하에 무료로 사용할 수 있습니다.
 &lt;/p&gt;
 &lt;p&gt;
- 보통 Spring Framework이나 Java를 사용하지 Java SE를 고쳐서 쓰는 경우는 드물다고 생각합니다..
+ &lt;span style=&quot;color: rgb(27,29,37);&quot;&gt;
+  BCL 계약에는 일반적인 컴퓨팅에서 사용할 수 있으며 Java를 수정하지 않는 범위에서 무료로 사용할 수 있습니다.
+ &lt;/span&gt;
 &lt;/p&gt;
 &lt;p&gt;
- 1.8.181 을 패치 없이 사용하거나 구독형 라이선스를 구매해서 사용할 수 있습니다.
+ &lt;span style=&quot;color: rgb(27,29,37);&quot;&gt;
+  JDK(Java Development Kit)를 수정해서 사용하시면 구매를 하셔야합니다.
+ &lt;/span&gt;
 &lt;/p&gt;
-&lt;h1 id=&quot;AtlassianOracleSEJava-AtlassianOracleJava지원&quot;&gt;
- Atlassian Oracle Java 지원
+&lt;p&gt;
+ &lt;span style=&quot;color: rgb(27,29,37);&quot;&gt;
+  Java 자체는 오픈소스 이지만 Oracle Java는 무료 또는 유료라는 점!
+ &lt;/span&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;span style=&quot;color: rgb(27,29,37);&quot;&gt;
+  Oracle은 OpenJDK를 OracleJDK와 동일하게 릴리즈합니다. Oracle의 기술지원 없이 OpenJDK로 라이선스 걱정없이 사용할 수 있습니다.
+ &lt;/span&gt;
+&lt;/p&gt;
+&lt;h1 id=&quot;AtlassianOracleSEJava소식-AtlassianOracleJava지원&quot;&gt;
+ &lt;span style=&quot;color: rgb(27,29,37);&quot;&gt;
+  Atlassian Oracle Java 지원
+ &lt;/span&gt;
 &lt;/h1&gt;
 &lt;p&gt;
- Oracle Java를 사용하는 제품은 Jira, Confluence가 있습니다.
+ Jira, Confluence는 Oracle Java가 필요합니다. 정확히는 JRE: Java Runtime Environment 가 필요합니다.
 &lt;/p&gt;
 &lt;p&gt;
- 무료 사용자는 Java 1.8 패치 지원이 중단되면서 구매를 해야하나? 궁금하실 텐데요.
+ 기존 Jira, Confluence 또는 새로 구매하시는 사용자는 Java 1.8 패치 지원이 중단되면서 구매를 해야하나? 궁금하실 텐데요.
 &lt;/p&gt;
 &lt;p&gt;
- Atlassian은 Open JDK 지원 계획을 발표 했습니다.
+ 최신 Jira, Confluence Open JDK 를 지원합니다.
 &lt;/p&gt;
 &lt;p&gt;
- 그리고 Beta Version으로 Open JDK를 지원하는 최신 버전의 Jira, Confluence가 릴리즈 됐습니다.
+ 물론 Oracle Java도 같이 지원됩니다.
 &lt;/p&gt;
 &lt;p&gt;
- 물론 Oracle JDK도 같이 지원 예정입니다.
-&lt;/p&gt;
-&lt;p&gt;
- &lt;a class=&quot;external-link&quot; href=&quot;https://confluence.atlassian.com/jirasoftware/jira-software-7-13-x-release-notes-957981568.html#JiraSoftware7.13.xreleasenotes-openjdk&quot; rel=&quot;nofollow&quot;&gt;
+ &lt;a class=&quot;external-link&quot; href=&quot;https://confluence.atlassian.com/jirasoftware/jira-software-7-13-x-release-notes-957981568.html#JiraSoftware7.13.xreleasenotes-openjdk&quot; rel=&quot;nofollow&quot; style=&quot;letter-spacing: 0.0px;&quot;&gt;
   https://confluence.atlassian.com/jirasoftware/jira-software-7-13-x-release-notes-957981568.html#JiraSoftware7.13.xreleasenotes-openjdk
  &lt;/a&gt;
 &lt;/p&gt;
 &lt;p&gt;
- &lt;a class=&quot;external-link&quot; href=&quot;https://confluence.atlassian.com/doc/preparing-for-confluence-6-13-958443854.html&quot; rel=&quot;nofollow&quot;&gt;
-  https://confluence.atlassian.com/doc/preparing-for-confluence-6-13-958443854.html
+ &lt;a class=&quot;external-link&quot; href=&quot;https://confluence.atlassian.com/doc/confluence-6-13-release-notes-959288785.html&quot; rel=&quot;nofollow&quot;&gt;
+  https://confluence.atlassian.com/doc/confluence-6-13-release-notes-959288785.html
  &lt;/a&gt;
 &lt;/p&gt;
 &lt;p&gt;
  &lt;br/&gt;
 &lt;/p&gt;
 &lt;p&gt;
- 현재 1.8.181로 사용하고 계시다면 Jira, Confluence 최신 버전이 안정화 될 때 까지 지켜보다가 Open JDK로 운영하시는게 좋을 것 같습니다.
+ 현재 1.8.181로 사용하고 계시다면 Jira, Confluence 최신 버전이 안정화 될 때 까지 지켜보다가 OpenJDK로 운영하시는게 좋을 것 같습니다.
 &lt;/p&gt;
 &lt;p&gt;
  오픈소스컨설팅과 함께면 더욱 좋겠죠?
 &lt;/p&gt;
-&lt;h1 id=&quot;AtlassianOracleSEJava-Bundle로제공되는JRE는?&quot;&gt;
+&lt;h1 id=&quot;AtlassianOracleSEJava소식-Bundle로제공되는JRE는?&quot;&gt;
  Bundle로 제공되는 JRE는?
 &lt;/h1&gt;
 &lt;p&gt;
@@ -92,11 +105,8 @@ Sharing Tech. Growing Together.
 &lt;/p&gt;
 &lt;p&gt;
  &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
-&lt;img src=&quot;/assets/images/50692831/1&quot;/&gt;
+  &lt;img src=&quot;/assets/images/50692831/1&quot;/&gt;
  &lt;/span&gt;
-&lt;/p&gt;
-&lt;p&gt;
- Atlassian도 무료 버전을 Bundle로 제공하고 있습니다.
 &lt;/p&gt;
 &lt;p&gt;
  하지만 보안, 성능 다양한 이슈로 1.8.0_181 을 계속 사용할 수 없겠죠.
@@ -110,10 +120,24 @@ Sharing Tech. Growing Together.
  &lt;/a&gt;
 &lt;/p&gt;
 &lt;p&gt;
- 결과적으로 OpenJDK, OracleJDK 둘다 지원입니다.
+ Jira는 adoptOpenJDK를 지원 한다고 하네요.
+ &lt;a class=&quot;external-link&quot; href=&quot;https://adoptopenjdk.net/&quot; rel=&quot;nofollow&quot;&gt;
+  https://adoptopenjdk.net/
+ &lt;/a&gt;
 &lt;/p&gt;
 &lt;p&gt;
- &lt;br/&gt;
+ Atlassian은 빠르고 유연하게 Java 라이선스 문제를 해결하고 있습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ 글로벌 공룡 기업의 정책에 따라서 개발 문화, 기업 문화가 바뀌는 것 같습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ 우리가 도구, 개발언어, 기술 스택을 선택할 때 신중해야 하는 이유입니다.
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
+  &lt;img src=&quot;/assets/images/50692831/2&quot;/&gt;
+ &lt;/span&gt;
 &lt;/p&gt;
 &lt;p&gt;
  감사합니다.
@@ -138,8 +162,7 @@ Sharing Tech. Growing Together.
 &lt;/p&gt;
 &lt;p&gt;
  &lt;br/&gt;
-&lt;/p&gt;
-</description>
+&lt;/p&gt;</description>
         <pubDate>Sun, 02 Dec 2018 00:00:00 +0900</pubDate>
         <link>https://tech.osci.kr/atlassian/2018/12/02/50692831/</link>
         <guid isPermaLink="true">https://tech.osci.kr/atlassian/2018/12/02/50692831/</guid>
@@ -367,36 +390,6 @@ Sharing Tech. Growing Together.
  &lt;a class=&quot;external-link&quot; href=&quot;https://drive.google.com/open?id=1YzXq1pigKcV4efAHAAK4fvjRcqjer-qK&quot; rel=&quot;nofollow&quot;&gt;
   발표자료 다운로드&amp;gt;&amp;gt;
  &lt;/a&gt;
-&lt;/p&gt;
-&lt;p&gt;
- &lt;br/&gt;
-&lt;/p&gt;
-&lt;p&gt;
- &lt;br/&gt;
-&lt;/p&gt;
-&lt;p&gt;
- &lt;br/&gt;
-&lt;/p&gt;
-&lt;p&gt;
- &lt;br/&gt;
-&lt;/p&gt;
-&lt;p&gt;
- &lt;br/&gt;
-&lt;/p&gt;
-&lt;p&gt;
- &lt;br/&gt;
-&lt;/p&gt;
-&lt;p&gt;
- &lt;br/&gt;
-&lt;/p&gt;
-&lt;p&gt;
- &lt;br/&gt;
-&lt;/p&gt;
-&lt;p&gt;
- &lt;br/&gt;
-&lt;/p&gt;
-&lt;p&gt;
- &lt;br/&gt;
 &lt;/p&gt;
 </description>
         <pubDate>Thu, 29 Nov 2018 00:00:00 +0900</pubDate>
