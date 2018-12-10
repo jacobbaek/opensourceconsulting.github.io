@@ -14,6 +14,15 @@
   </url>
   
   <url>
+    <loc>https://tech.osci.kr/2018/12/06/50693623/</loc>
+    
+    <lastmod>2018-12-06T00:00:00+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
     <loc>https://tech.osci.kr/atlassian/2018/12/02/50692831/</loc>
     
     <lastmod>2018-12-02T00:00:00+09:00</lastmod>
@@ -474,6 +483,12 @@
   
   <url>
     <loc>https://tech.osci.kr/authors/it2seiyon</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/authors/kbseo</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
