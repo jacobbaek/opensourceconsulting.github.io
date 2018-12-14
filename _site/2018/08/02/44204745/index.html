@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+ <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+<title>Confluence 6.11.0-beta Release Notes 분석</title>
+<meta name="title" content="Confluence 6.11.0-beta Release Notes 분석" />
+<meta name="author" content="seiyeon.kim"/>
+<meta name="description" content="Confluence 6.11.0 beta가 릴리즈 됐습니다. 몇가지 큰 변화기 있는데요 한번 살펴보겠습니다. 설치 다운로드 받아서 설치를 진행해 봤습니다. 아래 주소에서 다운로드 받을 수 있습니다. https://www.atlassian.com/software/confluence/download-eap? https://www.atlassian.com/software/confluence/downloads/binary/atlassian-confluence-6.11.0-beta1-x64.bin 저는 간단한게 Virtualbox에 vm 올려서 설치를 해보겠습니다. 저는 평소에 Virtualbox + Vagrant 조합을 사용해서 테스트를 하는데요 편하고 쉽습니다. 자주 사용하는 개발환경, 테스트환경은 provisioning script로 작성하여 git에서 관리하고 있습니다. (언제 어디서나 테스트 환경을 뚝.딱! 만들 수 있습니다. from 좋은 선배) 주요기능 첨부파일 edit A better way to edit files Confluence already lets..."/>
+
+<meta property="fb:app_id" content=""/>
+
+<meta property="og:site_name" content="오픈소스컨설팅 
+기술 블로그
+"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="Confluence 6.11.0-beta Release Notes 분석"/>
+<meta property="og:description" content="Confluence 6.11.0 beta가 릴리즈 됐습니다. 몇가지 큰 변화기 있는데요 한번 살펴보겠습니다. 설치 다운로드 받아서 설치를 진행해 봤습니다. 아래 주소에서 다운로드 받을 수 있습니다. https://www.atlassian.com/software/confluence/download-eap? https://www.atlassian.com/software/confluence/downloads/binary/atlassian-confluence-6.11.0-beta1-x64.bin 저는 간단한게 Virtualbox에 vm 올려서 설치를 해보겠습니다. 저는 평소에 Virtualbox + Vagrant 조합을 사용해서 테스트를 하는데요 편하고 쉽습니다. 자주 사용하는 개발환경, 테스트환경은 provisioning script로 작성하여 git에서 관리하고 있습니다. (언제 어디서나 테스트 환경을 뚝.딱! 만들 수 있습니다. from 좋은 선배) 주요기능 첨부파일 edit A better way to edit files Confluence already lets..."/>
+<meta property="og:url" content="https://tech.osci.kr/2018/08/02/44204745/"/>
+<meta property="og:image" content=""/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Confluence 6.11.0-beta Release Notes 분석"/>
+<meta name="twitter:description" content="Confluence 6.11.0 beta가 릴리즈 됐습니다. 몇가지 큰 변화기 있는데요 한번 살펴보겠습니다. 설치 다운로드 받아서 설치를 진행해 봤습니다. 아래 주소에서 다운로드 받을 수 있습니다. https://www.atlassian.com/software/confluence/download-eap? https://www.atlassian.com/software/confluence/downloads/binary/atlassian-confluence-6.11.0-beta1-x64.bin 저는 간단한게 Virtualbox에 vm 올려서 설치를 해보겠습니다. 저는 평소에 Virtualbox + Vagrant 조합을 사용해서 테스트를 하는데요 편하고 쉽습니다. 자주 사용하는 개발환경, 테스트환경은 provisioning script로 작성하여 git에서 관리하고 있습니다. (언제 어디서나 테스트 환경을 뚝.딱! 만들 수 있습니다. from 좋은 선배) 주요기능 첨부파일 edit A better way to edit files Confluence already lets..."/>
+<meta name="twitter:label1" content="Written by"/>
+<meta name="twitter:data1" content="seiyeon.kim"/>
+<meta name="twitter:image:src" content="https://tech.osci.kr/assets/images/default_blog_cover.jpg"/>
+<meta name="naver-site-verification" content="11ec9086ec9292ebc8dc73f6224492f208b2007b"/>
+<meta name="google-site-verification" content="Q5w5X0R32gOG-1lBhFg0UxvXRNoQX-uOSPjxPI4sXH4" />
+
+<meta name="twitter:label2" content="Filed under"/>
+<meta name="twitter:data2" content=""/>
+
+
+
+<meta property="article:published_time" content="2018-08-02T00:00:00+09:00"/>
+
+
+<meta property="article:author" content="https://tech.osci.kr/authors/seiyeon.kim"/>
+
+<link href="https://tech.osci.kr/rss/" rel="alternate" type="application/rss+xml" title="RSS"/>
+<link href="/assets/favicon.png" rel="icon" type="image/png"/>
+<link href="/assets/apple-touch-icon.png" rel="apple-touch-icon" type="image/png"/>
+<link href="/assets/apple-touch-icon.png" rel="apple-touch-icon-precomposed" type="image/png"/>
+<link href="/assets/lib/normalize.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/css/monokai.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/lib/magnific-popup.min.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/css/screen.css" rel="stylesheet" type="text/css"/>
+
+</head>
+<body class="post-template">
+
+<div id="header">
+    <button id="menu-toggle" type="button">
+        <span class="sr-only">Toggle Navigation Menu</span>
+    </button>
+    <button id="search-toggle" type="button">
+        <span class="sr-only">Toggle Search Form</span>
+    </button>
+    <a href="/" id="logo">
+    </a>
+    <form id="search">
+        <input id="searchQueryEdit" name="q" type="search" placeholder="Search..." value="" />
+    </form>
+
+    <ul id="menu" class="nav">
+        <li class=" active "><a href="/">Blog</a></li>
+        <!--<li class=""><a href="/books/">Books</a></li>-->
+        <li class=""><a href="/about/">About</a></li>
+    </ul>
+</div><!-- #header -->
+
+
+<div id="wrapper">
+    <div id="fb-root"></div>
+<div id="navbar" class="container">
+    <h5><a id="link-back" href="/">Back to Posts</a></h5>
+    
+<ul id="shares">
+    
+    <li>
+        <a id="share-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://tech.osci.kr/2018/08/02/44204745/"
+           onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+            <span class="sr-only">Share to Facebook</span>
+        </a>
+    </li>
+    
+    
+    
+</ul>
+
+</div>
+
+<div id="cover" class="container"
+     >
+    <div>
+        <h1>Confluence 6.11.0-beta Release Notes 분석</h1>
+        <p> </p>
+        <p class="right" style="opacity: 0.5">
+            
+        </p>
+        
+
+
+    </div>
+</div>
+
+<div id="content" class="container post" role="main">
+    <div id="post-content"><p>Confluence 6.11.0 beta가 릴리즈 됐습니다. 몇가지 큰 변화기 있는데요 한번 살펴보겠습니다.<br />
+ <img src="/assets/images/44204745/0" alt="" /></p>
+
+<h1 id="설치">설치</h1>
+<p>다운로드 받아서 설치를 진행해 봤습니다.<br />
+아래 주소에서 다운로드 받을 수 있습니다.<br />
+https://www.atlassian.com/software/confluence/download-eap?<br />
+https://www.atlassian.com/software/confluence/downloads/binary/atlassian-confluence-6.11.0-beta1-x64.bin<br />
+<img src="/assets/images/44204745/1" alt="" /></p>
+
+<p>저는 간단한게 Virtualbox에 vm 올려서 설치를 해보겠습니다.<br />
+저는 평소에 Virtualbox + Vagrant 조합을 사용해서 테스트를 하는데요 편하고 쉽습니다.<br />
+자주 사용하는 개발환경, 테스트환경은 provisioning script로 작성하여 git에서 관리하고 있습니다.<br />
+(언제 어디서나 테스트 환경을 뚝.딱! 만들 수 있습니다. from 좋은 선배)</p>
+
+<p><img src="/assets/images/44204745/2" alt="" /></p>
+
+<h1 id="주요기능">주요기능</h1>
+<h2 id="첨부파일-edit">첨부파일 edit</h2>
+<blockquote>
+  <p>A better way to edit files
+Confluence already lets you upload a wide range of files to share and discuss with your team. We’ve now made it easier to make changes to your files without the hassle of downloading and uploading multiple times.
+You can now edit any file attached to a Confluence page using a desktop application, then save the file back to Confluence in a few clicks. And it’s not just available for Microsoft Offices documents; it works for Photoshop files, Keynote &gt; &gt; presentations — any attached file with a compatible application installed on your computer.
+This feature replaces the Edit in Office function, which had some tricky limitations. It was restricted to Microsoft Office documents and only worked if you had the right browser, operating system and app combo running.
+Read more in our guide to editing files.</p>
+</blockquote>
+
+<p>이제 컴퓨터에 설치된 어플리케이션을 통해 업로드된 첨부파일을 편집할 수 있습니다.<br />
+ Microsoft Office 문서에만 사용할수있는 것은 아닙니다. Photoshop 파일, Keynote 등 컴퓨터에 설치된 호환 응용 프로그램이 있는 첨부파일에서 작동합니다.<br />
+ 설치한 컨플루언스로 편집 기능을 이용해 보겠습니다.<br />
+ 처음에는 Atlassian 프로그램을 설치해야 합니다. macOS도 지원하네요 : )<br />
+ <img src="/assets/images/44204745/3" alt="" /></p>
+
+<p>설치를 하구요.<br />
+ <img src="/assets/images/44204745/4" alt="" /></p>
+
+<p>어플리케이션을 실행하면 Status Bar에 작은 아틀라시안 아이콘이 생깁니다.<br />
+ <img src="/assets/images/44204745/5" alt="" /><br />
+ Confluence 에서 클라이언트로 접속을 허용 할건지 팝업이 뜹니다.<br />
+ <img src="/assets/images/44204745/6" alt="" /></p>
+
+<p>Trust로 허용 하면 연결 됐다는 메시지가 나옵니다.<br />
+ <img src="/assets/images/44204745/7" alt="" /></p>
+
+<p>Confluence로 돌아가서 Edit with를 누르면 Edit with Excel로 변경이 되어 있습니다.<br />
+ <img src="/assets/images/44204745/8" alt="" /></p>
+
+<p>Edit 버튼을 누르면 엑셀이 실행 되면서 편집을 할 수 있습니다.<br />
+ <img src="/assets/images/44204745/9" alt="" /><br />
+ Excel 파일을 수정 후 저장을 하게 되면<br />
+ Upload 버튼이 활성화 됩니다.<br />
+ <img src="/assets/images/44204745/10" alt="" /></p>
+
+<p>Upload를 하게되면 변경 사항에 Companion app으로 수정됐다는 이력이 기록됩니다.<br />
+ <img src="/assets/images/44204745/11" alt="" /></p>
+
+<p>아쉽지만 동시편집은 안됐습니다.<br />
+ 엑셀 레벨에서 편집이 되기때문에 동시편집은 힘들겠죠?</p>
+
+<p>Keynote 파일도 편집을 해보겠습니다. Edit with Kenote 버튼이 활성화 되네요.<br />
+ <img src="/assets/images/44204745/12" alt="" /></p>
+
+<p>Keynote가 실행됩니다.<br />
+ <img src="/assets/images/44204745/13" alt="" /></p>
+
+<p>변경 후 저장하면 Upload 버튼이 활성화 됩니다.<br />
+ <img src="/assets/images/44204745/14" alt="" /></p>
+
+<p>변경이력 내용을 보면 Keynote 파일이 Companion app으로 업로드 됐다고 나옵니다.<br />
+ <img src="/assets/images/44204745/15" alt="" /><br />
+ 앞으로 Confluence는 다양한 어플리케이션과 작업할 수 있는 환경이 되겠네요. (엄지 척!)</p>
+
+<h2 id="support-zip-생성이-쉬워졌습니다">Support Zip 생성이 쉬워졌습니다.</h2>
+<blockquote>
+  <p>Easier ways to generate support zips   We’ve made it easier for you to create support zips from your site. A new REST API allows you to generate a support zip, and then download the zip remotely. You can even generate support zips from multiple nodes in your Data Center cluster with a single request.
+We hope that this API will save a huge amount of time when you’re investigating an issue, and also opens up opportunities for automating support zip generation.
+Find out how to generate a support zip via REST for Server or for Data Center.</p>
+</blockquote>
+
+<p>REST API를 통해서 Support Zip을 생성하고 다운로드 할 수 있다고 합니다. Data Center 버전에서는 여러 노드에서 Support Zip을 쉽게 만들 수 있을 것 같습니다.<br />
+자동화도 쉽게 할 수 있겠습니다.</p>
+
+<h2 id="data-center-버전에서-xml-backups-스케줄이-비활성화-되었습니다">Data Center 버전에서 XML backups 스케줄이 비활성화 되었습니다.</h2>
+<blockquote>
+  <p>Scheduled XML backups disabled for Data Center   Having a robust backup strategy is essential. For small or test instances, the scheduled daily XML backup may be adequate, but once you’re running at scale we recommend you back up your database, install and home directories regularly. <br />
+In this release, we’ve disabled the daily XML backup for sites with a Data Center license.</p>
+</blockquote>
+
+<h1 id="새로운-분석정보-제공-예정">새로운 분석정보 제공 예정</h1>
+<blockquote>
+  <p>New diagnostics info coming soon   After upgrading to Confluence 6.11, you may see some new messages in your application log, and a new  <code>   atlassian-diagnostics.log  </code>  file, which is also included in support zips. This is related to new diagnostic information we’re working on, for things like low memory or disk space, or slow HTTP requests, long running tasks, or macro rendering. No action is required for these messages for now. <br />
+We plan to fine-tune the thresholds and provide a UI for this diagnostic information in an upcoming Confluence release.</p>
+</blockquote>
+
+<p>Confluence 6.11로 업그레이드하면 새로운 atlassian-diagnostics.log를 확인할 수 있습니다.<br />
+이 로그는 느린 HTTP 요청, 메모리 또는 디스크 공간부족, 장기 실행 작업 또는 매크로 렌더링 관련하여 작업중인 진단 정보와 관련이 있습니다. 이 메시지에 대한 조치는 당장 필요하지 않습니다. 아틀라시안은 앞으로 릴리즈에서 임계 값을 미세 조정하고 진단 정보를 보여주는 UI를 제공 예정에 있다고 합니다. 반가운 소식입니다.</p>
+
+<h2 id="지원하는-플랫폼-변경사항">지원하는 플랫폼 변경사항</h2>
+<blockquote>
+  <p>Supported platforms changes <br />
+In this release we will be adding support for:</p>
+  <ul>
+    <li>Oracle 12c R2</li>
+    <li>Microsoft SQL Server 2017</li>
+  </ul>
+</blockquote>
+
+<p>Oralce 12c r2, MS SQL 2017을 지원합니다.</p>
+
+<h1 id="wrap-up">Wrap up</h1>
+<p>변화의 바람이 6.11에서 불어오네요. 첨부파일을 Edit할 수 있는 기능과 메모리 사용량, 느린 HTTP 요청 등 APM에서 제공하던 기능을 Confluence에서 제공 예정입니다.<br />
+Confluence를 사용하면서 조금 아쉽다 하는 부분을 예리하게 기능 추가/개선이 되는 것 같습니다.<br />
+지금까지 반가운 6.11 Beta Release 소식이었습니다.<br />
+감사합니다.</p>
+</div>
+
+    <div id="post-footer">
+        
+        <a id="post-author" href="/authors/seiyeon.kim/">
+            <div id="author-image" style="background-image:url(/files/authors/it2seiyon.jpeg);">
+                <span class="sr-only">seiyeon.kim's profile image</span>
+            </div>
+            <p id="author-name">seiyeon.kim</p>
+        </a>
+        <p id="post-date">2018-08-02</p>
+        <a id="post-more" href="/authors/seiyeon.kim/">
+            <span>Read more posts by this author</span>
+        </a>
+    </div>
+</div>
+
+<div id="post-links" class="container">
+    
+    
+        <div id="post-prev"
+             >
+            <div>
+                <h3><a href="/linux/2018/07/31/linux-filesystem/">리눅스 파일 시스템 이해하기 : ext4</a></h3>
+                <p>YOU MIGHT ENJOY</p>
+            </div>
+        </div>
+    
+    
+    
+        <div id="post-next"
+             style="background-image: url(/assets/images/44205100/1);">
+            <div>
+                <h3><a href="/bitbucket/2018/08/05/44205100/">Bitbucket jekyll 블로그 만들기</a></h3>
+                <p>NEXT POST</p>
+            </div>
+        </div>
+    
+</div>
+
+<div id="lightbox">
+    <div id="lightbox-image"></div>
+</div>
+
+
+    <div class="clearfix"></div>
+
+    <a href="#" id="back-to-top"></a>
+</div>
+
+<div id="footer" class="container-fluid">
+    <ul id="links">
+        
+        <li>
+            <a id="link-github" href="http://github.com/opensourceconsulting" target="_blank">
+                <span class="sr-only">github</span>
+            </a>
+        </li>
+        
+        
+        <li>
+            <a id="link-facebook" href="http://facebook.com/osckorea" target="_blank">
+                <span class="sr-only">facebook</span>
+            </a>
+        </li>
+        
+        
+        <li>
+            <a id="link-rss" href="/rss" target="_blank">
+                <span class="sr-only">rss</span>
+            </a>
+        </li>
+    </ul>
+    <p id="copyright">
+        <a href="https://tech.osci.kr">&copy;2018 OpenSourceConsulting</a>
+        All rights reserved.
+    </p>
+</div><!--#footer-->
+
+
+<script src="/assets/lib/jquery-1.12.0.min.js"></script>
+<script src="/assets/lib/jquery.magnific-popup.min.js"></script>
+<script src="/assets/js/index.js"></script>
+
+
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-39977834-4', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+
+
+
+    
+    <!-- <script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '',
+            xfbml      : true,
+            version    : 'v2.8'
+        });
+        FB.Canvas.getPageInfo(
+            function(info) {
+                alert('Width: ' + info.clientWidth + ' Height: ' + info.clientHeight);
+            }
+        );
+        FB.AppEvents.logPageView();
+    };
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.8";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script> -->
+
+<!--
+<script>
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.8";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+-->
+
+    
+
+    
+
+    
+
+</body>
+</html>

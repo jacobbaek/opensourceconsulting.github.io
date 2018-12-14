@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+ <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+<title>자바와 웹 애플리케이션 서버 성능 튜닝</title>
+<meta name="title" content="자바와 웹 애플리케이션 서버 성능 튜닝" />
+<meta name="author" content="ienvyou"/>
+<meta name="description" content="
+ 
+  아래의 슬라이드는 여러 해에 걸쳐서 진화해온 자바 성능 튜닝에 대한 강의자료입니다. 많은 분들의 다양한 지식 기부를 통해 자료가 점점 풍성해 진 것 같습니다.
+ 
+ 
+  
+ 
+ 
+  항상 중요하게 생각하고 있는 것은 자신이 알고 있는 것을 다른 사람에게 공유하는 방법이라고 생각합니다. 하루가 멀다하고 기술이 변하긴 합니다만 그 기술 근원에 자리잡고 있는 핵심적인 내용은 사실 크게 변하지 않습니다.
+ 
+ 
+  
+ 
+ 
+  아래의 슬라이드도 그러한 내용으로 보시면 될 것 같습니다. 자료를 풍부하게 해주신 오픈소스컨설팅 정명훈 이사님, 오픈나루 전준식 이사님, 오라클 이창재 선생님께 감사의 말씀드립니다.
+ 
+ 
+  
+   
+    
+     
+    
+   
+   
+    
+     
+      
+     
+    
+    
+     
+      
+     
+    
+    
+     
+     
+     
+      
+     
+    
+   
+  
+  
+ 
+ 
+  
+ 
+ 
+ 
+ 
+  
+  
+ 
+
+"/>
+
+<meta property="fb:app_id" content=""/>
+
+<meta property="og:site_name" content="오픈소스컨설팅 
+기술 블로그
+"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="자바와 웹 애플리케이션 서버 성능 튜닝"/>
+<meta property="og:description" content="
+ 
+  아래의 슬라이드는 여러 해에 걸쳐서 진화해온 자바 성능 튜닝에 대한 강의자료입니다. 많은 분들의 다양한 지식 기부를 통해 자료가 점점 풍성해 진 것 같습니다.
+ 
+ 
+  
+ 
+ 
+  항상 중요하게 생각하고 있는 것은 자신이 알고 있는 것을 다른 사람에게 공유하는 방법이라고 생각합니다. 하루가 멀다하고 기술이 변하긴 합니다만 그 기술 근원에 자리잡고 있는 핵심적인 내용은 사실 크게 변하지 않습니다.
+ 
+ 
+  
+ 
+ 
+  아래의 슬라이드도 그러한 내용으로 보시면 될 것 같습니다. 자료를 풍부하게 해주신 오픈소스컨설팅 정명훈 이사님, 오픈나루 전준식 이사님, 오라클 이창재 선생님께 감사의 말씀드립니다.
+ 
+ 
+  
+   
+    
+     
+    
+   
+   
+    
+     
+      
+     
+    
+    
+     
+      
+     
+    
+    
+     
+     
+     
+      
+     
+    
+   
+  
+  
+ 
+ 
+  
+ 
+ 
+ 
+ 
+  
+  
+ 
+
+"/>
+<meta property="og:url" content="https://tech.osci.kr/java/2015/04/09/tistory-54/"/>
+<meta property="og:image" content=""/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="자바와 웹 애플리케이션 서버 성능 튜닝"/>
+<meta name="twitter:description" content="
+ 
+  아래의 슬라이드는 여러 해에 걸쳐서 진화해온 자바 성능 튜닝에 대한 강의자료입니다. 많은 분들의 다양한 지식 기부를 통해 자료가 점점 풍성해 진 것 같습니다.
+ 
+ 
+  
+ 
+ 
+  항상 중요하게 생각하고 있는 것은 자신이 알고 있는 것을 다른 사람에게 공유하는 방법이라고 생각합니다. 하루가 멀다하고 기술이 변하긴 합니다만 그 기술 근원에 자리잡고 있는 핵심적인 내용은 사실 크게 변하지 않습니다.
+ 
+ 
+  
+ 
+ 
+  아래의 슬라이드도 그러한 내용으로 보시면 될 것 같습니다. 자료를 풍부하게 해주신 오픈소스컨설팅 정명훈 이사님, 오픈나루 전준식 이사님, 오라클 이창재 선생님께 감사의 말씀드립니다.
+ 
+ 
+  
+   
+    
+     
+    
+   
+   
+    
+     
+      
+     
+    
+    
+     
+      
+     
+    
+    
+     
+     
+     
+      
+     
+    
+   
+  
+  
+ 
+ 
+  
+ 
+ 
+ 
+ 
+  
+  
+ 
+
+"/>
+<meta name="twitter:label1" content="Written by"/>
+<meta name="twitter:data1" content="ienvyou"/>
+<meta name="twitter:image:src" content="https://tech.osci.kr/assets/images/default_blog_cover.jpg"/>
+<meta name="naver-site-verification" content="11ec9086ec9292ebc8dc73f6224492f208b2007b"/>
+<meta name="google-site-verification" content="Q5w5X0R32gOG-1lBhFg0UxvXRNoQX-uOSPjxPI4sXH4" />
+
+<meta name="twitter:label2" content="Filed under"/>
+<meta name="twitter:data2" content="Java,Web Application"/>
+
+<meta property="article:tag" content="Java"/>
+
+<meta property="article:tag" content="Web Application"/>
+
+
+
+<meta property="article:published_time" content="2015-04-09T09:33:12+09:00"/>
+
+
+<meta property="article:author" content="https://tech.osci.kr/authors/ienvyou"/>
+
+<link href="https://tech.osci.kr/rss/" rel="alternate" type="application/rss+xml" title="RSS"/>
+<link href="/assets/favicon.png" rel="icon" type="image/png"/>
+<link href="/assets/apple-touch-icon.png" rel="apple-touch-icon" type="image/png"/>
+<link href="/assets/apple-touch-icon.png" rel="apple-touch-icon-precomposed" type="image/png"/>
+<link href="/assets/lib/normalize.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/css/monokai.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/lib/magnific-popup.min.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/css/screen.css" rel="stylesheet" type="text/css"/>
+
+</head>
+<body class="post-template">
+
+<div id="header">
+    <button id="menu-toggle" type="button">
+        <span class="sr-only">Toggle Navigation Menu</span>
+    </button>
+    <button id="search-toggle" type="button">
+        <span class="sr-only">Toggle Search Form</span>
+    </button>
+    <a href="/" id="logo">
+    </a>
+    <form id="search">
+        <input id="searchQueryEdit" name="q" type="search" placeholder="Search..." value="" />
+    </form>
+
+    <ul id="menu" class="nav">
+        <li class=" active "><a href="/">Blog</a></li>
+        <!--<li class=""><a href="/books/">Books</a></li>-->
+        <li class=""><a href="/about/">About</a></li>
+    </ul>
+</div><!-- #header -->
+
+
+<div id="wrapper">
+    <div id="fb-root"></div>
+<div id="navbar" class="container">
+    <h5><a id="link-back" href="/">Back to Posts</a></h5>
+    
+<ul id="shares">
+    
+    <li>
+        <a id="share-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://tech.osci.kr/java/2015/04/09/tistory-54/"
+           onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+            <span class="sr-only">Share to Facebook</span>
+        </a>
+    </li>
+    
+    
+    
+</ul>
+
+</div>
+
+<div id="cover" class="container"
+     >
+    <div>
+        <h1>자바와 웹 애플리케이션 서버 성능 튜닝</h1>
+        <p>자바 성능 튜닝에 대한 강의자료입니다. 많은 분들의 다양한 지식 기부를 통해 자료가 점점 풍성해 진 것 같습니다. 항상 중요하게 생각하고 있는 것은 자신이 알고..</p>
+        <p class="right" style="opacity: 0.5">
+            
+                Java
+                ,
+            
+                Web Application
+                
+            
+        </p>
+        
+
+
+    </div>
+</div>
+
+<div id="content" class="container post" role="main">
+    <div id="post-content"><div class="area_view">
+ <p>
+  아래의 슬라이드는 여러 해에 걸쳐서 진화해온 자바 성능 튜닝에 대한 강의자료입니다. 많은 분들의 다양한 지식 기부를 통해 자료가 점점 풍성해 진 것 같습니다.
+ </p>
+ <p>
+  <br />
+ </p>
+ <p>
+  항상 중요하게 생각하고 있는 것은 자신이 알고 있는 것을 다른 사람에게 공유하는 방법이라고 생각합니다. 하루가 멀다하고 기술이 변하긴 합니다만 그 기술 근원에 자리잡고 있는 핵심적인 내용은 사실 크게 변하지 않습니다.
+ </p>
+ <p>
+  <br />
+ </p>
+ <p>
+  아래의 슬라이드도 그러한 내용으로 보시면 될 것 같습니다. 자료를 풍부하게 해주신 오픈소스컨설팅 정명훈 이사님, 오픈나루 전준식 이사님, 오라클 이창재 선생님께 감사의 말씀드립니다.
+ </p>
+ <div>
+  <p>
+   <p>
+    <span style="font-size: 9pt; line-height: 1.5;">
+     <br />
+    </span>
+   </p>
+   <p>
+    <p>
+     <span style="font-size: 9pt; line-height: 1.5;">
+      <br />
+     </span>
+    </p>
+    <p>
+     <div style="margin-bottom:5px">
+      <br />
+     </div>
+    </p>
+    <p>
+     <span style="font-size: 9pt; line-height: 1.5;">
+     </span>
+     <span style="font-size: 9pt; line-height: 1.5;">
+      <br />
+     </span>
+    </p>
+   </p>
+  </p>
+  <br />
+ </div>
+ <p>
+  <br />
+ </p>
+ <div class="container_postbtn">
+ </div>
+ <div style="text-align:left; padding-top:10px;clear:both">
+  <iframe allowtransparency="true" frameborder="0" scrolling="no" src="//www.facebook.com/plugins/like.php?href=http://blog.osci.kr/54&amp;layout=standard&amp;show_faces=true&amp;width=310&amp;action=like&amp;font=tahoma&amp;colorscheme=light&amp;height=65" style="border:none; overflow:hidden; width:310px; height:65px;">
+  </iframe>
+ </div>
+</div>
+</div>
+
+    <div id="post-footer">
+        
+        <a id="post-author" href="/authors/ienvyou/">
+            <div id="author-image" style="background-image:url(/files/authors/ienvyou.jpeg);">
+                <span class="sr-only">ienvyou's profile image</span>
+            </div>
+            <p id="author-name">ienvyou</p>
+        </a>
+        <p id="post-date">2015-04-09</p>
+        <a id="post-more" href="/authors/ienvyou/">
+            <span>Read more posts by this author</span>
+        </a>
+    </div>
+</div>
+
+<div id="post-links" class="container">
+    
+    
+        <div id="post-prev"
+             >
+            <div>
+                <h3><a href="/docker,%20openstack/2015/03/18/tistory-53/">configuration of openstack 4 node</a></h3>
+                <p>YOU MIGHT ENJOY</p>
+            </div>
+        </div>
+    
+    
+    
+        <div id="post-next"
+             >
+            <div>
+                <h3><a href="/docker/2015/05/09/tistory-56/">Docker 발표 및 VM과 성능비교</a></h3>
+                <p>NEXT POST</p>
+            </div>
+        </div>
+    
+</div>
+
+<div id="lightbox">
+    <div id="lightbox-image"></div>
+</div>
+
+
+    <div class="clearfix"></div>
+
+    <a href="#" id="back-to-top"></a>
+</div>
+
+<div id="footer" class="container-fluid">
+    <ul id="links">
+        
+        <li>
+            <a id="link-github" href="http://github.com/opensourceconsulting" target="_blank">
+                <span class="sr-only">github</span>
+            </a>
+        </li>
+        
+        
+        <li>
+            <a id="link-facebook" href="http://facebook.com/osckorea" target="_blank">
+                <span class="sr-only">facebook</span>
+            </a>
+        </li>
+        
+        
+        <li>
+            <a id="link-rss" href="/rss" target="_blank">
+                <span class="sr-only">rss</span>
+            </a>
+        </li>
+    </ul>
+    <p id="copyright">
+        <a href="https://tech.osci.kr">&copy;2018 OpenSourceConsulting</a>
+        All rights reserved.
+    </p>
+</div><!--#footer-->
+
+
+<script src="/assets/lib/jquery-1.12.0.min.js"></script>
+<script src="/assets/lib/jquery.magnific-popup.min.js"></script>
+<script src="/assets/js/index.js"></script>
+
+
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-39977834-4', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+
+
+
+    
+    <!-- <script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '',
+            xfbml      : true,
+            version    : 'v2.8'
+        });
+        FB.Canvas.getPageInfo(
+            function(info) {
+                alert('Width: ' + info.clientWidth + ' Height: ' + info.clientHeight);
+            }
+        );
+        FB.AppEvents.logPageView();
+    };
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.8";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script> -->
+
+<!--
+<script>
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.8";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+-->
+
+    
+
+    
+
+    
+
+</body>
+</html>
