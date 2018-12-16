@@ -9,8 +9,8 @@ Sharing Tech. Growing Together.
 </description>
     <link>https://tech.osci.kr/</link>
     <atom:link href="https://tech.osci.kr/rss" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 17 Dec 2018 01:00:04 +0900</pubDate>
-    <lastBuildDate>Mon, 17 Dec 2018 01:00:04 +0900</lastBuildDate>
+    <pubDate>Mon, 17 Dec 2018 01:16:21 +0900</pubDate>
+    <lastBuildDate>Mon, 17 Dec 2018 01:16:21 +0900</lastBuildDate>
     <generator>Jekyll v3.7.4</generator>
     
       <item>
@@ -96,9 +96,7 @@ Sharing Tech. Growing Together.
      Java Agent
     &lt;/td&gt;
     &lt;td class=&quot;confluenceTd&quot; colspan=&quot;1&quot;&gt;
-     &lt;p&gt;
       모니터링 대상 시스템(WAS)에 구성되면 되며, 각종 성능 정보를 수집, 스카우터 서버로 전달하는 역할을 합니다.
-     &lt;/p&gt;
     &lt;/td&gt;
    &lt;/tr&gt;
    &lt;tr&gt;
