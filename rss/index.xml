@@ -9,8 +9,8 @@ Sharing Tech. Growing Together.
 </description>
     <link>https://tech.osci.kr/</link>
     <atom:link href="https://tech.osci.kr/rss" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 17 Dec 2018 00:37:53 +0900</pubDate>
-    <lastBuildDate>Mon, 17 Dec 2018 00:37:53 +0900</lastBuildDate>
+    <pubDate>Mon, 17 Dec 2018 01:00:04 +0900</pubDate>
+    <lastBuildDate>Mon, 17 Dec 2018 01:00:04 +0900</lastBuildDate>
     <generator>Jekyll v3.7.4</generator>
     
       <item>
@@ -123,15 +123,6 @@ Sharing Tech. Growing Together.
 &lt;h1 id=&quot;Scouter로Confluence모니터링!-설치Stepbystep&quot;&gt;
  설치 Step by step
 &lt;/h1&gt;
-&lt;p&gt;
- &lt;span class=&quot;confluence-embedded-file-wrapper&quot;&gt;
-  &lt;img src=&quot;/assets/images/51741685/1&quot;/&gt;
-  &lt;img class=&quot;confluence-embedded-image confluence-external-resource&quot; data-image-src=&quot;https://upload.wikimedia.org/wikipedia/en/thumb/2/2f/Stepbystep_album_cover.jpg/220px-Stepbystep_album_cover.jpg&quot; src=&quot;https://upload.wikimedia.org/wikipedia/en/thumb/2/2f/Stepbystep_album_cover.jpg/220px-Stepbystep_album_cover.jpg&quot;/&gt;
- &lt;/span&gt;
-&lt;/p&gt;
-&lt;p&gt;
- 우베이베~
-&lt;/p&gt;
 &lt;div class=&quot;code panel pdl conf-macro output-block&quot; data-hasbody=&quot;true&quot; data-macro-name=&quot;code&quot; style=&quot;border-width: 1px;&quot;&gt;
  &lt;div class=&quot;codeContent panelContent pdl&quot;&gt;
   &lt;pre class=&quot;syntaxhighlighter-pre&quot; data-syntaxhighlighter-params=&quot;brush: java; gutter: false; theme: Confluence&quot; data-theme=&quot;Confluence&quot;&gt;//환경
