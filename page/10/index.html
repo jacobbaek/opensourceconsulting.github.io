@@ -44,12 +44,6 @@ Sharing Tech. Growing Together.
 <meta name="naver-site-verification" content="11ec9086ec9292ebc8dc73f6224492f208b2007b"/>
 <meta name="google-site-verification" content="Q5w5X0R32gOG-1lBhFg0UxvXRNoQX-uOSPjxPI4sXH4" />
 
-<meta name="twitter:label2" content="Filed under"/>
-<meta name="twitter:data2" content=""/>
-
-
-
-<meta property="article:published_time" content="2018-12-17T00:37:53+09:00"/>
 
 
 <link href="https://tech.osci.kr/rss/" rel="alternate" type="application/rss+xml" title="RSS"/>
@@ -62,7 +56,7 @@ Sharing Tech. Growing Together.
 <link href="/assets/css/screen.css" rel="stylesheet" type="text/css"/>
 
 </head>
-<body class="tag-template">
+<body class="home-template">
 
 <div id="header">
     <button id="menu-toggle" type="button">
@@ -86,132 +80,82 @@ Sharing Tech. Growing Together.
 
 
 <div id="wrapper">
-    <div id="navbar" class="container">
-    <h5><a id="link-back" href="/">Main</a></h5>
-    
-<ul id="shares">
-    
-    <li>
-        <a id="share-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://tech.osci.kr/tags/diary/"
-           onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-            <span class="sr-only">Share to Facebook</span>
-        </a>
-    </li>
-    
-    
-    
-</ul>
-
-</div>
-
-<div id="cover" class="container"
-     >
+    <div id="cover" class="container-fluid"
+    style="background-image:url(/assets/images/default_blog_cover.jpg);">
     <div>
-        <h1>diary</h1>
-        <p>All Posts in <strong>diary</strong></p>
+        <h1>오픈소스컨설팅 
+기술 블로그
+</h1>
+        <p>기술을 나눕니다. 함께 성장합니다.<br />
+Sharing Tech. Growing Together.<br />
+</p>
     </div>
 </div>
 
+<div id="navbar" class="container">
+    <h5>Featured Posts</h5>
+</div>
+
 <div id="content" class="container">
-    <div id="tag-content" role="main">
+    <div id="home-content" role="main">
         <ul id="post-list">
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-        </ul>
-        <ul id="pagination" role="navigation">
+    
+        <li class="post-item post ">
+    <a href="/linux/2014/11/13/tistory-1/">
+        <h3 class="post-title">Linux kdump에 대한 이해</h3>
+        <p class="post-excerpt">kdump는 무엇인가? (The kexec-based Crash Dumping Solution) kdump는 kexec를 바탕으로 한 “커널 크래쉬 덤핑 메카니즘” 입니다. 이는 커널 패닉이 발생 하였을때, 시스템의 메모리 상태를 vmcore 라는 파.. 1. kdump는 무엇인가? (The kexec-based Crash Dumping Solution) kdump는 kexec를 바탕으로 한 “커널 크래쉬 덤핑 메카니즘” 입니다. 이는 커널 패닉이 발생 하였을때, 시스템의 메모리 상태를 vmcore 라는 파일 형태로 생성하는 작업입니다. 2. kexec는 무엇인가? kexec는 kdump의 핵심이라고 보시면 되겠습니다. kexec는 커널패닉이 발생하였을 때, BIOS를 거치지 않고 빠르게 새로운 커널로 부팅시키는 역할을 하는 녀석입니다. kdump가 작동하게 하는 녀석입니다. kexec로 새로운 캡쳐 커널을 사용하는 이유는 기존에 패닉이 발생한 상태에서의 커널이 아니라 새로운 커널이기 때문에 덤프를 하는 부분에서...</p>
+    </a>
+    <p class="post-tags">
+        
+            <a class="tag tag-Linux">Linux</a>
+        
+            <a class="tag tag-kdump">kdump</a>
+        
+    </p>
+    <div class="post-meta">
+        
+        <a href="/authors/OpenSourceConsulting">
+            <div class="author-image"
+                 style="background-image:url(/files/authors/osc.png);">
+                <span class="sr-only">OpenSourceConsulting's profile image</span>
+            </div>
+            <p class="author-name">OpenSourceConsulting</p>
+        </a>
+        <p class="post-date">2014-11-13</p>
+    </div>
+    <!--<div class="clearfix"></div>-->
+</li>
+
     
 </ul>
+<ul id="pagination" role="navigation">
+    
+        
+        
+            <li id="page-prev"><a href="/page/9/"><span class="sr-only">Previous Page</span></a>
+            </li>
+        
+        
+            
+                <li class="page-number"><a
+                            href="/page/8/">8</a></li>
+            
+        
+            
+                <li class="page-number"><a
+                            href="/page/9/">9</a></li>
+            
+        
+            
+                <li class="page-number active">10</li>
+                
+        
+        
+            <li id="page-next" class="disabled"><span class="sr-only">No Next Page</span></li>
+        
+    
+</ul>
+
 
     </div>
 </div>
@@ -275,50 +219,6 @@ Sharing Tech. Growing Together.
 
 
 
-
-
-    
-    <!-- <script>
-    window.fbAsyncInit = function() {
-        FB.init({
-            appId      : '',
-            xfbml      : true,
-            version    : 'v2.8'
-        });
-        FB.Canvas.getPageInfo(
-            function(info) {
-                alert('Width: ' + info.clientWidth + ' Height: ' + info.clientHeight);
-            }
-        );
-        FB.AppEvents.logPageView();
-    };
-
-    (function(d, s, id){
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) {return;}
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.8";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-</script> -->
-
-<!--
-<script>
-    (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.8";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-</script>
--->
-
-    
-
-    
-
-    
 
 </body>
 </html>
