@@ -9,9 +9,499 @@ Sharing Tech. Growing Together.
 </description>
     <link>https://tech.osci.kr/</link>
     <atom:link href="https://tech.osci.kr/rss" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 14 Dec 2018 17:22:07 +0900</pubDate>
-    <lastBuildDate>Fri, 14 Dec 2018 17:22:07 +0900</lastBuildDate>
+    <pubDate>Mon, 17 Dec 2018 00:16:29 +0900</pubDate>
+    <lastBuildDate>Mon, 17 Dec 2018 00:16:29 +0900</lastBuildDate>
     <generator>Jekyll v3.7.4</generator>
+    
+      <item>
+        <title>Scouter로 Confluence 모니터링!</title>
+        <description>&lt;p&gt;
+ &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
+  &lt;img src=&quot;/assets/images/51741685/0&quot;/&gt;
+ &lt;/span&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ 안녕하세요?
+&lt;/p&gt;
+&lt;p&gt;
+ 오픈소스컨설팅 김세연입니다.
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ 오늘은 Confluence에 Scouter를 설치하여 모니터링을 해보겠습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;h1 id=&quot;Scouter로Confluence모니터링!-APM&quot;&gt;
+ APM
+&lt;/h1&gt;
+&lt;p&gt;
+ &lt;span style=&quot;color: rgb(34,34,34);&quot;&gt;
+  Application Performance Management는 웹 어플리케이션을 운영하는 시스템, 프로그램 성능을 측정하고 모니터링하는 도구입니다. 많은 APM 중 Scouter는 국내에서 오픈소스로 개발되고 있습니다. 활발한 커뮤니티 활동으로 사용자가 원하는 기능이 빠르게 반영되고 있습니다.
+ &lt;/span&gt;
+&lt;/p&gt;
+&lt;h1 id=&quot;Scouter로Confluence모니터링!-Scouter&quot;&gt;
+ Scouter
+&lt;/h1&gt;
+&lt;p&gt;
+ &lt;a class=&quot;external-link&quot; href=&quot;https://github.com/scouter-project/scouter&quot; rel=&quot;nofollow&quot;&gt;
+  https://github.com/scouter-project/scouter
+ &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;span class=&quot;confluence-embedded-file-wrapper&quot;&gt;
+  &lt;img src=&quot;/assets/images/51741685/1&quot;/&gt;
+  &lt;img alt=&quot;scouter overview&quot; class=&quot;confluence-embedded-image confluence-external-resource&quot; data-image-src=&quot;https://github.com/scouter-project/scouter/raw/master/scouter.document/img/main/scouter-overview.png&quot; src=&quot;https://github.com/scouter-project/scouter/raw/master/scouter.document/img/main/scouter-overview.png&quot;/&gt;
+ &lt;/span&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ ▲ 스카우터 구성도
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ 스카우터는 4가지 모듈이 있습니다.
+&lt;/p&gt;
+&lt;div class=&quot;table-wrap&quot;&gt;
+ &lt;table class=&quot;confluenceTable&quot;&gt;
+  &lt;colgroup&gt;
+   &lt;col/&gt;
+   &lt;col/&gt;
+  &lt;/colgroup&gt;
+  &lt;tbody&gt;
+   &lt;tr&gt;
+    &lt;td class=&quot;confluenceTd&quot;&gt;
+     Modules
+    &lt;/td&gt;
+    &lt;td class=&quot;confluenceTd&quot;&gt;
+     Desc
+    &lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+    &lt;td class=&quot;confluenceTd&quot; colspan=&quot;1&quot;&gt;
+     Collector
+    &lt;/td&gt;
+    &lt;td class=&quot;confluenceTd&quot; colspan=&quot;1&quot;&gt;
+     에이전트로부터 실시간 모니터링 정보를 수집, 가공하며 실시간 대시보드 제공 및 통계정보관리, 장애/에러 경보 등 관리에 필요한 각종 기능을 수행합니다
+    &lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+    &lt;td class=&quot;confluenceTd&quot; colspan=&quot;1&quot;&gt;
+     Java Agent
+    &lt;/td&gt;
+    &lt;td class=&quot;confluenceTd&quot; colspan=&quot;1&quot;&gt;
+     &lt;p&gt;
+      모니터링 대상 시스템(WAS)에 구성되면 되며, 각종 성능 정보를 수집, 스카우터 서버로 전달하는 역할을 합니다.
+     &lt;/p&gt;
+    &lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+    &lt;td class=&quot;confluenceTd&quot; colspan=&quot;1&quot;&gt;
+     Host Agent
+    &lt;/td&gt;
+    &lt;td class=&quot;confluenceTd&quot; colspan=&quot;1&quot;&gt;
+     CPU, Memory, 디스크 성능 정보를 Collector로 전송합니다.
+    &lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+    &lt;td class=&quot;confluenceTd&quot; colspan=&quot;1&quot;&gt;
+     Client
+    &lt;/td&gt;
+    &lt;td class=&quot;confluenceTd&quot; colspan=&quot;1&quot;&gt;
+     Collector에서 수집된 정보를 확인하는 클라이언트 프로그램입니다.
+    &lt;/td&gt;
+   &lt;/tr&gt;
+  &lt;/tbody&gt;
+ &lt;/table&gt;
+&lt;/div&gt;
+&lt;h1 id=&quot;Scouter로Confluence모니터링!-설치Stepbystep&quot;&gt;
+ 설치 Step by step
+&lt;/h1&gt;
+&lt;p&gt;
+ &lt;span class=&quot;confluence-embedded-file-wrapper&quot;&gt;
+  &lt;img src=&quot;/assets/images/51741685/1&quot;/&gt;
+  &lt;img class=&quot;confluence-embedded-image confluence-external-resource&quot; data-image-src=&quot;https://upload.wikimedia.org/wikipedia/en/thumb/2/2f/Stepbystep_album_cover.jpg/220px-Stepbystep_album_cover.jpg&quot; src=&quot;https://upload.wikimedia.org/wikipedia/en/thumb/2/2f/Stepbystep_album_cover.jpg/220px-Stepbystep_album_cover.jpg&quot;/&gt;
+ &lt;/span&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ 우베이베~
+&lt;/p&gt;
+&lt;div class=&quot;code panel pdl conf-macro output-block&quot; data-hasbody=&quot;true&quot; data-macro-name=&quot;code&quot; style=&quot;border-width: 1px;&quot;&gt;
+ &lt;div class=&quot;codeContent panelContent pdl&quot;&gt;
+  &lt;pre class=&quot;syntaxhighlighter-pre&quot; data-syntaxhighlighter-params=&quot;brush: java; gutter: false; theme: Confluence&quot; data-theme=&quot;Confluence&quot;&gt;//환경
+Ubuntu 18 LTS
+Confluence 6.13 - JRE 
+
+&lt;/pre&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&quot;Scouter로Confluence모니터링!-Step1.Confluence설치&quot;&gt;
+ Step1. Confluence 설치
+&lt;/h2&gt;
+&lt;ul style=&quot;list-style-type: square;&quot;&gt;
+ &lt;li&gt;
+  &lt;a class=&quot;external-link&quot; href=&quot;https://ko.atlassian.com/software/confluence/download&quot; rel=&quot;nofollow&quot;&gt;
+   https://ko.atlassian.com/software/confluence/download
+  &lt;/a&gt;
+ &lt;/li&gt;
+ &lt;li&gt;
+  Linux Installer로 설치 진행했습니다.
+ &lt;/li&gt;
+ &lt;li&gt;
+  기본 경로, 기본 포트를 사용했습니다.
+ &lt;/li&gt;
+ &lt;li&gt;
+  &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
+   &lt;img src=&quot;/assets/images/51741685/1&quot;/&gt;
+  &lt;/span&gt;
+ &lt;/li&gt;
+ &lt;li&gt;
+  설치된 JRE 버전은 1.8.9_192 입니다.
+ &lt;/li&gt;
+ &lt;li&gt;
+  &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
+   &lt;img src=&quot;/assets/images/51741685/2&quot;/&gt;
+  &lt;/span&gt;
+  &lt;br/&gt;
+  &lt;br/&gt;
+ &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;Scouter로Confluence모니터링!-Step2.ScouterCollectorServer설정&quot;&gt;
+ Step2. Scouter Collector Server 설정
+&lt;/h2&gt;
+&lt;ul style=&quot;list-style-type: square;&quot;&gt;
+ &lt;li&gt;
+  JDK 1.8+ 필요합니다. OpenJDK를 사용해 볼게요.
+ &lt;/li&gt;
+ &lt;li&gt;
+  `apt install openjdk-8-jdk-headless`
+ &lt;/li&gt;
+ &lt;li&gt;
+  &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
+   &lt;img src=&quot;/assets/images/51741685/3&quot;/&gt;
+  &lt;/span&gt;
+ &lt;/li&gt;
+ &lt;li&gt;
+  Scouter Download
+ &lt;/li&gt;
+ &lt;li&gt;
+  &lt;a class=&quot;external-link&quot; href=&quot;https://github.com/scouter-project/scouter/releases&quot; rel=&quot;nofollow&quot;&gt;
+   https://github.com/scouter-project/scouter/releases
+  &lt;/a&gt;
+ &lt;/li&gt;
+ &lt;li&gt;
+  2.5.1 버전 다운로드
+  &lt;a class=&quot;external-link&quot; href=&quot;https://github.com/scouter-project/scouter/releases/download/v2.5.1/scouter-min-2.5.1.tar.gz&quot; rel=&quot;nofollow&quot;&gt;
+   https://github.com/scouter-project/scouter/releases/download/v2.5.1/scouter-min-2.5.1.tar.gz
+  &lt;/a&gt;
+ &lt;/li&gt;
+ &lt;li&gt;
+  Confluence Server에는 min 버전을 다운로드 받아서 해보겠습니다.
+ &lt;/li&gt;
+ &lt;li&gt;
+  압축을 해제하면 agent.host, agent.java, server가 생성됩니다.
+ &lt;/li&gt;
+ &lt;li&gt;
+  &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
+   &lt;img src=&quot;/assets/images/51741685/4&quot;/&gt;
+  &lt;/span&gt;
+ &lt;/li&gt;
+ &lt;li&gt;
+  Server 설정을 해보겠습니다.
+ &lt;/li&gt;
+ &lt;li&gt;
+  server/conf/scouter.conf 파일을 열어서 아래 내용을 추가합니다.
+ &lt;/li&gt;
+ &lt;li&gt;
+  &lt;div class=&quot;code panel pdl conf-macro output-block&quot; data-hasbody=&quot;true&quot; data-macro-name=&quot;code&quot; style=&quot;border-width: 1px;&quot;&gt;
+   &lt;div class=&quot;codeContent panelContent pdl&quot;&gt;
+    &lt;pre class=&quot;syntaxhighlighter-pre&quot; data-syntaxhighlighter-params=&quot;brush: java; gutter: false; theme: Confluence&quot; data-theme=&quot;Confluence&quot;&gt;# Agent Control and Service Port(Default : TCP 6100)
+net_tcp_listen_port=6100
+
+# UDP Receive Port(Default : 6100)
+net_udp_listen_port=6100
+
+# DB directory(Default : ./database)
+db_dir=./database
+
+# Log directory(Default : ./logs)
+log_dir=./logs&lt;/pre&gt;
+   &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;p&gt;
+   &lt;br/&gt;
+  &lt;/p&gt;
+ &lt;/li&gt;
+ &lt;li&gt;
+  &lt;p&gt;
+   서비스를 시작해 볼게요.
+  &lt;/p&gt;
+ &lt;/li&gt;
+ &lt;li&gt;
+  &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
+   &lt;img src=&quot;/assets/images/51741685/5&quot;/&gt;
+  &lt;/span&gt;
+ &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;h2 id=&quot;Scouter로Confluence모니터링!-Step3.Client설치&quot;&gt;
+ Step3. Client 설치
+&lt;/h2&gt;
+&lt;ul style=&quot;list-style-type: square;&quot;&gt;
+ &lt;li&gt;
+  저는 macOS 버전을 다운로드 받았습니다. 리눅스, 윈도우, 맥 모두 지원하네요~! Java의 매력 아니겠습니꽈~!
+ &lt;/li&gt;
+ &lt;li&gt;
+  Eclipse 기반의 클라이언트 프로그램입니다.
+ &lt;/li&gt;
+ &lt;li&gt;
+  &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
+   &lt;img src=&quot;/assets/images/51741685/6&quot;/&gt;
+  &lt;/span&gt;
+ &lt;/li&gt;
+ &lt;li&gt;
+  Client 실행하면 Ip, Port, ID, Password 를 적습니다.
+ &lt;/li&gt;
+ &lt;li&gt;
+  ID는 admin password는 admin 입니다.
+ &lt;/li&gt;
+ &lt;li&gt;
+  &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
+   &lt;img src=&quot;/assets/images/51741685/7&quot;/&gt;
+  &lt;/span&gt;
+ &lt;/li&gt;
+ &lt;li&gt;
+  Collector Server와 Client 접속 상태를 확인합니다.
+ &lt;/li&gt;
+ &lt;li&gt;
+  &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
+   &lt;img src=&quot;/assets/images/51741685/8&quot;/&gt;
+  &lt;/span&gt;
+ &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;h2 id=&quot;Scouter로Confluence모니터링!-Step4.javahost설정&quot;&gt;
+ Step4. java host 설정
+&lt;/h2&gt;
+&lt;ul style=&quot;list-style-type: square;&quot;&gt;
+ &lt;li&gt;
+  `/scouter/agent.host/conf/scouter.conf` 파일을 아래와 같이 수정합니다.
+ &lt;/li&gt;
+ &lt;li&gt;
+  &lt;p class=&quot;auto-cursor-target&quot;&gt;
+   기본 값으로 주석 처리만 했습니다.
+  &lt;/p&gt;
+  &lt;div class=&quot;code panel pdl conf-macro output-block&quot; data-hasbody=&quot;true&quot; data-macro-name=&quot;code&quot; style=&quot;border-width: 1px;&quot;&gt;
+   &lt;div class=&quot;codeContent panelContent pdl&quot;&gt;
+    &lt;pre class=&quot;syntaxhighlighter-pre&quot; data-syntaxhighlighter-params=&quot;brush: java; gutter: false; theme: Confluence&quot; data-theme=&quot;Confluence&quot;&gt;### scouter host configruation sample
+net_collector_ip=127.0.0.1
+net_collector_udp_port=6100
+net_collector_tcp_port=6100
+cpu_warning_pct=80
+cpu_fatal_pct=85
+cpu_check_period_ms=60000
+cpu_fatal_history=3
+cpu_alert_interval_ms=300000
+disk_warning_pct=88
+disk_fatal_pct=92&lt;/pre&gt;
+   &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;p class=&quot;auto-cursor-target&quot;&gt;
+   -
+  &lt;/p&gt;
+ &lt;/li&gt;
+ &lt;li&gt;
+  서비스를 시작해 보겠습니다.
+ &lt;/li&gt;
+ &lt;li&gt;
+  `/scouter/agent.host/host.sh` 실행
+ &lt;/li&gt;
+ &lt;li&gt;
+  이제 client에서 cpu, disk, memory를 모니터링 시자으아아아악!
+ &lt;/li&gt;
+ &lt;li&gt;
+  &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
+   &lt;img src=&quot;/assets/images/51741685/9&quot;/&gt;
+  &lt;/span&gt;
+ &lt;/li&gt;
+ &lt;li&gt;
+  파이썬으로 for loop 좀 돌렸다고 기영이 패턴이..!?
+ &lt;/li&gt;
+ &lt;li&gt;
+  &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
+   &lt;img src=&quot;/assets/images/51741685/10&quot;/&gt;
+  &lt;/span&gt;
+ &lt;/li&gt;
+ &lt;li&gt;
+  &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
+   &lt;img src=&quot;/assets/images/51741685/11&quot;/&gt;
+  &lt;/span&gt;
+ &lt;/li&gt;
+ &lt;li&gt;
+  Memory, Disk 사용량 모니터링 가능! 운영 서버에 배포하기전에 어플리케이션 부하테스트로 필요한 리소스를 확인하세요! 꼭이요!!
+ &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;Scouter로Confluence모니터링!-Step5.agentjava설정(중요해요별표3개땅땅!)&quot;&gt;
+ Step5. agent java 설정 (중요해요 별표 3개 땅땅!)
+&lt;/h2&gt;
+&lt;ul style=&quot;list-style-type: square;&quot;&gt;
+ &lt;li&gt;
+  `./scouter/agent.java/conf/scouter.conf` 파일을 편집합니다.
+ &lt;/li&gt;
+ &lt;li&gt;
+  java agent 기본 값으로 주석 해제 했습니다.
+ &lt;/li&gt;
+ &lt;li&gt;
+  &lt;p class=&quot;auto-cursor-target&quot;&gt;
+   WAS 이름은 confluence-01 로 했습니다.
+  &lt;/p&gt;
+  &lt;div class=&quot;code panel pdl conf-macro output-block&quot; data-hasbody=&quot;true&quot; data-macro-name=&quot;code&quot; style=&quot;border-width: 1px;&quot;&gt;
+   &lt;div class=&quot;codeContent panelContent pdl&quot;&gt;
+    &lt;pre class=&quot;syntaxhighlighter-pre&quot; data-syntaxhighlighter-params=&quot;brush: java; gutter: false; theme: Confluence&quot; data-theme=&quot;Confluence&quot;&gt;obj_name=confluence-01
+net_collector_ip=127.0.0.1
+net_collector_udp_port=6100
+net_collector_tcp_port=6100
+hook_method_patterns=sample.mybiz.*Biz.*,sample.service.*Service.*
+trace_http_client_ip_header_key=X-Forwarded-For
+profile_spring_controller_method_parameter_enabled=false
+hook_exception_class_patterns=my.exception.TypedException
+profile_fullstack_hooked_exception_enabled=true
+hook_exception_handler_method_patterns=my.AbstractAPIController.fallbackHandler,my.ApiExceptionLoggingFilter.handleNotFoundErrorResponse
+hook_exception_hanlder_exclude_class_patterns=exception.BizException&lt;/pre&gt;
+   &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;p&gt;
+   &lt;br/&gt;
+  &lt;/p&gt;
+ &lt;/li&gt;
+ &lt;li&gt;
+  &lt;p&gt;
+   `/opt/scouter/agent.java/scouter.agent.jar`  jar를 tomcat application에 설정해야합니다. 위치를 기억해 두세요.
+  &lt;/p&gt;
+ &lt;/li&gt;
+ &lt;li&gt;
+  Confluence의 setenv.sh 을 수정합니다. (setenv.sh는 Application을 실행할 때 환경 변수를 설정하는 파일입니다.)
+ &lt;/li&gt;
+ &lt;li&gt;
+  `/opt/atlassian/confluence/bin/setenv.sh` 설치 경로는 다를 수 있습니다.
+ &lt;/li&gt;
+ &lt;li&gt;
+  &lt;div class=&quot;code panel pdl conf-macro output-block&quot; data-hasbody=&quot;true&quot; data-macro-name=&quot;code&quot; style=&quot;border-width: 1px;&quot;&gt;
+   &lt;div class=&quot;codeContent panelContent pdl&quot;&gt;
+    &lt;pre class=&quot;syntaxhighlighter-pre&quot; data-syntaxhighlighter-params=&quot;brush: java; gutter: false; theme: Confluence&quot; data-theme=&quot;Confluence&quot;&gt;JAVA_OPTS=&quot;-javaagent:/opt/scouter/agent.java/scouter.agent.jar&quot;
+JAVA_OPTS=&quot;${JAVA_OPTS} -Dscouter.config=/opt/scouter/agent.java/conf/scouter.conf&quot;
+JAVA_OPTS=&quot;${JAVA_OPTS} -Datlassian.org.osgi.framework.bootdelegation=META-INF.services,com.yourkit,com.singularity.*,com.jprofiler,com.jprofiler.*,org.apache.xerces,org.apache.xerces.*,org.apache.xalan,org.apache.xalan.*,sun.*,com.sun.jndi.*,com.icl.saxon,com.icl.saxon.*,javax.servlet,javax.servlet.*,com.sun.xml.bind.*,javax.xml.*,scouter.*&quot;
+export JAVA_OPTS&lt;/pre&gt;
+   &lt;/div&gt;
+  &lt;/div&gt;
+ &lt;/li&gt;
+ &lt;li&gt;
+  &lt;strong&gt;
+   Confluence Service 시작
+  &lt;/strong&gt;
+ &lt;/li&gt;
+ &lt;li&gt;
+  catalina.out 로그를 보시면 Scouter가 시작됩니다. 퐈이야!!
+ &lt;/li&gt;
+ &lt;li&gt;
+  &lt;div class=&quot;code panel pdl conf-macro output-block&quot; data-hasbody=&quot;true&quot; data-macro-name=&quot;code&quot; style=&quot;border-width: 1px;&quot;&gt;
+   &lt;div class=&quot;codeContent panelContent pdl&quot;&gt;
+    &lt;pre class=&quot;syntaxhighlighter-pre&quot; data-syntaxhighlighter-params=&quot;brush: java; gutter: false; theme: Confluence&quot; data-theme=&quot;Confluence&quot;&gt;  ____                  _
+ / ___|  ___ ___  _   _| |_ ___ _ __
+ \___ \ / __/   \| | | | __/ _ \ '__|
+  ___) | (_| (+) | |_| | ||  __/ |
+ |____/ \___\___/ \__,_|\__\___|_|
+ Open Source S/W Performance Monitoring
+ Scouter version 2.5.1
+
+20181216 14:09:29 [SCOUTER] Version 2.5.1 2018-12-16 08:55 GMT_ENV_java8plus
+20181216 14:09:29 [SCOUTER] loaded by system classloader
+20181216 14:09:29 [SCOUTER] jar:file:/opt/scouter/agent.java/scouter.agent.jar
+20181216 14:09:30 [SCOUTER] objType:java
+20181216 14:09:30 [SCOUTER] objName:/ubuntu-bionic/confluence-01
+20181216 14:09:30 [A113] Counter Collector Started (#19)
+20181216 14:09:30 [A113] InteractionCounter Collector Started (#19)
+20181216 14:09:30 [SCOUTER] Configure -Dscouter.config=/opt/scouter/agent.java/conf/scouter.conf
+20181216 14:09:30 [A100] agent boot seed=xk5irljeeb
+20181216 14:09:30 [SCOUTER] PLUG-IN : scouter.agent.plugin.AbstractAppService service.plug loaded #xghqpc
+20181216 14:09:30 [SCOUTER] PLUG-IN : scouter.agent.plugin.AbstractHttpService httpservice.plug loaded #xg8h3a1
+20181216 14:09:30 [SCOUTER] PLUG-IN : scouter.agent.plugin.AbstractCapture capture.plug loaded #x469nrf
+20181216 14:09:30 [SCOUTER] PLUG-IN : scouter.agent.plugin.AbstractCapture springControllerCapture.plug loaded #x1rvuqrv
+20181216 14:09:30 [SCOUTER] PLUG-IN : scouter.agent.plugin.AbstractJdbcPool jdbcpool.plug loaded #x148lqht
+20181216 14:09:30 [NONE] LoadJarBytes scouter.jdbc 33156 bytes
+20181216 14:09:30 [SCOUTER] PLUG-IN : scouter.agent.plugin.AbstractHttpCall httpcall.plug loaded #x14uol51
+20181216 14:09:30 [SCOUTER] PLUG-IN : scouter.agent.plugin.AbstractCounter counter.plug loaded #x1obvb4m&lt;/pre&gt;
+   &lt;/div&gt;
+  &lt;/div&gt;
+ &lt;/li&gt;
+ &lt;li&gt;
+  &lt;strong&gt;
+   &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
+    &lt;img src=&quot;/assets/images/51741685/12&quot;/&gt;
+   &lt;/span&gt;
+  &lt;/strong&gt;
+ &lt;/li&gt;
+ &lt;li&gt;
+  모니터링 시작입니다!
+  &lt;strong&gt;
+  &lt;/strong&gt;
+  느린 응답, SQL 확인할 수 있습니다.
+  &lt;strong&gt;
+   &lt;br/&gt;
+  &lt;/strong&gt;
+ &lt;/li&gt;
+ &lt;li&gt;
+  Heap used, Disk, CPU, Memory 등을 모니터링 시작입니다.
+ &lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul style=&quot;list-style-type: square;&quot;&gt;
+ &lt;li&gt;
+  &lt;div class=&quot;embeddedObject conf-macro output-block&quot; data-hasbody=&quot;false&quot; data-macro-name=&quot;multimedia&quot;&gt;
+   &lt;video controls=&quot;&quot; height=&quot;380&quot; src=&quot;/download/attachments/51741685/apm_wiki.mp4&quot; width=&quot;500&quot;&gt;
+    Your browser does not support the HTML5 video element
+   &lt;/video&gt;
+  &lt;/div&gt;
+ &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ 감사합니다.
+&lt;/p&gt;
+&lt;p&gt;
+ 오픈소스컨설팅
+&lt;/p&gt;
+&lt;p&gt;
+ 아틀라시안팀 김세연
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;a class=&quot;external-link&quot; href=&quot;mailto:atlassian@osci.kr&quot; rel=&quot;nofollow&quot;&gt;
+  atlassian@osci.kr
+ &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;a class=&quot;external-link&quot; href=&quot;mailto:sales@osci.kr&quot; rel=&quot;nofollow&quot;&gt;
+  sales@osci.kr
+ &lt;/a&gt;
+&lt;/p&gt;</description>
+        <pubDate>Sun, 16 Dec 2018 00:00:00 +0900</pubDate>
+        <link>https://tech.osci.kr/2018/12/16/51741685/</link>
+        <guid isPermaLink="true">https://tech.osci.kr/2018/12/16/51741685/</guid>
+        
+        
+      </item>
     
       <item>
         <title>Salesforce &amp; Jira Connector add-on 설정</title>
@@ -4695,455 +5185,6 @@ han0495/hello-world   latest              2cb0d9787c4d        2 months ago      
         
         
         <category>Atlassian</category>
-        
-      </item>
-    
-      <item>
-        <title>Jira 이슈 수준 보안 설정 (Configuring issue-level security)</title>
-        <description>&lt;p&gt;
- 이슈 보안 계획에서 이슈 보안 등급을 생성하여 누가 이슈를 볼 수 있고 볼 수 없는지를 제어할 수 있습니다. 사용자나 그룹을 설정할 수 있는 보안 등급의 집합으로 이루어져 있습니다.
-&lt;/p&gt;
-&lt;p&gt;
- 이슈를 생성하거나 수정할 때 해당 이슈의 보안 등급을 지정할 수 있습니다. 이렇게 하면 해당 이슈를 볼 권한이 있는 사람만이 볼 수 있게 할 수 있습니다.
-&lt;/p&gt;
-&lt;p&gt;
- 이슈 보안 계획이 프로젝트와 연결 되며 해당 보안 등급은 해당 프로젝트의 이슈에 적용될 수 있습니다. 하위 작업은 부모 이슈의 보안 등급도 상속받습니다.
-&lt;/p&gt;
-&lt;p&gt;
- 참고로, 연계된 프로젝트가 있다면 이슈 보안 계획을 삭제할 수 없습니다.
-&lt;/p&gt;
-&lt;h1 id=&quot;Jira이슈수준보안설정(Configuringissue-levelsecurity)-시작하기전&quot;&gt;
- &lt;strong&gt;
-  시작하기 전
- &lt;/strong&gt;
-&lt;/h1&gt;
-&lt;ul&gt;
- &lt;li&gt;
-  이슈 등급 보안을 설정하기 위한 JIRA 관리자 전역 권한으로 로그인합니다.
- &lt;/li&gt;
- &lt;li&gt;
-  이슈 등급 보안을 사용하려는 모든 사용자에게 프로젝트 별 '이슈 보안 설정' 권한이 있는지 확인합니다.
- &lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&quot;Jira이슈수준보안설정(Configuringissue-levelsecurity)-이슈보안계획추가&quot;&gt;
- &lt;strong style=&quot;color: rgb(27,29,37);font-size: 24.0px;letter-spacing: 0.0px;&quot;&gt;
-  이슈 보안 계획 추가
- &lt;/strong&gt;
-&lt;/h1&gt;
-&lt;ol&gt;
- &lt;li&gt;
-  &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
-&lt;img src=&quot;/assets/images/45745597/0&quot; style=&quot;width:20px;&quot;/&gt;
-  &lt;/span&gt;
-  선택 &amp;gt;
-  &lt;strong&gt;
-   이슈
-  &lt;/strong&gt;
-  .
- &lt;/li&gt;
- &lt;li&gt;
-  &lt;strong&gt;
-   이슈 보안 계획
-  &lt;/strong&gt;
-  을 선택하여 이슈 보안 계획 페이지를 엽니다.
- &lt;/li&gt;
- &lt;li&gt;
-  &lt;strong&gt;
-   이슈 보안 계획 추가
-  &lt;/strong&gt;
-  를 클릭합니다.
- &lt;/li&gt;
- &lt;li&gt;
-  요청 된 세부 사항을 기입하여
-  &lt;strong&gt;
-   추가
-  &lt;/strong&gt;
-  를 클릭합니다.
- &lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&quot;Jira이슈수준보안설정(Configuringissue-levelsecurity)-보안등급을이슈보안계획에추가&quot;&gt;
- &lt;strong&gt;
-  보안 등급을 이슈 보안 계획에 추가
- &lt;/strong&gt;
-&lt;/h2&gt;
-&lt;ol&gt;
- &lt;li&gt;
-  &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
-&lt;img src=&quot;/assets/images/45745597/1&quot; style=&quot;width:20px;&quot;/&gt;
-  &lt;/span&gt;
-  선택 &amp;gt;
-  &lt;strong&gt;
-   이슈
-  &lt;/strong&gt;
-  .
- &lt;/li&gt;
- &lt;li&gt;
-  &lt;strong&gt;
-   이슈 보안 계획
-  &lt;/strong&gt;
-  을 선택하여 이슈 보안 계획 페이지를 엽니다.
- &lt;/li&gt;
- &lt;li&gt;
-  이슈 보안 계획 이름이나
-  &lt;strong&gt;
-   보안 등급
-  &lt;/strong&gt;
-  링크를 클릭하여 이슈 보안 등급 편집 페이지를 엽니다.
- &lt;/li&gt;
- &lt;li&gt;
-  요청 된 세부 사항을 기입하여
-  &lt;strong&gt;
-   보안 등급 추가
-  &lt;/strong&gt;
-  를 클릭합니다.
- &lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&quot;Jira이슈수준보안설정(Configuringissue-levelsecurity)-이슈보안계획의기본보안등급설정&quot;&gt;
- &lt;strong&gt;
-  이슈 보안 계획의 기본 보안 등급 설정
- &lt;/strong&gt;
-&lt;/h2&gt;
-&lt;p&gt;
- 이제 각 보안 계획에 할당 된 이슈에 적용될 기본 보안 등급을 선택할 수 있습니다.
-&lt;/p&gt;
-&lt;p&gt;
- 기본 보안 등급을 설정할 때 유의해야 할 사항은 다음과 같습니다.
-&lt;/p&gt;
-&lt;ul&gt;
- &lt;li&gt;
-  이슈 보고자가 '이슈 보안 설정' 권한이 없는 경우 이슈는 기본 보안 등급으로 설정됩니다.
- &lt;/li&gt;
- &lt;li&gt;
-  이슈 보안 계획에 기본 보안 등급이 없는 경우 이슈 보안 등급이 '없음'으로 설정됩니다 (모든 사용자가 이슈를 볼 수 있음).
- &lt;/li&gt;
-&lt;/ul&gt;
-&lt;ol&gt;
- &lt;li&gt;
-  &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
-&lt;img src=&quot;/assets/images/45745597/2&quot; style=&quot;width:20px;&quot;/&gt;
-  &lt;/span&gt;
-  선택 &amp;gt;
-  &lt;strong&gt;
-   이슈
-  &lt;/strong&gt;
-  .
- &lt;/li&gt;
- &lt;li&gt;
-  &lt;strong&gt;
-   이슈 보안 계획
-  &lt;/strong&gt;
-  을 선택하여 이슈 보안 계획 페이지를 엽니다.
- &lt;/li&gt;
- &lt;li&gt;
-  이슈 보안 계획 이름이나
-  &lt;strong&gt;
-   보안 등급
-  &lt;/strong&gt;
-  링크를 클릭하여 이슈 보안 등급 편집 페이지를 엽니다.
-  &lt;ol&gt;
-   &lt;li&gt;
-    기본 보안 등급을 설정하려면 적절한
-    &lt;strong&gt;
-     보안 등급
-    &lt;/strong&gt;
-    을 찾은 다음 작업 열에서
-    &lt;strong&gt;
-     기본값
-    &lt;/strong&gt;
-    을 클릭합니다.
-   &lt;/li&gt;
-   &lt;li&gt;
-    기본 보안 등급을 제거하려면
-    &lt;strong&gt;
-     기본 보안 등급을 &quot;없음&quot;으로 변경
-    &lt;/strong&gt;
-    을 클릭합니다 (페이지 상단 부근) .
-   &lt;/li&gt;
-  &lt;/ol&gt;
- &lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&quot;Jira이슈수준보안설정(Configuringissue-levelsecurity)-보안등급에사용자를추가&quot;&gt;
- &lt;strong&gt;
-  보안 등급에 사용자를 추가
- &lt;/strong&gt;
-&lt;/h2&gt;
-&lt;ol&gt;
- &lt;li&gt;
-  &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
-&lt;img src=&quot;/assets/images/45745597/3&quot; style=&quot;width:20px;&quot;/&gt;
-  &lt;/span&gt;
-  선택 &amp;gt;
-  &lt;strong&gt;
-   이슈
-  &lt;/strong&gt;
-  .
- &lt;/li&gt;
- &lt;li&gt;
-  &lt;strong&gt;
-   이슈 보안 계획
-  &lt;/strong&gt;
-  을 선택하여 이슈 보안 계획 페이지를 엽니다.
- &lt;/li&gt;
- &lt;li&gt;
-  이슈 보안 계획 이름이나
-  &lt;strong&gt;
-   보안 등급
-  &lt;/strong&gt;
-  링크를 클릭하여 이슈 보안 등급 편집 페이지를 엽니다.
- &lt;/li&gt;
- &lt;li&gt;
-  보안 등급을 선택한 후 작업 열에서
-  &lt;strong&gt;
-   추가
-  &lt;/strong&gt;
-  링크를 클릭하여
-  &lt;strong&gt;
-   사용자/그룹/프로젝트 역할을 보안 등급에 추가
-  &lt;/strong&gt;
-  페이지가 열립니다.
- &lt;/li&gt;
- &lt;li&gt;
-  적절한 사용자, 그룹 또는 프로젝트 역할을 선택한 다음
-  &lt;strong&gt;
-   추가
-  &lt;/strong&gt;
-  버튼을 클릭합니다.
- &lt;/li&gt;
-&lt;/ol&gt;
-&lt;p style=&quot;margin-left: 30.0px;&quot;&gt;
- 보안 등급의 구성원은 다음으로 구성 될 수 있습니다.
-&lt;/p&gt;
-&lt;ul&gt;
- &lt;li style=&quot;list-style-type: none;background-image: none;&quot;&gt;
-  &lt;ul&gt;
-   &lt;li&gt;
-    개인 사용자
-   &lt;/li&gt;
-   &lt;li&gt;
-    그룹
-   &lt;/li&gt;
-   &lt;li&gt;
-    프로젝트 역할
-   &lt;/li&gt;
-   &lt;li&gt;
-    '보고자', '프로젝트 리드' 및 '현재 담당자'와 같은 이슈 역할
-   &lt;/li&gt;
-   &lt;li&gt;
-    '아무나' (예 : 익명 액세스 허용)
-   &lt;/li&gt;
-   &lt;li&gt;
-    (멀티) 사용자 또는 (멀티) 그룹 선택기 사용자 정의 필드.
-   &lt;/li&gt;
-  &lt;/ul&gt;
- &lt;/li&gt;
-&lt;/ul&gt;
-&lt;p style=&quot;margin-left: 30.0px;&quot;&gt;
- 6. 모든 적절한 사용자, 그룹 또는 프로젝트 역할이 보안 등급에 추가 될 때까지 4 단계와 5 단계를 반복합니다.
-&lt;/p&gt;
-&lt;h1 id=&quot;Jira이슈수준보안설정(Configuringissue-levelsecurity)-프로젝트에이슈보안계획을할당&quot;&gt;
- &lt;strong&gt;
-  프로젝트에 이슈 보안 계획을 할당
- &lt;/strong&gt;
-&lt;/h1&gt;
-&lt;ol&gt;
- &lt;li&gt;
-  &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
-&lt;img src=&quot;/assets/images/45745597/4&quot; style=&quot;width:20px;&quot;/&gt;
-  &lt;/span&gt;
-  선택 &amp;gt;
-  &lt;strong&gt;
-   프로젝트
-  &lt;/strong&gt;
-  클릭하여 관련 프로젝트를 선택합니다.
- &lt;/li&gt;
- &lt;li&gt;
-  관심있는 프로젝트의 이름을 선택하여
-  &lt;strong&gt;
-   프로젝트 요약
-  &lt;/strong&gt;
-  페이지가 표시됩니다.
- &lt;/li&gt;
- &lt;li&gt;
-  &lt;strong&gt;
-   프로젝트 요약
-  &lt;/strong&gt;
-  페이지의
-  &lt;strong&gt;
-   사용 권한
-  &lt;/strong&gt;
-  섹션에서 이슈 레이블에 해당하는 링크를 클릭하여
-  &lt;strong&gt;
-   프로젝트에 이슈 보안 계획을 연결
-  &lt;/strong&gt;
-  페이지를 엽니다. 이 이름은 프로젝트의 현재 이슈 보안 계획의 이름이거나
-  &lt;strong&gt;
-   None
-  &lt;/strong&gt;
-  입니다.
- &lt;/li&gt;
- &lt;li&gt;
-  이 프로젝트와 연결할 이슈 보안 계획을 선택합니다.
- &lt;/li&gt;
- &lt;li&gt;
-  이전에 보안이 설정된 이슈가 없는 경우 (또는 프로젝트에 이전에 이슈 보안 계획이 없는 경우) 다음 단계를 건너 뜁니다.
- &lt;/li&gt;
- &lt;li&gt;
-  이전에 보안이 설정된 이슈가 있는 경우 새 보안 등급을 선택하여 각 이전 등급을 대체합니다. 이전 계획의 보안 등급과 관련된 모든 이슈는 이제 새로운 계획의 보안 등급을 갖게됩니다. 이전에 보안이 설정된 모든 이슈에서 보안을 제거하려면 '없음'을 선택할 수 있습니다.
- &lt;/li&gt;
- &lt;li&gt;
-  프로젝트를 이슈 보안 계획과 연결하려면 '
-  &lt;strong&gt;
-   연계
-  &lt;/strong&gt;
-  ' 버튼을 클릭합니다.
- &lt;/li&gt;
-&lt;/ol&gt;
-&lt;p style=&quot;margin-left: 30.0px;&quot;&gt;
- i. 이슈 등급 보안을 구성한 후 보안 등급 필드가 이슈의 화면에 표시되지 않으면 내 필드가 어디있지? 도구를 사용하여 표시되지 않는 이유를 확인합니다.
-&lt;/p&gt;
-&lt;h1 id=&quot;Jira이슈수준보안설정(Configuringissue-levelsecurity)-이슈보안계획삭제&quot;&gt;
- &lt;strong&gt;
-  이슈 보안 계획
- &lt;/strong&gt;
- &lt;strong&gt;
-  삭제
- &lt;/strong&gt;
-&lt;/h1&gt;
-&lt;p&gt;
- 프로젝트와 연결된 이슈 보안 계획을 삭제할 수 없다는 것을 이해하는 것이 중요합니다. 먼저 JIRA 설치에서 이슈 보안 계획과 프로젝트 간의 연결을 제거해야 합니다.
-&lt;/p&gt;
-&lt;ol&gt;
- &lt;li&gt;
-  &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
-&lt;img src=&quot;/assets/images/45745597/5&quot; style=&quot;width:20px;&quot;/&gt;
-  &lt;/span&gt;
-  선택 &amp;gt;
-  &lt;strong&gt;
-   이슈
-  &lt;/strong&gt;
-  .
- &lt;/li&gt;
- &lt;li&gt;
-  &lt;strong&gt;
-   이슈 보안 계획
-  &lt;/strong&gt;
-  을 선택하여 이슈 보안 계획 페이지를 엽니다. 현재 JIRA 설치에서 사용 가능한 모든 이슈 보안 계획을 나열합니다.
- &lt;/li&gt;
- &lt;li&gt;
-  삭제할 이슈 보안 계획의 작업 열에서
-  &lt;strong&gt;
-   삭제
-  &lt;/strong&gt;
-  링크를 클릭합니다.
- &lt;/li&gt;
- &lt;li&gt;
-  확인 페이지에서
-  &lt;strong&gt;
-   삭제
-  &lt;/strong&gt;
-  를 클릭하여 삭제를 확인합니다. 그렇지 않으면
-  &lt;strong&gt;
-   취소
-  &lt;/strong&gt;
-  를 클릭합니다.
- &lt;/li&gt;
-&lt;/ol&gt;
-&lt;h1 id=&quot;Jira이슈수준보안설정(Configuringissue-levelsecurity)-이슈보안계획편집&quot;&gt;
- &lt;strong&gt;
-  이슈 보안 계획 편집
- &lt;/strong&gt;
-&lt;/h1&gt;
-&lt;p&gt;
- 이슈 보안 계획의 이름과 설명을 편집할 수 있습니다. 또한 이슈를 편집 할 때 기본 보안 등급을 편집할 수도 있습니다.
-&lt;/p&gt;
-&lt;ol&gt;
- &lt;li&gt;
-  &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
-&lt;img src=&quot;/assets/images/45745597/6&quot; style=&quot;width:20px;&quot;/&gt;
-  &lt;/span&gt;
-  선택 &amp;gt;
-  &lt;strong&gt;
-   이슈
-  &lt;/strong&gt;
-  .
- &lt;/li&gt;
- &lt;li&gt;
-  &lt;strong&gt;
-   이슈 보안 계획
-  &lt;/strong&gt;
-  을 선택하여 이슈 보안 계획 페이지를 엽니다. 현재 JIRA 설치에서 사용 가능한 모든 이슈 보안 계획을 나열합니다.
- &lt;/li&gt;
- &lt;li&gt;
-  편집할 이슈 보안 계획의 작업 열에서
-  &lt;strong&gt;
-   편집
-  &lt;/strong&gt;
-  링크를 클릭합니다.
- &lt;/li&gt;
- &lt;li&gt;
-  수정 한 다음
-  &lt;strong&gt;
-   편집
-  &lt;/strong&gt;
-  을 클릭하여 편집을 확인합니다. 그렇지 않으면
-  &lt;strong&gt;
-   취소
-  &lt;/strong&gt;
-  를 클릭합니다.
- &lt;/li&gt;
-&lt;/ol&gt;
-&lt;h1 id=&quot;Jira이슈수준보안설정(Configuringissue-levelsecurity)-이슈보안계획복사&quot;&gt;
- &lt;strong&gt;
-  이슈 보안 계획 복사
- &lt;/strong&gt;
-&lt;/h1&gt;
-&lt;ol&gt;
- &lt;li&gt;
-  &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
-&lt;img src=&quot;/assets/images/45745597/7&quot; style=&quot;width:20px;&quot;/&gt;
-  &lt;/span&gt;
-  선택 &amp;gt;
-  &lt;strong&gt;
-   이슈
-  &lt;/strong&gt;
-  .
- &lt;/li&gt;
- &lt;li&gt;
-  &lt;strong&gt;
-   이슈 보안 계획
-  &lt;/strong&gt;
-  을 선택하여 이슈 보안 계획 페이지를 엽니다. 현재 JIRA 설치에서 사용 가능한 모든 이슈 보안 계획을 나열합니다.
- &lt;/li&gt;
- &lt;li&gt;
-  복사할 이슈 보안 계획의 작업 열에서
-  &lt;strong&gt;
-   복사
-  &lt;/strong&gt;
-  링크를 클릭합니다. 신규 이슈 보안 계획은 동일한 보안 등급과 동일한 사용자/그룹/프로젝트 역할로 할당됩니다. 신규 계획은 '
-  &lt;strong&gt;
-   ...
-  &lt;/strong&gt;
-  &lt;strong&gt;
-   의 사본
-  &lt;/strong&gt;
-  ' 이라고 할 것입니다. 원하는 경우 신규 계획을 편집하여 다른 이름을 지정할 수 있습니다.
-  &lt;br/&gt;
-  &lt;br/&gt;
- &lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;
- 2018.08.30
-&lt;/p&gt;</description>
-        <pubDate>Thu, 30 Aug 2018 00:00:00 +0900</pubDate>
-        <link>https://tech.osci.kr/jira/2018/08/30/45745597/</link>
-        <guid isPermaLink="true">https://tech.osci.kr/jira/2018/08/30/45745597/</guid>
-        
-        <category>Atlassina</category>
-        
-        <category>Jira</category>
-        
-        
-        <category>Jira</category>
         
       </item>
     
