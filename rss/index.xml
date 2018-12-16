@@ -9,8 +9,8 @@ Sharing Tech. Growing Together.
 </description>
     <link>https://tech.osci.kr/</link>
     <atom:link href="https://tech.osci.kr/rss" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 17 Dec 2018 01:16:21 +0900</pubDate>
-    <lastBuildDate>Mon, 17 Dec 2018 01:16:21 +0900</lastBuildDate>
+    <pubDate>Mon, 17 Dec 2018 08:57:29 +0900</pubDate>
+    <lastBuildDate>Mon, 17 Dec 2018 08:57:29 +0900</lastBuildDate>
     <generator>Jekyll v3.7.4</generator>
     
       <item>
@@ -456,7 +456,7 @@ export JAVA_OPTS&lt;/pre&gt;
 &lt;ul style=&quot;list-style-type: square;&quot;&gt;
  &lt;li&gt;
   &lt;div class=&quot;embeddedObject conf-macro output-block&quot; data-hasbody=&quot;false&quot; data-macro-name=&quot;multimedia&quot;&gt;
-   &lt;video controls=&quot;&quot; height=&quot;380&quot; src=&quot;/assets/images/51741685/apm_wiki.mp4&quot; width=&quot;500&quot;&gt;
+   &lt;video controls=&quot;&quot;  src=&quot;/assets/images/51741685/apm_wiki.mp4&quot; width=100%&gt;
     Your browser does not support the HTML5 video element
    &lt;/video&gt;
   &lt;/div&gt;
