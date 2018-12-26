@@ -5,6 +5,15 @@
         xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://tech.osci.kr/2018/12/26/53347127/</loc>
+    
+    <lastmod>2018-12-26T00:00:00+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
     <loc>https://tech.osci.kr/2018/12/26/53346876/</loc>
     
     <lastmod>2018-12-26T00:00:00+09:00</lastmod>
