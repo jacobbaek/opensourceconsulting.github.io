@@ -1,3 +1,6 @@
+---
+layout: null
+---
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="2.0"
                 xmlns:html="http://www.w3.org/TR/REC-html40"
@@ -15,11 +18,11 @@
         <div id="content">
           <h1>XML Sitemap</h1>
           <p>This is a generated
-            <a href="https://tech.osci.kr/sitemap.xml">sitemap</a>
+            <a href="{{ site.url }}{{ site.baseurl }}/sitemap.xml">sitemap</a>
             for robot, orcs or elves.
           </p>
           <p>You might to visit a
-            <a href="https://tech.osci.kr">site</a>
+            <a href="{{ site.url }}{{ site.baseurl }}">site</a>
             for human.
           </p>
           <xsl:if test="count(sitemap:sitemapindex/sitemap:sitemap) &gt; 0">
