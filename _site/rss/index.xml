@@ -9,9 +9,376 @@ Sharing Tech. Growing Together.
 </description>
     <link>https://tech.osci.kr/</link>
     <atom:link href="https://tech.osci.kr/rss" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 26 Dec 2018 11:12:32 +0900</pubDate>
-    <lastBuildDate>Wed, 26 Dec 2018 11:12:32 +0900</lastBuildDate>
+    <pubDate>Wed, 26 Dec 2018 12:21:33 +0900</pubDate>
+    <lastBuildDate>Wed, 26 Dec 2018 12:21:33 +0900</lastBuildDate>
     <generator>Jekyll v3.7.4</generator>
+    
+      <item>
+        <title>11 ~ 12월 Atlassian TroubleShooting 정리</title>
+        <description>&lt;h1 id=&quot;id-11~12월AtlassianTroubleShooting정리-ActiveDirectory의그룹명변경시연동된Jira/Confluence의권한등에반영되지않는현상&quot;&gt;
+ &lt;strong&gt;
+  Active Directory의 그룹명 변경 시 연동된 Jira / Confluence의 권한 등에 반영되지 않는 현상
+ &lt;/strong&gt;
+&lt;/h1&gt;
+&lt;ol&gt;
+ &lt;li style=&quot;list-style-type: none;background-image: none;&quot;&gt;
+  &lt;ul&gt;
+   &lt;li&gt;
+    Jira / Confluence에 그룹명 변경 기능이 없기에 AD에서 그룹명 변경 후 Sync 시에 Jira / Confluence에는 새로운 그룹으로 생성됨
+   &lt;/li&gt;
+   &lt;li&gt;
+    &lt;p class=&quot;auto-cursor-target&quot;&gt;
+     Atlassian Support의 공식적인 답변은 안정성을 위해 기본적으로 하나씩 직접 다시 권한을 부여하는 방법을 권장하나, 큰 인스턴스에서 현실적으로 불가능하기에 Staging에서 테스트 및 DB백업 후 다음 쿼리작업을 실행
+    &lt;/p&gt;
+    &lt;div class=&quot;code panel pdl conf-macro output-block&quot; data-hasbody=&quot;true&quot; data-macro-name=&quot;code&quot; style=&quot;border-width: 1px;&quot;&gt;
+     &lt;div class=&quot;codeHeader panelHeader pdl&quot; style=&quot;border-bottom-width: 1px;&quot;&gt;
+      &lt;b&gt;
+       Confluence
+      &lt;/b&gt;
+     &lt;/div&gt;
+     &lt;div class=&quot;codeContent panelContent pdl&quot;&gt;
+      &lt;pre class=&quot;syntaxhighlighter-pre&quot; data-syntaxhighlighter-params=&quot;brush: java; gutter: false; theme: Confluence&quot; data-theme=&quot;Confluence&quot;&gt;UPDATE spacepermissions
+SET permgroupname = '&amp;lt;New Group Name&amp;gt;'
+WHERE permgroupname IN ('&amp;lt;Old Group Name&amp;gt;')
+AND spaceid IS NULL;
+ 
+ 
+UPDATE spacepermissions
+SET permgroupname = '&amp;lt;New Group Name&amp;gt;'
+WHERE permgroupname IN ('&amp;lt;Old Group Name&amp;gt;')
+AND spaceid IS NOT NULL;
+ 
+ 
+UPDATE content_perm
+SET groupname = '&amp;lt;New Group Name&amp;gt;'
+WHERE groupname IN ('&amp;lt;Old Group Name&amp;gt;');&lt;/pre&gt;
+     &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;hr/&gt;
+    &lt;div class=&quot;code panel pdl conf-macro output-block&quot; data-hasbody=&quot;true&quot; data-macro-name=&quot;code&quot; style=&quot;border-width: 1px;&quot;&gt;
+     &lt;div class=&quot;codeHeader panelHeader pdl&quot; style=&quot;border-bottom-width: 1px;&quot;&gt;
+      &lt;b&gt;
+       Jira Postgresql
+      &lt;/b&gt;
+     &lt;/div&gt;
+     &lt;div class=&quot;codeContent panelContent pdl&quot;&gt;
+      &lt;pre class=&quot;syntaxhighlighter-pre&quot; data-syntaxhighlighter-params=&quot;brush: java; gutter: false; theme: Confluence&quot; data-theme=&quot;Confluence&quot;&gt;UPDATE cwd_group SET group_name=REPLACE(group_name,&quot;&amp;lt;old-group-name&amp;gt;&quot;,&quot;&amp;lt;new-group-name&amp;gt;&quot;) WHERE INSTR(group_name, &quot;&amp;lt;old-group-name&amp;gt;&quot;) &amp;gt; 0
+UPDATE cwd_group SET lower_group_name=REPLACE(lower_group_name,&quot;&amp;lt;old-group-name&amp;gt;&quot;,&quot;&amp;lt;new-group-name&amp;gt;&quot;) WHERE INSTR(lower_group_name, &quot;&amp;lt;old-group-name&amp;gt;&quot;) &amp;gt; 0
+UPDATE cwd_membership SET parent_name=REPLACE(parent_name,&quot;&amp;lt;old-group-name&amp;gt;&quot;,&quot;&amp;lt;new-group-name&amp;gt;&quot;) WHERE INSTR(parent_name, &quot;&amp;lt;old-group-name&amp;gt;&quot;) &amp;gt; 0
+UPDATE cwd_membership SET lower_parent_name=REPLACE(lower_parent_name,&quot;&amp;lt;old-group-name&amp;gt;&quot;,&quot;&amp;lt;new-group-name&amp;gt;&quot;) WHERE INSTR(lower_parent_name, &quot;&amp;lt;old-group-name&amp;gt;&quot;) &amp;gt; 0
+UPDATE filtersubscription SET groupname=REPLACE(groupname,&quot;&amp;lt;old-group-name&amp;gt;&quot;,&quot;&amp;lt;new-group-name&amp;gt;&quot;) WHERE INSTR(groupname, &quot;&amp;lt;old-group-name&amp;gt;&quot;) &amp;gt; 0
+UPDATE jiraaction SET actionlevel=REPLACE(actionlevel,&quot;&amp;lt;old-group-name&amp;gt;&quot;,&quot;&amp;lt;new-group-name&amp;gt;&quot;) WHERE INSTR(actionlevel, &quot;&amp;lt;old-group-name&amp;gt;&quot;) &amp;gt; 0
+UPDATE notification SET notif_parameter=REPLACE(notif_parameter,&quot;&amp;lt;old-group-name&amp;gt;&quot;,&quot;&amp;lt;new-group-name&amp;gt;&quot;) WHERE INSTR(notif_parameter, &quot;&amp;lt;old-group-name&amp;gt;&quot;) &amp;gt; 0
+UPDATE projectroleactor SET ROLETYPEPARAMETER=REPLACE(ROLETYPEPARAMETER,&quot;&amp;lt;old-group-name&amp;gt;&quot;,&quot;&amp;lt;new-group-name&amp;gt;&quot;) WHERE INSTR(ROLETYPEPARAMETER, &quot;&amp;lt;old-group-name&amp;gt;&quot;) &amp;gt; 0
+UPDATE searchrequest SET groupname=REPLACE(groupname,&quot;&amp;lt;old-group-name&amp;gt;&quot;,&quot;&amp;lt;new-group-name&amp;gt;&quot;) WHERE INSTR(groupname, &quot;&amp;lt;old-group-name&amp;gt;&quot;) &amp;gt; 0
+UPDATE searchrequest SET reqcontent=REPLACE(reqcontent,&quot;&amp;lt;old-group-name&amp;gt;&quot;,&quot;&amp;lt;new-group-name&amp;gt;&quot;) WHERE INSTR(reqcontent, &quot;&amp;lt;old-group-name&amp;gt;&quot;) &amp;gt; 0
+UPDATE sharepermissions SET PARAM1=REPLACE(PARAM1,&quot;&amp;lt;old-group-name&amp;gt;&quot;,&quot;&amp;lt;new-group-name&amp;gt;&quot;) WHERE INSTR(PARAM1, &quot;&amp;lt;old-group-name&amp;gt;&quot;) &amp;gt; 0
+UPDATE worklog SET grouplevel=REPLACE(grouplevel,&quot;&amp;lt;old-group-name&amp;gt;&quot;,&quot;&amp;lt;new-group-name&amp;gt;&quot;) WHERE INSTR(grouplevel, &quot;&amp;lt;old-group-name&amp;gt;&quot;) &amp;gt; 0
+
+UPDATE globalpermissionentry gpe1
+SET group_id = 'NEW_GROUP'
+WHERE gpe1.group_id = 'OLD_GROUP'
+AND NOT EXISTS
+(
+    SELECT *
+    FROM globalpermissionentry gpe2
+    WHERE gpe2.permission = gpe1.permission
+    AND gpe2.group_id = 'NEW_GROUP'
+)
+
+UPDATE licenserolesgroup lrg1
+SET group_id = 'NEW_GROUP'
+WHERE lrg1.group_id = 'OLD_GROUP'
+AND NOT EXISTS
+(
+    SELECT *
+    FROM licenserolesgroup lrg2
+    WHERE lrg2.license_role_name = lrg1.license_role_name
+    AND lrg2.group_id = 'NEW_GROUP'
+)
+
+UPDATE projectroleactor pra1
+SET roletypeparameter = 'NEW_GROUP'
+WHERE pra1.roletypeparameter = 'OLD_GROUP'
+AND pra1.roletype = 'atlassian-group-role-actor'
+AND NOT EXISTS
+(
+    SELECT *
+    FROM projectroleactor pra2
+    WHERE pra2.pid = pra1.pid
+    AND pra2.projectroleid = pra1.projectroleid
+    AND pra2.roletypeparameter = 'NEW_GROUP'
+    AND pra2.roletype = 'atlassian-group-role-actor'
+)
+
+UPDATE schemeissuesecurities sis1
+SET sec_parameter = 'NEW_GROUP'
+WHERE sis1.sec_parameter = 'OLD_GROUP'
+AND sis1.sec_type = 'group'
+AND NOT EXISTS
+(
+    SELECT *
+    FROM schemeissuesecurities sis2
+    WHERE sis2.scheme = sis1.scheme
+    AND sis2.security = sis1.security
+    AND sis2.sec_parameter = 'NEW_GROUP'
+    AND sis2.sec_type = 'group'
+)
+
+UPDATE schemepermissions sp1
+SET perm_parameter = 'NEW_GROUP'
+WHERE sp1.perm_parameter = 'OLD_GROUP'
+AND sp1.perm_type = 'group'
+AND NOT EXISTS
+(
+    SELECT *
+    FROM schemepermissions sp2
+    WHERE sp2.scheme = sp1.scheme
+    AND (sp2.permission = sp1.permission OR sp2.permission_key = sp1.permission_key)
+    AND sp2.perm_parameter = 'NEW_GROUP'
+    AND sp2.perm_type = 'group'
+)
+
+UPDATE sharepermissions sp1
+SET param1 = 'NEW_GROUP'
+WHERE sp1.param1 = 'OLD_GROUP'
+AND sp1.sharetype = 'group'
+AND NOT EXISTS
+(
+    SELECT *
+    FROM sharepermissions sp2
+    WHERE sp2.entityid = sp1.entityid
+    AND sp2.entitytype = sp1.entitytype
+    AND sp2.param1 = 'NEW_GROUP'
+    AND sp2.sharetype = 'group'
+)
+
+SELECT *
+FROM schemeissuesecurities
+WHERE sec_type = 'groupCF'
+
+SELECT *
+FROM schemepermissions
+WHERE perm_type = 'groupCF'
+
+select * from customfieldvalue where stringvalue like '%&amp;lt;groupname&amp;gt;%';
+select * from customfieldoption where customvalue like '%&amp;lt;groupname&amp;gt;%';
+select * from customfield where id = '&amp;lt;customfield&amp;gt;';&lt;/pre&gt;
+     &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;hr/&gt;
+    &lt;div class=&quot;code panel pdl conf-macro output-block&quot; data-hasbody=&quot;true&quot; data-macro-name=&quot;code&quot; style=&quot;border-width: 1px;&quot;&gt;
+     &lt;div class=&quot;codeHeader panelHeader pdl&quot; style=&quot;border-bottom-width: 1px;&quot;&gt;
+      &lt;b&gt;
+       Jira Mysql
+      &lt;/b&gt;
+     &lt;/div&gt;
+     &lt;div class=&quot;codeContent panelContent pdl&quot;&gt;
+      &lt;pre class=&quot;syntaxhighlighter-pre&quot; data-syntaxhighlighter-params=&quot;brush: java; gutter: false; theme: Confluence&quot; data-theme=&quot;Confluence&quot;&gt;UPDATE cwd_group SET group_name=REPLACE(group_name,&quot;&amp;lt;Old Group Name&amp;gt;&quot;,&quot;&amp;lt;New Group Name&amp;gt;&quot;) WHERE INSTR(group_name, &quot;&amp;lt;Old Group Name&amp;gt;&quot;) &amp;gt; 0
+UPDATE cwd_group SET lower_group_name=REPLACE(lower_group_name,&quot;&amp;lt;Old Group Name&amp;gt;&quot;,&quot;&amp;lt;New Group Name&amp;gt;&quot;) WHERE INSTR(lower_group_name, &quot;&amp;lt;Old Group Name&amp;gt;&quot;) &amp;gt; 0
+UPDATE cwd_membership SET parent_name=REPLACE(parent_name,&quot;&amp;lt;Old Group Name&amp;gt;&quot;,&quot;&amp;lt;New Group Name&amp;gt;&quot;) WHERE INSTR(parent_name, &quot;&amp;lt;Old Group Name&amp;gt;&quot;) &amp;gt; 0
+UPDATE cwd_membership SET lower_parent_name=REPLACE(lower_parent_name,&quot;&amp;lt;Old Group Name&amp;gt;&quot;,&quot;&amp;lt;New Group Name&amp;gt;&quot;) WHERE INSTR(lower_parent_name, &quot;&amp;lt;Old Group Name&amp;gt;&quot;) &amp;gt; 0
+UPDATE filtersubscription SET groupname=REPLACE(groupname,&quot;&amp;lt;Old Group Name&amp;gt;&quot;,&quot;&amp;lt;New Group Name&amp;gt;&quot;) WHERE INSTR(groupname, &quot;&amp;lt;Old Group Name&amp;gt;&quot;) &amp;gt; 0
+UPDATE jiraaction SET actionlevel=REPLACE(actionlevel,&quot;&amp;lt;Old Group Name&amp;gt;&quot;,&quot;&amp;lt;New Group Name&amp;gt;&quot;) WHERE INSTR(actionlevel, &quot;&amp;lt;Old Group Name&amp;gt;&quot;) &amp;gt; 0
+UPDATE notification SET notif_parameter=REPLACE(notif_parameter,&quot;&amp;lt;Old Group Name&amp;gt;&quot;,&quot;&amp;lt;New Group Name&amp;gt;&quot;) WHERE INSTR(notif_parameter, &quot;&amp;lt;Old Group Name&amp;gt;&quot;) &amp;gt; 0
+UPDATE projectroleactor SET ROLETYPEPARAMETER=REPLACE(ROLETYPEPARAMETER,&quot;&amp;lt;Old Group Name&amp;gt;&quot;,&quot;&amp;lt;New Group Name&amp;gt;&quot;) WHERE INSTR(ROLETYPEPARAMETER, &quot;&amp;lt;Old Group Name&amp;gt;&quot;) &amp;gt; 0
+UPDATE searchrequest SET groupname=REPLACE(groupname,&quot;&amp;lt;Old Group Name&amp;gt;&quot;,&quot;&amp;lt;New Group Name&amp;gt;&quot;) WHERE INSTR(groupname, &quot;&amp;lt;Old Group Name&amp;gt;&quot;) &amp;gt; 0
+UPDATE searchrequest SET reqcontent=REPLACE(reqcontent,&quot;&amp;lt;Old Group Name&amp;gt;&quot;,&quot;&amp;lt;New Group Name&amp;gt;&quot;) WHERE INSTR(reqcontent, &quot;&amp;lt;Old Group Name&amp;gt;&quot;) &amp;gt; 0
+UPDATE sharepermissions SET PARAM1=REPLACE(PARAM1,&quot;&amp;lt;Old Group Name&amp;gt;&quot;,&quot;&amp;lt;New Group Name&amp;gt;&quot;) WHERE INSTR(PARAM1, &quot;&amp;lt;Old Group Name&amp;gt;&quot;) &amp;gt; 0
+UPDATE worklog SET grouplevel=REPLACE(grouplevel,&quot;&amp;lt;Old Group Name&amp;gt;&quot;,&quot;&amp;lt;New Group Name&amp;gt;&quot;) WHERE INSTR(grouplevel, &quot;&amp;lt;Old Group Name&amp;gt;&quot;) &amp;gt; 0
+ 
+ 
+UPDATE globalpermissionentry gpe1
+SET gpe1.group_id = '&amp;lt;New Group Name&amp;gt;'
+WHERE gpe1.group_id = '&amp;lt;Old Group Name&amp;gt;'
+AND NOT EXISTS
+(select * from (
+    SELECT *
+    FROM globalpermissionentry gpe2
+    WHERE gpe2.permission = (select permission from globalpermissionentry gpe3 where gpe3.group_id = '&amp;lt;Old Group Name&amp;gt;')
+    AND gpe2.group_id = '&amp;lt;New Group Name&amp;gt;'
+) as temp_table );
+  
+  
+UPDATE licenserolesgroup lrg1
+SET lrg1.group_id = '&amp;lt;New Group Name&amp;gt;'
+WHERE lrg1.group_id = '&amp;lt;Old Group Name&amp;gt;'
+AND NOT EXISTS
+(select * from (
+    SELECT *
+    FROM licenserolesgroup lrg2
+    WHERE lrg2.license_role_name = (select license_role_name from licenserolesgroup lrg3 where lrg3.group_id = '&amp;lt;Old Group Name&amp;gt;')
+    AND lrg2.group_id = '&amp;lt;New Group Name&amp;gt;'
+) as temp_table );
+  
+  
+UPDATE projectroleactor pra1
+SET roletypeparameter = '&amp;lt;New Group Name&amp;gt;'
+WHERE pra1.roletypeparameter = '&amp;lt;Old Group Name&amp;gt;'
+AND pra1.roletype = 'atlassian-group-role-actor'
+AND NOT EXISTS
+(
+select *
+from (
+SELECT pra2.*
+FROM projectroleactor pra2
+Join projectroleactor pra3
+on pra2.pid = pra3.pid and pra2.projectroleid = pra3.projectroleid
+AND pra2.roletypeparameter = '&amp;lt;New Group Name&amp;gt;'AND pra2.roletype = 'atlassian-group-role-actor'
+)as aaa
+);
+  
+  
+UPDATE schemeissuesecurities sis1
+SET sec_parameter = '&amp;lt;New Group Name&amp;gt;'
+WHERE sis1.sec_parameter = '&amp;lt;Old Group Name&amp;gt;'
+AND sis1.sec_type = 'group'
+AND NOT EXISTS
+(
+SELECT *
+FROM (
+SELECT sis2.*
+FROM schemeissuesecurities sis2
+JOIN schemeissuesecurities sis3
+ON sis2.scheme = sis3.scheme
+AND sis2.security = sis3.security
+AND sis2.sec_parameter = '&amp;lt;New Group Name&amp;gt;'
+AND sis2.sec_type = 'group'
+) as aaa
+);
+  
+  
+UPDATE schemepermissions sp1
+SET perm_parameter = '&amp;lt;New Group Name&amp;gt;'
+WHERE sp1.perm_parameter = '&amp;lt;Old Group Name&amp;gt;'
+AND sp1.perm_type = 'group'
+AND NOT EXISTS
+(
+SELECT *
+FROM (
+SELECT sp2.*
+FROM schemepermissions sp2
+JOIN schemepermissions sp3
+ON sp2.scheme = sp3.scheme
+AND sp2.permission = sp3.permission
+AND sp2.perm_parameter = '&amp;lt;New Group Name&amp;gt;'
+AND sp2.perm_type = 'group'
+) as aaa
+);
+  
+  
+UPDATE sharepermissions sp1
+SET param1 = '&amp;lt;New Group Name&amp;gt;'
+WHERE sp1.param1 = '&amp;lt;Old Group Name&amp;gt;'
+AND sp1.sharetype = 'group'
+AND NOT EXISTS
+(
+SELECT *
+FROM (
+SELECT sp2.*
+FROM sharepermissions sp2
+JOIN sharepermissions sp3
+ON sp2.entityid = sp3.entityid
+AND sp2.entitytype = sp3.entitytype
+AND sp2.param1 = '&amp;lt;New Group Name&amp;gt;'
+AND sp2.sharetype = 'group'
+) as aaa
+);&lt;/pre&gt;
+     &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;hr/&gt;
+   &lt;/li&gt;
+   &lt;li&gt;
+    &lt;p class=&quot;auto-cursor-target&quot;&gt;
+     Jira의 View All Board 클릭 시 에러 해결을 위해 추가로 다음의 작업이 필요
+    &lt;/p&gt;
+    &lt;div class=&quot;code panel pdl conf-macro output-block&quot; data-hasbody=&quot;true&quot; data-macro-name=&quot;code&quot; style=&quot;border-width: 1px;&quot;&gt;
+     &lt;div class=&quot;codeContent panelContent pdl&quot;&gt;
+      &lt;pre class=&quot;syntaxhighlighter-pre&quot; data-syntaxhighlighter-params=&quot;brush: java; gutter: false; theme: Confluence&quot; data-theme=&quot;Confluence&quot;&gt;select distinct `KEY` from AO_60DB71_BOARDADMINS where TYPE = 'GROUP' and `KEY` not in (select group_name from cwd_group);
+select NAME, ID  from AO_60DB71_RAPIDVIEW WHERE ID IN (select RAPID_VIEW_ID from AO_60DB71_BOARDADMINS WHERE `KEY` = '&amp;lt;1번 쿼리에서 출력된 그룹명&amp;gt;');
+http://&amp;lt;Jira BaseURL&amp;gt;/secure/RapidView.jspa?rapidView=&amp;lt;1번 쿼리에서 출력된 ID&amp;gt;&amp;amp;tab=filter
+
+Administrators 클릭 및 edit으로 해당 그룹 삭제&lt;/pre&gt;
+     &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;p class=&quot;auto-cursor-target&quot;&gt;
+     &lt;a class=&quot;external-link&quot; href=&quot;https://jira.atlassian.com/browse/JSWSERVER-15924&quot; rel=&quot;nofollow&quot;&gt;
+      https://jira.atlassian.com/browse/JSWSERVER-15924
+     &lt;/a&gt;
+    &lt;/p&gt;
+   &lt;/li&gt;
+  &lt;/ul&gt;
+ &lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&quot;id-11~12월AtlassianTroubleShooting정리-Jira업그레이드후,HealthCheckIndexing에러및Re-index불가능한현상&quot;&gt;
+ &lt;strong&gt;
+  Jira 업그레이드 후, Health Check Indexing에러 및 Re-index 불가능한 현상
+ &lt;/strong&gt;
+&lt;/h1&gt;
+&lt;ol&gt;
+ &lt;li style=&quot;list-style-type: none;background-image: none;&quot;&gt;
+  &lt;ul&gt;
+   &lt;li&gt;
+    Health check에 다음과 같은 메세지가 출력되며, 인덱싱이 실패함
+   &lt;/li&gt;
+   &lt;li&gt;
+    The issue index is inconsistent with the database state. Database has (898,665) issues but the index has (898,400) issues
+   &lt;/li&gt;
+   &lt;li&gt;
+    &lt;p class=&quot;auto-cursor-target&quot;&gt;
+     Jira 종료 및 DB백업 후 쿼리 수행 (Update의 CREATED 부분에는 임의의 날짜를 입력
+    &lt;/p&gt;
+    &lt;div class=&quot;code panel pdl conf-macro output-block&quot; data-hasbody=&quot;true&quot; data-macro-name=&quot;code&quot; style=&quot;border-width: 1px;&quot;&gt;
+     &lt;div class=&quot;codeContent panelContent pdl&quot;&gt;
+      &lt;pre class=&quot;syntaxhighlighter-pre&quot; data-syntaxhighlighter-params=&quot;brush: java; gutter: false; theme: Confluence&quot; data-theme=&quot;Confluence&quot;&gt;select distinct issueid from changegroup where CREATED is null;
+update changegroup set CREATED='2015-01-01' where CREATED is null;&lt;/pre&gt;
+     &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;p class=&quot;auto-cursor-target&quot;&gt;
+     &lt;a class=&quot;external-link&quot; href=&quot;https://confluence.atlassian.com/jirakb/cloning-issues-or-indexing-jira-throws-indexing-completed-with-1-errors-718669171.html&quot; rel=&quot;nofollow&quot;&gt;
+      https://confluence.atlassian.com/jirakb/cloning-issues-or-indexing-jira-throws-indexing-completed-with-1-errors-718669171.html
+     &lt;/a&gt;
+    &lt;/p&gt;
+   &lt;/li&gt;
+  &lt;/ul&gt;
+ &lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&quot;id-11~12월AtlassianTroubleShooting정리-Jira의Log에다음과같은Warning이많이발생하는경우&quot;&gt;
+ &lt;strong&gt;
+  Jira의 Log에 다음과 같은 Warning이 많이 발생하는 경우
+ &lt;/strong&gt;
+&lt;/h1&gt;
+&lt;ol&gt;
+ &lt;li style=&quot;list-style-type: none;background-image: none;&quot;&gt;
+  &lt;ul&gt;
+   &lt;li&gt;
+    2018-12-19 03:17:17,228 http-nio-8080-exec-14 WARN admin 197x1172x1 1z4wpv 192.168.0.139 /secure/WorkflowUIDispatcher.jspa [c.i.jmcf.fields.AbstractTransitionSearchField] com.innovalog.jmcf.fields.ActionExecutionTimeField: could not find transition name or ID in custom field description for miscTran Navigate to the following URL to edit the custom field description:
+    &lt;a class=&quot;external-link&quot; href=&quot;http://192.168.1.118:8080/secure/admin/EditCustomField!default.jspa?id=10201&quot; rel=&quot;nofollow&quot;&gt;
+     http://192.168.1.118:8080/secure/admin/EditCustomField!default.jspa?id=10201
+    &lt;/a&gt;
+   &lt;/li&gt;
+   &lt;li&gt;
+    Misc Custom Field Plugin사용 시 Description을 제대로 기입하지 않아 발생하는 문제로 다음처럼 기입 시 해결됨
+   &lt;/li&gt;
+   &lt;li&gt;
+    &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
+     &lt;img src=&quot;/assets/images/53346876/0&quot;/&gt;
+    &lt;/span&gt;
+   &lt;/li&gt;
+   &lt;li&gt;
+    &lt;a class=&quot;external-link&quot; href=&quot;https://innovalog.atlassian.net/wiki/spaces/JMCF/overview#JIRAMiscCustomFields-transitiondatefield&quot; rel=&quot;nofollow&quot;&gt;
+     https://innovalog.atlassian.net/wiki/spaces/JMCF/overview#JIRAMiscCustomFields-transitiondatefield
+    &lt;/a&gt;
+   &lt;/li&gt;
+  &lt;/ul&gt;
+ &lt;/li&gt;
+&lt;/ol&gt;</description>
+        <pubDate>Wed, 26 Dec 2018 00:00:00 +0900</pubDate>
+        <link>https://tech.osci.kr/2018/12/26/53346876/</link>
+        <guid isPermaLink="true">https://tech.osci.kr/2018/12/26/53346876/</guid>
+        
+        
+      </item>
     
       <item>
         <title>Scouter로 Confluence 모니터링!</title>
@@ -4871,310 +5238,6 @@ han0495/hello-world   latest              2cb0d9787c4d        2 months ago      
         
         
         <category>docker</category>
-        
-      </item>
-    
-      <item>
-        <title>8월 Atlassian TroubleShooting 정리</title>
-        <description>&lt;h2 id=&quot;id-8월AtlassianTroubleShooting정리-8월이슈사항내역&quot;&gt;
- 8월 이슈사항 내역
-&lt;/h2&gt;
-&lt;h3 id=&quot;id-8월AtlassianTroubleShooting정리-JiraRestart시Plugin문제로Jira가재시작되지않는현상(7.9.2)&quot;&gt;
- &lt;strong&gt;
-  &lt;strong&gt;
-   Jira Restart 시 Plugin 문제로 Jira가 재시작되지 않는 현상 (7.9.2)
-  &lt;/strong&gt;
- &lt;/strong&gt;
-&lt;/h3&gt;
-&lt;ul&gt;
- &lt;li style=&quot;list-style-type: none;background-image: none;&quot;&gt;
-  &lt;ul&gt;
-   &lt;li&gt;
-    System plugins failed to start: We haven't been able to start all the required system plugins
-   &lt;/li&gt;
-   &lt;li&gt;
-    Jira_Installation/bin/setenv.sh 옵션에 다음 내용 추가
-    &lt;ul&gt;
-     &lt;li&gt;
-      -Datlassian.plugins.enable.wait=300
-     &lt;/li&gt;
-    &lt;/ul&gt;
-   &lt;/li&gt;
-   &lt;li&gt;
-    다음 파일 및 디렉토리 삭제 후 Jira 재시작
-    &lt;br/&gt;
-    &lt;ul&gt;
-     &lt;li&gt;
-      Jira_Installation/work/*
-     &lt;/li&gt;
-     &lt;li&gt;
-      Jira_Installation/temp/*
-     &lt;/li&gt;
-     &lt;li&gt;
-      J
-      &lt;span style=&quot;color: rgb(51,51,51);&quot;&gt;
-       ira_Home/plugin/
-      &lt;/span&gt;
-      .bundled-plugins
-     &lt;/li&gt;
-     &lt;li&gt;
-      J
-      &lt;span style=&quot;color: rgb(51,51,51);&quot;&gt;
-       ira_Home/plugin/
-      &lt;/span&gt;
-      .osgi-plugins
-     &lt;/li&gt;
-    &lt;/ul&gt;
-   &lt;/li&gt;
-   &lt;li&gt;
-    앞의 내용으로 해결되지 않을 경우 다음 내용 추가 진행
-    &lt;br/&gt;
-    &lt;ul&gt;
-     &lt;li&gt;
-      mv Jira_Home/plugin/installed-plugin Jira_Home/plugin/installed-plugin_OLD
-     &lt;/li&gt;
-     &lt;li&gt;
-      Jira 재시작 후 로그인 가능 여부 확인 및 정상 동작 확인
-     &lt;/li&gt;
-     &lt;li&gt;
-      다음과 같이 추가 에러발생 시 Hipchat 관련 플러그인 disable
-      &lt;ul&gt;
-       &lt;li&gt;
-        500 error with java.lang.RuntimeException bundle
-        &lt;span class=&quot;error&quot; style=&quot;letter-spacing: 0.0px;color: rgb(51,51,51);&quot;&gt;
-         [comp.atlassian.plugins.base-hipchat-integration-plugin-api]
-        &lt;/span&gt;
-       &lt;/li&gt;
-       &lt;li&gt;
-        &lt;span class=&quot;error&quot; style=&quot;color: rgb(51,51,51);&quot;&gt;
-         &lt;a class=&quot;external-link&quot; href=&quot;https://confluence.atlassian.com/jirakb/all-jira-pages-fail-to-load-after-disabling-atlassian-hipchat-integration-plugin-core-720832508.html&quot; rel=&quot;nofollow&quot;&gt;
-          https://confluence.atlassian.com/jirakb/all-jira-pages-fail-to-load-after-disabling-atlassian-hipchat-integration-plugin-core-720832508.html
-         &lt;/a&gt;
-        &lt;/span&gt;
-       &lt;/li&gt;
-      &lt;/ul&gt;
-     &lt;/li&gt;
-     &lt;li&gt;
-      기존 User-installed 재설치 및 Kanban 사용을 위한 Jira Software 재설치
-      &lt;ul&gt;
-       &lt;li&gt;
-        &lt;span class=&quot;error&quot; style=&quot;color: rgb(51,51,51);&quot;&gt;
-         &lt;a class=&quot;external-link&quot; href=&quot;https://marketplace.atlassian.com/apps/1213607/jira-software/version-history&quot; rel=&quot;nofollow&quot;&gt;
-          https://marketplace.atlassian.com/apps/1213607/jira-software/version-history
-         &lt;/a&gt;
-        &lt;/span&gt;
-       &lt;/li&gt;
-      &lt;/ul&gt;
-     &lt;/li&gt;
-     &lt;li&gt;
-      &lt;span class=&quot;error&quot; style=&quot;color: rgb(51,51,51);&quot;&gt;
-       Jira 재시작 및 Re-index 후, 이상여부 재확인
-      &lt;/span&gt;
-     &lt;/li&gt;
-    &lt;/ul&gt;
-   &lt;/li&gt;
-  &lt;/ul&gt;
- &lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;id-8월AtlassianTroubleShooting정리-ConfluenceUpgrade후400error발생현상(6.6.7)&quot;&gt;
- &lt;strong&gt;
-  &lt;strong&gt;
-   Confluence Upgrade 후 400 error 발생 현상 (6.6.7)
-  &lt;/strong&gt;
- &lt;/strong&gt;
-&lt;/h3&gt;
-&lt;ol&gt;
- &lt;li style=&quot;list-style-type: none;background-image: none;&quot;&gt;
-  &lt;ul&gt;
-   &lt;li&gt;
-    6.4.1에서 6.6.7로 Confluence 업그레이드 후, 기존 도메인 이름으로 접속할 경우 400 에러발생
-   &lt;/li&gt;
-   &lt;li&gt;
-    앞단에 Nginx(1.9) proxy가 설정되어있으며, Nginx를 통하지 않고 IP로 접속하거나 Nginx(1.4)로 접속 시 정상접속 가능
-   &lt;/li&gt;
-   &lt;li&gt;
-    6.6.7의 Tomcat 버전만 6.4.1의 Tomcat 버전으로 다운그레이드 후 정상동작 확인
-   &lt;/li&gt;
-   &lt;li&gt;
-    명확한 원인 파악은 되지 않았으며, 같은 버전의 환경으로 재현 시 재현불가
-   &lt;/li&gt;
-   &lt;li&gt;
-    Tomcat 자체 다운그레이드의 경우 Atlassian의 권장사항은 아님
-   &lt;/li&gt;
-  &lt;/ul&gt;
- &lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&quot;id-8월AtlassianTroubleShooting정리-특수문자가들어간FileDownload시error발생현상(Jira,Confluence)&quot;&gt;
- &lt;strong&gt;
-  &lt;strong&gt;
-   특수문자가 들어간 File Download 시 error 발생 현상 (Jira , Confluence)
-  &lt;/strong&gt;
- &lt;/strong&gt;
-&lt;/h3&gt;
-&lt;ol&gt;
- &lt;li style=&quot;list-style-type: none;background-image: none;&quot;&gt;
-  &lt;ul&gt;
-   &lt;li&gt;
-    앞단의 Nginx 설정의 proxy_pass 설정 부분에서 / 제거 필요
-   &lt;/li&gt;
-   &lt;li&gt;
-    &lt;p class=&quot;p1&quot;&gt;
-     proxy_pass
-     &lt;span class=&quot;nolink&quot;&gt;
-      &lt;a class=&quot;external-link&quot; href=&quot;http://localhost:8080/&quot; rel=&quot;nofollow&quot;&gt;
-       http://localhost:8080/
-      &lt;/a&gt;
-     &lt;/span&gt;
-     ; =&amp;gt; proxy_pass
-     &lt;span class=&quot;nolink&quot;&gt;
-      &lt;a class=&quot;external-link&quot; href=&quot;http://localhost:8080&quot; rel=&quot;nofollow&quot;&gt;
-       http://localhost:8080
-      &lt;/a&gt;
-     &lt;/span&gt;
-     ;
-    &lt;/p&gt;
-   &lt;/li&gt;
-  &lt;/ul&gt;
- &lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&quot;id-8월AtlassianTroubleShooting정리-ConfluenceUpgrade후페이지권한관련문제발생현상&quot;&gt;
- &lt;strong&gt;
-  &lt;strong&gt;
-   Confluence Upgrade 후 페이지 권한 관련  문제 발생 현상
-  &lt;/strong&gt;
- &lt;/strong&gt;
-&lt;/h3&gt;
-&lt;ol&gt;
- &lt;li style=&quot;list-style-type: none;background-image: none;&quot;&gt;
-  &lt;ul&gt;
-   &lt;li&gt;
-    권한이 있는 페이지에 접속이 불가능하거나, 페이지 트리에서 보이지말아야 할 페이지가 보여짐
-   &lt;/li&gt;
-   &lt;li&gt;
-    Index Corruption 문제로써 Ancestor table Reindex 수행 필요
-    &lt;ul&gt;
-     &lt;li&gt;
-      DB 백업 후 다음 절차 수행
-     &lt;/li&gt;
-     &lt;li&gt;
-      &amp;lt;Confluence-URL&amp;gt;
-      &lt;span style=&quot;color: rgb(51,51,51);&quot;&gt;
-       /admin/permissions/pagepermsadmin.action
-      &lt;/span&gt;
-     &lt;/li&gt;
-     &lt;li&gt;
-      Rebuild ancetor table
-     &lt;/li&gt;
-     &lt;li&gt;
-      General Configuration - Cache Management 메뉴에서 Flush the
-      &lt;strong style=&quot;letter-spacing: 0.0px;&quot;&gt;
-       Inherited Content Permissions
-      &lt;/strong&gt;
-      &lt;span style=&quot;letter-spacing: 0.0px;&quot;&gt;
-       cache
-      &lt;/span&gt;
-     &lt;/li&gt;
-     &lt;li&gt;
-      Confluence 전체 Re-Indexing (General Configuration - Content Indexing)
-      &lt;ul&gt;
-       &lt;li&gt;
-        &lt;a class=&quot;external-link&quot; href=&quot;https://confluence.atlassian.com/confkb/detected-ancestors-table-corruption-error-in-confluence-6-5-or-later-939502322.html&quot; rel=&quot;nofollow&quot;&gt;
-         https://confluence.atlassian.com/confkb/detected-ancestors-table-corruption-error-in-confluence-6-5-or-later-939502322.html
-        &lt;/a&gt;
-       &lt;/li&gt;
-       &lt;li&gt;
-        &lt;a class=&quot;external-link&quot; href=&quot;https://confluence.atlassian.com/doc/rebuilding-the-ancestor-table-153948.html&quot; rel=&quot;nofollow&quot;&gt;
-         https://confluence.atlassian.com/doc/rebuilding-the-ancestor-table-153948.html
-        &lt;/a&gt;
-       &lt;/li&gt;
-      &lt;/ul&gt;
-     &lt;/li&gt;
-    &lt;/ul&gt;
-   &lt;/li&gt;
-  &lt;/ul&gt;
- &lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&quot;id-8월AtlassianTroubleShooting정리-SVGFile이Link로되어있을경우ConfluenceSpace가export되지않는현상&quot;&gt;
- &lt;strong&gt;
-  &lt;strong&gt;
-   SVG File이 Link로 되어있을 경우 Confluence Space가 export되지 않는 현상
-  &lt;/strong&gt;
- &lt;/strong&gt;
-&lt;/h3&gt;
-&lt;ol&gt;
- &lt;li style=&quot;list-style-type: none;background-image: none;&quot;&gt;
-  &lt;ul&gt;
-   &lt;li&gt;
-    &lt;p class=&quot;auto-cursor-target&quot;&gt;
-     종류는 두 가지가 있으며, 각각 버그로 등록 되어있음
-    &lt;/p&gt;
-    &lt;div class=&quot;code panel pdl conf-macro output-block&quot; data-hasbody=&quot;true&quot; data-macro-name=&quot;code&quot; style=&quot;border-width: 1px;&quot;&gt;
-     &lt;div class=&quot;codeContent panelContent pdl&quot;&gt;
-      &lt;pre class=&quot;syntaxhighlighter-pre&quot; data-syntaxhighlighter-params=&quot;brush: java; gutter: false; theme: Confluence&quot; data-theme=&quot;Confluence&quot;&gt;ERROR [Long running task: PDF Space Export] [core.task.longrunning.AbstractLongRunningTask] doInTransactionWithoutResult Error during PDF export -- url: /wiki/spaces/flyingpdf/doflyingpdf.action | traceId: 47206a07fe1e800d | userName: admin | referer: http://localhost/wiki/spaces/flyingpdf/flyingpdf.action?key=AT | action: doflyingpdf com.atlassian.confluence.importexport.ImportExportException: Exception while rendering the PDF document /var/atlassian/application-data/confluence/temp/pdfexport-20180828-280818-1027-70/AT-280818-1027-71.pdf at com.atlassian.confluence.extra.flyingpdf.FlyingSaucerXmlToPdfConverter.convertXhtmlToPdf(FlyingSaucerXmlToPdfConverter.java:104)&lt;/pre&gt;
-     &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;p class=&quot;auto-cursor-target&quot;&gt;
-     &lt;a class=&quot;external-link&quot; href=&quot;https://jira.atlassian.com/browse/CONFSERVER-31911&quot; rel=&quot;nofollow&quot;&gt;
-      https://jira.atlassian.com/browse/CONFSERVER-31911
-     &lt;/a&gt;
-    &lt;/p&gt;
-    &lt;div class=&quot;code panel pdl conf-macro output-block&quot; data-hasbody=&quot;true&quot; data-macro-name=&quot;code&quot; style=&quot;border-width: 1px;&quot;&gt;
-     &lt;div class=&quot;codeContent panelContent pdl&quot;&gt;
-      &lt;pre class=&quot;syntaxhighlighter-pre&quot; data-syntaxhighlighter-params=&quot;brush: java; gutter: false; theme: Confluence&quot; data-theme=&quot;Confluence&quot;&gt;WARN [Long running task: PDF Space Export] [confluence.extra.flyingpdf.ConfluenceExportUserAgent] getImageResource Could not retrieve image resource /wiki/download/attachments/235933350/sample1_car.svg?version=1&amp;amp;modificationDate=1511171810000&amp;amp;api=v2 during Confluence export&lt;/pre&gt;
-     &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;p class=&quot;auto-cursor-target&quot;&gt;
-     &lt;a class=&quot;external-link&quot; href=&quot;https://jira.atlassian.com/browse/CONFSERVER-26016&quot; rel=&quot;nofollow&quot;&gt;
-      https://jira.atlassian.com/browse/CONFSERVER-26016
-     &lt;/a&gt;
-    &lt;/p&gt;
-   &lt;/li&gt;
-   &lt;li&gt;
-    링크가 아닌 File and Images를 통해 업로드 시 export 가능
-   &lt;/li&gt;
-  &lt;/ul&gt;
- &lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&quot;id-8월AtlassianTroubleShooting정리-JiraDataCenterNode중하나에서한글검색이되지않는현상(7.6.6)&quot;&gt;
- &lt;strong&gt;
-  &lt;strong&gt;
-   Jira DataCenter Node 중 하나에서 한글 검색이 되지 않는 현상 (7.6.6)
-  &lt;/strong&gt;
- &lt;/strong&gt;
-&lt;/h3&gt;
-&lt;ol&gt;
- &lt;li style=&quot;list-style-type: none;background-image: none;&quot;&gt;
-  &lt;ul&gt;
-   &lt;li&gt;
-    동일하게 Search 메뉴에서 한글로 검색 시 특정 노드에서만 다음과 같은 에러가 발생
-    &lt;ul&gt;
-     &lt;li&gt;
-      Error in the JQL Query: The character 'U+0095' on line 1 at position 10 must be escaped. Use the escape '\u0095' instead. (line 1, character 10)
-     &lt;/li&gt;
-    &lt;/ul&gt;
-   &lt;/li&gt;
-   &lt;li&gt;
-    확인 시 모든 Jira Tomcat 설정은 동일하나, 문제가 되는 노드의 OS 버전이 타 노드보다 낮음
-   &lt;/li&gt;
-   &lt;li&gt;
-    해당 노드의 Jira 설정 백업 후, OS 재설치
-   &lt;/li&gt;
-   &lt;li&gt;
-    Jira 노드 복원 및 Clustering 후 해결 확인
-   &lt;/li&gt;
-  &lt;/ul&gt;
- &lt;/li&gt;
-&lt;/ol&gt;</description>
-        <pubDate>Mon, 10 Sep 2018 00:00:00 +0900</pubDate>
-        <link>https://tech.osci.kr/atlassian/2018/09/10/45749344/</link>
-        <guid isPermaLink="true">https://tech.osci.kr/atlassian/2018/09/10/45749344/</guid>
-        
-        <category>Atlassian</category>
-        
-        <category>TroubleShooting</category>
-        
-        
-        <category>Atlassian</category>
         
       </item>
     

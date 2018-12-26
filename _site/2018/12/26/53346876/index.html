@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+ <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+<title>11 ~ 12월 Atlassian TroubleShooting 정리</title>
+<meta name="title" content="11 ~ 12월 Atlassian TroubleShooting 정리" />
+<meta name="author" content="kjeon"/>
+<meta name="description" content="Active Directory의 그룹명 변경 시 연동된 Jira / Confluence의 권한 등에 반영되지 않는 현상 Jira / Confluence에 그룹명 변경 기능이 없기에 AD에서 그룹명 변경 후 Sync 시에 Jira / Confluence에는 새로운 그룹으로 생성됨 Atlassian Support의 공식적인 답변은 안정성을 위해 기본적으로 하나씩 직접 다시 권한을 부여하는 방법을 권장하나, 큰 인스턴스에서 현실적으로 불가능하기에 Staging에서 테스트 및 DB백업 후 다음 쿼리작업을 실행 Confluence UPDATE spacepermissions SET permgroupname = '&lt;New Group Name&gt;' WHERE permgroupname IN ('&lt;Old Group Name&gt;') AND spaceid..."/>
+
+<meta property="fb:app_id" content=""/>
+
+<meta property="og:site_name" content="오픈소스컨설팅 
+기술 블로그
+"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="11 ~ 12월 Atlassian TroubleShooting 정리"/>
+<meta property="og:description" content="Active Directory의 그룹명 변경 시 연동된 Jira / Confluence의 권한 등에 반영되지 않는 현상 Jira / Confluence에 그룹명 변경 기능이 없기에 AD에서 그룹명 변경 후 Sync 시에 Jira / Confluence에는 새로운 그룹으로 생성됨 Atlassian Support의 공식적인 답변은 안정성을 위해 기본적으로 하나씩 직접 다시 권한을 부여하는 방법을 권장하나, 큰 인스턴스에서 현실적으로 불가능하기에 Staging에서 테스트 및 DB백업 후 다음 쿼리작업을 실행 Confluence UPDATE spacepermissions SET permgroupname = '&lt;New Group Name&gt;' WHERE permgroupname IN ('&lt;Old Group Name&gt;') AND spaceid..."/>
+<meta property="og:url" content="https://tech.osci.kr/2018/12/26/53346876/"/>
+<meta property="og:image" content="/assets/images/53346876/0"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="11 ~ 12월 Atlassian TroubleShooting 정리"/>
+<meta name="twitter:description" content="Active Directory의 그룹명 변경 시 연동된 Jira / Confluence의 권한 등에 반영되지 않는 현상 Jira / Confluence에 그룹명 변경 기능이 없기에 AD에서 그룹명 변경 후 Sync 시에 Jira / Confluence에는 새로운 그룹으로 생성됨 Atlassian Support의 공식적인 답변은 안정성을 위해 기본적으로 하나씩 직접 다시 권한을 부여하는 방법을 권장하나, 큰 인스턴스에서 현실적으로 불가능하기에 Staging에서 테스트 및 DB백업 후 다음 쿼리작업을 실행 Confluence UPDATE spacepermissions SET permgroupname = '&lt;New Group Name&gt;' WHERE permgroupname IN ('&lt;Old Group Name&gt;') AND spaceid..."/>
+<meta name="twitter:label1" content="Written by"/>
+<meta name="twitter:data1" content="kjeon"/>
+<meta name="twitter:image:src" content="https://tech.osci.kr/assets/images/53346876/0"/>
+<meta name="naver-site-verification" content="11ec9086ec9292ebc8dc73f6224492f208b2007b"/>
+<meta name="google-site-verification" content="Q5w5X0R32gOG-1lBhFg0UxvXRNoQX-uOSPjxPI4sXH4" />
+
+<meta name="twitter:label2" content="Filed under"/>
+<meta name="twitter:data2" content=""/>
+
+
+
+<meta property="article:published_time" content="2018-12-26T00:00:00+09:00"/>
+
+
+<meta property="article:author" content="https://tech.osci.kr/authors/kjeon"/>
+
+<link href="https://tech.osci.kr/rss/" rel="alternate" type="application/rss+xml" title="RSS"/>
+<link href="/assets/favicon.png" rel="icon" type="image/png"/>
+<link href="/assets/apple-touch-icon.png" rel="apple-touch-icon" type="image/png"/>
+<link href="/assets/apple-touch-icon.png" rel="apple-touch-icon-precomposed" type="image/png"/>
+<link href="/assets/lib/normalize.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/css/monokai.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/lib/magnific-popup.min.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/css/screen.css" rel="stylesheet" type="text/css"/>
+
+</head>
+<body class="post-template">
+
+<div id="header">
+    <button id="menu-toggle" type="button">
+        <span class="sr-only">Toggle Navigation Menu</span>
+    </button>
+    <button id="search-toggle" type="button">
+        <span class="sr-only">Toggle Search Form</span>
+    </button>
+    <a href="/" id="logo">
+    </a>
+    <form id="search">
+        <input id="searchQueryEdit" name="q" type="search" placeholder="Search..." value="" />
+    </form>
+
+    <ul id="menu" class="nav">
+        <li class=" active "><a href="/">Blog</a></li>
+        <!--<li class=""><a href="/books/">Books</a></li>-->
+        <li class=""><a href="/about/">About</a></li>
+    </ul>
+</div><!-- #header -->
+
+
+<div id="wrapper">
+    <div id="fb-root"></div>
+<div id="navbar" class="container">
+    <h5><a id="link-back" href="/">Back to Posts</a></h5>
+    
+<ul id="shares">
+    
+    <li>
+        <a id="share-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://tech.osci.kr/2018/12/26/53346876/"
+           onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+            <span class="sr-only">Share to Facebook</span>
+        </a>
+    </li>
+    
+    
+    
+</ul>
+
+</div>
+
+<div id="cover" class="container"
+     style="background-image: url(/assets/images/53346876/0);">
+    <div>
+        <h1>11 ~ 12월 Atlassian TroubleShooting 정리</h1>
+        <p> </p>
+        <p class="right" style="opacity: 0.5">
+            
+        </p>
+        
+
+
+    </div>
+</div>
+
+<div id="content" class="container post" role="main">
+    <div id="post-content"><h1 id="id-11~12월AtlassianTroubleShooting정리-ActiveDirectory의그룹명변경시연동된Jira/Confluence의권한등에반영되지않는현상">
+ <strong>
+  Active Directory의 그룹명 변경 시 연동된 Jira / Confluence의 권한 등에 반영되지 않는 현상
+ </strong>
+</h1>
+<ol>
+ <li style="list-style-type: none;background-image: none;">
+  <ul>
+   <li>
+    Jira / Confluence에 그룹명 변경 기능이 없기에 AD에서 그룹명 변경 후 Sync 시에 Jira / Confluence에는 새로운 그룹으로 생성됨
+   </li>
+   <li>
+    <p class="auto-cursor-target">
+     Atlassian Support의 공식적인 답변은 안정성을 위해 기본적으로 하나씩 직접 다시 권한을 부여하는 방법을 권장하나, 큰 인스턴스에서 현실적으로 불가능하기에 Staging에서 테스트 및 DB백업 후 다음 쿼리작업을 실행
+    </p>
+    <div class="code panel pdl conf-macro output-block" data-hasbody="true" data-macro-name="code" style="border-width: 1px;">
+     <div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;">
+      <b>
+       Confluence
+      </b>
+     </div>
+     <div class="codeContent panelContent pdl">
+      <pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">UPDATE spacepermissions
+SET permgroupname = '&lt;New Group Name&gt;'
+WHERE permgroupname IN ('&lt;Old Group Name&gt;')
+AND spaceid IS NULL;
+ 
+ 
+UPDATE spacepermissions
+SET permgroupname = '&lt;New Group Name&gt;'
+WHERE permgroupname IN ('&lt;Old Group Name&gt;')
+AND spaceid IS NOT NULL;
+ 
+ 
+UPDATE content_perm
+SET groupname = '&lt;New Group Name&gt;'
+WHERE groupname IN ('&lt;Old Group Name&gt;');</pre>
+     </div>
+    </div>
+    <hr/>
+    <div class="code panel pdl conf-macro output-block" data-hasbody="true" data-macro-name="code" style="border-width: 1px;">
+     <div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;">
+      <b>
+       Jira Postgresql
+      </b>
+     </div>
+     <div class="codeContent panelContent pdl">
+      <pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">UPDATE cwd_group SET group_name=REPLACE(group_name,"&lt;old-group-name&gt;","&lt;new-group-name&gt;") WHERE INSTR(group_name, "&lt;old-group-name&gt;") &gt; 0
+UPDATE cwd_group SET lower_group_name=REPLACE(lower_group_name,"&lt;old-group-name&gt;","&lt;new-group-name&gt;") WHERE INSTR(lower_group_name, "&lt;old-group-name&gt;") &gt; 0
+UPDATE cwd_membership SET parent_name=REPLACE(parent_name,"&lt;old-group-name&gt;","&lt;new-group-name&gt;") WHERE INSTR(parent_name, "&lt;old-group-name&gt;") &gt; 0
+UPDATE cwd_membership SET lower_parent_name=REPLACE(lower_parent_name,"&lt;old-group-name&gt;","&lt;new-group-name&gt;") WHERE INSTR(lower_parent_name, "&lt;old-group-name&gt;") &gt; 0
+UPDATE filtersubscription SET groupname=REPLACE(groupname,"&lt;old-group-name&gt;","&lt;new-group-name&gt;") WHERE INSTR(groupname, "&lt;old-group-name&gt;") &gt; 0
+UPDATE jiraaction SET actionlevel=REPLACE(actionlevel,"&lt;old-group-name&gt;","&lt;new-group-name&gt;") WHERE INSTR(actionlevel, "&lt;old-group-name&gt;") &gt; 0
+UPDATE notification SET notif_parameter=REPLACE(notif_parameter,"&lt;old-group-name&gt;","&lt;new-group-name&gt;") WHERE INSTR(notif_parameter, "&lt;old-group-name&gt;") &gt; 0
+UPDATE projectroleactor SET ROLETYPEPARAMETER=REPLACE(ROLETYPEPARAMETER,"&lt;old-group-name&gt;","&lt;new-group-name&gt;") WHERE INSTR(ROLETYPEPARAMETER, "&lt;old-group-name&gt;") &gt; 0
+UPDATE searchrequest SET groupname=REPLACE(groupname,"&lt;old-group-name&gt;","&lt;new-group-name&gt;") WHERE INSTR(groupname, "&lt;old-group-name&gt;") &gt; 0
+UPDATE searchrequest SET reqcontent=REPLACE(reqcontent,"&lt;old-group-name&gt;","&lt;new-group-name&gt;") WHERE INSTR(reqcontent, "&lt;old-group-name&gt;") &gt; 0
+UPDATE sharepermissions SET PARAM1=REPLACE(PARAM1,"&lt;old-group-name&gt;","&lt;new-group-name&gt;") WHERE INSTR(PARAM1, "&lt;old-group-name&gt;") &gt; 0
+UPDATE worklog SET grouplevel=REPLACE(grouplevel,"&lt;old-group-name&gt;","&lt;new-group-name&gt;") WHERE INSTR(grouplevel, "&lt;old-group-name&gt;") &gt; 0
+
+UPDATE globalpermissionentry gpe1
+SET group_id = 'NEW_GROUP'
+WHERE gpe1.group_id = 'OLD_GROUP'
+AND NOT EXISTS
+(
+    SELECT *
+    FROM globalpermissionentry gpe2
+    WHERE gpe2.permission = gpe1.permission
+    AND gpe2.group_id = 'NEW_GROUP'
+)
+
+UPDATE licenserolesgroup lrg1
+SET group_id = 'NEW_GROUP'
+WHERE lrg1.group_id = 'OLD_GROUP'
+AND NOT EXISTS
+(
+    SELECT *
+    FROM licenserolesgroup lrg2
+    WHERE lrg2.license_role_name = lrg1.license_role_name
+    AND lrg2.group_id = 'NEW_GROUP'
+)
+
+UPDATE projectroleactor pra1
+SET roletypeparameter = 'NEW_GROUP'
+WHERE pra1.roletypeparameter = 'OLD_GROUP'
+AND pra1.roletype = 'atlassian-group-role-actor'
+AND NOT EXISTS
+(
+    SELECT *
+    FROM projectroleactor pra2
+    WHERE pra2.pid = pra1.pid
+    AND pra2.projectroleid = pra1.projectroleid
+    AND pra2.roletypeparameter = 'NEW_GROUP'
+    AND pra2.roletype = 'atlassian-group-role-actor'
+)
+
+UPDATE schemeissuesecurities sis1
+SET sec_parameter = 'NEW_GROUP'
+WHERE sis1.sec_parameter = 'OLD_GROUP'
+AND sis1.sec_type = 'group'
+AND NOT EXISTS
+(
+    SELECT *
+    FROM schemeissuesecurities sis2
+    WHERE sis2.scheme = sis1.scheme
+    AND sis2.security = sis1.security
+    AND sis2.sec_parameter = 'NEW_GROUP'
+    AND sis2.sec_type = 'group'
+)
+
+UPDATE schemepermissions sp1
+SET perm_parameter = 'NEW_GROUP'
+WHERE sp1.perm_parameter = 'OLD_GROUP'
+AND sp1.perm_type = 'group'
+AND NOT EXISTS
+(
+    SELECT *
+    FROM schemepermissions sp2
+    WHERE sp2.scheme = sp1.scheme
+    AND (sp2.permission = sp1.permission OR sp2.permission_key = sp1.permission_key)
+    AND sp2.perm_parameter = 'NEW_GROUP'
+    AND sp2.perm_type = 'group'
+)
+
+UPDATE sharepermissions sp1
+SET param1 = 'NEW_GROUP'
+WHERE sp1.param1 = 'OLD_GROUP'
+AND sp1.sharetype = 'group'
+AND NOT EXISTS
+(
+    SELECT *
+    FROM sharepermissions sp2
+    WHERE sp2.entityid = sp1.entityid
+    AND sp2.entitytype = sp1.entitytype
+    AND sp2.param1 = 'NEW_GROUP'
+    AND sp2.sharetype = 'group'
+)
+
+SELECT *
+FROM schemeissuesecurities
+WHERE sec_type = 'groupCF'
+
+SELECT *
+FROM schemepermissions
+WHERE perm_type = 'groupCF'
+
+select * from customfieldvalue where stringvalue like '%&lt;groupname&gt;%';
+select * from customfieldoption where customvalue like '%&lt;groupname&gt;%';
+select * from customfield where id = '&lt;customfield&gt;';</pre>
+     </div>
+    </div>
+    <hr/>
+    <div class="code panel pdl conf-macro output-block" data-hasbody="true" data-macro-name="code" style="border-width: 1px;">
+     <div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;">
+      <b>
+       Jira Mysql
+      </b>
+     </div>
+     <div class="codeContent panelContent pdl">
+      <pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">UPDATE cwd_group SET group_name=REPLACE(group_name,"&lt;Old Group Name&gt;","&lt;New Group Name&gt;") WHERE INSTR(group_name, "&lt;Old Group Name&gt;") &gt; 0
+UPDATE cwd_group SET lower_group_name=REPLACE(lower_group_name,"&lt;Old Group Name&gt;","&lt;New Group Name&gt;") WHERE INSTR(lower_group_name, "&lt;Old Group Name&gt;") &gt; 0
+UPDATE cwd_membership SET parent_name=REPLACE(parent_name,"&lt;Old Group Name&gt;","&lt;New Group Name&gt;") WHERE INSTR(parent_name, "&lt;Old Group Name&gt;") &gt; 0
+UPDATE cwd_membership SET lower_parent_name=REPLACE(lower_parent_name,"&lt;Old Group Name&gt;","&lt;New Group Name&gt;") WHERE INSTR(lower_parent_name, "&lt;Old Group Name&gt;") &gt; 0
+UPDATE filtersubscription SET groupname=REPLACE(groupname,"&lt;Old Group Name&gt;","&lt;New Group Name&gt;") WHERE INSTR(groupname, "&lt;Old Group Name&gt;") &gt; 0
+UPDATE jiraaction SET actionlevel=REPLACE(actionlevel,"&lt;Old Group Name&gt;","&lt;New Group Name&gt;") WHERE INSTR(actionlevel, "&lt;Old Group Name&gt;") &gt; 0
+UPDATE notification SET notif_parameter=REPLACE(notif_parameter,"&lt;Old Group Name&gt;","&lt;New Group Name&gt;") WHERE INSTR(notif_parameter, "&lt;Old Group Name&gt;") &gt; 0
+UPDATE projectroleactor SET ROLETYPEPARAMETER=REPLACE(ROLETYPEPARAMETER,"&lt;Old Group Name&gt;","&lt;New Group Name&gt;") WHERE INSTR(ROLETYPEPARAMETER, "&lt;Old Group Name&gt;") &gt; 0
+UPDATE searchrequest SET groupname=REPLACE(groupname,"&lt;Old Group Name&gt;","&lt;New Group Name&gt;") WHERE INSTR(groupname, "&lt;Old Group Name&gt;") &gt; 0
+UPDATE searchrequest SET reqcontent=REPLACE(reqcontent,"&lt;Old Group Name&gt;","&lt;New Group Name&gt;") WHERE INSTR(reqcontent, "&lt;Old Group Name&gt;") &gt; 0
+UPDATE sharepermissions SET PARAM1=REPLACE(PARAM1,"&lt;Old Group Name&gt;","&lt;New Group Name&gt;") WHERE INSTR(PARAM1, "&lt;Old Group Name&gt;") &gt; 0
+UPDATE worklog SET grouplevel=REPLACE(grouplevel,"&lt;Old Group Name&gt;","&lt;New Group Name&gt;") WHERE INSTR(grouplevel, "&lt;Old Group Name&gt;") &gt; 0
+ 
+ 
+UPDATE globalpermissionentry gpe1
+SET gpe1.group_id = '&lt;New Group Name&gt;'
+WHERE gpe1.group_id = '&lt;Old Group Name&gt;'
+AND NOT EXISTS
+(select * from (
+    SELECT *
+    FROM globalpermissionentry gpe2
+    WHERE gpe2.permission = (select permission from globalpermissionentry gpe3 where gpe3.group_id = '&lt;Old Group Name&gt;')
+    AND gpe2.group_id = '&lt;New Group Name&gt;'
+) as temp_table );
+  
+  
+UPDATE licenserolesgroup lrg1
+SET lrg1.group_id = '&lt;New Group Name&gt;'
+WHERE lrg1.group_id = '&lt;Old Group Name&gt;'
+AND NOT EXISTS
+(select * from (
+    SELECT *
+    FROM licenserolesgroup lrg2
+    WHERE lrg2.license_role_name = (select license_role_name from licenserolesgroup lrg3 where lrg3.group_id = '&lt;Old Group Name&gt;')
+    AND lrg2.group_id = '&lt;New Group Name&gt;'
+) as temp_table );
+  
+  
+UPDATE projectroleactor pra1
+SET roletypeparameter = '&lt;New Group Name&gt;'
+WHERE pra1.roletypeparameter = '&lt;Old Group Name&gt;'
+AND pra1.roletype = 'atlassian-group-role-actor'
+AND NOT EXISTS
+(
+select *
+from (
+SELECT pra2.*
+FROM projectroleactor pra2
+Join projectroleactor pra3
+on pra2.pid = pra3.pid and pra2.projectroleid = pra3.projectroleid
+AND pra2.roletypeparameter = '&lt;New Group Name&gt;'AND pra2.roletype = 'atlassian-group-role-actor'
+)as aaa
+);
+  
+  
+UPDATE schemeissuesecurities sis1
+SET sec_parameter = '&lt;New Group Name&gt;'
+WHERE sis1.sec_parameter = '&lt;Old Group Name&gt;'
+AND sis1.sec_type = 'group'
+AND NOT EXISTS
+(
+SELECT *
+FROM (
+SELECT sis2.*
+FROM schemeissuesecurities sis2
+JOIN schemeissuesecurities sis3
+ON sis2.scheme = sis3.scheme
+AND sis2.security = sis3.security
+AND sis2.sec_parameter = '&lt;New Group Name&gt;'
+AND sis2.sec_type = 'group'
+) as aaa
+);
+  
+  
+UPDATE schemepermissions sp1
+SET perm_parameter = '&lt;New Group Name&gt;'
+WHERE sp1.perm_parameter = '&lt;Old Group Name&gt;'
+AND sp1.perm_type = 'group'
+AND NOT EXISTS
+(
+SELECT *
+FROM (
+SELECT sp2.*
+FROM schemepermissions sp2
+JOIN schemepermissions sp3
+ON sp2.scheme = sp3.scheme
+AND sp2.permission = sp3.permission
+AND sp2.perm_parameter = '&lt;New Group Name&gt;'
+AND sp2.perm_type = 'group'
+) as aaa
+);
+  
+  
+UPDATE sharepermissions sp1
+SET param1 = '&lt;New Group Name&gt;'
+WHERE sp1.param1 = '&lt;Old Group Name&gt;'
+AND sp1.sharetype = 'group'
+AND NOT EXISTS
+(
+SELECT *
+FROM (
+SELECT sp2.*
+FROM sharepermissions sp2
+JOIN sharepermissions sp3
+ON sp2.entityid = sp3.entityid
+AND sp2.entitytype = sp3.entitytype
+AND sp2.param1 = '&lt;New Group Name&gt;'
+AND sp2.sharetype = 'group'
+) as aaa
+);</pre>
+     </div>
+    </div>
+    <hr/>
+   </li>
+   <li>
+    <p class="auto-cursor-target">
+     Jira의 View All Board 클릭 시 에러 해결을 위해 추가로 다음의 작업이 필요
+    </p>
+    <div class="code panel pdl conf-macro output-block" data-hasbody="true" data-macro-name="code" style="border-width: 1px;">
+     <div class="codeContent panelContent pdl">
+      <pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">select distinct `KEY` from AO_60DB71_BOARDADMINS where TYPE = 'GROUP' and `KEY` not in (select group_name from cwd_group);
+select NAME, ID  from AO_60DB71_RAPIDVIEW WHERE ID IN (select RAPID_VIEW_ID from AO_60DB71_BOARDADMINS WHERE `KEY` = '&lt;1번 쿼리에서 출력된 그룹명&gt;');
+http://&lt;Jira BaseURL&gt;/secure/RapidView.jspa?rapidView=&lt;1번 쿼리에서 출력된 ID&gt;&amp;tab=filter
+
+Administrators 클릭 및 edit으로 해당 그룹 삭제</pre>
+     </div>
+    </div>
+    <p class="auto-cursor-target">
+     <a class="external-link" href="https://jira.atlassian.com/browse/JSWSERVER-15924" rel="nofollow">
+      https://jira.atlassian.com/browse/JSWSERVER-15924
+     </a>
+    </p>
+   </li>
+  </ul>
+ </li>
+</ol>
+<h1 id="id-11~12월AtlassianTroubleShooting정리-Jira업그레이드후,HealthCheckIndexing에러및Re-index불가능한현상">
+ <strong>
+  Jira 업그레이드 후, Health Check Indexing에러 및 Re-index 불가능한 현상
+ </strong>
+</h1>
+<ol>
+ <li style="list-style-type: none;background-image: none;">
+  <ul>
+   <li>
+    Health check에 다음과 같은 메세지가 출력되며, 인덱싱이 실패함
+   </li>
+   <li>
+    The issue index is inconsistent with the database state. Database has (898,665) issues but the index has (898,400) issues
+   </li>
+   <li>
+    <p class="auto-cursor-target">
+     Jira 종료 및 DB백업 후 쿼리 수행 (Update의 CREATED 부분에는 임의의 날짜를 입력
+    </p>
+    <div class="code panel pdl conf-macro output-block" data-hasbody="true" data-macro-name="code" style="border-width: 1px;">
+     <div class="codeContent panelContent pdl">
+      <pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">select distinct issueid from changegroup where CREATED is null;
+update changegroup set CREATED='2015-01-01' where CREATED is null;</pre>
+     </div>
+    </div>
+    <p class="auto-cursor-target">
+     <a class="external-link" href="https://confluence.atlassian.com/jirakb/cloning-issues-or-indexing-jira-throws-indexing-completed-with-1-errors-718669171.html" rel="nofollow">
+      https://confluence.atlassian.com/jirakb/cloning-issues-or-indexing-jira-throws-indexing-completed-with-1-errors-718669171.html
+     </a>
+    </p>
+   </li>
+  </ul>
+ </li>
+</ol>
+<h1 id="id-11~12월AtlassianTroubleShooting정리-Jira의Log에다음과같은Warning이많이발생하는경우">
+ <strong>
+  Jira의 Log에 다음과 같은 Warning이 많이 발생하는 경우
+ </strong>
+</h1>
+<ol>
+ <li style="list-style-type: none;background-image: none;">
+  <ul>
+   <li>
+    2018-12-19 03:17:17,228 http-nio-8080-exec-14 WARN admin 197x1172x1 1z4wpv 192.168.0.139 /secure/WorkflowUIDispatcher.jspa [c.i.jmcf.fields.AbstractTransitionSearchField] com.innovalog.jmcf.fields.ActionExecutionTimeField: could not find transition name or ID in custom field description for miscTran Navigate to the following URL to edit the custom field description:
+    <a class="external-link" href="http://192.168.1.118:8080/secure/admin/EditCustomField!default.jspa?id=10201" rel="nofollow">
+     http://192.168.1.118:8080/secure/admin/EditCustomField!default.jspa?id=10201
+    </a>
+   </li>
+   <li>
+    Misc Custom Field Plugin사용 시 Description을 제대로 기입하지 않아 발생하는 문제로 다음처럼 기입 시 해결됨
+   </li>
+   <li>
+    <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size">
+     <img src="/assets/images/53346876/0"/>
+    </span>
+   </li>
+   <li>
+    <a class="external-link" href="https://innovalog.atlassian.net/wiki/spaces/JMCF/overview#JIRAMiscCustomFields-transitiondatefield" rel="nofollow">
+     https://innovalog.atlassian.net/wiki/spaces/JMCF/overview#JIRAMiscCustomFields-transitiondatefield
+    </a>
+   </li>
+  </ul>
+ </li>
+</ol></div>
+
+    <div id="post-footer">
+        
+        <a id="post-author" href="/authors/kjeon/">
+            <div id="author-image" style="background-image:url(/files/authors/wjsrkqdlf.png);">
+                <span class="sr-only">kjeon's profile image</span>
+            </div>
+            <p id="author-name">kjeon</p>
+        </a>
+        <p id="post-date">2018-12-26</p>
+        <a id="post-more" href="/authors/kjeon/">
+            <span>Read more posts by this author</span>
+        </a>
+    </div>
+</div>
+
+<div id="post-links" class="container">
+    
+    
+        <div id="post-prev"
+             style="background-image: url(/assets/images/51741685/0);">
+            <div>
+                <h3><a href="/2018/12/16/51741685/">Scouter로 Confluence 모니터링!</a></h3>
+                <p>YOU MIGHT ENJOY</p>
+            </div>
+        </div>
+    
+    
+    
+</div>
+
+<div id="lightbox">
+    <div id="lightbox-image"></div>
+</div>
+
+
+    <div class="clearfix"></div>
+
+    <a href="#" id="back-to-top"></a>
+</div>
+
+<div id="footer" class="container-fluid">
+    <ul id="links">
+        
+        <li>
+            <a id="link-github" href="http://github.com/opensourceconsulting" target="_blank">
+                <span class="sr-only">github</span>
+            </a>
+        </li>
+        
+        
+        <li>
+            <a id="link-facebook" href="http://facebook.com/osckorea" target="_blank">
+                <span class="sr-only">facebook</span>
+            </a>
+        </li>
+        
+        
+        <li>
+            <a id="link-rss" href="/rss" target="_blank">
+                <span class="sr-only">rss</span>
+            </a>
+        </li>
+    </ul>
+    <p id="copyright">
+        <a href="https://tech.osci.kr">&copy;2018 OpenSourceConsulting</a>
+        All rights reserved.
+    </p>
+</div><!--#footer-->
+
+
+<script src="/assets/lib/jquery-1.12.0.min.js"></script>
+<script src="/assets/lib/jquery.magnific-popup.min.js"></script>
+<script src="/assets/js/index.js"></script>
+
+
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-39977834-4', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+
+
+
+    
+    <!-- <script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '',
+            xfbml      : true,
+            version    : 'v2.8'
+        });
+        FB.Canvas.getPageInfo(
+            function(info) {
+                alert('Width: ' + info.clientWidth + ' Height: ' + info.clientHeight);
+            }
+        );
+        FB.AppEvents.logPageView();
+    };
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.8";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script> -->
+
+<!--
+<script>
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.8";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+-->
+
+    
+
+    
+
+    
+
+</body>
+</html>
