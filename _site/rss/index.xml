@@ -9,9 +9,285 @@ Sharing Tech. Growing Together.
 </description>
     <link>https://tech.osci.kr/</link>
     <atom:link href="https://tech.osci.kr/rss" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 08 Jan 2019 11:14:47 +0900</pubDate>
-    <lastBuildDate>Tue, 08 Jan 2019 11:14:47 +0900</lastBuildDate>
+    <pubDate>Tue, 08 Jan 2019 11:15:19 +0900</pubDate>
+    <lastBuildDate>Tue, 08 Jan 2019 11:15:19 +0900</lastBuildDate>
     <generator>Jekyll v3.7.4</generator>
+    
+      <item>
+        <title>Spacewalk latest Docker image 제작기</title>
+        <description>&lt;h1 id=&quot;SpacewalklatestDockerimage제작기-SpacewalklatestDockerimage제작기&quot;&gt;
+ Spacewalk latest Docker image 제작기
+&lt;/h1&gt;
+&lt;hr/&gt;
+&lt;p&gt;
+ 안녕하세요? 오픈소스컨설팅 한철희 입니다.
+&lt;/p&gt;
+&lt;p&gt;
+ 고객사의 요청으로 Spacewalk 로 docker container 형태로 운영을 해야되는 요건이 생겨서, image를 만들기 시작 하였습니다...... ;(
+&lt;/p&gt;
+&lt;h1 id=&quot;SpacewalklatestDockerimage제작기-Spacewalk란?&quot;&gt;
+ Spacewalk 란?
+&lt;/h1&gt;
+&lt;hr/&gt;
+&lt;p&gt;
+ Spacewalk는 오픈 소스 Linux 시스템 관리 솔루션입니다. Red Hat Satellite 제품이 파생 된 업스트림 커뮤니티 프로젝트입니다.
+&lt;/p&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;
+ &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
+  &lt;img src=&quot;/assets/images/55869620/0&quot;/&gt;
+  &lt;img class=&quot;confluence-embedded-image confluence-external-resource&quot; data-image-src=&quot;https://chhanz.github.io/assets/images/post/2019-01-07-spacewalkdocker/1.png&quot; height=&quot;550&quot; src=&quot;https://chhanz.github.io/assets/images/post/2019-01-07-spacewalkdocker/1.png&quot;/&gt;
+ &lt;/span&gt;
+ &lt;br/&gt;
+ &lt;a class=&quot;external-link&quot; href=&quot;https://spacewalkproject.github.io/index.html&quot; rel=&quot;nofollow&quot;&gt;
+  @Go to detail
+ &lt;/a&gt;
+ &lt;br/&gt;
+ &lt;a class=&quot;external-link&quot; href=&quot;https://www.slideshare.net/ienvyou/ss-31321783&quot; rel=&quot;nofollow&quot;&gt;
+  @[오픈소스컨설팅]클라우드자동화 및 운영효율화방안
+ &lt;/a&gt;
+&lt;/p&gt;
+&lt;h1 id=&quot;SpacewalklatestDockerimage제작기-쉽게가자...&quot;&gt;
+ 쉽게 가자...
+&lt;/h1&gt;
+&lt;hr/&gt;
+&lt;p&gt;
+ docker 의 장점이 뭡니까! docker hub의 많은 offiaical image 아닙니까!
+&lt;/p&gt;
+&lt;p&gt;
+ 열심히 docker image를 찾아보았습니다. 하지만...
+&lt;/p&gt;
+&lt;div class=&quot;code panel pdl conf-macro output-block&quot; data-hasbody=&quot;true&quot; data-macro-name=&quot;code&quot; style=&quot;border-width: 1px;&quot;&gt;
+ &lt;div class=&quot;codeContent panelContent pdl&quot;&gt;
+  &lt;pre class=&quot;syntaxhighlighter-pre&quot; data-syntaxhighlighter-params=&quot;brush: java; gutter: true; theme: Confluence&quot; data-theme=&quot;Confluence&quot;&gt;# docker search spacewalk
+INDEX       NAME                                            DESCRIPTION                                     STARS     OFFICIAL   AUTOMATED
+docker.io   docker.io/bashell/spacewalk                     Spacewalk Docker Image                          7                    [OK]
+docker.io   docker.io/ruo91/spacewalk                       Spacewalk is an open source Linux systems ...   4                    [OK]
+docker.io   docker.io/pajinek/docker-spacewalk              Spacewalk in Docker (without systemd)           3                    [OK]
+docker.io   docker.io/egonzalez90/spacewalk                 Spacewalk docker image                          1                    [OK]&lt;/pre&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ OFFICIAL 은 없고, 그나마 STARS 는 7개 뿐이고... 내가 만들어야 겠다... ;) 이렇게 시작 되었습니다.
+&lt;/p&gt;
+&lt;h1 id=&quot;SpacewalklatestDockerimage제작기-Dockerimage를만들어보자!&quot;&gt;
+ Docker image 를 만들어보자!
+&lt;/h1&gt;
+&lt;hr/&gt;
+&lt;p&gt;
+ 먼저 참고할 Dockerfile 은 docker hub 에서 가져왔습니다. &amp;gt; https://bitbucket.org/bashell-com/spacewalk
+&lt;/p&gt;
+&lt;p&gt;
+ Dockerfile 은 아래와 같이 수정하였습니다.
+&lt;/p&gt;
+&lt;div class=&quot;code panel pdl conf-macro output-block&quot; data-hasbody=&quot;true&quot; data-macro-name=&quot;code&quot; style=&quot;border-width: 1px;&quot;&gt;
+ &lt;div class=&quot;codeContent panelContent pdl&quot;&gt;
+  &lt;pre class=&quot;syntaxhighlighter-pre&quot; data-syntaxhighlighter-params=&quot;brush: java; gutter: true; theme: Confluence&quot; data-theme=&quot;Confluence&quot;&gt;# Dockerfile - Spacewalk
+#
+# - Build
+#
+# docker build --rm -t spacewalk .
+#
+# - Run
+# docker run --privileged=true -d --name=&quot;spacewalk&quot; -p 80:80 -p 443:443 spacewalk
+
+# 1. Base images
+FROM     centos:6
+MAINTAINER chhanz &amp;lt;chhan@osci.kr&amp;gt;
+
+# 2. Set the environment variable
+WORKDIR /opt
+
+# 3. Add the epel, spacewalk, jpackage, supervisord
+ADD conf/group_spacewalkproject-epel6-addons-epel-6.repo /etc/yum.repos.d/epel6-addons-epel-6.repo
+ADD conf/group_spacewalkproject-java-packages-epel-7.repo /etc/yum.repos.d/java-packages-epel-7.repo
+RUN yum install -y epel-release \
+ &amp;amp;&amp;amp; rpm -Uvh https://copr-be.cloud.fedoraproject.org/results/@spacewalkproject/spacewalk-2.8/epel-6-x86_64/00736372-spacewalk-repo/spacewalk-repo-2.8-11.el6.noarch.rpm \
+ &amp;amp;&amp;amp; yum check-update ; yum upgrade -y \
+ &amp;amp;&amp;amp; yum install -y spacewalk-setup-postgresql spacewalk-postgresql tomcat-native python-setuptools python-pip \
+ &amp;amp;&amp;amp; yum clean all \
+ &amp;amp;&amp;amp; pip install supervisor &amp;amp;&amp;amp; pip install --upgrade meld3==0.6.10 &amp;amp;&amp;amp; mkdir /etc/supervisord.d \
+ &amp;amp;&amp;amp; rm -rf /root/.cache \
+ &amp;amp;&amp;amp; cat /usr/share/zoneinfo/Asia/Seoul &amp;gt; /etc/localtime
+
+# 4. Install supervisord config
+ADD conf/supervisord.conf /etc/supervisord.d/supervisord.conf
+
+# 5. Install spacewalk initial and running scripts
+ADD conf/answer.txt   /opt/answer.txt
+ADD conf/spacewalk.sh /opt/spacewalk.sh
+
+# 6. Start supervisord
+CMD [&quot;/usr/bin/supervisord&quot;, &quot;-c&quot;, &quot;/etc/supervisord.d/supervisord.conf&quot;]
+
+# System Log
+VOLUME /var/log
+
+# PostgreSQL Data
+VOLUME /var/lib/pgsql/data
+
+# RPM repository
+VOLUME /var/satellite
+
+# Bootstrap directory
+VOLUME /var/www/html/pub
+
+# Port
+EXPOSE 80 443&lt;/pre&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code&gt;&lt;br/&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;
+ 수정된 내용은 아래와 같습니다.
+&lt;/p&gt;
+&lt;p style=&quot;margin-left: 30.0px;&quot;&gt;
+ 1. Update Spacewalk (Spacewalk 2.6 &amp;gt; Spacewalk 2.8)
+&lt;/p&gt;
+&lt;p style=&quot;margin-left: 30.0px;&quot;&gt;
+ 2. Spacewalk 2.8 Repository 로 변경
+&lt;/p&gt;
+&lt;p style=&quot;margin-left: 30.0px;&quot;&gt;
+ 3. spacewalk-setup 에 필요한 Answer file 을 최신버전의 요건에 맞게 수정하였습니다.
+&lt;/p&gt;
+&lt;p style=&quot;margin-left: 30.0px;&quot;&gt;
+ 4. Container 로 실행할때, Spacewalk 가 정상적으로 시작되는지 확인이 가능하도록 내부 Script 를 수정하였습니다.
+&lt;/p&gt;
+&lt;p style=&quot;margin-left: 30.0px;&quot;&gt;
+ 5. supervisord 를 통해, Spacewalk 를 시작하는데 해당 Log 를 debug 수준으로 설정해서 상태를 확인하는 것이 더욱 쉽게 만들었습니다.
+&lt;/p&gt;
+&lt;p style=&quot;margin-left: 30.0px;&quot;&gt;
+ 6. localtime 을 Asia/Seoul 으로 설정 하였습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;
+ 위와 같이 수정한 Dockerfile 를 Build 합니다.
+&lt;/p&gt;
+&lt;h1 id=&quot;SpacewalklatestDockerimage제작기-Build&quot;&gt;
+ Build
+&lt;/h1&gt;
+&lt;hr/&gt;
+&lt;p&gt;
+ Dockerfile 및 image 에 추가될 file 이 있는 Directory 에서 Build 를 진행합니다.
+&lt;/p&gt;
+&lt;div class=&quot;code panel pdl conf-macro output-block&quot; data-hasbody=&quot;true&quot; data-macro-name=&quot;code&quot; style=&quot;border-width: 1px;&quot;&gt;
+ &lt;div class=&quot;codeContent panelContent pdl&quot;&gt;
+  &lt;pre class=&quot;syntaxhighlighter-pre&quot; data-syntaxhighlighter-params=&quot;brush: java; gutter: true; theme: Confluence&quot; data-theme=&quot;Confluence&quot;&gt;# docker build --rm -t spacewalk .&lt;/pre&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;br/&gt;&lt;/pre&gt;
+&lt;p&gt;
+ 많은 시간이 소요되면서 Build 가 진행 됩니다.
+&lt;/p&gt;
+&lt;div class=&quot;code panel pdl conf-macro output-block&quot; data-hasbody=&quot;true&quot; data-macro-name=&quot;code&quot; style=&quot;border-width: 1px;&quot;&gt;
+ &lt;div class=&quot;codeContent panelContent pdl&quot;&gt;
+  &lt;pre class=&quot;syntaxhighlighter-pre&quot; data-syntaxhighlighter-params=&quot;brush: java; gutter: true; theme: Confluence&quot; data-theme=&quot;Confluence&quot;&gt;# docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+spacewalk           latest             f0e26b8230ad        13 days ago         1.04 GB&lt;/pre&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code&gt;&lt;br/&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;
+ 위와 같이 Build 가 완료 되었습니다.
+&lt;/p&gt;
+&lt;h1 id=&quot;SpacewalklatestDockerimage제작기-Run&quot;&gt;
+ Run
+&lt;/h1&gt;
+&lt;hr/&gt;
+&lt;p&gt;
+ Build 가 된 이미지를 실행합니다. 먼저 Container 가 종료되고, 제거가 되더라도 Spacewalk 데이터를 보존 할 수 있게 Volume 으로 사용될 경로를 생성합니다.
+&lt;/p&gt;
+&lt;div class=&quot;code panel pdl conf-macro output-block&quot; data-hasbody=&quot;true&quot; data-macro-name=&quot;code&quot; style=&quot;border-width: 1px;&quot;&gt;
+ &lt;div class=&quot;codeContent panelContent pdl&quot;&gt;
+  &lt;pre class=&quot;syntaxhighlighter-pre&quot; data-syntaxhighlighter-params=&quot;brush: java; gutter: true; theme: Confluence&quot; data-theme=&quot;Confluence&quot;&gt;mkdir -p /data/var/lib/pgsql/data
+mkdir -p /data/var/satellite
+mkdir -p /data/var/www/html/pub
+mkdir -p /data/var/log/tomcat6
+mkdir -p /data/var/log/httpd
+mkdir -p /data/var/log/cobbler
+
+chown 26:26 /data/var/lib/pgsql/data
+chmod 777 -R /data/var&lt;/pre&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code&gt;&lt;br/&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;
+ Volume 생성이 다 되었다면,
+&lt;/p&gt;
+&lt;div class=&quot;code panel pdl conf-macro output-block&quot; data-hasbody=&quot;true&quot; data-macro-name=&quot;code&quot; style=&quot;border-width: 1px;&quot;&gt;
+ &lt;div class=&quot;codeContent panelContent pdl&quot;&gt;
+  &lt;pre class=&quot;syntaxhighlighter-pre&quot; data-syntaxhighlighter-params=&quot;brush: java; gutter: true; theme: Confluence&quot; data-theme=&quot;Confluence&quot;&gt;# docker run --privileged=true -d --name=&quot;spacewalk&quot; -p 80:80 -p 443:443 -v /data/var/log:/var/log -v /data/var/lib/pgsql/data:/var/lib/pgsql/data -v /data/var/satellite:/var/satellite -v /data/var/www/html/pub:/var/www/html/pub spacewalk&lt;/pre&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;br/&gt;&lt;/pre&gt;
+&lt;p&gt;
+ 위 명령으로 Container 를 시작합니다.
+&lt;/p&gt;
+&lt;p&gt;
+ https://(Docker Host IP) 로 접속합니다.
+&lt;/p&gt;
+&lt;p&gt;
+ 아래와 같이 Spacewalk 화면을 확인 할 수 있습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+ &lt;span class=&quot;confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size&quot;&gt;
+  &lt;img src=&quot;/assets/images/55869620/0&quot;/&gt;
+  &lt;img class=&quot;confluence-embedded-image confluence-external-resource image-center&quot; data-image-src=&quot;https://chhanz.github.io/assets/images/post/2019-01-07-spacewalkdocker/0.png&quot; height=&quot;400&quot; src=&quot;https://chhanz.github.io/assets/images/post/2019-01-07-spacewalkdocker/0.png&quot;/&gt;
+ &lt;/span&gt;
+&lt;/p&gt;
+&lt;h1 id=&quot;SpacewalklatestDockerimage제작기-마치며&quot;&gt;
+ 마치며
+&lt;/h1&gt;
+&lt;hr/&gt;
+&lt;p&gt;
+ 위와 같이 나만의 특별한 Docker Image 를 생성 할 수 있었습니다. 해당 Dockerfile 및 기타 필요한 file, 쉽게 Spacewalk 를 운영 할 수 있도록 만든 Script 들을 github 에 올려놨습니다.
+&lt;/p&gt;
+&lt;div class=&quot;code panel pdl conf-macro output-block&quot; data-hasbody=&quot;true&quot; data-macro-name=&quot;code&quot; style=&quot;border-width: 1px;&quot;&gt;
+ &lt;div class=&quot;codeContent panelContent pdl&quot;&gt;
+  &lt;pre class=&quot;syntaxhighlighter-pre&quot; data-syntaxhighlighter-params=&quot;brush: java; gutter: true; theme: Confluence&quot; data-theme=&quot;Confluence&quot;&gt;# git clone https://github.com/chhanz/spacewalk-docker-img.git&lt;/pre&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;br/&gt;&lt;/pre&gt;
+&lt;p&gt;
+ 앞으로도 Opensource Software 를 손쉽게 사용 할 수 있도록 노력 하겠습니다.
+&lt;/p&gt;
+&lt;p&gt;
+ 감사합니다.
+&lt;/p&gt;
+&lt;h2 id=&quot;SpacewalklatestDockerimage제작기-참고자료&quot;&gt;
+ 참고 자료
+&lt;/h2&gt;
+&lt;hr/&gt;
+&lt;ul&gt;
+ &lt;li&gt;
+  Base Dockerfile :
+  &lt;a class=&quot;external-link&quot; href=&quot;https://bitbucket.org/bashell-com/spacewalk&quot; rel=&quot;nofollow&quot;&gt;
+   https://bitbucket.org/bashell-com/spacewalk
+  &lt;/a&gt;
+ &lt;/li&gt;
+ &lt;li&gt;
+  Spacewalk Document :
+  &lt;a class=&quot;external-link&quot; href=&quot;https://spacewalkproject.github.io/documentation.html&quot; rel=&quot;nofollow&quot;&gt;
+   https://spacewalkproject.github.io/documentation.html
+  &lt;/a&gt;
+ &lt;/li&gt;
+ &lt;li&gt;
+  chhanz github :
+  &lt;a class=&quot;external-link&quot; href=&quot;https://github.com/chhanz/spacewalk-docker-img&quot; rel=&quot;nofollow&quot;&gt;
+   https://github.com/chhanz/spacewalk-docker-img
+  &lt;/a&gt;
+ &lt;/li&gt;
+&lt;/ul&gt;</description>
+        <pubDate>Mon, 07 Jan 2019 00:00:00 +0900</pubDate>
+        <link>https://tech.osci.kr/2019/01/07/55869620/</link>
+        <guid isPermaLink="true">https://tech.osci.kr/2019/01/07/55869620/</guid>
+        
+        
+      </item>
     
       <item>
         <title>Confluence Addon 개발환경 자동화 VirtualBox + Vagrant</title>
@@ -3774,261 +4050,6 @@ export JAVA_OPTS&lt;/pre&gt;
         <pubDate>Thu, 08 Nov 2018 00:00:00 +0900</pubDate>
         <link>https://tech.osci.kr/2018/11/08/47551306/</link>
         <guid isPermaLink="true">https://tech.osci.kr/2018/11/08/47551306/</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>11월 AUG 모임</title>
-        <description>&lt;p&gt;
- 안녕하세요? #오픈소스컨설팅 #아틀라시안 흥부자 김세연입니다.
-&lt;/p&gt;
-&lt;p&gt;
- #오픈소스컨설팅 은 #Atlassian User Group #AUG 공식 서포터로 활동하고 있습니다.
-&lt;/p&gt;
-&lt;p&gt;
- (많이들 오세요!! 몸만 오시면 됩니다!! )
-&lt;/p&gt;
-&lt;p&gt;
- 오늘은 강승현 님의 50명 이하 조직의 Jira Cloud 도입과정에 대해서 발표를 하셨습니다.
-&lt;/p&gt;
-&lt;p&gt;
- 승현 님이 다니는 Ecube Labs 회사는 스마트 쓰래기통을 만드는 일을 하고 계신데요
-&lt;/p&gt;
-&lt;p&gt;
- 하드웨어, 소프트웨어, 영업 모두 하는데 충돌이 많았데요. 그걸 정리하기 위해서 Jira를 도입 하셨다고 합니다.
-&lt;/p&gt;
-&lt;p&gt;
- 처음에는 동아리로 시작하셨는데 우연히 투자를 받았습니다. 초기 프로세스가 없었고, 자율성은 높으나 공유, 소통이
-&lt;/p&gt;
-&lt;p&gt;
- 어려웠다고 하네요...
-&lt;/p&gt;
-&lt;p&gt;
- 그리고 자료는 개인 컴퓨터에 보관이 되고 인수인계가 매우 어려웠다고 합니다.
-&lt;/p&gt;
-&lt;p&gt;
- 구성원의 생각을 공유하고 문제점을 공유하기 위해서 Jira를 도입했다고 합니다.
-&lt;/p&gt;
-&lt;h1 id=&quot;id-11월AUG모임-Jira도입과정&quot;&gt;
- Jira 도입 과정
-&lt;/h1&gt;
-&lt;ul style=&quot;list-style-type: square;&quot;&gt;
- &lt;li&gt;
-  유명한 Issue Tracker
- &lt;/li&gt;
- &lt;li&gt;
-  Jira Cloud를 선택한 이유
-  &lt;ul style=&quot;list-style-type: square;&quot;&gt;
-   &lt;li&gt;
-    Cloud에 대한 인식이 좋았음
-   &lt;/li&gt;
-   &lt;li&gt;
-    설치와 업데이트를 신경 쓸 필요가 없다.
-   &lt;/li&gt;
-   &lt;li&gt;
-    혼자 관리중인 솔루션이 10개가 넘어서 관리 포인트 줄이고 싶었다.
-   &lt;/li&gt;
-  &lt;/ul&gt;
- &lt;/li&gt;
- &lt;li&gt;
-  전사에 도입하기 전에 우리 팀만 써보자!
-  &lt;ul style=&quot;list-style-type: square;&quot;&gt;
-   &lt;li&gt;
-    팀장님을 설득해서 결재하고!
-   &lt;/li&gt;
-   &lt;li&gt;
-    SW 엔지니어들이라 적응도 빠르고 필요성을 느끼고 있었기 때문에 일단 만족도 짱
-   &lt;/li&gt;
-   &lt;li&gt;
-    모든 업무 하나하나를 이슈로 만들어서 사용
-   &lt;/li&gt;
-   &lt;li&gt;
-    한 달 동안 SW팀은 정말 잘 사용했고 만족도가 높았음
-   &lt;/li&gt;
-   &lt;li&gt;
-    한 달 후 워크숖에서 승현 님께서 Jira 전사 도입을 추진해서 됐음!!
-   &lt;/li&gt;
-  &lt;/ul&gt;
- &lt;/li&gt;
- &lt;li&gt;
-  전사 도입 후 어떻게 사용했을까!
-  &lt;ul style=&quot;list-style-type: square;&quot;&gt;
-   &lt;li&gt;
-    회사에 존재하는 역할에 따라 프로젝트를 구성 (수 많은 프로젝트가 생김...)
-   &lt;/li&gt;
-   &lt;li&gt;
-    프로젝트가 엄청나게 생겨나기 시작했음!! 관리가 안되기 시작함
-   &lt;/li&gt;
-   &lt;li&gt;
-    그래서 프로젝트를 성격에 따라 구성하고 나누기 시작했음
-   &lt;/li&gt;
-   &lt;li&gt;
-    영업같은 경우는 미국, 중국, 유럽 등 나뉘어서 만들어 달라는 요청이 있어 만들어 줬음 (앞으로 하나의 프로젝트로 관리 예정)
-   &lt;/li&gt;
-  &lt;/ul&gt;
- &lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&quot;id-11월AUG모임-도입하면서느낀것...&quot;&gt;
- 도입 하면서 느낀 것...
-&lt;/h1&gt;
-&lt;ul style=&quot;list-style-type: square;&quot;&gt;
- &lt;li&gt;
-  Jira를 도입하면서 어려운 업무도 있다..
-  &lt;ul style=&quot;list-style-type: square;&quot;&gt;
-   &lt;li&gt;
-    스마트 쓰레기통을 수리하는 업무가 있는데 대부분 밖에서 일하는 사용자는 Jira를 사용하기 어려움
-    &lt;ul style=&quot;list-style-type: square;&quot;&gt;
-     &lt;li&gt;
-      코치도 어렵고, Jira 접근성도 떨어짐
-     &lt;/li&gt;
-    &lt;/ul&gt;
-   &lt;/li&gt;
-   &lt;li&gt;
-    Jira를 사용하기 힘든 부서가 있다. 모든 업무가 Jira에 어울리는 것은 아니다.
-   &lt;/li&gt;
-  &lt;/ul&gt;
- &lt;/li&gt;
- &lt;li&gt;
-  프로젝트는 무조건 나눈다고 좋은게 아니었다..
-  &lt;ul style=&quot;list-style-type: square;&quot;&gt;
-   &lt;li&gt;
-    하나의 프로젝트에 업무 별로 나눈면 좋지만.. JQL은 사용자 친화적이지 않다고 느낌.
-   &lt;/li&gt;
-   &lt;li&gt;
-    사용자들은 필터를 만들기 힘들어하고 UI가 친숙하지 않다.
-   &lt;/li&gt;
-  &lt;/ul&gt;
- &lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&quot;id-11월AUG모임-Cloud서비스장/단점&quot;&gt;
- Cloud 서비스 장/단점
-&lt;/h1&gt;
-&lt;ul style=&quot;list-style-type: square;&quot;&gt;
- &lt;li&gt;
-  장점: 자동 업데이트
- &lt;/li&gt;
- &lt;li&gt;
-  단점: 자동 업데이트
- &lt;/li&gt;
- &lt;li&gt;
-  무엇!? 업데이트가 너무 빠르다보니 사용자들이 적용하기 힘들어하고 버그가 있음
-  &lt;ul style=&quot;list-style-type: square;&quot;&gt;
-   &lt;li&gt;
-    &quot;갑자기 이 화면에 있었는데 어디갔어? 새로운 기능은 이거 어떻게 해?&quot; 이런 것들이 있음
-   &lt;/li&gt;
-  &lt;/ul&gt;
- &lt;/li&gt;
- &lt;li&gt;
-  자동 업데이트 이후 일부 플러그인 사용에 문제가 발생
-  &lt;ul style=&quot;list-style-type: square;&quot;&gt;
-   &lt;li&gt;
-    플러그인 개발사 OR Atlassian이 지원해줄 때 까지 &quot;이거 왜 갑자기 안되요?&quot;에 시달려야 했다..
-   &lt;/li&gt;
-  &lt;/ul&gt;
- &lt;/li&gt;
- &lt;li&gt;
-  비교적 비싸다!
- &lt;/li&gt;
- &lt;li&gt;
-  느리다..
- &lt;/li&gt;
- &lt;li&gt;
-  아직 많이 불안정하다
-  &lt;ul style=&quot;list-style-type: square;&quot;&gt;
-   &lt;li&gt;
-    파일 업로드가 자주 실패하는 것은 물론, 안되는 경우도 있다.
-   &lt;/li&gt;
-   &lt;li&gt;
-    이미 업로드 된 파일 접근에 실패하여 몇번이나 재시도를 해야하는 경우가 비일비재
-   &lt;/li&gt;
-  &lt;/ul&gt;
- &lt;/li&gt;
- &lt;li&gt;
-  도메인 변경이 안된다.
- &lt;/li&gt;
- &lt;li&gt;
-  Storage 가 너무 적다. 25GB
- &lt;/li&gt;
- &lt;li&gt;
-  Cloud에서 Server로 마이그레이션이 불안정하다고 함!
- &lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&quot;id-11월AUG모임-결론&quot;&gt;
- 결론
-&lt;/h1&gt;
-&lt;ul style=&quot;list-style-type: square;&quot;&gt;
- &lt;li&gt;
-  Jira 보다는 Confluence 더 예쁘고 문제 없고 깔끔하다.
- &lt;/li&gt;
- &lt;li&gt;
-  Jira Cloud도 좋아지고 있다.
- &lt;/li&gt;
- &lt;li&gt;
-  Cloud 버전을 회사에 도입 하려면 조금 더 기다려보자.
- &lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;id-11월AUG모임-이후에질문과답변시간을가졌습니다.&quot;&gt;
- 이후에 질문과 답변 시간을 가졌습니다.
-&lt;/h3&gt;
-&lt;ul style=&quot;list-style-type: square;&quot;&gt;
- &lt;li&gt;
-  Jira Cloud는 대량 변경 기능이 없다!?  없다네요..
-  &lt;ul style=&quot;list-style-type: square;&quot;&gt;
-   &lt;li&gt;
-    프로젝트를 정리하는데 어려움이 있다고 합니다. ㅠ
-   &lt;/li&gt;
-   &lt;li&gt;
-    Github은 Create Branch 기능이 없다. Bitbcuket만 있음
-   &lt;/li&gt;
-  &lt;/ul&gt;
- &lt;/li&gt;
- &lt;li&gt;
-  Jira를 사용하면서 개발 문화가 어떻게 변경 됐는지?
-  &lt;ul style=&quot;list-style-type: square;&quot;&gt;
-   &lt;li&gt;
-    PR 문화가 정착 되어 코드 리뷰를 잘 하고 있고 개발자들 만족도가 높음.
-   &lt;/li&gt;
-  &lt;/ul&gt;
- &lt;/li&gt;
- &lt;li&gt;
-  Google Drive 랑 Confluence같이 사용하고 있는데 교통 정리는 어떻게 하고 있는지?
-  &lt;ul style=&quot;list-style-type: square;&quot;&gt;
-   &lt;li&gt;
-    최근 문서는 Confluence에 작성하고 있고 영업팀은 Export문제로 Google Drive 를 사용하고 있음
-   &lt;/li&gt;
-  &lt;/ul&gt;
- &lt;/li&gt;
- &lt;li&gt;
-  계정은 G Suite를 사용하고 있음
- &lt;/li&gt;
- &lt;li&gt;
-  Jira 사용을 이끌면서 싫어하는 팀도 있었을 텐데 시작하게 된 이유?
-  &lt;ul style=&quot;list-style-type: square;&quot;&gt;
-   &lt;li&gt;
-    일단 일을 똑똑하게 편하게 하기 위해서 시작했고, 워크샾 때 희망하는 팀은 팀장을 통해서 접수를 받았고 꾀 많이 접수를 해주셨음
-   &lt;/li&gt;
-  &lt;/ul&gt;
- &lt;/li&gt;
- &lt;li&gt;
-  메신저는 S/W팀은 Slack을 사용하고 업무팀은 라인을 사용하고 있음
- &lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&quot;id-11월AUG모임-후기&quot;&gt;
- 후기
-&lt;/h1&gt;
-&lt;p&gt;
- 스타트업에 근무 하시는 승현 님  발표 재미있게 들었습니다. 승현 님이 시작해서 Jira, Confluence를 도입하고, 조직이 변화하는 과정을
-&lt;/p&gt;
-&lt;p&gt;
- 간접적으로 경험 했습니다. 즐겁고 좋은 시간이었습니다. ^^
-&lt;/p&gt;
-&lt;p&gt;
- 다음에 또 만나요~!!
-&lt;/p&gt;</description>
-        <pubDate>Fri, 02 Nov 2018 00:00:00 +0900</pubDate>
-        <link>https://tech.osci.kr/2018/11/02/47550611/</link>
-        <guid isPermaLink="true">https://tech.osci.kr/2018/11/02/47550611/</guid>
         
         
       </item>
