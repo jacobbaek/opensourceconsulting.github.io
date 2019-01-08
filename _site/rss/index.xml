@@ -9,8 +9,8 @@ Sharing Tech. Growing Together.
 </description>
     <link>https://tech.osci.kr/</link>
     <atom:link href="https://tech.osci.kr/rss" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 08 Jan 2019 11:22:42 +0900</pubDate>
-    <lastBuildDate>Tue, 08 Jan 2019 11:22:42 +0900</lastBuildDate>
+    <pubDate>Tue, 08 Jan 2019 11:26:55 +0900</pubDate>
+    <lastBuildDate>Tue, 08 Jan 2019 11:26:55 +0900</lastBuildDate>
     <generator>Jekyll v3.7.4</generator>
     
       <item>
@@ -35,7 +35,6 @@ Sharing Tech. Growing Together.
 &lt;p style=&quot;text-align: center;&quot;&gt;
  &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
   &lt;img src=&quot;/assets/images/55869620/0&quot;/&gt;
-  &lt;img class=&quot;confluence-embedded-image confluence-external-resource&quot; data-image-src=&quot;https://chhanz.github.io/assets/images/post/2019-01-07-spacewalkdocker/1.png&quot; height=&quot;550&quot; src=&quot;https://chhanz.github.io/assets/images/post/2019-01-07-spacewalkdocker/1.png&quot;/&gt;
  &lt;/span&gt;
  &lt;br/&gt;
  &lt;a class=&quot;external-link&quot; href=&quot;https://spacewalkproject.github.io/index.html&quot; rel=&quot;nofollow&quot;&gt;
@@ -235,8 +234,7 @@ chmod 777 -R /data/var&lt;/pre&gt;
 &lt;p&gt;
  &lt;br/&gt;
  &lt;span class=&quot;confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size&quot;&gt;
-  &lt;img src=&quot;/assets/images/55869620/0&quot;/&gt;
-  &lt;img class=&quot;confluence-embedded-image confluence-external-resource image-center&quot; data-image-src=&quot;https://chhanz.github.io/assets/images/post/2019-01-07-spacewalkdocker/0.png&quot; height=&quot;400&quot; src=&quot;https://chhanz.github.io/assets/images/post/2019-01-07-spacewalkdocker/0.png&quot;/&gt;
+  &lt;img src=&quot;/assets/images/55869620/1&quot;/&gt;
  &lt;/span&gt;
 &lt;/p&gt;
 &lt;h1 id=&quot;SpacewalklatestDockerimage제작기-마치며&quot;&gt;
