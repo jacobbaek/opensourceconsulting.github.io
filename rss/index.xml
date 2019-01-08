@@ -9,8 +9,8 @@ Sharing Tech. Growing Together.
 </description>
     <link>https://tech.osci.kr/</link>
     <atom:link href="https://tech.osci.kr/rss" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 08 Jan 2019 13:39:07 +0900</pubDate>
-    <lastBuildDate>Tue, 08 Jan 2019 13:39:07 +0900</lastBuildDate>
+    <pubDate>Tue, 08 Jan 2019 15:01:02 +0900</pubDate>
+    <lastBuildDate>Tue, 08 Jan 2019 15:01:02 +0900</lastBuildDate>
     <generator>Jekyll v3.7.4</generator>
     
       <item>
@@ -18,13 +18,13 @@ Sharing Tech. Growing Together.
         <description>&lt;h1 id=&quot;spacewalk-latest-docker-image-제작기&quot;&gt;Spacewalk latest Docker image 제작기&lt;/h1&gt;
 &lt;hr /&gt;
 
-&lt;p&gt;안녕하세요? chhanz 입니다.
-고객사의 요청으로 Spacewalk 로 docker container 형태로 운영을 해야되는 요건이 생겨서,
-image를 만들기 시작 하였습니다…… ;(&lt;/p&gt;
+&lt;p&gt;안녕하세요? 오픈소스컨설팅 한철희 입니다. &lt;br /&gt;
+고객사의 요청으로 Spacewalk 로 docker container 형태로 운영을 해야되는 요건이 생겨서 &lt;br /&gt;
+Image를 만들기 시작 하였습니다…… ;(&lt;/p&gt;
 
 &lt;h1 id=&quot;spacewalk-란&quot;&gt;Spacewalk 란?&lt;/h1&gt;
 &lt;hr /&gt;
-&lt;p&gt;Spacewalk는 오픈 소스 Linux 시스템 관리 솔루션입니다.
+&lt;p&gt;Spacewalk는 오픈 소스 Linux 시스템 관리 솔루션입니다. &lt;br /&gt;
 Red Hat Satellite 제품이 파생 된 업스트림 커뮤니티 프로젝트입니다.&lt;/p&gt;
 
 &lt;center&gt;&lt;img src=&quot;https://chhanz.github.io/assets/images/post/2019-01-07-spacewalkdocker/1.png&quot; height=&quot;550&quot; /&gt; &lt;br /&gt;
@@ -33,10 +33,10 @@ Red Hat Satellite 제품이 파생 된 업스트림 커뮤니티 프로젝트입
 
 &lt;h1 id=&quot;쉽게-가자&quot;&gt;쉽게 가자…&lt;/h1&gt;
 &lt;hr /&gt;
-&lt;p&gt;docker 의 장점이 뭡니까!
-docker hub의 많은 offiaical image 아닙니까!&lt;/p&gt;
+&lt;p&gt;docker 의 장점이 뭡니까! &lt;br /&gt;
+docker hub의 많은 Offiaical Image 아닙니까!&lt;/p&gt;
 
-&lt;p&gt;열심히 docker image를 찾아보았습니다.
+&lt;p&gt;열심히 Docker Image를 찾아보았습니다. &lt;br /&gt;
 하지만…&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# docker search spacewalk
@@ -47,11 +47,11 @@ docker.io   docker.io/pajinek/docker-spacewalk              Spacewalk in Docker 
 docker.io   docker.io/egonzalez90/spacewalk                 Spacewalk docker image                          1                    [OK]
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;OFFICIAL 은 없고, 그나마 STARS 는 7개 뿐이고…
-내가 만들어야 겠다… ;)
+&lt;p&gt;OFFICIAL 은 없고, 그나마 STARS 는 7개 뿐이고…  &lt;br /&gt;
+내가 만들어야 겠다… ;)  &lt;br /&gt;
 이렇게 시작 되었습니다.&lt;/p&gt;
 
-&lt;h1 id=&quot;docker-image-를-만들어보자&quot;&gt;Docker image 를 만들어보자!&lt;/h1&gt;
+&lt;h1 id=&quot;docker-image-를-만들어보자&quot;&gt;Docker Image 를 만들어보자!&lt;/h1&gt;
 &lt;hr /&gt;
 
 &lt;p&gt;먼저 참고할 Dockerfile 은 docker hub 에서 가져왔습니다.&lt;/p&gt;
@@ -149,7 +149,7 @@ spacewalk           latest             f0e26b8230ad        13 days ago         1
 &lt;h1 id=&quot;run&quot;&gt;Run&lt;/h1&gt;
 &lt;hr /&gt;
 
-&lt;p&gt;Build 가 된 이미지를 실행합니다.
+&lt;p&gt;Build 가 된 이미지를 실행합니다. &lt;br /&gt;
 먼저 Container 가 종료되고, 제거가 되더라도 Spacewalk 데이터를 보존 할 수 있게 Volume 으로 사용될 경로를 생성합니다.&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mkdir -p /data/var/lib/pgsql/data
@@ -179,7 +179,7 @@ chmod 777 -R /data/var
 &lt;h1 id=&quot;마치며&quot;&gt;마치며&lt;/h1&gt;
 &lt;hr /&gt;
 
-&lt;p&gt;위와 같이 나만의 특별한 Docker Image 를 생성 할 수 있었습니다.
+&lt;p&gt;위와 같이 나만의 특별한 Docker Image 를 생성 할 수 있었습니다.  &lt;br /&gt;
 해당 Dockerfile 및 기타 필요한 file, 쉽게 Spacewalk 를 운영 할 수 있도록 만든 Script 들을 github 에 올려놨습니다.&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# git clone https://github.com/chhanz/spacewalk-docker-img.git
