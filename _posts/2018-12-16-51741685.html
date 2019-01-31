@@ -1,0 +1,481 @@
+---
+layout: post
+title: "Scouter로 Confluence 모니터링!"
+description: " " 
+author: seiyeon.kim
+date: 2018-12-16
+tags: []
+category: 
+image: /assets/images/51741685/0 
+---
+<p>
+ <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size">
+  <img src="/assets/images/51741685/0"/>
+ </span>
+</p>
+<p>
+ <br/>
+</p>
+<p>
+ 안녕하세요?
+</p>
+<p>
+ 오픈소스컨설팅 김세연입니다.
+</p>
+<p>
+ <br/>
+</p>
+<p>
+ 오늘은 Confluence에 Scouter를 설치하여 모니터링을 해보겠습니다.
+</p>
+<p>
+ <br/>
+</p>
+<h1 id="Scouter로Confluence모니터링!-APM">
+ APM
+</h1>
+<p>
+ <span style="color: rgb(34,34,34);">
+  Application Performance Management는 웹 어플리케이션을 운영하는 시스템, 프로그램 성능을 측정하고 모니터링하는 도구입니다. 많은 APM 중 Scouter는 국내에서 오픈소스로 개발되고 있습니다. 활발한 커뮤니티 활동으로 사용자가 원하는 기능이 빠르게 반영되고 있습니다.
+ </span>
+</p>
+<h1 id="Scouter로Confluence모니터링!-Scouter">
+ Scouter
+</h1>
+<p>
+ <a class="external-link" href="https://github.com/scouter-project/scouter" rel="nofollow">
+  https://github.com/scouter-project/scouter
+ </a>
+</p>
+<p>
+ <span class="confluence-embedded-file-wrapper">
+  <img alt="scouter overview" class="confluence-embedded-image confluence-external-resource" data-image-src="https://github.com/scouter-project/scouter/raw/master/scouter.document/img/main/scouter-overview.png" src="https://github.com/scouter-project/scouter/raw/master/scouter.document/img/main/scouter-overview.png"/>
+ </span>
+</p>
+<p>
+ ▲ 스카우터 구성도
+</p>
+<p>
+ <br/>
+</p>
+<p>
+ 스카우터는 4가지 모듈이 있습니다.
+</p>
+<div class="table-wrap">
+ <table class="confluenceTable">
+  <colgroup>
+   <col/>
+   <col/>
+  </colgroup>
+  <tbody>
+   <tr>
+    <td class="confluenceTd">
+     Modules
+    </td>
+    <td class="confluenceTd">
+     Desc
+    </td>
+   </tr>
+   <tr>
+    <td class="confluenceTd" colspan="1">
+     Collector
+    </td>
+    <td class="confluenceTd" colspan="1">
+     에이전트로부터 실시간 모니터링 정보를 수집, 가공하며 실시간 대시보드 제공 및 통계정보관리, 장애/에러 경보 등 관리에 필요한 각종 기능을 수행합니다
+    </td>
+   </tr>
+   <tr>
+    <td class="confluenceTd" colspan="1">
+     Java Agent
+    </td>
+    <td class="confluenceTd" colspan="1">
+     <p>
+      모니터링 대상 시스템(WAS)에 구성되면 되며, 각종 성능 정보를 수집, 스카우터 서버로 전달하는 역할을 합니다.
+     </p>
+    </td>
+   </tr>
+   <tr>
+    <td class="confluenceTd" colspan="1">
+     Host Agent
+    </td>
+    <td class="confluenceTd" colspan="1">
+     CPU, Memory, 디스크 성능 정보를 Collector로 전송합니다.
+    </td>
+   </tr>
+   <tr>
+    <td class="confluenceTd" colspan="1">
+     Client
+    </td>
+    <td class="confluenceTd" colspan="1">
+     Collector에서 수집된 정보를 확인하는 클라이언트 프로그램입니다.
+    </td>
+   </tr>
+  </tbody>
+ </table>
+</div>
+<h1 id="Scouter로Confluence모니터링!-설치Stepbystep">
+ 설치 Step by step
+</h1>
+<div class="code panel pdl conf-macro output-block" data-hasbody="true" data-macro-name="code" style="border-width: 1px;">
+ <div class="codeContent panelContent pdl">
+  <pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">//환경
+Ubuntu 18 LTS
+Confluence 6.13 - JRE 
+
+</pre>
+ </div>
+</div>
+<h2 id="Scouter로Confluence모니터링!-Step1.Confluence설치">
+ Step1. Confluence 설치
+</h2>
+<ul style="list-style-type: square;">
+ <li>
+  <a class="external-link" href="https://ko.atlassian.com/software/confluence/download" rel="nofollow">
+   https://ko.atlassian.com/software/confluence/download
+  </a>
+ </li>
+ <li>
+  Linux Installer로 설치 진행했습니다.
+ </li>
+ <li>
+  기본 경로, 기본 포트를 사용했습니다.
+ </li>
+ <li>
+  <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size">
+   <img src="/assets/images/51741685/1"/>
+  </span>
+ </li>
+ <li>
+  설치된 JRE 버전은 1.8.9_192 입니다.
+ </li>
+ <li>
+  <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size">
+   <img src="/assets/images/51741685/2"/>
+  </span>
+  <br/>
+  <br/>
+ </li>
+</ul>
+<h2 id="Scouter로Confluence모니터링!-Step2.ScouterCollectorServer설정">
+ Step2. Scouter Collector Server 설정
+</h2>
+<ul style="list-style-type: square;">
+ <li>
+  JDK 1.8+ 필요합니다. OpenJDK를 사용해 볼게요.
+ </li>
+ <li>
+  `apt install openjdk-8-jdk-headless`
+ </li>
+ <li>
+  <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size">
+   <img src="/assets/images/51741685/3"/>
+  </span>
+ </li>
+ <li>
+  Scouter Download
+ </li>
+ <li>
+  <a class="external-link" href="https://github.com/scouter-project/scouter/releases" rel="nofollow">
+   https://github.com/scouter-project/scouter/releases
+  </a>
+ </li>
+ <li>
+  2.5.1 버전 다운로드
+  <a class="external-link" href="https://github.com/scouter-project/scouter/releases/download/v2.5.1/scouter-min-2.5.1.tar.gz" rel="nofollow">
+   https://github.com/scouter-project/scouter/releases/download/v2.5.1/scouter-min-2.5.1.tar.gz
+  </a>
+ </li>
+ <li>
+  Confluence Server에는 min 버전을 다운로드 받아서 해보겠습니다.
+ </li>
+ <li>
+  압축을 해제하면 agent.host, agent.java, server가 생성됩니다.
+ </li>
+ <li>
+  <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size">
+   <img src="/assets/images/51741685/4"/>
+  </span>
+ </li>
+ <li>
+  Server 설정을 해보겠습니다.
+ </li>
+ <li>
+  server/conf/scouter.conf 파일을 열어서 아래 내용을 추가합니다.
+ </li>
+ <li>
+  <div class="code panel pdl conf-macro output-block" data-hasbody="true" data-macro-name="code" style="border-width: 1px;">
+   <div class="codeContent panelContent pdl">
+    <pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence"># Agent Control and Service Port(Default : TCP 6100)
+net_tcp_listen_port=6100
+
+# UDP Receive Port(Default : 6100)
+net_udp_listen_port=6100
+
+# DB directory(Default : ./database)
+db_dir=./database
+
+# Log directory(Default : ./logs)
+log_dir=./logs</pre>
+   </div>
+  </div>
+  <p>
+   <br/>
+  </p>
+ </li>
+ <li>
+  <p>
+   서비스를 시작해 볼게요.
+  </p>
+ </li>
+ <li>
+  <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size">
+   <img src="/assets/images/51741685/5"/>
+  </span>
+ </li>
+</ul>
+<p>
+ <br/>
+</p>
+<h2 id="Scouter로Confluence모니터링!-Step3.Client설치">
+ Step3. Client 설치
+</h2>
+<ul style="list-style-type: square;">
+ <li>
+  저는 macOS 버전을 다운로드 받았습니다. 리눅스, 윈도우, 맥 모두 지원하네요~! Java의 매력 아니겠습니꽈~!
+ </li>
+ <li>
+  Eclipse 기반의 클라이언트 프로그램입니다.
+ </li>
+ <li>
+  <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size">
+   <img src="/assets/images/51741685/6"/>
+  </span>
+ </li>
+ <li>
+  Client 실행하면 Ip, Port, ID, Password 를 적습니다.
+ </li>
+ <li>
+  ID는 admin password는 admin 입니다.
+ </li>
+ <li>
+  <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size">
+   <img src="/assets/images/51741685/7"/>
+  </span>
+ </li>
+ <li>
+  Collector Server와 Client 접속 상태를 확인합니다.
+ </li>
+ <li>
+  <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size">
+   <img src="/assets/images/51741685/8"/>
+  </span>
+ </li>
+</ul>
+<p>
+ <br/>
+</p>
+<h2 id="Scouter로Confluence모니터링!-Step4.javahost설정">
+ Step4. java host 설정
+</h2>
+<ul style="list-style-type: square;">
+ <li>
+  `/scouter/agent.host/conf/scouter.conf` 파일을 아래와 같이 수정합니다.
+ </li>
+ <li>
+  <p class="auto-cursor-target">
+   기본 값으로 주석 처리만 했습니다.
+  </p>
+  <div class="code panel pdl conf-macro output-block" data-hasbody="true" data-macro-name="code" style="border-width: 1px;">
+   <div class="codeContent panelContent pdl">
+    <pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">### scouter host configruation sample
+net_collector_ip=127.0.0.1
+net_collector_udp_port=6100
+net_collector_tcp_port=6100
+cpu_warning_pct=80
+cpu_fatal_pct=85
+cpu_check_period_ms=60000
+cpu_fatal_history=3
+cpu_alert_interval_ms=300000
+disk_warning_pct=88
+disk_fatal_pct=92</pre>
+   </div>
+  </div>
+  <p class="auto-cursor-target">
+   -
+  </p>
+ </li>
+ <li>
+  서비스를 시작해 보겠습니다.
+ </li>
+ <li>
+  `/scouter/agent.host/host.sh` 실행
+ </li>
+ <li>
+  이제 client에서 cpu, disk, memory를 모니터링 시자으아아아악!
+ </li>
+ <li>
+  <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size">
+   <img src="/assets/images/51741685/9"/>
+  </span>
+ </li>
+ <li>
+  파이썬으로 for loop 좀 돌렸다고 기영이 패턴이..!?
+ </li>
+ <li>
+  <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size">
+   <img src="/assets/images/51741685/10"/>
+  </span>
+ </li>
+ <li>
+  <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size">
+   <img src="/assets/images/51741685/11"/>
+  </span>
+ </li>
+ <li>
+  Memory, Disk 사용량 모니터링 가능! 운영 서버에 배포하기전에 어플리케이션 부하테스트로 필요한 리소스를 확인하세요! 꼭이요!!
+ </li>
+</ul>
+<h2 id="Scouter로Confluence모니터링!-Step5.agentjava설정(중요해요별표3개땅땅!)">
+ Step5. agent java 설정 (중요해요 별표 3개 땅땅!)
+</h2>
+<ul style="list-style-type: square;">
+ <li>
+  `./scouter/agent.java/conf/scouter.conf` 파일을 편집합니다.
+ </li>
+ <li>
+  java agent 기본 값으로 주석 해제 했습니다.
+ </li>
+ <li>
+  <p class="auto-cursor-target">
+   WAS 이름은 confluence-01 로 했습니다.
+  </p>
+  <div class="code panel pdl conf-macro output-block" data-hasbody="true" data-macro-name="code" style="border-width: 1px;">
+   <div class="codeContent panelContent pdl">
+    <pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">obj_name=confluence-01
+net_collector_ip=127.0.0.1
+net_collector_udp_port=6100
+net_collector_tcp_port=6100
+hook_method_patterns=sample.mybiz.*Biz.*,sample.service.*Service.*
+trace_http_client_ip_header_key=X-Forwarded-For
+profile_spring_controller_method_parameter_enabled=false
+hook_exception_class_patterns=my.exception.TypedException
+profile_fullstack_hooked_exception_enabled=true
+hook_exception_handler_method_patterns=my.AbstractAPIController.fallbackHandler,my.ApiExceptionLoggingFilter.handleNotFoundErrorResponse
+hook_exception_hanlder_exclude_class_patterns=exception.BizException</pre>
+   </div>
+  </div>
+  <p>
+   <br/>
+  </p>
+ </li>
+ <li>
+  <p>
+   `/opt/scouter/agent.java/scouter.agent.jar`  jar를 tomcat application에 설정해야합니다. 위치를 기억해 두세요.
+  </p>
+ </li>
+ <li>
+  Confluence의 setenv.sh 을 수정합니다. (setenv.sh는 Application을 실행할 때 환경 변수를 설정하는 파일입니다.)
+ </li>
+ <li>
+  `/opt/atlassian/confluence/bin/setenv.sh` 설치 경로는 다를 수 있습니다.
+ </li>
+ <li>
+  <div class="code panel pdl conf-macro output-block" data-hasbody="true" data-macro-name="code" style="border-width: 1px;">
+   <div class="codeContent panelContent pdl">
+    <pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">JAVA_OPTS="-javaagent:/opt/scouter/agent.java/scouter.agent.jar"
+JAVA_OPTS="${JAVA_OPTS} -Dscouter.config=/opt/scouter/agent.java/conf/scouter.conf"
+JAVA_OPTS="${JAVA_OPTS} -Datlassian.org.osgi.framework.bootdelegation=META-INF.services,com.yourkit,com.singularity.*,com.jprofiler,com.jprofiler.*,org.apache.xerces,org.apache.xerces.*,org.apache.xalan,org.apache.xalan.*,sun.*,com.sun.jndi.*,com.icl.saxon,com.icl.saxon.*,javax.servlet,javax.servlet.*,com.sun.xml.bind.*,javax.xml.*,scouter.*"
+export JAVA_OPTS</pre>
+   </div>
+  </div>
+ </li>
+ <li>
+  <strong>
+   Confluence Service 시작
+  </strong>
+ </li>
+ <li>
+  catalina.out 로그를 보시면 Scouter가 시작됩니다. 퐈이야!!
+ </li>
+ <li>
+  <div class="code panel pdl conf-macro output-block" data-hasbody="true" data-macro-name="code" style="border-width: 1px;">
+   <div class="codeContent panelContent pdl">
+    <pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">  ____                  _
+ / ___|  ___ ___  _   _| |_ ___ _ __
+ \___ \ / __/   \| | | | __/ _ \ '__|
+  ___) | (_| (+) | |_| | ||  __/ |
+ |____/ \___\___/ \__,_|\__\___|_|
+ Open Source S/W Performance Monitoring
+ Scouter version 2.5.1
+
+20181216 14:09:29 [SCOUTER] Version 2.5.1 2018-12-16 08:55 GMT_ENV_java8plus
+20181216 14:09:29 [SCOUTER] loaded by system classloader
+20181216 14:09:29 [SCOUTER] jar:file:/opt/scouter/agent.java/scouter.agent.jar
+20181216 14:09:30 [SCOUTER] objType:java
+20181216 14:09:30 [SCOUTER] objName:/ubuntu-bionic/confluence-01
+20181216 14:09:30 [A113] Counter Collector Started (#19)
+20181216 14:09:30 [A113] InteractionCounter Collector Started (#19)
+20181216 14:09:30 [SCOUTER] Configure -Dscouter.config=/opt/scouter/agent.java/conf/scouter.conf
+20181216 14:09:30 [A100] agent boot seed=xk5irljeeb
+20181216 14:09:30 [SCOUTER] PLUG-IN : scouter.agent.plugin.AbstractAppService service.plug loaded #xghqpc
+20181216 14:09:30 [SCOUTER] PLUG-IN : scouter.agent.plugin.AbstractHttpService httpservice.plug loaded #xg8h3a1
+20181216 14:09:30 [SCOUTER] PLUG-IN : scouter.agent.plugin.AbstractCapture capture.plug loaded #x469nrf
+20181216 14:09:30 [SCOUTER] PLUG-IN : scouter.agent.plugin.AbstractCapture springControllerCapture.plug loaded #x1rvuqrv
+20181216 14:09:30 [SCOUTER] PLUG-IN : scouter.agent.plugin.AbstractJdbcPool jdbcpool.plug loaded #x148lqht
+20181216 14:09:30 [NONE] LoadJarBytes scouter.jdbc 33156 bytes
+20181216 14:09:30 [SCOUTER] PLUG-IN : scouter.agent.plugin.AbstractHttpCall httpcall.plug loaded #x14uol51
+20181216 14:09:30 [SCOUTER] PLUG-IN : scouter.agent.plugin.AbstractCounter counter.plug loaded #x1obvb4m</pre>
+   </div>
+  </div>
+ </li>
+ <li>
+  <strong>
+   <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size">
+    <img src="/assets/images/51741685/12"/>
+   </span>
+  </strong>
+ </li>
+ <li>
+  모니터링 시작입니다!
+  <strong>
+  </strong>
+  느린 응답, SQL 확인할 수 있습니다.
+  <strong>
+   <br/>
+  </strong>
+ </li>
+ <li>
+  Heap used, Disk, CPU, Memory 등을 모니터링 시작입니다.
+ </li>
+</ul>
+<ul style="list-style-type: square;">
+ <li>
+  <div class="embeddedObject conf-macro output-block" data-hasbody="false" data-macro-name="multimedia">
+   <video controls="" height="380" src="/assets/images/51741685/apm_wiki.mp4" width="500">
+    Your browser does not support the HTML5 video element
+   </video>
+  </div>
+ </li>
+</ul>
+<p>
+ <br/>
+</p>
+<p>
+ 감사합니다.
+</p>
+<p>
+ 오픈소스컨설팅
+</p>
+<p>
+ 아틀라시안팀 김세연
+</p>
+<p>
+ <a class="external-link" href="mailto:atlassian@osci.kr" rel="nofollow">
+  atlassian@osci.kr
+ </a>
+</p>
+<p>
+ <a class="external-link" href="mailto:sales@osci.kr" rel="nofollow">
+  sales@osci.kr
+ </a>
+</p>
