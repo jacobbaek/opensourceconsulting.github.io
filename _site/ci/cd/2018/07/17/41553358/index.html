@@ -81,6 +81,13 @@
 
 <div id="wrapper">
     <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v3.2&appId=1720005341592310&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 <div id="navbar" class="container">
     <h5><a id="link-back" href="/">Back to Posts</a></h5>
     
@@ -121,7 +128,6 @@
 
     </div>
 </div>
-
 <div id="content" class="container post" role="main">
     <div id="post-content"><p>Bamboo Agent로 Remote Server에서 Job을 실행할 수 있는 환경을 안내드립니다.<br />
 전체 순서는 아래와 같습니다.</p>
@@ -223,7 +229,10 @@ API 빌드 결과에 따라서 다음 API 서버의 작업을 다르게 설정�
 <p>Bamboo는 UI/UX가 군더더기 없고 깔끔해서 관리하기가 좋은 것 같습니다.
 또한 Jira, Bitbucket과 강력한 통합 환경을 제공하는데요 이 내용은 다음에 공유하도록 하겠습니다.
 감사합니다.</p>
-</div>
+
+            <div class="fb-like" data-href="https://tech.osci.kr/ci/cd/2018/07/17/41553358/" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+        <div class="fb-comments" data-href="https://tech.osci.kr/ci/cd/2018/07/17/41553358/" data-width="100%" data-numposts="5"></div>
+    </div>
 
     <div id="post-footer">
         
