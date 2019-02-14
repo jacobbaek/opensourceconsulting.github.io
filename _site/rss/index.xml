@@ -9,8 +9,8 @@ Sharing Tech. Growing Together.
 </description>
     <link>https://tech.osci.kr/</link>
     <atom:link href="https://tech.osci.kr/rss" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 14 Feb 2019 20:54:33 +0900</pubDate>
-    <lastBuildDate>Thu, 14 Feb 2019 20:54:33 +0900</lastBuildDate>
+    <pubDate>Thu, 14 Feb 2019 20:57:33 +0900</pubDate>
+    <lastBuildDate>Thu, 14 Feb 2019 20:57:33 +0900</lastBuildDate>
     <generator>Jekyll v3.7.4</generator>
     
       <item>
@@ -120,7 +120,6 @@ Sharing Tech. Growing Together.
 &lt;p&gt;
  &lt;span class=&quot;confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size&quot;&gt;
   &lt;img src=&quot;/assets/images/59736201/2&quot;/&gt;
-  &lt;img alt=&quot;Swarm mode cluster&quot; class=&quot;confluence-embedded-image confluence-external-resource confluence-content-image-border image-center&quot; data-image-src=&quot;https://docs.docker.com/engine/swarm/images/swarm-diagram.png&quot; height=&quot;250&quot; src=&quot;https://docs.docker.com/engine/swarm/images/swarm-diagram.png&quot;/&gt;
  &lt;/span&gt;
 &lt;/p&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;
@@ -167,7 +166,7 @@ Sharing Tech. Growing Together.
 &lt;/div&gt;
 &lt;p&gt;
  &lt;span class=&quot;confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size&quot;&gt;
-  &lt;img src=&quot;/assets/images/59736201/2&quot;/&gt;
+  &lt;img src=&quot;/assets/images/59736201/3&quot;/&gt;
  &lt;/span&gt;
 &lt;/p&gt;
 &lt;p&gt;
@@ -863,7 +862,7 @@ m82bq5rgmk7z  phpdemo.1  manager1.example.com:5000/phpdemo:v1  manager2.example.
 &lt;/p&gt;
 &lt;p&gt;
  &lt;span class=&quot;confluence-embedded-file-wrapper image-center-wrapper&quot;&gt;
-  &lt;img src=&quot;/assets/images/59736201/3&quot;/&gt;
+  &lt;img src=&quot;/assets/images/59736201/4&quot;/&gt;
  &lt;/span&gt;
 &lt;/p&gt;
 &lt;p&gt;
@@ -930,7 +929,7 @@ m82bq5rgmk7z  phpdemo.1  manager1.example.com:5000/phpdemo:v1  manager2.example.
 &lt;/p&gt;
 &lt;p&gt;
  &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
-  &lt;img src=&quot;/assets/images/59736201/4&quot;/&gt;
+  &lt;img src=&quot;/assets/images/59736201/5&quot;/&gt;
  &lt;/span&gt;
 &lt;/p&gt;
 &lt;p&gt;
@@ -947,7 +946,7 @@ m82bq5rgmk7z  phpdemo.1  manager1.example.com:5000/phpdemo:v1  manager2.example.
 &lt;/p&gt;
 &lt;p&gt;
  &lt;span class=&quot;confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size&quot;&gt;
-  &lt;img src=&quot;/assets/images/59736201/5&quot;/&gt;
+  &lt;img src=&quot;/assets/images/59736201/6&quot;/&gt;
  &lt;/span&gt;
 &lt;/p&gt;
 &lt;p&gt;
@@ -1131,7 +1130,7 @@ sxp3cs1vmn96  phpdemo.3      manager1.example.com:5000/phpdemo:v2  manager1.exam
 &lt;/p&gt;
 &lt;p&gt;
  &lt;span class=&quot;confluence-embedded-file-wrapper&quot;&gt;
-  &lt;img src=&quot;/assets/images/59736201/6&quot;/&gt;
+  &lt;img src=&quot;/assets/images/59736201/7&quot;/&gt;
  &lt;/span&gt;
 &lt;/p&gt;
 &lt;p&gt;
@@ -1201,7 +1200,7 @@ sxp3cs1vmn96   \_ phpdemo.3  manager1.example.com:5000/phpdemo:v2  manager1.exam
 &lt;/p&gt;
 &lt;p&gt;
  &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
-  &lt;img src=&quot;/assets/images/59736201/7&quot;/&gt;
+  &lt;img src=&quot;/assets/images/59736201/8&quot;/&gt;
  &lt;/span&gt;
 &lt;/p&gt;
 &lt;p&gt;
@@ -1266,7 +1265,7 @@ a50p5gs82hop   \_ phpdemo.1  manager1.example.com:5000/phpdemo:v2  manager2.exam
 &lt;/p&gt;
 &lt;p&gt;
  &lt;span class=&quot;confluence-embedded-file-wrapper&quot;&gt;
-  &lt;img src=&quot;/assets/images/59736201/8&quot;/&gt;
+  &lt;img src=&quot;/assets/images/59736201/9&quot;/&gt;
  &lt;/span&gt;
 &lt;/p&gt;
 &lt;p&gt;
