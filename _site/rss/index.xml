@@ -9,9 +9,410 @@ Sharing Tech. Growing Together.
 </description>
     <link>https://tech.osci.kr/</link>
     <atom:link href="https://tech.osci.kr/rss" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 26 Apr 2019 02:01:26 +0900</pubDate>
-    <lastBuildDate>Fri, 26 Apr 2019 02:01:26 +0900</lastBuildDate>
+    <pubDate>Fri, 26 Apr 2019 02:02:12 +0900</pubDate>
+    <lastBuildDate>Fri, 26 Apr 2019 02:02:12 +0900</lastBuildDate>
     <generator>Jekyll v3.7.4</generator>
+    
+      <item>
+        <title>오픈소스컨설팅, Atlassian meets DevOps and ITSM을 개최하다!</title>
+        <description>&lt;p&gt;
+ &lt;div class=&quot;conf-macro output-block&quot; data-hasbody=&quot;false&quot; data-macro-name=&quot;include&quot;&gt;
+  안녕하세요!!!
+  &lt;p&gt;
+   오픈소스컨설팅 마케터 박현수입니다.
+  &lt;/p&gt;
+  &lt;p&gt;
+   &lt;br/&gt;
+  &lt;/p&gt;
+  &lt;p&gt;
+   지난 4월 19일, Atlassian 솔루션을 활용한 DevOps 및 ITSM Best Practice라는 주제로 오픈소스컨설팅이 주최하고, 아틀라시안이 후원하는 &quot;Atlassian meets DevOps and ITSM&quot; 행사가 열렸습니다.
+  &lt;/p&gt;
+  &lt;p&gt;
+   큰 행사의 직후였음에도 불구하고, 정말 많은 고객 분들이 참석해주셔서 저희도 깜짝 놀랐어요!
+  &lt;/p&gt;
+  &lt;p&gt;
+   성원에 진심으로 감사드리고, 앞으로도 더욱 노력하는 오픈소스컨설팅이 되겠습니다. 지켜봐주세요~
+  &lt;/p&gt;
+  &lt;p&gt;
+   &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
+    &lt;img src=&quot;/assets/images/71801513/0&quot;/&gt;
+   &lt;/span&gt;
+   &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
+    &lt;img src=&quot;/assets/images/71801513/1&quot;/&gt;
+   &lt;/span&gt;
+  &lt;/p&gt;
+  &lt;p&gt;
+   &lt;span style=&quot;color: rgb(165,173,186);&quot;&gt;
+    &lt;sup&gt;
+     (왼쪽부터 오픈소스컨설팅 한진규 이사, 카카오 이호정 셀장, 아틀라시안 Scott Davis SA, 통역사, 오픈소스컨설팅 최지웅 부사장)
+    &lt;/sup&gt;
+   &lt;/span&gt;
+  &lt;/p&gt;
+  &lt;p&gt;
+   &lt;br/&gt;
+  &lt;/p&gt;
+  &lt;p&gt;
+   음 다소 긴 제목이지만, 이번 세미나의 주제는
+   &lt;strong&gt;
+    DevOps를 위한 Atlassian 사용 방법
+   &lt;/strong&gt;
+   정도로 풀어 이야기할 수 있겠네요.
+  &lt;/p&gt;
+  &lt;p&gt;
+   이번 세미나에서 소개된 대부분의 내용은 기술보다는 운영자나 개발자의 마인드셋에 대해 강조하곤 했습니다. (DevOps의 시작은 역시 마음가짐이죠!)
+  &lt;/p&gt;
+  &lt;p&gt;
+   이러한 내용은 오픈소스컨설팅의 CTO이자 정신적 지주를 맡고 계신 최지웅 부사장님의 키노트에서도 확인해볼 수 있었습니다.
+  &lt;/p&gt;
+  &lt;p&gt;
+   &quot;사실 기술이 문제가 아니예요&quot;라는 부제를 달고,
+   &lt;strong&gt;
+    올바른 DevOps 수행을 위한 인프라 스트럭처 전략
+   &lt;/strong&gt;
+   을 소개해주셨습니다.
+  &lt;/p&gt;
+  &lt;h3 id=&quot;id-오픈소스컨설팅,AtlassianmeetsDevOpsandITSM을개최하다!-Atlassian을도입하기전,필수적인고민&quot;&gt;
+   Atlassian을 도입하기 전, 필수적인 고민
+  &lt;/h3&gt;
+  &lt;p&gt;
+   DevOps를 위한 도구로서 Atlassian을 도입하기 전, 하부 인프라 스트럭처에 대한 고민이 선행되어야 합니다.
+  &lt;/p&gt;
+  &lt;p&gt;
+   IT 환경에서 중요한 것은 프로젝트에서 프로덕트로, 목표는 안정성에서 민첩성으로 점차 변화하고 있고 그러한 변화의 중심에 DevOps가 있다고 볼 수 있습니다.
+  &lt;/p&gt;
+  &lt;p&gt;
+   Time to Value -  Time to Market : 혁신을 위해서는 작은 단위로 빠르게 배워야 합니다.  너무 많은 기능을 한꺼번에 넣으려 하는 것은 욕심인거죠.
+  &lt;/p&gt;
+  &lt;p&gt;
+   현재의 IT 최고의 인프라스트럭처는 보다 단순하게 연결되어야 하고, &quot;새로운 기술&quot;을 보다 빠른 주기로 제공하는 모델입니다.
+  &lt;/p&gt;
+  &lt;p&gt;
+   조금 기술적인 관점에서 이야기하자면, 애플리케이션을 분할 / 규격화 / 캡슐화해서 Microservice 형태로 개발하여 다양한 운영 환경에 지속적 배포 (Continuous Deploy) 결국, 분산된 환경에 최적화해야 합니다.
+  &lt;/p&gt;
+  &lt;p&gt;
+   스케일 형태로,
+   &lt;strong&gt;
+    가용성을 위해 분산하는 클라우드 네이티브 환경을 구축하는거죠.
+   &lt;/strong&gt;
+  &lt;/p&gt;
+  &lt;p&gt;
+   클라우드 네이티브는 클라우드 컴퓨팅 모델의 장점을 모두 활용하는 애플리케이션을 개발하고 실행하기 위한 접근 방식입니다.
+  &lt;/p&gt;
+  &lt;p&gt;
+   장점은 분산을 통한 유연성을 가져올 수 있지만, 운영 관점에서는 단점도 분명합니다. 애플리케이션도 분산시켜야 하기 때문이죠.  분산은 곧 인스턴스 증가, 인스턴스 증가는 곧 소프트웨어 비용의 증가를 불러옵니다.
+  &lt;/p&gt;
+  &lt;p&gt;
+   이러한 클라우드 네이티브의 단점을 타개하기 위해서는,
+   &lt;strong&gt;
+    오픈소스를 도입하여 인프라를 만들어야 합니다.
+   &lt;/strong&gt;
+  &lt;/p&gt;
+  &lt;p&gt;
+   인프라 스트럭처 단에서는 개발된 코드가 유연하게 물흐르듯 연결된 에코시스템을 구축하고,  조직에서는 프로세스가 잘 조화되도록 알맞은 시스템을 제공해야 합니다.
+  &lt;/p&gt;
+  &lt;p&gt;
+   &lt;br/&gt;
+  &lt;/p&gt;
+  &lt;h3 id=&quot;id-오픈소스컨설팅,AtlassianmeetsDevOpsandITSM을개최하다!-DevOps를위한최적의인프라찾기&quot;&gt;
+   DevOps를 위한 최적의 인프라찾기
+  &lt;/h3&gt;
+  &lt;p&gt;
+   DevOps로 가기위해서는 Cloud로의 이동은 필연인 것으로 보입니다.  그 근간은 MSA(Microservices Architecture)이며, DevOps + Cloud까지의 조합이 매우 중요합니다.
+  &lt;/p&gt;
+  &lt;p&gt;
+   일부조직에서는 이미  Dev + Ops + Sec + CI/CD 까지 연결하여,  컨테이너용 애플리케이션 빌드가 최종 목표인 방향으로 흘러가고 있습니다.
+  &lt;/p&gt;
+  &lt;p&gt;
+   Trigger Build &amp;amp; Deploy 구성을 살펴보면, 컨테이너에 한데 모아놓고 개발 및 배포에 관한 부분들에 대한 관리가 가능한 것으로 보입니다.
+  &lt;/p&gt;
+  &lt;p&gt;
+   ITS부터 개발, 검증, 빌드하여 컨테이너를 통해 운영까지 보내는 프로세스를 물흐르듯이 연결시키는 것이 중요합니다. 이러한 부분은 직접 쿠버네티스를 사용하거나, PaaS를 통해 구성해낼 수 있습니다.
+  &lt;/p&gt;
+  &lt;p&gt;
+   &lt;br/&gt;
+  &lt;/p&gt;
+  &lt;h3 id=&quot;id-오픈소스컨설팅,AtlassianmeetsDevOpsandITSM을개최하다!-엔터프라이즈DevOps까지확장하기&quot;&gt;
+   엔터프라이즈 DevOps까지 확장하기
+  &lt;/h3&gt;
+  &lt;p&gt;
+   따라서, 이러한 애플리케이션 구동 환경이 특정 인프라 환경으로 제한되어서는 안됩니다.
+   &lt;strong&gt;
+    결국 멀티 클라우드
+   &lt;/strong&gt;
+   에 대한 이야기까지 흘러오게 되는거죠.
+  &lt;/p&gt;
+  &lt;p&gt;
+   프라이빗 및 퍼블릭 환경에서 다 똑같이 구성해야 합니다.  (이 때문에 컨테이너에 대한 부분을 고민하지 않을 수가 없습니다)
+  &lt;/p&gt;
+  &lt;p&gt;
+   재작년부터 고민이 되는 것은, 어떻게 하면 DC를 클라우드로 연결시키는 작업을 할 수 있을까에 대한 부분입니다.  일부 게임사들은 이미 컨테이너를 도입하고 있습니다.
+  &lt;/p&gt;
+  &lt;p&gt;
+   하이브리드 및 멀티 클라우드로 갔을 때 배포 대상은 굉장히 다양합니다. 직접 배포할 수도 있고, 지난주 발표한 것처럼 Google의 Anthos라는 프로그램을 이용할 수도 있습니다.
+  &lt;/p&gt;
+  &lt;p&gt;
+   엔터프라이즈 DevOps까지 확장을 하고자 한다면, 비전, 전략 및 하부 인프라, 오토 메이션, 성능 보안 등 고민할 부분이 상당히 많죠. 기존 인프라 및 각 컴포넌트까지 총체적으로 고민해야 합니다.
+  &lt;/p&gt;
+  &lt;h3 id=&quot;id-오픈소스컨설팅,AtlassianmeetsDevOpsandITSM을개최하다!-결국에는사람!&quot;&gt;
+   결국에는 사람!
+  &lt;/h3&gt;
+  &lt;p&gt;
+   결국 결론은 다시 마인드셋으로 흘러옵니다.  기술력보다는 이를 어떻게 조합하는지가 중요합니다.
+  &lt;/p&gt;
+  &lt;p&gt;
+   따라서, 팀 조직 및 서비스 및 운영 그리고
+   &lt;strong&gt;
+    결국에는 사람과의 커뮤니케이션
+   &lt;/strong&gt;
+   이 가장 중요하다는 것을 강조하는 키노트였습니다!
+  &lt;/p&gt;
+  &lt;p&gt;
+   &lt;br/&gt;
+  &lt;/p&gt;
+  &lt;p&gt;
+   키노트 다음으로는 Atlassian의 솔루션 엔지니어
+   &lt;strong&gt;
+    Scott Goh-Davis (이하, 스캇)의 &quot;ITSM in and Agile World&quot; 세션
+   &lt;/strong&gt;
+   이 이어졌습니다.
+  &lt;/p&gt;
+  &lt;h3 id=&quot;id-오픈소스컨설팅,AtlassianmeetsDevOpsandITSM을개최하다!-ForTEAMS!&quot;&gt;
+   &lt;strong&gt;
+    For TEAMS !
+   &lt;/strong&gt;
+  &lt;/h3&gt;
+  &lt;p&gt;
+   스캇은 오랜 경력동안 좋은 팀을 만나고 많은 경험 토대로, 그 경험을 공유하고 ITSM을 이룩하는 방법에 대해서 이야기해주었습니다.
+  &lt;/p&gt;
+  &lt;p&gt;
+   ITSM과 관련해서는 1. 인스턴스 관리 2. 운영 관리 3. 몇가지 Metric에 대한 이야기를 했고, 마지막으로
+   &lt;a class=&quot;external-link&quot; href=&quot;https://www.atlassian.com/whitepapers/itil4&quot; rel=&quot;nofollow&quot;&gt;
+    ITSM 백서를 다운로드할 수 있는 링크
+   &lt;/a&gt;
+   를 공유했습니다.
+  &lt;/p&gt;
+  &lt;p&gt;
+   &lt;br/&gt;
+  &lt;/p&gt;
+  &lt;p&gt;
+   처음 스캇이 개발자로서 일하기 시작했을 때는, 운영에서 나오는 변경 사항을 그때그때 반영해야 했고 그것이 Final QA라고 주장했다고 합니다. 이런 상황은 30년이 지난 지금도 빈번하게 일어나고 있죠.
+  &lt;/p&gt;
+  &lt;p&gt;
+   이를테면, 개발에 있어 Waterfall 방식을 고수하듯, 작은 변경 사항을 빠르게 반영하는 애자일 방법과는 다른 움직임도 아직 만연합니다.
+  &lt;/p&gt;
+  &lt;p&gt;
+   하지만, 요새는 빠른 것뿐만 아니라 퀄리티를 함께 높이는 것이 중요해 DevOps를 넘어서 DevSecOps까지 나와있는 상황입니다.
+  &lt;/p&gt;
+  &lt;p&gt;
+   DevOps와 ITSM이 많은 조직들이 적용하고자 하는 기조이긴 하지만, 개발쪽 변경사항이 더 빨리 자주 발생하면 Operation에서는 리스크라고 받아들일 수도 있습니다. 팀간 장벽이 한층 높아질 수도 있구요.
+  &lt;/p&gt;
+  &lt;p&gt;
+   이러한 상황을 Atlassian은 팀과 문화와 일이 같은 방향으로 함께 움직인다는 미션을 통해 극복하고자 합니다. 각 팀에 맞는 방법과 문화를 개발한 후, 툴과 제품에 대해서 고려하는거죠.
+  &lt;/p&gt;
+  &lt;p&gt;
+   &lt;br/&gt;
+  &lt;/p&gt;
+  &lt;h3 id=&quot;id-오픈소스컨설팅,AtlassianmeetsDevOpsandITSM을개최하다!-Let'sPLAY!&quot;&gt;
+   Let's PLAY!
+  &lt;/h3&gt;
+  &lt;p&gt;
+   사람과 문화 그리고 팀은 어떻게 개선할 수 있을까요? 대부분의 회사는 인사 고과를 받는데, 이러한 인사 고과에 대해서는 익숙하죠. 하지만, 팀에 대해서는 어떨까요?
+  &lt;/p&gt;
+  &lt;p&gt;
+   아틀라시안이 지속적으로 고민하는 것은 팀워크를 어떻게 개선하는가입니다.  왜 팀마다 결과가 다를까요?  그러한 결과를 분석해보기 위해서, Atlassian은
+   &lt;a class=&quot;external-link&quot; href=&quot;https://www.atlassian.com/team-playbook&quot; rel=&quot;nofollow&quot;&gt;
+    Atlassian Team Playbook
+   &lt;/a&gt;
+   을 만들었습니다.  (링크를 통해 다운로드 받을 수 있어요!)
+  &lt;/p&gt;
+  &lt;p&gt;
+   1.
+   &lt;strong&gt;
+    팀의 현황을 어떻게 측정하는가?
+   &lt;/strong&gt;
+   - 측정 후 개선 부분을 발견하는 첫단계입니다.
+  &lt;/p&gt;
+  &lt;p&gt;
+   2.
+   &lt;strong&gt;
+    어떻게 개선할 것인가?
+   &lt;/strong&gt;
+   개선 아이디어를 도출하고 난 후 실천하는 것을 Atlassian은
+   &lt;strong&gt;
+    Play
+   &lt;/strong&gt;
+   라고 부릅니다.
+  &lt;/p&gt;
+  &lt;p&gt;
+   아틀라시안은 이러한 팀플레이북을 매년 1-2번 수행하고 플레이를 통해 개선 및 실천해나가고 있습니다.  특정 아틀라시안 제품에 국한되어서만 사용되는 것은 아니고, 보편적으로 활용할 수 있다고 합니다.
+  &lt;/p&gt;
+  &lt;p&gt;
+   &lt;br/&gt;
+  &lt;/p&gt;
+  &lt;p&gt;
+   &lt;strong&gt;
+    Genius for managing incidents - Opsgenie
+   &lt;/strong&gt;
+  &lt;/p&gt;
+  &lt;p&gt;
+   여러 팀이 가지고 있는 스킬을 어떻게 개선할 수 있을까요? ITSM 이나 애자일에 대해서도 어떻게 접근하고 실천할 수 있을까요?
+  &lt;/p&gt;
+  &lt;p&gt;
+   모던 ITSM에 있어서 가장 이슈가 되는 것은 메이저한 인시던트에 대해서 어떻게 대처하는가 입니다.  인시던트 관리에서 가장 중요한 것은 평균 복구 시간이고,  MTR에서 가장 중요한 것은 반응 (Respond)입니다.
+  &lt;/p&gt;
+  &lt;p&gt;
+   모니터링을 대부분 간과하곤하는데,  중간에 대응 과정에서 Opsgenie라는 제품을 사용해볼 것을 추천드립니다. Opsgenie는 모든 알림을 하나하나 보고, 알람을 봐야하는 적임자에게 전달 및 알림(Alert)을 하는 중간의 허브역할을 수행합니다.
+  &lt;/p&gt;
+  &lt;p&gt;
+   복구는 JSD와 Statuspage를 통해 복구 및 처리 개선을 할 수 있겠습니다. Operation 뿐만 아니라 End user까지 전달될 수 있도록 말이죠.
+  &lt;/p&gt;
+  &lt;p&gt;
+   중간과정에 필요한 Monitoring에서는 Amazon CloudWatch나 Docker 등 고객이 원하는 프로그램을 사용할 수 있습니다.
+  &lt;/p&gt;
+  &lt;p&gt;
+   Opsgenie 이용하면 MTTR을 획기적으로 줄일수 있습니다. 하지만 무엇보다 중요한 것은
+   &lt;strong&gt;
+    인시턴트 발생 및 대처 이후의 Review
+   &lt;/strong&gt;
+   라고 스캇은 강조했습니다.
+  &lt;/p&gt;
+  &lt;p&gt;
+   70%나 되는 비율로 인시던트 발생 이후의 대처를 형식적으로 리뷰하고 이 문서를 다른데 두거나 잊혀지고는 합니다. 하지만, 리뷰는 꼼꼼히, 반드시 놓쳐서는 안되는 중요한 과정입니다!
+  &lt;/p&gt;
+  &lt;p&gt;
+   &lt;br/&gt;
+  &lt;/p&gt;
+  &lt;p&gt;
+   1.팀플레이북을 통해 시작해라
+  &lt;/p&gt;
+  &lt;p&gt;
+   2. 전통적인 R&amp;amp;R에 대해 의문을 제기해라.
+  &lt;/p&gt;
+  &lt;p&gt;
+   3. 자동화하라! (Automate with opsgenie)
+  &lt;/p&gt;
+  &lt;p&gt;
+   4. 계속해서 실험하고 적용할 것
+  &lt;/p&gt;
+  &lt;p&gt;
+   &lt;br/&gt;
+  &lt;/p&gt;
+  &lt;p&gt;
+   이후에는 오픈소스컨설팅 한진규 이사님과 카카오 이호정셀장님의 세션이 이어졌습니다.
+  &lt;/p&gt;
+  &lt;p&gt;
+   한진규 이사님은
+   &lt;strong&gt;
+    &quot;DevOps 문화 구축하기&quot;
+   &lt;/strong&gt;
+   를 주제로 Atlassian 제품을 활용한 DevOps구성도를 소개해주셨는데요,
+  &lt;/p&gt;
+  &lt;p&gt;
+   아래 그림에서 보듯 Jira를 중심으로 Confluence, Jira Service Desk, Bitbucket 등 도구를 통해 DevOps를 쉽고 간편하게 구축할 수 있습니다.
+  &lt;/p&gt;
+  &lt;p&gt;
+   &lt;br/&gt;
+  &lt;/p&gt;
+  &lt;p&gt;
+   &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
+    &lt;img src=&quot;/assets/images/71801513/2&quot;/&gt;
+   &lt;/span&gt;
+  &lt;/p&gt;
+  &lt;p&gt;
+   &lt;br/&gt;
+  &lt;/p&gt;
+  &lt;p&gt;
+   아울러, 이전 세션들처럼 DevOps를 위해서 결국에는 &quot;사람&quot;과의 소통이 가장 중요하다고 강조하며,
+   &lt;strong&gt;
+    &lt;a class=&quot;external-link&quot; href=&quot;https://www.slideshare.net/BrianHan21/devops-134656677?fbclid=IwAR3DCY-AnjafeAU8RYnjgJsFTe9WTF1mQfP1DaseD3MQIaVQXqhTIls1X7c&quot; rel=&quot;nofollow&quot;&gt;
+     DevOps 시뮬레이션
+    &lt;/a&gt;
+   &lt;/strong&gt;
+   을 소개했는데요.
+  &lt;/p&gt;
+  &lt;p&gt;
+   DevOps 효과를 직접 경험하고 체득하면서 구성원 한 명 한 명이 DevOps의 실행자가 될 수 있도록 변화시키는 획기적인 시뮬레이션입니다. (위 링크를 통해 DevOps 시뮬레이션을 만나보세요!)
+  &lt;/p&gt;
+  &lt;p&gt;
+   &lt;br/&gt;
+  &lt;/p&gt;
+  &lt;p&gt;
+   KaKao는 Atlassian을 오래 전부터 선구적으로 사용하여, 우리나라에서 DevOps 및 ITSM을 잘 실천하고 있는 회사로 유명하죠.
+  &lt;/p&gt;
+  &lt;p&gt;
+   이호정 셀장님의 &quot;Kakao meets Jira&quot;에서는 말그대로 DevOps의 핵심 툴인 Jira와 kakao가 만난 이야기입니다.
+  &lt;/p&gt;
+  &lt;p&gt;
+   이호정 셀장님이 귀한 시간을 내주셔서 카카오에서 Jira를 어떻게 사용하고 있는지 알아보고, ITSM을 달성하는 방법에 대해서 생생하게 전달받을 수 있었습니다.
+  &lt;/p&gt;
+  &lt;p&gt;
+   특히, 카카오에서 사용 중인 주요 Add-on에 대해서 친절하게 공개해주셔서 많은 고객분들께 참고가 되셨을거라고 생각합니다.
+  &lt;/p&gt;
+  &lt;p&gt;
+   아울러 카카오에서의 업무 요청 처리 예시 프로세스는 마케터인 저한테도 많은 도움이 되었네요
+   &lt;img src=&quot;/assets/images/71801513/3&quot;/&gt;
+   &lt;img alt=&quot;(smile)&quot; border=&quot;0&quot; class=&quot;emoticon emoticon-smile&quot; src=&quot;http://wiki.osci.kr/s/en_US/8100/655541fd8de32cde09f1d3f09341851d946007a5/_/images/icons/emoticons/smile.svg&quot; title=&quot;(smile)&quot;/&gt;
+   좋은 발표와 공유에 진심으로 감사드립니다!
+  &lt;/p&gt;
+  &lt;p&gt;
+   모든 발표 내용은
+   &lt;a class=&quot;external-link&quot; href=&quot;http://www.osci.kr/board/board.php?b_id=newsletter&amp;amp;cmd=view&amp;amp;num=15&amp;amp;page=0&amp;amp;cate=&amp;amp;eq1=&amp;amp;eq2=&amp;amp;eq3=&amp;amp;eq4=&amp;amp;eq5=&amp;amp;st=&amp;amp;sk=&quot; rel=&quot;nofollow&quot;&gt;
+    여기 링크
+   &lt;/a&gt;
+   에서 확인하실 수 있답니다.
+  &lt;/p&gt;
+  &lt;p&gt;
+   &lt;br/&gt;
+  &lt;/p&gt;
+  &lt;p&gt;
+   세션이 다 끝나고 난 후에는 시원한 맥주와 함께 네트워킹 타임을 가졌답니다!
+  &lt;/p&gt;
+  &lt;p&gt;
+   아틀라시안 본사 직원, 오픈소스컨설팅의 CTO, 실제로 아틀라시안을 도입하신 고객사 셀장님 등 다양한 연사자 분들과 함께 하는 자리여서 많은 분들과 함께 어우러질 수 있어 더욱 좋았습니다!
+  &lt;/p&gt;
+  &lt;p&gt;
+   앞으로도 이런 행사 많이 준비해서 고객 여러분께 더욱 도움이 될 수 있는 오픈소스컨설팅이 되겠습니다.
+  &lt;/p&gt;
+  &lt;p&gt;
+   &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
+    &lt;img src=&quot;/assets/images/71801513/3&quot;/&gt;
+   &lt;/span&gt;
+   &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
+    &lt;img src=&quot;/assets/images/71801513/4&quot;/&gt;
+   &lt;/span&gt;
+  &lt;/p&gt;
+  &lt;p&gt;
+   &lt;br/&gt;
+  &lt;/p&gt;
+  &lt;p&gt;
+   &lt;br/&gt;
+  &lt;/p&gt;
+  &lt;p&gt;
+   &lt;br/&gt;
+  &lt;/p&gt;
+  &lt;p&gt;
+   &lt;br/&gt;
+  &lt;/p&gt;
+  &lt;p&gt;
+   &lt;br/&gt;
+  &lt;/p&gt;
+  &lt;p&gt;
+   &lt;br/&gt;
+  &lt;/p&gt;
+ &lt;/div&gt;
+&lt;/p&gt;</description>
+        <pubDate>Thu, 25 Apr 2019 00:00:00 +0900</pubDate>
+        <link>https://tech.osci.kr/2019/04/25/71801513/</link>
+        <guid isPermaLink="true">https://tech.osci.kr/2019/04/25/71801513/</guid>
+        
+        <category>atlassian</category>
+        
+        <category>itsm</category>
+        
+        <category>devops</category>
+        
+        
+      </item>
     
       <item>
         <title>2019년 4월 Atlassian User Group Meetup에 다녀오다!</title>
@@ -5779,486 +6180,6 @@ update changegroup set CREATED='2015-01-01' where CREATED is null;&lt;/pre&gt;
         <pubDate>Wed, 26 Dec 2018 00:00:00 +0900</pubDate>
         <link>https://tech.osci.kr/2018/12/26/53346876/</link>
         <guid isPermaLink="true">https://tech.osci.kr/2018/12/26/53346876/</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Scouter로 Confluence 모니터링!</title>
-        <description>&lt;p&gt;
- &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
-  &lt;img src=&quot;/assets/images/51741685/0&quot;/&gt;
- &lt;/span&gt;
-&lt;/p&gt;
-&lt;p&gt;
- &lt;br/&gt;
-&lt;/p&gt;
-&lt;p&gt;
- 안녕하세요?
-&lt;/p&gt;
-&lt;p&gt;
- 오픈소스컨설팅 김세연입니다.
-&lt;/p&gt;
-&lt;p&gt;
- &lt;br/&gt;
-&lt;/p&gt;
-&lt;p&gt;
- 오늘은 Confluence에 Scouter를 설치하여 모니터링을 해보겠습니다.
-&lt;/p&gt;
-&lt;p&gt;
- &lt;br/&gt;
-&lt;/p&gt;
-&lt;h1 id=&quot;Scouter로Confluence모니터링!-APM&quot;&gt;
- APM
-&lt;/h1&gt;
-&lt;p&gt;
- &lt;span style=&quot;color: rgb(34,34,34);&quot;&gt;
-  Application Performance Management는 웹 어플리케이션을 운영하는 시스템, 프로그램 성능을 측정하고 모니터링하는 도구입니다. 많은 APM 중 Scouter는 국내에서 오픈소스로 개발되고 있습니다. 활발한 커뮤니티 활동으로 사용자가 원하는 기능이 빠르게 반영되고 있습니다.
- &lt;/span&gt;
-&lt;/p&gt;
-&lt;h1 id=&quot;Scouter로Confluence모니터링!-Scouter&quot;&gt;
- Scouter
-&lt;/h1&gt;
-&lt;p&gt;
- &lt;a class=&quot;external-link&quot; href=&quot;https://github.com/scouter-project/scouter&quot; rel=&quot;nofollow&quot;&gt;
-  https://github.com/scouter-project/scouter
- &lt;/a&gt;
-&lt;/p&gt;
-&lt;p&gt;
- &lt;span class=&quot;confluence-embedded-file-wrapper&quot;&gt;
-  &lt;img alt=&quot;scouter overview&quot; class=&quot;confluence-embedded-image confluence-external-resource&quot; data-image-src=&quot;https://github.com/scouter-project/scouter/raw/master/scouter.document/img/main/scouter-overview.png&quot; src=&quot;https://github.com/scouter-project/scouter/raw/master/scouter.document/img/main/scouter-overview.png&quot;/&gt;
- &lt;/span&gt;
-&lt;/p&gt;
-&lt;p&gt;
- ▲ 스카우터 구성도
-&lt;/p&gt;
-&lt;p&gt;
- &lt;br/&gt;
-&lt;/p&gt;
-&lt;p&gt;
- 스카우터는 4가지 모듈이 있습니다.
-&lt;/p&gt;
-&lt;div class=&quot;table-wrap&quot;&gt;
- &lt;table class=&quot;confluenceTable&quot;&gt;
-  &lt;colgroup&gt;
-   &lt;col/&gt;
-   &lt;col/&gt;
-  &lt;/colgroup&gt;
-  &lt;tbody&gt;
-   &lt;tr&gt;
-    &lt;td class=&quot;confluenceTd&quot;&gt;
-     Modules
-    &lt;/td&gt;
-    &lt;td class=&quot;confluenceTd&quot;&gt;
-     Desc
-    &lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td class=&quot;confluenceTd&quot; colspan=&quot;1&quot;&gt;
-     Collector
-    &lt;/td&gt;
-    &lt;td class=&quot;confluenceTd&quot; colspan=&quot;1&quot;&gt;
-     에이전트로부터 실시간 모니터링 정보를 수집, 가공하며 실시간 대시보드 제공 및 통계정보관리, 장애/에러 경보 등 관리에 필요한 각종 기능을 수행합니다
-    &lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td class=&quot;confluenceTd&quot; colspan=&quot;1&quot;&gt;
-     Java Agent
-    &lt;/td&gt;
-    &lt;td class=&quot;confluenceTd&quot; colspan=&quot;1&quot;&gt;
-     &lt;p&gt;
-      모니터링 대상 시스템(WAS)에 구성되면 되며, 각종 성능 정보를 수집, 스카우터 서버로 전달하는 역할을 합니다.
-     &lt;/p&gt;
-    &lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td class=&quot;confluenceTd&quot; colspan=&quot;1&quot;&gt;
-     Host Agent
-    &lt;/td&gt;
-    &lt;td class=&quot;confluenceTd&quot; colspan=&quot;1&quot;&gt;
-     CPU, Memory, 디스크 성능 정보를 Collector로 전송합니다.
-    &lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-    &lt;td class=&quot;confluenceTd&quot; colspan=&quot;1&quot;&gt;
-     Client
-    &lt;/td&gt;
-    &lt;td class=&quot;confluenceTd&quot; colspan=&quot;1&quot;&gt;
-     Collector에서 수집된 정보를 확인하는 클라이언트 프로그램입니다.
-    &lt;/td&gt;
-   &lt;/tr&gt;
-  &lt;/tbody&gt;
- &lt;/table&gt;
-&lt;/div&gt;
-&lt;h1 id=&quot;Scouter로Confluence모니터링!-설치Stepbystep&quot;&gt;
- 설치 Step by step
-&lt;/h1&gt;
-&lt;div class=&quot;code panel pdl conf-macro output-block&quot; data-hasbody=&quot;true&quot; data-macro-name=&quot;code&quot; style=&quot;border-width: 1px;&quot;&gt;
- &lt;div class=&quot;codeContent panelContent pdl&quot;&gt;
-  &lt;pre class=&quot;syntaxhighlighter-pre&quot; data-syntaxhighlighter-params=&quot;brush: java; gutter: false; theme: Confluence&quot; data-theme=&quot;Confluence&quot;&gt;//환경
-Ubuntu 18 LTS
-Confluence 6.13 - JRE 
-
-&lt;/pre&gt;
- &lt;/div&gt;
-&lt;/div&gt;
-&lt;h2 id=&quot;Scouter로Confluence모니터링!-Step1.Confluence설치&quot;&gt;
- Step1. Confluence 설치
-&lt;/h2&gt;
-&lt;ul style=&quot;list-style-type: square;&quot;&gt;
- &lt;li&gt;
-  &lt;a class=&quot;external-link&quot; href=&quot;https://ko.atlassian.com/software/confluence/download&quot; rel=&quot;nofollow&quot;&gt;
-   https://ko.atlassian.com/software/confluence/download
-  &lt;/a&gt;
- &lt;/li&gt;
- &lt;li&gt;
-  Linux Installer로 설치 진행했습니다.
- &lt;/li&gt;
- &lt;li&gt;
-  기본 경로, 기본 포트를 사용했습니다.
- &lt;/li&gt;
- &lt;li&gt;
-  &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
-   &lt;img src=&quot;/assets/images/51741685/1&quot;/&gt;
-  &lt;/span&gt;
- &lt;/li&gt;
- &lt;li&gt;
-  설치된 JRE 버전은 1.8.9_192 입니다.
- &lt;/li&gt;
- &lt;li&gt;
-  &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
-   &lt;img src=&quot;/assets/images/51741685/2&quot;/&gt;
-  &lt;/span&gt;
-  &lt;br/&gt;
-  &lt;br/&gt;
- &lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;Scouter로Confluence모니터링!-Step2.ScouterCollectorServer설정&quot;&gt;
- Step2. Scouter Collector Server 설정
-&lt;/h2&gt;
-&lt;ul style=&quot;list-style-type: square;&quot;&gt;
- &lt;li&gt;
-  JDK 1.8+ 필요합니다. OpenJDK를 사용해 볼게요.
- &lt;/li&gt;
- &lt;li&gt;
-  `apt install openjdk-8-jdk-headless`
- &lt;/li&gt;
- &lt;li&gt;
-  &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
-   &lt;img src=&quot;/assets/images/51741685/3&quot;/&gt;
-  &lt;/span&gt;
- &lt;/li&gt;
- &lt;li&gt;
-  Scouter Download
- &lt;/li&gt;
- &lt;li&gt;
-  &lt;a class=&quot;external-link&quot; href=&quot;https://github.com/scouter-project/scouter/releases&quot; rel=&quot;nofollow&quot;&gt;
-   https://github.com/scouter-project/scouter/releases
-  &lt;/a&gt;
- &lt;/li&gt;
- &lt;li&gt;
-  2.5.1 버전 다운로드
-  &lt;a class=&quot;external-link&quot; href=&quot;https://github.com/scouter-project/scouter/releases/download/v2.5.1/scouter-min-2.5.1.tar.gz&quot; rel=&quot;nofollow&quot;&gt;
-   https://github.com/scouter-project/scouter/releases/download/v2.5.1/scouter-min-2.5.1.tar.gz
-  &lt;/a&gt;
- &lt;/li&gt;
- &lt;li&gt;
-  Confluence Server에는 min 버전을 다운로드 받아서 해보겠습니다.
- &lt;/li&gt;
- &lt;li&gt;
-  압축을 해제하면 agent.host, agent.java, server가 생성됩니다.
- &lt;/li&gt;
- &lt;li&gt;
-  &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
-   &lt;img src=&quot;/assets/images/51741685/4&quot;/&gt;
-  &lt;/span&gt;
- &lt;/li&gt;
- &lt;li&gt;
-  Server 설정을 해보겠습니다.
- &lt;/li&gt;
- &lt;li&gt;
-  server/conf/scouter.conf 파일을 열어서 아래 내용을 추가합니다.
- &lt;/li&gt;
- &lt;li&gt;
-  &lt;div class=&quot;code panel pdl conf-macro output-block&quot; data-hasbody=&quot;true&quot; data-macro-name=&quot;code&quot; style=&quot;border-width: 1px;&quot;&gt;
-   &lt;div class=&quot;codeContent panelContent pdl&quot;&gt;
-    &lt;pre class=&quot;syntaxhighlighter-pre&quot; data-syntaxhighlighter-params=&quot;brush: java; gutter: false; theme: Confluence&quot; data-theme=&quot;Confluence&quot;&gt;# Agent Control and Service Port(Default : TCP 6100)
-net_tcp_listen_port=6100
-
-# UDP Receive Port(Default : 6100)
-net_udp_listen_port=6100
-
-# DB directory(Default : ./database)
-db_dir=./database
-
-# Log directory(Default : ./logs)
-log_dir=./logs&lt;/pre&gt;
-   &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;p&gt;
-   &lt;br/&gt;
-  &lt;/p&gt;
- &lt;/li&gt;
- &lt;li&gt;
-  &lt;p&gt;
-   서비스를 시작해 볼게요.
-  &lt;/p&gt;
- &lt;/li&gt;
- &lt;li&gt;
-  &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
-   &lt;img src=&quot;/assets/images/51741685/5&quot;/&gt;
-  &lt;/span&gt;
- &lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;
- &lt;br/&gt;
-&lt;/p&gt;
-&lt;h2 id=&quot;Scouter로Confluence모니터링!-Step3.Client설치&quot;&gt;
- Step3. Client 설치
-&lt;/h2&gt;
-&lt;ul style=&quot;list-style-type: square;&quot;&gt;
- &lt;li&gt;
-  저는 macOS 버전을 다운로드 받았습니다. 리눅스, 윈도우, 맥 모두 지원하네요~! Java의 매력 아니겠습니꽈~!
- &lt;/li&gt;
- &lt;li&gt;
-  Eclipse 기반의 클라이언트 프로그램입니다.
- &lt;/li&gt;
- &lt;li&gt;
-  &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
-   &lt;img src=&quot;/assets/images/51741685/6&quot;/&gt;
-  &lt;/span&gt;
- &lt;/li&gt;
- &lt;li&gt;
-  Client 실행하면 Ip, Port, ID, Password 를 적습니다.
- &lt;/li&gt;
- &lt;li&gt;
-  ID는 admin password는 admin 입니다.
- &lt;/li&gt;
- &lt;li&gt;
-  &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
-   &lt;img src=&quot;/assets/images/51741685/7&quot;/&gt;
-  &lt;/span&gt;
- &lt;/li&gt;
- &lt;li&gt;
-  Collector Server와 Client 접속 상태를 확인합니다.
- &lt;/li&gt;
- &lt;li&gt;
-  &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
-   &lt;img src=&quot;/assets/images/51741685/8&quot;/&gt;
-  &lt;/span&gt;
- &lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;
- &lt;br/&gt;
-&lt;/p&gt;
-&lt;h2 id=&quot;Scouter로Confluence모니터링!-Step4.javahost설정&quot;&gt;
- Step4. java host 설정
-&lt;/h2&gt;
-&lt;ul style=&quot;list-style-type: square;&quot;&gt;
- &lt;li&gt;
-  `/scouter/agent.host/conf/scouter.conf` 파일을 아래와 같이 수정합니다.
- &lt;/li&gt;
- &lt;li&gt;
-  &lt;p class=&quot;auto-cursor-target&quot;&gt;
-   기본 값으로 주석 처리만 했습니다.
-  &lt;/p&gt;
-  &lt;div class=&quot;code panel pdl conf-macro output-block&quot; data-hasbody=&quot;true&quot; data-macro-name=&quot;code&quot; style=&quot;border-width: 1px;&quot;&gt;
-   &lt;div class=&quot;codeContent panelContent pdl&quot;&gt;
-    &lt;pre class=&quot;syntaxhighlighter-pre&quot; data-syntaxhighlighter-params=&quot;brush: java; gutter: false; theme: Confluence&quot; data-theme=&quot;Confluence&quot;&gt;### scouter host configruation sample
-net_collector_ip=127.0.0.1
-net_collector_udp_port=6100
-net_collector_tcp_port=6100
-cpu_warning_pct=80
-cpu_fatal_pct=85
-cpu_check_period_ms=60000
-cpu_fatal_history=3
-cpu_alert_interval_ms=300000
-disk_warning_pct=88
-disk_fatal_pct=92&lt;/pre&gt;
-   &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;p class=&quot;auto-cursor-target&quot;&gt;
-   -
-  &lt;/p&gt;
- &lt;/li&gt;
- &lt;li&gt;
-  서비스를 시작해 보겠습니다.
- &lt;/li&gt;
- &lt;li&gt;
-  `/scouter/agent.host/host.sh` 실행
- &lt;/li&gt;
- &lt;li&gt;
-  이제 client에서 cpu, disk, memory를 모니터링 시자으아아아악!
- &lt;/li&gt;
- &lt;li&gt;
-  &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
-   &lt;img src=&quot;/assets/images/51741685/9&quot;/&gt;
-  &lt;/span&gt;
- &lt;/li&gt;
- &lt;li&gt;
-  파이썬으로 for loop 좀 돌렸다고 기영이 패턴이..!?
- &lt;/li&gt;
- &lt;li&gt;
-  &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
-   &lt;img src=&quot;/assets/images/51741685/10&quot;/&gt;
-  &lt;/span&gt;
- &lt;/li&gt;
- &lt;li&gt;
-  &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
-   &lt;img src=&quot;/assets/images/51741685/11&quot;/&gt;
-  &lt;/span&gt;
- &lt;/li&gt;
- &lt;li&gt;
-  Memory, Disk 사용량 모니터링 가능! 운영 서버에 배포하기전에 어플리케이션 부하테스트로 필요한 리소스를 확인하세요! 꼭이요!!
- &lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;Scouter로Confluence모니터링!-Step5.agentjava설정(중요해요별표3개땅땅!)&quot;&gt;
- Step5. agent java 설정 (중요해요 별표 3개 땅땅!)
-&lt;/h2&gt;
-&lt;ul style=&quot;list-style-type: square;&quot;&gt;
- &lt;li&gt;
-  `./scouter/agent.java/conf/scouter.conf` 파일을 편집합니다.
- &lt;/li&gt;
- &lt;li&gt;
-  java agent 기본 값으로 주석 해제 했습니다.
- &lt;/li&gt;
- &lt;li&gt;
-  &lt;p class=&quot;auto-cursor-target&quot;&gt;
-   WAS 이름은 confluence-01 로 했습니다.
-  &lt;/p&gt;
-  &lt;div class=&quot;code panel pdl conf-macro output-block&quot; data-hasbody=&quot;true&quot; data-macro-name=&quot;code&quot; style=&quot;border-width: 1px;&quot;&gt;
-   &lt;div class=&quot;codeContent panelContent pdl&quot;&gt;
-    &lt;pre class=&quot;syntaxhighlighter-pre&quot; data-syntaxhighlighter-params=&quot;brush: java; gutter: false; theme: Confluence&quot; data-theme=&quot;Confluence&quot;&gt;obj_name=confluence-01
-net_collector_ip=127.0.0.1
-net_collector_udp_port=6100
-net_collector_tcp_port=6100
-hook_method_patterns=sample.mybiz.*Biz.*,sample.service.*Service.*
-trace_http_client_ip_header_key=X-Forwarded-For
-profile_spring_controller_method_parameter_enabled=false
-hook_exception_class_patterns=my.exception.TypedException
-profile_fullstack_hooked_exception_enabled=true
-hook_exception_handler_method_patterns=my.AbstractAPIController.fallbackHandler,my.ApiExceptionLoggingFilter.handleNotFoundErrorResponse
-hook_exception_hanlder_exclude_class_patterns=exception.BizException&lt;/pre&gt;
-   &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;p&gt;
-   &lt;br/&gt;
-  &lt;/p&gt;
- &lt;/li&gt;
- &lt;li&gt;
-  &lt;p&gt;
-   `/opt/scouter/agent.java/scouter.agent.jar`  jar를 tomcat application에 설정해야합니다. 위치를 기억해 두세요.
-  &lt;/p&gt;
- &lt;/li&gt;
- &lt;li&gt;
-  Confluence의 setenv.sh 을 수정합니다. (setenv.sh는 Application을 실행할 때 환경 변수를 설정하는 파일입니다.)
- &lt;/li&gt;
- &lt;li&gt;
-  `/opt/atlassian/confluence/bin/setenv.sh` 설치 경로는 다를 수 있습니다.
- &lt;/li&gt;
- &lt;li&gt;
-  &lt;div class=&quot;code panel pdl conf-macro output-block&quot; data-hasbody=&quot;true&quot; data-macro-name=&quot;code&quot; style=&quot;border-width: 1px;&quot;&gt;
-   &lt;div class=&quot;codeContent panelContent pdl&quot;&gt;
-    &lt;pre class=&quot;syntaxhighlighter-pre&quot; data-syntaxhighlighter-params=&quot;brush: java; gutter: false; theme: Confluence&quot; data-theme=&quot;Confluence&quot;&gt;JAVA_OPTS=&quot;-javaagent:/opt/scouter/agent.java/scouter.agent.jar&quot;
-JAVA_OPTS=&quot;${JAVA_OPTS} -Dscouter.config=/opt/scouter/agent.java/conf/scouter.conf&quot;
-JAVA_OPTS=&quot;${JAVA_OPTS} -Datlassian.org.osgi.framework.bootdelegation=META-INF.services,com.yourkit,com.singularity.*,com.jprofiler,com.jprofiler.*,org.apache.xerces,org.apache.xerces.*,org.apache.xalan,org.apache.xalan.*,sun.*,com.sun.jndi.*,com.icl.saxon,com.icl.saxon.*,javax.servlet,javax.servlet.*,com.sun.xml.bind.*,javax.xml.*,scouter.*&quot;
-export JAVA_OPTS&lt;/pre&gt;
-   &lt;/div&gt;
-  &lt;/div&gt;
- &lt;/li&gt;
- &lt;li&gt;
-  &lt;strong&gt;
-   Confluence Service 시작
-  &lt;/strong&gt;
- &lt;/li&gt;
- &lt;li&gt;
-  catalina.out 로그를 보시면 Scouter가 시작됩니다. 퐈이야!!
- &lt;/li&gt;
- &lt;li&gt;
-  &lt;div class=&quot;code panel pdl conf-macro output-block&quot; data-hasbody=&quot;true&quot; data-macro-name=&quot;code&quot; style=&quot;border-width: 1px;&quot;&gt;
-   &lt;div class=&quot;codeContent panelContent pdl&quot;&gt;
-    &lt;pre class=&quot;syntaxhighlighter-pre&quot; data-syntaxhighlighter-params=&quot;brush: java; gutter: false; theme: Confluence&quot; data-theme=&quot;Confluence&quot;&gt;  ____                  _
- / ___|  ___ ___  _   _| |_ ___ _ __
- \___ \ / __/   \| | | | __/ _ \ '__|
-  ___) | (_| (+) | |_| | ||  __/ |
- |____/ \___\___/ \__,_|\__\___|_|
- Open Source S/W Performance Monitoring
- Scouter version 2.5.1
-
-20181216 14:09:29 [SCOUTER] Version 2.5.1 2018-12-16 08:55 GMT_ENV_java8plus
-20181216 14:09:29 [SCOUTER] loaded by system classloader
-20181216 14:09:29 [SCOUTER] jar:file:/opt/scouter/agent.java/scouter.agent.jar
-20181216 14:09:30 [SCOUTER] objType:java
-20181216 14:09:30 [SCOUTER] objName:/ubuntu-bionic/confluence-01
-20181216 14:09:30 [A113] Counter Collector Started (#19)
-20181216 14:09:30 [A113] InteractionCounter Collector Started (#19)
-20181216 14:09:30 [SCOUTER] Configure -Dscouter.config=/opt/scouter/agent.java/conf/scouter.conf
-20181216 14:09:30 [A100] agent boot seed=xk5irljeeb
-20181216 14:09:30 [SCOUTER] PLUG-IN : scouter.agent.plugin.AbstractAppService service.plug loaded #xghqpc
-20181216 14:09:30 [SCOUTER] PLUG-IN : scouter.agent.plugin.AbstractHttpService httpservice.plug loaded #xg8h3a1
-20181216 14:09:30 [SCOUTER] PLUG-IN : scouter.agent.plugin.AbstractCapture capture.plug loaded #x469nrf
-20181216 14:09:30 [SCOUTER] PLUG-IN : scouter.agent.plugin.AbstractCapture springControllerCapture.plug loaded #x1rvuqrv
-20181216 14:09:30 [SCOUTER] PLUG-IN : scouter.agent.plugin.AbstractJdbcPool jdbcpool.plug loaded #x148lqht
-20181216 14:09:30 [NONE] LoadJarBytes scouter.jdbc 33156 bytes
-20181216 14:09:30 [SCOUTER] PLUG-IN : scouter.agent.plugin.AbstractHttpCall httpcall.plug loaded #x14uol51
-20181216 14:09:30 [SCOUTER] PLUG-IN : scouter.agent.plugin.AbstractCounter counter.plug loaded #x1obvb4m&lt;/pre&gt;
-   &lt;/div&gt;
-  &lt;/div&gt;
- &lt;/li&gt;
- &lt;li&gt;
-  &lt;strong&gt;
-   &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
-    &lt;img src=&quot;/assets/images/51741685/12&quot;/&gt;
-   &lt;/span&gt;
-  &lt;/strong&gt;
- &lt;/li&gt;
- &lt;li&gt;
-  모니터링 시작입니다!
-  &lt;strong&gt;
-  &lt;/strong&gt;
-  느린 응답, SQL 확인할 수 있습니다.
-  &lt;strong&gt;
-   &lt;br/&gt;
-  &lt;/strong&gt;
- &lt;/li&gt;
- &lt;li&gt;
-  Heap used, Disk, CPU, Memory 등을 모니터링 시작입니다.
- &lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul style=&quot;list-style-type: square;&quot;&gt;
- &lt;li&gt;
-  &lt;div class=&quot;embeddedObject conf-macro output-block&quot; data-hasbody=&quot;false&quot; data-macro-name=&quot;multimedia&quot;&gt;
-   &lt;video controls=&quot;&quot; height=&quot;380&quot; src=&quot;/assets/images/51741685/apm_wiki.mp4&quot; width=&quot;500&quot;&gt;
-    Your browser does not support the HTML5 video element
-   &lt;/video&gt;
-  &lt;/div&gt;
- &lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;
- &lt;br/&gt;
-&lt;/p&gt;
-&lt;p&gt;
- 감사합니다.
-&lt;/p&gt;
-&lt;p&gt;
- 오픈소스컨설팅
-&lt;/p&gt;
-&lt;p&gt;
- 아틀라시안팀 김세연
-&lt;/p&gt;
-&lt;p&gt;
- &lt;a class=&quot;external-link&quot; href=&quot;mailto:atlassian@osci.kr&quot; rel=&quot;nofollow&quot;&gt;
-  atlassian@osci.kr
- &lt;/a&gt;
-&lt;/p&gt;
-&lt;p&gt;
- &lt;a class=&quot;external-link&quot; href=&quot;mailto:sales@osci.kr&quot; rel=&quot;nofollow&quot;&gt;
-  sales@osci.kr
- &lt;/a&gt;
-&lt;/p&gt;</description>
-        <pubDate>Sun, 16 Dec 2018 00:00:00 +0900</pubDate>
-        <link>https://tech.osci.kr/2018/12/16/51741685/</link>
-        <guid isPermaLink="true">https://tech.osci.kr/2018/12/16/51741685/</guid>
         
         
       </item>
