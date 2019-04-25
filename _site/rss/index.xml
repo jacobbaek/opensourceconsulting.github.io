@@ -9,8 +9,8 @@ Sharing Tech. Growing Together.
 </description>
     <link>https://tech.osci.kr/</link>
     <atom:link href="https://tech.osci.kr/rss" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 26 Apr 2019 02:04:58 +0900</pubDate>
-    <lastBuildDate>Fri, 26 Apr 2019 02:04:58 +0900</lastBuildDate>
+    <pubDate>Fri, 26 Apr 2019 02:05:40 +0900</pubDate>
+    <lastBuildDate>Fri, 26 Apr 2019 02:05:40 +0900</lastBuildDate>
     <generator>Jekyll v3.7.4</generator>
     
       <item>
@@ -1412,7 +1412,6 @@ ls: cannot access /var/lib/kubelet/pods/fcd69917-59fd-11e9-a751-001a4a160172/: N
  &lt;/blockquote&gt;
  &lt;p&gt;
   &lt;img src=&quot;/assets/images/71798599/0&quot;/&gt;
-  &lt;img alt=&quot;&quot; src=&quot;https://chhanz.github.io/assets/images/post/2019-04-15-kubernetes-volume/image1.png&quot;/&gt;
  &lt;/p&gt;
  &lt;p&gt;
   이와 같은 방식을
