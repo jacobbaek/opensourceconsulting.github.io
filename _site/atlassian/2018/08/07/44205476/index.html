@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+ <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+<title>7월 Atlassian TroubleShooting 정리</title>
+<meta name="title" content="7월 Atlassian TroubleShooting 정리" />
+<meta name="author" content="wjsrkqdlf"/>
+<meta name="description" content="7월 이슈사항 내역 일반 사용자가 Header의 Issues 메뉴(Current search, Search for issues) 사용 시 Layout이 깨지며, Browser가 hang되는 현상 Exception :Uncaught ReferenceError :Calendar is not defined 사용하지 않는 Jira Suit Utilities plugin이 설치되어 있었으며, 해당 Add-on을 제거함으로써 해결 Project 생성 시 에러발생현상 Caused by: java.lang.RuntimeException: Could not identify Bundle at location &lt;reference: file:/var/atlassian/application-data/jira/plugins/.osgi-plugins/transformed-plugins/project-templates-plugin-6.2.3_1531264928000.jar &gt; Cache된 플러그인 디렉토리가 삭제되어 발생하는 에러로, Jira 재시작 시 해결 Jira Kanban Board에서 이슈 클릭 시 에러발생현상 An ssh error occurred..."/>
+
+<meta property="fb:app_id" content=""/>
+
+<meta property="og:site_name" content="오픈소스컨설팅 
+기술 블로그
+"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="7월 Atlassian TroubleShooting 정리"/>
+<meta property="og:description" content="7월 이슈사항 내역 일반 사용자가 Header의 Issues 메뉴(Current search, Search for issues) 사용 시 Layout이 깨지며, Browser가 hang되는 현상 Exception :Uncaught ReferenceError :Calendar is not defined 사용하지 않는 Jira Suit Utilities plugin이 설치되어 있었으며, 해당 Add-on을 제거함으로써 해결 Project 생성 시 에러발생현상 Caused by: java.lang.RuntimeException: Could not identify Bundle at location &lt;reference: file:/var/atlassian/application-data/jira/plugins/.osgi-plugins/transformed-plugins/project-templates-plugin-6.2.3_1531264928000.jar &gt; Cache된 플러그인 디렉토리가 삭제되어 발생하는 에러로, Jira 재시작 시 해결 Jira Kanban Board에서 이슈 클릭 시 에러발생현상 An ssh error occurred..."/>
+<meta property="og:url" content="https://tech.osci.kr/atlassian/2018/08/07/44205476/"/>
+<meta property="og:image" content=""/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="7월 Atlassian TroubleShooting 정리"/>
+<meta name="twitter:description" content="7월 이슈사항 내역 일반 사용자가 Header의 Issues 메뉴(Current search, Search for issues) 사용 시 Layout이 깨지며, Browser가 hang되는 현상 Exception :Uncaught ReferenceError :Calendar is not defined 사용하지 않는 Jira Suit Utilities plugin이 설치되어 있었으며, 해당 Add-on을 제거함으로써 해결 Project 생성 시 에러발생현상 Caused by: java.lang.RuntimeException: Could not identify Bundle at location &lt;reference: file:/var/atlassian/application-data/jira/plugins/.osgi-plugins/transformed-plugins/project-templates-plugin-6.2.3_1531264928000.jar &gt; Cache된 플러그인 디렉토리가 삭제되어 발생하는 에러로, Jira 재시작 시 해결 Jira Kanban Board에서 이슈 클릭 시 에러발생현상 An ssh error occurred..."/>
+<meta name="twitter:label1" content="Written by"/>
+<meta name="twitter:data1" content="wjsrkqdlf"/>
+<meta name="twitter:image:src" content="https://tech.osci.kr/assets/images/default_blog_cover.jpg"/>
+<meta name="naver-site-verification" content="11ec9086ec9292ebc8dc73f6224492f208b2007b"/>
+<meta name="google-site-verification" content="Q5w5X0R32gOG-1lBhFg0UxvXRNoQX-uOSPjxPI4sXH4" />
+
+<meta name="twitter:label2" content="Filed under"/>
+<meta name="twitter:data2" content="atlassian,TroubleShooting"/>
+
+<meta property="article:tag" content="atlassian"/>
+
+<meta property="article:tag" content="TroubleShooting"/>
+
+
+
+<meta property="article:published_time" content="2018-08-07T00:00:00+09:00"/>
+
+
+<meta property="article:author" content="https://tech.osci.kr/authors/wjsrkqdlf"/>
+
+<link href="https://tech.osci.kr/rss/" rel="alternate" type="application/rss+xml" title="RSS"/>
+<link href="/assets/favicon.png" rel="icon" type="image/png"/>
+<link href="/assets/apple-touch-icon.png" rel="apple-touch-icon" type="image/png"/>
+<link href="/assets/apple-touch-icon.png" rel="apple-touch-icon-precomposed" type="image/png"/>
+<link href="/assets/lib/normalize.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/css/monokai.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/lib/magnific-popup.min.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/css/screen.css" rel="stylesheet" type="text/css"/>
+
+</head>
+<body class="post-template">
+
+<div id="header">
+    <button id="menu-toggle" type="button">
+        <span class="sr-only">Toggle Navigation Menu</span>
+    </button>
+    <button id="search-toggle" type="button">
+        <span class="sr-only">Toggle Search Form</span>
+    </button>
+    <a href="/" id="logo">
+    </a>
+    <form id="search">
+        <input id="searchQueryEdit" name="q" type="search" placeholder="Search..." value="" />
+    </form>
+
+    <ul id="menu" class="nav">
+        <li class=" active "><a href="/">Blog</a></li>
+        <!--<li class=""><a href="/books/">Books</a></li>-->
+        <li class=""><a href="/about/">About</a></li>
+    </ul>
+</div><!-- #header -->
+
+
+<div id="wrapper">
+    <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v3.2&appId=1720005341592310&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div id="navbar" class="container">
+    <h5><a id="link-back" href="/">Back to Posts</a></h5>
+    
+<ul id="shares">
+    
+    <li>
+        <a id="share-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://tech.osci.kr/atlassian/2018/08/07/44205476/"
+           onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+            <span class="sr-only">Share to Facebook</span>
+        </a>
+    </li>
+    
+    
+    
+</ul>
+
+</div>
+
+<div id="cover" class="container"
+     >
+    <div>
+        <h1>7월 Atlassian TroubleShooting 정리</h1>
+        <p>TroubleShooting 경험을 공유합니다.</p>
+        <p class="right" style="opacity: 0.5">
+            
+                atlassian
+                ,
+            
+                TroubleShooting
+                
+            
+        </p>
+        
+
+
+    </div>
+</div>
+<div id="content" class="container post" role="main">
+    <div id="post-content">
+        
+        <h2 id="id-7월AtlassianTroubleShooting정리-7월이슈사항내역">
+ 7월 이슈사항 내역
+</h2>
+<h3 id="id-7월AtlassianTroubleShooting정리-일반사용자가Header의Issues메뉴(Currentsearch,Searchforissues)사용시Layout이깨지며,Browser가hang되는현상">
+ <strong>
+  일반 사용자가 Header의 Issues 메뉴(Current search, Search for issues) 사용 시 Layout이 깨지며, Browser가 hang되는 현상
+ </strong>
+</h3>
+<ul>
+ <li style="list-style-type: none;background-image: none;">
+  <ul>
+   <li>
+    Exception :Uncaught ReferenceError :Calendar is not defined
+   </li>
+   <li>
+    사용하지 않는 Jira Suit Utilities plugin이 설치되어 있었으며, 해당 Add-on을 제거함으로써 해결
+   </li>
+  </ul>
+ </li>
+</ul>
+<h3 id="id-7월AtlassianTroubleShooting정리-Project생성시에러발생현상">
+ <strong>
+  Project 생성 시 에러발생현상
+ </strong>
+</h3>
+<ol>
+ <li style="list-style-type: none;background-image: none;">
+  <ul>
+   <li>
+    Caused by: java.lang.RuntimeException: Could not identify Bundle at location &lt;reference:
+    <a class="external-link" href="http://file/var/atlassian/application-data/jira/plugins/.osgi-plugins/transformed-plugins/project-templates-plugin-6.2.3_1531264928000.jar" rel="nofollow">
+     file:/var/atlassian/application-data/jira/plugins/.osgi-plugins/transformed-plugins/project-templates-plugin-6.2.3_1531264928000.jar
+    </a>
+    &gt;
+   </li>
+   <li>
+    Cache된 플러그인 디렉토리가 삭제되어 발생하는 에러로, Jira 재시작 시 해결
+   </li>
+  </ul>
+ </li>
+</ol>
+<h3 id="id-7월AtlassianTroubleShooting정리-JiraKanbanBoard에서이슈클릭시에러발생현상">
+ <strong>
+  Jira Kanban Board에서 이슈 클릭 시 에러발생현상
+ </strong>
+</h3>
+<ol>
+ <li style="list-style-type: none;background-image: none;">
+  <ul>
+   <li>
+    An ssh error occurred while querying for reviews
+   </li>
+   <li>
+    사용하지 않는 Gerrit plugin이 설치되어 있었으며, 해당 Add-on을 제거함으로써 해결
+   </li>
+  </ul>
+ </li>
+</ol>
+<h3 id="id-7월AtlassianTroubleShooting정리-UserpickercustomField문제">
+ <strong>
+  User picker custom Field 문제
+ </strong>
+</h3>
+<ol>
+ <li style="list-style-type: none;background-image: none;">
+  <ul>
+   <li>
+    사용자가 1000명 이상인 그룹에 대해 Jira의 Custom field 중 하나인 user picker를 사용 시 해당 그룹의 최대 사용자가 1000명까지밖에 조회되지않는 현상
+   </li>
+   <li>
+    이는 Third-party Add-on인 Custom watcher field에서도 동일하게 발생
+   </li>
+   <li>
+    현재 Bug로 등록 및 에스컬레이션 진행 중이나, Fix되지 않음
+    <ul>
+     <li>
+      <a class="external-link" href="https://jira.atlassian.com/browse/JRASERVER-63771" rel="nofollow">
+       https://jira.atlassian.com/browse/JRASERVER-63771
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li>
+    Atlassian Bug Fix 정책에 따라, hotfix가 불가능
+   </li>
+  </ul>
+ </li>
+</ol>
+<h3 id="id-7월AtlassianTroubleShooting정리-JiraFileupload문제">
+ <strong>
+  Jira File upload 문제
+ </strong>
+</h3>
+<ol>
+ <li style="list-style-type: none;background-image: none;">
+  <ul>
+   <li>
+    Jira의 자체적인 파일업로드 사이즈 제한을 풀었음에도 파일 업로드가 되지 않는 현상
+   </li>
+   <li>
+    Nginx 웹서버 설정의 max_body size 를 늘림으로써 해결
+   </li>
+  </ul>
+ </li>
+</ol>
+<h3 id="id-7월AtlassianTroubleShooting정리-ConfluenceTable자음분리문제">
+ <strong>
+  Confluence Table 자음 분리 문제
+ </strong>
+</h3>
+<ol>
+ <li style="list-style-type: none;background-image: none;">
+  <ul>
+   <li>
+    Confluence Table에서 첫 Column에서 한글의 자음이 분리되는 현상
+   </li>
+   <li>
+    Chrome의 버그로 최신업데이트로 해결
+   </li>
+  </ul>
+ </li>
+</ol>
+<h3 id="id-7월AtlassianTroubleShooting정리-JiraServiceDesk에서ConfluenceKnowledgeBase연동시Anonymous권한이있어야만하는현상">
+ <strong>
+  Jira Service Desk에서 Confluence KnowledgeBase 연동 시 Anonymous 권한이 있어야만하는 현상
+ </strong>
+</h3>
+<ul>
+ <li style="list-style-type: none;background-image: none;">
+  <ul>
+   <li>
+    Jira의 Application link 버그로, 연결방식을 OAuth (impersonation)로 변경 시 해결
+   </li>
+  </ul>
+ </li>
+</ul>
+<h3 id="id-7월AtlassianTroubleShooting정리-SSRF버그를통한취약점문제">
+ <strong>
+  SSRF 버그를 통한 취약점 문제
+ </strong>
+</h3>
+<ol>
+ <li style="list-style-type: none;background-image: none;">
+  <ul>
+   <li>
+    <a class="external-link" href="https://www.zdnet.com/article/jira-bug-exposed-private-server-keys-at-major-companies-researcher-finds/" rel="nofollow">
+     https://www.zdnet.com/article/jira-bug-exposed-private-server-keys-at-major-companies-researcher-finds/
+    </a>
+   </li>
+   <li>
+    <a class="external-link" href="https://www.trendmicro.com/vinfo/us/security/news/vulnerabilities-and-exploits/jira-bug-exposes-organizations-aws-server-keys" rel="nofollow">
+     https://www.trendmicro.com/vinfo/us/security/news/vulnerabilities-and-exploits/jira-bug-exposes-organizations-aws-server-keys
+    </a>
+   </li>
+   <li>
+    Jira / Confluence 각각 해당 취약점이 해결된 버전으로 업그레이드하여 해결
+   </li>
+  </ul>
+ </li>
+</ol>
+<h3 id="id-7월AtlassianTroubleShooting정리-Log에사용자ID가남지않는문제">
+ <strong>
+  Log에 사용자 ID가 남지않는 문제
+ </strong>
+</h3>
+<ul>
+ <li style="list-style-type: none;background-image: none;">
+  <ul>
+   <li>
+    <p>
+     192.168.1.120 - -
+     <span class="error">
+      [12/Jul/2018:14:53:16 +0900]
+     </span>
+     0.366s - 7423 /wiki/attachmentnotfound.action?pageId=159876496
+    </p>
+   </li>
+   <li>
+    <p>
+     server.xml파일에 %{X-AUSERNAME}o 파라메터 추가
+     <br/>
+     <a class="external-link" href="https://confluence.atlassian.com/confkb/audit-confluence-using-the-tomcat-valve-component-223216846.html" rel="nofollow" title="Follow link">
+      https://confluence.atlassian.com/confkb/audit-confluence-using-the-tomcat-valve-component-223216846.html
+     </a>
+    </p>
+    <p>
+     <span class="error">
+      [12/Jul/2018:15:04:19 +0900]
+     </span>
+     testuser Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36 192.168.1.120 0.042s - 672 /wiki/rest/webResources/1.0/resources
+    </p>
+   </li>
+  </ul>
+ </li>
+</ul>
+<h2 id="id-7월AtlassianTroubleShooting정리-ETC">
+ ETC
+</h2>
+<h3 id="id-7월AtlassianTroubleShooting정리-CrowdDataCenterMechanism관련">
+ Crowd Data Center Mechanism 관련
+</h3>
+<ul>
+ <li style="list-style-type: none;background-image: none;">
+  <ul>
+   <li>
+    Jira의 경우 ehcache를, Confluence의 경우 hazelcast를 Clustering에 사용하나 Crowd에 대한 정보를 찾기가 어려워 Support에 질의
+   </li>
+   <li>
+    Crowd의 경우 Jira나 Confluence만큼 복잡한 솔루션이 아니기에 DB Table 레벨에서 해결
+    <ul>
+     <li>
+      <p>
+       Crowd doesn't use any mechanisms like Hazelcast or ehcache to manage the cluster. It maintains the state of the cluster through tables in the database.
+       <br/>
+       Basically, Crowd is a
+       <em>
+        simpler
+       </em>
+       application than Confluence or Jira and doesn't have any need to implement any additional clustering mechanism
+       <br/>
+       I also got the following information from one of our Crowd developers.
+      </p>
+      <blockquote>
+       <p>
+        Crowd is not using cache replication among DC nodes.
+        <br/>
+        It relies on DB and there is publish - subscribe mechanism also based on DB to notify all nodes about changes in config
+       </p>
+      </blockquote>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p>
+ <br/>
+</p>
+        <div class="fb-like" data-href="https://tech.osci.kr/atlassian/2018/08/07/44205476/"  data-width="300px" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+        <div class="fb-comments" data-href="https://tech.osci.kr/atlassian/2018/08/07/44205476/" data-width="100%" data-numposts="5"></div>
+    </div>
+
+    <div id="post-footer">
+        
+        <a id="post-author" href="/authors/wjsrkqdlf/">
+            <div id="author-image" style="background-image:url(/files/authors/wjsrkqdlf.png);">
+                <span class="sr-only">wjsrkqdlf's profile image</span>
+            </div>
+            <p id="author-name">wjsrkqdlf</p>
+        </a>
+        <p id="post-date">2018-08-07</p>
+        <a id="post-more" href="/authors/wjsrkqdlf/">
+            <span>Read more posts by this author</span>
+        </a>
+    </div>
+</div>
+
+<div id="post-links" class="container">
+    
+    
+        <div id="post-prev"
+             style="background-image: url(/assets/images/44205100/1);">
+            <div>
+                <h3><a href="/bitbucket/2018/08/05/44205100/">Bitbucket jekyll 블로그 만들기</a></h3>
+                <p>YOU MIGHT ENJOY</p>
+            </div>
+        </div>
+    
+    
+    
+        <div id="post-next"
+             >
+            <div>
+                <h3><a href="/2018/08/09/44205726/">오픈소스컨설팅 Jira 교육 후기</a></h3>
+                <p>NEXT POST</p>
+            </div>
+        </div>
+    
+</div>
+
+<div id="lightbox">
+    <div id="lightbox-image"></div>
+</div>
+
+
+    <div class="clearfix"></div>
+
+    <a href="#" id="back-to-top"></a>
+</div>
+
+<div id="footer" class="container-fluid">
+    <ul id="links">
+        
+        <li>
+            <a id="link-github" href="http://github.com/opensourceconsulting" target="_blank">
+                <span class="sr-only">github</span>
+            </a>
+        </li>
+        
+        
+        <li>
+            <a id="link-facebook" href="http://facebook.com/osckorea" target="_blank">
+                <span class="sr-only">facebook</span>
+            </a>
+        </li>
+        
+        
+        <li>
+            <a id="link-rss" href="/rss" target="_blank">
+                <span class="sr-only">rss</span>
+            </a>
+        </li>
+    </ul>
+    <p id="copyright">
+        <a href="https://tech.osci.kr">&copy;2018 OpenSourceConsulting</a>
+        All rights reserved.
+    </p>
+</div><!--#footer-->
+
+
+<script src="/assets/lib/jquery-1.12.0.min.js"></script>
+<script src="/assets/lib/jquery.magnific-popup.min.js"></script>
+<script src="/assets/js/index.js"></script>
+
+
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-39977834-4', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+
+
+
+    
+    <!-- <script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '',
+            xfbml      : true,
+            version    : 'v2.8'
+        });
+        FB.Canvas.getPageInfo(
+            function(info) {
+                alert('Width: ' + info.clientWidth + ' Height: ' + info.clientHeight);
+            }
+        );
+        FB.AppEvents.logPageView();
+    };
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.8";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script> -->
+
+<!--
+<script>
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.8";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+-->
+
+    
+
+    
+
+    
+
+</body>
+</html>

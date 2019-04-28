@@ -1,0 +1,1706 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+ <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+<title>configuration of openstack 4 node</title>
+<meta name="title" content="configuration of openstack 4 node" />
+<meta name="author" content="OpenSourceConsulting"/>
+<meta name="description" content="
+ 
+  
+   
+  
+  
+   
+    
+     
+      Docker on Openstack_OSC_v7.pptx
+     &lt;/img&gt;
+    
+   
+  
+  
+   
+  
+  
+   4노드 기반의 오픈스택을 구축하고 해당 기반위에 Docker를 구성하는 방법에 대한 내용을 설명합니다. 자세한 항목은 본문에 포함되는 PPT 파일을 다운로드 받아 확인하시면 됩니다.
+  
+  
+   
+  
+  
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+  
+  
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+  
+  
+   
+    
+     
+      
+       저작자표시
+      
+     
+    
+   
+  
+  
+  
+  
+ 
+
+"/>
+
+<meta property="fb:app_id" content=""/>
+
+<meta property="og:site_name" content="오픈소스컨설팅 
+기술 블로그
+"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="configuration of openstack 4 node"/>
+<meta property="og:description" content="
+ 
+  
+   
+  
+  
+   
+    
+     
+      Docker on Openstack_OSC_v7.pptx
+     &lt;/img&gt;
+    
+   
+  
+  
+   
+  
+  
+   4노드 기반의 오픈스택을 구축하고 해당 기반위에 Docker를 구성하는 방법에 대한 내용을 설명합니다. 자세한 항목은 본문에 포함되는 PPT 파일을 다운로드 받아 확인하시면 됩니다.
+  
+  
+   
+  
+  
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+  
+  
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+  
+  
+   
+    
+     
+      
+       저작자표시
+      
+     
+    
+   
+  
+  
+  
+  
+ 
+
+"/>
+<meta property="og:url" content="https://tech.osci.kr/docker,%20openstack/2015/03/18/tistory-53/"/>
+<meta property="og:image" content=""/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="configuration of openstack 4 node"/>
+<meta name="twitter:description" content="
+ 
+  
+   
+  
+  
+   
+    
+     
+      Docker on Openstack_OSC_v7.pptx
+     &lt;/img&gt;
+    
+   
+  
+  
+   
+  
+  
+   4노드 기반의 오픈스택을 구축하고 해당 기반위에 Docker를 구성하는 방법에 대한 내용을 설명합니다. 자세한 항목은 본문에 포함되는 PPT 파일을 다운로드 받아 확인하시면 됩니다.
+  
+  
+   
+  
+  
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+  
+  
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+    
+   
+  
+  
+   
+  
+  
+   
+  
+  
+   
+    
+     
+      
+       저작자표시
+      
+     
+    
+   
+  
+  
+  
+  
+ 
+
+"/>
+<meta name="twitter:label1" content="Written by"/>
+<meta name="twitter:data1" content="OpenSourceConsulting"/>
+<meta name="twitter:image:src" content="https://tech.osci.kr/assets/images/default_blog_cover.jpg"/>
+<meta name="naver-site-verification" content="11ec9086ec9292ebc8dc73f6224492f208b2007b"/>
+<meta name="google-site-verification" content="Q5w5X0R32gOG-1lBhFg0UxvXRNoQX-uOSPjxPI4sXH4" />
+
+<meta name="twitter:label2" content="Filed under"/>
+<meta name="twitter:data2" content="Docker,OpenStack"/>
+
+<meta property="article:tag" content="Docker"/>
+
+<meta property="article:tag" content="OpenStack"/>
+
+
+
+<meta property="article:published_time" content="2015-03-18T20:51:21+09:00"/>
+
+
+<meta property="article:author" content="https://tech.osci.kr/authors/OpenSourceConsulting"/>
+
+<link href="https://tech.osci.kr/rss/" rel="alternate" type="application/rss+xml" title="RSS"/>
+<link href="/assets/favicon.png" rel="icon" type="image/png"/>
+<link href="/assets/apple-touch-icon.png" rel="apple-touch-icon" type="image/png"/>
+<link href="/assets/apple-touch-icon.png" rel="apple-touch-icon-precomposed" type="image/png"/>
+<link href="/assets/lib/normalize.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/css/monokai.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/lib/magnific-popup.min.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/css/screen.css" rel="stylesheet" type="text/css"/>
+
+</head>
+<body class="post-template">
+
+<div id="header">
+    <button id="menu-toggle" type="button">
+        <span class="sr-only">Toggle Navigation Menu</span>
+    </button>
+    <button id="search-toggle" type="button">
+        <span class="sr-only">Toggle Search Form</span>
+    </button>
+    <a href="/" id="logo">
+    </a>
+    <form id="search">
+        <input id="searchQueryEdit" name="q" type="search" placeholder="Search..." value="" />
+    </form>
+
+    <ul id="menu" class="nav">
+        <li class=" active "><a href="/">Blog</a></li>
+        <!--<li class=""><a href="/books/">Books</a></li>-->
+        <li class=""><a href="/about/">About</a></li>
+    </ul>
+</div><!-- #header -->
+
+
+<div id="wrapper">
+    <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v3.2&appId=1720005341592310&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div id="navbar" class="container">
+    <h5><a id="link-back" href="/">Back to Posts</a></h5>
+    
+<ul id="shares">
+    
+    <li>
+        <a id="share-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://tech.osci.kr/docker,%20openstack/2015/03/18/tistory-53/"
+           onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+            <span class="sr-only">Share to Facebook</span>
+        </a>
+    </li>
+    
+    
+    
+</ul>
+
+</div>
+
+<div id="cover" class="container"
+     >
+    <div>
+        <h1>configuration of openstack 4 node</h1>
+        <p>4노드 기반의 오픈스택을 구축하고 해당 기반위에 Docker를 구성하는 방법에 대한 내용을 설명합니다. 자세한 항목은 본문에 포함되는 PPT 파일을 다운로드 받아 확인하시면 됩니다...</p>
+        <p class="right" style="opacity: 0.5">
+            
+                Docker
+                ,
+            
+                OpenStack
+                
+            
+        </p>
+        
+
+
+    </div>
+</div>
+<div id="content" class="container post" role="main">
+    <div id="post-content">
+        
+        <div class="area_view">
+ <div class="tt_article_useless_p_margin">
+  <p>
+   <br />
+  </p>
+  <p>
+   <span class="imageblock" style="display:inline-block;;height:auto;max-width:100%">
+    <a href="http://blog.osci.kr/attachment/cfile8.uf@272619445509677D0EE15A.pptx">
+     <img alt="" src="https://t1.daumcdn.net/tistory_admin/blogs/image/extension/pptx.gif?_version_=e5bccf3ae699fd50098405045efeeb0cc901a607" style="vertical-align: middle;" />
+      Docker on Openstack_OSC_v7.pptx
+     &lt;/img&gt;
+    </a>
+   </span>
+  </p>
+  <p>
+   <br />
+  </p>
+  <p>
+   4노드 기반의 오픈스택을 구축하고 해당 기반위에 Docker를 구성하는 방법에 대한 내용을 설명합니다. 자세한 항목은 본문에 포함되는 PPT 파일을 다운로드 받아 확인하시면 됩니다.
+  </p>
+  <p>
+   <br />
+  </p>
+  <p>
+   <br />
+  </p>
+  <p>
+   <br />
+  </p>
+  <p style="text-align: center; clear: none; float: none;">
+   <span class="imageblock" style="display:inline-block;width:800px;;height:auto;max-width:100%">
+    <img src="/assets/images/53/슬라이드5.PNG" />
+   </span>
+  </p>
+  <p>
+   <br />
+  </p>
+  <p style="text-align: center; clear: none; float: none;">
+   <span class="imageblock" style="display:inline-block;width:800px;;height:auto;max-width:100%">
+    <img src="/assets/images/53/슬라이드6.PNG" />
+   </span>
+  </p>
+  <p>
+   <br />
+  </p>
+  <p style="text-align: center; clear: none; float: none;">
+   <span class="imageblock" style="display:inline-block;width:800px;;height:auto;max-width:100%">
+    <img src="/assets/images/53/슬라이드7.PNG" />
+   </span>
+  </p>
+  <p>
+   <br />
+  </p>
+  <p style="text-align: center; clear: none; float: none;">
+   <span class="imageblock" style="display:inline-block;width:800px;;height:auto;max-width:100%">
+    <img src="/assets/images/53/슬라이드8.PNG" />
+   </span>
+  </p>
+  <p>
+   <br />
+  </p>
+  <p style="text-align: center; clear: none; float: none;">
+   <span class="imageblock" style="display:inline-block;width:800px;;height:auto;max-width:100%">
+    <img src="/assets/images/53/슬라이드9.PNG" />
+   </span>
+  </p>
+  <p>
+  </p>
+  <p>
+  </p>
+  <p style="text-align: center; clear: none; float: none;">
+   <span class="imageblock" style="display:inline-block;width:800px;;height:auto;max-width:100%">
+    <img src="/assets/images/53/슬라이드10.PNG" />
+   </span>
+  </p>
+  <p>
+   <br />
+  </p>
+  <p style="text-align: center; clear: none; float: none;">
+   <span class="imageblock" style="display:inline-block;width:800px;;height:auto;max-width:100%">
+    <img src="/assets/images/53/슬라이드11.PNG" />
+   </span>
+  </p>
+  <p>
+   <br />
+  </p>
+  <p style="text-align: center; clear: none; float: none;">
+   <span class="imageblock" style="display:inline-block;width:800px;;height:auto;max-width:100%">
+    <img src="/assets/images/53/슬라이드12.PNG" />
+   </span>
+  </p>
+  <p>
+   <br />
+  </p>
+  <p style="text-align: center; clear: none; float: none;">
+   <span class="imageblock" style="display:inline-block;width:800px;;height:auto;max-width:100%">
+    <img src="/assets/images/53/슬라이드13.PNG" />
+   </span>
+  </p>
+  <p>
+   <br />
+  </p>
+  <p style="text-align: center; clear: none; float: none;">
+   <span class="imageblock" style="display:inline-block;width:800px;;height:auto;max-width:100%">
+    <img src="/assets/images/53/슬라이드14.PNG" />
+   </span>
+  </p>
+  <p>
+   <br />
+  </p>
+  <p style="text-align: center; clear: none; float: none;">
+   <span class="imageblock" style="display:inline-block;width:800px;;height:auto;max-width:100%">
+    <img src="/assets/images/53/슬라이드15.PNG" />
+   </span>
+  </p>
+  <p>
+   <br />
+  </p>
+  <p style="text-align: center; clear: none; float: none;">
+   <span class="imageblock" style="display:inline-block;width:800px;;height:auto;max-width:100%">
+    <img src="/assets/images/53/슬라이드16.PNG" />
+   </span>
+  </p>
+  <p>
+   <br />
+  </p>
+  <p style="text-align: center; clear: none; float: none;">
+   <span class="imageblock" style="display:inline-block;width:800px;;height:auto;max-width:100%">
+    <img src="/assets/images/53/슬라이드17.PNG" />
+   </span>
+  </p>
+  <p>
+   <br />
+  </p>
+  <p style="text-align: center; clear: none; float: none;">
+   <span class="imageblock" style="display:inline-block;width:800px;;height:auto;max-width:100%">
+    <img src="/assets/images/53/슬라이드18.PNG" />
+   </span>
+  </p>
+  <p>
+   <br />
+  </p>
+  <p style="text-align: center; clear: none; float: none;">
+   <span class="imageblock" style="display:inline-block;width:800px;;height:auto;max-width:100%">
+    <img src="/assets/images/53/슬라이드19.PNG" />
+   </span>
+  </p>
+  <p>
+   <br />
+  </p>
+  <p style="text-align: center; clear: none; float: none;">
+   <span class="imageblock" style="display:inline-block;width:800px;;height:auto;max-width:100%">
+    <img src="/assets/images/53/슬라이드20.PNG" />
+   </span>
+  </p>
+  <p>
+   <br />
+  </p>
+  <p style="text-align: center; clear: none; float: none;">
+   <span class="imageblock" style="display:inline-block;width:800px;;height:auto;max-width:100%">
+    <img src="/assets/images/53/슬라이드21.PNG" />
+   </span>
+  </p>
+  <p>
+   <br />
+  </p>
+  <p style="text-align: center; clear: none; float: none;">
+   <span class="imageblock" style="display:inline-block;width:800px;;height:auto;max-width:100%">
+    <img src="/assets/images/53/슬라이드22.PNG" />
+   </span>
+  </p>
+  <p>
+   <br />
+  </p>
+  <p style="text-align: center; clear: none; float: none;">
+   <span class="imageblock" style="display:inline-block;width:800px;;height:auto;max-width:100%">
+    <img src="/assets/images/53/슬라이드23.PNG" />
+   </span>
+  </p>
+  <p>
+   <br />
+  </p>
+  <p style="text-align: center; clear: none; float: none;">
+   <span class="imageblock" style="display:inline-block;width:800px;;height:auto;max-width:100%">
+    <img src="/assets/images/53/슬라이드24.PNG" />
+   </span>
+  </p>
+  <p>
+   <br />
+  </p>
+  <p style="text-align: center; clear: none; float: none;">
+   <span class="imageblock" style="display:inline-block;width:800px;;height:auto;max-width:100%">
+    <img src="/assets/images/53/슬라이드25.PNG" />
+   </span>
+  </p>
+  <p>
+   <br />
+  </p>
+  <p style="text-align: center; clear: none; float: none;">
+   <span class="imageblock" style="display:inline-block;width:800px;;height:auto;max-width:100%">
+    <img src="/assets/images/53/슬라이드26.PNG" />
+   </span>
+  </p>
+  <p>
+   <br />
+  </p>
+  <p style="text-align: center; clear: none; float: none;">
+   <span class="imageblock" style="display:inline-block;width:800px;;height:auto;max-width:100%">
+    <img src="/assets/images/53/슬라이드27.PNG" />
+   </span>
+  </p>
+  <p>
+   <br />
+  </p>
+  <p style="text-align: center; clear: none; float: none;">
+   <span class="imageblock" style="display:inline-block;width:800px;;height:auto;max-width:100%">
+    <img src="/assets/images/53/슬라이드28.PNG" />
+   </span>
+  </p>
+  <p>
+   <br />
+  </p>
+  <p style="text-align: center; clear: none; float: none;">
+   <span class="imageblock" style="display:inline-block;width:800px;;height:auto;max-width:100%">
+    <img src="/assets/images/53/슬라이드29.PNG" />
+   </span>
+  </p>
+  <p>
+   <br />
+  </p>
+  <p style="text-align: center; clear: none; float: none;">
+   <span class="imageblock" style="display:inline-block;width:800px;;height:auto;max-width:100%">
+    <img src="/assets/images/53/슬라이드30.PNG" />
+   </span>
+  </p>
+  <p>
+   <br />
+  </p>
+  <p style="text-align: center; clear: none; float: none;">
+   <span class="imageblock" style="display:inline-block;width:800px;;height:auto;max-width:100%">
+    <img src="/assets/images/53/슬라이드31.PNG" />
+   </span>
+  </p>
+  <p>
+   <br />
+  </p>
+  <p style="text-align: center; clear: none; float: none;">
+   <span class="imageblock" style="display:inline-block;width:800px;;height:auto;max-width:100%">
+    <img src="/assets/images/53/슬라이드32.PNG" />
+   </span>
+  </p>
+  <p>
+   <br />
+  </p>
+  <p style="text-align: center; clear: none; float: none;">
+   <span class="imageblock" style="display:inline-block;width:800px;;height:auto;max-width:100%">
+    <img src="/assets/images/53/슬라이드33.PNG" />
+   </span>
+  </p>
+  <p>
+   <br />
+  </p>
+  <p style="text-align: center; clear: none; float: none;">
+   <span class="imageblock" style="display:inline-block;width:800px;;height:auto;max-width:100%">
+    <img src="/assets/images/53/슬라이드34.PNG" />
+   </span>
+  </p>
+  <p>
+   <br />
+  </p>
+  <p style="text-align: center; clear: none; float: none;">
+   <span class="imageblock" style="display:inline-block;width:800px;;height:auto;max-width:100%">
+    <img src="/assets/images/53/슬라이드35.PNG" />
+   </span>
+  </p>
+  <p>
+   <br />
+  </p>
+  <p style="text-align: center; clear: none; float: none;">
+   <span class="imageblock" style="display:inline-block;width:800px;;height:auto;max-width:100%">
+    <img src="/assets/images/53/슬라이드36.PNG" />
+   </span>
+  </p>
+  <p>
+   <br />
+  </p>
+  <p style="text-align: center; clear: none; float: none;">
+   <span class="imageblock" style="display:inline-block;width:800px;;height:auto;max-width:100%">
+    <img src="/assets/images/53/슬라이드37.PNG" />
+   </span>
+  </p>
+  <p>
+   <br />
+  </p>
+  <p style="text-align: center; clear: none; float: none;">
+   <span class="imageblock" style="display:inline-block;width:800px;;height:auto;max-width:100%">
+    <img src="/assets/images/53/슬라이드38.PNG" />
+   </span>
+  </p>
+  <p>
+   <br />
+  </p>
+  <p style="text-align: center; clear: none; float: none;">
+   <span class="imageblock" style="display:inline-block;width:800px;;height:auto;max-width:100%">
+    <img src="/assets/images/53/슬라이드39.PNG" />
+   </span>
+  </p>
+  <p>
+   <br />
+  </p>
+  <p style="text-align: center; clear: none; float: none;">
+   <span class="imageblock" style="display:inline-block;width:800px;;height:auto;max-width:100%">
+    <img src="/assets/images/53/슬라이드40.PNG" />
+   </span>
+  </p>
+  <p>
+   <br />
+  </p>
+  <p style="text-align: center; clear: none; float: none;">
+   <span class="imageblock" style="display:inline-block;width:800px;;height:auto;max-width:100%">
+    <img src="/assets/images/53/슬라이드41.PNG" />
+   </span>
+  </p>
+  <p>
+   <br />
+  </p>
+  <p style="text-align: center; clear: none; float: none;">
+   <span class="imageblock" style="display:inline-block;width:800px;;height:auto;max-width:100%">
+    <img src="/assets/images/53/슬라이드42.PNG" />
+   </span>
+  </p>
+  <p>
+   <br />
+  </p>
+  <p style="text-align: center; clear: none; float: none;">
+   <br />
+  </p>
+  <div class="container_postbtn">
+   <div class="postbtn_ccl" data-ccl-type="3">
+    <a class="link_ccl" href="http://creativecommons.org/licenses/by/4.0/deed.ko" target="_blank">
+     <span class="bundle_ccl">
+      <span class="ico_postbtn ico_ccl1">
+       저작자표시
+      </span>
+     </span>
+    </a>
+   </div>
+  </div>
+  <!--
+	<rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+		<Work rdf:about="">
+			<license rdf:resource="http://creativecommons.org/licenses/by-fr/2.0/kr/" />
+		</Work>
+		<License rdf:about="http://creativecommons.org/licenses/by-fr/">
+			<permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+			<permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+			<requires rdf:resource="http://web.resource.org/cc/Notice"/>
+			<requires rdf:resource="http://web.resource.org/cc/Attribution"/>
+			<permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+		</License>
+	</rdf:RDF>
+	-->
+  <div style="text-align:left; padding-top:10px;clear:both">
+  </div>
+ </div>
+</div>
+
+        <div class="fb-like" data-href="https://tech.osci.kr/docker,%20openstack/2015/03/18/tistory-53/"  data-width="300px" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+        <div class="fb-comments" data-href="https://tech.osci.kr/docker,%20openstack/2015/03/18/tistory-53/" data-width="100%" data-numposts="5"></div>
+    </div>
+
+    <div id="post-footer">
+        
+        <a id="post-author" href="/authors/osc/">
+            <div id="author-image" style="background-image:url(/files/authors/osc.png);">
+                <span class="sr-only">OpenSourceConsulting's profile image</span>
+            </div>
+            <p id="author-name">OpenSourceConsulting</p>
+        </a>
+        <p id="post-date">2015-03-18</p>
+        <a id="post-more" href="/authors/osc/">
+            <span>Read more posts by this author</span>
+        </a>
+    </div>
+</div>
+
+<div id="post-links" class="container">
+    
+    
+        <div id="post-prev"
+             >
+            <div>
+                <h3><a href="/openstack/2014/12/18/tistory-42/">PackStack으로 OpenStack 교육용 All-In-One VM 여러 세트를 하나의 KVM에 만들기</a></h3>
+                <p>YOU MIGHT ENJOY</p>
+            </div>
+        </div>
+    
+    
+    
+        <div id="post-next"
+             >
+            <div>
+                <h3><a href="/java/2015/04/09/tistory-54/">자바와 웹 애플리케이션 서버 성능 튜닝</a></h3>
+                <p>NEXT POST</p>
+            </div>
+        </div>
+    
+</div>
+
+<div id="lightbox">
+    <div id="lightbox-image"></div>
+</div>
+
+
+    <div class="clearfix"></div>
+
+    <a href="#" id="back-to-top"></a>
+</div>
+
+<div id="footer" class="container-fluid">
+    <ul id="links">
+        
+        <li>
+            <a id="link-github" href="http://github.com/opensourceconsulting" target="_blank">
+                <span class="sr-only">github</span>
+            </a>
+        </li>
+        
+        
+        <li>
+            <a id="link-facebook" href="http://facebook.com/osckorea" target="_blank">
+                <span class="sr-only">facebook</span>
+            </a>
+        </li>
+        
+        
+        <li>
+            <a id="link-rss" href="/rss" target="_blank">
+                <span class="sr-only">rss</span>
+            </a>
+        </li>
+    </ul>
+    <p id="copyright">
+        <a href="https://tech.osci.kr">&copy;2018 OpenSourceConsulting</a>
+        All rights reserved.
+    </p>
+</div><!--#footer-->
+
+
+<script src="/assets/lib/jquery-1.12.0.min.js"></script>
+<script src="/assets/lib/jquery.magnific-popup.min.js"></script>
+<script src="/assets/js/index.js"></script>
+
+
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-39977834-4', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+
+
+
+    
+    <!-- <script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '',
+            xfbml      : true,
+            version    : 'v2.8'
+        });
+        FB.Canvas.getPageInfo(
+            function(info) {
+                alert('Width: ' + info.clientWidth + ' Height: ' + info.clientHeight);
+            }
+        );
+        FB.AppEvents.logPageView();
+    };
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.8";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script> -->
+
+<!--
+<script>
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.8";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+-->
+
+    
+
+    
+
+    
+
+</body>
+</html>

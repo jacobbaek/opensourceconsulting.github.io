@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+ <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+<title>Jira 설정_2(System Administration / User Management)</title>
+<meta name="title" content="Jira 설정_2(System Administration / User Management)" />
+<meta name="author" content="wjsrkqdlf"/>
+<meta name="description" content="그럼 바로 1편에 이어 2편을 진행하겠습니다. [Jira Administration] 그럼 Jira Administration메뉴부터 주로 사용되는 기능들을 하나씩 살펴보도록 하죠. 시스템관리보다 Issue의 설정 및 사용에 대한 내용이 우선 필요할 경우, 이후에 작성될 [Jira Administration - Issues] 글로 이동하시면 됩니다. [Jira Administration - System] 우선 중요해보이는 System부터 클릭해보죠. 그럼 다음과 같이 한 번에 캡쳐도 안될만큼 휘황찬란한 메뉴가 나옵니다. 모든 메뉴를 설명드리면 좋겠지만, 그 렇게하면 이 문서를 다 작성하기전에 힘들어서 포기해버릴 것 같기에 몇 가지 자주 사용하는 메뉴를 한 줄요약 정도로..."/>
+
+<meta property="fb:app_id" content=""/>
+
+<meta property="og:site_name" content="오픈소스컨설팅 
+기술 블로그
+"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="Jira 설정_2(System Administration / User Management)"/>
+<meta property="og:description" content="그럼 바로 1편에 이어 2편을 진행하겠습니다. [Jira Administration] 그럼 Jira Administration메뉴부터 주로 사용되는 기능들을 하나씩 살펴보도록 하죠. 시스템관리보다 Issue의 설정 및 사용에 대한 내용이 우선 필요할 경우, 이후에 작성될 [Jira Administration - Issues] 글로 이동하시면 됩니다. [Jira Administration - System] 우선 중요해보이는 System부터 클릭해보죠. 그럼 다음과 같이 한 번에 캡쳐도 안될만큼 휘황찬란한 메뉴가 나옵니다. 모든 메뉴를 설명드리면 좋겠지만, 그 렇게하면 이 문서를 다 작성하기전에 힘들어서 포기해버릴 것 같기에 몇 가지 자주 사용하는 메뉴를 한 줄요약 정도로..."/>
+<meta property="og:url" content="https://tech.osci.kr/opensourceconsulting/2017/02/03/tistory-62/"/>
+<meta property="og:image" content=""/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Jira 설정_2(System Administration / User Management)"/>
+<meta name="twitter:description" content="그럼 바로 1편에 이어 2편을 진행하겠습니다. [Jira Administration] 그럼 Jira Administration메뉴부터 주로 사용되는 기능들을 하나씩 살펴보도록 하죠. 시스템관리보다 Issue의 설정 및 사용에 대한 내용이 우선 필요할 경우, 이후에 작성될 [Jira Administration - Issues] 글로 이동하시면 됩니다. [Jira Administration - System] 우선 중요해보이는 System부터 클릭해보죠. 그럼 다음과 같이 한 번에 캡쳐도 안될만큼 휘황찬란한 메뉴가 나옵니다. 모든 메뉴를 설명드리면 좋겠지만, 그 렇게하면 이 문서를 다 작성하기전에 힘들어서 포기해버릴 것 같기에 몇 가지 자주 사용하는 메뉴를 한 줄요약 정도로..."/>
+<meta name="twitter:label1" content="Written by"/>
+<meta name="twitter:data1" content="wjsrkqdlf"/>
+<meta name="twitter:image:src" content="https://tech.osci.kr/assets/images/default_blog_cover.jpg"/>
+<meta name="naver-site-verification" content="11ec9086ec9292ebc8dc73f6224492f208b2007b"/>
+<meta name="google-site-verification" content="Q5w5X0R32gOG-1lBhFg0UxvXRNoQX-uOSPjxPI4sXH4" />
+
+<meta name="twitter:label2" content="Filed under"/>
+<meta name="twitter:data2" content="OpenSourceConsulting"/>
+
+<meta property="article:tag" content="OpenSourceConsulting"/>
+
+
+
+<meta property="article:published_time" content="2017-02-03T19:17:34+09:00"/>
+
+
+<meta property="article:author" content="https://tech.osci.kr/authors/wjsrkqdlf"/>
+
+<link href="https://tech.osci.kr/rss/" rel="alternate" type="application/rss+xml" title="RSS"/>
+<link href="/assets/favicon.png" rel="icon" type="image/png"/>
+<link href="/assets/apple-touch-icon.png" rel="apple-touch-icon" type="image/png"/>
+<link href="/assets/apple-touch-icon.png" rel="apple-touch-icon-precomposed" type="image/png"/>
+<link href="/assets/lib/normalize.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/css/monokai.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/lib/magnific-popup.min.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/css/screen.css" rel="stylesheet" type="text/css"/>
+
+</head>
+<body class="post-template">
+
+<div id="header">
+    <button id="menu-toggle" type="button">
+        <span class="sr-only">Toggle Navigation Menu</span>
+    </button>
+    <button id="search-toggle" type="button">
+        <span class="sr-only">Toggle Search Form</span>
+    </button>
+    <a href="/" id="logo">
+    </a>
+    <form id="search">
+        <input id="searchQueryEdit" name="q" type="search" placeholder="Search..." value="" />
+    </form>
+
+    <ul id="menu" class="nav">
+        <li class=" active "><a href="/">Blog</a></li>
+        <!--<li class=""><a href="/books/">Books</a></li>-->
+        <li class=""><a href="/about/">About</a></li>
+    </ul>
+</div><!-- #header -->
+
+
+<div id="wrapper">
+    <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v3.2&appId=1720005341592310&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div id="navbar" class="container">
+    <h5><a id="link-back" href="/">Back to Posts</a></h5>
+    
+<ul id="shares">
+    
+    <li>
+        <a id="share-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://tech.osci.kr/opensourceconsulting/2017/02/03/tistory-62/"
+           onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+            <span class="sr-only">Share to Facebook</span>
+        </a>
+    </li>
+    
+    
+    
+</ul>
+
+</div>
+
+<div id="cover" class="container"
+     >
+    <div>
+        <h1>Jira 설정_2(System Administration / User Management)</h1>
+        <p>Jira 사용자 관리에 대해 알아보겠습니다.</p>
+        <p class="right" style="opacity: 0.5">
+            
+                OpenSourceConsulting
+                
+            
+        </p>
+        
+
+
+    </div>
+</div>
+<div id="content" class="container post" role="main">
+    <div id="post-content">
+        
+        <div class="area_view">
+ <div class="tt_article_useless_p_margin">
+  <p>
+   그럼 바로 1편에 이어 2편을 진행하겠습니다.
+  </p>
+  <p>
+   <br />
+  </p>
+  <div>
+   <span>
+    <b>
+     [Jira Administration]
+    </b>
+   </span>
+  </div>
+  <div>
+   <span>
+    그럼 Jira Administration메뉴부터 주로 사용되는 기능들을 하나씩 살펴보도록 하죠.
+   </span>
+  </div>
+  <div>
+   <span>
+    시스템관리보다 Issue의 설정 및 사용에 대한 내용이 우선 필요할 경우,
+   </span>
+  </div>
+  <div>
+   이후에 작성될
+   <b>
+    [Jira Administration - Issues]
+   </b>
+   글로 이동하시면 됩니다.
+  </div>
+  <div>
+   <span>
+    <br />
+   </span>
+  </div>
+  <div>
+   <span>
+    <br />
+   </span>
+  </div>
+  <div>
+   <span>
+    <b>
+     [Jira Administration - System]
+    </b>
+   </span>
+  </div>
+  <div>
+   <span>
+    우선 중요해보이는 System부터 클릭해보죠. 그럼 다음과 같이 한 번에 캡쳐도 안될만큼 휘황찬란한 메뉴가 나옵니다.
+   </span>
+  </div>
+  <p>
+  </p>
+  <div>
+   <span>
+    모든 메뉴를 설명드리면 좋겠지만, 그
+    <s>
+     렇게하면 이 문서를 다 작성하기전에 힘들어서 포기해버릴 것 같기에
+    </s>
+   </span>
+  </div>
+  <div>
+   <span>
+    몇 가지 자주 사용하는 메뉴를 한 줄요약 정도로 대체하겠습니다.
+   </span>
+   <span class="imageblock" style="display:inline-block;width:533px;text-align: center;;height:auto;max-width:100%">
+    <img src="/assets/images/62/1.png" />
+   </span>
+  </div>
+  <div>
+   <br />
+  </div>
+  <div>
+   <br />
+  </div>
+  <div>
+   <br />
+  </div>
+  <p>
+   <b>
+    <i>
+     General configuration
+    </i>
+    :
+   </b>
+   이름처럼 기본 설정입니다. 주로 해당 Jira System의 이름변경,
+   <span style="color: rgb(255, 0, 0);">
+    BaseURL변경(중요),
+   </span>
+  </p>
+  <p>
+   인덱싱언어 변경 등에 사용됩니다. Base URL의 경우 Jira의 접속 시 사용하는 주소가 IP기반인지, Domain기반인지에 대한 내용으로
+  </p>
+  <p>
+   <span style="color: rgb(255, 0, 0);">
+    반드시 Jira에 접속 시 사용하는
+   </span>
+   <span style="color: rgb(255, 0, 0);">
+    주소와 일치
+   </span>
+   하여야합니다.
+  </p>
+  <div>
+   <br />
+  </div>
+  <div>
+   <b>
+    <i>
+     System Info
+    </i>
+    :
+   </b>
+   시스템 정보입니다. Jira의 구성정보(Jira 버전, jdk버전, DB버전, 메모리설정 등)를 보여줍니다.
+  </div>
+  <div>
+   <br />
+  </div>
+  <div>
+   <b>
+    <i>
+     Logging and Profiling
+    </i>
+    :
+   </b>
+   Jira의 로그설정입니다. 기본은 info레벨이며, 문제가 생겼을 시 Debug 레벨로 변경하여 트러블슈팅을 진행합니다.
+  </div>
+  <div>
+   (다만 부하가 올라가므로 평소엔 info레벨로 두는 것을 권장합니다)
+  </div>
+  <div>
+   <br />
+  </div>
+  <div>
+   <b>
+    <i>
+     Support Tools
+    </i>
+    :
+   </b>
+   Jira의 health체크를 포함하여 Support zip 생성이 가능합니다. Jira에 문제가 생겼을 경우,
+  </div>
+  <div>
+   보통 이 메뉴에서 Support zip파일을 생성하여 트러블슈팅을 진행합니다.
+  </div>
+  <div>
+   <br />
+  </div>
+  <div>
+   <b>
+    <i>
+     Audit Log
+    </i>
+    :
+   </b>
+   System변경 사항을 보여줍니다. 어떤 사용자가 어떤 작업(유저 생성, 삭제 등)을 어떤 날짜에했는지 확인이 가능합니다.
+  </div>
+  <div>
+   <br />
+  </div>
+  <div>
+   <b>
+    <i>
+     Project roles
+    </i>
+    :
+   </b>
+   전 프로젝트에 적용되는 Role을 설정합니다. 이후 설명드리겠지만,
+  </div>
+  <div>
+   프로젝트의 기본 권한이 이 Role 기반으로 되어있는 것이 몇 가지 있기에 이런 메뉴가 있다는 것을 알아둘 필요가 있습니다.
+  </div>
+  <div>
+   <br />
+  </div>
+  <div>
+   <b>
+    <i>
+     Global permissions
+    </i>
+    :
+   </b>
+   Jira로그인 이후의 권한을 설정합니다. 가장 중요한 권한은 Jira System Administrators와 Jira Administrators로
+  </div>
+  <div>
+   System Administrators는 Jira의 모든 권한을 가지고 있습니다.
+  </div>
+  <div>
+   그 다음으로는 Administrators로 System Administrators에서 Jira Backup과 Restore를 포함한 몇 가지의 기능을 제외하고 가지고 있죠.
+  </div>
+  <div>
+   <br />
+  </div>
+  <div>
+   <b>
+    <i>
+     System dashboard
+    </i>
+    :
+   </b>
+   처음 로그인 시 반겨주는 화면을 수정할 수 있습니다.
+  </div>
+  <div>
+   따로 개인의 Dashboard를 만들지 않는 한, 기본적으로 보여주는 화면이기에 공지사항정도로 수정하여 사용도 가능합니다.
+  </div>
+  <div>
+   <br />
+  </div>
+  <div>
+   <b>
+    <i>
+     Look and feel
+    </i>
+    :
+   </b>
+   <s>
+    높으신 분들의 취향에 맞추어
+   </s>
+   Jira의 기본 헤더 색상이나 로고 등의 변경이 가능합니다.
+  </div>
+  <div>
+   그 외에 날짜나 시간의 표시를 한국식으로 변경이 가능합니다.
+  </div>
+  <div>
+   <br />
+  </div>
+  <div>
+   <b>
+    <i>
+     Announcement banner
+    </i>
+    :
+   </b>
+   공지사항을 띄웁니다. 거창한 알림이나 이런 것은 아니며 간단한 텍스트 한 줄 정도를
+  </div>
+  <div>
+   헤더메뉴 바로 아래에 생성합니다.
+  </div>
+  <div>
+   <br />
+  </div>
+  <div>
+   <b>
+    <i>
+     Backup system
+    </i>
+    :
+   </b>
+   Jira 자체를 백업합니다. 백업파일은 서버의 지정된 위치에 생성되며, 해당 파일은 첨부파일(이미지, 동영상 등)을
+  </div>
+  <div>
+   포함하지 않으므로,
+   <span style="color: rgb(255, 0, 0);">
+    반드시 데이터 디렉토리를 따로 백업
+   </span>
+   해야합니다. (Installation문서 참조)
+  </div>
+  <div>
+   보통 해당 파일들을 내려받은 뒤, rsync등으로 백업서버로 백업하는 방법을 사용합니다.
+  </div>
+  <div>
+   <br />
+  </div>
+  <div>
+   <b>
+    <i>
+     Restore system
+    </i>
+    :
+   </b>
+   Jira를 복구합니다. Backup메뉴로 받은 xml파일을 서버의 지정된 위치로 이동한 뒤, Restore버튼을 클릭하여 복구합니다.
+  </div>
+  <div>
+   <br />
+  </div>
+  <div>
+   <b>
+    <i>
+     Project import
+    </i>
+    :
+   </b>
+   Jira의 특정 Project만 import합니다. 다만 이동하려는 곳의 Jira에
+  </div>
+  <div>
+   import하려는 프로젝트의 이슈타입, 필드등이 전부 있어야하므로, 많이 귀찮은 경우가 발생할 수 있습니다.
+  </div>
+  <div>
+   <br />
+  </div>
+  <div>
+   <b>
+    <i>
+     External System Import
+    </i>
+    :
+   </b>
+   다른 솔루션(Remine, Bugzila등)으로부터 정보를 import합니다.
+  </div>
+  <div>
+   <br />
+  </div>
+  <div>
+   <b>
+    <i>
+     Global Mail Settings
+    </i>
+    :
+   </b>
+   외부 Email 계정등으로부터 메일을 가져와서 DB에 쌓을 수 있도록 허용합니다.
+  </div>
+  <div>
+   <br />
+  </div>
+  <div>
+   <b>
+    <i>
+     Outgoing Mail
+    </i>
+    :
+   </b>
+   Jira에서 메일을 발송할 수 있도록 설정합니다. 내부에 smtp서버가 있다면 해당 서버를 사용하여도 되며,
+  </div>
+  <div>
+   그렇지 않을 경우 Gamil같은 외부메일을 통해 발송할 수 있도록 설정가능합니다.
+  </div>
+  <div>
+   <br />
+  </div>
+  <div>
+   <b>
+    <i>
+     Incoming Mail
+    </i>
+    :
+   </b>
+   외부메일로부터 Jira 이슈를 생성할 수 있도록 설정합니다. 어떤 메일주소로부터 가져올 것인지,
+  </div>
+  <div>
+   가져온 내용을 어떤 프로젝트에 이슈로 생성할 것인지 설정이 추가로 필요합니다.
+  </div>
+  <div>
+   <br />
+  </div>
+  <div>
+   <b>
+    <i>
+     Indexing
+    </i>
+    :
+   </b>
+   DB의 Re-indexing이 필요한 작업을 수행했을 경우 사용합니다. 일반적으로 Jira에서 필요할 경우 자동으로 팝업 창을 띄워주며,
+  </div>
+  <div>
+   조금 느리지만 Jira서비스를 사용하며 가능한 Background방식과 빠르지만 Jira사용이 불가능한 Lock방식이 있습니다.
+  </div>
+  <div>
+   당연히 일반적으로는 Background로 실행합니다.
+  </div>
+  <div>
+   <br />
+  </div>
+  <div>
+   <b>
+    <i>
+     Attachments
+    </i>
+    :
+   </b>
+   업로드하는 첨부파일들의 저장 위치와, 파일 사이즈의 제한이 가능합니다.
+  </div>
+  <div>
+   보통 기본 파일사이즈가 좀 작기에, 올려서 사용하는 편입니다.
+  </div>
+  <div>
+   <br />
+  </div>
+  <div>
+   <b>
+    <i>
+     Services
+    </i>
+    :
+   </b>
+   일정 주기로 수행되는 동작입니다. Jira의 백업주기 등을 설정할 수 있으며,
+  </div>
+  <div>
+   기본적으로는 매일 새벽2시에 백업하도록 설정되어있습니다.
+  </div>
+  <div>
+   <br />
+  </div>
+  <div>
+   <br />
+  </div>
+  <div>
+   적기 전에는 굉장히 많아 보였는데 막상 적고나니 얼마 안되는 것 같아서 씁쓸하군요.
+  </div>
+  <div>
+   사실 Atlassian은 Documentation이 굉장히 잘 되어있는 편이라, 위 내용들은 단순 번역 수준 정도이기에
+  </div>
+  <div>
+   필요하신 경우 Documentation을 참조하시는 편이 좋습니다.
+  </div>
+  <div>
+   <br />
+  </div>
+  <div>
+   그럼 다음으로 Jira Administration의 User management 메뉴로 넘어가보겠습니다.
+  </div>
+  <p>
+   <br />
+  </p>
+  <p>
+   <br />
+  </p>
+  <p>
+   <br />
+  </p>
+  <p>
+   <br />
+  </p>
+  <p>
+   <br />
+  </p>
+  <div>
+   <span>
+    <b>
+     [Jira Administration - User management]
+    </b>
+   </span>
+  </div>
+  <div>
+   <span>
+    메뉴가 적기에,
+    <s>
+     너무 텍스트만 있으면 지겨우므로
+    </s>
+    캡쳐를 좀 넣어가면서 진행해보죠.
+   </span>
+  </div>
+  <div>
+   <span>
+    <br />
+   </span>
+  </div>
+  <div>
+   <b>
+    <i>
+     Users
+    </i>
+    :
+   </b>
+   사용자를 추가, 관리합니다. 방식에는 사용자 메일로 초대를 보내는 Invite users방식과
+  </div>
+  <div>
+   <span>
+    관리자가 직접 생성하는 Create user방식이 있습니다.
+   </span>
+  </div>
+  <div>
+   <span>
+    <br />
+   </span>
+  </div>
+  <p>
+  </p>
+  <div>
+   <span>
+    버튼을 눌러보면 굉장히 직관적이기에 추가설명없이 Group으로 넘어가겠습니다.
+   </span>
+  </div>
+  <div>
+   <p style="text-align: center; clear: none; float: none;">
+    <span class="imageblock" style="display:inline-block;width:820px;;height:auto;max-width:100%">
+     <img src="/assets/images/62/2.png" />
+    </span>
+   </p>
+   <p>
+    <br />
+   </p>
+   <p>
+    <br />
+   </p>
+   <p>
+    <br />
+   </p>
+   <p>
+    <br />
+   </p>
+   <p>
+   </p>
+   <div>
+    <b>
+     <i>
+      Groups
+     </i>
+     :
+    </b>
+    그룹을 추가, 관리합니다. 이 또한 직관적이기에 추가설명없이 Jira user server로 넘어갑니다.
+   </div>
+   <div>
+    <span>
+     <p style="text-align: center; clear: none; float: none;">
+      <span class="imageblock" style="display:inline-block;width:820px;;height:auto;max-width:100%">
+       <img src="/assets/images/62/3.png" />
+      </span>
+     </p>
+     <p>
+      <br />
+     </p>
+     <br />
+    </span>
+   </div>
+   <p>
+    <br />
+   </p>
+   <p>
+    <br />
+   </p>
+   <p>
+    <br />
+   </p>
+   <div>
+    <b>
+     <i>
+      JIRA user server
+     </i>
+     :
+    </b>
+    다른 Atlassian솔루션(Confluence 등)에서 Jira의 계정 정보를 사용할 수 있도록 설정합니다.
+   </div>
+   <div>
+    <span>
+     Add application을 클릭 시 다음과 같은 화면이 출력되는데 여기서 Applicatioin name이나 Password는
+    </span>
+   </div>
+   <div>
+    타 솔루션에서 Jira에 접속할 정보이며, 임의로 작성하면 됩니다.
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    만약 해당 솔루션이 Jira와 같은 서버가 아닌 다른 서버에 존재할 경우, 해당 서버의 IP를 IP Addresses에 추가해줍니다.
+    <span class="imageblock" style="display:inline-block;width:418px;text-align: center;;height:auto;max-width:100%">
+     <img src="/assets/images/62/4.png" />
+    </span>
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    <br />
+   </div>
+   <div>
+    <b>
+     <br />
+    </b>
+   </div>
+   <p>
+    <b>
+     <i>
+      User Directories
+     </i>
+     :
+    </b>
+    타 솔루션으로부터 계정정보를 가져오도록 설정합니다.
+   </p>
+   <p>
+    기본적으로는 Jira internal 디렉토리를 사용하지만, 필요할 경우 기존에 구성된 LDAP이나 AD등으로부터
+   </p>
+   <p>
+    계정 정보를 가져올 수 있습니다.
+   </p>
+   <p>
+    <br />
+   </p>
+   <p>
+    다음 그림과 같이 Add Directory를 클릭하여 추가가 가능하며, 본 문서에서는 간단히 Atlassian 타입으로 생성해보겠습니다.
+   </p>
+   <p>
+    <span class="imageblock" style="display:inline-block;width:573px;text-align: center;;height:auto;max-width:100%">
+     <img src="/assets/images/62/5.png" />
+    </span>
+   </p>
+   <p>
+   </p>
+   <div>
+    <span>
+     위에서 Atlassian JIRA선택 시 다음과 같이 추가 설정이 나오며 여기서 Name은 임의의 디렉토리명으로 생성하면되고,
+    </span>
+   </div>
+   <div>
+    <span>
+     Server URL은 받아올 주소, Application Name과 Password는 위의
+     <i>
+      JIRA user server
+     </i>
+     메뉴에서 설정했던 이름으로 입력합니다.
+    </span>
+   </div>
+   <div>
+    <span>
+     <br />
+    </span>
+   </div>
+   <div>
+    <span>
+     Server Permission의 경우 일반적으로 Default인 Read Only로 설정하며,
+    </span>
+   </div>
+   <div>
+    <span>
+     Synchronisation Interval로 해당 정보를 얼마만큼의 주기로 가져올 것인지 설정합니다.
+    </span>
+   </div>
+   <div>
+    <span>
+     <br />
+    </span>
+   </div>
+   <div>
+    <span>
+     Test Settings 버튼을 클릭 시 녹색 팝업창으로 성공이 뜨면 Save and Test로 설정을 마무리합니다.
+    </span>
+   </div>
+   <div>
+    <span>
+     기본적으로 정보를 가져오는 시간이 1시간 단위이므로, 차후 가져오려는 서버에서 계정정보에 변동이 있을 경우,
+    </span>
+   </div>
+   <div>
+    <span>
+     즉시 반영이 필요하면 synchronize 버튼을 클릭해줍니다.
+    </span>
+   </div>
+   <p>
+    <br />
+   </p>
+   <p>
+   </p>
+   <p style="text-align: center; clear: none; float: none;">
+    <span class="imageblock" style="display:inline-block;width:820px;;height:auto;max-width:100%">
+     <img src="/assets/images/62/6.jpg" />
+    </span>
+   </p>
+   <p>
+    <br />
+   </p>
+   <p>
+    <br />
+   </p>
+   <p>
+    <br />
+   </p>
+   <p>
+    <br />
+   </p>
+   <p>
+    다음에는 Application과 Add-on 메뉴에 대해 기술하도록 하겠습니다.
+   </p>
+  </div>
+  <p>
+   <br />
+  </p>
+  <div class="container_postbtn">
+  </div>
+  <div style="text-align:left; padding-top:10px;clear:both">
+  </div>
+ </div>
+</div>
+
+        <div class="fb-like" data-href="https://tech.osci.kr/opensourceconsulting/2017/02/03/tistory-62/"  data-width="300px" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+        <div class="fb-comments" data-href="https://tech.osci.kr/opensourceconsulting/2017/02/03/tistory-62/" data-width="100%" data-numposts="5"></div>
+    </div>
+
+    <div id="post-footer">
+        
+        <a id="post-author" href="/authors/wjsrkqdlf/">
+            <div id="author-image" style="background-image:url(/files/authors/wjsrkqdlf.png);">
+                <span class="sr-only">wjsrkqdlf's profile image</span>
+            </div>
+            <p id="author-name">wjsrkqdlf</p>
+        </a>
+        <p id="post-date">2017-02-03</p>
+        <a id="post-more" href="/authors/wjsrkqdlf/">
+            <span>Read more posts by this author</span>
+        </a>
+    </div>
+</div>
+
+<div id="post-links" class="container">
+    
+    
+        <div id="post-prev"
+             >
+            <div>
+                <h3><a href="/atlassian,%20jira/2017/02/02/tistory-61/">Jira 설정_1(Project)</a></h3>
+                <p>YOU MIGHT ENJOY</p>
+            </div>
+        </div>
+    
+    
+    
+        <div id="post-next"
+             >
+            <div>
+                <h3><a href="/opensourceconsulting/2017/02/05/tistory-63/">Jira 설정_3(Project / Application / Add-ons)</a></h3>
+                <p>NEXT POST</p>
+            </div>
+        </div>
+    
+</div>
+
+<div id="lightbox">
+    <div id="lightbox-image"></div>
+</div>
+
+
+    <div class="clearfix"></div>
+
+    <a href="#" id="back-to-top"></a>
+</div>
+
+<div id="footer" class="container-fluid">
+    <ul id="links">
+        
+        <li>
+            <a id="link-github" href="http://github.com/opensourceconsulting" target="_blank">
+                <span class="sr-only">github</span>
+            </a>
+        </li>
+        
+        
+        <li>
+            <a id="link-facebook" href="http://facebook.com/osckorea" target="_blank">
+                <span class="sr-only">facebook</span>
+            </a>
+        </li>
+        
+        
+        <li>
+            <a id="link-rss" href="/rss" target="_blank">
+                <span class="sr-only">rss</span>
+            </a>
+        </li>
+    </ul>
+    <p id="copyright">
+        <a href="https://tech.osci.kr">&copy;2018 OpenSourceConsulting</a>
+        All rights reserved.
+    </p>
+</div><!--#footer-->
+
+
+<script src="/assets/lib/jquery-1.12.0.min.js"></script>
+<script src="/assets/lib/jquery.magnific-popup.min.js"></script>
+<script src="/assets/js/index.js"></script>
+
+
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-39977834-4', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+
+
+
+    
+    <!-- <script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '',
+            xfbml      : true,
+            version    : 'v2.8'
+        });
+        FB.Canvas.getPageInfo(
+            function(info) {
+                alert('Width: ' + info.clientWidth + ' Height: ' + info.clientHeight);
+            }
+        );
+        FB.AppEvents.logPageView();
+    };
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.8";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script> -->
+
+<!--
+<script>
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.8";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+-->
+
+    
+
+    
+
+    
+
+</body>
+</html>

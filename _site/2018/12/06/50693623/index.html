@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+ <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+<title>AWS re:Invent 2018 - Keynote with Andy Jassy</title>
+<meta name="title" content="AWS re:Invent 2018 - Keynote with Andy Jassy" />
+<meta name="author" content="kbseo"/>
+<meta name="description" content="AWS re:Invent 2018 @Las Vegas, 11월 26일(월) ~ 30(금) 안녕하세요~ 오픈소스컨설팅의 서경빈입니다. AWS의 최고 행사 re:Invent가 11월 26일 부터 일주일동안 라스베가스에서 개최되었는데 이를 놓칠 수 없어 저 또한 라스베가스로 날라가 생생한 현장을 느끼고 왔습니다. (오픈소스컨설팅 사랑합니다.) 그 중 AWS의 CEO인 Andy Jassy 의 Key Note연설에서 나온 여러 신규 서비스들이 큰 화제가 되고있는 가운데 어떠한 서비스들이 새로 출시되었고 주요기능은 어떤것들이 있는지 알아보도록 하겠습니다. KeyNote with Andy Jassy, AWS CEO, @Venetian Hall A AWS의 최고 경영자 Andy Jassy의 Key..."/>
+
+<meta property="fb:app_id" content=""/>
+
+<meta property="og:site_name" content="오픈소스컨설팅 
+기술 블로그
+"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="AWS re:Invent 2018 - Keynote with Andy Jassy"/>
+<meta property="og:description" content="AWS re:Invent 2018 @Las Vegas, 11월 26일(월) ~ 30(금) 안녕하세요~ 오픈소스컨설팅의 서경빈입니다. AWS의 최고 행사 re:Invent가 11월 26일 부터 일주일동안 라스베가스에서 개최되었는데 이를 놓칠 수 없어 저 또한 라스베가스로 날라가 생생한 현장을 느끼고 왔습니다. (오픈소스컨설팅 사랑합니다.) 그 중 AWS의 CEO인 Andy Jassy 의 Key Note연설에서 나온 여러 신규 서비스들이 큰 화제가 되고있는 가운데 어떠한 서비스들이 새로 출시되었고 주요기능은 어떤것들이 있는지 알아보도록 하겠습니다. KeyNote with Andy Jassy, AWS CEO, @Venetian Hall A AWS의 최고 경영자 Andy Jassy의 Key..."/>
+<meta property="og:url" content="https://tech.osci.kr/2018/12/06/50693623/"/>
+<meta property="og:image" content="/assets/images/50693623/0"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="AWS re:Invent 2018 - Keynote with Andy Jassy"/>
+<meta name="twitter:description" content="AWS re:Invent 2018 @Las Vegas, 11월 26일(월) ~ 30(금) 안녕하세요~ 오픈소스컨설팅의 서경빈입니다. AWS의 최고 행사 re:Invent가 11월 26일 부터 일주일동안 라스베가스에서 개최되었는데 이를 놓칠 수 없어 저 또한 라스베가스로 날라가 생생한 현장을 느끼고 왔습니다. (오픈소스컨설팅 사랑합니다.) 그 중 AWS의 CEO인 Andy Jassy 의 Key Note연설에서 나온 여러 신규 서비스들이 큰 화제가 되고있는 가운데 어떠한 서비스들이 새로 출시되었고 주요기능은 어떤것들이 있는지 알아보도록 하겠습니다. KeyNote with Andy Jassy, AWS CEO, @Venetian Hall A AWS의 최고 경영자 Andy Jassy의 Key..."/>
+<meta name="twitter:label1" content="Written by"/>
+<meta name="twitter:data1" content="kbseo"/>
+<meta name="twitter:image:src" content="https://tech.osci.kr/assets/images/50693623/0"/>
+<meta name="naver-site-verification" content="11ec9086ec9292ebc8dc73f6224492f208b2007b"/>
+<meta name="google-site-verification" content="Q5w5X0R32gOG-1lBhFg0UxvXRNoQX-uOSPjxPI4sXH4" />
+
+<meta name="twitter:label2" content="Filed under"/>
+<meta name="twitter:data2" content=""/>
+
+
+
+<meta property="article:published_time" content="2018-12-06T00:00:00+09:00"/>
+
+
+<meta property="article:author" content="https://tech.osci.kr/authors/kbseo"/>
+
+<link href="https://tech.osci.kr/rss/" rel="alternate" type="application/rss+xml" title="RSS"/>
+<link href="/assets/favicon.png" rel="icon" type="image/png"/>
+<link href="/assets/apple-touch-icon.png" rel="apple-touch-icon" type="image/png"/>
+<link href="/assets/apple-touch-icon.png" rel="apple-touch-icon-precomposed" type="image/png"/>
+<link href="/assets/lib/normalize.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/css/monokai.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/lib/magnific-popup.min.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/css/screen.css" rel="stylesheet" type="text/css"/>
+
+</head>
+<body class="post-template">
+
+<div id="header">
+    <button id="menu-toggle" type="button">
+        <span class="sr-only">Toggle Navigation Menu</span>
+    </button>
+    <button id="search-toggle" type="button">
+        <span class="sr-only">Toggle Search Form</span>
+    </button>
+    <a href="/" id="logo">
+    </a>
+    <form id="search">
+        <input id="searchQueryEdit" name="q" type="search" placeholder="Search..." value="" />
+    </form>
+
+    <ul id="menu" class="nav">
+        <li class=" active "><a href="/">Blog</a></li>
+        <!--<li class=""><a href="/books/">Books</a></li>-->
+        <li class=""><a href="/about/">About</a></li>
+    </ul>
+</div><!-- #header -->
+
+
+<div id="wrapper">
+    <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v3.2&appId=1720005341592310&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div id="navbar" class="container">
+    <h5><a id="link-back" href="/">Back to Posts</a></h5>
+    
+<ul id="shares">
+    
+    <li>
+        <a id="share-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://tech.osci.kr/2018/12/06/50693623/"
+           onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+            <span class="sr-only">Share to Facebook</span>
+        </a>
+    </li>
+    
+    
+    
+</ul>
+
+</div>
+
+<div id="cover" class="container"
+     style="background-image: url(/assets/images/50693623/0);">
+    <div>
+        <h1>AWS re:Invent 2018 - Keynote with Andy Jassy</h1>
+        <p> </p>
+        <p class="right" style="opacity: 0.5">
+            
+        </p>
+        
+
+
+    </div>
+</div>
+<div id="content" class="container post" role="main">
+    <div id="post-content">
+        
+        <p style="text-align: center;">
+ <strong>
+  AWS re:Invent 2018 @Las Vegas, 11월 26일(월) ~ 30(금)
+ </strong>
+</p>
+<p>
+ <br/>
+</p>
+<p style="text-align: center;">
+ 안녕하세요~ 오픈소스컨설팅의 서경빈입니다.
+</p>
+<p style="text-align: center;">
+ AWS의 최고 행사 re:Invent가 11월 26일 부터 일주일동안 라스베가스에서 개최되었는데
+</p>
+<p style="text-align: center;">
+ 이를 놓칠 수 없어 저 또한 라스베가스로 날라가 생생한 현장을 느끼고 왔습니다.
+</p>
+<p style="text-align: center;">
+ <sup>
+  <span style="color: rgb(0,51,102);">
+   (오픈소스컨설팅 사랑합니다.)
+  </span>
+ </sup>
+</p>
+<p style="text-align: center;">
+ <span style="color: rgb(0,51,102);">
+  <br/>
+ </span>
+</p>
+<p style="text-align: center;">
+ 그 중 AWS의 CEO인 Andy Jassy 의 Key Note연설에서 나온 여러 신규 서비스들이 큰 화제가 되고있는 가운데
+</p>
+<p style="text-align: center;">
+ 어떠한 서비스들이 새로 출시되었고 주요기능은 어떤것들이 있는지 알아보도록 하겠습니다.
+</p>
+<p>
+ <br/>
+</p>
+<p>
+ <span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size">
+  <img src="/assets/images/50693623/0"/>
+ </span>
+</p>
+<p>
+ <br/>
+</p>
+<h2 id="AWSre:Invent2018-KeynotewithAndyJassy-KeyNotewithAndyJassy,AWSCEO,@VenetianHallA">
+ <span style="color: rgb(255,153,0);">
+  <strong>
+   KeyNote with Andy Jassy, AWS CEO, @Venetian Hall A
+  </strong>
+ </span>
+</h2>
+<p>
+ AWS의 최고 경영자 Andy Jassy의 Key Note가 라스베가스 현지시간 오전 8시에 re:Invent 행사장 Hall A에서 열렸습니다.
+</p>
+<p>
+ 올해 AWS re:Invent 행사는 전 세계적으로 5만5천명이 넘는 참가자를 기록하였고 10만명이 넘는 인원이 Andy Jassy의 기초연설을 Live Stream으로 감상하였습니다.
+</p>
+<p>
+ 행사장에도 마찬가지로 이른 아침임에도 불구하고 이 연설을 듣기 위하여 수 많은 사람들로 가득 차 있었습니다.
+</p>
+<p>
+ <br/>
+</p>
+<p>
+ KeyNote를 열면서 Andy Jassy는 처음으로 Gartner의 분석을 직접 인용하여 경쟁업체와의 시장점유율을 공개 하였습니다. (현재 51.8%)
+</p>
+<p>
+ <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size">
+  <img src="/assets/images/50693623/1"/>
+ </span>
+</p>
+<p>
+ 이 분석에 따르면, AWS가 클라우드시장을 얼마나 주도하고 있는지, 그리고 다른 벤더사에 비하여 얼마나 차별성이 있는지 연설을 하면서 다시한번 강조하였습니다.
+</p>
+<p>
+ <sup>
+  (역시 AWS입니다..)
+ </sup>
+</p>
+<p>
+ <br/>
+</p>
+<p>
+ 하지만 KeyNote중에서 가장중요한 연설은 아무래도
+ <u>
+  새로운 AWS의 서비스들
+ </u>
+ 이겠죠!
+</p>
+<p>
+ <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size">
+  <img src="/assets/images/50693623/2"/>
+ </span>
+</p>
+<p>
+ Andy Jassy는
+ <strong>
+  <em>
+   "What do Builders want?
+  </em>
+ </strong>
+ "이라는 큰 주제를 가지고 밴드의 음악에 맞춰 총 5가지의 작은 주제들로 신규 서비스들을 소개하였습니다.
+</p>
+<p>
+ ( * Builder는 AWS User Community입니다.)
+</p>
+<p>
+ <br/>
+</p>
+<p>
+ <br/>
+</p>
+<ol>
+ <li>
+  <strong>
+   <em>
+    I want It All - Queen
+   </em>
+  </strong>
+  <br/>
+  : Builder들이 AWS환경으로 빠르고 쉽게 옮길 수 있도록 새로운
+  <u>
+   데이터 전송도구 및 스토리지 서비스
+  </u>
+  를 발표하였습니다.
+  <br/>
+  <br/>
+  <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size">
+   <img src="/assets/images/50693623/3"/>
+  </span>
+  <br/>
+  &gt; 아래 각각의 서비스 제목을 클릭하면 소개페이지로 넘어갑니다.
+  <br/>
+  <br/>
+  <ul>
+   <li>
+    <span style="color: rgb(255,153,0);">
+     <a class="external-link" href="https://aws.amazon.com/about-aws/whats-new/2018/11/introducing-aws-datasync-for-accelerated-online-data-transfer/" rel="nofollow">
+      <span style="color: rgb(255,153,0);">
+       AWS DataSync
+      </span>
+     </a>
+    </span>
+    <br/>
+    - 클라우드 내부 및 외부로 대용량 데이터를 전송할 수 있는 기능이 필요하다는 사용자의 의견을 토대로 DataSync가 만들어졌습니다.
+    <br/>
+    DataSync는 완전 관리형 서비스로 오픈 소스 기반 데이터 전송 솔루션 보다 10배 빠른 속도로 실행 할 수 있습니다.
+    <br/>
+    자세한 내용은
+    <a class="external-link" href="https://aws.amazon.com/datasync/" rel="nofollow">
+     제품 상세소개
+    </a>
+    및 AWS Korea 한국블로그 -
+    <a class="external-link" href="https://aws.amazon.com/ko/blogs/korea/new-aws-datasync-automated-and-accelerated-data-transfer/?nc1=b_rp" rel="nofollow">
+     AWS DataSync
+    </a>
+    를 참고하시기 바랍니다.
+    <br/>
+    <br/>
+   </li>
+   <li>
+    <span style="color: rgb(255,153,0);">
+     <a class="external-link" href="https://aws.amazon.com/about-aws/whats-new/2018/11/aws-transfer-for-sftp-fully-managed-sftp-for-s3/" rel="nofollow">
+      <span style="color: rgb(255,153,0);">
+       AWS SecureFTP
+      </span>
+     </a>
+    </span>
+    <br/>
+    - 완전 관리형 SFTP서비스로 서버를 생성하고, 계정을 설정해주고, 서버를 S3 버킷에 연결하기만 하면 사용자 자격증명, 권한 및 키를 세부적으로 제어할 수 있습니다.
+    <br/>
+    자세한 내용은
+    <a class="external-link" href="https://aws.amazon.com/sftp/" rel="nofollow">
+     제품 상세소개
+    </a>
+    및
+    <a class="external-link" href="https://aws.amazon.com/sftp/features/" rel="nofollow">
+     주요 특징
+    </a>
+    ,  AWS 블로그 -
+    <a class="external-link" href="https://aws.amazon.com/ko/blogs/korea/new-aws-datasync-automated-and-accelerated-data-transfer/?nc1=b_rp" rel="nofollow">
+     AWS
+    </a>
+    <a class="external-link" href="https://aws.amazon.com/blogs/aws/new-aws-transfer-for-sftp-fully-managed-sftp-service-for-amazon-s3/" rel="nofollow">
+     SFTP
+    </a>
+    를 참조.
+    <br/>
+    <br/>
+   </li>
+   <li>
+    <span style="color: rgb(255,153,0);">
+     <a class="external-link" href="https://aws.amazon.com/about-aws/whats-new/2018/11/s3-intelligent-tiering/" rel="nofollow">
+      <span style="color: rgb(255,153,0);">
+       Amazon S3 Intelligent Tiering
+      </span>
+     </a>
+    </span>
+    <br/>
+    - 데이터를 S3에 업로드할 때 적절한 스토리지 클래스를 선택할 수 있으며 미리 액세스 패턴을 파악 할 필요 없이 자동으로 계층화 되어 스토리지 비용을 최적화 해줍니다.
+    <br/>
+    더 자세한 내용은
+    <a class="external-link" href="https://aws.amazon.com/s3/storage-classes/" rel="nofollow">
+     주요 특징
+    </a>
+    ,  AWS 블로그 -
+    <a class="external-link" href="https://aws.amazon.com/ko/blogs/korea/new-aws-datasync-automated-and-accelerated-data-transfer/?nc1=b_rp" rel="nofollow">
+     AWS
+    </a>
+    <a class="external-link" href="https://aws.amazon.com/blogs/aws/new-automatic-cost-optimization-for-amazon-s3-via-intelligent-tiering/" rel="nofollow">
+     Intelligent Tiering
+    </a>
+    를 참조.
+    <br/>
+    <br/>
+   </li>
+   <li>
+    <span style="color: rgb(255,153,0);">
+     <a class="external-link" href="https://aws.amazon.com/about-aws/whats-new/2018/11/s3-glacier-deep-archive/" rel="nofollow">
+      <span style="color: rgb(255,153,0);">
+       Amazon S3 Glacier Deep Archive
+      </span>
+     </a>
+    </span>
+    (Jan 2019)
+    <br/>
+    - 신규 S3 스토리지 클래스로 장기간 데이터 보존을 위해 가장 저렴한 저장공간을 제공합니다. (TB당 월 1.01.달러, 기존 요금의 1/10)
+    <br/>
+    <br/>
+   </li>
+   <li>
+    <span style="color: rgb(255,153,0);">
+     <a class="external-link" href="https://aws.amazon.com/about-aws/whats-new/2018/11/coming-soon-amazon-efs-infrequent-access-storage-class/" rel="nofollow">
+      <span style="color: rgb(255,153,0);">
+       AWS EFS-Infrequent Access
+      </span>
+     </a>
+    </span>
+    (2019)
+    <br/>
+    - EFS보다 최대 85% 저렴하고 액세스 빈도가 낮은 데이터게 최적화 된 서비스 입니다.
+    <br/>
+    <br/>
+   </li>
+   <li>
+    <span style="color: rgb(255,153,0);">
+     <a class="external-link" href="https://aws.amazon.com/about-aws/whats-new/2018/11/amazon-fsx-windows/" rel="nofollow">
+      <span style="color: rgb(255,153,0);">
+       Amazon FSx for Windows Server
+      </span>
+     </a>
+    </span>
+    <br/>
+    - Windows Server를 기반으로 구축되어 있으므로 변경없이 응용 프로그램을 AWS로 옮기는 데 필요한 기능과 성능으로 Windows 파일 저장 기능을 사용할 수 있습니다.
+    <br/>
+    SMB 프로토콜을 사용하여 수천 개의 컴퓨팅 인스턴스에서 엑세스 할 수 있는 NTFS파일 시스템을 제공합니다.
+    <br/>
+    또한 Microsoft Active Directory와 함께 사용하여 파일 시스템을 Windows환경과 통합합니다.
+    <br/>
+    보다 더 자세한 내용은
+    <a class="external-link" href="https://aws.amazon.com/fsx/windows/?nc2=type_a" rel="nofollow">
+     제품 상세소개
+    </a>
+    및  AWS 블로그 -
+    <a class="external-link" href="https://aws.amazon.com/ko/blogs/korea/new-aws-datasync-automated-and-accelerated-data-transfer/?nc1=b_rp" rel="nofollow">
+     AWS
+    </a>
+    <a class="external-link" href="https://aws.amazon.com/blogs/aws/new-amazon-fsx-for-windows-file-server-fast-fully-managed-and-secure/" rel="nofollow">
+     FSx for Windows Server
+    </a>
+    를 참조 바랍니다.
+    <br/>
+    <br/>
+   </li>
+   <li>
+    <span style="color: rgb(255,153,0);">
+     <a class="external-link" href="https://aws.amazon.com/about-aws/whats-new/2018/11/amazon-fsx-lustre/" rel="nofollow">
+      <span style="color: rgb(255,153,0);">
+       AWS File System for Lustre
+      </span>
+     </a>
+    </span>
+    <br/>
+    - 고성능 컴퓨팅, 기계학습 및 미디어 데이터 처리 워크플로우같이 연산 집약적 작업부하에 최적화 된 파일시스템 입니다.
+    <br/>
+    자세한 내용은
+    <a class="external-link" href="https://aws.amazon.com/fsx/lustre/" rel="nofollow">
+     제품 상세소개
+    </a>
+    및  AWS 블로그 -
+    <a class="external-link" href="https://aws.amazon.com/blogs/aws/new-amazon-fsx-for-lustre/" rel="nofollow">
+    </a>
+    <a class="external-link" href="https://aws.amazon.com/ko/blogs/korea/new-aws-datasync-automated-and-accelerated-data-transfer/?nc1=b_rp" rel="nofollow">
+     AWS
+    </a>
+    <a class="external-link" href="https://aws.amazon.com/blogs/aws/new-amazon-fsx-for-lustre/" rel="nofollow">
+     FSx for Luster
+    </a>
+    를 참조 바랍니다.
+    <br/>
+    <br/>
+    <br/>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <strong>
+   <em>
+    I've been Waiting - Mattew Sweet
+   </em>
+  </strong>
+  <br/>
+  : Builder들이 AWS Cloud Platform으로 쉽게 이전하는데 있어 조금도
+  <u>
+   자동화에 초점
+  </u>
+  을 두어서 신규 서비스를 발표하였습니다.
+  <br/>
+  <br/>
+  <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size">
+   <img src="/assets/images/50693623/4"/>
+  </span>
+  <br/>
+  <br/>
+  <ul>
+   <li>
+    <span style="color: rgb(255,153,0);">
+     <a class="external-link" href="https://aws.amazon.com/controltower/?nc2=type_a" rel="nofollow">
+      <span style="color: rgb(255,153,0);">
+       AWS Control Tower
+      </span>
+     </a>
+    </span>
+    <br/>
+    - 보통 AWS로 마이그레이션 시 수 많은 애플리케이션과 여러 팀을 보유하고 있습니다.
+    <br/>
+    일반적으로 여러 애플리케이션 별 여러개의 계정을 생성하게 되는데 AWS 상에서는 쉽게 계정이 생성이 되기 때문에 필요없는 계정으로 인해 낭비되거나 혹은 보안규제를 벗어나는 일이 생기지 않도록 Control Tower 서비스를 이용하여 AWS계정을 통합적으로 관리할 수 있게 되었습니다.
+    <br/>
+    Control Tower는 AWS조직, AWS 서비스 카탈로그 및 AWS구성과 같은 AWS의 관리 및 보안 서비스를 사용하여 작업 부하에 대해 매우 세부적인 제어를 제공합니다.
+    <br/>
+    이러한 세부적인 제어를 통제를 유지하기 위하여 중앙에서 관리하고 시행되는 서비스 입니다.
+    <br/>
+    <br/>
+   </li>
+   <li>
+    <span style="color: rgb(255,153,0);">
+     <a class="external-link" href="https://aws.amazon.com/about-aws/whats-new/2018/11/introducing-aws-security-hub/" rel="nofollow">
+      <span style="color: rgb(255,153,0);">
+       AWS Security Hub
+      </span>
+     </a>
+    </span>
+    <br/>
+    - Security Hub서비스는 AWS환경에서 보안 및 규정준수를 관리할 거점 지역입니다.
+    <br/>
+    이 서비스를 이용하면 보안 경고를 한 눈에 보고 관리 할 수 있으며, AWS계정에서 또한 전체 AWS 계정에 대한 규정준수검사를 자동화 할 수 있습니다.
+    <br/>
+    즉 AWS환경에서 보안과 규정준수를 관리할 거점지역 이라고 보면 됩니다.
+    <br/>
+    자세한 내용은
+    <a class="external-link" href="https://pages.awscloud.com/AWS-Online-Tech-Talks_2018_1216-SID.html?&amp;trk=el_a131L000006VNYTQA4&amp;trkCampaign=December_1216-SID&amp;sc_channel=el&amp;sc_campaign=pac_Q4-2018_exlinks_whatsnew_OTT_12DGAB&amp;sc_outcome=Product_Adoption_Campaigns&amp;sc_geo=NAMER&amp;sc_country=US" rel="nofollow">
+     제품 상세소개
+    </a>
+    및  AWS Tech Talk 웨비나 -
+    <a class="external-link" href="https://aws.amazon.com/blogs/aws/new-amazon-fsx-for-lustre/" rel="nofollow">
+    </a>
+    <a class="external-link" href="https://aws.amazon.com/ko/blogs/korea/new-aws-datasync-automated-and-accelerated-data-transfer/?nc1=b_rp" rel="nofollow">
+     AWS
+    </a>
+    <a class="external-link" href="https://pages.awscloud.com/AWS-Online-Tech-Talks_2018_1216-SID.html?&amp;trk=el_a131L000006VNYTQA4&amp;trkCampaign=December_1216-SID&amp;sc_channel=el&amp;sc_campaign=pac_Q4-2018_exlinks_whatsnew_OTT_12DGAB&amp;sc_outcome=Product_Adoption_Campaigns&amp;sc_geo=NAMER&amp;sc_country=US" rel="nofollow">
+     Introduction of AWS Security Hub
+    </a>
+    를 참조 바랍니다.
+    <br/>
+    <span style="color: rgb(255,153,0);">
+     <br/>
+    </span>
+   </li>
+   <li>
+    <span style="color: rgb(255,153,0);">
+     <a class="external-link" href="https://aws.amazon.com/about-aws/whats-new/2018/11/announcing-aws-lake-formation/" rel="nofollow">
+      <span style="color: rgb(255,153,0);">
+       AWS Lake Formation
+      </span>
+     </a>
+    </span>
+    <br/>
+    - Lake Formation은 수 일 내에 안전하게 Data Lake를 설정할 수 있도록 해주는  완전 관리형서비스입니다.
+    <br/>
+    데이터 소스를 크롤링하고 데이터를 S3로 가져올 수 있습니다. 또한 AWS 서비스 전반에 걸쳐 일관된 보안 정책을 정의하고 관리 할 수 있습니다.
+    <br/>
+    데이터레이크는 데이터 관리 기법이지만, 구현이 쉽지 않았습니다. 여러 소스에서 데이터 로딩, 파티션 설정, 데이터 준비 등 여서 세부구성 작업들이 필요했는데
+    <br/>
+    Lake Formation은 데이터레이크 구성을 위한 번거로운 과정을 제거해 시간효율적으로 데이터 레이크를 구축 할 수 있는 기능을 제공합니다.
+    <br/>
+    자세한 내용은
+    <a class="external-link" href="https://aws.amazon.com/lake-formation/" rel="nofollow">
+     제품 상세소개
+    </a>
+    를 참고 바랍니다.
+    <br/>
+    <br/>
+    <br/>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <strong>
+   <em>
+    BlackBird - The Beetles
+   </em>
+  </strong>
+  <em>
+   (Freedom)
+  </em>
+  <em>
+   <br/>
+  </em>
+  : 새로운 데이터 패턴을 통해
+  <u>
+   기존 DB의 제약조건을 폐지
+  </u>
+  하고 작업 부하에 적합한 Tool을 선택할 수 있도록 Builder들에게 선택의 자유를 줍니다.
+  <br/>
+  <br/>
+  <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size">
+   <img src="/assets/images/50693623/5"/>
+  </span>
+  <br/>
+  <br/>
+  <ul>
+   <li>
+    <span style="color: rgb(255,153,0);">
+     <a class="external-link" href="https://aws.amazon.com/about-aws/whats-new/2018/11/announcing-amazon-dynamodb-on-demand/" rel="nofollow">
+      <span style="color: rgb(255,153,0);">
+       Amazon DynamoDB On-Demand
+      </span>
+     </a>
+    </span>
+    <br/>
+    - 용량계획없이 초당 수천개의 요청을 처리 할 수 있는 DynamoDB의 새 청구 옵션입니다.
+    <br/>
+    DynamoDB On-Demand는 읽기 및 쓰기 요청에 대한 간단한 리퀘스트별 가격이 측정됨으로 비용과 성능의 균형을 쉽게 맞출 수 있습니다.
+    <br/>
+    자세한 내용은
+    <a class="external-link" href="https://aws.amazon.com/dynamodb/pricing/" rel="nofollow">
+    </a>
+    <a class="external-link" href="https://pages.awscloud.com/AWS-Online-Tech-Talks_2018_1216-SID.html?&amp;trk=el_a131L000006VNYTQA4&amp;trkCampaign=December_1216-SID&amp;sc_channel=el&amp;sc_campaign=pac_Q4-2018_exlinks_whatsnew_OTT_12DGAB&amp;sc_outcome=Product_Adoption_Campaigns&amp;sc_geo=NAMER&amp;sc_country=US" rel="nofollow">
+     제품 요금 상세소개
+    </a>
+    및
+    <a class="external-link" href="https://docs.aws.amazon.com/ko_kr/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html" rel="nofollow">
+     AWS DynamoDB Developer Guide
+    </a>
+    , AWS 블로그 -
+    <a class="external-link" href="https://aws.amazon.com/blogs/aws/amazon-dynamodb-on-demand-no-capacity-planning-and-pay-per-request-pricing/" rel="nofollow">
+     DynamoDB On-Demand
+    </a>
+    를 참조 바랍니다.
+    <br/>
+    <br/>
+   </li>
+   <li>
+    <span style="color: rgb(255,153,0);">
+     <a class="external-link" href="https://aws.amazon.com/ko/about-aws/whats-new/2018/11/announcing-amazon-timestream/" rel="nofollow">
+      <span style="color: rgb(255,153,0);">
+       Amazon Timestream
+      </span>
+     </a>
+    </span>
+    <br/>
+    - Amazon Timestream은 완전 관리형 시계열 데이터베이스 서비스입니다.
+    <br/>
+    사물인터넷의 발달로 시간에 따른 변화를 측정하는 시계열 데이터는 가장 빠르게 증가하는 데이터 유형중 하나 이므로 이 타임스트림을 이용하여
+    <br/>
+    관계형 데이터베이스의 10분의 1가격으로 하루에 수조개의 이벤트를 쉽게 저장하고 분석할 수 있습니다.
+    <br/>
+    자세한 내용은
+    <a class="external-link" href="https://aws.amazon.com/dynamodb/pricing/" rel="nofollow">
+    </a>
+    <a class="external-link" href="https://aws.amazon.com/timestream/" rel="nofollow">
+     제품 상세소개
+    </a>
+    페이지를 참고 바랍니다.
+    <br/>
+    <br/>
+   </li>
+   <li>
+    <span style="color: rgb(255,153,0);">
+     <a class="external-link" href="https://aws.amazon.com/about-aws/whats-new/2018/11/introducing-amazon-qldb/" rel="nofollow">
+      <span style="color: rgb(255,153,0);">
+       Amazon Quantum Ledger Database (QLDB)
+      </span>
+     </a>
+    </span>
+    <br/>
+    - 새로운 개념의 원장(Master)데이터베이스로 애플리케이션 데이터의 변경 사항 전체를 추적하고 확인 할 수 있습니다.
+    <br/>
+    QLDB를 사용하면 응용프로그램의 전체 변경기록을 바꿀 수 없으므로 수정하거나 삭제할 수 없고 또한 암호화를 사용하면 응용프로그램 데이터에 의도하지 않은
+    <br/>
+    수정이 없었는지 쉽게 확인 할 수 있습니다. 금융, 제조, 보험, 인사 등 신뢰할 수 있는 데이터 기록을 필요로 하는 고객들의 수요가 있을 것 이라고 예측됩니다.
+    <br/>
+    자세한 내용은
+    <a class="external-link" href="https://aws.amazon.com/dynamodb/pricing/" rel="nofollow">
+    </a>
+    <a class="external-link" href="https://aws.amazon.com/qldb/" rel="nofollow">
+     제품 상세소개
+    </a>
+    페이지를 참고 바랍니다.
+    <br/>
+    <br/>
+   </li>
+   <li>
+    <span style="color: rgb(255,153,0);">
+     <a class="external-link" href="https://aws.amazon.com/about-aws/whats-new/2018/11/introducing-amazon-managed-blockchain/" rel="nofollow">
+      <span style="color: rgb(255,153,0);">
+       AWS Managed Blockchain
+      </span>
+     </a>
+    </span>
+    <br/>
+    - 완전관리형 서비스로 오픈소스 프레임워크인 Hyperledger Fabric 및 Ethereum을 사용하여 확장 가능한 블록체인 네트워크를 쉽게 만들고 관리 할 수 있게 만들어 줍니다.
+    <br/>
+    일반적으로 블록체인 네트워크를 생성하기 위해 수동으로 하드웨어 공급, SW설치, 접근을 위한 인증서생성, 네트워크 구성요소 등을 구축해야하는데
+    <br/>
+    AWS Managed Blockchain은 이 과정을 간소화한 서비스입니다.
+    <br/>
+    자세한 내용은
+    <a class="external-link" href="https://aws.amazon.com/dynamodb/pricing/" rel="nofollow">
+    </a>
+    <a class="external-link" href="https://aws.amazon.com/qldb/" rel="nofollow">
+     제품 상세소개
+    </a>
+    페이지를 참고 바랍니다.
+    <br/>
+    <br/>
+    <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size">
+     <img src="/assets/images/50693623/6"/>
+    </span>
+    <br/>
+    <br/>
+    <br/>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <em>
+   <strong>
+    Satisfy Me - Elvis Presley
+   </strong>
+  </em>
+  <br/>
+  : AWS사용자들은 실제 사용가능한 AI, ML서비스들을 원했었습니다. 이러한 피드백을 바탕으로 AWS는 재미있고 빠르고 쉬운
+  <u>
+   ML관련한 서비스들
+  </u>
+  을 출시하였습니다.
+  <br/>
+  <br/>
+  <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size">
+   <img src="/assets/images/50693623/7"/>
+  </span>
+  <br/>
+  <br/>
+  <ul>
+   <li>
+    <span style="color: rgb(255,153,0);">
+     <a class="external-link" href="https://aws.amazon.com/about-aws/whats-new/2018/11/announcing-amazon-inferentia-machine-learning-inference-microchip/" rel="nofollow">
+      <span style="color: rgb(255,153,0);">
+       AWS Inferentia
+      </span>
+     </a>
+    </span>
+    <br/>
+    - 저비용으로 고성능을 제공하도록 설계된 기계학습 추론칩입니다. (TensorFlow, Apache MXNet, PyTorch 프레임워크 지원 + ONNX형식의 모델도 지원)
+    <br/>
+    각 칩은 복잡한 모델이 빠른 예측을 할 수 있도록 수백 회의 TOPS(초당 테라 연산)의 추론 처리량을 제공합니다.
+    <br/>
+    자세한 내용은
+    <a class="external-link" href="https://aws.amazon.com/dynamodb/pricing/" rel="nofollow">
+    </a>
+    <a class="external-link" href="https://aws.amazon.com/qldb/" rel="nofollow">
+     제품 상세소개
+    </a>
+    페이지를 참고 바랍니다.
+    <br/>
+    <br/>
+   </li>
+   <li>
+    <span style="color: rgb(255,153,0);">
+     <a class="external-link" href="https://aws.amazon.com/about-aws/whats-new/2018/11/introducing-amazon-elastic-inference/" rel="nofollow">
+      <span style="color: rgb(255,153,0);">
+       Amazon Elastic Inference(EI)
+      </span>
+     </a>
+    </span>
+    <br/>
+    - GPU기반 딥러닝 추론 가속 서비스로 EI를 사용하면 EC2및 SageMaker 인스턴스에 GPU기반 가속기능을 추가하여 심층 학습 추른 비용을 최대 75%까지 절감할 수 있습니다.
+    <br/>
+    자세한 내용은
+    <a class="external-link" href="https://aws.amazon.com/machine-learning/elastic-inference/" rel="nofollow">
+     제품 상세소개
+    </a>
+    및  AWS 블로그 -
+    <a class="external-link" href="https://aws.amazon.com/blogs/aws/new-amazon-fsx-for-lustre/" rel="nofollow">
+    </a>
+    <a class="external-link" href="https://aws.amazon.com/ko/blogs/korea/new-aws-datasync-automated-and-accelerated-data-transfer/?nc1=b_rp" rel="nofollow">
+     AWS
+    </a>
+    <a class="external-link" href="https://aws.amazon.com/blogs/aws/amazon-elastic-inference-gpu-powered-deep-learning-inference-acceleration/" rel="nofollow">
+     Elastic Inference
+    </a>
+    를 참조 바랍니다.
+    <br/>
+    <br/>
+   </li>
+   <li>
+    <span style="color: rgb(255,153,0);">
+     <a class="external-link" href="https://aws.amazon.com/about-aws/whats-new/2018/11/introducing-amazon-sagemaker-groundtruth/" rel="nofollow">
+      <span style="color: rgb(255,153,0);">
+       Amazon SageMaker Ground Truth
+      </span>
+     </a>
+    </span>
+    <br/>
+    - 기계학습의 가장 큰 어려운점은 학습용 데이터를 어떻게 구축해야 하는 가 일것입니다. 즉 ML 모델을 구축하기 위해선 모델을 훈련하기 위해 데이터세트를 준비하고,
+    <br/>
+    모델을 학습하는데 필요한 레이블 작업을 해야하는데, 이러한 과정은 많은 시간과 비용이 소모됩니다.
+    <br/>
+    SageMaker Ground Truth는 기계학습에 대한 매우 정확한 교육 데이터세트를 신속하게 구축하는데 도움을 줍니다.
+    <br/>
+    이 서비스는 데이터에 라벨링을 하는 사람들의 손길을 최소화 하며 라벨링에 대한 비용을 최대 70%감소 시킬수 있다고 설명하고 있습니다.
+    <br/>
+    자세한 내용은
+    <a class="external-link" href="https://aws.amazon.com/sagemaker/groundtruth/?nc2=type_a" rel="nofollow">
+     제품 상세소개
+    </a>
+    및  AWS 블로그 -
+    <a class="external-link" href="https://aws.amazon.com/blogs/aws/new-amazon-fsx-for-lustre/" rel="nofollow">
+    </a>
+    <a class="external-link" href="https://aws.amazon.com/ko/blogs/korea/new-aws-datasync-automated-and-accelerated-data-transfer/?nc1=b_rp" rel="nofollow">
+     AWS
+    </a>
+    <a class="external-link" href="https://aws.amazon.com/blogs/aws/amazon-sagemaker-ground-truth-build-highly-accurate-datasets-and-reduce-labeling-costs-by-up-to-70/" rel="nofollow">
+     SageMaker Ground Truth
+    </a>
+    를 참조 바랍니다.
+    <br/>
+    <br/>
+   </li>
+   <li>
+    <span style="color: rgb(255,153,0);">
+     <a class="external-link" href="https://aws.amazon.com/marketplace/solutions/machine-learning" rel="nofollow">
+      <span style="color: rgb(255,153,0);">
+       Amazon Marketplace to ML
+      </span>
+     </a>
+    </span>
+    <br/>
+    - ML모델 및 알고리즘을 위한 Amazon Marketplace입니다.
+    <br/>
+    AWS 블로그
+    <a class="external-link" href="https://aws.amazon.com/blogs/aws/new-machine-learaning-algorithms-and-model-packages-now-available-in-aws-marketplace/" rel="nofollow">
+     ML in Marketplace
+    </a>
+    를 통해 보다 더 자세한 내용을 확인 바랍니다.
+    <br/>
+    <br/>
+   </li>
+   <li>
+    <span style="color: rgb(255,153,0);">
+     <a class="external-link" href="https://aws.amazon.com/sagemaker/" rel="nofollow">
+      <span style="color: rgb(255,153,0);">
+       Amazon SageMaker Reinforcement Learning(RL)
+      </span>
+     </a>
+     <a class="external-link" href="https://aws.amazon.com/sagemaker/features/" rel="nofollow">
+      <span style="color: rgb(255,153,0);">
+       )
+      </span>
+     </a>
+    </span>
+    <br/>
+    - SageMaker의 내장된 완전 관리형 강화학습 알고리즘 입니다.
+    <br/>
+    많은양의 데이터가 없는 모델을 훈련할 때 유용하게 이용할 수 있습니다.
+    <br/>
+    자세한 내용은
+    <a class="external-link" href="https://aws.amazon.com/dynamodb/pricing/" rel="nofollow">
+    </a>
+    AWS 블로그 -
+    <a class="external-link" href="https://aws.amazon.com/blogs/aws/amazon-sagemaker-rl-managed-reinforcement-learning-with-amazon-sagemaker/" rel="nofollow">
+     AWS SageMaker RL
+    </a>
+    페이지를 참고 바랍니다.
+    <br/>
+    <br/>
+   </li>
+   <li>
+    <span style="color: rgb(255,153,0);">
+     <a class="external-link" href="https://aws.amazon.com/about-aws/whats-new/2018/11/introducing-aws-deepracer/" rel="nofollow">
+      <span style="color: rgb(255,153,0);">
+       AWS Deep Racer and Deep Racer League
+      </span>
+     </a>
+    </span>
+    <br/>
+    - 자율주행 강화학습(RL)을 위한 소형 경주형 자동차입니다.
+    <br/>
+    클라우드 기반 3D경주 시뮬레이터에서 가상 자동차 및 트랙을 시작하고 실제 경험을 위해 숙련 된 모델을 설치 할 수 있습니다.
+    <br/>
+    <br/>
+    <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size">
+     <img src="/assets/images/50693623/8"/>
+    </span>
+    <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size">
+     <img src="/assets/images/50693623/9"/>
+    </span>
+    <br/>
+    <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size">
+     <img src="/assets/images/50693623/10"/>
+    </span>
+    <br/>
+    <br/>
+    * 현재 아마존에서 판매되고 있다고 합니다...
+    <br/>
+    보다 더 자세한 내용은
+    <a class="external-link" href="https://aws.amazon.com/deepracer/" rel="nofollow">
+     제품소개페이지
+    </a>
+    및  AWS블로그
+    <a class="external-link" href="https://aws.amazon.com/blogs/aws/aws-deepracer-go-hands-on-with-reinforcement-learning-at-reinvent/" rel="nofollow">
+     AWS DeepRacer
+    </a>
+    참고바랍니다.
+    <br/>
+    - 구매좌표 :
+    <a class="external-link" href="https://www.amazon.com/AWS-DeepRacer-Fully-autonomous-developers/dp/B07JMHRKQG" rel="nofollow">
+     https://www.amazon.com/AWS-DeepRacer-Fully-autonomous-developers/dp/B07JMHRKQG
+    </a>
+    (2019년도에 정식 출시예정입니다.)
+    <br/>
+    <br/>
+   </li>
+   <li>
+    <span style="color: rgb(255,153,0);">
+     <a class="external-link" href="https://aws.amazon.com/about-aws/whats-new/2018/11/introducing-amazon-textract-now-in-preview-easily-extract-text-and-data-from-virtually-any-document/" rel="nofollow">
+      <span style="color: rgb(255,153,0);">
+       Amazon Textrac
+      </span>
+     </a>
+     t
+    </span>
+    <br/>
+    - Textract은 광학 인식 AI서비스로 스캔 한 문서에서 텍스트와 데이터를 자동으로 추출하는 서비스 입니다.
+    <br/>
+    간단한 관락 문자인식 (OCR)을 뛰어 넘어 테이블에 저장된 양식 및 정보의 필드 내용을 식별합니다.
+    <br/>
+    예를들어 보험설계사가 종이에 받아온 계약서를 온라인화 할 때 이 서비스를 이용하면 컴퓨터에 하나하나 데이터를 기입 할 필요없이 스캔을 하는 것만으로도 필드에 데이터가
+    <br/>
+    자동으로 입력됩니다.
+    <br/>
+    자세한 사항은
+    <a class="external-link" href="https://aws.amazon.com/textract/" rel="nofollow">
+     제품소개
+    </a>
+    를 참고바랍니다.
+    <br/>
+    <br/>
+   </li>
+   <li>
+    <span style="color: rgb(255,153,0);">
+     <a class="external-link" href="https://aws.amazon.com/about-aws/whats-new/2018/11/introducing-amazon-personalize-now-in-preview/" rel="nofollow">
+      <span style="color: rgb(255,153,0);">
+       Amazon Personalize
+      </span>
+     </a>
+    </span>
+    <br/>
+    - 개발자가 자신의 응용프로그램을 사용하는 고객들을 위하여 개별 권장사항을  쉽게 작성할 수 있게 해주는 기계 학습 서비스 입니다.
+    <br/>
+    정교한 추천시스템을 구현하기 위해서는 기계학습이 필요한데, 개발자가 복잡한 기계학습을 구축하는것은 쉽지 않습니다.
+    <br/>
+    Amazon Personalize를 사용하면, 수년간
+    <a class="external-link" href="http://Amazon.com" rel="nofollow">
+     Amazon.com
+    </a>
+    에서 완성 된 기계 학습 기술을 사용하여 이전의 기계학습 경험이 없는 개발자가 복잡한 응용 프로그램에
+    <br/>
+    쉽개 개인화 기능을 구축 할 수 있습니다.
+    <br/>
+    자세한 사항은
+    <a class="external-link" href="https://aws.amazon.com/personalize/" rel="nofollow">
+     제품소개
+    </a>
+    를 및 AWS 블로그 -
+    <a class="external-link" href="https://aws.amazon.com/blogs/aws/amazon-personalize-real-time-personalization-and-recommendation-for-everyone/" rel="nofollow">
+     AWS Personalize
+    </a>
+    를참고바랍니다.
+    <br/>
+    <br/>
+   </li>
+   <li>
+    <span style="color: rgb(255,153,0);">
+     <a class="external-link" href="https://aws.amazon.com/about-aws/whats-new/2018/11/introducing-amazon-forecast-now-in-preview/" rel="nofollow">
+      <span style="color: rgb(255,153,0);">
+       Amazon Forecast
+      </span>
+     </a>
+    </span>
+    <br/>
+    - ML을 이용하여 몇 단계로 시계열을 예측 할 수 있도록 도와주는 서비스 입니다.
+    <br/>
+    시계열 예측의 목표는 주별 판매, 일일 재고 수준 또는 시간별 트래픽같은 시간 종속 데이터의 미래가치를 예측하는 것 입니다.
+    <br/>
+    비지니스의 성공적으로 이끌기 위하여 과거의 데이터를 기반으로 미래의 수요를 시계열로 예측하여 시간과 비용낭비를 줄일 수 있습니다.
+    <br/>
+    가장 큰 특징은 머신러닝에 대해 모르더라도 과거의 데이터와 예측에 필요한 추가적인 데이터만 입력하면 누구나 쉽게 사용할 수 있다는 점 입니다.
+    <br/>
+    자세한 사항은
+    <a class="external-link" href="https://aws.amazon.com/forecast/" rel="nofollow">
+     제품소개
+    </a>
+    를 및 AWS 블로그 -
+    <a class="external-link" href="https://aws.amazon.com/blogs/aws/amazon-personalize-real-time-personalization-and-recommendation-for-everyone/" rel="nofollow">
+     AWS
+    </a>
+    <a class="external-link" href="https://aws.amazon.com/blogs/aws/amazon-forecast-time-series-forecasting-made-easy/" rel="nofollow">
+     Forecast
+    </a>
+    를참고바랍니다.
+   </li>
+  </ul>
+  <br/>
+  <br/>
+ </li>
+ <li>
+  <strong>
+   <em>
+    Should I Stay Or Should I Go - The Clash
+   </em>
+  </strong>
+  <br/>
+  : AWS Cloud Platform 생태계를 확장하기 위하여 새로운 하이브리드 클라우드 서비스를 채택하였습니다.
+  <br/>
+  이를 위해 AWS는 VMware와의 파트너쉽을 확장하여 AWS서비스를 On-Premise 환경으로 제공합니다.
+  <br/>
+  <br/>
+  <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size">
+   <img src="/assets/images/50693623/11"/>
+  </span>
+  <br/>
+  <br/>
+  <ul>
+   <li>
+    <span style="color: rgb(255,153,0);">
+     <a class="external-link" href="https://aws.amazon.com/ko/about-aws/whats-new/2018/11/announcing-public-preview-amazon-rds-on-vmware/" rel="nofollow">
+      <span style="color: rgb(255,153,0);">
+       RDS on VMware Cloud
+      </span>
+     </a>
+    </span>
+    <br/>
+    - VMware 기반 Amazon RDS 서비스는 VMware vSphere가 구동하는 물리 데이터 센터(On-prem)에 RDS 관리 관계형 데이터베이스를 제공하는 서비스 입니다.
+    <br/>
+    VMware의 RDS는 온프레미스 배포에도 이와 동일한 이점을 제공하므로 VMware vSphere 개인 데이터 센터에서 데이터베이스를 쉽게 설정, 작동 및 확장하거나 AWS로 마이그레이션 할 수 있습니다.
+    <br/>
+    자세한 사항은
+    <a class="external-link" href="https://aws.amazon.com/rds/vmware/?nc2=type_a" rel="nofollow">
+     제품소개
+    </a>
+    를 및 AWS 웨비나 TechTalk -
+    <a class="external-link" href="https://pages.awscloud.com/AWS-Online-Tech-Talks_2018_1203-DAT.html?&amp;trk=el_a131L000006VMVXQA4&amp;trkCampaign=December_1203-DAT&amp;sc_channel=el&amp;sc_campaign=pac_Q4-2018_exlinks_PMM_OTT_12DGAB&amp;sc_outcome=Product_Adoption_Campaigns&amp;sc_geo=NAMER&amp;sc_country=mult" rel="nofollow">
+     RDS on VMware
+    </a>
+    를 참고 바랍니다.
+    <br/>
+    <br/>
+   </li>
+   <li>
+    <span style="color: rgb(255,153,0);">
+     <a class="external-link" href="https://aws.amazon.com/outposts/" rel="nofollow">
+      <span style="color: rgb(255,153,0);">
+       AWS Outpost
+      </span>
+     </a>
+    </span>
+    <br/>
+    - AWS는 지금까지 Public Cloud 서비스에만 집중해 왔었는데 앞으로는 Private Cloud와 Public Cloud를 연동하는 Hybrid Cloud시장까지 진출하려는 움직임이 보입니다.
+    <br/>
+    이번에 발표한 Outpost도 기업 내 데이터센터에서 AWS클라우드를 활용할 수 있도록 하는 서비스로서 AWS 인프라와 서비스를 기업 내부 환경에서 똑같이 운영할 수 있도록 해주는 방식입니다.
+    <br/>
+    즉, AWS가 퍼블릭 클라우드에서 사용하는 소프트웨어를 하드웨어에 담아 어플라리언스 형태로 공급하는 형태의 서비스입니다.
+    <br/>
+    이 서비스는 두가지 방식으로 제공되는데 첫번째는 VMwareCloud onAWS, 두번째는 AWS Native 이러한 두가지 방식으로 제공됩니다.
+    <br/>
+    자세한 사항은
+    <a class="external-link" href="https://aws.amazon.com/outposts/" rel="nofollow">
+     AWS 제품소개
+    </a>
+    를 참고 바랍니다.
+    <br/>
+    <span style="color: rgb(255,153,0);">
+     <br/>
+    </span>
+   </li>
+   <li>
+    <span style="color: rgb(255,153,0);">
+     <a class="external-link" href="https://aws.amazon.com/snowball-edge/features/" rel="nofollow">
+      <span style="color: rgb(255,153,0);">
+       Snowball Edge-Compute Optimized
+      </span>
+     </a>
+    </span>
+    <br/>
+    - AWS Snowball Edge는 Amazon S3 호환 스토리지가 탑재 된 데이터 전송장치 입니다.
+    <br/>
+    이 서비스는 데이터를 AWS로 전송하는 것 외에도 Storage Optimized 옵션과 Compute Optimized 옵션 을 제공합니다.
+    <br/>
+    Storage Optimized옵션은 전처리 및 대규모 데이터 전송을 위해 최대 100TB 스토리지, 24vCPU 및 1TB SSD를 제공합니다.
+    <br/>
+    Compute Optimized옵션은 연결이 제한된 환경에서 고급 컴퓨터 학습 작업을 실행하기 위해 최대 52개의 vCPU, 7.68 TB NVMe SSD 등을 제공합니다.
+    <br/>
+    <br/>
+   </li>
+  </ul>
+ </li>
+</ol>
+<p>
+ <span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size">
+  <img src="/assets/images/50693623/12"/>
+ </span>
+</p>
+<p>
+ <br/>
+</p>
+<p>
+ Andy의 기초연설 뿐만 아니라 이전의 re-invent와 같이 연설 중간중간 고객사의 AWS경험을 공유하는 시간도 있었습니다.
+</p>
+<ul>
+ <li>
+  <span style="color: rgb(68,68,68);">
+   <em>
+    Guardian,
+   </em>
+  </span>
+  CIO - Dean Del Vecchio : Cloud First Strategy - Secure &amp; Compliance
+  <br/>
+  <br/>
+  <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size">
+   <img src="/assets/images/50693623/13"/>
+  </span>
+  <br/>
+  - 200개의 workloads를 AWS상으로 이전하여,  기존 데이터 센터의 공간을 80%까지 줄일 수 있었던 사례를 공유하였습니다. 이를 통해 Guardian은 경쟁우위를 얻었습니다.
+  <br/>
+  <br/>
+ </li>
+ <li>
+  <span style="color: rgb(68,68,68);">
+   <em>
+    Formula1
+   </em>
+  </span>
+  , Managing Director - Ross Brawne Obe
+  <br/>
+  <br/>
+  <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size">
+   <img src="/assets/images/50693623/14"/>
+  </span>
+  <br/>
+  -
+  <span style="color: rgb(68,68,68);">
+   아마존 SageMaker를 ML 센서 및 원격 측정법을 사용하여 경주 용 자동차에서 Formula1 경주의 팬 시청률 참여를 향상시키고 HPC를 통해 새로운 경주 용 디자인을 구현할 수 있습니다.
+  </span>
+  <br/>
+  <br/>
+  <br/>
+ </li>
+</ul>
+<p>
+ 마지막으로 Jassay는 Franklin D. Roosevelt 의 말을 인용하며 연설을 마무리 하였습니다.
+</p>
+<p>
+ <span style="color: rgb(255,153,0);">
+  <strong>
+   <em>
+    "The Only Thing To Fear, Is Fear Itself!"
+   </em>
+  </strong>
+ </span>
+</p>
+<p>
+ <br/>
+</p>
+<p>
+ <em>
+  AWS의 최고경영자 Andy Jassy의 KeyNote를 들으면서, AWS가 명실상부  Public Cloud의 1위자리를 굳건히 지키는데에는 고객중심의 생각과 경영이 바탕이 되어 있다는 것을 다시 한번 깨닫게 된 연설이였고,
+ </em>
+</p>
+<p>
+ <em>
+  저의 생애 첫 Tech Conference가 이번 AWS re:Invent라는것이 너무나 영광스럽고 뜻깊은 경험이지 않았나 느낍니다.
+ </em>
+</p>
+<p>
+ <em>
+  <br/>
+ </em>
+</p>
+<p>
+ <em>
+  Jassy가 FDR의 말을 인용한 것처럼 저 또한 FDR의 말로 마무리를 짓도록 하겠습니다.
+ </em>
+</p>
+<p>
+ <strong>
+  <em>
+   "It isn't sufficient just to want - you've got to ask yourself what you are going to do to get the things you want"
+  </em>
+ </strong>
+</p>
+<p>
+ <em>
+  그냥 원하는 것으로 만족하지 말고 이를 이루기 위하여 스스로 무엇을 해야하는지 생각해 봐야한다는 말처럼
+ </em>
+</p>
+<p>
+ <em>
+  저는 오늘도 원하는 것을 얻기 위하여 AWS를 공부하겠습니다.
+ </em>
+</p>
+<p>
+ <em>
+  AWS 충성충성
+ </em>
+</p>
+<p>
+ <em>
+  <br/>
+ </em>
+</p>
+<p>
+ AWS re:Invent 2018 - Keynote with Werner Vogels, CTO, AWS 로 다시 돌아오겠습니다.
+</p>
+<p>
+ 연설에 대한 자세한 사항은 아래의 링크를 참고하여 주시기 바랍니다!
+</p>
+<p>
+ <br/>
+</p>
+<p>
+ 참고자료 :
+</p>
+<p>
+ <a class="external-link" href="https://aws.amazon.com/ko/blogs/aws/category/events/reinvent/" rel="nofollow">
+  AWS re:Invent 영문 블로그 신규 출시 소식
+ </a>
+</p>
+<p>
+ <a class="external-link" href="https://aws.amazon.com/new/reinvent/" rel="nofollow">
+  AWS re:Invent What's New 영문 페이지
+ </a>
+</p>
+<p>
+ <a class="external-link" href="https://aws.amazon.com/about-aws/whats-new/2018/" rel="nofollow">
+  AWS What's New 2018 영문페이지
+ </a>
+</p>
+<p>
+ <a class="external-link" href="https://www.youtube.com/watch?v=ZOIkOnW640A" rel="nofollow">
+  Andy Jassy, CEO, Amazon Web Services, KeyNote
+ </a>
+</p>
+<p>
+ <a class="external-link" href="https://aws.amazon.com/blogs/aws/aws-previews-and-pre-announcements-at-reinvent-2018-andy-jassy-keynote/" rel="nofollow">
+  AWS News Blog - AWS Launches, Previews at re:Invent 2018 - Andy Jassy
+ </a>
+</p>
+<p>
+ <a class="external-link" href="https://aws.amazon.com/ko/blogs/korea/aws-previews-and-pre-announcements-at-reinvent-2018-andy-jassy-keynote/" rel="nofollow">
+  Amazon Web Services 한국 블로그 - AWS re:Invent 2018 - Andy Jassy 연설
+ </a>
+</p>
+        <div class="fb-like" data-href="https://tech.osci.kr/2018/12/06/50693623/"  data-width="300px" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+        <div class="fb-comments" data-href="https://tech.osci.kr/2018/12/06/50693623/" data-width="100%" data-numposts="5"></div>
+    </div>
+
+    <div id="post-footer">
+        
+        <a id="post-author" href="/authors/kbseo/">
+            <div id="author-image" style="background-image:url(/files/authors/kbseo);">
+                <span class="sr-only">kbseo's profile image</span>
+            </div>
+            <p id="author-name">kbseo</p>
+        </a>
+        <p id="post-date">2018-12-06</p>
+        <a id="post-more" href="/authors/kbseo/">
+            <span>Read more posts by this author</span>
+        </a>
+    </div>
+</div>
+
+<div id="post-links" class="container">
+    
+    
+        <div id="post-prev"
+             style="background-image: url(/assets/images/50693268/0);">
+            <div>
+                <h3><a href="/2018/12/04/50693268/">마케터 , AWS re:invent 2018에 가다!</a></h3>
+                <p>YOU MIGHT ENJOY</p>
+            </div>
+        </div>
+    
+    
+    
+        <div id="post-next"
+             style="background-image: url(/assets/images/50693858/0);">
+            <div>
+                <h3><a href="/2018/12/07/50693858/">Salesforce & Jira Connector add-on 설정</a></h3>
+                <p>NEXT POST</p>
+            </div>
+        </div>
+    
+</div>
+
+<div id="lightbox">
+    <div id="lightbox-image"></div>
+</div>
+
+
+    <div class="clearfix"></div>
+
+    <a href="#" id="back-to-top"></a>
+</div>
+
+<div id="footer" class="container-fluid">
+    <ul id="links">
+        
+        <li>
+            <a id="link-github" href="http://github.com/opensourceconsulting" target="_blank">
+                <span class="sr-only">github</span>
+            </a>
+        </li>
+        
+        
+        <li>
+            <a id="link-facebook" href="http://facebook.com/osckorea" target="_blank">
+                <span class="sr-only">facebook</span>
+            </a>
+        </li>
+        
+        
+        <li>
+            <a id="link-rss" href="/rss" target="_blank">
+                <span class="sr-only">rss</span>
+            </a>
+        </li>
+    </ul>
+    <p id="copyright">
+        <a href="https://tech.osci.kr">&copy;2018 OpenSourceConsulting</a>
+        All rights reserved.
+    </p>
+</div><!--#footer-->
+
+
+<script src="/assets/lib/jquery-1.12.0.min.js"></script>
+<script src="/assets/lib/jquery.magnific-popup.min.js"></script>
+<script src="/assets/js/index.js"></script>
+
+
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-39977834-4', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+
+
+
+    
+    <!-- <script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '',
+            xfbml      : true,
+            version    : 'v2.8'
+        });
+        FB.Canvas.getPageInfo(
+            function(info) {
+                alert('Width: ' + info.clientWidth + ' Height: ' + info.clientHeight);
+            }
+        );
+        FB.AppEvents.logPageView();
+    };
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.8";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script> -->
+
+<!--
+<script>
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.8";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+-->
+
+    
+
+    
+
+    
+
+</body>
+</html>
