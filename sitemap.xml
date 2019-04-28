@@ -1,45 +1,725 @@
----
-layout: null
----
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
         xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  {% for post in site.posts %}
+  
   <url>
-    <loc>{{ site.url }}{{ site.baseurl }}{{ post.url }}</loc>
-    {% if post.date %}
-    <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
-    {% endif %}
+    <loc>https://tech.osci.kr/2019/04/25/71801513/</loc>
+    
+    <lastmod>2019-04-25T00:00:00+09:00</lastmod>
+    
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-  {% endfor %}
-  {% for page in site.pages %}
-  {% if page.sitemap %}
+  
   <url>
-    <loc>{{ site.url }}{{ site.baseurl }}{{ page.url }}</loc>
-    {% if page.date %}
-    <lastmod>{{ page.date | date_to_xmlschema }}</lastmod>
-    {% endif %}
-    <changefreq>{{ sitemap.freq | default: 'monthly' }}</changefreq>
-    <priority>{{ sitemap.priority | default: '1.0' }}</priority>
+    <loc>https://tech.osci.kr/2019/04/23/71800553/</loc>
+    
+    <lastmod>2019-04-23T00:00:00+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
   </url>
-  {% endif %}
-  {% endfor %}
-  {% for author in site.authors %}
+  
   <url>
-    <loc>{{ site.url }}{{ site.baseurl }}/authors/{{ author.name }}</loc>
+    <loc>https://tech.osci.kr/2019/04/15/71798599/</loc>
+    
+    <lastmod>2019-04-15T00:00:00+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/2019/02/28/63373558/</loc>
+    
+    <lastmod>2019-02-28T00:00:00+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/2019/02/13/59736201/</loc>
+    
+    <lastmod>2019-02-13T00:00:00+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/2019/02/06/58035834/</loc>
+    
+    <lastmod>2019-02-06T00:00:00+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/2019/01/31/58035473/</loc>
+    
+    <lastmod>2019-01-31T00:00:00+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/spacewalk/2019/01/07/55869620/</loc>
+    
+    <lastmod>2019-01-07T00:00:00+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/2018/12/26/53347127/</loc>
+    
+    <lastmod>2018-12-26T00:00:00+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/2018/12/26/53346876/</loc>
+    
+    <lastmod>2018-12-26T00:00:00+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/2018/12/16/51741685/</loc>
+    
+    <lastmod>2018-12-16T00:00:00+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/2018/12/07/50693858/</loc>
+    
+    <lastmod>2018-12-07T00:00:00+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/2018/12/06/50693623/</loc>
+    
+    <lastmod>2018-12-06T00:00:00+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/2018/12/04/50693268/</loc>
+    
+    <lastmod>2018-12-04T00:00:00+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/atlassian/2018/12/02/50692831/</loc>
+    
+    <lastmod>2018-12-02T00:00:00+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/openstack/2018/11/29/50692685/</loc>
+    
+    <lastmod>2018-11-29T00:00:00+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/2018/11/08/47551306/</loc>
+    
+    <lastmod>2018-11-08T00:00:00+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/2018/11/02/47550611/</loc>
+    
+    <lastmod>2018-11-02T00:00:00+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/docker/2018/09/10/45749387/</loc>
+    
+    <lastmod>2018-09-10T00:00:00+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/atlassian/2018/09/10/45749344/</loc>
+    
+    <lastmod>2018-09-10T00:00:00+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/jira/2018/08/30/45745597/</loc>
+    
+    <lastmod>2018-08-30T00:00:00+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/marketing/2018/08/13/44206301/</loc>
+    
+    <lastmod>2018-08-13T00:00:00+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/atlassian/2018/08/09/44205753/</loc>
+    
+    <lastmod>2018-08-09T00:00:00+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/2018/08/09/44205726/</loc>
+    
+    <lastmod>2018-08-09T00:00:00+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/atlassian/2018/08/07/44205476/</loc>
+    
+    <lastmod>2018-08-07T00:00:00+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/bitbucket/2018/08/05/44205100/</loc>
+    
+    <lastmod>2018-08-05T00:00:00+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/2018/08/02/44204745/</loc>
+    
+    <lastmod>2018-08-02T00:00:00+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/linux/2018/07/31/linux-filesystem/</loc>
+    
+    <lastmod>2018-07-31T00:00:00+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/git/2018/07/27/44204215/</loc>
+    
+    <lastmod>2018-07-27T00:00:00+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/confluence,%20atlassian/2018/07/23/confluence-style/</loc>
+    
+    <lastmod>2018-07-23T00:00:00+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/ci/cd/2018/07/17/41553358/</loc>
+    
+    <lastmod>2018-07-17T00:00:00+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/opensource,%20github,%20jekyll/2018/07/03/migration-github-blog/</loc>
+    
+    <lastmod>2018-07-03T00:00:00+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/agile,%20jira/2017/06/13/tistory-71/</loc>
+    
+    <lastmod>2017-06-13T22:50:47+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/jira,%20alm,%20project%20management/2017/02/22/tistory-70/</loc>
+    
+    <lastmod>2017-02-22T20:25:26+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/atlassian,%20alm,%20project%20management/2017/02/20/tistory-69/</loc>
+    
+    <lastmod>2017-02-20T20:25:27+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/atlassian,%20alm,%20project%20management/2017/02/18/tistory-68/</loc>
+    
+    <lastmod>2017-02-18T23:37:15+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/atlassian,%20alm,%20project%20management/2017/02/16/tistory-67/</loc>
+    
+    <lastmod>2017-02-16T21:52:37+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/opensourceconsulting/2017/02/14/tistory-66/</loc>
+    
+    <lastmod>2017-02-14T22:59:26+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/atlassian,%20jira,%20alm,%20project%20management/2017/02/12/tistory-65/</loc>
+    
+    <lastmod>2017-02-12T00:35:05+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/atlassian,%20jira/2017/02/07/tistory-64/</loc>
+    
+    <lastmod>2017-02-07T10:42:36+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/opensourceconsulting/2017/02/05/tistory-63/</loc>
+    
+    <lastmod>2017-02-05T13:23:05+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/opensourceconsulting/2017/02/03/tistory-62/</loc>
+    
+    <lastmod>2017-02-03T19:17:34+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/atlassian,%20jira/2017/02/02/tistory-61/</loc>
+    
+    <lastmod>2017-02-02T17:43:50+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/atlassian,%20jira/2017/02/01/tistory-60/</loc>
+    
+    <lastmod>2017-02-01T17:57:41+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/atlassian,%20jira/2017/01/31/tistory-59/</loc>
+    
+    <lastmod>2017-01-31T19:41:11+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/os,%20rhel7,%20centos7/2016/01/18/tistory-58/</loc>
+    
+    <lastmod>2016-01-18T13:00:30+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/docker,%20openstack/2015/05/09/tistory-57/</loc>
+    
+    <lastmod>2015-05-09T12:00:37+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/docker/2015/05/09/tistory-56/</loc>
+    
+    <lastmod>2015-05-09T11:32:24+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/java/2015/04/09/tistory-54/</loc>
+    
+    <lastmod>2015-04-09T09:33:12+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/docker,%20openstack/2015/03/18/tistory-53/</loc>
+    
+    <lastmod>2015-03-18T20:51:21+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/openstack/2014/12/18/tistory-42/</loc>
+    
+    <lastmod>2014-12-18T00:20:08+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/%ED%91%9C%EC%A4%80%ED%99%94/2014/12/09/tistory-27/</loc>
+    
+    <lastmod>2014-12-09T19:36:24+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/database/2014/11/27/tistory-14/</loc>
+    
+    <lastmod>2014-11-27T22:50:26+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/architecture/2014/11/22/tistory-9/</loc>
+    
+    <lastmod>2014-11-22T12:44:05+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/java/2014/11/15/tistory-4/</loc>
+    
+    <lastmod>2014-11-15T09:26:06+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/linux/2014/11/13/tistory-1/</loc>
+    
+    <lastmod>2014-11-13T22:46:38+09:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  
+  
+  
+  
+  <url>
+    <loc>https://tech.osci.kr/about/</loc>
+    
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://tech.osci.kr/authors/</loc>
+    
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <url>
+    <loc>https://tech.osci.kr/tags/</loc>
+    
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <url>
+    <loc>https://tech.osci.kr/authors/brian</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  {% endfor %}
-  {% for tag in site.tags %}
+  
   <url>
-    <loc>{{ site.url }}{{ site.baseurl }}/tags/{{ tag.name }}</loc>
+    <loc>https://tech.osci.kr/authors/chhan</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  {% endfor %}
+  
+  <url>
+    <loc>https://tech.osci.kr/authors/hjkim</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/authors/ienvyou</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/authors/it2seiyon</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/authors/kbseo</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/authors/kjeon</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/authors/natalia.tian</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/authors/OpenSourceConsulting</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/authors/seiyeon.kim</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/authors/songhr</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/authors/soopark</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/authors/wjsrkqdlf</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/authors/wsj31013</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  
+  <url>
+    <loc>https://tech.osci.kr/tags/JPA</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/tags/Spacewalk</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/tags/data structure</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/tags/diary</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/tags/gc</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/tags/git</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/tags/java</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/tags/java8</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/tags/mac</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/tags/spring</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://tech.osci.kr/tags/vim</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
 </urlset>
