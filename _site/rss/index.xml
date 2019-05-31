@@ -9,8 +9,8 @@ Sharing Tech. Growing Together.
 </description>
     <link>https://tech.osci.kr/</link>
     <atom:link href="https://tech.osci.kr/rss" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 31 May 2019 11:03:59 +0900</pubDate>
-    <lastBuildDate>Fri, 31 May 2019 11:03:59 +0900</lastBuildDate>
+    <pubDate>Fri, 31 May 2019 11:22:37 +0900</pubDate>
+    <lastBuildDate>Fri, 31 May 2019 11:22:37 +0900</lastBuildDate>
     <generator>Jekyll v3.7.4</generator>
     
       <item>
@@ -277,6 +277,672 @@ Sharing Tech. Growing Together.
         <category>롯데월드</category>
         
         <category>워크샵</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>간단한 AWX 설치 및 기본 사용방법</title>
+        <description>&lt;p&gt;
+ AWX는 Redhat Ansible Tower의 Community 버전으로써 GUI 환경에서 Ansible 스크립트를 수행할 수 있는 장점이 있습니다
+&lt;/p&gt;
+&lt;p&gt;
+ 본문의 내용은 AWX의 설치 및 간단한 사용방법에 대한 내용을 다룹니다
+&lt;/p&gt;
+&lt;h1 id=&quot;id-간단한AWX설치및기본사용방법-TestServer구성&quot;&gt;
+ &lt;strong&gt;
+  Test Server 구성
+ &lt;/strong&gt;
+&lt;/h1&gt;
+&lt;div class=&quot;panel conf-macro output-block&quot; data-hasbody=&quot;true&quot; data-macro-name=&quot;panel&quot; style=&quot;border-width: 1px;&quot;&gt;
+ &lt;div class=&quot;panelContent&quot;&gt;
+  &lt;p&gt;
+   본문에서의 테스트 환경은 Openstack 환경의 Centos7.3 기준으로 구축되었으며 IP주소(Floating IP)는 임의로 지정합니다
+  &lt;/p&gt;
+  &lt;ul&gt;
+   &lt;li&gt;
+    ansible1 192.168.11.35
+   &lt;/li&gt;
+   &lt;li&gt;
+    ansible2 192.168.11.44
+   &lt;/li&gt;
+   &lt;li&gt;
+    ansible3 192.168.11.45
+   &lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;hr/&gt;
+  &lt;ol&gt;
+   &lt;li&gt;
+    &lt;strong&gt;
+     ansible1 서버에서 centos 계정으로 암호없이 ansible2와 ansible3에 접속 가능하도록 설정
+    &lt;/strong&gt;
+    &lt;ol&gt;
+     &lt;li&gt;
+      /etc/hosts 파일에 위 내용을 등록합니다
+     &lt;/li&gt;
+     &lt;li&gt;
+      ansible2와 ansible3 서버에 접속 후, 다음 파일을 수정합니다(해당 내용이 이미 반영되어 있을 경우엔 수정하지 않아도 무관)
+      &lt;ol&gt;
+       &lt;li&gt;
+        #/etc/ssh/sshd_config
+        &lt;ol&gt;
+         &lt;li&gt;
+          PasswordAuthentication yes
+         &lt;/li&gt;
+         &lt;li&gt;
+          저장 후 centos 계정의 암호를 설정합니다
+         &lt;/li&gt;
+         &lt;li&gt;
+          passwd centos
+         &lt;/li&gt;
+        &lt;/ol&gt;
+       &lt;/li&gt;
+      &lt;/ol&gt;
+     &lt;/li&gt;
+     &lt;li&gt;
+      ansible1 서버에서 다음 명령을 통해 ssh-copy-id 적용 후 centos계정으로 ansible2와 ansible3서버에 암호입력 없이 접속 가능한지 확인합니다
+      &lt;ol&gt;
+       &lt;li&gt;
+        #ssh-copy-id centos@ansible2
+       &lt;/li&gt;
+       &lt;li&gt;
+        #ssh-copy-id centos@ansible3
+       &lt;/li&gt;
+       &lt;li&gt;
+        #ssh centos@ansible2
+       &lt;/li&gt;
+       &lt;li&gt;
+        #ssh centos@ansible3
+       &lt;/li&gt;
+      &lt;/ol&gt;
+     &lt;/li&gt;
+    &lt;/ol&gt;
+   &lt;/li&gt;
+   &lt;li&gt;
+    &lt;strong&gt;
+     Ansible 및 AWX 설치
+    &lt;/strong&gt;
+    &lt;ol&gt;
+     &lt;li&gt;
+      작성일 기준으로 Ansible 2.7.10, AWX 4.0 버전을 ansible1서버에 설치합니다
+     &lt;/li&gt;
+     &lt;li&gt;
+      패키지 설치
+      &lt;ol&gt;
+       &lt;li&gt;
+        &lt;p&gt;
+         #sudo yum install epel-release
+        &lt;/p&gt;
+       &lt;/li&gt;
+       &lt;li&gt;
+        &lt;p class=&quot;p1&quot;&gt;
+         #sudo yum install git gettext ansible docker nodejs npm gcc-c++ bzip2 -y
+        &lt;/p&gt;
+       &lt;/li&gt;
+       &lt;li&gt;
+        &lt;p&gt;
+         #sudo yum install python-pip -y
+        &lt;/p&gt;
+       &lt;/li&gt;
+       &lt;li&gt;
+        &lt;p class=&quot;p1&quot;&gt;
+         #sudo yum install python-docker-py -y
+        &lt;/p&gt;
+       &lt;/li&gt;
+      &lt;/ol&gt;
+     &lt;/li&gt;
+     &lt;li&gt;
+      Docker 실행
+      &lt;ol&gt;
+       &lt;li&gt;
+        &lt;p class=&quot;p1&quot;&gt;
+         #sudo systemctl start docker
+        &lt;/p&gt;
+       &lt;/li&gt;
+       &lt;li&gt;
+        &lt;p class=&quot;p1&quot;&gt;
+         #sudo systemctl enable docker
+        &lt;/p&gt;
+       &lt;/li&gt;
+      &lt;/ol&gt;
+     &lt;/li&gt;
+     &lt;li&gt;
+      &lt;span class=&quot;s1&quot;&gt;
+       AWX Clone 및 설정
+      &lt;/span&gt;
+      &lt;br/&gt;
+      &lt;ol&gt;
+       &lt;li&gt;
+        &lt;p class=&quot;p1&quot;&gt;
+         &lt;span class=&quot;s1&quot;&gt;
+          #git clone
+          &lt;span class=&quot;s2&quot;&gt;
+           &lt;a class=&quot;external-link&quot; href=&quot;https://github.com/ansible/awx.git&quot; rel=&quot;nofollow&quot;&gt;
+            https://github.com/ansible/awx.git
+           &lt;/a&gt;
+          &lt;/span&gt;
+         &lt;/span&gt;
+        &lt;/p&gt;
+       &lt;/li&gt;
+       &lt;li&gt;
+        &lt;p class=&quot;p1&quot;&gt;
+         #cd awx/installer/
+        &lt;/p&gt;
+       &lt;/li&gt;
+       &lt;li&gt;
+        #vim inventory
+        &lt;ol&gt;
+         &lt;li&gt;
+          postgres_data_dir=/opt/awxdb
+         &lt;/li&gt;
+         &lt;li&gt;
+          docker_compose_dir=/opt/awxcompose
+         &lt;/li&gt;
+        &lt;/ol&gt;
+       &lt;/li&gt;
+       &lt;li&gt;
+        #sudo mkdir /opt{awxdb,awxcompose}
+       &lt;/li&gt;
+       &lt;li&gt;
+        inventory 설정 중 AWX 버전 설정이 필요하다면 다음 부분을 수정합니다(설정 안할 시 latest로 설치)
+        &lt;br/&gt;
+        &lt;ol&gt;
+         &lt;li&gt;
+          dockerhub_base=ansible
+         &lt;/li&gt;
+        &lt;/ol&gt;
+       &lt;/li&gt;
+       &lt;li&gt;
+        inventory 설정 중 proxy가 필요하다면 다음 부분을 수정합니다
+        &lt;ol&gt;
+         &lt;li&gt;
+          # Proxy
+         &lt;/li&gt;
+         &lt;li&gt;
+          #http_proxy=
+          &lt;span class=&quot;nolink&quot;&gt;
+           &lt;a class=&quot;external-link&quot; href=&quot;http://proxy:3128&quot; rel=&quot;nofollow&quot;&gt;
+            http://proxy:3128
+           &lt;/a&gt;
+          &lt;/span&gt;
+         &lt;/li&gt;
+         &lt;li&gt;
+          #https_proxy=
+          &lt;span class=&quot;nolink&quot;&gt;
+           &lt;a class=&quot;external-link&quot; href=&quot;http://proxy:3128&quot; rel=&quot;nofollow&quot;&gt;
+            http://proxy:3128
+           &lt;/a&gt;
+          &lt;/span&gt;
+         &lt;/li&gt;
+         &lt;li&gt;
+          #no_proxy=
+          &lt;a class=&quot;external-link&quot; href=&quot;http://mycorp.org&quot; rel=&quot;nofollow&quot;&gt;
+           mycorp.org
+          &lt;/a&gt;
+         &lt;/li&gt;
+        &lt;/ol&gt;
+       &lt;/li&gt;
+       &lt;li class=&quot;li1&quot;&gt;
+        설정파일의 설정이 완료될 경우 다음 명령을 수행하여 docker-compose파일을 생성합니다
+        &lt;ol&gt;
+         &lt;li class=&quot;li1&quot;&gt;
+          #ansible-playbook -i inventory install.yml
+         &lt;/li&gt;
+        &lt;/ol&gt;
+       &lt;/li&gt;
+       &lt;li class=&quot;li1&quot;&gt;
+        위 명령 수행 시 다음과 같은 에러가 발생 가능할 수 있습니다
+        &lt;ol&gt;
+         &lt;li class=&quot;li1&quot;&gt;
+          TASK [local_docker : Start the containers] *************************************************************************************************************************************
+          &lt;ol&gt;
+           &lt;li class=&quot;li1&quot;&gt;
+            fatal: [localhost]: FAILED! =&amp;gt; {&quot;changed&quot;: false, &quot;msg&quot;: &quot;Failed to import docker or docker-py - No module named docker. Try `pip install docker` or `pip install docker-py` (Python 2.6)&quot;
+           &lt;/li&gt;
+          &lt;/ol&gt;
+         &lt;/li&gt;
+         &lt;li class=&quot;li1&quot;&gt;
+          &lt;span class=&quot;s1&quot;&gt;
+           위 에러가 발생할 경우 다음 명령을 수행한 뒤 다시 playbook을 수행합니다
+          &lt;/span&gt;
+          &lt;ol&gt;
+           &lt;li class=&quot;li1&quot;&gt;
+            #pip install docker
+           &lt;/li&gt;
+           &lt;li class=&quot;li1&quot;&gt;
+            #pip install docker-compose
+           &lt;/li&gt;
+          &lt;/ol&gt;
+         &lt;/li&gt;
+        &lt;/ol&gt;
+       &lt;/li&gt;
+       &lt;li class=&quot;li1&quot;&gt;
+        install.yml을 수행 시 docker-compose 파일이 다음의 위치에 생성되게 됩니다
+        &lt;ol&gt;
+         &lt;li&gt;
+          #cd /opt/awxcompose/
+         &lt;/li&gt;
+        &lt;/ol&gt;
+       &lt;/li&gt;
+       &lt;li&gt;
+        만들어진 docker-compose파일을 다음 명령을 통해 실행합니다(docker-compose 명령 사용 시 특정 파일을 지정하지 않을 경우 자동으로 docker-compose.yml 이름을 가진 파일을 수행)
+        &lt;ol&gt;
+         &lt;li class=&quot;li1&quot;&gt;
+          #docker-compose up -d
+         &lt;/li&gt;
+        &lt;/ol&gt;
+       &lt;/li&gt;
+      &lt;/ol&gt;
+     &lt;/li&gt;
+    &lt;/ol&gt;
+   &lt;/li&gt;
+   &lt;li&gt;
+    &lt;strong&gt;
+     AWX 접속 확인
+    &lt;/strong&gt;
+    &lt;ol&gt;
+     &lt;li&gt;
+      &lt;span class=&quot;nolink&quot;&gt;
+       &lt;a class=&quot;external-link&quot; href=&quot;http://192.168.11.35&quot; rel=&quot;nofollow&quot;&gt;
+        http://192.168.11.35
+       &lt;/a&gt;
+       로 접속 시 다음과 같은 화면을 확인가능하며 admin / password로 접속합니다
+      &lt;/span&gt;
+     &lt;/li&gt;
+     &lt;li&gt;
+      &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
+       &lt;img src=&quot;/assets/images/77138487/0.png&quot;/&gt;
+      &lt;/span&gt;
+     &lt;/li&gt;
+    &lt;/ol&gt;
+   &lt;/li&gt;
+  &lt;/ol&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;h1 class=&quot;auto-cursor-target&quot; id=&quot;id-간단한AWX설치및기본사용방법-AWX기본사용법&quot;&gt;
+ &lt;strong&gt;
+  AWX 기본 사용법
+ &lt;/strong&gt;
+&lt;/h1&gt;
+&lt;div class=&quot;panel conf-macro output-block&quot; data-hasbody=&quot;true&quot; data-macro-name=&quot;panel&quot; style=&quot;border-width: 1px;&quot;&gt;
+ &lt;div class=&quot;panelContent&quot;&gt;
+  &lt;ol&gt;
+   &lt;li&gt;
+    &lt;strong&gt;
+     Credential 설정
+    &lt;/strong&gt;
+    &lt;ol&gt;
+     &lt;li&gt;
+      좌측 패널의 Credential 클릭 후 + 로 새 Credential 추가합니다
+     &lt;/li&gt;
+     &lt;li&gt;
+      &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
+       &lt;img src=&quot;/assets/images/77138487/1.png&quot;/&gt;
+      &lt;/span&gt;
+     &lt;/li&gt;
+     &lt;li&gt;
+      다음 필드 내용을 추가합니다
+      &lt;ol&gt;
+       &lt;li&gt;
+        NAME: 임의의 Credential 이름
+       &lt;/li&gt;
+       &lt;li&gt;
+        CREDENTIAL TYPE: Machine
+       &lt;/li&gt;
+       &lt;li&gt;
+        USERNAME: ansible1 서버 접속 계정
+       &lt;/li&gt;
+       &lt;li&gt;
+        SSH PRIVATE KEY: 키로 접속한는 경우에 사용하며 Key가 아닌 암호로 접속할 경우 위의 비밀번호를 넣어서 Save
+       &lt;/li&gt;
+      &lt;/ol&gt;
+     &lt;/li&gt;
+     &lt;li&gt;
+      &lt;span class=&quot;confluence-embedded-file-wrapper&quot;&gt;
+       &lt;img src=&quot;/assets/images/77138487/2.png&quot;/&gt;
+      &lt;/span&gt;
+     &lt;/li&gt;
+     &lt;li&gt;
+      Key를 직접 입력하거나 pem 파일등을 드래그 앤 드롭으로 넣어도 가능합니다
+     &lt;/li&gt;
+    &lt;/ol&gt;
+   &lt;/li&gt;
+   &lt;li&gt;
+    &lt;strong&gt;
+     Inventory 설정
+    &lt;/strong&gt;
+    &lt;ol&gt;
+     &lt;li&gt;
+      좌측 패널의 Inventories 클릭 및 + 로 새로운 Inventory를 생성합니다 (Smart가 아닌 일반 inventory로 생성)
+     &lt;/li&gt;
+     &lt;li&gt;
+      &lt;span class=&quot;confluence-embedded-file-wrapper&quot;&gt;
+       &lt;img src=&quot;/assets/images/77138487/3.png&quot;/&gt;
+      &lt;/span&gt;
+     &lt;/li&gt;
+     &lt;li&gt;
+      다음 필드 내용을 추가합니다
+      &lt;ol&gt;
+       &lt;li&gt;
+        NAME: 임의의 Inventory 이름
+       &lt;/li&gt;
+       &lt;li&gt;
+        ORGANIZTION: Default
+       &lt;/li&gt;
+       &lt;li&gt;
+        &lt;span class=&quot;confluence-embedded-file-wrapper&quot;&gt;
+         &lt;img src=&quot;/assets/images/77138487/4.png&quot;/&gt;
+        &lt;/span&gt;
+       &lt;/li&gt;
+       &lt;li&gt;
+        Inventory 생성 시 HOSTS 탭을 사용 가능하며 + 를 눌러서 Host를 등록합니다
+       &lt;/li&gt;
+       &lt;li&gt;
+        &lt;span class=&quot;confluence-embedded-file-wrapper&quot;&gt;
+         &lt;img src=&quot;/assets/images/77138487/5.png&quot;/&gt;
+        &lt;/span&gt;
+       &lt;/li&gt;
+       &lt;li&gt;
+        ansible2를 다음과 같이 등록하며 같은 방법으로 ansible3도 등록합니다
+       &lt;/li&gt;
+       &lt;li&gt;
+        &lt;span class=&quot;confluence-embedded-file-wrapper&quot;&gt;
+         &lt;img src=&quot;/assets/images/77138487/6.png&quot;/&gt;
+        &lt;/span&gt;
+       &lt;/li&gt;
+       &lt;li&gt;
+        다음과 같이 ansible2를 선택 후 run commands 클릭합니다
+       &lt;/li&gt;
+       &lt;li&gt;
+        &lt;span class=&quot;confluence-embedded-file-wrapper&quot;&gt;
+         &lt;img src=&quot;/assets/images/77138487/7.png&quot;/&gt;
+        &lt;/span&gt;
+       &lt;/li&gt;
+       &lt;li&gt;
+        다음 내용을 통해 확인합니다
+        &lt;ol&gt;
+         &lt;li&gt;
+          MODULE: ping
+         &lt;/li&gt;
+         &lt;li&gt;
+          MACHINE CREDENTIAL: AWX Admin Credential
+         &lt;/li&gt;
+        &lt;/ol&gt;
+       &lt;/li&gt;
+       &lt;li&gt;
+        &lt;span class=&quot;confluence-embedded-file-wrapper&quot;&gt;
+         &lt;img src=&quot;/assets/images/77138487/8.png&quot;/&gt;
+        &lt;/span&gt;
+       &lt;/li&gt;
+       &lt;li&gt;
+        LAUNCH클릭 시 정상적으로 수행될 경우 다음과 같은 화면이 출력됩니다
+       &lt;/li&gt;
+       &lt;li&gt;
+        &lt;span class=&quot;confluence-embedded-file-wrapper&quot;&gt;
+         &lt;img src=&quot;/assets/images/77138487/9.png&quot;/&gt;
+        &lt;/span&gt;
+       &lt;/li&gt;
+      &lt;/ol&gt;
+     &lt;/li&gt;
+    &lt;/ol&gt;
+   &lt;/li&gt;
+   &lt;li&gt;
+    &lt;strong&gt;
+     Project 생성
+    &lt;/strong&gt;
+    &lt;ol&gt;
+     &lt;li&gt;
+      일반적으로 git을 사용하나 내부 테스트용으로 Manual로 생성해봅니다
+     &lt;/li&gt;
+     &lt;li&gt;
+      생성 시 다음처럼 프로젝트를 만들 수 없음을 확인할 수 있습니다
+      &lt;ol&gt;
+       &lt;li&gt;
+        &lt;span class=&quot;confluence-embedded-file-wrapper&quot;&gt;
+         &lt;img src=&quot;/assets/images/77138487/10.png&quot;/&gt;
+        &lt;/span&gt;
+       &lt;/li&gt;
+       &lt;li&gt;
+        /var/lib/awx/projects내에 디렉토리를 만들어도 인식하지 않음을 알 수 있으며,  inventory 설정 중 다음 부분의 수정 및 재배포가 필요합니다
+       &lt;/li&gt;
+       &lt;li&gt;
+        재배포하더라도 기존 설정이 초기화되지는 않습니다
+        &lt;ol&gt;
+         &lt;li&gt;
+          #vim /centos/awx/installer/inventory
+          &lt;ol&gt;
+           &lt;li&gt;
+            project_data_dir= /var/lib/awx/projects
+           &lt;/li&gt;
+          &lt;/ol&gt;
+         &lt;/li&gt;
+         &lt;li&gt;
+          디렉토리를 default인 /var/lib/awx/projects가 아닌 임의의 디렉토리 /opt/awx/projects 등으로 지정해도 무관하며 본문에서는 임의의 디렉토리를 사용합니다
+         &lt;/li&gt;
+         &lt;li&gt;
+          /centos/awx/installer에서 ansible-playbook -i inventory install.yml 명령을 수행합니다
+         &lt;/li&gt;
+         &lt;li&gt;
+          vim /opt/awxcompose/docker-compose.yml 명령으로 내용 확인 시 다음 부분이 추가된 것을 확인할 수 있습니다
+          &lt;ol&gt;
+           &lt;li&gt;
+            &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
+             &lt;img src=&quot;/assets/images/77138487/11.png&quot;/&gt;
+            &lt;/span&gt;
+           &lt;/li&gt;
+          &lt;/ol&gt;
+         &lt;/li&gt;
+         &lt;li&gt;
+          이제 /opt/awx/projects에 디렉토리를 생성 후 새로고침 시 다음처럼 프로젝트 추가가 가능한 것을 확인할 수 있습니다
+          &lt;ol&gt;
+           &lt;li&gt;
+            &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
+             &lt;img src=&quot;/assets/images/77138487/12.png&quot;/&gt;
+            &lt;/span&gt;
+           &lt;/li&gt;
+          &lt;/ol&gt;
+         &lt;/li&gt;
+         &lt;li&gt;
+          동작을 테스트해보기 위해 test_project 디렉토리 내에 간단한 playbook을 생성합니다
+          &lt;ol&gt;
+           &lt;li&gt;
+            vim /opt/awx/projects/test_project/fact.yml
+           &lt;/li&gt;
+           &lt;li&gt;
+            &lt;div class=&quot;code panel pdl conf-macro output-block&quot; data-hasbody=&quot;true&quot; data-macro-name=&quot;code&quot; style=&quot;border-width: 1px;&quot;&gt;
+             &lt;div class=&quot;codeContent panelContent pdl&quot;&gt;
+              &lt;pre class=&quot;syntaxhighlighter-pre&quot; data-syntaxhighlighter-params=&quot;brush: java; gutter: false; theme: Confluence&quot; data-theme=&quot;Confluence&quot;&gt;---
+- hosts: all
+  tasks:
+    - name: Print Facts
+      debug:
+        msg:
+          - Default Hostname is 
+          - Default IPV4 of  is &lt;/pre&gt;
+             &lt;/div&gt;
+            &lt;/div&gt;
+           &lt;/li&gt;
+           &lt;li&gt;
+            yml 파일을 생성 후 Test_project에서 JOB TEMPLATES탭을 클릭하여 Job Template을 추가합니다
+           &lt;/li&gt;
+           &lt;li&gt;
+            &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
+             &lt;img src=&quot;/assets/images/77138487/13.png&quot;/&gt;
+            &lt;/span&gt;
+           &lt;/li&gt;
+           &lt;li&gt;
+            &lt;span class=&quot;confluence-embedded-file-wrapper&quot;&gt;
+             &lt;img src=&quot;/assets/images/77138487/14.png&quot;/&gt;
+            &lt;/span&gt;
+           &lt;/li&gt;
+           &lt;li&gt;
+            위 화면에서 Save 이후 바로 LAUNCH를 클릭하거나 좌측 패널의 TEMPLATES메뉴에서 새로 만든 템플릿의 Start job 아이콘을 클릭합니다
+           &lt;/li&gt;
+           &lt;li&gt;
+            &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
+             &lt;img src=&quot;/assets/images/77138487/15.png&quot;/&gt;
+            &lt;/span&gt;
+           &lt;/li&gt;
+           &lt;li&gt;
+            &lt;span class=&quot;confluence-embedded-file-wrapper&quot;&gt;
+             &lt;img src=&quot;/assets/images/77138487/16.png&quot;/&gt;
+            &lt;/span&gt;
+           &lt;/li&gt;
+           &lt;li&gt;
+            정상적으로 동작 시 위와 같이 완료되며 TEMPLATE 화면에서 녹색으로 표시되는 것을 확인할 수 있습니다
+           &lt;/li&gt;
+           &lt;li&gt;
+            &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
+             &lt;img src=&quot;/assets/images/77138487/17.png&quot;/&gt;
+            &lt;/span&gt;
+           &lt;/li&gt;
+          &lt;/ol&gt;
+         &lt;/li&gt;
+        &lt;/ol&gt;
+       &lt;/li&gt;
+      &lt;/ol&gt;
+     &lt;/li&gt;
+    &lt;/ol&gt;
+   &lt;/li&gt;
+  &lt;/ol&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;panel conf-macro output-block&quot; data-hasbody=&quot;true&quot; data-macro-name=&quot;panel&quot; style=&quot;border-width: 1px;&quot;&gt;
+ &lt;div class=&quot;panelHeader&quot; style=&quot;border-bottom-width: 1px;&quot;&gt;
+  &lt;b&gt;
+   암호화 파일 실행
+  &lt;/b&gt;
+ &lt;/div&gt;
+ &lt;div class=&quot;panelContent&quot;&gt;
+  &lt;ol&gt;
+   &lt;li&gt;
+    &lt;strong&gt;
+     Ansible Vault 란
+    &lt;/strong&gt;
+    &lt;ol&gt;
+     &lt;li&gt;
+      Ansible에는 playbook 파일을 암호화할 수 있는 ansible vault라는 기능을 제공하며, 해당 기능으로 암호화 시 암호를 입력해야만 해당 playbook을 수행할 수 있게됩니다
+     &lt;/li&gt;
+    &lt;/ol&gt;
+   &lt;/li&gt;
+   &lt;li&gt;
+    &lt;strong&gt;
+     Vault로 암호화된 playbook 실행
+    &lt;/strong&gt;
+    &lt;ol&gt;
+     &lt;li&gt;
+      일반적으로 group_vars/all 등 playbook에 사용되는 변수들에 대해 암호화하나 간단한 테스트를 위해 기존 playbook을 복사 후 encrypt합니다
+      &lt;ol&gt;
+       &lt;li&gt;
+        cd /opt/awx/projects/test_project
+       &lt;/li&gt;
+       &lt;li&gt;
+        cp fact.yml secfact.yml
+       &lt;/li&gt;
+       &lt;li&gt;
+        ansible-vault encrypt secfact.yml
+       &lt;/li&gt;
+      &lt;/ol&gt;
+     &lt;/li&gt;
+     &lt;li&gt;
+      vi 편집기 등으로 secfact.yml을 열어볼 경우 암호화되어 내용을 확인할 수 없으며, 내용 확인을 위해서는 다음 명령을 통해 암호를 입력해야합니다
+      &lt;ol&gt;
+       &lt;li&gt;
+        ansible-vault view secfact.yml
+       &lt;/li&gt;
+      &lt;/ol&gt;
+     &lt;/li&gt;
+     &lt;li&gt;
+      테스트를 위해 AWX에 접속 후 Job Template을 생성하여 실행 시 다음과 같은 에러를 확인 가능합니다
+     &lt;/li&gt;
+     &lt;li&gt;
+      &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
+       &lt;img src=&quot;/assets/images/77138487/18.png&quot;/&gt;
+      &lt;/span&gt;
+     &lt;/li&gt;
+     &lt;li&gt;
+      credential 메뉴에서 다음과 같이 새로운 Vault type의 credential을 생성합니다
+     &lt;/li&gt;
+     &lt;li&gt;
+      &lt;span class=&quot;confluence-embedded-file-wrapper&quot;&gt;
+       &lt;img src=&quot;/assets/images/77138487/19.png&quot;/&gt;
+      &lt;/span&gt;
+     &lt;/li&gt;
+     &lt;li&gt;
+      생성 후 Job Template에 새로 만들어진 Vault Credential를 추가합니다
+     &lt;/li&gt;
+     &lt;li&gt;
+      &lt;span class=&quot;confluence-embedded-file-wrapper&quot;&gt;
+       &lt;img src=&quot;/assets/images/77138487/20.png&quot;/&gt;
+      &lt;/span&gt;
+     &lt;/li&gt;
+     &lt;li&gt;
+      다시 실행 시 다음처럼 정상적으로 수행됨을 확인할 수 있습니다
+     &lt;/li&gt;
+     &lt;li&gt;
+      &lt;span class=&quot;confluence-embedded-file-wrapper&quot;&gt;
+       &lt;img src=&quot;/assets/images/77138487/21.png&quot;/&gt;
+      &lt;/span&gt;
+     &lt;/li&gt;
+    &lt;/ol&gt;
+   &lt;/li&gt;
+  &lt;/ol&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;panel conf-macro output-block&quot; data-hasbody=&quot;true&quot; data-macro-name=&quot;panel&quot; style=&quot;border-width: 1px;&quot;&gt;
+ &lt;div class=&quot;panelHeader&quot; style=&quot;border-bottom-width: 1px;&quot;&gt;
+  &lt;b&gt;
+   후기
+  &lt;/b&gt;
+ &lt;/div&gt;
+ &lt;div class=&quot;panelContent&quot;&gt;
+  &lt;p&gt;
+   Ansible 초보의 입장에서 느낀 점으로는 우선 GUI에서 오는 가시성은 꽤나 편리했습니다.(예를 들어 ping test부분이라던가) 특히 Admin의 입장에서라면 이미 모든 설정이 되어있다고 가정할 시 관리적인 측면에서 일반 Ansible에 비해 편하게 사용이 가능하구요.
+  &lt;/p&gt;
+  &lt;p&gt;
+   다만 기본 Ansible외에 AWX의 설치 및 설정에 대한 관리포인트의 증가 및 AWX내에서 yml파일을 생성할 수 없는 점, 실제 운영환경에서의 제약사항등을 고려 시 Ansible에 숙달될수록 AWX의 필요성을 덜 느낄 것으로 생각됩니다.
+  &lt;/p&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;panel conf-macro output-block&quot; data-hasbody=&quot;true&quot; data-macro-name=&quot;panel&quot; style=&quot;border-width: 1px;&quot;&gt;
+ &lt;div class=&quot;panelHeader&quot; style=&quot;border-bottom-width: 1px;&quot;&gt;
+  &lt;b&gt;
+   References
+  &lt;/b&gt;
+ &lt;/div&gt;
+ &lt;div class=&quot;panelContent&quot;&gt;
+  &lt;ol&gt;
+   &lt;li&gt;
+    &lt;a class=&quot;external-link&quot; href=&quot;https://chhanz.github.io/ansible/2019/01/30/ansible-vault-create-groupvars/&quot; rel=&quot;nofollow&quot;&gt;
+     https://chhanz.github.io/ansible/2019/01/30/ansible-vault-create-groupvars/
+    &lt;/a&gt;
+   &lt;/li&gt;
+   &lt;li&gt;
+    &lt;a class=&quot;external-link&quot; href=&quot;https://github.com/ansible/awx/issues/857&quot; rel=&quot;nofollow&quot;&gt;
+     https://github.com/ansible/awx/issues/857
+    &lt;/a&gt;
+   &lt;/li&gt;
+   &lt;li&gt;
+    &lt;a class=&quot;external-link&quot; href=&quot;https://www.unixarena.com/2018/11/ansible-tower-awx-how-to-create-manual-scm-project.html/&quot; rel=&quot;nofollow&quot;&gt;
+     https://www.unixarena.com/2018/11/ansible-tower-awx-how-to-create-manual-scm-project.html/
+    &lt;/a&gt;
+   &lt;/li&gt;
+   &lt;li&gt;
+    &lt;a class=&quot;external-link&quot; href=&quot;https://docs.ansible.com/ansible/2.4/ansible-vault.html&quot; rel=&quot;nofollow&quot;&gt;
+     https://docs.ansible.com/ansible/2.4/ansible-vault.html
+    &lt;/a&gt;
+   &lt;/li&gt;
+  &lt;/ol&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;
+ &lt;br/&gt;
+&lt;/p&gt;</description>
+        <pubDate>Fri, 24 May 2019 00:00:00 +0900</pubDate>
+        <link>https://tech.osci.kr/2019/05/24/77138487/</link>
+        <guid isPermaLink="true">https://tech.osci.kr/2019/05/24/77138487/</guid>
+        
+        <category>배포요청</category>
         
         
       </item>
@@ -5670,201 +6336,6 @@ a50p5gs82hop   \_ phpdemo.1  manager1.example.com:5000/phpdemo:v2  manager2.exam
         
         <category>confluence</category>
         
-        
-      </item>
-    
-      <item>
-        <title>Spacewalk latest Docker image 제작기</title>
-        <description>&lt;h1 id=&quot;spacewalk-latest-docker-image-제작기&quot;&gt;Spacewalk latest Docker image 제작기&lt;/h1&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;안녕하세요? 오픈소스컨설팅 한철희 입니다. &lt;br /&gt;
-고객사의 요청으로 Spacewalk 를 docker container 형태로 운영을 해야되는 요건이 생겨서 &lt;br /&gt;
-Image를 만들기 시작 하였습니다…… ;(&lt;/p&gt;
-
-&lt;h1 id=&quot;spacewalk-란&quot;&gt;Spacewalk 란?&lt;/h1&gt;
-&lt;hr /&gt;
-&lt;p&gt;Spacewalk는 오픈 소스 Linux 시스템 관리 솔루션입니다. &lt;br /&gt;
-Red Hat Satellite 제품이 파생 된 업스트림 커뮤니티 프로젝트입니다.&lt;/p&gt;
-
-&lt;center&gt;&lt;img src=&quot;https://chhanz.github.io/assets/images/post/2019-01-07-spacewalkdocker/1.png&quot; height=&quot;550&quot; /&gt; &lt;br /&gt;
-&lt;a href=&quot;https://spacewalkproject.github.io/index.html&quot;&gt;@Go to detail&lt;/a&gt;  &lt;br /&gt;
-&lt;a href=&quot;https://www.slideshare.net/ienvyou/ss-31321783&quot;&gt;@[오픈소스컨설팅]클라우드자동화 및 운영효율화방안&lt;/a&gt;&lt;br /&gt; &lt;/center&gt;
-
-&lt;h1 id=&quot;쉽게-가자&quot;&gt;쉽게 가자…&lt;/h1&gt;
-&lt;hr /&gt;
-&lt;p&gt;docker 의 장점이 뭡니까! &lt;br /&gt;
-docker hub의 많은 Official Image 아닙니까!&lt;/p&gt;
-
-&lt;p&gt;열심히 Docker Image를 찾아보았습니다. &lt;br /&gt;
-하지만…&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# docker search spacewalk
-INDEX       NAME                                            DESCRIPTION                                     STARS     OFFICIAL   AUTOMATED
-docker.io   docker.io/bashell/spacewalk                     Spacewalk Docker Image                          7                    [OK]
-docker.io   docker.io/ruo91/spacewalk                       Spacewalk is an open source Linux systems ...   4                    [OK]
-docker.io   docker.io/pajinek/docker-spacewalk              Spacewalk in Docker (without systemd)           3                    [OK]
-docker.io   docker.io/egonzalez90/spacewalk                 Spacewalk docker image                          1                    [OK]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;OFFICIAL 은 없고, 그나마 STARS 는 7개 뿐이고…  &lt;br /&gt;
-내가 만들어야겠다… ;)  &lt;br /&gt;
-이렇게 시작 되었습니다.&lt;/p&gt;
-
-&lt;h1 id=&quot;docker-image-를-만들어보자&quot;&gt;Docker Image 를 만들어보자!&lt;/h1&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;먼저 참고할 Dockerfile 은 docker hub 에서 가져왔습니다.&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;https://bitbucket.org/bashell-com/spacewalk&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Dockerfile 은 아래와 같이 수정하였습니다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# Dockerfile - Spacewalk
-#
-# - Build
-#
-# docker build --rm -t spacewalk .
-#
-# - Run
-# docker run --privileged=true -d --name=&quot;spacewalk&quot; -p 80:80 -p 443:443 spacewalk
-
-# 1. Base images
-FROM     centos:6
-MAINTAINER chhanz &amp;lt;chhan@osci.kr&amp;gt;
-
-# 2. Set the environment variable
-WORKDIR /opt
-
-# 3. Add the epel, spacewalk, jpackage, supervisord
-ADD conf/group_spacewalkproject-epel6-addons-epel-6.repo /etc/yum.repos.d/epel6-addons-epel-6.repo
-ADD conf/group_spacewalkproject-java-packages-epel-7.repo /etc/yum.repos.d/java-packages-epel-7.repo
-RUN yum install -y epel-release \
- &amp;amp;&amp;amp; rpm -Uvh https://copr-be.cloud.fedoraproject.org/results/@spacewalkproject/spacewalk-2.8/epel-6-x86_64/00736372-spacewalk-repo/spacewalk-repo-2.8-11.el6.noarch.rpm \
- &amp;amp;&amp;amp; yum check-update ; yum upgrade -y \
- &amp;amp;&amp;amp; yum install -y spacewalk-setup-postgresql spacewalk-postgresql tomcat-native python-setuptools python-pip \
- &amp;amp;&amp;amp; yum clean all \
- &amp;amp;&amp;amp; pip install supervisor &amp;amp;&amp;amp; pip install --upgrade meld3==0.6.10 &amp;amp;&amp;amp; mkdir /etc/supervisord.d \
- &amp;amp;&amp;amp; rm -rf /root/.cache \
- &amp;amp;&amp;amp; cat /usr/share/zoneinfo/Asia/Seoul &amp;gt; /etc/localtime
-
-# 4. Install supervisord config
-ADD conf/supervisord.conf /etc/supervisord.d/supervisord.conf
-
-# 5. Install spacewalk initial and running scripts
-ADD conf/answer.txt   /opt/answer.txt
-ADD conf/spacewalk.sh /opt/spacewalk.sh
-
-# 6. Start supervisord
-CMD [&quot;/usr/bin/supervisord&quot;, &quot;-c&quot;, &quot;/etc/supervisord.d/supervisord.conf&quot;]
-
-# System Log
-VOLUME /var/log
-
-# PostgreSQL Data
-VOLUME /var/lib/pgsql/data
-
-# RPM repository
-VOLUME /var/satellite
-
-# Bootstrap directory
-VOLUME /var/www/html/pub
-
-# Port
-EXPOSE 80 443
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;수정된 내용은 아래와 같습니다.&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;ol&gt;
-    &lt;li&gt;Update Spacewalk (Spacewalk 2.6 &amp;gt; Spacewalk 2.8)&lt;/li&gt;
-    &lt;li&gt;Spacewalk 2.8 Repository 로 변경&lt;/li&gt;
-    &lt;li&gt;spacewalk-setup 에 필요한 Answer file 을 최신버전의 요건에 맞게 수정하였습니다.&lt;/li&gt;
-    &lt;li&gt;Container  로 실행할때, Spacewalk 가 정상적으로 시작되는지 확인이 가능하도록 내부 Script 를 수정하였습니다.&lt;/li&gt;
-    &lt;li&gt;supervisord 를 통해, Spacewalk 를 시작하는데 해당 Log 를 debug 수준으로 설정해서 상태를 확인하는 것이 더욱 쉽게 만들었습니다.&lt;/li&gt;
-    &lt;li&gt;localtime 을 Asia/Seoul 으로 설정 하였습니다.&lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;위와 같이 수정한 Dockerfile 를 Build 합니다.&lt;/p&gt;
-
-&lt;h1 id=&quot;build&quot;&gt;Build&lt;/h1&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;Dockerfile 및 image 에 추가될 file 이 있는 Directory 에서 Build 를 진행합니다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# docker build --rm -t spacewalk .
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;많은 시간이 소요되면서 Build 가 진행 됩니다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# docker images
-REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-spacewalk           latest             f0e26b8230ad        13 days ago         1.04 GB
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;위와 같이 Build 가 완료 되었습니다.&lt;/p&gt;
-
-&lt;h1 id=&quot;run&quot;&gt;Run&lt;/h1&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;Build 가 된 이미지를 실행합니다. &lt;br /&gt;
-먼저 Container 가 종료되고, 제거가 되더라도 Spacewalk 데이터를 보존 할 수 있게 Volume 으로 사용될 경로를 생성합니다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mkdir -p /data/var/lib/pgsql/data
-mkdir -p /data/var/satellite
-mkdir -p /data/var/www/html/pub
-mkdir -p /data/var/log/tomcat6
-mkdir -p /data/var/log/httpd
-mkdir -p /data/var/log/cobbler
-
-chown 26:26 /data/var/lib/pgsql/data
-chmod 777 -R /data/var
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Volume 생성이 다 되었다면,&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# docker run --privileged=true -d --name=&quot;spacewalk&quot; -p 80:80 -p 443:443 -v /data/var/log:/var/log -v /data/var/lib/pgsql/data:/var/lib/pgsql/data -v /data/var/satellite:/var/satellite -v /data/var/www/html/pub:/var/www/html/pub spacewalk
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;위 명령으로 Container 를 시작합니다.&lt;/p&gt;
-
-&lt;p&gt;https://(Docker Host IP)  로 접속합니다.&lt;/p&gt;
-
-&lt;p&gt;아래와 같이 Spacewalk 화면을 확인 할 수 있습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://chhanz.github.io/assets/images/post/2019-01-07-spacewalkdocker/0.png&quot; height=&quot;400&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;마치며&quot;&gt;마치며&lt;/h1&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;위와 같이 나만의 특별한 Docker Image 를 생성 할 수 있었습니다.  &lt;br /&gt;
-해당 Dockerfile 및 기타 필요한 file, 쉽게 Spacewalk 를 운영 할 수 있도록 만든 Script 들을 github 에 올려놨습니다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# git clone https://github.com/chhanz/spacewalk-docker-img.git
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;앞으로도 Opensource Software 를 손쉽게 사용 할 수 있도록 노력 하겠습니다.&lt;/p&gt;
-
-&lt;p&gt;감사합니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;참고-자료&quot;&gt;참고 자료&lt;/h2&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-  &lt;li&gt;Base Dockerfile : &lt;a href=&quot;https://bitbucket.org/bashell-com/spacewalk&quot;&gt;https://bitbucket.org/bashell-com/spacewalk&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spacewalk Document : &lt;a href=&quot;https://spacewalkproject.github.io/documentation.html&quot;&gt;https://spacewalkproject.github.io/documentation.html&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;chhanz github : &lt;a href=&quot;https://github.com/chhanz/spacewalk-docker-img&quot;&gt;https://github.com/chhanz/spacewalk-docker-img&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Mon, 07 Jan 2019 00:00:00 +0900</pubDate>
-        <link>https://tech.osci.kr/spacewalk/2019/01/07/55869620/</link>
-        <guid isPermaLink="true">https://tech.osci.kr/spacewalk/2019/01/07/55869620/</guid>
-        
-        <category>Spacewalk</category>
-        
-        
-        <category>Spacewalk</category>
         
       </item>
     
