@@ -1,5 +1,5 @@
 ---
 name: myjang 
-title:장미영
+title: 장미영
 image: /files/authors/myjang
 ---

@@ -59,15 +59,6 @@
   </url>
   
   <url>
-    <loc>https://tech.osci.kr/2019/02/28/63373558/</loc>
-    
-    <lastmod>2019-02-28T00:00:00+09:00</lastmod>
-    
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  
-  <url>
     <loc>https://tech.osci.kr/2019/02/13/59736201/</loc>
     
     <lastmod>2019-02-13T00:00:00+09:00</lastmod>
@@ -641,7 +632,7 @@
   </url>
   
   <url>
-    <loc>https://tech.osci.kr/authors/</loc>
+    <loc>https://tech.osci.kr/authors/myjang</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
