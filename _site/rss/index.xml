@@ -9,8 +9,8 @@ Sharing Tech. Growing Together.
 </description>
     <link>https://tech.osci.kr/</link>
     <atom:link href="https://tech.osci.kr/rss" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 31 May 2019 11:22:37 +0900</pubDate>
-    <lastBuildDate>Fri, 31 May 2019 11:22:37 +0900</lastBuildDate>
+    <pubDate>Fri, 31 May 2019 11:24:30 +0900</pubDate>
+    <lastBuildDate>Fri, 31 May 2019 11:24:30 +0900</lastBuildDate>
     <generator>Jekyll v3.7.4</generator>
     
       <item>
@@ -4296,7 +4296,7 @@ AJS.$('[data-macro-name=&quot;markdown&quot;] table tbody tr td').each(function(
 &lt;hr/&gt;
 &lt;p&gt;
  &lt;span class=&quot;confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size&quot;&gt;
-  &lt;img src=&quot;/assets/images/59736201/0&quot;/&gt;
+  &lt;img src=&quot;/assets/images/59736201/0.png&quot;/&gt;
  &lt;/span&gt;
 &lt;/p&gt;
 &lt;p&gt;
@@ -4317,7 +4317,7 @@ AJS.$('[data-macro-name=&quot;markdown&quot;] table tbody tr td').each(function(
 &lt;/p&gt;
 &lt;p&gt;
  &lt;span class=&quot;confluence-embedded-file-wrapper image-center-wrapper&quot;&gt;
-  &lt;img src=&quot;/assets/images/59736201/1&quot;/&gt;
+  &lt;img src=&quot;/assets/images/59736201/1.gif&quot;/&gt;
  &lt;/span&gt;
 &lt;/p&gt;
 &lt;p&gt;
@@ -4344,7 +4344,7 @@ AJS.$('[data-macro-name=&quot;markdown&quot;] table tbody tr td').each(function(
 &lt;hr/&gt;
 &lt;p&gt;
  &lt;span class=&quot;confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size&quot;&gt;
-  &lt;img src=&quot;/assets/images/59736201/2&quot;/&gt;
+  &lt;img src=&quot;/assets/images/59736201/2.png&quot;/&gt;
  &lt;/span&gt;
 &lt;/p&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;
@@ -4391,7 +4391,7 @@ AJS.$('[data-macro-name=&quot;markdown&quot;] table tbody tr td').each(function(
 &lt;/div&gt;
 &lt;p&gt;
  &lt;span class=&quot;confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size&quot;&gt;
-  &lt;img src=&quot;/assets/images/59736201/3&quot;/&gt;
+  &lt;img src=&quot;/assets/images/59736201/3.png&quot;/&gt;
  &lt;/span&gt;
 &lt;/p&gt;
 &lt;p&gt;
@@ -5087,7 +5087,7 @@ m82bq5rgmk7z  phpdemo.1  manager1.example.com:5000/phpdemo:v1  manager2.example.
 &lt;/p&gt;
 &lt;p&gt;
  &lt;span class=&quot;confluence-embedded-file-wrapper image-center-wrapper&quot;&gt;
-  &lt;img src=&quot;/assets/images/59736201/4&quot;/&gt;
+  &lt;img src=&quot;/assets/images/59736201/4.png&quot;/&gt;
  &lt;/span&gt;
 &lt;/p&gt;
 &lt;p&gt;
@@ -5154,7 +5154,7 @@ m82bq5rgmk7z  phpdemo.1  manager1.example.com:5000/phpdemo:v1  manager2.example.
 &lt;/p&gt;
 &lt;p&gt;
  &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
-  &lt;img src=&quot;/assets/images/59736201/5&quot;/&gt;
+  &lt;img src=&quot;/assets/images/59736201/5.gif&quot;/&gt;
  &lt;/span&gt;
 &lt;/p&gt;
 &lt;p&gt;
@@ -5171,7 +5171,7 @@ m82bq5rgmk7z  phpdemo.1  manager1.example.com:5000/phpdemo:v1  manager2.example.
 &lt;/p&gt;
 &lt;p&gt;
  &lt;span class=&quot;confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size&quot;&gt;
-  &lt;img src=&quot;/assets/images/59736201/6&quot;/&gt;
+  &lt;img src=&quot;/assets/images/59736201/6.png&quot;/&gt;
  &lt;/span&gt;
 &lt;/p&gt;
 &lt;p&gt;
@@ -5355,7 +5355,7 @@ sxp3cs1vmn96  phpdemo.3      manager1.example.com:5000/phpdemo:v2  manager1.exam
 &lt;/p&gt;
 &lt;p&gt;
  &lt;span class=&quot;confluence-embedded-file-wrapper&quot;&gt;
-  &lt;img src=&quot;/assets/images/59736201/7&quot;/&gt;
+  &lt;img src=&quot;/assets/images/59736201/7.gif&quot;/&gt;
  &lt;/span&gt;
 &lt;/p&gt;
 &lt;p&gt;
@@ -5425,7 +5425,7 @@ sxp3cs1vmn96   \_ phpdemo.3  manager1.example.com:5000/phpdemo:v2  manager1.exam
 &lt;/p&gt;
 &lt;p&gt;
  &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
-  &lt;img src=&quot;/assets/images/59736201/8&quot;/&gt;
+  &lt;img src=&quot;/assets/images/59736201/8.gif&quot;/&gt;
  &lt;/span&gt;
 &lt;/p&gt;
 &lt;p&gt;
@@ -5490,7 +5490,7 @@ a50p5gs82hop   \_ phpdemo.1  manager1.example.com:5000/phpdemo:v2  manager2.exam
 &lt;/p&gt;
 &lt;p&gt;
  &lt;span class=&quot;confluence-embedded-file-wrapper&quot;&gt;
-  &lt;img src=&quot;/assets/images/59736201/9&quot;/&gt;
+  &lt;img src=&quot;/assets/images/59736201/9.gif&quot;/&gt;
  &lt;/span&gt;
 &lt;/p&gt;
 &lt;p&gt;
