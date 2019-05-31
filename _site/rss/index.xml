@@ -9,8 +9,8 @@ Sharing Tech. Growing Together.
 </description>
     <link>https://tech.osci.kr/</link>
     <atom:link href="https://tech.osci.kr/rss" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 31 May 2019 11:26:06 +0900</pubDate>
-    <lastBuildDate>Fri, 31 May 2019 11:26:06 +0900</lastBuildDate>
+    <pubDate>Fri, 31 May 2019 11:38:08 +0900</pubDate>
+    <lastBuildDate>Fri, 31 May 2019 11:38:08 +0900</lastBuildDate>
     <generator>Jekyll v3.7.4</generator>
     
       <item>
@@ -264,8 +264,6 @@ Sharing Tech. Growing Together.
         <link>https://tech.osci.kr/2019/05/30/77140019/</link>
         <guid isPermaLink="true">https://tech.osci.kr/2019/05/30/77140019/</guid>
         
-        <category>배포요청</category>
-        
         <category>오픈소스컨설팅</category>
         
         <category>마케팅팀</category>
@@ -277,6 +275,8 @@ Sharing Tech. Growing Together.
         <category>롯데월드</category>
         
         <category>워크샵</category>
+        
+        <category>배포요청</category>
         
         
       </item>
