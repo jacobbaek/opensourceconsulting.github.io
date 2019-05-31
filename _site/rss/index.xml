@@ -9,8 +9,8 @@ Sharing Tech. Growing Together.
 </description>
     <link>https://tech.osci.kr/</link>
     <atom:link href="https://tech.osci.kr/rss" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 31 May 2019 11:38:08 +0900</pubDate>
-    <lastBuildDate>Fri, 31 May 2019 11:38:08 +0900</lastBuildDate>
+    <pubDate>Fri, 31 May 2019 11:40:12 +0900</pubDate>
+    <lastBuildDate>Fri, 31 May 2019 11:40:12 +0900</lastBuildDate>
     <generator>Jekyll v3.7.4</generator>
     
       <item>
@@ -5563,6 +5563,8 @@ a50p5gs82hop   \_ phpdemo.1  manager1.example.com:5000/phpdemo:v2  manager2.exam
         <pubDate>Wed, 13 Feb 2019 00:00:00 +0900</pubDate>
         <link>https://tech.osci.kr/2019/02/13/59736201/</link>
         <guid isPermaLink="true">https://tech.osci.kr/2019/02/13/59736201/</guid>
+        
+        <category>배포요청</category>
         
         
       </item>
