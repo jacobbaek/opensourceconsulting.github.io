@@ -1,0 +1,245 @@
+---
+layout: post
+title: "Open Infrastructure Summit 2019 후기"
+description: " " 
+author: cmkang
+date: 2019-05-31
+tags: ['배포요청']
+category: 
+image: /assets/images/77140128/0.jpeg 
+---
+<p>
+ 안녕하십니까. 오픈소스컨설팅입니다.
+</p>
+<p>
+ 지난 4월 29일 ~ 5월 1일, 미국 덴버의 Colorado Convention Center에서 Open Infrastructure Summit 2019 행사가 개최되었습니다.
+</p>
+<p>
+ <br/>
+</p>
+<p>
+ <iframe allowfullscreen="" class="youtube-player conf-macro output-block" data-hasbody="false" data-macro-name="widget" frameborder="0" mozallowfullscreen="" src="//www.youtube.com/embed/Pzqqi8wIBT8?wmode=opaque" style="width: 400px; height: 300px" type="text/html" webkitallowfullscreen="">
+ </iframe>
+</p>
+<p>
+ <br/>
+</p>
+<p>
+ 기존의 OpenStack Summit에서 Open Infrastructure Summit으로 이름을 바꾸고 처음 열린 이번 행사에서는
+ <span class="s1">
+  Container Infrastructure, CI/CD, Telecom + NFV, Public Cloud, Private &amp; Hybrid Cloud, Security와 관련된 300여개의 세션과 워크샵이 열렸습니다.
+ </span>
+</p>
+<p>
+ 본 포스팅에서는 이번 Summit에 참석하면서 듣고 느낀 내용을 공유하려고 합니다.
+</p>
+<h1 id="OpenInfrastructureSummit2019후기-Summit이남긴메시지1-경계없는협업(Collaborationwithoutborder)">
+ Summit이 남긴 메시지 1 -
+ <span style="color: rgb(0,0,0);">
+  <strong>
+   경계 없는 협업 (Collaboration without border)
+  </strong>
+ </span>
+</h1>
+<p>
+ <span class="s1">
+  OpenStack Foundation의 Executive Director이자 Rackspace의 창업자인 Jonathan Bryce는 키노트 세션을 통해 열린 협업(Open Collaboration), 경계 없는 협업(Collaboration without border)을 강조했습니다.
+ </span>
+</p>
+<p>
+ <br/>
+</p>
+<p>
+ <span class="s1">
+  <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size">
+   <img src="/assets/images/77140128/0.jpeg"/>
+  </span>
+  <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size">
+   <img src="/assets/images/77140128/1.jpeg"/>
+  </span>
+ </span>
+</p>
+<p>
+ <br/>
+</p>
+<p>
+ <span class="s1">
+  OpenStack이 다른 오픈소스 프로젝트와의 통합과 협업을 통해 Open Infrastructure로서, 다양한 분야에서 직면한 과제를 해결할 수 있음을 강조한 것입니다.
+ </span>
+</p>
+<p>
+ <br/>
+</p>
+<p>
+ <span class="s1">
+  특히 최근 OpenStack user survey에서 OpenStack 사용자 중 61%가 OpenStack 환경에서 Kubernetes를 사용하고 있다는 조사 결과를 인용하면서, OpenStack 프로젝트와 Kubernetes 프로젝트와의 협업이 계속되고 있다는 것을 강조했습니다.
+ </span>
+</p>
+<p>
+ <br/>
+</p>
+<p>
+ <span class="s1">
+  <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size">
+   <img src="/assets/images/77140128/2.svg"/>
+  </span>
+  <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size">
+   <img src="/assets/images/77140128/3.svg"/>
+  </span>
+ </span>
+</p>
+<p>
+ <span class="s1">
+  *출처: 2018 OpenStack User Survey Report (
+  <a class="external-link" href="https://www.openstack.org/user-survey/2018-user-survey-report/" rel="nofollow">
+   https://www.openstack.org/user-survey/2018-user-survey-report/
+  </a>
+  )
+ </span>
+</p>
+<p>
+ <br/>
+</p>
+<p>
+ <span class="s1">
+  이는 OpenStack 커뮤니티가 Kubernetes와의 통합을 매우 중요하게 생각하고 있다는 것과, OpenStack이 VM 뿐만 아니라 컨테이너 운영까지 가능한 플랫폼으로 확산 중임을 의미합니다.
+ </span>
+</p>
+<p>
+ <br/>
+</p>
+<p>
+ 또한 이번 Summit에서는 OpenStack Foundation의 첫번째 Pilot Project로 시작된 Kata Containers가 Confirmed Project가 되었음을 알렸습니다.
+</p>
+<p>
+ Kata Containers는 기존의 컨테이너가 가지고 있던 신속성과 VM이 가지는 보안의 장점을 결합한  Lightweight VM으로서, Docker OCI와 Kubernetes CRI를 지원합니다.
+</p>
+<p>
+ <br/>
+</p>
+<p>
+ <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size">
+  <img src="/assets/images/77140128/4.png"/>
+ </span>
+</p>
+<p>
+ <br/>
+</p>
+<p>
+ 특히 1.5 버전부터는 AWS에서 serverless 서비스를 위해 개발한 오픈소스 하이퍼바이저인 Firecracker를 지원합니다. Firecracker는 AWS의 Lambda 서비스와 Fargate 서비스에 사용되고 있습니다.
+</p>
+<p>
+ <br/>
+</p>
+<p>
+ <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size">
+  <img src="/assets/images/77140128/5.png"/>
+ </span>
+</p>
+<p>
+ <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size">
+  <img src="/assets/images/77140128/6.png"/>
+ </span>
+</p>
+<p>
+ <br/>
+</p>
+<p>
+ Serverless 기술에 대한 관심과 도입은 증가하고 있습니다. 그리고 보안이 강화된 컨테이너, 또는 Lightweight VM은 serverless의 핵심 기술로 주목받고 있습니다.
+</p>
+<p>
+ <br/>
+</p>
+<p>
+ <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size">
+  <img src="/assets/images/77140128/7.png"/>
+ </span>
+ <span class="confluence-embedded-file-wrapper">
+  <img src="/assets/images/77140128/8.png"/>
+ </span>
+</p>
+<p>
+ *출처: Where PaaS, Containers and Serverless Stand in a Multi-Platform World, June 2018, CLOUDFOUNDRY (
+ <a class="external-link" href="https://www.cloudfoundry.org/wp-content/uploads/GPS-7-FINAL-REPORT-.pdf" rel="nofollow">
+  https://www.cloudfoundry.org/wp-content/uploads/GPS-7-FINAL-REPORT-.pdf
+ </a>
+ )
+</p>
+<p>
+ <br/>
+</p>
+<p>
+ OpenStack Foundation의 Kata Containers 프로젝트와 AWS에서 시작된 Firecracker 프로젝트의 협업이 serverless와 컨테이너 기술의 지형을 어떻게 변화시킬지 궁금해집니다.
+</p>
+<h1 id="OpenInfrastructureSummit2019후기-Summit이남긴메시지2-5G,그리고Edge">
+ Summit이 남긴 메시지 2 -
+ <span style="color: rgb(0,0,0);">
+  <strong>
+   5G, 그리고 Edge
+  </strong>
+ </span>
+</h1>
+<p>
+ 5G와 Edge는 이번 Summit의 처음과 끝을 관통하는 주제였습니다. 키노트 세션에서는 Ericsson과 AT&amp;T에서 OpenStack을 기반으로 한 자사의 5G 구축 사례를 발표했습니다.
+</p>
+<p>
+ <br/>
+</p>
+<p>
+ <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size">
+  <img src="/assets/images/77140128/9.png"/>
+ </span>
+ <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size">
+  <img src="/assets/images/77140128/10.png"/>
+ </span>
+</p>
+<p>
+ <br/>
+</p>
+<p>
+ 뒤이어 Ericsson과 AT&amp;T가 파트너가 되어 가상현실 게임을 시연하면서 참석자들에게 3G, 4G, 5G의 네트워크 지연시간의 차이를 보여주는 행사를 가졌습니다.
+</p>
+<p>
+ <br/>
+</p>
+<p>
+ <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size">
+  <img src="/assets/images/77140128/11.png"/>
+ </span>
+</p>
+<p>
+ <br/>
+</p>
+<p>
+ 중국 최대 통신회사인 China Mobile은 OpenStack의 NFV 아키텍처를 기반으로 한 5G 시스템과 Edge 컴퓨팅 구축 사례를 발표하는 세션을 가졌습니다.
+</p>
+<p>
+ 이밖에 Intel, EMC, Redhat, Dell, Lenovo 등 많은 업체가 5G와 Edge를 위한 솔루션을 소개하는 세션을 가졌습니다.
+</p>
+<p>
+ <br/>
+</p>
+<p>
+ OpenStack이 5G의 데이터 허브(hub) 역할을 하는 Edge 클라우드 기반 인프라로 자리 잡았음을 느낄 수 있었던 행사였습니다.
+</p>
+<p>
+ <br/>
+</p>
+<p>
+ <br/>
+</p>
+<p>
+ <br/>
+</p>
+<p>
+ <br/>
+</p>
+<p>
+ <br/>
+</p>
+<p>
+ <br/>
+</p>
+<p>
+ <br/>
+</p>
