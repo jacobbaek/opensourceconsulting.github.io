@@ -20,13 +20,13 @@
 <meta property="og:title" content="11 ~ 12월 Atlassian TroubleShooting 정리"/>
 <meta property="og:description" content="Active Directory의 그룹명 변경 시 연동된 Jira / Confluence의 권한 등에 반영되지 않는 현상 Jira / Confluence에 그룹명 변경 기능이 없기에 AD에서 그룹명 변경 후 Sync 시에 Jira / Confluence에는 새로운 그룹으로 생성됨 Atlassian Support의 공식적인 답변은 안정성을 위해 기본적으로 하나씩 직접 다시 권한을 부여하는 방법을 권장하나, 큰 인스턴스에서 현실적으로 불가능하기에 Staging에서 테스트 및 DB백업 후 다음 쿼리작업을 실행 Confluence UPDATE spacepermissions SET permgroupname = '&lt;New Group Name&gt;' WHERE permgroupname IN ('&lt;Old Group Name&gt;') AND spaceid..."/>
 <meta property="og:url" content="https://tech.osci.kr/2018/12/26/53346876/"/>
-<meta property="og:image" content="/assets/images/53346876/0"/>
+<meta property="og:image" content="/assets/images/53346876/0.png"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="11 ~ 12월 Atlassian TroubleShooting 정리"/>
 <meta name="twitter:description" content="Active Directory의 그룹명 변경 시 연동된 Jira / Confluence의 권한 등에 반영되지 않는 현상 Jira / Confluence에 그룹명 변경 기능이 없기에 AD에서 그룹명 변경 후 Sync 시에 Jira / Confluence에는 새로운 그룹으로 생성됨 Atlassian Support의 공식적인 답변은 안정성을 위해 기본적으로 하나씩 직접 다시 권한을 부여하는 방법을 권장하나, 큰 인스턴스에서 현실적으로 불가능하기에 Staging에서 테스트 및 DB백업 후 다음 쿼리작업을 실행 Confluence UPDATE spacepermissions SET permgroupname = '&lt;New Group Name&gt;' WHERE permgroupname IN ('&lt;Old Group Name&gt;') AND spaceid..."/>
 <meta name="twitter:label1" content="Written by"/>
 <meta name="twitter:data1" content="kjeon"/>
-<meta name="twitter:image:src" content="https://tech.osci.kr/assets/images/53346876/0"/>
+<meta name="twitter:image:src" content="https://tech.osci.kr/assets/images/53346876/0.png"/>
 <meta name="naver-site-verification" content="11ec9086ec9292ebc8dc73f6224492f208b2007b"/>
 <meta name="google-site-verification" content="Q5w5X0R32gOG-1lBhFg0UxvXRNoQX-uOSPjxPI4sXH4" />
 
@@ -101,7 +101,7 @@
 </div>
 
 <div id="cover" class="container"
-     style="background-image: url(/assets/images/53346876/0);">
+     style="background-image: url(/assets/images/53346876/0.png);">
     <div>
         <h1>11 ~ 12월 Atlassian TroubleShooting 정리</h1>
         <p> </p>
@@ -463,7 +463,7 @@ update changegroup set CREATED='2015-01-01' where CREATED is null;</pre>
    </li>
    <li>
     <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size">
-     <img src="/assets/images/53346876/0"/>
+     <img src="/assets/images/53346876/0.png"/>
     </span>
    </li>
    <li>
@@ -497,7 +497,7 @@ update changegroup set CREATED='2015-01-01' where CREATED is null;</pre>
     
     
         <div id="post-prev"
-             style="background-image: url(/assets/images/51741685/0);">
+             style="background-image: url(/assets/images/51741685/0.png);">
             <div>
                 <h3><a href="/2018/12/16/51741685/">Scouter로 Confluence 모니터링!</a></h3>
                 <p>YOU MIGHT ENJOY</p>
@@ -507,7 +507,7 @@ update changegroup set CREATED='2015-01-01' where CREATED is null;</pre>
     
     
         <div id="post-next"
-             style="background-image: url(/assets/images/53347127/0);">
+             style="background-image: url(/assets/images/53347127/0.png);">
             <div>
                 <h3><a href="/2018/12/26/53347127/">Confluence Addon 개발환경 자동화 VirtualBox + Vagrant</a></h3>
                 <p>NEXT POST</p>
