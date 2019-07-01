@@ -19,14 +19,14 @@
 <meta property="og:type" content="article"/>
 <meta property="og:title" content="Confluence 6.11.0-beta Release Notes 분석"/>
 <meta property="og:description" content="Confluence 6.11.0 beta가 릴리즈 됐습니다. 몇가지 큰 변화기 있는데요 한번 살펴보겠습니다. 설치 다운로드 받아서 설치를 진행해 봤습니다. 아래 주소에서 다운로드 받을 수 있습니다. https://www.atlassian.com/software/confluence/download-eap? https://www.atlassian.com/software/confluence/downloads/binary/atlassian-confluence-6.11.0-beta1-x64.bin 저는 간단한게 Virtualbox에 vm 올려서 설치를 해보겠습니다. 저는 평소에 Virtualbox + Vagrant 조합을 사용해서 테스트를 하는데요 편하고 쉽습니다. 자주 사용하는 개발환경, 테스트환경은 provisioning script로 작성하여 git에서 관리하고 있습니다. (언제 어디서나 테스트 환경을 뚝.딱! 만들 수 있습니다. from 좋은 선배) 주요기능 첨부파일 edit A better way to edit files Confluence already lets..."/>
-<meta property="og:url" content="https://tech.osci.kr/2018/08/02/44204745/"/>
+<meta property="og:url" content="http://localhost:4000/2018/08/02/44204745/"/>
 <meta property="og:image" content=""/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Confluence 6.11.0-beta Release Notes 분석"/>
 <meta name="twitter:description" content="Confluence 6.11.0 beta가 릴리즈 됐습니다. 몇가지 큰 변화기 있는데요 한번 살펴보겠습니다. 설치 다운로드 받아서 설치를 진행해 봤습니다. 아래 주소에서 다운로드 받을 수 있습니다. https://www.atlassian.com/software/confluence/download-eap? https://www.atlassian.com/software/confluence/downloads/binary/atlassian-confluence-6.11.0-beta1-x64.bin 저는 간단한게 Virtualbox에 vm 올려서 설치를 해보겠습니다. 저는 평소에 Virtualbox + Vagrant 조합을 사용해서 테스트를 하는데요 편하고 쉽습니다. 자주 사용하는 개발환경, 테스트환경은 provisioning script로 작성하여 git에서 관리하고 있습니다. (언제 어디서나 테스트 환경을 뚝.딱! 만들 수 있습니다. from 좋은 선배) 주요기능 첨부파일 edit A better way to edit files Confluence already lets..."/>
 <meta name="twitter:label1" content="Written by"/>
 <meta name="twitter:data1" content="seiyeon.kim"/>
-<meta name="twitter:image:src" content="https://tech.osci.kr/assets/images/default_blog_cover.jpg"/>
+<meta name="twitter:image:src" content="http://localhost:4000/assets/images/default_blog_cover.jpg"/>
 <meta name="naver-site-verification" content="11ec9086ec9292ebc8dc73f6224492f208b2007b"/>
 <meta name="google-site-verification" content="Q5w5X0R32gOG-1lBhFg0UxvXRNoQX-uOSPjxPI4sXH4" />
 
@@ -38,10 +38,10 @@
 <meta property="article:published_time" content="2018-08-02T00:00:00+09:00"/>
 
 
-<meta property="article:author" content="https://tech.osci.kr/authors/seiyeon.kim"/>
+<meta property="article:author" content="http://localhost:4000/authors/seiyeon.kim"/>
 
-<link href="https://tech.osci.kr/rss/" rel="alternate" type="application/rss+xml" title="RSS"/>
-<link href="/assets/favicon.png" rel="icon" type="image/png"/>
+<link href="http://localhost:4000/rss/" rel="alternate" type="application/rss+xml" title="RSS"/>
+<link href="/assets/favicon.ico" rel="icon" type="image/png"/>
 <link href="/assets/apple-touch-icon.png" rel="apple-touch-icon" type="image/png"/>
 <link href="/assets/apple-touch-icon.png" rel="apple-touch-icon-precomposed" type="image/png"/>
 <link href="/assets/lib/normalize.css" rel="stylesheet" type="text/css"/>
@@ -88,7 +88,7 @@
 <ul id="shares">
     
     <li>
-        <a id="share-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://tech.osci.kr/2018/08/02/44204745/"
+        <a id="share-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/2018/08/02/44204745/"
            onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
             <span class="sr-only">Share to Facebook</span>
         </a>
@@ -231,8 +231,8 @@ Confluence를 사용하면서 조금 아쉽다 하는 부분을 예리하게 기
 지금까지 반가운 6.11 Beta Release 소식이었습니다.<br />
 감사합니다.</p>
 
-        <div class="fb-like" data-href="https://tech.osci.kr/2018/08/02/44204745/"  data-width="300px" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
-        <div class="fb-comments" data-href="https://tech.osci.kr/2018/08/02/44204745/" data-width="100%" data-numposts="5"></div>
+        <div class="fb-like" data-href="http://localhost:4000/2018/08/02/44204745/"  data-width="300px" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+        <div class="fb-comments" data-href="http://localhost:4000/2018/08/02/44204745/" data-width="100%" data-numposts="5"></div>
     </div>
 
     <div id="post-footer">
@@ -307,7 +307,7 @@ Confluence를 사용하면서 조금 아쉽다 하는 부분을 예리하게 기
         </li>
     </ul>
     <p id="copyright">
-        <a href="https://tech.osci.kr">&copy;2018 OpenSourceConsulting</a>
+        <a href="https://tech.osci.kr">&copy;2019 OpenSource Consulting</a>
         All rights reserved.
     </p>
 </div><!--#footer-->

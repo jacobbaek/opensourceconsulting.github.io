@@ -7,11 +7,967 @@
     <description>기술을 나눕니다. 함께 성장합니다.
 Sharing Tech. Growing Together.
 </description>
-    <link>https://tech.osci.kr/</link>
-    <atom:link href="https://tech.osci.kr/rss" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 07 Jun 2019 21:11:26 +0900</pubDate>
-    <lastBuildDate>Fri, 07 Jun 2019 21:11:26 +0900</lastBuildDate>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/rss" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 01 Jul 2019 16:23:38 +0900</pubDate>
+    <lastBuildDate>Mon, 01 Jul 2019 16:23:38 +0900</lastBuildDate>
     <generator>Jekyll v3.7.4</generator>
+    
+      <item>
+        <title>Openshift Origin v3.11 설치, App 배포</title>
+        <description>&lt;div class=&quot;conf-macro output-block&quot; data-hasbody=&quot;true&quot; data-macro-name=&quot;markdown&quot;&gt;
+ &lt;center&gt;
+  &lt;img src=&quot;/assets/images/78611423/0.png&quot; style=&quot;max-width: 100%; height: auto;&quot;/&gt;
+ &lt;/center&gt;
+ &lt;p&gt;
+  안녕하세요 오픈소스컨설팅 한철희 입니다.
+  &lt;br/&gt;
+  이번 포스팅에서는 Kubernetes에 기반을 둔 Developer-Oriented PaaS 인 Red Hat Openshift를 살펴볼 것입니다.
+ &lt;/p&gt;
+ &lt;h1&gt;
+  &lt;a href=&quot;#openshift-란&quot; id=&quot;openshift-란&quot;&gt;
+   Openshift 란?
+  &lt;/a&gt;
+ &lt;/h1&gt;
+ &lt;hr/&gt;
+ &lt;p&gt;
+  OpenShift 는 개발자 및 IT 운영팀을 단일 플랫폼에서 통합하여, 하이브리드 클라우드 및 멀티 클라우드 인프라 전반에서 애플리케이션을 일관되게 구축, 배포 및 관리하도록 지원하는 플랫폼입니다.
+ &lt;/p&gt;
+ &lt;h1&gt;
+  &lt;a href=&quot;#openshift-이점&quot; id=&quot;openshift-이점&quot;&gt;
+   Openshift 이점
+  &lt;/a&gt;
+ &lt;/h1&gt;
+ &lt;hr/&gt;
+ &lt;h2&gt;
+  &lt;a href=&quot;#주요-이점&quot; id=&quot;주요-이점&quot;&gt;
+   주요 이점
+  &lt;/a&gt;
+ &lt;/h2&gt;
+ &lt;ul&gt;
+  &lt;li&gt;
+   애플리케이션 라이프사이클 전반에 걸쳐 운영 및 개발팀에서 더 큰 가치 실현
+  &lt;/li&gt;
+  &lt;li&gt;
+   애플리케이션 개발 주기 단축 및 소프트웨어 배포 빈도 증가
+  &lt;/li&gt;
+  &lt;li&gt;
+   하이브리드 클라우드 및 멀티 클라우드 전반에서 IT 운영 비용 절감 및 애플리케이션 이식성 실현
+  &lt;/li&gt;
+ &lt;/ul&gt;
+ &lt;h2&gt;
+  &lt;a href=&quot;#개발팀을-위한-이점&quot; id=&quot;개발팀을-위한-이점&quot;&gt;
+   개발팀을 위한 이점
+  &lt;/a&gt;
+ &lt;/h2&gt;
+ &lt;blockquote&gt;
+  &lt;ul&gt;
+   &lt;li&gt;
+    Openshift는 개발자에게 셀프 서비스 방식으로 애플리케이션과 컴포넌트를 프로비저닝, 빌드 및 배포하도록 지원하는 최적의 플랫폼입니다.
+   &lt;/li&gt;
+   &lt;li&gt;
+    Source To Image(S2I) 프로세스 같은 자동화된 워크플로우 덕분에 소스 형상 관리의 소스 코드를 즉시 실행 가능한 도커 포맷 컨테이너 이미지로 간단하게 생성할 수 있습니다.
+   &lt;/li&gt;
+   &lt;li&gt;
+    Openshift는 CI(Continuous Integration)와 CD(Continuous Delivery)의 통합 툴을 제공하기 때문에 모든 조직에게 이상적인 솔루션이 될 수 있습니다.
+   &lt;/li&gt;
+  &lt;/ul&gt;
+ &lt;/blockquote&gt;
+ &lt;h2&gt;
+  &lt;a href=&quot;#운영팀을-위한-이점&quot; id=&quot;운영팀을-위한-이점&quot;&gt;
+   운영팀을 위한 이점
+  &lt;/a&gt;
+ &lt;/h2&gt;
+ &lt;blockquote&gt;
+  &lt;ul&gt;
+   &lt;li&gt;
+    Openshift는 IT 운영팀에 애플리케이션 빌드 배포 자동화와 정책 기반 권한 관리를 지원하는 안전한 엔터프라이즈급 Kubernetes를 제공합니다.
+   &lt;/li&gt;
+   &lt;li&gt;
+    클러스터 서비스, 스케줄링 그리고 오케스트레이션을 통해 부하 분산과 자동 스케일링 기능을 제공합니다. 보안 기능을 통해 테넌트가 다른 애플리케이션이나 기본 호스트에 지장을 주지 않도록 방지합니다.
+   &lt;/li&gt;
+   &lt;li&gt;
+    Openshift는 Persistent Storage를 Linux 컨테이너에 직접 연결할 수 있기 때문에 IT 조직은 하나의 플랫폼에서 스테이트풀(Stateful) 및 스테이트리스(Stateless) 애플리케이션을 모두 실행할 수 있습니다.
+   &lt;/li&gt;
+  &lt;/ul&gt;
+ &lt;/blockquote&gt;
+ &lt;h1&gt;
+  &lt;a href=&quot;#openshift-종류&quot; id=&quot;openshift-종류&quot;&gt;
+   Openshift 종류
+  &lt;/a&gt;
+ &lt;/h1&gt;
+ &lt;hr/&gt;
+ &lt;p&gt;
+  Openshift 에는 다양한 버전이 존재합니다.
+ &lt;/p&gt;
+ &lt;ul&gt;
+  &lt;li&gt;
+   &lt;strong&gt;
+    OpenShift Origin
+   &lt;/strong&gt;
+   &lt;ul&gt;
+    &lt;li&gt;
+     OpenShift Online, OpenShift Dedicated 및 OpenShift Container Platform에서 사용되는 업스트림 커뮤니티 프로젝트입니다.
+    &lt;/li&gt;
+   &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+   &lt;strong&gt;
+    OpenShift Container Platform
+   &lt;/strong&gt;
+   &lt;ul&gt;
+    &lt;li&gt;
+     OpenShift Container Platform은 Red Hat이 제공하고 지원하는 엔터프라이즈 버전입니다.
+    &lt;/li&gt;
+   &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+   &lt;strong&gt;
+    OpenShift Online
+   &lt;/strong&gt;
+   &lt;ul&gt;
+    &lt;li&gt;
+     OpenShift Online은 Red Hat의 호스팅형 퍼블릭 PaaS 로서 클라우드에서 애플리케이션 개발, 구축, 배포, 호스팅 솔루션을 제공합니다.
+    &lt;/li&gt;
+   &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+   &lt;strong&gt;
+    OpenShift Dedicated
+   &lt;/strong&gt;
+   &lt;ul&gt;
+    &lt;li&gt;
+     OpenShift Dedicated는 퍼블릭 클라우드에서 관리형 싱글 테넌트 OpenShift 환경을 제공합니다. 전체 OpenShift Cluster를 기업 전용 솔루션으로 구축하고 Red Hat을 통해 종합적으로 관리합니다.
+    &lt;/li&gt;
+   &lt;/ul&gt;
+  &lt;/li&gt;
+ &lt;/ul&gt;
+ &lt;h1&gt;
+  &lt;a href=&quot;#openshift-origin-설치&quot; id=&quot;openshift-origin-설치&quot;&gt;
+   Openshift Origin 설치
+  &lt;/a&gt;
+ &lt;/h1&gt;
+ &lt;hr/&gt;
+ &lt;p&gt;
+  Openshift 설치 테스트 환경은 아래와 같습니다.
+ &lt;/p&gt;
+ &lt;blockquote&gt;
+  &lt;p&gt;
+   CentOS Linux release 7.6.1810 (Core)
+   &lt;br/&gt;
+   Openshift Origin v3.11
+   &lt;br/&gt;
+   Docker v1.13.1
+  &lt;/p&gt;
+ &lt;/blockquote&gt;
+ &lt;p&gt;
+  Openshift 를 설치하기 위해서는 기본적으로 필요한 OS 설정 및 Infra 구성이 필요합니다.
+ &lt;/p&gt;
+ &lt;ul&gt;
+  &lt;li&gt;
+   &lt;p&gt;
+    &lt;strong&gt;
+     OS 설정
+    &lt;/strong&gt;
+   &lt;/p&gt;
+   &lt;ol&gt;
+    &lt;li&gt;
+     SELinux : Enforcing
+    &lt;/li&gt;
+    &lt;li&gt;
+     Firewalld Disable / iptables Enable (설치간 자동으로 설정 진행됨)
+    &lt;/li&gt;
+    &lt;li&gt;
+     NetworkManager Enable
+    &lt;/li&gt;
+   &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+   &lt;p&gt;
+    &lt;strong&gt;
+     추가 필요 Infra 요소
+    &lt;/strong&gt;
+   &lt;/p&gt;
+   &lt;ol&gt;
+    &lt;li&gt;
+     Internal DNS 서버 (이번 포스팅에서는 DNS 시스템 구성 내용은 제외되어 있습니다.)
+    &lt;/li&gt;
+   &lt;/ol&gt;
+  &lt;/li&gt;
+ &lt;/ul&gt;
+ &lt;p&gt;
+  위와 같이 Openshift 를 배포하기 위해서는 기본 설정이 필요합니다.
+ &lt;/p&gt;
+ &lt;h2&gt;
+  &lt;a href=&quot;#주요-os-설정-부분&quot; id=&quot;주요-os-설정-부분&quot;&gt;
+   주요 OS 설정 부분
+  &lt;/a&gt;
+ &lt;/h2&gt;
+ &lt;hr/&gt;
+ &lt;p&gt;
+  &lt;code&gt;
+   /etc/sysconfig/network-script/
+  &lt;/code&gt;
+  의 내용은 아래와 같은 내부 Internal DNS 및 Upstream DNS 설정 해야됩니다.
+ &lt;/p&gt;
+ &lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;# cat /etc/sysconfig/network-scripts/ifcfg-eth1
+TYPE=Ethernet
+BOOTPROTO=static
+DEFROUTE=yes
+NAME=eth1
+UUID=XXXXXXXX-XXXXX-XXXX-XXXX-XXXXXXXXXXXXX
+DEVICE=eth1
+ONBOOT=yes
+IPADDR=192.168.XX.50
+NETMASK=255.255.255.0
+GATEWAY=192.168.XX.XX
+DNS1=192.168.XX.111      # Internal DNS
+DNS2=1.1.1.1             # Upstream
+&lt;/code&gt;&lt;/pre&gt;
+ &lt;p&gt;
+  &lt;code&gt;
+   SELinux
+  &lt;/code&gt;
+  설정 확인
+ &lt;/p&gt;
+ &lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;# cat /etc/selinux/config
+...
+SELINUX=enforcing         # Enforcing 설정
+...
+&lt;/code&gt;&lt;/pre&gt;
+ &lt;h2&gt;
+  &lt;a href=&quot;#dns-설정-부분&quot; id=&quot;dns-설정-부분&quot;&gt;
+   DNS 설정 부분
+  &lt;/a&gt;
+ &lt;/h2&gt;
+ &lt;hr/&gt;
+ &lt;p&gt;
+  Internal DNS 는 아래와 같이
+  &lt;code&gt;
+   Zone File
+  &lt;/code&gt;
+  을 설정합니다.
+ &lt;/p&gt;
+ &lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;# cat /var/named/example.com.zone
+$TTL 3H
+@	IN SOA	ns.example.com. root.example.com. (
+					0	; serial
+					1D	; refresh
+					1H	; retry
+					1W	; expire
+					3H )	; minimum
+
+	IN      NS      ns.example.com.
+ns	IN	A	192.168.XX.111
+*	IN	A	192.168.XX.50             # wildcard DNS 설정
+master	IN	A	192.168.XX.50
+;
+&lt;/code&gt;&lt;/pre&gt;
+ &lt;p&gt;
+  &lt;em&gt;
+   &lt;strong&gt;
+    wildcard DNS
+   &lt;/strong&gt;
+  &lt;/em&gt;
+  설정을 합니다.
+  &lt;br/&gt;
+  &lt;strong&gt;
+   참고자료 :
+  &lt;/strong&gt;
+  &lt;a href=&quot;https://docs.openshift.com/container-platform/3.11/install/prerequisites.html#wildcard-dns-prereq&quot;&gt;
+   https://docs.openshift.com/container-platform/3.11/install/prerequisites.html#wildcard-dns-prereq
+  &lt;/a&gt;
+ &lt;/p&gt;
+ &lt;h2&gt;
+  &lt;a href=&quot;#requirements-package-설치&quot; id=&quot;requirements-package-설치&quot;&gt;
+   Requirements Package 설치
+  &lt;/a&gt;
+ &lt;/h2&gt;
+ &lt;hr/&gt;
+ &lt;p&gt;
+  Openshift 설치를 하기 위해서
+  &lt;code&gt;
+   centos-openshift-origin311
+  &lt;/code&gt;
+  Repository 를
+  &lt;code&gt;
+   Enable
+  &lt;/code&gt;
+  해야됩니다.
+ &lt;/p&gt;
+ &lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;[root@master ~]# yum install centos-release-openshift-origin311.noarch
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: ftp.nara.wide.ad.jp
+ * extras: data.aonenetworks.kr
+ * updates: ftp.nara.wide.ad.jp
+Resolving Dependencies
+--&amp;gt; Running transaction check
+---&amp;gt; Package centos-release-openshift-origin311.noarch 0:1-2.el7.centos will be installed
+--&amp;gt; Processing Dependency: centos-release-paas-common for package: centos-release-openshift-origin311-1-2.el7.centos.noarch
+--&amp;gt; Processing Dependency: centos-release-ansible26 for package: centos-release-openshift-origin311-1-2.el7.centos.noarch
+--&amp;gt; Running transaction check
+---&amp;gt; Package centos-release-ansible26.noarch 0:1-3.el7.centos will be installed
+--&amp;gt; Processing Dependency: centos-release-configmanagement for package: centos-release-ansible26-1-3.el7.centos.noarch
+---&amp;gt; Package centos-release-paas-common.noarch 0:1-1.el7.centos will be installed
+--&amp;gt; Running transaction check
+---&amp;gt; Package centos-release-configmanagement.noarch 0:1-1.el7.centos will be installed
+--&amp;gt; Finished Dependency Resolution
+ 
+Dependencies Resolved
+ 
+===================================================================================================================================================================================================================================================================================================
+ Package                                                                                   Arch                                                          Version                                                               Repository                                                     Size
+===================================================================================================================================================================================================================================================================================================
+Installing:
+ centos-release-openshift-origin311                                                        noarch                                                        1-2.el7.centos                                                        extras                                                         11 k
+Installing for dependencies:
+ centos-release-ansible26                                                                  noarch                                                        1-3.el7.centos                                                        extras                                                        4.1 k
+ centos-release-configmanagement                                                           noarch                                                        1-1.el7.centos                                                        extras                                                        4.3 k
+ centos-release-paas-common                                                                noarch                                                        1-1.el7.centos                                                        extras                                                         11 k
+ 
+Transaction Summary
+===================================================================================================================================================================================================================================================================================================
+Install  1 Package (+3 Dependent packages)
+ 
+Total download size: 31 k
+Installed size: 39 k
+Is this ok [y/d/N]:y
+ 
+...
+Running transaction
+  Installing : centos-release-configmanagement-1-1.el7.centos.noarch                                                                                                                                                                                                                           1/4
+  Installing : centos-release-ansible26-1-3.el7.centos.noarch                                                                                                                                                                                                                                  2/4
+  Installing : centos-release-paas-common-1-1.el7.centos.noarch                                                                                                                                                                                                                                3/4
+  Installing : centos-release-openshift-origin311-1-2.el7.centos.noarch                                                                                                                                                                                                                        4/4
+  Verifying  : centos-release-paas-common-1-1.el7.centos.noarch                                                                                                                                                                                                                                1/4
+  Verifying  : centos-release-configmanagement-1-1.el7.centos.noarch                                                                                                                                                                                                                           2/4
+  Verifying  : centos-release-openshift-origin311-1-2.el7.centos.noarch                                                                                                                                                                                                                        3/4
+  Verifying  : centos-release-ansible26-1-3.el7.centos.noarch                                                                                                                                                                                                                                  4/4
+ 
+Installed:
+  centos-release-openshift-origin311.noarch 0:1-2.el7.centos
+ 
+Dependency Installed:
+  centos-release-ansible26.noarch 0:1-3.el7.centos                                             centos-release-configmanagement.noarch 0:1-1.el7.centos                                             centos-release-paas-common.noarch 0:1-1.el7.centos
+ 
+Complete!
+[root@master ~]#
+&lt;/code&gt;&lt;/pre&gt;
+ &lt;p&gt;
+  위와 같이 설치가 완료가 되면 추가로 Openshift Origin v3.11 설치를 위한 Repogitory 가 Enable 됩니다.
+ &lt;/p&gt;
+ &lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;[root@master ~]# yum repolist
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: ftp.nara.wide.ad.jp
+ * centos-ansible26: data.aonenetworks.kr
+ * extras: data.aonenetworks.kr
+ * updates: ftp.nara.wide.ad.jp
+centos-ansible26                                                                                                                                                                                                                                                            | 2.9 kB  00:00:00
+centos-openshift-origin311                                                                                                                                                                                                                                                  | 2.9 kB  00:00:00
+(1/2): centos-ansible26/7/x86_64/primary_db                                                                                                                                                                                                                                 | 6.5 kB  00:00:00
+(2/2): centos-openshift-origin311/primary_db                                                                                                                                                                                                                                |  19 kB  00:00:00
+repo id                                                                                                                                         repo name                                                                                                                                    status
+base/7/x86_64                                                                                                                                   CentOS-7 - Base                                                                                                                              10,019
+centos-ansible26/7/x86_64                                                                                                                       CentOS-7 - Ansible26                                                                                                                              8
+centos-openshift-origin311                                                                                                                      CentOS OpenShift Origin                                                                                                                          31
+extras/7/x86_64                                                                                                                                 CentOS-7 - Extras                                                                                                                               409
+updates/7/x86_64                                                                                                                                CentOS-7 - Updates                                                                                                                            1,982
+repolist: 12,449
+[root@master ~]#
+&lt;/code&gt;&lt;/pre&gt;
+ &lt;p&gt;
+  Openshift Origin v3.11 은 ansible Version 에 종속성이 있어서 추가로
+  &lt;code&gt;
+   centos-ansible26
+  &lt;/code&gt;
+  Repository 가
+  &lt;code&gt;
+   Enable
+  &lt;/code&gt;
+  됩니다.
+ &lt;/p&gt;
+ &lt;p&gt;
+  추가로 Openshift ansible Playbook 및 ansible 을 설치합니다.
+ &lt;/p&gt;
+ &lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;[root@master ~]# yum install openshift-ansible ansible
+&lt;/code&gt;&lt;/pre&gt;
+ &lt;p&gt;
+  설치가 완료되면 아래와 같이
+  &lt;code&gt;
+   /usr/share/ansible/openshift-ansible/
+  &lt;/code&gt;
+  경로에 Playbook 이 생성됩니다.
+ &lt;/p&gt;
+ &lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;[root@master ~]# cd /usr/share/ansible/openshift-ansible/
+[root@master openshift-ansible]# ls -la
+합계 12
+drwxr-xr-x.  5 root root   72  6월  5 07:14 .
+drwxr-xr-x.  3 root root   31  6월  5 07:14 ..
+-rw-r--r--.  1 root root 1303 11월  2  2018 ansible.cfg
+drwxr-xr-x.  3 root root   34  6월  5 07:15 inventory
+drwxr-xr-x. 38 root root 4096  6월  5 07:14 playbooks
+drwxr-xr-x. 93 root root 4096  6월  5 07:14 roles
+[root@master openshift-ansible]#
+&lt;/code&gt;&lt;/pre&gt;
+ &lt;h2&gt;
+  &lt;a href=&quot;#all-in-one-inventory-작성&quot; id=&quot;all-in-one-inventory-작성&quot;&gt;
+   All-in-one Inventory 작성
+  &lt;/a&gt;
+ &lt;/h2&gt;
+ &lt;hr/&gt;
+ &lt;p&gt;
+  노드 하나에 master, infra, compute 의 기능을 전부 설치하는 All-in-one Inventory 를 작성합니다.
+ &lt;/p&gt;
+ &lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;[root@master openshift-ansible]# cat inventory/hosts.localhost
+#bare minimum hostfile
+ 
+[OSEv3:children]
+masters
+nodes
+etcd
+ 
+[OSEv3:vars]
+# if your target hosts are Fedora uncomment this
+#ansible_python_interpreter=/usr/bin/python3
+openshift_deployment_type=origin
+openshift_portal_net=172.30.0.0/16
+# localhost likely doesn't meet the minimum requirements
+openshift_disable_check=disk_availability,memory_availability
+ 
+openshift_node_groups=[{'name': 'node-config-all-in-one', 'labels': ['node-role.kubernetes.io/master=true', 'node-role.kubernetes.io/infra=true', 'node-role.kubernetes.io/compute=true']}]
+openshift_release=&quot;3.11&quot;
+openshift_master_default_subdomain=apps.example.com
+ 
+# uncomment the following to enable htpasswd authentication; defaults to AllowAllPasswordIdentityProvider
+openshift_master_identity_providers=[{'name': 'htpasswd_auth', 'login': 'true', 'challenge': 'true', 'kind': 'HTPasswdPasswordIdentityProvider'}]
+ 
+ 
+[masters]
+localhost ansible_connection=local
+ 
+[etcd]
+localhost ansible_connection=local
+ 
+[nodes]
+# openshift_node_group_name should refer to a dictionary with matching key of name in list openshift_node_groups.
+localhost ansible_connection=local openshift_node_group_name=&quot;node-config-all-in-one&quot;
+&lt;/code&gt;&lt;/pre&gt;
+ &lt;p&gt;
+  &lt;code&gt;
+   openshift_master_identity_providers
+  &lt;/code&gt;
+  항목을 추가하여 htpasswd 기능을 활성화 하였습니다.
+ &lt;/p&gt;
+ &lt;h2&gt;
+  &lt;a href=&quot;#prerequisitesyml-배포&quot; id=&quot;prerequisitesyml-배포&quot;&gt;
+   prerequisites.yml 배포
+  &lt;/a&gt;
+ &lt;/h2&gt;
+ &lt;hr/&gt;
+ &lt;p&gt;
+  Openshift Cluster 배포하기 전에
+  &lt;code&gt;
+   prerequisites.yml
+  &lt;/code&gt;
+  를 실행하여 Cluster 구성간 필요한 설정 작업 및 추가 패키지 설치를 합니다.
+ &lt;/p&gt;
+ &lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;# ansible-playbook -i inventory/hosts.localhost playbooks/prerequisites.yml
+...
+
+PLAY RECAP ****************************************************************************************************************************************************************************************************************************************************************************************
+localhost                  : ok=83   changed=23   unreachable=0    failed=0
+ 
+ 
+INSTALLER STATUS **********************************************************************************************************************************************************************************************************************************************************************************
+Initialization  : Complete (0:00:35)
+Tuesday 04 June 2019  10:38:27 +0900 (0:00:00.032)       0:01:35.916 ***********
+===============================================================================
+Ensure openshift-ansible installer package deps are installed ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 19.40s
+container_runtime : Install Docker -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 10.40s
+os_firewall : need to pause here, otherwise the iptables service starting can sometimes cause ssh to fail --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 10.13s
+os_firewall : Wait 10 seconds after disabling firewalld ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 10.10s
+Gathering Facts ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 4.49s
+openshift_excluder : Install docker excluder - yum ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 4.01s
+os_firewall : Install iptables packages ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 3.08s
+container_runtime : restart container runtime ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 2.88s
+container_runtime : Fixup SELinux permissions for docker ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 1.54s
+openshift_repos : refresh cache ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ 0.76s
+openshift_repos : Ensure libselinux-python is installed ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ 0.74s
+Gather Cluster facts ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 0.66s
+os_firewall : Ensure firewalld service is not enabled -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 0.60s
+openshift_repos : Configure origin gpg keys ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ 0.60s
+os_firewall : Start and enable iptables service -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 0.55s
+container_runtime : Get current installed Docker version ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 0.52s
+container_runtime : Place additional/blocked/insecure registries in /etc/containers/registries.conf ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 0.50s
+openshift_repos : Configure correct origin release repository ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ 0.46s
+container_runtime : Configure Docker service unit file ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 0.45s
+Detecting Operating System from ostree_booted ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 0.44s
+[root@master openshift-ansible]#
+&lt;/code&gt;&lt;/pre&gt;
+ &lt;h2&gt;
+  &lt;a href=&quot;#deploy-clusteryml-배포&quot; id=&quot;deploy-clusteryml-배포&quot;&gt;
+   deploy_cluster.yml 배포
+  &lt;/a&gt;
+ &lt;/h2&gt;
+ &lt;hr/&gt;
+ &lt;p&gt;
+  &lt;code&gt;
+   prerequisites.yml
+  &lt;/code&gt;
+  가 위와 같이 정상적으로 배포가 되면 Cluster 구성 준비가 완료 된 것입니다.
+  &lt;br/&gt;
+  &lt;code&gt;
+   deploy_cluster.yml
+  &lt;/code&gt;
+  을 이용하여 Cluster 배포를 시작합니다.
+ &lt;/p&gt;
+ &lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;# ansible-playbook -i inventory/hosts.localhost playbooks/deploy_cluster.yml
+...
+
+PLAY RECAP ****************************************************************************************************************************************************************************************************************************************************************************************
+localhost                  : ok=566  changed=138  unreachable=0    failed=0
+ 
+ 
+INSTALLER STATUS **********************************************************************************************************************************************************************************************************************************************************************************
+Initialization               : Complete (0:00:23)
+Health Check                 : Complete (0:00:38)
+Node Bootstrap Preparation   : Complete (0:01:14)
+etcd Install                 : Complete (0:00:32)
+Master Install               : Complete (0:04:37)
+Master Additional Install    : Complete (0:00:36)
+Node Join                    : Complete (0:00:18)
+Hosted Install               : Complete (0:00:40)
+Cluster Monitoring Operator  : Complete (0:00:11)
+Web Console Install          : Complete (0:00:40)
+Console Install              : Complete (0:00:18)
+metrics-server Install       : Complete (0:00:01)
+Service Catalog Install      : Complete (0:03:39)
+Tuesday 04 June 2019  11:23:04 +0900 (0:00:00.096)       0:14:35.316 **********
+===============================================================================
+openshift_control_plane : Wait for all control plane pods to become ready ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 97.17s
+/root/openshift-ansible/roles/openshift_control_plane/tasks/main.yml:272 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+template_service_broker : Verify that TSB is running -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 53.92s
+/root/openshift-ansible/roles/template_service_broker/tasks/deploy.yml:52 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+openshift_service_catalog : Wait for Controller Manager rollout success ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 43.92s
+/root/openshift-ansible/roles/openshift_service_catalog/tasks/start.yml:14 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+openshift_control_plane : Wait for control plane pods to appear --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 42.90s
+/root/openshift-ansible/roles/openshift_control_plane/tasks/main.yml:220 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Run health checks (install) - EL ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 37.39s
+/root/openshift-ansible/playbooks/openshift-checks/private/install.yml:24 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+openshift_service_catalog : Wait for API Server rollout success --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 32.19s
+/root/openshift-ansible/roles/openshift_service_catalog/tasks/start.yml:2 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+openshift_web_console : Pause for the web console deployment to start --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 30.16s
+/root/openshift-ansible/roles/openshift_web_console/tasks/install.yml:158 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+openshift_service_catalog : oc_process ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 16.35s
+/root/openshift-ansible/roles/openshift_service_catalog/tasks/install.yml:44 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+openshift_console : Waiting for console rollout to complete -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 9.06s
+/root/openshift-ansible/roles/openshift_console/tasks/start.yml:2 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+openshift_manageiq : Configure role/user permissions --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 5.73s
+/root/openshift-ansible/roles/openshift_manageiq/tasks/main.yaml:45 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+tuned : Restart tuned service -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 5.41s
+/root/openshift-ansible/roles/tuned/tasks/main.yml:38 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+openshift_control_plane : Wait for APIs to become available -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 5.29s
+/root/openshift-ansible/roles/openshift_control_plane/tasks/check_master_api_is_ready.yml:2 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+openshift_node : Install node, clients, and conntrack packages ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 4.55s
+/root/openshift-ansible/roles/openshift_node/tasks/install.yml:2 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+tuned : Restart tuned service -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 4.05s
+/root/openshift-ansible/roles/tuned/tasks/main.yml:38 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Gathering Facts ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 3.86s
+/root/openshift-ansible/playbooks/init/basic_facts.yml:2 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+openshift_excluder : Install docker excluder - yum ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 3.62s
+/root/openshift-ansible/roles/openshift_excluder/tasks/install.yml:9 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+openshift_cli : Install clients ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ 3.57s
+/root/openshift-ansible/roles/openshift_cli/tasks/main.yml:2 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ansible_service_broker : Create custom resource definitions for asb ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ 3.29s
+/root/openshift-ansible/roles/ansible_service_broker/tasks/install.yml:128 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+openshift_hosted : Create OpenShift router ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 3.22s
+/root/openshift-ansible/roles/openshift_hosted/tasks/router.yml:85 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+openshift_control_plane : Start and enable self-hosting node ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 3.04s
+/root/openshift-ansible/roles/openshift_control_plane/tasks/main.yml:201 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[root@master openshift-ansible]#
+&lt;/code&gt;&lt;/pre&gt;
+ &lt;p&gt;
+  배포가 완료되면 아래와 같이
+  &lt;code&gt;
+   # oc get all
+  &lt;/code&gt;
+  명령을 통해 Openshift 가 정상적으로 설치가 된 것을 확인 할 수 있습니다.
+ &lt;/p&gt;
+ &lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;[root@master ~]# oc get all
+NAME                           READY     STATUS    RESTARTS   AGE
+pod/docker-registry-1-9t2zp    1/1       Running   0          10m
+pod/registry-console-1-n4v9t   1/1       Running   0          10m
+pod/router-1-58cpz             1/1       Running   3          10m
+
+NAME                                       DESIRED   CURRENT   READY     AGE
+replicationcontroller/docker-registry-1    1         1         1         10m
+replicationcontroller/registry-console-1   1         1         1         10m
+replicationcontroller/router-1             1         1         1         10m
+
+NAME                       TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)                   AGE
+service/docker-registry    ClusterIP   172.30.205.4     &amp;lt;none&amp;gt;        5000/TCP                  10m
+service/kubernetes         ClusterIP   172.30.0.1       &amp;lt;none&amp;gt;        443/TCP,53/UDP,53/TCP     10m
+service/registry-console   ClusterIP   172.30.204.108   &amp;lt;none&amp;gt;        9000/TCP                  10m
+service/router             ClusterIP   172.30.237.203   &amp;lt;none&amp;gt;        80/TCP,443/TCP,1936/TCP   10m
+
+NAME                                                  REVISION   DESIRED   CURRENT   TRIGGERED BY
+deploymentconfig.apps.openshift.io/docker-registry    1          1         1         config
+deploymentconfig.apps.openshift.io/registry-console   1          1         1         config
+deploymentconfig.apps.openshift.io/router             1          1         1         config
+
+NAME                                        HOST/PORT                                   PATH      SERVICES           PORT      TERMINATION   WILDCARD
+route.route.openshift.io/docker-registry    docker-registry-default.apps.example.com              docker-registry    &amp;lt;all&amp;gt;     passthrough   None
+route.route.openshift.io/registry-console   registry-console-default.apps.example.com             registry-console   &amp;lt;all&amp;gt;     passthrough   None
+[root@master ~]#
+&lt;/code&gt;&lt;/pre&gt;
+ &lt;h2&gt;
+  &lt;a href=&quot;#htpasswd-설정--user-권한-설정&quot; id=&quot;htpasswd-설정--user-권한-설정&quot;&gt;
+   Htpasswd 설정 &amp;amp;&amp;amp; USER 권한 설정
+  &lt;/a&gt;
+ &lt;/h2&gt;
+ &lt;hr/&gt;
+ &lt;p&gt;
+  htpasswd 설정을 동해 Openshift Cluster를 관리할
+  &lt;code&gt;
+   admin
+  &lt;/code&gt;
+  계정을 생성합니다.
+ &lt;/p&gt;
+ &lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;# cat /etc/origin/master/master-config.yaml | grep htpasswd
+    name: htpasswd_auth
+      file: /etc/origin/master/htpasswd
+&lt;/code&gt;&lt;/pre&gt;
+ &lt;p&gt;
+  Master 설정을 확인하여 htpasswd 가 저장되는 경로를 확인합니다.
+ &lt;/p&gt;
+ &lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;[root@master master]# htpasswd /etc/origin/master/htpasswd admin
+New password:
+Re-type new password:
+Updating password for user admin
+
+[root@master master]# cat /etc/origin/master/htpasswd
+admin:$apr1$vfGx9xr2$G9/SgRxXUupu/mUVSuwmR/
+[root@master master]#
+&lt;/code&gt;&lt;/pre&gt;
+ &lt;p&gt;
+  &lt;code&gt;
+   htpasswd
+  &lt;/code&gt;
+  명령을 이용하여 신규 사용자
+  &lt;code&gt;
+   admin
+  &lt;/code&gt;
+  을 생성합니다.
+ &lt;/p&gt;
+ &lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;[root@master master]# oc login -u admin
+Authentication required for https://master.example.com:8443 (openshift)
+Username: admin
+Password:
+Login successful.
+
+You have access to the following projects and can switch between them with 'oc project &amp;lt;projectname&amp;gt;':
+...
+  * sample-project
+...
+Using project &quot;&quot;.
+[root@master master]# oc new-project sample-project
+Now using project &quot;sample-project&quot; on server &quot;https://master.example.com:8443&quot;.
+
+You can add applications to this project with the 'new-app' command. For example, try:
+
+    oc new-app centos/ruby-25-centos7~https://github.com/sclorg/ruby-ex.git
+
+to build a new example application in Ruby.
+[root@master master]#
+&lt;/code&gt;&lt;/pre&gt;
+ &lt;p&gt;
+  신규로 생성된
+  &lt;code&gt;
+   admin
+  &lt;/code&gt;
+  으로 login을 하고 사용할 Project 를 생성합니다.
+ &lt;/p&gt;
+ &lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;[root@master master]# oc login -u system:admin
+Logged into &quot;https://master.example.com:8443&quot; as &quot;system:admin&quot; using existing credentials.
+
+You have access to the following projects and can switch between them with 'oc project &amp;lt;projectname&amp;gt;':
+...
+  * sample-project
+...
+Using project &quot;sample-project&quot;.
+
+[root@master master]# oc adm policy add-scc-to-user anyuid -z default
+scc &quot;anyuid&quot; added to: [&quot;system:serviceaccount:sample-project:default&quot;]
+
+[root@master master]# oc login -u admin
+Logged into &quot;https://master.example.com:8443&quot; as &quot;admin&quot; using existing credentials.
+
+You have access to the following projects and can switch between them with 'oc project &amp;lt;projectname&amp;gt;':
+...
+  * sample-project
+...
+Using project &quot;sample-project&quot;.
+[root@master master]#
+&lt;/code&gt;&lt;/pre&gt;
+ &lt;p&gt;
+  default serviceaccount 에 anyuid scc 를 추가하여 pod 를 제어 할 수 있는 권한을 부여합니다.
+ &lt;/p&gt;
+ &lt;h1&gt;
+  &lt;a href=&quot;#sample-app-배포&quot; id=&quot;sample-app-배포&quot;&gt;
+   Sample APP 배포
+  &lt;/a&gt;
+ &lt;/h1&gt;
+ &lt;hr/&gt;
+ &lt;p&gt;
+  Sample APP 를 배포하여 실제로 Openshift 를 이용하여 서비스를 시작해보겠습니다.
+ &lt;/p&gt;
+ &lt;h2&gt;
+  &lt;a href=&quot;#s2i-기능을-이용한-app-배포&quot; id=&quot;s2i-기능을-이용한-app-배포&quot;&gt;
+   S2I 기능을 이용한 APP 배포
+  &lt;/a&gt;
+ &lt;/h2&gt;
+ &lt;hr/&gt;
+ &lt;p&gt;
+  Openshift 의 S2I 기능을 이용하여 Sample APP 를 배포하겠습니다.
+ &lt;/p&gt;
+ &lt;blockquote&gt;
+  &lt;p&gt;
+   APP : wildfly:latest
+   &lt;br/&gt;
+   Source :
+   &lt;a href=&quot;https://github.com/chhanz/openshift-deploy.git&quot;&gt;
+    https://github.com/chhanz/openshift-deploy.git
+   &lt;/a&gt;
+  &lt;/p&gt;
+ &lt;/blockquote&gt;
+ &lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;[root@master ~]# oc new-app wildfly~https://github.com/chhanz/openshift-deploy --name sampleapp
+--&amp;gt; Found image 05e5cf6 (2 weeks old) in image stream &quot;openshift/wildfly&quot; under tag &quot;13.0&quot; for &quot;wildfly&quot;
+
+    WildFly 13.0.0.Final
+    --------------------
+    Platform for building and running JEE applications on WildFly 13.0.0.Final
+
+    Tags: builder, wildfly, wildfly13
+
+    * A source build using source code from https://github.com/chhanz/openshift-deploy will be created
+      * The resulting image will be pushed to image stream tag &quot;sampleapp:latest&quot;
+      * Use 'start-build' to trigger a new build
+    * This image will be deployed in deployment config &quot;sampleapp&quot;
+    * Port 8080/tcp will be load balanced by service &quot;sampleapp&quot;
+      * Other containers can access this service through the hostname &quot;sampleapp&quot;
+
+--&amp;gt; Creating resources ...
+    imagestream.image.openshift.io &quot;sampleapp&quot; created
+    buildconfig.build.openshift.io &quot;sampleapp&quot; created
+    deploymentconfig.apps.openshift.io &quot;sampleapp&quot; created
+    service &quot;sampleapp&quot; created
+--&amp;gt; Success
+    Build scheduled, use 'oc logs -f bc/sampleapp' to track its progress.
+    Application is not exposed. You can expose services to the outside world by executing one or more of the commands below:
+     'oc expose svc/sampleapp'
+    Run 'oc status' to view your app.
+&lt;/code&gt;&lt;/pre&gt;
+ &lt;p&gt;
+  신규 APP 가 생성이 되고 sample.war 소스를 기반으로
+ &lt;/p&gt;
+ &lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;[root@master ~]# oc logs -f bc/sampleapp
+Cloning &quot;https://github.com/chhanz/openshift-deploy&quot; ...
+	Commit:	7c4656f9d88fe9ffbf846ba0dff5b74742f34c67 (Change Location)
+	Author:	chhanz &amp;lt;han0495@gmail.com&amp;gt;
+	Date:	Fri Jun 7 22:00:34 2019 +0900
+Using docker-registry.default.svc:5000/openshift/wildfly@sha256:895e0a6c732f8244ce75b376651155fdef12311df0d940ce111756ef43aa2bfc as the s2i builder image
+Moving binaries in source directory into /wildfly/standalone/deployments for later deployment...
+Moving all war artifacts from /opt/app-root/src/. directory into /wildfly/standalone/deployments for later deployment...
+'/opt/app-root/src/./sample.war' -&amp;gt; '/wildfly/standalone/deployments/sample.war'
+Moving all ear artifacts from /opt/app-root/src/. directory into /wildfly/standalone/deployments for later deployment...
+Moving all rar artifacts from /opt/app-root/src/. directory into /wildfly/standalone/deployments for later deployment...
+Moving all jar artifacts from /opt/app-root/src/. directory into /wildfly/standalone/deployments for later deployment...
+...done
+
+Pushing image docker-registry.default.svc:5000/sample-project/sampleapp:latest ...
+Pushed 2/13 layers, 15% complete
+Pushed 3/13 layers, 23% complete
+Pushed 4/13 layers, 31% complete
+Pushed 5/13 layers, 39% complete
+Pushed 6/13 layers, 46% complete
+Pushed 7/13 layers, 54% complete
+Pushed 8/13 layers, 62% complete
+Pushed 9/13 layers, 69% complete
+Pushed 10/13 layers, 77% complete
+Pushed 11/13 layers, 85% complete
+Pushed 12/13 layers, 92% complete
+Pushed 13/13 layers, 100% complete
+Push successful
+&lt;/code&gt;&lt;/pre&gt;
+ &lt;p&gt;
+  위와 같이 git 에서 소스를 가져와서 이미지로 생성하고 Openshift registory 에 Push 합니다.
+ &lt;/p&gt;
+ &lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;[root@master ~]# oc get po
+NAME                READY     STATUS      RESTARTS   AGE
+sampleapp-1-build   0/1       Completed   0          4m
+sampleapp-1-rsklv   1/1       Running     0          3m
+[root@master ~]#
+
+[root@master ~]# oc get svc
+NAME        TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE
+sampleapp   ClusterIP   172.30.37.118   &amp;lt;none&amp;gt;        8080/TCP   4m
+[root@master ~]#
+&lt;/code&gt;&lt;/pre&gt;
+ &lt;p&gt;
+  생성된 service 를 이용하여 route 를 생성합니다.
+ &lt;/p&gt;
+ &lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;[root@master ~]# oc expose service/sampleapp
+route.route.openshift.io/sampleapp exposed
+[root@master ~]# oc get route
+NAME        HOST/PORT                                   PATH      SERVICES    PORT       TERMINATION   WILDCARD
+sampleapp   sampleapp-sample-project.apps.example.com             sampleapp   8080-tcp                 None
+[root@master ~]#
+&lt;/code&gt;&lt;/pre&gt;
+ &lt;p&gt;
+  sampleapp 에 대한 route 가 생성이 되었습니다.
+  &lt;br/&gt;
+  실제로 서비스가 되는지 확인하도록 하겠습니다.
+ &lt;/p&gt;
+ &lt;center&gt;
+  &lt;img src=&quot;/assets/images/78611423/1.png&quot; style=&quot;max-width: 100%; height: auto;&quot;/&gt;
+  &lt;br/&gt;
+  sample 서비스 정상 구동중
+ &lt;/center&gt;
+ &lt;h1&gt;
+  &lt;a href=&quot;#web-console&quot; id=&quot;web-console&quot;&gt;
+   Web Console
+  &lt;/a&gt;
+ &lt;/h1&gt;
+ &lt;hr/&gt;
+ &lt;p&gt;
+  Openshift 는 Web Console 을 제공하여 좀더 편리하게 서비스를 배포하고 운영 할 수 있도록 하고 있습니다.
+ &lt;/p&gt;
+ &lt;center&gt;
+  &lt;br/&gt;
+  &lt;img src=&quot;/assets/images/78611423/2.png&quot;  style=&quot;max-width: 100%; height: auto;&quot;/&gt;
+  &lt;br/&gt;
+  Openshift Web Condole
+  &lt;br/&gt;
+ &lt;/center&gt;
+ admin 계정으로 로그인을 하겠습니다.
+ &lt;center&gt;
+  &lt;br/&gt;
+  &lt;img src=&quot;/assets/images/78611423/3.png&quot;  style=&quot;max-width: 100%; height: auto;&quot;/&gt;
+  &lt;br/&gt;
+  배포된 sampleapp 어플리케이션
+  &lt;br/&gt;
+ &lt;/center&gt;
+ 위와 같이 배포된 어플리케이션들에 대해 상태를 확인하고 Scale Up/Down 등의 기능을 수행이 가능합니다.
+ &lt;center&gt;
+  &lt;br/&gt;
+  &lt;img src=&quot;/assets/images/78611423/4.png&quot; style=&quot;max-width: 100%; height: auto;&quot;/&gt;
+  &lt;br/&gt;
+  Openshift Grafana
+  &lt;br/&gt;
+ &lt;/center&gt;
+ &lt;p&gt;
+  Openshift Origin v3.11에는 기본적으로 Prometheus + Grafana Dashboard 를 제공하고 있습니다.
+  &lt;br/&gt;
+  &lt;em&gt;
+   &lt;strong&gt;
+    (openshift-monitoring Project 에서 실행중)
+   &lt;/strong&gt;
+  &lt;/em&gt;
+ &lt;/p&gt;
+ &lt;p&gt;
+  이번 포스팅에서는 Openshift Origin 설치 및 APP 를 배포하여 서비스가 동작되는 것을 확인 하였습니다.
+  &lt;br/&gt;
+  이후 포스팅에서는 Web Console 를 통한 배포/관리, HPA 를 이용한 Auto-Scaling 구현을 작성해보도록 하겠습니다.
+ &lt;/p&gt;
+ &lt;p&gt;
+  감사합니다.
+ &lt;/p&gt;
+ &lt;h1&gt;
+  &lt;a href=&quot;#참고자료&quot; id=&quot;참고자료&quot;&gt;
+   참고자료
+  &lt;/a&gt;
+ &lt;/h1&gt;
+ &lt;hr/&gt;
+ &lt;ul&gt;
+  &lt;li&gt;
+   설치 관련 참고 자료
+   &lt;ul&gt;
+    &lt;li&gt;
+     DNS 구성 관련 :
+     &lt;a href=&quot;https://www.unixmen.com/setting-dns-server-centos-7/&quot;&gt;
+      https://www.unixmen.com/setting-dns-server-centos-7/
+     &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+     DNS 설정 관련 :
+     &lt;a href=&quot;https://docs.openshift.com/container-platform/3.11/install/prerequisites.html#wildcard-dns-prereq&quot;&gt;
+      https://docs.openshift.com/container-platform/3.11/install/prerequisites.html#wildcard-dns-prereq
+     &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+     ansible-playbook inventory 관련 :
+     &lt;a href=&quot;https://docs.okd.io/3.11/install/configuring_inventory_file.html&quot;&gt;
+      https://docs.okd.io/3.11/install/configuring_inventory_file.html
+     &lt;/a&gt;
+    &lt;/li&gt;
+   &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+   scc 관련
+   &lt;ul&gt;
+    &lt;li&gt;
+     &lt;a href=&quot;https://blog.openshift.com/understanding-service-accounts-sccs/&quot;&gt;
+      https://blog.openshift.com/understanding-service-accounts-sccs/
+     &lt;/a&gt;
+    &lt;/li&gt;
+   &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+   git source
+   &lt;ul&gt;
+    &lt;li&gt;
+     chhanz github :
+     &lt;a href=&quot;https://github.com/chhanz/openshift-deploy&quot;&gt;
+      https://github.com/chhanz/openshift-deploy
+     &lt;/a&gt;
+    &lt;/li&gt;
+   &lt;/ul&gt;
+  &lt;/li&gt;
+ &lt;/ul&gt;
+ &lt;script&gt;
+  //&lt;![CDATA[
+
+AJS.$('[data-macro-name=&quot;markdown&quot;] code').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+
+//]]&gt;
+ &lt;/script&gt;
+ &lt;style&gt;
+  .hljs {display: inline;}
+pre &gt; code {display: block !important;}
+ &lt;/style&gt;
+ &lt;script&gt;
+  //&lt;![CDATA[
+ AJS.$('[data-macro-name=&quot;markdown&quot;] table thead th').each(function(i, block) {
+    block.classList.add(&quot;confluenceTh&quot;);
+});
+
+AJS.$('[data-macro-name=&quot;markdown&quot;] table tbody tr td').each(function(i, block) {
+    block.classList.add(&quot;confluenceTd&quot;);
+});
+//]]&gt;
+ &lt;/script&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Mon, 10 Jun 2019 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/2019/06/10/78611423/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/06/10/78611423/</guid>
+        
+        
+      </item>
     
       <item>
         <title>Open Infrastructure Summit 2019 후기</title>
@@ -251,8 +1207,8 @@ Sharing Tech. Growing Together.
  &lt;br/&gt;
 &lt;/p&gt;</description>
         <pubDate>Fri, 31 May 2019 00:00:00 +0900</pubDate>
-        <link>https://tech.osci.kr/2019/05/31/77140128/</link>
-        <guid isPermaLink="true">https://tech.osci.kr/2019/05/31/77140128/</guid>
+        <link>http://localhost:4000/2019/05/31/77140128/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/05/31/77140128/</guid>
         
         
       </item>
@@ -505,8 +1461,8 @@ Sharing Tech. Growing Together.
  &lt;br/&gt;
 &lt;/p&gt;</description>
         <pubDate>Thu, 30 May 2019 00:00:00 +0900</pubDate>
-        <link>https://tech.osci.kr/2019/05/30/77140019/</link>
-        <guid isPermaLink="true">https://tech.osci.kr/2019/05/30/77140019/</guid>
+        <link>http://localhost:4000/2019/05/30/77140019/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/05/30/77140019/</guid>
         
         <category>오픈소스컨설팅</category>
         
@@ -1181,8 +2137,8 @@ Sharing Tech. Growing Together.
  &lt;br/&gt;
 &lt;/p&gt;</description>
         <pubDate>Fri, 24 May 2019 00:00:00 +0900</pubDate>
-        <link>https://tech.osci.kr/2019/05/24/77138487/</link>
-        <guid isPermaLink="true">https://tech.osci.kr/2019/05/24/77138487/</guid>
+        <link>http://localhost:4000/2019/05/24/77138487/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/05/24/77138487/</guid>
         
         
       </item>
@@ -1512,8 +2468,8 @@ Sharing Tech. Growing Together.
  &lt;br/&gt;
 &lt;/p&gt;</description>
         <pubDate>Wed, 08 May 2019 00:00:00 +0900</pubDate>
-        <link>https://tech.osci.kr/2019/05/08/75825367/</link>
-        <guid isPermaLink="true">https://tech.osci.kr/2019/05/08/75825367/</guid>
+        <link>http://localhost:4000/2019/05/08/75825367/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/05/08/75825367/</guid>
         
         
       </item>
@@ -1906,8 +2862,8 @@ Sharing Tech. Growing Together.
  &lt;/div&gt;
 &lt;/p&gt;</description>
         <pubDate>Thu, 25 Apr 2019 00:00:00 +0900</pubDate>
-        <link>https://tech.osci.kr/2019/04/25/71801513/</link>
-        <guid isPermaLink="true">https://tech.osci.kr/2019/04/25/71801513/</guid>
+        <link>http://localhost:4000/2019/04/25/71801513/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/04/25/71801513/</guid>
         
         <category>atlassian</category>
         
@@ -2275,8 +3231,8 @@ Sharing Tech. Growing Together.
  &lt;br/&gt;
 &lt;/p&gt;</description>
         <pubDate>Tue, 23 Apr 2019 00:00:00 +0900</pubDate>
-        <link>https://tech.osci.kr/2019/04/23/71800553/</link>
-        <guid isPermaLink="true">https://tech.osci.kr/2019/04/23/71800553/</guid>
+        <link>http://localhost:4000/2019/04/23/71800553/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/04/23/71800553/</guid>
         
         <category>atlassian</category>
         
@@ -3607,8 +4563,8 @@ AJS.$('[data-macro-name=&quot;markdown&quot;] table tbody tr td').each(function(
  &lt;/script&gt;
 &lt;/div&gt;</description>
         <pubDate>Mon, 15 Apr 2019 00:00:00 +0900</pubDate>
-        <link>https://tech.osci.kr/2019/04/15/71798599/</link>
-        <guid isPermaLink="true">https://tech.osci.kr/2019/04/15/71798599/</guid>
+        <link>http://localhost:4000/2019/04/15/71798599/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/04/15/71798599/</guid>
         
         
       </item>
@@ -4736,8 +5692,8 @@ AJS.$('[data-macro-name=&quot;markdown&quot;] table tbody tr td').each(function(
  &lt;br/&gt;
 &lt;/p&gt;</description>
         <pubDate>Thu, 28 Feb 2019 00:00:00 +0900</pubDate>
-        <link>https://tech.osci.kr/2019/02/28/63373558/</link>
-        <guid isPermaLink="true">https://tech.osci.kr/2019/02/28/63373558/</guid>
+        <link>http://localhost:4000/2019/02/28/63373558/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/02/28/63373558/</guid>
         
         <category>atlassian</category>
         
@@ -6071,423 +7027,8 @@ a50p5gs82hop   \_ phpdemo.1  manager1.example.com:5000/phpdemo:v2  manager2.exam
  &lt;br/&gt;
 &lt;/p&gt;</description>
         <pubDate>Wed, 13 Feb 2019 00:00:00 +0900</pubDate>
-        <link>https://tech.osci.kr/2019/02/13/59736201/</link>
-        <guid isPermaLink="true">https://tech.osci.kr/2019/02/13/59736201/</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>오픈소스컨설팅 아틀라시안팀이 일하는 방법</title>
-        <description>&lt;p&gt;
- &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
-  &lt;img src=&quot;/assets/images/58035834/0.jpeg&quot;/&gt;
- &lt;/span&gt;
-&lt;/p&gt;
-&lt;p&gt;
- 안녕하세요?
-&lt;/p&gt;
-&lt;p&gt;
- 오픈소스컨설팅
-&lt;/p&gt;
-&lt;p&gt;
- 아틀라시안팀 - 김세연입니다.
-&lt;/p&gt;
-&lt;p&gt;
- &lt;strong&gt;
-  지금부터 저희 팀 소개를 하겠습니다~ 재미있어요~ (아마도요..)
- &lt;/strong&gt;
-&lt;/p&gt;
-&lt;p&gt;
- 저희 팀은 애자일, 데브옵스 문화 도입 및 활성화를 위해, 최선의 방법을 찾아 알맞은 솔루션을 컨설팅합니다.
-&lt;/p&gt;
-&lt;p&gt;
- 애자일, 데브옵스의 경험이 풍부한 엔지니어로 이루어진 저희 팀은 꾸준한 교육과 연습을 통해, 팀을 발전 시키고자 합니다.
-&lt;/p&gt;
-&lt;p&gt;
- 팀웍, 협업, 공유를 중요시하는 저희 아틀라시안팀의 이야기를 들어보실래요? 'ㅡ'
-&lt;/p&gt;
-&lt;p&gt;
- 그리고
- &lt;strong&gt;
-  함께할 멤버를 찾고 있습니다. (불꽃!!)
- &lt;/strong&gt;
-&lt;/p&gt;
-&lt;p&gt;
- &lt;br/&gt;
-&lt;/p&gt;
-&lt;p&gt;
- &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
-  &lt;img src=&quot;/assets/images/58035834/1.png&quot;/&gt;
- &lt;/span&gt;
- &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
-  &lt;img src=&quot;/assets/images/58035834/2.png&quot;/&gt;
- &lt;/span&gt;
-&lt;/p&gt;
-&lt;p&gt;
- &lt;strong&gt;
-  &amp;lt;운명같은 만남을 꿈꾸고 발 벗고 찾아다닙니다.&amp;gt;
- &lt;/strong&gt;
-&lt;/p&gt;
-&lt;p&gt;
- &lt;br/&gt;
-&lt;/p&gt;
-&lt;p&gt;
- &lt;br/&gt;
-&lt;/p&gt;
-&lt;h1 id=&quot;id-오픈소스컨설팅아틀라시안팀이일하는방법-오픈소스컨설팅출근과퇴근&quot;&gt;
- 오픈소스컨설팅 출근과 퇴근
-&lt;/h1&gt;
-&lt;p&gt;
- &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
-  &lt;img src=&quot;/assets/images/58035834/3.png&quot;/&gt;
- &lt;/span&gt;
-&lt;/p&gt;
-&lt;p&gt;
- &lt;strong&gt;
-  &amp;lt;월요일의 내 멘탈은 대략 블루스크린&amp;gt;
- &lt;/strong&gt;
-&lt;/p&gt;
-&lt;h3 id=&quot;id-오픈소스컨설팅아틀라시안팀이일하는방법-월요일&quot;&gt;
- &lt;strong&gt;
-  월요일
- &lt;/strong&gt;
-&lt;/h3&gt;
-&lt;p&gt;
- 월요일은 오전 10시 출근 → 오후 6시 퇴근을 합니다.
-&lt;/p&gt;
-&lt;p&gt;
- 주말동안 쉬었던 몸과 마음을 콜드부팅합니다.
-&lt;/p&gt;
-&lt;p&gt;
- 대표님과 CTO님께서 일할 땐 일하고 놀 때 노는 문화를 만들고 정착 시키셨습니다. (으메 좋은거)
-&lt;/p&gt;
-&lt;p&gt;
- 저는 입사 하자마자 혜택 받고 있습니다 :)
-&lt;/p&gt;
-&lt;p&gt;
- 일이 많아서 또는 고객 지원 업무가 6시 이후에 있을 경우에는 대체 휴무를 부여하고 있습니다. 할 때 하고 쉴 때 쉽니다.
-&lt;/p&gt;
-&lt;p&gt;
- 정시퇴근, 정시출근! (야근식대 무엇!?)
-&lt;/p&gt;
-&lt;h4 id=&quot;id-오픈소스컨설팅아틀라시안팀이일하는방법-테크세션&amp;amp;오픈톡&quot;&gt;
- 테크세션 &amp;amp; 오픈톡
-&lt;/h4&gt;
-&lt;p&gt;
- 매주 월요일은 내부 발표 신청자에 의해 테크세션 또는 오픈톡 발표를 합니다.
-&lt;/p&gt;
-&lt;p&gt;
- &lt;strong&gt;
-  테크세션은
- &lt;/strong&gt;
-&lt;/p&gt;
-&lt;p&gt;
- 내부에 공유하고 싶은 기술, 트렌드 등을 발표합니다.
-&lt;/p&gt;
-&lt;p&gt;
- 저도 가끔 발표를 하는데요 장점은 내가 아는 기술을 발표 자료로 만들면서 더 공부가 되고 정리하는 시간을 가질 수 있습니다.
-&lt;/p&gt;
-&lt;p&gt;
- 그리고
- &lt;strong&gt;
-  발표 연습을 할 수 있습니다. (&quot;어머님, 예서는 멘탈이 약한 아이입니다.&quot;)
- &lt;/strong&gt;
- 전 직원이 집중하고 피드백을 줍니다. 멘탈을 다지고 큰 무대로 갈 수 있습니다. (원한다면요 :) )
-&lt;/p&gt;
-&lt;p&gt;
- &lt;strong&gt;
-  오픈톡은
- &lt;/strong&gt;
-&lt;/p&gt;
-&lt;p&gt;
- 기술 이외에 문화, 책을 읽고 감동 받은 점 등 자유롭게 발표할 수 있습니다.
-&lt;/p&gt;
-&lt;p&gt;
- 인문학이 없는 기술은 5살 어린아이에게 총을 쥐어진 것처럼 기술의 의미가 얕아질 수 있습니다.
-&lt;/p&gt;
-&lt;p&gt;
- &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
-  &lt;img src=&quot;/assets/images/58035834/4.png&quot;/&gt;
- &lt;/span&gt;
-&lt;/p&gt;
-&lt;p&gt;
- &lt;strong&gt;
-  &amp;lt;아빠 이번 선물은 마음에 들어요 당겨봐도 되죠?&amp;gt;
- &lt;/strong&gt;
-&lt;/p&gt;
-&lt;p&gt;
- 우리는 인문학을 중요하게 생각하고 사랑합니다.
-&lt;/p&gt;
-&lt;h3 id=&quot;id-오픈소스컨설팅아틀라시안팀이일하는방법-화요일~목요일&quot;&gt;
- 화요일 ~ 목요일
-&lt;/h3&gt;
-&lt;p&gt;
- 어느 직장과 동일하게 열심히 9시에 출근하고 18시에 퇴근합니다.
-&lt;/p&gt;
-&lt;h3 id=&quot;id-오픈소스컨설팅아틀라시안팀이일하는방법-금요일&quot;&gt;
- 금요일
-&lt;/h3&gt;
-&lt;p&gt;
- 우리 오픈소스컨설팅은 A조 B조로 나눠서 격주 금요일 휴식을 갖습니다. (복지)
-&lt;/p&gt;
-&lt;p&gt;
- 금토일 여행을 갈 수도 있고 개인적인 시간을 가질 수 있습니다. 대박! 엄지척!
-&lt;/p&gt;
-&lt;p&gt;
- &lt;br/&gt;
-&lt;/p&gt;
-&lt;p&gt;
- 벌써 일주일이 다 갔습니다.
-&lt;/p&gt;
-&lt;h1 id=&quot;id-오픈소스컨설팅아틀라시안팀이일하는방법-팀문화&quot;&gt;
- 팀 문화
-&lt;/h1&gt;
-&lt;p&gt;
- 저희 팀의 문화를 3가지로 표현하면 수다, 신뢰, Right Person입니다.
-&lt;/p&gt;
-&lt;p&gt;
- &lt;strong&gt;
-  수다
- &lt;/strong&gt;
-&lt;/p&gt;
-&lt;p&gt;
- 대화를 넘어서 수다가 많습니다.
-&lt;/p&gt;
-&lt;p&gt;
- 생각, 감정, 철학, 방향성, 기술 스택 등 수시로 대화합니다. (물론 대화 가능 시간을 물어보고 초대합니다)
-&lt;/p&gt;
-&lt;p&gt;
- 저희부터 좋은 협업, 공유 문화를 갖고 애자일, 데브옵스를 구축하고 컨설팅을 하고 있습니다.
-&lt;/p&gt;
-&lt;p&gt;
- 팀의 대화에서는 '틀리다'는 없습니다. '다르다'를 서로 이야기하고 자신의 생각, 가치관을 이야기 합니다.
-&lt;/p&gt;
-&lt;p&gt;
- 수다에서 많은 아이디어와 팀의 방향성이 나오곤 합니다. 그리고 대화에 빠질 수 없는 커피&amp;amp;티를 사랑합니다.
-&lt;/p&gt;
-&lt;p&gt;
- &lt;strong&gt;
-  신뢰
- &lt;/strong&gt;
-&lt;/p&gt;
-&lt;p&gt;
- 강력한 신뢰를 바탕으로 일하고 있습니다.
-&lt;/p&gt;
-&lt;p&gt;
- 고객과의 스케줄을 정하고 외근을 갔다가 알아서 복귀 또는 퇴근을 합니다.
-&lt;/p&gt;
-&lt;p&gt;
- 공유할 내용이 있다면 Confluence, Slack으로 공유합니다.
-&lt;/p&gt;
-&lt;p&gt;
- 팀장님의 결정이 필요하면 슬랙하거나 결재를 올리면 됩니다.
-&lt;/p&gt;
-&lt;p&gt;
- 각자 분명한 역할을 정하고 계획, 진행, 결과에서 솔직한 이야기들이 오고 갑니다.
-&lt;/p&gt;
-&lt;p&gt;
- 솔직한 이야기를 할 수 있다는 것은 팀장, 팀원들의 간의 신뢰와 믿음이 있기 때문이라고 생각합니다.
-&lt;/p&gt;
-&lt;p&gt;
- &lt;strong&gt;
-  Right Person
- &lt;/strong&gt;
-&lt;/p&gt;
-&lt;p&gt;
- 제가 생각하는 Right Person은 '옳은 사람'이 아닙니다. '옳은 방향으로 결정할 수 있는 사람'입니다.
-&lt;/p&gt;
-&lt;p&gt;
- 저희 팀은 2주 간격으로 Atlassian App 개발 스크럼 미팅을 진행합니다.
-&lt;/p&gt;
-&lt;p&gt;
- 미팅에 팀장님을 포함한 개발자들이 참여합니다.
-&lt;/p&gt;
-&lt;p&gt;
- 개발 방향, 기간, 비즈니스 로직 등 뜨거운 논쟁이 펼쳐집니다.
-&lt;/p&gt;
-&lt;p&gt;
- 우리 팀은 옳은 방향으로 갈 수 있기 때문에, 알기 때문에 우리는 목소리를 낼 수 있습니다.
-&lt;/p&gt;
-&lt;p&gt;
- 우리 팀만 해당되지 않습니다. 우리 회사에서 옳은 방향을 주장하고 의견을 내면 수용됩니다. (제가 봤어요. +_+ )
-&lt;/p&gt;
-&lt;h1 id=&quot;id-오픈소스컨설팅아틀라시안팀이일하는방법-개발&quot;&gt;
- 개발
-&lt;/h1&gt;
-&lt;p&gt;
- &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
-  &lt;img src=&quot;/assets/images/58035834/5.png&quot;/&gt;
- &lt;/span&gt;
-&lt;/p&gt;
-&lt;p&gt;
- 저희 팀은 Atlassian 제품 기술 지원과 Plug-in(App)을 개발하고 있습니다.
-&lt;/p&gt;
-&lt;p&gt;
- Atlassian 제품으로 컨설팅을 진행하면서 고객의 필요한 기능을 개발하고 Atlassian MarketPlace에 올릴 예정입니다.
-&lt;/p&gt;
-&lt;p&gt;
- 2월에 제품 하나가 출시되고 3월에 추가 출시 예정입니다.
-&lt;/p&gt;
-&lt;p&gt;
- 4월에는 라스베가스에서 열리는 Atlassian summit에도 참가합니다.
-&lt;/p&gt;
-&lt;p&gt;
- 좋은 아이디어는 누구나 생각할 수 있습니다. 하지만 실천은 아무나 못합니다. 저희팀은 로켓 발사 단계에 있습니다.
-&lt;/p&gt;
-&lt;p&gt;
- 함께 로켓에 탑승하여 빠르게 성장할 멤버를 찾고 있습니다!! (자꾸 홍보)
-&lt;/p&gt;
-&lt;p&gt;
- 기술 스택 - JAVA, HTML, Linux, SQL, Script언어 하나
-&lt;/p&gt;
-&lt;p&gt;
- Atlassian Server Version은 JAVA 기반으로 만들어 졌습니다. App도 JAVA(Spring)으로 개발합니다.
-&lt;/p&gt;
-&lt;p&gt;
- JAVA로 게시판 하나 만들 정도면 환영합니다. (구글 검색은 당연하죠~)
-&lt;/p&gt;
-&lt;p&gt;
- Front-end는 간단하게 HTML, Jquery 정도로 구성하고 있습니다. Jquery로 AJAX 통신한다! 환영합니다
-&lt;/p&gt;
-&lt;p&gt;
- 많은 고객들이 Linux Server에 Atlassian 제품을 설치하고 있습니다.
-&lt;/p&gt;
-&lt;p&gt;
- Linux NFS 서버 구성하고 마운트 경험이나 구글 검색으로할 수 있다. 환영합니다.
-&lt;/p&gt;
-&lt;p&gt;
- 저는 파이썬을 좋아하고 제 바로 위 선배는 노드를 좋아합니다.  REST API 간단하게 만들거나 호출해서 값 파싱해서 처리할 수 있으면 환영합니다.
-&lt;/p&gt;
-&lt;p&gt;
- (컴파일 언어 이외에 스크립트 언어 간단하게 스킬이 있으면 사용할 일이 가끔 있습니다. 강력한 추천!)
-&lt;/p&gt;
-&lt;p&gt;
- &lt;br/&gt;
-&lt;/p&gt;
-&lt;p&gt;
- Scrum 방식으로 일하고 있습니다. Jira, Confluence, Bitbucket, Bamboo를 사용하고 있습니다.
-&lt;/p&gt;
-&lt;p&gt;
- macOS에서 IntelliJ를 사용하고 있습니다. 원하시면 Windows PC를 받을 수 있습니다.
-&lt;/p&gt;
-&lt;p&gt;
- 하지만 어머님. macOS를 댁으로 들이십시오. Windows는 멘탈이 약한 아이입니다.
-&lt;/p&gt;
-&lt;p&gt;
- 원하는 스택은 팀과 논의하여 더 추가될 수 있습니다.
-&lt;/p&gt;
-&lt;h1 id=&quot;id-오픈소스컨설팅아틀라시안팀이일하는방법-고객지원&quot;&gt;
- 고객지원
-&lt;/h1&gt;
-&lt;p&gt;
- 저는 개발팀에서 개발을 할 때 End User의 피드백이 궁금했습니다. 그래서 Google Analytic를 분석하고 App Store, Play Store의 댓글도 보고 했지만 물에 비치는 흐릿한 풍경이 아닌 뚜렷한 피드백을 받고 싶었습니다.
-&lt;/p&gt;
-&lt;p&gt;
- 고객지원을 다니면서 구체적으로 필요한 기술, 아키텍처, 문화, 컨설팅에 대해서 들었습니다. 요구사항을 구축, 구현 후 고객께서 주신 피드백도 날카롭거나 따듯했습니다.
-&lt;/p&gt;
-&lt;p&gt;
- 엔지니어로써 뚜렷한 요구사항과 구축 후 피드백은 힘을 낭비하지 않고 기술 스택을 쌓기 좋은 경험이 될 것 같습니다.
-&lt;/p&gt;
-&lt;p&gt;
- 고객과 협업하는 스킬도 늘어나서 여기저기 아는 사람이 많이 생깁니다.
-&lt;/p&gt;
-&lt;p&gt;
- 주로 하는 업무는 Atlassian 제품 설치, Migration, Trouble Shooting 등입니다.
-&lt;/p&gt;
-&lt;p&gt;
- &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
-  &lt;img src=&quot;/assets/images/58035834/6.png&quot;/&gt;
- &lt;/span&gt;
-&lt;/p&gt;
-&lt;p&gt;
- &lt;strong&gt;
-  &amp;lt;나날이 성장하는건 기분탓이 아니겠지&amp;gt;
- &lt;/strong&gt;
-&lt;/p&gt;
-&lt;p&gt;
- Apache Http, Nginx, Atlassian Products, MySQL 등을 설치합니다. 요즘 추세는 AWS에 설치, 운영을 많이 합니다.
-&lt;/p&gt;
-&lt;h1 id=&quot;id-오픈소스컨설팅아틀라시안팀이일하는방법-교육&quot;&gt;
- 교육
-&lt;/h1&gt;
-&lt;p&gt;
- &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
-  &lt;img src=&quot;/assets/images/58035834/7.png&quot;/&gt;
- &lt;/span&gt;
-&lt;/p&gt;
-&lt;p&gt;
- &lt;strong&gt;
-  &amp;lt;고객과 함께 성장합니다.&amp;gt;
- &lt;/strong&gt;
-&lt;/p&gt;
-&lt;p&gt;
- 매달 Jira, Confluence 무료 교육을 진행하고 있습니다.
-&lt;/p&gt;
-&lt;p&gt;
- 지금은 교육 진행자가 정해져 있지만 원한다면 진행할 수 있습니다. (우리 회사는 원하는 대로 됩니다.)
-&lt;/p&gt;
-&lt;p&gt;
- 고객사의 요청으로 고객사에서 교육을 진행하는 경우도 있습니다. 짧게는 1시간 길게는 하루
-&lt;/p&gt;
-&lt;p&gt;
- Atlassian 제품 교육, DevOps, Agile, ALM 문화 기술 등 교육을 진행하고 있습니다.
-&lt;/p&gt;
-&lt;p&gt;
- 천천히~ 발표&amp;amp;교육을 진행 하면 큰 재미를 느끼실 겁니다. 전적으로 저를 믿으셔야 합니다.
-&lt;/p&gt;
-&lt;h1 id=&quot;id-오픈소스컨설팅아틀라시안팀이일하는방법-면접&quot;&gt;
- 면접
-&lt;/h1&gt;
-&lt;p&gt;
- 저희 팀이 일하는 방법을 간단하게 소개 했습니다.
-&lt;/p&gt;
-&lt;p&gt;
- 글로만 봐서는 잘 모르실 것 같아요.
-&lt;/p&gt;
-&lt;p&gt;
- 1차 팀 면접은 화기애애하면서 재미 있습니다. (왜냐면 팀이 그래요..)
-&lt;/p&gt;
-&lt;p&gt;
- &lt;span class=&quot;confluence-embedded-file-wrapper confluence-embedded-manual-size&quot;&gt;
-  &lt;img src=&quot;/assets/images/58035834/8.png&quot;/&gt;
- &lt;/span&gt;
-&lt;/p&gt;
-&lt;p&gt;
- &lt;strong&gt;
-  &amp;lt;돈벌면서 재미 있으면 안되나요? 네 안되요&amp;gt;
- &lt;/strong&gt;
-&lt;/p&gt;
-&lt;p&gt;
- 호기심에 이력서 넣고 저희 팀을 만나셔도 좋을 것 같아요. 커피를 좋아하시면 맛있는 커피 대접하겠습니다. (심지어 빵도 맛있는 카페가 바로 앞에 있어요)
-&lt;/p&gt;
-&lt;p&gt;
- 이력서 넣기 귀찮고 그냥 만나고 싶다! 하셔도 좋아요 언제든 메일 주세요. 커피는 제가 쏩니다.
-&lt;/p&gt;
-&lt;p&gt;
- &lt;a class=&quot;external-link&quot; href=&quot;mailto:atlassian@osci.kr&quot; rel=&quot;nofollow&quot;&gt;
-  atlassian@osci.kr
- &lt;/a&gt;
-&lt;/p&gt;
-&lt;p&gt;
- 제목 또는 내용에 김세연 소개로 왔습니다 넣어주세요~
-&lt;/p&gt;
-&lt;p&gt;
- 읽어 주셔서 감사합니다.
-&lt;/p&gt;
-&lt;h1 id=&quot;id-오픈소스컨설팅아틀라시안팀이일하는방법-(부록)앞으로팀의방향,회사복지등등&quot;&gt;
- (부록) 앞으로 팀의 방향, 회사 복지 등등
-&lt;/h1&gt;
-&lt;p&gt;
- 뵙고 이야기 나눠요.  :)
-&lt;/p&gt;</description>
-        <pubDate>Wed, 06 Feb 2019 00:00:00 +0900</pubDate>
-        <link>https://tech.osci.kr/2019/02/06/58035834/</link>
-        <guid isPermaLink="true">https://tech.osci.kr/2019/02/06/58035834/</guid>
-        
-        <category>atlassian</category>
-        
-        <category>opensourceconsulting</category>
+        <link>http://localhost:4000/2019/02/13/59736201/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/02/13/59736201/</guid>
         
         
       </item>
