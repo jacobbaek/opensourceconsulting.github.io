@@ -1,0 +1,460 @@
+---
+layout: post
+title: "Openshift Web Console 를 이용해보자!"
+description: " " 
+author: chhan
+date: 2019-07-01
+tags: ['개인블로그']
+category: 
+image: /assets/images/78615723/0.png 
+---
+<p>
+ <br/>
+</p>
+<p>
+ <br/>
+</p>
+<div class="conf-macro output-block" data-hasbody="true" data-macro-name="markdown">
+ <h1>
+  <a href="#openshift-openshift-web-console-을-이용한-배포" id="openshift-openshift-web-console-을-이용한-배포">
+   [Openshift] Openshift Web Console 을 이용한 배포
+  </a>
+ </h1>
+ <hr/>
+ <center>
+  <img src="/assets/images/78615723/0.png"/>
+ </center>
+ <p>
+  안녕하세요. 오픈소스컨설팅 한철희 입니다.
+ </p>
+ <p>
+ </p>
+ <p>
+  <em>
+   <strong>
+    <a href="https://tech.osci.kr/2019/06/10/78611423/">
+     이전 포스팅- Openshift Origin v3.11 설치, App 배포
+    </a>
+   </strong>
+  </em>
+ </p>
+ <p>
+ </p>
+ <p>
+  이전 포스팅인 Openshift Origin 설치에 이어서 Openshift Web Console 을 살펴보고 Web Console 을 이용하여 APP 배포도 해보겠습니다.
+ </p>
+ <p>
+  Openshift Web Console 에서는 기본적으로 3가지의 Web Console 을 제공합니다.
+ </p>
+ <blockquote>
+  <ol>
+   <li>
+    Service Catalog
+   </li>
+   <li>
+    Application Console
+   </li>
+   <li>
+    Cluster Console
+   </li>
+  </ol>
+ </blockquote>
+ <p>
+  지금부터 각각의 Web Console 을 확인해보고 사용해 보겠습니다.
+ </p>
+ <h2>
+  <a href="#openshift-web-console" id="openshift-web-console">
+   Openshift Web Console
+  </a>
+ </h2>
+ <hr/>
+ <p>
+  기본적으로 설치가 완료된 Openshift는 Web Console 이
+  <code>
+   expose
+  </code>
+  되어 있습니다.
+  <br/>
+  생성되어 있는
+  <code>
+   route
+  </code>
+  를 확인하고 접속 해보도록 하겠습니다.
+ </p>
+ <center>
+  <img src="/assets/images/78615723/1.png"/>
+ </center>
+ <p>
+  위와 같이 모든
+  <code>
+   namespace
+  </code>
+  의
+  <code>
+   route
+  </code>
+  를 확인 할 수 있습니다.
+  <br/>
+  현재 테스트 시스템에서는
+  <code>
+   http://console.apps.example.com
+  </code>
+  로
+  <code>
+   route
+  </code>
+  가 생성이 되어 있습니다.
+  <br/>
+  해당
+  <code>
+   Domain
+  </code>
+  으로 접속 해보겠습니다.
+ </p>
+ <center>
+  <img src="/assets/images/78615723/2.png"/>
+ </center>
+ <p>
+  Openshfit Web Console 에 접근하였습니다.
+ </p>
+ <h1>
+  <a href="#service-catalog" id="service-catalog">
+   Service Catalog
+  </a>
+ </h1>
+ <hr/>
+ <p>
+  Service Catalog 는 Openshift 에서 제공되는 기본적인 APP 을 보여주며, 개발자는 Service Catalog 를 통해 손쉽게 APP 을 배포 할 수 있습니다.
+ </p>
+ <center>
+  <img src="/assets/images/78615723/3.png"/>
+ </center>
+ <p>
+  이처럼 제공되는 Service 가 많습니다.
+  <br/>
+  한번 Service Catalog 를 통해 APP 를 배포 해보도록 하겠습니다.
+ </p>
+ <center>
+  <img src="/assets/images/78615723/4.png"/>
+ </center>
+ <p>
+  Apache HTTPD APP 을 선택합니다.
+ </p>
+ <center>
+  <img src="/assets/images/78615723/5.png"/>
+ </center>
+ <p>
+  APP 이 배포될 Project 및 사용될
+  <code>
+   Container Image
+  </code>
+  , 사용될
+  <code>
+   Source
+  </code>
+  를 입력합니다.
+ </p>
+ <center>
+  <img src="/assets/images/78615723/6.png"/>
+ </center>
+ <p>
+  APP 에 설정된 결과값이 표시되며, APP 배포가 시작 되었습니다.
+ </p>
+ <center>
+  <img src="/assets/images/78615723/7.png"/>
+ </center>
+ <p>
+  APP 이 배포중에 있습니다.
+ </p>
+ <center>
+  <img src="/assets/images/78615723/8.png"/>
+ </center>
+ <p>
+  배포가 완료된 APP 의 상세 로그를 보면
+  <code>
+   Container Image
+  </code>
+  를 Pull 하고
+  <code>
+   Source
+  </code>
+  를 Clone 하여 해당 APP 에 맞게 자동으로 S2I(Source To Image) 를 진행합니다.
+ </p>
+ <center>
+  <img src="/assets/images/78615723/9.png"/>
+ </center>
+ <p>
+  정상적으로 APP 가 배포되고, 서비스 되는 것을 볼 수 있습니다.
+ </p>
+ <h1>
+  <a href="#application-console" id="application-console">
+   Application Console
+  </a>
+ </h1>
+ <hr/>
+ <p>
+  Application Console 는 현재 Openshift 에서 서비스 중인 APP 에 대해 상세한 관리가 가능한 Web Console 입니다.
+  <br/>
+  예제를 보면서 기능들을 확인하도록 하겠습니다.
+ </p>
+ <center>
+  <img src="/assets/images/78615723/10.png"/>
+ </center>
+ <center>
+  <img src="/assets/images/78615723/11.png"/>
+ </center>
+ <p>
+  Openshift Cluster 에 만들어진 Project 목록이 표기되며, 이전 포스팅에서 sample APP 를 배포한
+  <code>
+   sample-project
+  </code>
+  를 선택합니다.
+ </p>
+ <h2>
+  <a href="#detail-app---scale-out-app" id="detail-app---scale-out-app">
+   Detail APP  &amp; Scale Out APP
+  </a>
+ </h2>
+ <center>
+  <img src="/assets/images/78615723/12.png"/>
+ </center>
+ <center>
+  <img src="/assets/images/78615723/13.png"/>
+ </center>
+ 배포 되어 있는 sample APP 의 정보를 확인 할 수 있습니다.   
+현재 생성되어 있는 Pod 의 수는 3개 이며, http://sampleapp-sample-project.apps.example.com 으로 접근 할 수 있도록 구성이 되어 있습니다.   
+Web Console 을 통해 Pod 의 수를 증가해보겠습니다.
+ <center>
+  <img src="/assets/images/78615723/14.png"/>
+ </center>
+ <p>
+  Pods 옆
+  <code>
+   ^
+  </code>
+  모양의 버튼을 누르면 바로 내가 원하는 만큼 쉽게 Scale Out 할 수 있습니다.
+ </p>
+ <h2>
+  <a href="#build-app" id="build-app">
+   Build APP
+  </a>
+ </h2>
+ <p>
+  New Version 의
+  <code>
+   Build
+  </code>
+  도 Web Console 을 통해 쉽게
+  <code>
+   Build
+  </code>
+  하고 배포 할 수 있습니다.
+ </p>
+ <center>
+  <img src="/assets/images/78615723/15.png"/>
+ </center>
+ <p>
+  <code>
+   #1
+  </code>
+  로
+  <code>
+   Build
+  </code>
+  되어 있습니다. 아래와 같이
+  <code>
+   #1
+  </code>
+  의
+  <code>
+   Build
+  </code>
+  로그 또한 확인이 가능합니다.
+ </p>
+ <center>
+  <img src="/assets/images/78615723/16.png"/>
+ </center>
+ <p>
+  <code>
+   #2
+  </code>
+  신규
+  <code>
+   Source
+  </code>
+  를 Git 에서 Clone 하여 New Version 으로
+  <code>
+   Build
+  </code>
+  하겠습니다.
+ </p>
+ <center>
+  <img src="/assets/images/78615723/17.png"/>
+ </center>
+ <p>
+  오른쪽 상단의
+  <code>
+   Start Build
+  </code>
+  버튼을 누르면 바로
+  <code>
+   Build
+  </code>
+  가 시작됩니다.
+  <br/>
+  그럼 아래와 같이
+  <code>
+   Build
+  </code>
+  가 시작되고 완료가 되는 것을 볼 수 있습니다.
+ </p>
+ <center>
+  <img src="/assets/images/78615723/18.png"/>
+ </center>
+ <center>
+  <img src="/assets/images/78615723/19.png"/>
+ </center>
+ <h2>
+  <a href="#monitoring" id="monitoring">
+   Monitoring
+  </a>
+ </h2>
+ <p>
+  위와 같이 많은 작업을 Web Console로 할 수 있습니다. 이런 많은 APP 들을 한번에
+  <code>
+   Monitoring
+  </code>
+  메뉴를 통해 한번에 모니터링 할 수 있습니다.
+ </p>
+ <center>
+  <img src="/assets/images/78615723/20.png"/>
+ </center>
+ <p>
+  Project 내에 모든 리소스들이 생성되고 추가되고
+  <code>
+   Build
+  </code>
+  되고 삭제되는 것 등등 많은
+  <code>
+   Event
+  </code>
+  들이 기록되며 각각의 상세 내역도 확인이 가능합니다.
+ </p>
+ <h1>
+  <a href="#cluster-console" id="cluster-console">
+   Cluster Console
+  </a>
+ </h1>
+ <hr/>
+ <p>
+  마지막으로 Cluster Console 이 있습니다.
+  <br/>
+  Cluster Console 은 Openshift Cluster 의 인프라 영역까지 관리가 가능한 Web Console 입니다.
+  <br/>
+  지금까지 설명한 Service Catalog, Application Console 은 개발자를 타겟으로한 Console 이라면, Cluster Console 은 운영자를 타겟으로 만들어진 Console 이라 보면 좋습니다.
+ </p>
+ <h2>
+  <a href="#project--status" id="project--status">
+   Project &amp;&amp; Status
+  </a>
+ </h2>
+ <p>
+  Cluster Console 에 접근하면 Openshift 에 만들어진 Project 들을 확인 할 수 있으며, 해당 Project 의 자세한 현황도 파악 할 수 있습니다.
+ </p>
+ <center>
+  <img src="/assets/images/78615723/21.png"/>
+ </center>
+ <center>
+  <img src="/assets/images/78615723/22.png"/>
+ </center>
+ <h2>
+  <a href="#check-resource" id="check-resource">
+   Check Resource
+  </a>
+ </h2>
+ <p>
+  Project 내에 생성된 Pod, Network 등을 쉽게 점검하고 확인 할 수 있습니다.
+ </p>
+ <center>
+  <img src="/assets/images/78615723/23.png"/>
+ </center>
+ <center>
+  <img src="/assets/images/78615723/24.png"/>
+ </center>
+ <h2>
+  <a href="#create-pod" id="create-pod">
+   Create Pod
+  </a>
+ </h2>
+ <p>
+  Web Console 을 통해 직접
+  <code>
+   Yaml
+  </code>
+  파일 내용을 입력하여 바로 Pod 을 생성 할 수 있습니다.
+ </p>
+ <center>
+  <img src="/assets/images/78615723/25.png"/>
+ </center>
+ `[Workloads]` &gt; `[Pods]` 메뉴에서 `[Create POD]` 버튼을 누르면 아래와 같이 `Yaml` 파일 `Template` 내용이 나옵니다.
+ <center>
+  <img src="/assets/images/78615723/26.png"/>
+ </center>
+ <center>
+  <img src="/assets/images/78615723/27.png"/>
+ </center>
+ <p>
+  위와 같이 직접 수정해서 Pod 을 생성하도록 하겠습니다.
+ </p>
+ <center>
+  <img src="/assets/images/78615723/28.png"/>
+ </center>
+ <p>
+  수정한 내역이 반영되어 바로 Pod 이 생성 된 것을 볼 수 있습니다.
+ </p>
+ <h1>
+  <a href="#마치며" id="마치며">
+   마치며
+  </a>
+ </h1>
+ <p>
+  제가 사용해본 Openshift 는 Cli 환경에서 충분이 많은 기능을 구현했다고 생각했습니다.
+  <br/>
+  하지만 Cli 환경이 미숙한 사용자들의 입장에서 본다면 Openshift 의 Web Console 은 정말 매력적인 기능일 것 같습니다.
+  <br/>
+  쉽게 Cluster 의 상태를 확인 할 수 있고, 서비스를 배포하고 운영 할 수 있었습니다.
+ </p>
+ <p>
+  다음 포스팅에서는 Openshfit 의
+  <code>
+   HPA
+  </code>
+  를 이용하여 Auto Scaling 을 구현해보도록 하겠습니다.
+  <br/>
+  감사합니다.
+ </p>
+ <script>
+  //<![CDATA[
+
+AJS.$('[data-macro-name="markdown"] code').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+
+//]]>
+ </script>
+ <style>
+  .hljs {display: inline;}
+pre > code {display: block !important;}
+ </style>
+ <script>
+  //<![CDATA[
+ AJS.$('[data-macro-name="markdown"] table thead th').each(function(i, block) {
+    block.classList.add("confluenceTh");
+});
+
+AJS.$('[data-macro-name="markdown"] table tbody tr td').each(function(i, block) {
+    block.classList.add("confluenceTd");
+});
+//]]>
+ </script>
+</div>

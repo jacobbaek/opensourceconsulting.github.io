@@ -19,14 +19,14 @@
 <meta property="og:type" content="article"/>
 <meta property="og:title" content="11 ~ 12월 Atlassian TroubleShooting 정리"/>
 <meta property="og:description" content="Active Directory의 그룹명 변경 시 연동된 Jira / Confluence의 권한 등에 반영되지 않는 현상 Jira / Confluence에 그룹명 변경 기능이 없기에 AD에서 그룹명 변경 후 Sync 시에 Jira / Confluence에는 새로운 그룹으로 생성됨 Atlassian Support의 공식적인 답변은 안정성을 위해 기본적으로 하나씩 직접 다시 권한을 부여하는 방법을 권장하나, 큰 인스턴스에서 현실적으로 불가능하기에 Staging에서 테스트 및 DB백업 후 다음 쿼리작업을 실행 Confluence UPDATE spacepermissions SET permgroupname = '&lt;New Group Name&gt;' WHERE permgroupname IN ('&lt;Old Group Name&gt;') AND spaceid..."/>
-<meta property="og:url" content="http://localhost:4000/2018/12/26/53346876/"/>
+<meta property="og:url" content="https://tech.osci.kr/2018/12/26/53346876/"/>
 <meta property="og:image" content="/assets/images/53346876/0.png"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="11 ~ 12월 Atlassian TroubleShooting 정리"/>
 <meta name="twitter:description" content="Active Directory의 그룹명 변경 시 연동된 Jira / Confluence의 권한 등에 반영되지 않는 현상 Jira / Confluence에 그룹명 변경 기능이 없기에 AD에서 그룹명 변경 후 Sync 시에 Jira / Confluence에는 새로운 그룹으로 생성됨 Atlassian Support의 공식적인 답변은 안정성을 위해 기본적으로 하나씩 직접 다시 권한을 부여하는 방법을 권장하나, 큰 인스턴스에서 현실적으로 불가능하기에 Staging에서 테스트 및 DB백업 후 다음 쿼리작업을 실행 Confluence UPDATE spacepermissions SET permgroupname = '&lt;New Group Name&gt;' WHERE permgroupname IN ('&lt;Old Group Name&gt;') AND spaceid..."/>
 <meta name="twitter:label1" content="Written by"/>
 <meta name="twitter:data1" content="kjeon"/>
-<meta name="twitter:image:src" content="http://localhost:4000/assets/images/53346876/0.png"/>
+<meta name="twitter:image:src" content="https://tech.osci.kr/assets/images/53346876/0.png"/>
 <meta name="naver-site-verification" content="11ec9086ec9292ebc8dc73f6224492f208b2007b"/>
 <meta name="google-site-verification" content="Q5w5X0R32gOG-1lBhFg0UxvXRNoQX-uOSPjxPI4sXH4" />
 
@@ -38,10 +38,10 @@
 <meta property="article:published_time" content="2018-12-26T00:00:00+09:00"/>
 
 
-<meta property="article:author" content="http://localhost:4000/authors/kjeon"/>
+<meta property="article:author" content="https://tech.osci.kr/authors/kjeon"/>
 
-<link href="http://localhost:4000/rss/" rel="alternate" type="application/rss+xml" title="RSS"/>
-<link href="/assets/favicon.ico" rel="icon" type="image/png"/>
+<link href="https://tech.osci.kr/rss/" rel="alternate" type="application/rss+xml" title="RSS"/>
+<link href="/assets/favicon.png" rel="icon" type="image/png"/>
 <link href="/assets/apple-touch-icon.png" rel="apple-touch-icon" type="image/png"/>
 <link href="/assets/apple-touch-icon.png" rel="apple-touch-icon-precomposed" type="image/png"/>
 <link href="/assets/lib/normalize.css" rel="stylesheet" type="text/css"/>
@@ -88,7 +88,7 @@
 <ul id="shares">
     
     <li>
-        <a id="share-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/2018/12/26/53346876/"
+        <a id="share-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://tech.osci.kr/2018/12/26/53346876/"
            onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
             <span class="sr-only">Share to Facebook</span>
         </a>
@@ -474,8 +474,8 @@ update changegroup set CREATED='2015-01-01' where CREATED is null;</pre>
   </ul>
  </li>
 </ol>
-        <div class="fb-like" data-href="http://localhost:4000/2018/12/26/53346876/"  data-width="300px" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
-        <div class="fb-comments" data-href="http://localhost:4000/2018/12/26/53346876/" data-width="100%" data-numposts="5"></div>
+        <div class="fb-like" data-href="https://tech.osci.kr/2018/12/26/53346876/"  data-width="300px" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+        <div class="fb-comments" data-href="https://tech.osci.kr/2018/12/26/53346876/" data-width="100%" data-numposts="5"></div>
     </div>
 
     <div id="post-footer">
@@ -550,7 +550,7 @@ update changegroup set CREATED='2015-01-01' where CREATED is null;</pre>
         </li>
     </ul>
     <p id="copyright">
-        <a href="https://tech.osci.kr">&copy;2019 OpenSource Consulting</a>
+        <a href="https://tech.osci.kr">&copy;2018 OpenSourceConsulting</a>
         All rights reserved.
     </p>
 </div><!--#footer-->

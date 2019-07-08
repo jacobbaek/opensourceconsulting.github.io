@@ -29,7 +29,7 @@ Sharing Tech. Growing Together.
 <meta property="og:description" content="기술을 나눕니다. 함께 성장합니다.
 Sharing Tech. Growing Together.
 "/>
-<meta property="og:url" content="http://localhost:4000"/>
+<meta property="og:url" content="https://tech.osci.kr"/>
 <meta property="og:image" content=""/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="오픈소스컨설팅 
@@ -40,14 +40,14 @@ Sharing Tech. Growing Together.
 "/>
 <meta name="twitter:label1" content="Written by"/>
 <meta name="twitter:data1" content="lab@osci.kr"/>
-<meta name="twitter:image:src" content="http://localhost:4000/assets/images/default_blog_cover.jpg"/>
+<meta name="twitter:image:src" content="https://tech.osci.kr/assets/images/default_blog_cover.jpg"/>
 <meta name="naver-site-verification" content="11ec9086ec9292ebc8dc73f6224492f208b2007b"/>
 <meta name="google-site-verification" content="Q5w5X0R32gOG-1lBhFg0UxvXRNoQX-uOSPjxPI4sXH4" />
 
 
 
-<link href="http://localhost:4000/rss/" rel="alternate" type="application/rss+xml" title="RSS"/>
-<link href="/assets/favicon.ico" rel="icon" type="image/png"/>
+<link href="https://tech.osci.kr/rss/" rel="alternate" type="application/rss+xml" title="RSS"/>
+<link href="/assets/favicon.png" rel="icon" type="image/png"/>
 <link href="/assets/apple-touch-icon.png" rel="apple-touch-icon" type="image/png"/>
 <link href="/assets/apple-touch-icon.png" rel="apple-touch-icon-precomposed" type="image/png"/>
 <link href="/assets/lib/normalize.css" rel="stylesheet" type="text/css"/>
@@ -99,29 +99,6 @@ Sharing Tech. Growing Together.<br />
 <div id="content" class="container">
     <div id="home-content" role="main">
         <ul id="post-list">
-    
-        <li class="post-item post ">
-    <a href="/2018/12/26/53346876/">
-        <h3 class="post-title">11 ~ 12월 Atlassian TroubleShooting 정리</h3>
-        <p class="post-excerpt">  Active Directory의 그룹명 변경 시 연동된 Jira / Confluence의 권한 등에 반영되지 않는 현상 Jira / Confluence에 그룹명 변경 기능이 없기에 AD에서 그룹명 변경 후 Sync 시에 Jira / Confluence에는 새로운 그룹으로 생성됨 Atlassian Support의 공식적인 답변은 안정성을 위해 기본적으로 하나씩 직접 다시 권한을 부여하는 방법을 권장하나, 큰 인스턴스에서 현실적으로 불가능하기에 Staging에서 테스트 및 DB백업 후 다음 쿼리작업을 실행 Confluence UPDATE spacepermissions SET permgroupname = '&lt;New Group Name&gt;' WHERE permgroupname IN ('&lt;Old Group Name&gt;') AND spaceid...</p>
-    </a>
-    <p class="post-tags">
-        
-    </p>
-    <div class="post-meta">
-        
-        <a href="/authors/kjeon">
-            <div class="author-image"
-                 style="background-image:url(/files/authors/wjsrkqdlf.png);">
-                <span class="sr-only">kjeon's profile image</span>
-            </div>
-            <p class="author-name">kjeon</p>
-        </a>
-        <p class="post-date">2018-12-26</p>
-    </div>
-    <!--<div class="clearfix"></div>-->
-</li>
-
     
         <li class="post-item post ">
     <a href="/2018/12/16/51741685/">
@@ -215,6 +192,35 @@ Sharing Tech. Growing Together.<br />
 </li>
 
     
+        <li class="post-item post ">
+    <a href="/2018/12/02/50692831/">
+        <h3 class="post-title">Atlassian Oracle SE Java 소식</h3>
+        <p class="post-excerpt">  Oracle Java BCL 라이선스가 2018년 7월 부로 `Java SE subscription` 년단위 구독모델로 개편됐습니다. Oracle 유료화 모델이 변경 되면서 Atlassian Jira, Software는 어떻게 대응하는지 알아봤습니다. Oracle JDK는 유료인가? 2019년 1월 이후에 릴리즈되는 Oracle Java SE8은 유료 라이선스 없이 업무용, 상업용으로 사용할 수 없습니다. Atlassian Jira, Confluence 설치할 때 JRE 1.8.181가 Bundle로 제공됩니다. Java 1.8.181은 BCL 계약의 동의하에 무료로 사용할 수 있습니다. BCL 계약에는 일반적인 컴퓨팅에서 사용할 수 있으며 Java를 수정하지 않는 범위에서 무료로 사용할 수 있습니다. JDK(Java Development...</p>
+    </a>
+    <p class="post-tags">
+        
+            <a class="tag tag-test">test</a>
+        
+            <a class="tag tag-label1">label1</a>
+        
+            <a class="tag tag-tests">tests</a>
+        
+    </p>
+    <div class="post-meta">
+        
+        <a href="/authors/seiyeon.kim">
+            <div class="author-image"
+                 style="background-image:url(/files/authors/it2seiyon.jpeg);">
+                <span class="sr-only">seiyeon.kim's profile image</span>
+            </div>
+            <p class="author-name">seiyeon.kim</p>
+        </a>
+        <p class="post-date">2018-12-02</p>
+    </div>
+    <!--<div class="clearfix"></div>-->
+</li>
+
+    
 </ul>
 <ul id="pagination" role="navigation">
     
@@ -289,7 +295,7 @@ Sharing Tech. Growing Together.<br />
         </li>
     </ul>
     <p id="copyright">
-        <a href="https://tech.osci.kr">&copy;2019 OpenSource Consulting</a>
+        <a href="https://tech.osci.kr">&copy;2018 OpenSourceConsulting</a>
         All rights reserved.
     </p>
 </div><!--#footer-->
